@@ -8,13 +8,16 @@ class OtherDropdown extends StatefulWidget {
 }
 
 class _OtherDropdownState extends State<OtherDropdown> {
+
   String dropdownValue = 'توسعه فناوی دینگ';
+
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Expanded(
         child: DropdownButton(
+          dropdownColor: Colors.grey,
           onChanged: (String? newValue) {
             setState(() {
               dropdownValue = newValue!;
@@ -24,23 +27,27 @@ class _OtherDropdownState extends State<OtherDropdown> {
             'One',
             'Two',
             'Free',
-            'Four',
             'توسعه فناوی دینگ',
           ].map<DropdownMenuItem<String>>((String value) {
             return DropdownMenuItem<String>(
               value: value,
               child: Text(
                 value,
-                style: TextStyle(color: Colors.black, fontSize: 18),
+                style: TextStyle(color: Colors.white, fontSize: 18),
               ),
             );
-          }).toList(),
+          }).toList(),0
           style: TextStyle(color: Colors.white),
           value: dropdownValue,
-          icon: const Icon(
-            Icons.arrow_drop_down,
-            size: 40,
-            color: Colors.white,
+          icon: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Icon(
+                Icons.arrow_drop_down,
+                size: 40,
+                color: Colors.transparent,
+              ),
+            ],
           ),
         ),
       ),

@@ -215,13 +215,19 @@ class _HomeState extends State<Home> {
                 children: [
                   Expanded(
                     child: Container(
-                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(right: 10),
+                      alignment: Alignment.centerRight,
                       height: 35,
                       decoration: BoxDecoration(
                           color: Colors.black38,
                           borderRadius: BorderRadius.circular(10),
                       ),
-                      child: OtherDropdown(),
+                      child: Row(
+                        children: [
+                          Icon(Icons.arrow_drop_down_rounded,size: 40,color: Colors.white,),
+                          OtherDropdown(),
+                        ],
+                      ),
                     ),
                   ),
                 ],

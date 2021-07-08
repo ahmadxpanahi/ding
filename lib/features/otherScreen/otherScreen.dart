@@ -9,6 +9,23 @@ class OtherScreen extends StatefulWidget {
 }
 
 class _OtherScreenState extends State<OtherScreen> {
+
+  Widget infoItem(String title,IconData icon) => Container(
+    margin: EdgeInsets.only(right: 10,left: 10,bottom: 12,top: 5),
+    height: 90 ,
+    width: 150,
+    decoration: BoxDecoration(
+      border: Border.all(width: 3,color: Colors.greenAccent)
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(icon,size: 35,color: Colors.greenAccent,),
+        Text(title,style: TextStyle(color: Colors.greenAccent,fontSize: 20,fontWeight: FontWeight.bold),)
+      ],
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,6 +41,27 @@ class _OtherScreenState extends State<OtherScreen> {
                 optionsTile('درباره ی سامانه دینگ', Icons.info),
               ],
             ),
+          ),
+        ),
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  infoItem('پشتیبانی سامانه',Icons.network_check_outlined),
+                  infoItem('وبسایت دینگ',Icons.center_focus_weak),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  infoItem('کانال تلگرام',Icons.call),
+                  infoItem('اینستاگرام',Icons.camera),
+                ],
+              )
+            ],
           ),
         )
       ],
