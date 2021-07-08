@@ -1,3 +1,4 @@
+import 'package:ding/features/reportScreen/detailedReport.dart';
 import 'package:ding/features/reportScreen/reportWidgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -163,23 +164,31 @@ class _ReportScreenState extends State<ReportScreen> {
                     ),
                   ),
                   Expanded(
-                    child: Container(
-                      alignment: Alignment.center,
-                      margin: EdgeInsets.symmetric(
-                        horizontal: 20,
-                      ),
-                      height: 60,
-                      decoration: BoxDecoration(
-                          border:
-                              Border.all(width: 3, color: Colors.greenAccent),
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white),
-                      child: Text(
-                        'گزارش تفضیلی',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
-                            color: Colors.black),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DetailedReport()));
+                      },
+                      child: Container(
+                        alignment: Alignment.center,
+                        margin: EdgeInsets.symmetric(
+                          horizontal: 20,
+                        ),
+                        height: 60,
+                        decoration: BoxDecoration(
+                            border:
+                                Border.all(width: 3, color: Colors.greenAccent),
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white),
+                        child: Text(
+                          'گزارش تفضیلی',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                              color: Colors.black),
+                        ),
                       ),
                     ),
                   ),
