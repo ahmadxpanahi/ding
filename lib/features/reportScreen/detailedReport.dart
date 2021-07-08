@@ -1,3 +1,4 @@
+import 'package:ding/features/reportScreen/entity/detailedData.dart';
 import 'package:ding/features/reportScreen/reportWidgets.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,65 @@ class DetailedReport extends StatefulWidget {
 }
 
 class _DetailedReportState extends State<DetailedReport> {
+  List<DetailedData> _list = <DetailedData>[
+    DetailedData(
+        bPeriod: DateTime.now(),
+        day: 'شنبه 1',
+        ePeriod: DateTime.now(),
+        month: 'خرداد',
+        time: DateTime.now(),
+        year: '1400'),
+    DetailedData(
+        bPeriod: DateTime.now(),
+        day: 'شنبه 1',
+        ePeriod: DateTime.now(),
+        month: 'خرداد',
+        time: DateTime.now(),
+        year: '1400'),
+    DetailedData(
+        bPeriod: DateTime.now(),
+        day: 'شنبه 1',
+        ePeriod: DateTime.now(),
+        month: 'خرداد',
+        time: DateTime.now(),
+        year: '1400'),
+    DetailedData(
+        bPeriod: DateTime.now(),
+        day: 'شنبه 1',
+        ePeriod: DateTime.now(),
+        month: 'خرداد',
+        time: DateTime.now(),
+        year: '1400'),
+    DetailedData(
+        bPeriod: DateTime.now(),
+        day: 'شنبه 1',
+        ePeriod: DateTime.now(),
+        month: 'خرداد',
+        time: DateTime.now(),
+        year: '1400'),
+    DetailedData(
+        bPeriod: DateTime.now(),
+        day: 'شنبه 1',
+        ePeriod: DateTime.now(),
+        month: 'خرداد',
+        time: DateTime.now(),
+        year: '1400'),
+    DetailedData(
+        bPeriod: DateTime.now(),
+        day: 'شنبه 1',
+        ePeriod: DateTime.now(),
+        month: 'خرداد',
+        time: DateTime.now(),
+        year: '1400'),
+    DetailedData(
+        bPeriod: DateTime.now(),
+        day: 'شنبه 1',
+        ePeriod: DateTime.now(),
+        month: 'خرداد',
+        time: DateTime.now(),
+        year: '1400'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +116,7 @@ class _DetailedReportState extends State<DetailedReport> {
       body: Column(
         children: [
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 10,vertical: 10  ),
+            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             height: 65,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -80,7 +140,9 @@ class _DetailedReportState extends State<DetailedReport> {
                     ),
                   ],
                 ),
-                SizedBox(height: 2,),
+                SizedBox(
+                  height: 2,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -103,11 +165,16 @@ class _DetailedReportState extends State<DetailedReport> {
               ],
             ),
           ),
-          Container(height: 2,color: Colors.greenAccent,),
+          Container(
+            height: 2,
+            color: Colors.greenAccent,
+          ),
           Expanded(
             child: ListView.builder(
-              itemCount: 12,
-              itemBuilder: (_,index) => DetailedItem(),
+              itemCount: _list.length,
+              itemBuilder: (_, index) => DetailedItem(
+                detailedData: _list[index],
+              ),
             ),
           )
         ],
