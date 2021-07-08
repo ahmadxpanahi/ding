@@ -114,22 +114,12 @@ class _HomeState extends State<Home> {
         child: Row(
           children: [
             Expanded(
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.refresh,
-                          size: 40,
-                          color: Colors.white,
-                        )))),
-            Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'وضعیت لحظه ای',
+                    'گزارش گیری',
                     style: TextStyle(fontSize: 19, color: Colors.white),
                   ),
                   Text(
@@ -139,7 +129,6 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-            Expanded(child: SizedBox())
           ],
         ),
       ),
