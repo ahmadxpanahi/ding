@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../advancedScreen.dart';
 import '../otherScreen/otherScreen.dart';
-import '../reportScreen.dart';
+import '../reportScreen/reportScreen.dart';
 import '../staffScreen/staffScreen.dart';
 import 'homeWidgets.dart';
 
