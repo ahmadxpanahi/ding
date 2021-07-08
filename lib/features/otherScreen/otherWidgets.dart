@@ -36,7 +36,7 @@ class _OtherDropdownState extends State<OtherDropdown> {
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ),
             );
-          }).toList(),0
+          }).toList(),
           style: TextStyle(color: Colors.white),
           value: dropdownValue,
           icon: Row(
