@@ -1,8 +1,7 @@
-import 'package:ding/features/todayScreen/entity/todayData.dart';
+import 'package:ding/domain/entity/today_data.dart';
 import 'package:ding/ui/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 
 class ListItem extends StatelessWidget {
 
@@ -10,7 +9,7 @@ class ListItem extends StatelessWidget {
 
   ListItem(
       {Key? key,
-      required this.todayData})
+        required this.todayData})
       : super(key: key);
 
   @override
@@ -43,7 +42,7 @@ class ListItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                       todayData.name,
+                      todayData.name,
                       style: TextStyle(fontSize: 20),
                     ),
                     Text(

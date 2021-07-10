@@ -1,6 +1,7 @@
-import 'package:ding/features/todayScreen/entity/todayData.dart';
-import 'package:ding/features/todayScreen/todayWidgets.dart';
+import 'package:ding/src/feature/today/widgets/list_item.dart';
 import 'package:flutter/material.dart';
+
+import '../../../domain/entity/today_data.dart';
 
 class TodayScreen extends StatefulWidget {
   const TodayScreen({Key? key}) : super(key: key);

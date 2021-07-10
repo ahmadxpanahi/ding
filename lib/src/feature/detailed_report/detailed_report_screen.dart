@@ -1,16 +1,16 @@
-import 'package:ding/features/reportScreen/entity/detailedData.dart';
-import 'package:ding/features/reportScreen/reportWidgets.dart';
+import 'package:ding/src/feature/detailed_report/widgets/detailed_item.dart';
 import 'package:ding/ui/colors.dart';
 import 'package:flutter/material.dart';
+import '../../../domain/entity/detailed_data.dart';
 
-class DetailedReport extends StatefulWidget {
-  const DetailedReport({Key? key}) : super(key: key);
+class DetailedReportScreen extends StatefulWidget {
+  const DetailedReportScreen({Key? key}) : super(key: key);
 
   @override
-  _DetailedReportState createState() => _DetailedReportState();
+  _DetailedReportScreenState createState() => _DetailedReportScreenState();
 }
 
-class _DetailedReportState extends State<DetailedReport> {
+class _DetailedReportScreenState extends State<DetailedReportScreen> {
   List<DetailedData> _list = <DetailedData>[
     DetailedData(
         bPeriod: DateTime.now(),

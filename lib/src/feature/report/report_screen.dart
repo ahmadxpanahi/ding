@@ -1,5 +1,5 @@
-import 'package:ding/features/reportScreen/detailedReport.dart';
-import 'package:ding/features/reportScreen/reportWidgets.dart';
+import 'package:ding/src/feature/detailed_report/detailed_report_screen.dart';
+import 'package:ding/src/feature/report/widgets/switch_button.dart';
 import 'package:ding/ui/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -13,13 +13,6 @@ class ReportScreen extends StatefulWidget {
 }
 
 class _ReportScreenState extends State<ReportScreen> {
-  bool status = true;
-
-  void change() {
-    setState(() {
-      status = !status;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +66,7 @@ class _ReportScreenState extends State<ReportScreen> {
                               flex: 7,
                             ),
                             Expanded(
-                              child: switchButton(status, change),
+                              child: SwitchButton(),
                               flex: 4,
                             )
                           ],
@@ -170,7 +163,7 @@ class _ReportScreenState extends State<ReportScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => DetailedReport()));
+                                builder: (context) => DetailedReportScreen()));
                       },
                       child: Container(
                         alignment: Alignment.center,

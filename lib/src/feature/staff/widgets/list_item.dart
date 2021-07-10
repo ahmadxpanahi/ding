@@ -1,8 +1,6 @@
-import 'package:ding/features/staffScreen/entity/staffData.dart';
-import 'package:ding/features/todayScreen/entity/todayData.dart';
+import 'package:ding/domain/entity/staff_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 
 class ListItem extends StatelessWidget {
 
@@ -10,7 +8,7 @@ class ListItem extends StatelessWidget {
 
   ListItem(
       {Key? key,
-      required this.staffData})
+        required this.staffData})
       : super(key: key);
 
   @override
@@ -41,7 +39,7 @@ class ListItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                       staffData.name,
+                      staffData.name,
                       style: TextStyle(fontSize: 20),
                     ),
                     Text(

@@ -1,7 +1,7 @@
 
-import 'package:ding/features/staffScreen/staffWidgets.dart';
+import 'package:ding/src/feature/staff/widgets/list_item.dart';
 import 'package:flutter/material.dart';
-import 'entity/staffData.dart';
+import '../../../domain/entity/staff_data.dart';
 
 class StaffScreen extends StatefulWidget {
   const StaffScreen({Key? key}) : super(key: key);
