@@ -1,5 +1,6 @@
 import 'package:ding/features/otherScreen/otherWidgets.dart';
 import 'package:ding/features/todayScreen/todayScreen.dart';
+import 'package:ding/ui/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../advancedScreen.dart';
@@ -31,7 +32,7 @@ class _HomeState extends State<Home> {
       preferredSize: Size.fromHeight(100),
       child: Container(
         padding: EdgeInsets.only(top: 15),
-        color: Colors.greenAccent,
+        color: DingColors.primary(),
         height: 90,
         child: Row(
           children: [
@@ -70,7 +71,7 @@ class _HomeState extends State<Home> {
       preferredSize: Size.fromHeight(100),
       child: Container(
         padding: EdgeInsets.only(top: 15),
-        color: Colors.greenAccent,
+        color: DingColors.primary(),
         height: 90,
         child: Row(
           children: [
@@ -109,7 +110,7 @@ class _HomeState extends State<Home> {
       preferredSize: Size.fromHeight(100),
       child: Container(
         padding: EdgeInsets.only(top: 15),
-        color: Colors.greenAccent,
+        color: DingColors.primary(),
         height: 90,
         child: Row(
           children: [
@@ -138,7 +139,7 @@ class _HomeState extends State<Home> {
       child: Container(
         height: 90,
         padding: EdgeInsets.only(top: 15),
-        color: Colors.greenAccent,
+        color: DingColors.primary(),
         child: Row(
           children: [
             Expanded(
@@ -176,7 +177,7 @@ class _HomeState extends State<Home> {
       preferredSize: Size.fromHeight(220),
       child: Container(
           padding: EdgeInsets.only(top: 15,left: 20,right: 20,bottom: 15),
-          color: Colors.greenAccent,
+          color: DingColors.primary(),
           height: 160,
           child: Column(
             children: [
@@ -277,7 +278,7 @@ class _HomeState extends State<Home> {
                 Icons.add,
                 size: 40,
               ),
-              backgroundColor: Colors.greenAccent,
+              backgroundColor: DingColors.primary(),
             )
           : null,
       bottomNavigationBar: _bottomNav(),

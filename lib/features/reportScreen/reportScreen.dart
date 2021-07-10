@@ -1,5 +1,6 @@
 import 'package:ding/features/reportScreen/detailedReport.dart';
 import 'package:ding/features/reportScreen/reportWidgets.dart';
+import 'package:ding/ui/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
@@ -52,7 +53,7 @@ class _ReportScreenState extends State<ReportScreen> {
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 17,
-                                  color: Colors.greenAccent),
+                                  color: DingColors.primary()),
                             ),
                           ],
                         ),
@@ -108,7 +109,7 @@ class _ReportScreenState extends State<ReportScreen> {
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 17,
-                                  color: Colors.greenAccent),
+                                  color: DingColors.primary()),
                             ),
                           ],
                         ),
@@ -128,7 +129,7 @@ class _ReportScreenState extends State<ReportScreen> {
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 17,
-                                  color: Colors.greenAccent),
+                                  color: DingColors.primary()),
                             ),
                           ],
                         ),
@@ -153,7 +154,7 @@ class _ReportScreenState extends State<ReportScreen> {
                       height: 60,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Colors.greenAccent),
+                          color: DingColors.primary()),
                       child: Text(
                         'گزارش خلاصه',
                         style: TextStyle(
@@ -179,7 +180,7 @@ class _ReportScreenState extends State<ReportScreen> {
                         height: 60,
                         decoration: BoxDecoration(
                             border:
-                                Border.all(width: 3, color: Colors.greenAccent),
+                                Border.all(width: 3, color: DingColors.primary()),
                             borderRadius: BorderRadius.circular(10),
                             color: Colors.white),
                         child: Text(

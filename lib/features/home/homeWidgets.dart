@@ -1,3 +1,4 @@
+import 'package:ding/ui/colors.dart';
 import 'package:flutter/material.dart';
 
 Widget bottomNavItem(Function tap,String screenName,String title,IconData icon,String checkTitle) => Expanded(
@@ -13,7 +14,7 @@ Widget bottomNavItem(Function tap,String screenName,String title,IconData icon,S
             icon,
             size: 40,
             color: screenName == checkTitle
-                ? Colors.greenAccent
+                ? DingColors.primary()
                 : Colors.black38,
           ),
         ),
@@ -25,7 +26,7 @@ Widget bottomNavItem(Function tap,String screenName,String title,IconData icon,S
           style: TextStyle(
               fontSize: 15,
               color: screenName == checkTitle
-                  ? Colors.greenAccent
+                  ? DingColors.primary()
                   : Colors.black38),
         )
       ],

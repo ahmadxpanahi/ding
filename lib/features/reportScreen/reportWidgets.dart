@@ -1,3 +1,4 @@
+import 'package:ding/ui/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -88,6 +89,7 @@ class DetailedItem extends StatefulWidget {
 class _DetailedItemState extends State<DetailedItem> {
   @override
   Widget build(BuildContext context) {
+
     int bPeriodMin = widget.detailedData.bPeriod.minute;
     int bPeriodHour = widget.detailedData.bPeriod.hour;
     int ePeriodMin = widget.detailedData.ePeriod.minute;
@@ -113,7 +115,7 @@ class _DetailedItemState extends State<DetailedItem> {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
-                        color: Colors.greenAccent),
+                        color: DingColors.primary()),
                   ),
                   SizedBox(
                     height: 8,
@@ -141,7 +143,7 @@ class _DetailedItemState extends State<DetailedItem> {
                 width: 90,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
-                    border: Border.all(width: 3, color: Colors.greenAccent)),
+                    border: Border.all(width: 3, color: DingColors.primary())),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

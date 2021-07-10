@@ -1,4 +1,5 @@
 import 'package:ding/features/todayScreen/entity/todayData.dart';
+import 'package:ding/ui/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -30,7 +31,7 @@ class ListItem extends StatelessWidget {
                 width: 75,
                 height: 75,
                 decoration: BoxDecoration(
-                    border: Border.all(width: 4, color: Colors.greenAccent),
+                    border: Border.all(width: 4, color: DingColors.primary()),
                     image: DecorationImage(
                         image: NetworkImage(todayData.imgUrl), fit: BoxFit.fill),
                     borderRadius: BorderRadius.circular(100),

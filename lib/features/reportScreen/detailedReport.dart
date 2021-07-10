@@ -1,5 +1,6 @@
 import 'package:ding/features/reportScreen/entity/detailedData.dart';
 import 'package:ding/features/reportScreen/reportWidgets.dart';
+import 'package:ding/ui/colors.dart';
 import 'package:flutter/material.dart';
 
 class DetailedReport extends StatefulWidget {
@@ -76,7 +77,7 @@ class _DetailedReportState extends State<DetailedReport> {
         preferredSize: Size.fromHeight(100),
         child: Container(
           padding: EdgeInsets.only(top: 15),
-          color: Colors.greenAccent,
+          color: DingColors.primary(),
           height: 90,
           child: Row(
             children: [
@@ -167,7 +168,7 @@ class _DetailedReportState extends State<DetailedReport> {
           ),
           Container(
             height: 2,
-            color: Colors.greenAccent,
+            color: DingColors.primary(),
           ),
           Expanded(
             child: ListView.builder(

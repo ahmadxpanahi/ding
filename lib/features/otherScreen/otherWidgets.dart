@@ -1,3 +1,4 @@
+import 'package:ding/ui/colors.dart';
 import 'package:flutter/material.dart';
 
 class OtherDropdown extends StatefulWidget {
@@ -63,7 +64,7 @@ Widget optionsTile(String title, IconData icon) => Column(
             children: [
               Icon(
                 icon,
-                color: Colors.greenAccent,
+                color: DingColors.primary(),
                 size: 33,
               ),
               SizedBox(

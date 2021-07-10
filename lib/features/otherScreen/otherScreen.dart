@@ -1,4 +1,5 @@
 import 'package:ding/features/otherScreen/otherWidgets.dart';
+import 'package:ding/ui/colors.dart';
 import 'package:flutter/material.dart';
 
 class OtherScreen extends StatefulWidget {
@@ -15,13 +16,13 @@ class _OtherScreenState extends State<OtherScreen> {
     height: 90 ,
     width: 150,
     decoration: BoxDecoration(
-      border: Border.all(width: 3,color: Colors.greenAccent)
+      border: Border.all(width: 3,color: DingColors.primary())
     ),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(icon,size: 35,color: Colors.greenAccent,),
-        Text(title,style: TextStyle(color: Colors.greenAccent,fontSize: 20,fontWeight: FontWeight.bold),)
+        Icon(icon,size: 35,color: DingColors.primary(),),
+        Text(title,style: TextStyle(color: DingColors.primary(),fontSize: 20,fontWeight: FontWeight.bold),)
       ],
     ),
   );
