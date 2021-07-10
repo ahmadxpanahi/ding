@@ -1,6 +1,8 @@
 import 'package:ding/src/feature/detailed_report/detailed_report_screen.dart';
 import 'package:ding/src/feature/report/widgets/switch_button.dart';
+import 'package:ding/src/feature/summary_report/summary_report_screen.dart';
 import 'package:ding/ui/colors.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
@@ -140,20 +142,25 @@ class _ReportScreenState extends State<ReportScreen> {
               child: Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      alignment: Alignment.center,
-                      margin:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                      height: 60,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: DingColors.primary()),
-                      child: Text(
-                        'گزارش خلاصه',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
-                            color: Colors.white),
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SummaryReportScreen()));
+                      },
+                      child: Container(
+                        alignment: Alignment.center,
+                        margin:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                        height: 60,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: DingColors.primary()),
+                        child: Text(
+                          'گزارش خلاصه',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                              color: Colors.white),
+                        ),
                       ),
                     ),
                   ),

@@ -1,3 +1,4 @@
+import 'package:ding/src/feature/advanced/advanced_screen.dart';
 import 'package:ding/src/feature/home/widgets/bottom_nav.dart';
 import 'package:ding/src/feature/other/other_screen.dart';
 import 'package:ding/src/feature/other/widgets/drop_down.dart';
@@ -7,7 +8,6 @@ import 'package:ding/src/feature/today/today_screen.dart';
 import 'package:ding/ui/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../advanced_screen/advanced_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
