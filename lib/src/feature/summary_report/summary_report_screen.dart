@@ -59,10 +59,12 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
                 children: [
                   Text(
                     'گزارش خلاصه',
+                    textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 19, color: Colors.white),
                   ),
                   Text(
                     'توسعه فناوری دینگ',
+                    textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 15, color: Colors.white),
                   ),
                 ],

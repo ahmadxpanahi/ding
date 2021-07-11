@@ -89,10 +89,12 @@ class _DetailedReportScreenState extends State<DetailedReportScreen> {
                   children: [
                     Text(
                       'گزارش تفضیلی',
+                      textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 19, color: Colors.white),
                     ),
                     Text(
                       'توسعه فناوری دینگ',
+                      textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 15, color: Colors.white),
                     ),
                   ],

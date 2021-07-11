@@ -53,10 +53,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Text(
                     'وضعیت لحظه ای',
+                    textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 19, color: Colors.white),
                   ),
                   Text(
                     'توسعه فناوری دینگ',
+                    textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 15, color: Colors.white),
                   ),
                 ],
@@ -92,10 +94,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Text(
                     'وضعیت لحظه ای',
+                    textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 19, color: Colors.white),
                   ),
                   Text(
                     'توسعه فناوری دینگ',
+                    textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 15, color: Colors.white),
                   ),
                 ],
@@ -121,10 +125,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Text(
                     'گزارش گیری',
+                    textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 19, color: Colors.white),
                   ),
                   Text(
                     'توسعه فناوری دینگ',
+                    textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 15, color: Colors.white),
                   ),
                 ],
@@ -159,10 +165,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Text(
                     'کارکنان',
+                    textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 19, color: Colors.white),
                   ),
                   Text(
                     'توسعه فناوری دینگ',
+                    textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 15, color: Colors.white),
                   ),
                 ],
