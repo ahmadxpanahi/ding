@@ -17,6 +17,9 @@ class MyApp extends StatelessWidget {
           builder: (BuildContext context , BoxConstraints constraints){
             SizeConfig().init(constraints , orientation);
             return MaterialApp(
+              theme: ThemeData(
+                fontFamily: 'IRANYekan'
+              ),
               debugShowCheckedModeBanner: false,
               home: HomeScreen(),
             );

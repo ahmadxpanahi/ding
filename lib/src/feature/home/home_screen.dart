@@ -32,40 +32,13 @@ class _HomeScreenState extends State<HomeScreen> {
       preferredSize: Size.fromHeight(100),
       child: Container(
         padding: EdgeInsets.only(top: 15),
+        alignment: Alignment.center,
         color: DingColors.primary(),
         height: 90,
-        child: Row(
-          children: [
-            Expanded(
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.refresh,
-                          size: 40,
-                          color: Colors.white,
-                        )))),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'وضعیت لحظه ای',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 19, color: Colors.white),
-                  ),
-                  Text(
-                    'توسعه فناوری دینگ',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 15, color: Colors.white),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(child: SizedBox())
-          ],
+        child: Text(
+          'وضعیت لحظه ای',
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 19, color: Colors.white),
         ),
       ),
     ),
