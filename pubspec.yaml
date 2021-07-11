@@ -52,6 +52,7 @@ flutter:
     - assets/images/letter.svg
     - assets/images/timer.svg
     - assets/images/other.svg
+    - assets/images/Shape.svg
 
   #   - images/a_dot_ham.jpeg
 

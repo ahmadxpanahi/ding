@@ -1,17 +1,18 @@
-import 'package:ding/src/feature/today/widgets/employee_item.dart';
-import 'package:ding/src/feature/today/widgets/other_employee.dart';
+
+import 'package:ding/src/feature/situation/widgets/employee_item.dart';
+import 'package:ding/src/feature/situation/widgets/other_employee.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 
-class TodayScreen extends StatefulWidget {
-  const TodayScreen({Key? key}) : super(key: key);
+class SituationScreen extends StatefulWidget {
+  const SituationScreen({Key? key}) : super(key: key);
 
   @override
-  _TodayScreenState createState() => _TodayScreenState();
+  _SituationScreenState createState() => _SituationScreenState();
 }
 
-class _TodayScreenState extends State<TodayScreen> {
+class _SituationScreenState extends State<SituationScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -24,17 +24,17 @@ class _BottomNavState extends State<BottomNav> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 _bottomNavItem(() {
-                  widget.change!('today');
-                }, widget.screenName ?? '', 'assets/images/eye.svg', 'today'),
+                  widget.change!('situation');
+                }, widget.screenName ?? '', 'assets/images/eye.svg', 'situation'),
                 _bottomNavItem(() {
-                  widget.change!('staff');
-                }, widget.screenName ?? '', 'assets/images/letter.svg', 'staff'),
-                _bottomNavItem(() {
-                  widget.change!('report');
-                }, widget.screenName ?? '', 'assets/images/timer.svg', 'report'),
+                  widget.change!('requests');
+                }, widget.screenName ?? '', 'assets/images/letter.svg', 'requests'),
                 _bottomNavItem(() {
                   widget.change!('advanced');
-                }, widget.screenName ?? '', 'assets/images/form.svg', 'advanced'),
+                }, widget.screenName ?? '', 'assets/images/timer.svg', 'advanced'),
+                _bottomNavItem(() {
+                  widget.change!('report');
+                }, widget.screenName ?? '', 'assets/images/form.svg', 'report'),
                 _bottomNavItem(() {
                   widget.change!('other');
                 }, widget.screenName ?? '', 'assets/images/other.svg', 'other'),

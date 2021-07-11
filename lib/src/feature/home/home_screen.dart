@@ -3,11 +3,12 @@ import 'package:ding/src/feature/home/widgets/bottom_nav.dart';
 import 'package:ding/src/feature/other/other_screen.dart';
 import 'package:ding/src/feature/other/widgets/drop_down.dart';
 import 'package:ding/src/feature/report/report_screen.dart';
-import 'package:ding/src/feature/staff/staff_screen.dart';
-import 'package:ding/src/feature/today/today_screen.dart';
+import 'package:ding/src/feature/requests/requests_screen.dart';
+import 'package:ding/src/feature/situation/situation_screen.dart';
 import 'package:ding/ui/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -17,18 +18,22 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   String _screenName = 'other';
 
   Map<String, Widget> pages = {
-    'today': TodayScreen(),
+
+    'situation': SituationScreen(),
     'advanced': AdvancedScreen(),
     'report': ReportScreen(),
-    'staff': StaffScreen(),
+    'requests': RequestsScreen(),
     'other': OtherScreen()
+
   };
 
   Map<String, PreferredSize> appBars = {
-    'today': PreferredSize(
+
+    'situation': PreferredSize(
       preferredSize: Size.fromHeight(100),
       child: Container(
         padding: EdgeInsets.only(top: 15),
@@ -86,34 +91,18 @@ class _HomeScreenState extends State<HomeScreen> {
     'report': PreferredSize(
       preferredSize: Size.fromHeight(100),
       child: Container(
+        alignment: Alignment.center,
         padding: EdgeInsets.only(top: 15),
         color: DingColors.primary(),
         height: 90,
-        child: Row(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'گزارش گیری',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 19, color: Colors.white),
-                  ),
-                  Text(
-                    'توسعه فناوری دینگ',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 15, color: Colors.white),
-                  ),
-                ],
-              ),
-            ),
-          ],
+        child: Text(
+          'گزارش',
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 19, color: Colors.white),
         ),
       ),
     ),
-    'staff': PreferredSize(
+    'requests': PreferredSize(
       preferredSize: Size.fromHeight(220),
       child: Container(
         height: 90,
@@ -124,29 +113,15 @@ class _HomeScreenState extends State<HomeScreen> {
             Expanded(
                 child: Align(
                     alignment: Alignment.centerLeft,
-                    child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.refresh,
-                          size: 40,
-                          color: Colors.white,
-                        )))),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: SvgPicture.asset('assets/images/Shape.svg'),
+                    ))),
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'کارکنان',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 19, color: Colors.white),
-                  ),
-                  Text(
-                    'توسعه فناوری دینگ',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 15, color: Colors.white),
-                  ),
-                ],
+              child: Text(
+                'درخواست ها',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 19, color: Colors.white),
               ),
             ),
             Expanded(child: SizedBox())
@@ -223,11 +198,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: Directionality(
           textDirection: TextDirection.rtl, child: pages[_screenName]!),
       appBar: appBars[_screenName],
-      floatingActionButton: _screenName == 'staff'
+      floatingActionButton: _screenName == 'requests'
           ? FloatingActionButton(
               onPressed: () {},
               child: Icon(
