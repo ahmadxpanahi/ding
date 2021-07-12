@@ -198,20 +198,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: Directionality(
           textDirection: TextDirection.rtl, child: pages[_screenName]!),
       appBar: appBars[_screenName],
-      floatingActionButton: _screenName == 'requests'
-          ? FloatingActionButton(
-              onPressed: () {},
-              child: Icon(
-                Icons.add,
-                size: 40,
-              ),
-              backgroundColor: DingColors.primary(),
-            )
-          : null,
       bottomNavigationBar: BottomNav(
         screenName: _screenName,
         change: setPage,
