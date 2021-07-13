@@ -27,28 +27,40 @@ class _RequestsScreenState extends State<RequestsScreen> {
           children: [
             Expanded(
               child: GestureDetector(
-                onTap: (){_controller!.animateToPage(0, duration: Duration(milliseconds: 300), curve: Curves.linear);},
+                onTap: () {
+                  _controller!.animateToPage(0,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.linear);
+                },
                 child: Container(
                   alignment: Alignment.center,
                   height: 60,
                   color: value == 0 ? DingColors.dark() : DingColors.light(),
                   child: Text(
                     'درخواست های من',
-                    style: TextStyle(fontSize: 20, color: value == 0 ? DingColors.primary() : Colors.grey),
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: value == 0 ? DingColors.primary() : Colors.grey),
                   ),
                 ),
               ),
             ),
             Expanded(
               child: GestureDetector(
-                onTap: (){_controller!.animateToPage(1, duration: Duration(milliseconds: 300), curve: Curves.linear);},
+                onTap: () {
+                  _controller!.animateToPage(1,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.linear);
+                },
                 child: Container(
                   alignment: Alignment.center,
                   height: 60,
                   color: value == 1 ? DingColors.dark() : DingColors.light(),
                   child: Text(
                     'کارتابل',
-                    style: TextStyle(fontSize: 20, color: value == 1 ? DingColors.primary() : Colors.grey),
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: value == 1 ? DingColors.primary() : Colors.grey),
                   ),
                 ),
               ),
@@ -58,7 +70,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
         Expanded(
             child: PageView(
           controller: _controller,
-          onPageChanged: (val){
+          onPageChanged: (val) {
             setState(() {
               value = val;
             });

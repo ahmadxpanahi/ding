@@ -1,5 +1,6 @@
 import 'package:ding/src/feature/advanced/advanced_screen.dart';
 import 'package:ding/src/feature/home/widgets/bottom_nav.dart';
+import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/feature/other/other_screen.dart';
 import 'package:ding/src/feature/other/widgets/drop_down.dart';
 import 'package:ding/src/feature/report/report_screen.dart';
@@ -197,14 +198,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Directionality(
-          textDirection: TextDirection.rtl, child: pages[_screenName]!),
-      appBar: appBars[_screenName],
-      bottomNavigationBar: BottomNav(
-        screenName: _screenName,
-        change: setPage,
-      ),
-    );
+    return NumberLoginScreen();
+    //   Scaffold(
+    //   body: Directionality(
+    //       textDirection: TextDirection.rtl, child: pages[_screenName]!),
+    //   appBar: appBars[_screenName],
+    //   bottomNavigationBar: BottomNav(
+    //     screenName: _screenName,
+    //     change: setPage,
+    //   ),
+    // );
   }
 }

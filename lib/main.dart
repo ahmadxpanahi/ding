@@ -1,3 +1,4 @@
+import 'package:country_code_picker/country_localizations.dart';
 import 'package:ding/src/feature/home/home_screen.dart';
 import 'package:ding/ui/size_config.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,10 @@ class MyApp extends StatelessWidget {
               ),
               debugShowCheckedModeBanner: false,
               home: HomeScreen(),
+              localizationsDelegates: [
+                CountryLocalizations.delegate,
+
+              ],
             );
           },
         );
