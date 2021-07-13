@@ -1,3 +1,5 @@
+import 'package:ding/src/feature/email_login/email_login_screen.dart';
+import 'package:ding/src/feature/enter_code/enter_code_screen.dart';
 import 'package:ding/ui/colors.dart';
 import 'package:ding/ui/size_config.dart';
 import 'package:flutter/material.dart';
@@ -16,60 +18,72 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
   bool _checkBoxValue = false;
   String phoneNumber = '';
 
-  Widget _getCodeButton() => Container(
-        alignment: Alignment.center,
-        height: 65,
-        width: 73.2 * SizeConfig.widthMultiplier!,
-        decoration: BoxDecoration(
-          color:
-              phoneNumber == '' ? DingColors.veryLight() : DingColors.primary(),
-          borderRadius: BorderRadius.circular(100),
-        ),
-        child: Text(
-          'دریافت کد',
-          style: TextStyle(
-              fontSize: 20,
-              color: phoneNumber == '' ? DingColors.light() : Colors.white),
-        ),
-      );
-
-  Widget _enterWithEmail() => Container(
-        alignment: Alignment.center,
-        margin: EdgeInsets.only(bottom: 25),
-        height: 65,
-        width: 73.2 * SizeConfig.widthMultiplier!,
-        decoration: BoxDecoration(
+  Widget _getCodeButton() => GestureDetector(
+    onTap: () {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => EnterCodeScreen()));
+    },
+    child: Container(
+          alignment: Alignment.center,
+          height: 65,
+          width: 73.2 * SizeConfig.widthMultiplier!,
+          decoration: BoxDecoration(
+            color:
+                phoneNumber == '' ? DingColors.veryLight() : DingColors.primary(),
             borderRadius: BorderRadius.circular(100),
-            border: Border.all(color: DingColors.dark(), width: 2)),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(child: SizedBox()),
-            Text(
-              'ورود با ایمیل',
-              style: TextStyle(fontSize: 20, color: DingColors.dark()),
-            ),
-            Expanded(
-                child: SvgPicture.asset(
-              'assets/images/mail.svg',
-              color: DingColors.dark(),
-            )),
-          ],
+          ),
+          child: Text(
+            'دریافت کد',
+            style: TextStyle(
+                fontSize: 20,
+                color: phoneNumber == '' ? DingColors.light() : Colors.white),
+          ),
+        ),
+  );
+
+  Widget _enterWithEmail() => GestureDetector(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => EmailLoginScreen()));
+        },
+        child: Container(
+          alignment: Alignment.center,
+          margin: EdgeInsets.only(bottom: 25),
+          height: 65,
+          width: 73.2 * SizeConfig.widthMultiplier!,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(100),
+              border: Border.all(color: DingColors.dark(), width: 2)),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(child: SizedBox()),
+              Text(
+                'ورود با ایمیل',
+                style: TextStyle(fontSize: 20, color: DingColors.dark()),
+              ),
+              Expanded(
+                  child: SvgPicture.asset(
+                'assets/images/mail.svg',
+                color: DingColors.dark(),
+              )),
+            ],
+          ),
         ),
       );
 
   @override
   Widget build(BuildContext context) => Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30),
+          padding: EdgeInsets.only(right: 30,left: 30,top: 40),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Expanded(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
                       'شماره موبایل خود را وارد کنید',
@@ -78,66 +92,72 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
                     SizedBox(
                       height: 20,
                     ),
-                    Row(
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Container(
-                            padding: EdgeInsets.symmetric(vertical: 5),
-                            height: 60,
-                            color: DingColors.veryLight(),
-                            child: Stack(
-                              children: [
-                                Align(
-                                  alignment: Alignment.topCenter,
-                                  child: CountryCodePicker(
-                                    alignLeft: false,
-                                    showFlag: false,
-                                    showFlagDialog: true,
-                                    dialogSize: Size(
-                                        87.5 * SizeConfig.widthMultiplier!,
-                                        73.2 * SizeConfig.heightMultiplier!),
-                                    padding: EdgeInsets.all(0),
-                                    textStyle: TextStyle(
-                                        fontSize: 13, color: DingColors.dark()),
-                                    initialSelection: 'IR',
-                                    favorite: ["IR"],
-                                  ),
+                    Expanded(
+                      child: Align(
+                        alignment: Alignment.topCenter,
+                        child: Row(
+                          children: [
+                            Expanded(
+                              flex: 1,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(vertical: 5),
+                                height: 60,
+                                color: DingColors.veryLight(),
+                                child: Stack(
+                                  children: [
+                                    Align(
+                                      alignment: Alignment.topCenter,
+                                      child: CountryCodePicker(
+                                        alignLeft: false,
+                                        showFlag: false,
+                                        showFlagDialog: true,
+                                        dialogSize: Size(
+                                            87.5 * SizeConfig.widthMultiplier!,
+                                            73.2 * SizeConfig.heightMultiplier!),
+                                        padding: EdgeInsets.all(0),
+                                        textStyle: TextStyle(
+                                            fontSize: 13, color: DingColors.dark()),
+                                        initialSelection: 'IR',
+                                        favorite: ["IR"],
+                                      ),
+                                    ),
+                                    Align(
+                                        alignment: Alignment.bottomCenter,
+                                        child: Icon(Icons.arrow_drop_down_sharp))
+                                  ],
                                 ),
-                                Align(
-                                    alignment: Alignment.bottomCenter,
-                                    child: Icon(Icons.arrow_drop_down_sharp))
-                              ],
+                              ),
                             ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 2,
-                        ),
-                        Expanded(
-                          flex: 5,
-                          child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
-                            height: 60,
-                            color: DingColors.veryLight(),
-                            child: TextField(
-                              onChanged: (val) {
-                                setState(() {
-                                  phoneNumber = val;
-                                });
-                              },
-                              keyboardType: TextInputType.phone,
-                              style: TextStyle(fontSize: 20, letterSpacing: 2),
-                              decoration:
-                                  InputDecoration(border: InputBorder.none),
+                            SizedBox(
+                              width: 2,
                             ),
-                          ),
+                            Expanded(
+                              flex: 5,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                height: 60,
+                                color: DingColors.veryLight(),
+                                child: TextField(
+                                  onChanged: (val) {
+                                    setState(() {
+                                      phoneNumber = val;
+                                    });
+                                  },
+                                  keyboardType: TextInputType.phone,
+                                  style: TextStyle(fontSize: 20, letterSpacing: 2),
+                                  decoration:
+                                      InputDecoration(border: InputBorder.none),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ],
                 ),
               ),
+              SizedBox(height: 20,),
               Expanded(
                 child: Column(
                   children: [
