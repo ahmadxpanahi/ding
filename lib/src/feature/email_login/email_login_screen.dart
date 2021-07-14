@@ -13,7 +13,6 @@ class EmailLoginScreen extends StatefulWidget {
 }
 
 class _EmailLoginScreenState extends State<EmailLoginScreen> {
-
   bool _validation() => _emailValue == '' || _passValue == '' ? true : false;
   bool _checkBoxValue = false;
   String _emailValue = '';
@@ -26,7 +25,7 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
         },
         child: Container(
           alignment: Alignment.center,
-          height: 65,
+          height: 9 * SizeConfig.heightMultiplier!,
           width: 73.2 * SizeConfig.widthMultiplier!,
           decoration: BoxDecoration(
             color:
@@ -36,7 +35,7 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
           child: Text(
             'ورود',
             style: TextStyle(
-                fontSize: 20,
+                fontSize: 2.73 * SizeConfig.textMultiplier!,
                 color: _validation() ? DingColors.light() : Colors.white),
           ),
         ),
@@ -50,7 +49,7 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
         child: Container(
           alignment: Alignment.center,
           margin: EdgeInsets.only(bottom: 25),
-          height: 65,
+          height: 9 * SizeConfig.heightMultiplier!,
           width: 73.2 * SizeConfig.widthMultiplier!,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
@@ -61,7 +60,9 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
               Expanded(child: SizedBox()),
               Text(
                 'ورود با شماره موبایل',
-                style: TextStyle(fontSize: 20, color: DingColors.dark()),
+                style: TextStyle(
+                    fontSize: 2.73 * SizeConfig.textMultiplier!,
+                    color: DingColors.dark()),
               ),
               Expanded(
                   child: SvgPicture.asset(
@@ -73,13 +74,61 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
         ),
       );
 
+  Widget _rules() => Row(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Container(
+        width: 65.8 * SizeConfig.widthMultiplier!,
+        child: RichText(
+          textAlign: TextAlign.end,
+          maxLines: 2,
+          text: TextSpan(
+              text: 'قوانین و شرایط',
+              style: TextStyle(
+                  fontSize: 4.1 * SizeConfig.widthMultiplier!,
+                  fontWeight: FontWeight.bold,
+                  color: DingColors.dark()),
+              children: [
+                TextSpan(
+                    text:
+                    ' استفاده از سامانه دینگ را به صورت کامل مطالعه نموده ام',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w200,
+                        fontSize:
+                        4.1 * SizeConfig.widthMultiplier!,
+                        color: DingColors.dark()))
+              ]),
+        ),
+      ),
+      SizedBox(
+        width: 7,
+      ),
+      Transform.scale(
+        scale: (SizeConfig.widthMultiplier! / 2.5),
+        child: Checkbox(
+          activeColor: DingColors.primary(),
+          value: _checkBoxValue,
+          onChanged: (val) {
+            setState(() {
+              _checkBoxValue = val ?? false;
+            });
+          },
+        ),
+      ),
+    ],
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.only(right: 30, left: 30, top: 40),
+        padding: EdgeInsets.only(
+            right: 7.3 * SizeConfig.widthMultiplier!,
+            left: 7.3 * SizeConfig.widthMultiplier!,
+            top: 5.47 * SizeConfig.heightMultiplier!),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -90,17 +139,19 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                 children: [
                   Text(
                     'ورود با ایمیل',
-                    style: TextStyle(fontSize: 20, color: DingColors.dark()),
+                    style: TextStyle(
+                        fontSize: 2.73 * SizeConfig.textMultiplier!,
+                        color: DingColors.dark()),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 2.73 * SizeConfig.heightMultiplier!,
                   ),
                   Expanded(
                     child: Column(
                       children: [
                         Container(
                           padding: EdgeInsets.symmetric(horizontal: 10),
-                          height: 60,
+                          height: 8.2 * SizeConfig.heightMultiplier!,
                           decoration: BoxDecoration(
                               border: Border.all(
                                   width: 0.6, color: DingColors.dark())),
@@ -111,20 +162,23 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                               });
                             },
                             keyboardType: TextInputType.emailAddress,
-                            style: TextStyle(fontSize: 20, letterSpacing: 2),
+                            style: TextStyle(
+                                fontSize: 2.73 * SizeConfig.textMultiplier!,
+                                letterSpacing: 2),
                             decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: 'ایمیل',
                                 hintStyle: TextStyle(
-                                    fontSize: 16, color: Colors.grey)),
+                                    fontSize: 2.73 * SizeConfig.textMultiplier!,
+                                    color: Colors.grey)),
                           ),
                         ),
                         SizedBox(
-                          height: 15,
+                          height: SizeConfig.heightMultiplier! * 2,
                         ),
                         Container(
                           padding: EdgeInsets.symmetric(horizontal: 10),
-                          height: 60,
+                          height: 8.2 * SizeConfig.heightMultiplier!,
                           decoration: BoxDecoration(
                               border: Border.all(
                                   width: 0.6, color: DingColors.dark())),
@@ -135,12 +189,15 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                               });
                             },
                             keyboardType: TextInputType.emailAddress,
-                            style: TextStyle(fontSize: 20, letterSpacing: 2),
+                            style: TextStyle(
+                                fontSize: 2.73 * SizeConfig.textMultiplier!,
+                                letterSpacing: 2),
                             decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: 'رمز عبور',
                                 hintStyle: TextStyle(
-                                    fontSize: 16, color: Colors.grey)),
+                                    fontSize: 2.73 * SizeConfig.textMultiplier!,
+                                    color: Colors.grey)),
                           ),
                         ),
                       ],
@@ -155,49 +212,7 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
             Expanded(
               child: Column(
                 children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 65.8 * SizeConfig.widthMultiplier!,
-                        child: RichText(
-                          textAlign: TextAlign.end,
-                          maxLines: 2,
-                          text: TextSpan(
-                              text: 'قوانین و شرایط',
-                              style: TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold,
-                                  color: DingColors.dark()),
-                              children: [
-                                TextSpan(
-                                    text:
-                                        ' استفاده از سامانه دینگ را به صورت کامل مطالعه نموده ام',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w200,
-                                        fontSize: 17,
-                                        color: DingColors.dark()))
-                              ]),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 7,
-                      ),
-                      Transform.scale(
-                        scale: 1.7,
-                        child: Checkbox(
-                          activeColor: DingColors.primary(),
-                          value: _checkBoxValue,
-                          onChanged: (val) {
-                            setState(() {
-                              _checkBoxValue = val ?? false;
-                            });
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
+                  _rules(),
                   SizedBox(
                     height: 15,
                   ),
