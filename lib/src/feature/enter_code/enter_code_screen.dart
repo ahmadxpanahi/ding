@@ -13,30 +13,31 @@ class EnterCodeScreen extends StatefulWidget {
 class _EnterCodeScreenState extends State<EnterCodeScreen> {
   String _code = '';
 
-  Widget _enterButton() => Align(
-    alignment: Alignment.topCenter,
-    child: GestureDetector(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => EnterCodeScreen()));
-          },
+  Widget _enterButton() => GestureDetector(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => EnterCodeScreen()));
+        },
+        child: Align(
+          alignment: Alignment.topCenter,
           child: Container(
             alignment: Alignment.center,
-            height: 65,
+            height: 9 * SizeConfig.heightMultiplier!,
             width: 73.2 * SizeConfig.widthMultiplier!,
             decoration: BoxDecoration(
-              color: _code == '' ? DingColors.veryLight() : DingColors.primary(),
+              color:
+                  _code == '' ? DingColors.veryLight() : DingColors.primary(),
               borderRadius: BorderRadius.circular(100),
             ),
             child: Text(
               'ورود',
               style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 2.73 * SizeConfig.textMultiplier!,
                   color: _code == '' ? DingColors.light() : Colors.white),
             ),
           ),
         ),
-  );
+      );
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -44,7 +45,9 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 2.73 * SizeConfig.heightMultiplier!,
+            ),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -55,8 +58,10 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
                       Padding(
                         padding: EdgeInsets.only(right: 10),
                         child: IconButton(
-                          onPressed: (){Navigator.pop(context);},
-                          icon: Icon(Icons.arrow_forward_ios),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: Icon(Icons.arrow_forward_ios,size: 6*SizeConfig.widthMultiplier!,),
                           color: DingColors.dark(),
                         ),
                       ),
@@ -64,7 +69,9 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
                   ),
                   Text(
                     'کد را وارد کنید',
-                    style: TextStyle(fontSize: 20, color: DingColors.dark()),
+                    style: TextStyle(
+                        fontSize: 2.73 * SizeConfig.textMultiplier!,
+                        color: DingColors.dark()),
                   ),
                   PinCodeTextField(
                     onTextChanged: (val) {
@@ -75,13 +82,14 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
                     maxLength: 4,
                     pinBoxColor: Colors.white,
                     pinBoxDecoration:
-                    ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
+                        ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
                     defaultBorderColor: DingColors.light(),
-                    pinBoxWidth: 40,
+                    pinBoxWidth: 9.7 * SizeConfig.widthMultiplier!,
                     errorBorderColor: DingColors.warning(),
                     hasTextBorderColor: DingColors.light(),
-                    pinBoxHeight: 70,
-                    pinTextStyle: TextStyle(fontSize: 30, color: DingColors.dark()),
+                    pinBoxHeight: 9.5 * SizeConfig.heightMultiplier!,
+                    pinTextStyle:
+                        TextStyle(fontSize: 30, color: DingColors.dark()),
                   ),
                 ],
               ),
@@ -93,30 +101,34 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
                   Text(
                     'کد به +98 901 909 5564 ارسال شد',
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 2.73 * SizeConfig.textMultiplier!,
                         color: DingColors.dark(),
                         fontWeight: FontWeight.w300),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 1.3 * SizeConfig.heightMultiplier!,
+                  ),
                   Text(
                     '00:36',
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 2.73 * SizeConfig.textMultiplier!,
                         color: DingColors.dark(),
                         fontWeight: FontWeight.w300),
                   ),
                   Text(
                     'ارسال مجدد',
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 2*SizeConfig.textMultiplier!,
                       color: DingColors.light(),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 2.73*SizeConfig.heightMultiplier!,
+                  ),
                 ],
               ),
             ),
-            Expanded(flex: 2,child: _enterButton()),
+            Expanded(flex: 2, child: _enterButton()),
           ],
         ),
       );
