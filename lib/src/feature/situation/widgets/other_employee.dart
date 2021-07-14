@@ -1,4 +1,4 @@
-import 'package:ding/ui/colors.dart';
+import 'package:ding/ui/size_config.dart';
 import 'package:flutter/material.dart';
 
 class OtherEmployee extends StatelessWidget {
@@ -13,12 +13,13 @@ class OtherEmployee extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
+      height: 14.7 * SizeConfig.heightMultiplier!,
       color: Colors.white,
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 10),
+            padding: EdgeInsets.symmetric(
+                vertical: 1.3 * SizeConfig.heightMultiplier!),
             child: Row(
               children: [
                 Expanded(
@@ -27,8 +28,8 @@ class OtherEmployee extends StatelessWidget {
                     children: [
                       Container(
                         margin: EdgeInsets.only(left: 10),
-                        width: 60,
-                        height: 60,
+                        width: 14.6 * SizeConfig.imageSizeMultiplier!,
+                        height: 14.6 * SizeConfig.imageSizeMultiplier!,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100),
                             image: DecorationImage(
@@ -42,11 +43,15 @@ class OtherEmployee extends StatelessWidget {
                         children: [
                           Text(
                             name ?? '',
-                            style: TextStyle(fontSize: 15, color: Colors.black),
+                            style: TextStyle(
+                                fontSize: SizeConfig.textMultiplier! * 2.2,
+                                color: Colors.black),
                           ),
                           Text(
                             unit ?? '',
-                            style: TextStyle(fontSize: 13, color: Colors.grey),
+                            style: TextStyle(
+                                fontSize: 2.2 * SizeConfig.textMultiplier! - 2,
+                                color: Colors.grey),
                           ),
                         ],
                       )
@@ -60,10 +65,12 @@ class OtherEmployee extends StatelessWidget {
                     children: [
                       Text(
                         reason ?? '',
-                        style: TextStyle(fontSize: 13, color: Colors.grey),
+                        style: TextStyle(
+                            fontSize: 2.2 * SizeConfig.textMultiplier! - 2,
+                            color: Colors.grey),
                       ),
                       SizedBox(
-                        width: 15,
+                        width: 3.6 * SizeConfig.widthMultiplier!,
                       ),
                       Icon(Icons.arrow_forward_ios)
                     ],

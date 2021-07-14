@@ -7,6 +7,7 @@ import 'package:ding/src/feature/report/report_screen.dart';
 import 'package:ding/src/feature/requests/requests_screen.dart';
 import 'package:ding/src/feature/situation/situation_screen.dart';
 import 'package:ding/ui/colors.dart';
+import 'package:ding/ui/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -19,32 +20,28 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   String _screenName = 'other';
 
   Map<String, Widget> pages = {
-
     'situation': SituationScreen(),
     'advanced': AdvancedScreen(),
     'report': ReportScreen(),
     'requests': RequestsScreen(),
     'other': OtherScreen()
-
   };
 
   Map<String, PreferredSize> appBars = {
-
     'situation': PreferredSize(
       preferredSize: Size.fromHeight(100),
       child: Container(
         padding: EdgeInsets.only(top: 15),
         alignment: Alignment.center,
         color: DingColors.primary(),
-        height: 90,
+        height: 13.3*SizeConfig.heightMultiplier!,
         child: Text(
           'وضعیت لحظه ای',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 19, color: Colors.white),
+          style: TextStyle(fontSize: 2.73*SizeConfig.textMultiplier!, color: Colors.white),
         ),
       ),
     ),
@@ -198,15 +195,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return NumberLoginScreen();
-    //   Scaffold(
-    //   body: Directionality(
-    //       textDirection: TextDirection.rtl, child: pages[_screenName]!),
-    //   appBar: appBars[_screenName],
-    //   bottomNavigationBar: BottomNav(
-    //     screenName: _screenName,
-    //     change: setPage,
-    //   ),
-    // );
+    return Scaffold(
+      body: Directionality(
+          textDirection: TextDirection.rtl, child: pages[_screenName]!),
+      appBar: appBars[_screenName],
+      bottomNavigationBar: BottomNav(
+        screenName: _screenName,
+        change: setPage,
+      ),
+    );
   }
 }
