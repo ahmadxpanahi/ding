@@ -1,6 +1,7 @@
 import 'package:ding/src/feature/requests/widgets/cartable_item.dart';
 import 'package:ding/src/feature/requests/widgets/my_requests_item.dart';
 import 'package:ding/ui/colors.dart';
+import 'package:ding/ui/size_config.dart';
 import 'package:flutter/material.dart';
 
 class RequestsScreen extends StatefulWidget {
@@ -34,12 +35,12 @@ class _RequestsScreenState extends State<RequestsScreen> {
                 },
                 child: Container(
                   alignment: Alignment.center,
-                  height: 60,
+                  height: 8.2*SizeConfig.heightMultiplier!,
                   color: value == 0 ? DingColors.dark() : DingColors.light(),
                   child: Text(
                     'درخواست های من',
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 2.73*SizeConfig.textMultiplier!,
                         color: value == 0 ? DingColors.primary() : Colors.grey),
                   ),
                 ),
@@ -54,12 +55,12 @@ class _RequestsScreenState extends State<RequestsScreen> {
                 },
                 child: Container(
                   alignment: Alignment.center,
-                  height: 60,
+                  height: 8.2*SizeConfig.heightMultiplier!,
                   color: value == 1 ? DingColors.dark() : DingColors.light(),
                   child: Text(
                     'کارتابل',
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 2.73*SizeConfig.textMultiplier!,
                         color: value == 1 ? DingColors.primary() : Colors.grey),
                   ),
                 ),
@@ -113,8 +114,8 @@ class _RequestsScreenState extends State<RequestsScreen> {
                   child: Container(
                     margin: EdgeInsets.only(bottom: 15),
                     alignment: Alignment.center,
-                    height: 60,
-                    width: 60,
+                    height: 14.6*SizeConfig.widthMultiplier!,
+                    width: 14.6*SizeConfig.widthMultiplier!,
                     decoration: BoxDecoration(
                       color: DingColors.primary(),
                       borderRadius: BorderRadius.circular(100),

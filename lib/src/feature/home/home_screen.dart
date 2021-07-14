@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
     'situation': PreferredSize(
       preferredSize: Size.fromHeight(100),
       child: Container(
-        padding: EdgeInsets.only(top: 15),
+        padding: EdgeInsets.only(top: 2.2*SizeConfig.heightMultiplier!),
         alignment: Alignment.center,
         color: DingColors.primary(),
         height: 13.3*SizeConfig.heightMultiplier!,
@@ -101,10 +101,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     ),
     'requests': PreferredSize(
-      preferredSize: Size.fromHeight(220),
+      preferredSize: Size.fromHeight(100),
       child: Container(
-        height: 90,
-        padding: EdgeInsets.only(top: 15),
+        height: 13.3*SizeConfig.heightMultiplier!,
+        padding: EdgeInsets.only(top: 2.2*SizeConfig.heightMultiplier!),
         color: DingColors.primary(),
         child: Row(
           children: [
@@ -112,14 +112,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 20),
+                      padding: EdgeInsets.only(left: 4.8*SizeConfig.widthMultiplier!),
                       child: SvgPicture.asset('assets/images/Shape.svg'),
                     ))),
             Expanded(
               child: Text(
                 'درخواست ها',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 19, color: Colors.white),
+                style: TextStyle(fontSize: 2.73*SizeConfig.textMultiplier!, color: Colors.white),
               ),
             ),
             Expanded(child: SizedBox())
