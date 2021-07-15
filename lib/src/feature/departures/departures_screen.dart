@@ -1,4 +1,5 @@
 import 'package:ding/src/feature/departures/widgets/device_page.dart';
+import 'package:ding/src/feature/departures/widgets/location_page.dart';
 import 'package:ding/ui/colors.dart';
 import 'package:ding/ui/size_config.dart';
 import 'package:flutter/material.dart';
@@ -111,7 +112,7 @@ class _DeparturesScreenState extends State<DeparturesScreen> {
             },
             children: [
               DevicePage(),
-              Container(color: Colors.yellow,)
+              LocationPage()
             ],
           ),
         )

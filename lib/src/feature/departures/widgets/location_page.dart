@@ -1,56 +1,20 @@
 import 'package:ding/ui/colors.dart';
 import 'package:ding/ui/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
-class DevicePage extends StatefulWidget {
-  const DevicePage({Key? key}) : super(key: key);
+class LocationPage extends StatefulWidget {
+  const LocationPage({Key? key}) : super(key: key);
 
   @override
-  _DevicePageState createState() => _DevicePageState();
+  _LocationPageState createState() => _LocationPageState();
 }
 
-class _DevicePageState extends State<DevicePage> {
-
-  Widget _infoContainer() => Container(
-        width: 30 * SizeConfig.heightMultiplier!,
-        height: 30 * SizeConfig.heightMultiplier!,
-        decoration: BoxDecoration(
-            color: DingColors.veryLight(), shape: BoxShape.circle),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              '10:45',
-              style: TextStyle(fontSize: 6.1 * SizeConfig.textMultiplier!),
-            ),
-            Text(
-              'دوشنبه، 17 مرداد',
-              style: TextStyle(
-                  fontSize: 2.73 * SizeConfig.textMultiplier!,
-                  fontWeight: FontWeight.w300),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  '33°C',
-                  style: TextStyle(
-                      fontSize: 2.73 * SizeConfig.textMultiplier!,
-                      fontWeight: FontWeight.w300),
-                ),
-                SizedBox(
-                  width: 4,
-                ),
-                SvgPicture.asset('assets/images/cloud.svg',width: 7*SizeConfig.widthMultiplier!,),
-              ],
-            )
-          ],
-        ),
-      );
+class _LocationPageState extends State<LocationPage> {
 
   Widget _enter() => Container(
-        margin: EdgeInsets.symmetric(horizontal: 9.7*SizeConfig.widthMultiplier!),
+        margin:
+            EdgeInsets.symmetric(horizontal: 9.7 * SizeConfig.widthMultiplier!),
         height: 9 * SizeConfig.heightMultiplier!,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
@@ -70,11 +34,15 @@ class _DevicePageState extends State<DevicePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Icon(Icons.arrow_back_ios,color: Colors.white,size: 3*SizeConfig.heightMultiplier!,),
+                    Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.white,
+                      size: 3 * SizeConfig.heightMultiplier!,
+                    ),
                     Text(
                       'ورود',
                       style: TextStyle(
-                          fontSize: 3.4*SizeConfig.textMultiplier!,
+                          fontSize: 3.4 * SizeConfig.textMultiplier!,
                           color: Colors.white,
                           fontWeight: FontWeight.w400),
                     )
@@ -87,7 +55,8 @@ class _DevicePageState extends State<DevicePage> {
       );
 
   Widget _exit() => Container(
-        margin: EdgeInsets.symmetric(horizontal: 9.7*SizeConfig.widthMultiplier!),
+        margin:
+            EdgeInsets.symmetric(horizontal: 9.7 * SizeConfig.widthMultiplier!),
         height: 9 * SizeConfig.heightMultiplier!,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
@@ -109,11 +78,15 @@ class _DevicePageState extends State<DevicePage> {
                     Text(
                       'خروج',
                       style: TextStyle(
-                          fontSize: 3.4*SizeConfig.textMultiplier!,
+                          fontSize: 3.4 * SizeConfig.textMultiplier!,
                           color: Colors.white,
                           fontWeight: FontWeight.w400),
                     ),
-                    Icon(Icons.arrow_forward_ios,color: Colors.white,size: 3*SizeConfig.heightMultiplier!,),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.white,
+                      size: 3 * SizeConfig.heightMultiplier!,
+                    ),
                   ],
                 ),
               ),
@@ -123,15 +96,60 @@ class _DevicePageState extends State<DevicePage> {
         ),
       );
 
+  Widget _mapContainer() => Container(
+        color: DingColors.secondary(),
+        height: 35 * SizeConfig.heightMultiplier!,
+        child: Stack(
+          children: [
+            _map(),
+            Positioned(
+              bottom: 10,
+              left: 10,
+              child: Container(
+                width: 19.5*SizeConfig.widthMultiplier!,
+                height: 16*SizeConfig.heightMultiplier!,
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    Expanded(child: Text('10:45',style: TextStyle(fontSize: 5*SizeConfig.widthMultiplier!),)),
+                    Text('دوشنبه',style: TextStyle(fontSize: 5*SizeConfig.widthMultiplier!-7),),
+                    Text('17 مرداد',style: TextStyle(fontSize: 5*SizeConfig.widthMultiplier!-7),),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            '33°C',
+                            style: TextStyle(
+                                fontSize: 5*SizeConfig.widthMultiplier!-5,
+                                fontWeight: FontWeight.w300),
+                          ),
+                          SizedBox(
+                            width: 4,
+                          ),
+                          SvgPicture.asset('assets/images/cloud.svg',width: 6*SizeConfig.widthMultiplier!,),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      );
+
+  Widget _map() => Container();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: SizeConfig.heightMultiplier!*2,top: SizeConfig.heightMultiplier!*3),
+      padding: EdgeInsets.only(bottom: SizeConfig.heightMultiplier! * 4),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          _infoContainer(),
+          _mapContainer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
