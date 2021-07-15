@@ -33,9 +33,9 @@ class _BottomNavState extends State<BottomNav> {
                 }, widget.screenName ?? '', 'assets/images/letter.svg',
                     'requests', 4.1 * SizeConfig.heightMultiplier!),
                 _bottomNavItem(() {
-                  widget.change!('advanced');
+                  widget.change!('departures');
                 }, widget.screenName ?? '', 'assets/images/timer.svg',
-                    'advanced', 4.5 * SizeConfig.heightMultiplier!),
+                    'departures', 4.5 * SizeConfig.heightMultiplier!),
                 _bottomNavItem(() {
                   widget.change!('report');
                 }, widget.screenName ?? '', 'assets/images/form.svg', 'report',

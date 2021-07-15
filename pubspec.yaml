@@ -56,6 +56,9 @@ flutter:
     - assets/images/Shape.svg
     - assets/images/mail.svg
     - assets/images/phone.svg
+    - assets/images/device.svg
+    - assets/images/location.svg
+    - assets/images/cloud.svg
 
   #   - images/a_dot_ham.jpeg
 
