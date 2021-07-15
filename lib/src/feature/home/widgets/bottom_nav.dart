@@ -16,7 +16,7 @@ class _BottomNavState extends State<BottomNav> {
   @override
   Widget build(BuildContext context) => Container(
         padding: EdgeInsets.symmetric(vertical: 3),
-        height: 8.2*SizeConfig.heightMultiplier!,
+        height: 8.2 * SizeConfig.heightMultiplier!,
         color: DingColors.dark(),
         child: SafeArea(
           child: Align(
@@ -26,19 +26,24 @@ class _BottomNavState extends State<BottomNav> {
               children: <Widget>[
                 _bottomNavItem(() {
                   widget.change!('situation');
-                }, widget.screenName ?? '', 'assets/images/eye.svg', 'situation',7*SizeConfig.heightMultiplier!),
+                }, widget.screenName ?? '', 'assets/images/eye.svg',
+                    'situation', 7 * SizeConfig.heightMultiplier!),
                 _bottomNavItem(() {
                   widget.change!('requests');
-                }, widget.screenName ?? '', 'assets/images/letter.svg', 'requests',4.1*SizeConfig.heightMultiplier!),
+                }, widget.screenName ?? '', 'assets/images/letter.svg',
+                    'requests', 4.1 * SizeConfig.heightMultiplier!),
                 _bottomNavItem(() {
                   widget.change!('advanced');
-                }, widget.screenName ?? '', 'assets/images/timer.svg', 'advanced',4.5*SizeConfig.heightMultiplier!),
+                }, widget.screenName ?? '', 'assets/images/timer.svg',
+                    'advanced', 4.5 * SizeConfig.heightMultiplier!),
                 _bottomNavItem(() {
                   widget.change!('report');
-                }, widget.screenName ?? '', 'assets/images/form.svg', 'report',4.1*SizeConfig.heightMultiplier!),
+                }, widget.screenName ?? '', 'assets/images/form.svg', 'report',
+                    4.1 * SizeConfig.heightMultiplier!),
                 _bottomNavItem(() {
                   widget.change!('other');
-                }, widget.screenName ?? '', 'assets/images/other.svg', 'other',SizeConfig.heightMultiplier!),
+                }, widget.screenName ?? '', 'assets/images/other.svg', 'other',
+                    SizeConfig.heightMultiplier!),
               ],
             ),
           ),
@@ -46,8 +51,8 @@ class _BottomNavState extends State<BottomNav> {
       );
 }
 
-Widget _bottomNavItem(
-        Function tap, String screenName, String svgUrl, String checkTitle,double size) =>
+Widget _bottomNavItem(Function tap, String screenName, String svgUrl,
+        String checkTitle, double size) =>
     Expanded(
       child: GestureDetector(
         onTap: () {

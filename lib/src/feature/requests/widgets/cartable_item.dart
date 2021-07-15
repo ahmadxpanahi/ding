@@ -34,230 +34,108 @@ class CartableItem extends StatelessWidget {
             ? DingColors.primary()
             : Colors.grey;
 
-    List<Widget> _typeDetail() => type == 'leave'
-        ? <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      width: 3 + SizeConfig.widthMultiplier!,
-                      height: 3 + SizeConfig.widthMultiplier!,
-                      decoration: BoxDecoration(
-                          color: _typeColor(),
-                          borderRadius: BorderRadius.circular(50)),
-                    ),
-                    SizedBox(
-                      width: 6,
-                    ),
-                    Text(
-                      info1 ?? '',
-                      style: TextStyle(
-                          fontSize: 2.2 * SizeConfig.textMultiplier!,
-                          color: DingColors.dark()),
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    Container(
-                      width: 3 + SizeConfig.widthMultiplier!,
-                      height: 3 + SizeConfig.widthMultiplier!,
-                      decoration: BoxDecoration(
-                          color: _typeColor(),
-                          borderRadius: BorderRadius.circular(50)),
-                    ),
-                    SizedBox(
-                      width: 6,
-                    ),
-                    Text(
-                      info2 ?? '',
-                      style: TextStyle(
-                          fontSize: 2.2 * SizeConfig.textMultiplier!,
-                          color: DingColors.dark()),
-                    )
-                  ],
-                ),
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'شروع',
-                  style: TextStyle(
-                      fontSize: 2.2 * SizeConfig.textMultiplier!,
-                      color: Colors.grey),
-                ),
-                Text(
-                  'پایان',
-                  style: TextStyle(
-                      fontSize: 2.2 * SizeConfig.textMultiplier!,
-                      color: Colors.grey),
-                )
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  beginDate ?? '',
-                  style: TextStyle(
-                      fontSize: 2.2 * SizeConfig.textMultiplier!,
-                      color: DingColors.dark()),
-                ),
-                Text(
-                  endDate ?? '',
-                  style: TextStyle(
-                      fontSize: 2.2 * SizeConfig.textMultiplier!,
-                      color: DingColors.dark()),
-                )
-              ],
-            ),
-          ]
+    Widget _typeDetail() => type == 'leave'
+        ? Row(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'شروع',
+                    style: TextStyle(
+                        fontSize: 2.2 * SizeConfig.textMultiplier!,
+                        color: Colors.grey),
+                  ),
+                  Text(
+                    'پایان',
+                    style: TextStyle(
+                        fontSize: 2.2 * SizeConfig.textMultiplier!,
+                        color: Colors.grey),
+                  )
+                ],
+              ),
+              SizedBox(
+                width: 5 * SizeConfig.widthMultiplier!,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    beginDate ?? '',
+                    style: TextStyle(
+                        fontSize: 2.2 * SizeConfig.textMultiplier!,
+                        color: DingColors.dark()),
+                  ),
+                  Text(
+                    endDate ?? '',
+                    style: TextStyle(
+                        fontSize: 2.2 * SizeConfig.textMultiplier!,
+                        color: DingColors.dark()),
+                  )
+                ],
+              ),
+            ],
+          )
         : type == 'enterAndExit'
-            ? <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          width: 3 + SizeConfig.widthMultiplier!,
-                          height: 3 + SizeConfig.widthMultiplier!,
-                          decoration: BoxDecoration(
-                              color: _typeColor(),
-                              borderRadius: BorderRadius.circular(50)),
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Text(
-                          info1 ?? '',
-                          style: TextStyle(
-                              fontSize: 2.2 * SizeConfig.textMultiplier!,
-                              color: DingColors.dark()),
-                        )
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          width: 3 + SizeConfig.widthMultiplier!,
-                          height: 3 + SizeConfig.widthMultiplier!,
-                          decoration: BoxDecoration(
-                              color: _typeColor(),
-                              borderRadius: BorderRadius.circular(50)),
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Text(
-                          info2 ?? '',
-                          style: TextStyle(
-                              fontSize: 2.2 * SizeConfig.textMultiplier!,
-                              color: DingColors.dark()),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.add,
-                      color: DingColors.primary(),
-                    ),
-                    Text(
-                      'نمایش جزءیات',
-                      style: TextStyle(
-                          fontSize: 2.2 * SizeConfig.textMultiplier!,
-                          color: DingColors.primary()),
-                    )
-                  ],
-                )
-              ]
-            : <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          width: 3 + SizeConfig.widthMultiplier!,
-                          height: 3 + SizeConfig.widthMultiplier!,
-                          decoration: BoxDecoration(
-                              color: _typeColor(),
-                              borderRadius: BorderRadius.circular(50)),
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Text(
-                          info1 ?? '',
-                          style: TextStyle(
-                              fontSize: 2.2 * SizeConfig.textMultiplier!,
-                              color: DingColors.dark()),
-                        )
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          width: 3 + SizeConfig.widthMultiplier!,
-                          height: 3 + SizeConfig.widthMultiplier!,
-                          decoration: BoxDecoration(
-                              color: _typeColor(),
-                              borderRadius: BorderRadius.circular(50)),
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Text(
-                          info2 ?? '',
-                          style: TextStyle(
-                              fontSize: 2.2 * SizeConfig.textMultiplier!,
-                              color: DingColors.dark()),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'شروع',
-                      style: TextStyle(fontSize: 2.2 * SizeConfig.textMultiplier!, color: Colors.grey),
-                    ),
-                    Text(
-                      'پایان',
-                      style: TextStyle(fontSize: 2.2 * SizeConfig.textMultiplier!, color: Colors.grey),
-                    )
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      beginDate ?? '',
-                      style: TextStyle(fontSize: 2.2 * SizeConfig.textMultiplier!, color: DingColors.dark()),
-                    ),
-                    Text(
-                      endDate ?? '',
-                      style: TextStyle(fontSize: 2.2 * SizeConfig.textMultiplier!, color: DingColors.dark()),
-                    )
-                  ],
-                ),
-              ];
+            ? Row(
+                children: [
+                  Icon(
+                    Icons.add,
+                    color: DingColors.primary(),
+                  ),
+                  Text(
+                    'نمایش جزءیات',
+                    style: TextStyle(
+                        fontSize: 2.2 * SizeConfig.textMultiplier!,
+                        color: DingColors.primary()),
+                  )
+                ],
+              )
+            : Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'شروع',
+                        style: TextStyle(
+                            fontSize: 2.2 * SizeConfig.textMultiplier!,
+                            color: Colors.grey),
+                      ),
+                      Text(
+                        'پایان',
+                        style: TextStyle(
+                            fontSize: 2.2 * SizeConfig.textMultiplier!,
+                            color: Colors.grey),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    width: 5 * SizeConfig.widthMultiplier!,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        beginDate ?? '',
+                        style: TextStyle(
+                            fontSize: 2.2 * SizeConfig.textMultiplier!,
+                            color: DingColors.dark()),
+                      ),
+                      Text(
+                        endDate ?? '',
+                        style: TextStyle(
+                            fontSize: 2.2 * SizeConfig.textMultiplier!,
+                            color: DingColors.dark()),
+                      )
+                    ],
+                  ),
+                ],
+              );
 
     return Container(
       margin: EdgeInsets.only(top: 5),
@@ -320,7 +198,57 @@ class CartableItem extends StatelessWidget {
                   Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: _typeDetail()),
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  width: 3 + SizeConfig.widthMultiplier!,
+                                  height: 3 + SizeConfig.widthMultiplier!,
+                                  decoration: BoxDecoration(
+                                      color: _typeColor(),
+                                      borderRadius: BorderRadius.circular(50)),
+                                ),
+                                SizedBox(
+                                  width: 6,
+                                ),
+                                Text(
+                                  info1 ?? '',
+                                  style: TextStyle(
+                                      fontSize:
+                                          2.2 * SizeConfig.textMultiplier!,
+                                      color: DingColors.dark()),
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  width: 3 + SizeConfig.widthMultiplier!,
+                                  height: 3 + SizeConfig.widthMultiplier!,
+                                  decoration: BoxDecoration(
+                                      color: _typeColor(),
+                                      borderRadius: BorderRadius.circular(50)),
+                                ),
+                                SizedBox(
+                                  width: 6,
+                                ),
+                                Text(
+                                  info2 ?? '',
+                                  style: TextStyle(
+                                      fontSize:
+                                          2.2 * SizeConfig.textMultiplier!,
+                                      color: DingColors.dark()),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                        _typeDetail()
+                      ]),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
