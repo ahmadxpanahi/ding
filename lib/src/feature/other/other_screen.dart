@@ -1,7 +1,10 @@
 import 'package:ding/src/feature/other/widgets/options_tile.dart';
 import 'package:ding/src/feature/setting/setting_screen.dart';
 import 'package:ding/ui/colors.dart';
+import 'package:ding/ui/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class OtherScreen extends StatefulWidget {
   const OtherScreen({Key? key}) : super(key: key);
@@ -11,89 +14,188 @@ class OtherScreen extends StatefulWidget {
 }
 
 class _OtherScreenState extends State<OtherScreen> {
-  Widget _infoItem(String title, IconData icon) => Container(
-        margin: EdgeInsets.only(right: 10, left: 10, bottom: 12, top: 5),
-        height: 90,
-        width: 150,
-        decoration: BoxDecoration(
-            border: Border.all(width: 3, color: DingColors.primary())),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+  Widget _profileContainer() => Expanded(
+      flex: 3,
+      child: Container(
+        color: Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Icon(
-              icon,
-              size: 35,
-              color: DingColors.primary(),
+            Row(
+              children: [
+                Container(
+                  width: 13.5 * SizeConfig.heightMultiplier!,
+                  height: 13.5 * SizeConfig.heightMultiplier!,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: DingColors.light(),
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              'https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png'),
+                          fit: BoxFit.fill)),
+                ),
+                SizedBox(
+                  width: 3.6 * SizeConfig.widthMultiplier!,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'پژمان شفیعی',
+                      style: TextStyle(
+                          fontSize: 2.7 * SizeConfig.textMultiplier!,
+                          fontWeight: FontWeight.bold,
+                          color: DingColors.dark()),
+                    ),
+                    Text(
+                      'توسعه ارتباطات دینگ',
+                      style: TextStyle(
+                          fontSize: 2.7 * SizeConfig.textMultiplier! - 5,
+                          fontWeight: FontWeight.w300,
+                          color: DingColors.dark()),
+                    ),
+                    Text(
+                      'واحد فروش',
+                      style: TextStyle(
+                          fontSize: 2.7 * SizeConfig.textMultiplier! - 5,
+                          fontWeight: FontWeight.w200,
+                          color: DingColors.dark()),
+                    ),
+                  ],
+                ),
+              ],
             ),
-            Text(
-              title,
-              style: TextStyle(
-                  color: DingColors.primary(),
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
+            IconButton(
+              onPressed: () {},
+              icon: SvgPicture.asset(
+                'assets/images/edit.svg',
+                width: 7.3 * SizeConfig.widthMultiplier!,
+              ),
             )
           ],
         ),
+      ));
+
+  Widget _item(String txt, String imgUrl) => Row(
+        children: [
+          SizedBox(
+            width: 7 * SizeConfig.widthMultiplier!,
+          ),
+          SvgPicture.asset(
+            imgUrl,
+            width: 5.4 * SizeConfig.heightMultiplier!,
+          ),
+          SizedBox(
+            width: 6 * SizeConfig.widthMultiplier!,
+          ),
+          Text(
+            txt,
+            style: TextStyle(
+                fontSize: 2.7 * SizeConfig.textMultiplier! - 5,
+                fontWeight: FontWeight.w300,
+                color: DingColors.dark()),
+          )
+        ],
       );
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: Column(
-              children: [
-                OptionsTile(
-                  icon: Icons.touch_app,
-                  title: 'ثبت ورود و خروج',
-                ),
-                OptionsTile(
-                  icon: Icons.add_box_rounded,
-                  title: 'افزودن کمپانی جدید',
-                ),
-                GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SettingScreen()));
-                    },
-                    child: OptionsTile(
-                      icon: Icons.settings,
-                      title: 'تنظیمات',
-                    )),
-                OptionsTile(
-                  icon: Icons.info,
-                  title: 'درباره ی سامانه دینگ',
-                ),
-              ],
-            ),
+    return Container(
+      color: DingColors.veryLight(),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 6,
           ),
-        ),
-        Expanded(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+          _profileContainer(),
+          SizedBox(
+            height: 6,
+          ),
+          Expanded(
+              flex: 4,
+              child: Container(
+                color: Colors.white,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    _item('مدیریت حساب', 'assets/images/manage-icon.svg'),
+                    _item('تنظیمات', 'assets/images/setting.svg'),
+                    _item('پشتیبانی', 'assets/images/support.svg'),
+                    _item('درباره دینگ', 'assets/images/info.svg'),
+                  ],
+                ),
+              )),
+          Expanded(
+            flex: 3,
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: SizeConfig.widthMultiplier! * 10,
+                  vertical: SizeConfig.heightMultiplier! * 3),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _infoItem('پشتیبانی سامانه', Icons.network_check_outlined),
-                  _infoItem('وبسایت دینگ', Icons.center_focus_weak),
+                  Column(
+                    children: [
+                      SvgPicture.asset(
+                        'assets/images/web.svg',
+                        width: 5 * SizeConfig.heightMultiplier!,
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        'وب سایت',
+                        style: TextStyle(
+                            fontSize: 2.7 * SizeConfig.textMultiplier! - 5,
+                            fontWeight: FontWeight.w200,
+                            color: DingColors.dark()),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      SvgPicture.asset(
+                        'assets/images/telegram.svg',
+                        width: 5 * SizeConfig.heightMultiplier!,
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        'تلگرام',
+                        style: TextStyle(
+                            fontSize: 2.7 * SizeConfig.textMultiplier! - 5,
+                            fontWeight: FontWeight.w200,
+                            color: DingColors.dark()),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Transform.scale(
+                        child: SvgPicture.asset(
+                          'assets/images/instagram.svg',
+                          width: 5 * SizeConfig.heightMultiplier!,
+                        ),
+                        scale: 1.4,
+                      ),
+                      SizedBox(height: 3,),
+                      Text(
+                        'اینستاگرام',
+                        style: TextStyle(
+                            fontSize: 2.7 * SizeConfig.textMultiplier! - 5,
+                            fontWeight: FontWeight.w200,
+                            color: DingColors.dark()),
+                      ),
+                    ],
+                  ),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _infoItem('کانال تلگرام', Icons.call),
-                  _infoItem('اینستاگرام', Icons.camera),
-                ],
-              )
-            ],
-          ),
-        )
-      ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }

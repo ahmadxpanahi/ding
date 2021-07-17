@@ -102,62 +102,18 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     ),
     'other': PreferredSize(
-      preferredSize: Size.fromHeight(220),
+      preferredSize: Size.fromHeight(100),
       child: Container(
-          padding: EdgeInsets.only(top: 15, left: 20, right: 20, bottom: 15),
-          color: DingColors.primary(),
-          height: 160,
-          child: Column(
-            children: [
-              Expanded(child: SizedBox()),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Ding',
-                    style: TextStyle(fontSize: 55, color: Colors.white),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.power_settings_new,
-                      size: 37,
-                      color: Colors.white,
-                    ),
-                    color: Colors.white,
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.only(right: 10),
-                      alignment: Alignment.centerRight,
-                      height: 35,
-                      decoration: BoxDecoration(
-                        color: Colors.black38,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.arrow_drop_down_rounded,
-                            size: 40,
-                            color: Colors.white,
-                          ),
-                          OtherDropdown(),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            ],
-          )),
+        alignment: Alignment.center,
+        padding: EdgeInsets.only(top: 2.2*SizeConfig.heightMultiplier!),
+        color: DingColors.primary(),
+        height: 13.3*SizeConfig.heightMultiplier!,
+        child: Text(
+          'سایر موارد',
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 2.73*SizeConfig.textMultiplier!, color: Colors.white),
+        ),
+      ),
     ),
   };
 

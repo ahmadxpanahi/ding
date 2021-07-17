@@ -59,6 +59,14 @@ flutter:
     - assets/images/device.svg
     - assets/images/location.svg
     - assets/images/cloud.svg
+    - assets/images/telegram.svg
+    - assets/images/instagram.svg
+    - assets/images/info.svg
+    - assets/images/setting.svg
+    - assets/images/support.svg
+    - assets/images/edit.svg
+    - assets/images/manage-icon.svg
+    - assets/images/web.svg
 
   #   - images/a_dot_ham.jpeg
 
