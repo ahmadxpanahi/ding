@@ -1,3 +1,4 @@
+import 'package:ding/src/feature/account_management/account_management_screen.dart';
 import 'package:ding/src/feature/other/widgets/options_tile.dart';
 import 'package:ding/src/feature/setting/setting_screen.dart';
 import 'package:ding/ui/colors.dart';
@@ -119,8 +120,24 @@ class _OtherScreenState extends State<OtherScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    _item('مدیریت حساب', 'assets/images/manage-icon.svg'),
-                    _item('تنظیمات', 'assets/images/setting.svg'),
+                    GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      AccountManagementScreen()));
+                        },
+                        child: _item(
+                            'مدیریت حساب', 'assets/images/manage-icon.svg')),
+                    GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SettingScreen()));
+                        },
+                        child: _item('تنظیمات', 'assets/images/setting.svg')),
                     _item('پشتیبانی', 'assets/images/support.svg'),
                     _item('درباره دینگ', 'assets/images/info.svg'),
                   ],
@@ -180,7 +197,9 @@ class _OtherScreenState extends State<OtherScreen> {
                         ),
                         scale: 1.4,
                       ),
-                      SizedBox(height: 3,),
+                      SizedBox(
+                        height: 3,
+                      ),
                       Text(
                         'اینستاگرام',
                         style: TextStyle(

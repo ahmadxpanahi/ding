@@ -67,6 +67,9 @@ flutter:
     - assets/images/edit.svg
     - assets/images/manage-icon.svg
     - assets/images/web.svg
+    - assets/images/log-in.svg
+    - assets/images/log-out.svg
+    - assets/images/trash2.svg
 
   #   - images/a_dot_ham.jpeg
 
