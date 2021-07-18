@@ -1,4 +1,5 @@
 import 'package:ding/ui/colors.dart';
+import 'package:ding/ui/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
@@ -47,7 +48,7 @@ class MyRequestsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
+      height: 14.7 * SizeConfig.heightMultiplier!,
       margin: EdgeInsets.only(top: 8),
       color: Colors.white,
       child: Row(
@@ -67,7 +68,7 @@ class MyRequestsItem extends StatelessWidget {
                             color: type == 'leave'
                                 ? DingColors.dark()
                                 : Colors.white,
-                            fontSize: 20),
+                            fontSize: 2.73 * SizeConfig.textMultiplier!),
                       ),
                     ),
                   ),
@@ -85,7 +86,7 @@ class MyRequestsItem extends StatelessWidget {
                                     color: type == 'leave'
                                         ? DingColors.dark()
                                         : Colors.white,
-                                    fontSize: 16),
+                                    fontSize: 2.2 * SizeConfig.textMultiplier!),
                               ),
                             ],
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -97,7 +98,7 @@ class MyRequestsItem extends StatelessWidget {
                                 color: type == 'leave'
                                     ? DingColors.dark()
                                     : Colors.white,
-                                fontSize: 16),
+                                fontSize: 2.2 * SizeConfig.textMultiplier!),
                           )),
                         ],
                       ),
@@ -120,8 +121,8 @@ class MyRequestsItem extends StatelessWidget {
                         Row(
                           children: [
                             Container(
-                              width: 7,
-                              height: 7,
+                              width: 3 + SizeConfig.widthMultiplier!,
+                              height: 3 + SizeConfig.widthMultiplier!,
                               decoration: BoxDecoration(
                                   color: _typeColor(),
                                   borderRadius: BorderRadius.circular(50)),
@@ -132,15 +133,16 @@ class MyRequestsItem extends StatelessWidget {
                             Text(
                               info1 ?? '',
                               style: TextStyle(
-                                  fontSize: 16, color: DingColors.dark()),
+                                  fontSize: 2.2 * SizeConfig.textMultiplier!,
+                                  color: DingColors.dark()),
                             )
                           ],
                         ),
                         Row(
                           children: [
                             Container(
-                              width: 7,
-                              height: 7,
+                              width: 3 + SizeConfig.widthMultiplier!,
+                              height: 3 + SizeConfig.widthMultiplier!,
                               decoration: BoxDecoration(
                                   color: _typeColor(),
                                   borderRadius: BorderRadius.circular(50)),
@@ -151,7 +153,8 @@ class MyRequestsItem extends StatelessWidget {
                             Text(
                               info2 ?? '',
                               style: TextStyle(
-                                  fontSize: 16, color: DingColors.dark()),
+                                  fontSize: 2.2 * SizeConfig.textMultiplier!,
+                                  color: DingColors.dark()),
                             )
                           ],
                         ),
@@ -160,15 +163,17 @@ class MyRequestsItem extends StatelessWidget {
                   ),
                   Text(
                     _statusText(),
-                    style: TextStyle(fontSize: 16, color: _statusColor()),
+                    style: TextStyle(
+                        fontSize: 2.2 * SizeConfig.textMultiplier!,
+                        color: _statusColor()),
                   ),
                   SizedBox(
-                    width: 5,
+                    width: SizeConfig.widthMultiplier!,
                   ),
                   Icon(
                     Icons.arrow_forward_ios,
                     color: Colors.grey,
-                    size: 20,
+                    size: SizeConfig.widthMultiplier! * 5,
                   )
                 ],
               ),

@@ -1,4 +1,5 @@
 import 'package:ding/src/feature/advanced/advanced_screen.dart';
+import 'package:ding/src/feature/departures/departures_screen.dart';
 import 'package:ding/src/feature/home/widgets/bottom_nav.dart';
 import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/feature/other/other_screen.dart';
@@ -7,6 +8,7 @@ import 'package:ding/src/feature/report/report_screen.dart';
 import 'package:ding/src/feature/requests/requests_screen.dart';
 import 'package:ding/src/feature/situation/situation_screen.dart';
 import 'package:ding/ui/colors.dart';
+import 'package:ding/ui/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -19,73 +21,42 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
-  String _screenName = 'other';
+  String _screenName = 'departures';
 
   Map<String, Widget> pages = {
-
     'situation': SituationScreen(),
-    'advanced': AdvancedScreen(),
+    'departures': DeparturesScreen(),
     'report': ReportScreen(),
     'requests': RequestsScreen(),
     'other': OtherScreen()
-
   };
 
   Map<String, PreferredSize> appBars = {
-
     'situation': PreferredSize(
       preferredSize: Size.fromHeight(100),
       child: Container(
-        padding: EdgeInsets.only(top: 15),
+        padding: EdgeInsets.only(top: 2.2*SizeConfig.heightMultiplier!),
         alignment: Alignment.center,
         color: DingColors.primary(),
-        height: 90,
+        height: 13.3*SizeConfig.heightMultiplier!,
         child: Text(
           'وضعیت لحظه ای',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 19, color: Colors.white),
+          style: TextStyle(fontSize: 2.73*SizeConfig.textMultiplier!, color: Colors.white),
         ),
       ),
     ),
-    'advanced': PreferredSize(
+    'departures': PreferredSize(
       preferredSize: Size.fromHeight(100),
       child: Container(
-        padding: EdgeInsets.only(top: 15),
+        alignment: Alignment.center,
+        padding: EdgeInsets.only(top: 2.2*SizeConfig.heightMultiplier!),
         color: DingColors.primary(),
-        height: 90,
-        child: Row(
-          children: [
-            Expanded(
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.refresh,
-                          size: 40,
-                          color: Colors.white,
-                        )))),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'وضعیت لحظه ای',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 19, color: Colors.white),
-                  ),
-                  Text(
-                    'توسعه فناوری دینگ',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 15, color: Colors.white),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(child: SizedBox())
-          ],
+        height: 13.3*SizeConfig.heightMultiplier!,
+        child: Text(
+          'ورود و خروج',
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 2.73*SizeConfig.textMultiplier!, color: Colors.white),
         ),
       ),
     ),
@@ -104,10 +75,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     ),
     'requests': PreferredSize(
-      preferredSize: Size.fromHeight(220),
+      preferredSize: Size.fromHeight(100),
       child: Container(
-        height: 90,
-        padding: EdgeInsets.only(top: 15),
+        height: 13.3*SizeConfig.heightMultiplier!,
+        padding: EdgeInsets.only(top: 2.2*SizeConfig.heightMultiplier!),
         color: DingColors.primary(),
         child: Row(
           children: [
@@ -115,14 +86,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 20),
+                      padding: EdgeInsets.only(left: 4.8*SizeConfig.widthMultiplier!),
                       child: SvgPicture.asset('assets/images/Shape.svg'),
                     ))),
             Expanded(
               child: Text(
                 'درخواست ها',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 19, color: Colors.white),
+                style: TextStyle(fontSize: 2.73*SizeConfig.textMultiplier!, color: Colors.white),
               ),
             ),
             Expanded(child: SizedBox())
@@ -131,62 +102,18 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     ),
     'other': PreferredSize(
-      preferredSize: Size.fromHeight(220),
+      preferredSize: Size.fromHeight(100),
       child: Container(
-          padding: EdgeInsets.only(top: 15, left: 20, right: 20, bottom: 15),
-          color: DingColors.primary(),
-          height: 160,
-          child: Column(
-            children: [
-              Expanded(child: SizedBox()),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Ding',
-                    style: TextStyle(fontSize: 55, color: Colors.white),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.power_settings_new,
-                      size: 37,
-                      color: Colors.white,
-                    ),
-                    color: Colors.white,
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.only(right: 10),
-                      alignment: Alignment.centerRight,
-                      height: 35,
-                      decoration: BoxDecoration(
-                        color: Colors.black38,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.arrow_drop_down_rounded,
-                            size: 40,
-                            color: Colors.white,
-                          ),
-                          OtherDropdown(),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            ],
-          )),
+        alignment: Alignment.center,
+        padding: EdgeInsets.only(top: 2.2*SizeConfig.heightMultiplier!),
+        color: DingColors.primary(),
+        height: 13.3*SizeConfig.heightMultiplier!,
+        child: Text(
+          'سایر موارد',
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 2.73*SizeConfig.textMultiplier!, color: Colors.white),
+        ),
+      ),
     ),
   };
 
@@ -198,15 +125,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return NumberLoginScreen();
-    //   Scaffold(
-    //   body: Directionality(
-    //       textDirection: TextDirection.rtl, child: pages[_screenName]!),
-    //   appBar: appBars[_screenName],
-    //   bottomNavigationBar: BottomNav(
-    //     screenName: _screenName,
-    //     change: setPage,
-    //   ),
-    // );
+    return Scaffold(
+      body: Directionality(
+          textDirection: TextDirection.rtl, child: pages[_screenName]!),
+      appBar: appBars[_screenName],
+      bottomNavigationBar: BottomNav(
+        screenName: _screenName,
+        change: setPage,
+      ),
+    );
   }
 }
