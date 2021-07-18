@@ -1,8 +1,11 @@
 import 'package:country_code_picker/country_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:ding/src/fallback_cupertino_localizations_delegate.dart';
 import 'package:ding/src/feature/home/home_screen.dart';
 import 'package:ding/ui/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,13 +22,20 @@ class MyApp extends StatelessWidget {
             SizeConfig().init(constraints , orientation);
             return MaterialApp(
               theme: ThemeData(
-                fontFamily: 'IRANYekan'
+                fontFamily: 'IRANYekan',
               ),
+              locale: Locale('fa', ''),
               debugShowCheckedModeBanner: false,
               home: HomeScreen(),
               localizationsDelegates: [
                 CountryLocalizations.delegate,
-
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                FarsiCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: [
+                const Locale('en', 'US'), // English
+                const Locale('fa', 'IR'), // Persian
               ],
             );
           },

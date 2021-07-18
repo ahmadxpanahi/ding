@@ -23,6 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   flutter_svg: ^0.22.0
   country_code_picker: ^2.0.2
   pin_code_text_field: ^1.8.0
@@ -70,6 +72,8 @@ flutter:
     - assets/images/log-in.svg
     - assets/images/log-out.svg
     - assets/images/trash2.svg
+    - assets/images/list.svg
+    - assets/images/calendar.svg
 
   #   - images/a_dot_ham.jpeg
 

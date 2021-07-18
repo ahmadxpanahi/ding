@@ -1,11 +1,12 @@
-import 'package:ding/src/feature/detailed_report/detailed_report_screen.dart';
-import 'package:ding/src/feature/report/widgets/switch_button.dart';
-import 'package:ding/src/feature/summary_report/summary_report_screen.dart';
+import 'package:ding/src/feature/report/widgets/custom.dart';
+import 'package:ding/src/feature/report/widgets/monthly.dart';
 import 'package:ding/ui/colors.dart';
+import 'package:ding/ui/size_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ReportScreen extends StatefulWidget {
   const ReportScreen({Key? key}) : super(key: key);
@@ -15,190 +16,77 @@ class ReportScreen extends StatefulWidget {
 }
 
 class _ReportScreenState extends State<ReportScreen> {
+  PageController? _controller;
+  int value = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = PageController();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.grey[200],
-      child: Column(
-        children: [
-          Expanded(
-            flex: 3,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  margin: EdgeInsets.only(top: 30),
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                  color: Colors.white,
-                  height: 100,
-                  child: Column(
-                    children: [
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'انتخاب کارمند',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 17),
-                            ),
-                            Text(
-                              'آیتا آتشگاهی',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 17,
-                                  color: DingColors.primary()),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Divider(),
-                      Expanded(
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Expanded(
-                              child: Text(
-                                'نوع بازه زمانی',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 17),
-                              ),
-                              flex: 7,
-                            ),
-                            Expanded(
-                              child: SwitchButton(),
-                              flex: 4,
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(right: 15, top: 5, bottom: 5),
+    return Column(
+      children: [
+        Row(
+          children: [
+            Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  _controller!.animateToPage(0,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.linear);
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 8.2 * SizeConfig.heightMultiplier!,
+                  color: value == 0 ? DingColors.dark() : DingColors.light(),
                   child: Text(
-                    'انتخاب ماه',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                    'ماهانه',
+                    style: TextStyle(
+                        fontSize: 2.73 * SizeConfig.textMultiplier!,
+                        color: value == 0 ? DingColors.primary() : Colors.grey),
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                  color: Colors.white,
-                  height: 100,
-                  child: Column(
-                    children: [
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'سال',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 17),
-                            ),
-                            Text(
-                              '1400',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 17,
-                                  color: DingColors.primary()),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Divider(),
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'ماه',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 17),
-                            ),
-                            Text(
-                              'تیر',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 17,
-                                  color: DingColors.primary()),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SummaryReportScreen()));
-                      },
-                      child: Container(
-                        alignment: Alignment.center,
-                        margin:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                        height: 60,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: DingColors.primary()),
-                        child: Text(
-                          'گزارش خلاصه',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17,
-                              color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => DetailedReportScreen()));
-                      },
-                      child: Container(
-                        alignment: Alignment.center,
-                        margin: EdgeInsets.symmetric(
-                          horizontal: 20,
-                        ),
-                        height: 60,
-                        decoration: BoxDecoration(
-                            border:
-                                Border.all(width: 3, color: DingColors.primary()),
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.white),
-                        child: Text(
-                          'گزارش تفضیلی',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17,
-                              color: Colors.black),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ),
-          )
-        ],
-      ),
+            Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  _controller!.animateToPage(1,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.linear);
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 8.2 * SizeConfig.heightMultiplier!,
+                  color: value == 1 ? DingColors.dark() : DingColors.light(),
+                  child: Text(
+                    'سفارشی',
+                    style: TextStyle(
+                        fontSize: 2.73 * SizeConfig.textMultiplier!,
+                        color: value == 1 ? DingColors.primary() : Colors.grey),
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+        Expanded(
+            child: PageView(
+          controller: _controller,
+          onPageChanged: (val) {
+            setState(() {
+              value = val;
+            });
+          },
+          children: [
+            MonthlyPage(),
+            CustomPage(),
+          ],
+        ))
+      ],
     );
   }
 }
