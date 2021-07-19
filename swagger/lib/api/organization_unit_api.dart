@@ -30,7 +30,7 @@ class OrganizationUnitApi {
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
+      MultipartRequest mp = new MultipartRequest("", Uri());
       
       if(hasFields)
         postBody = mp;
@@ -79,7 +79,7 @@ class OrganizationUnitApi {
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
+      MultipartRequest mp = new MultipartRequest("", Uri());
       
       if(hasFields)
         postBody = mp;
@@ -128,7 +128,7 @@ class OrganizationUnitApi {
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
+      MultipartRequest mp = new MultipartRequest("", Uri());
       
       if(hasFields)
         postBody = mp;
@@ -180,7 +180,7 @@ class OrganizationUnitApi {
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
+      MultipartRequest mp = new MultipartRequest("", Uri());
       
       if(hasFields)
         postBody = mp;
@@ -229,7 +229,7 @@ class OrganizationUnitApi {
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
+      MultipartRequest mp = new MultipartRequest("", Uri());
       
       if(hasFields)
         postBody = mp;
@@ -278,7 +278,7 @@ class OrganizationUnitApi {
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
+      MultipartRequest mp = new MultipartRequest("", Uri());
       
       if(hasFields)
         postBody = mp;
@@ -339,7 +339,7 @@ class OrganizationUnitApi {
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
+      MultipartRequest mp = new MultipartRequest("", Uri());
       
       if(hasFields)
         postBody = mp;
@@ -388,7 +388,7 @@ class OrganizationUnitApi {
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
+      MultipartRequest mp = new MultipartRequest("", Uri());
       
       if(hasFields)
         postBody = mp;
@@ -437,7 +437,7 @@ class OrganizationUnitApi {
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
+      MultipartRequest mp = new MultipartRequest("", Uri());
       
       if(hasFields)
         postBody = mp;
@@ -498,7 +498,7 @@ class OrganizationUnitApi {
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
+      MultipartRequest mp = new MultipartRequest("", Uri());
       
       if(hasFields)
         postBody = mp;
@@ -547,7 +547,7 @@ class OrganizationUnitApi {
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
+      MultipartRequest mp = new MultipartRequest("", Uri());
       
       if(hasFields)
         postBody = mp;
@@ -602,7 +602,7 @@ class OrganizationUnitApi {
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
+      MultipartRequest mp = new MultipartRequest("", Uri());
       
       if(hasFields)
         postBody = mp;
@@ -657,7 +657,7 @@ class OrganizationUnitApi {
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
+      MultipartRequest mp = new MultipartRequest("", Uri());
       
       if(hasFields)
         postBody = mp;
@@ -706,7 +706,7 @@ class OrganizationUnitApi {
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
+      MultipartRequest mp = new MultipartRequest("", Uri());
       
       if(hasFields)
         postBody = mp;
