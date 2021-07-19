@@ -82,13 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
         color: DingColors.primary(),
         child: Row(
           children: [
-            Expanded(
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 4.8*SizeConfig.widthMultiplier!),
-                      child: SvgPicture.asset('assets/images/Shape.svg'),
-                    ))),
+            Expanded(child: SizedBox()),
             Expanded(
               child: Text(
                 'درخواست ها',
@@ -96,7 +90,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(fontSize: 2.73*SizeConfig.textMultiplier!, color: Colors.white),
               ),
             ),
-            Expanded(child: SizedBox())
+            Expanded(
+                child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 4.8*SizeConfig.widthMultiplier!),
+                      child: SvgPicture.asset('assets/images/Shape.svg'),
+                    ))),
           ],
         ),
       ),

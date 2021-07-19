@@ -15,11 +15,11 @@ class MonthlyPage extends StatefulWidget {
 }
 
 class _MonthlyPageState extends State<MonthlyPage> {
-  DateTime period = DateTime.now();
+  DateTime? period;
 
   _infoContainer() => Container(
-        padding: EdgeInsets.symmetric(
-            horizontal: SizeConfig.widthMultiplier! * 4.5),
+        padding:
+            EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier! * 4.5),
         height: 15 * SizeConfig.heightMultiplier!,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -137,12 +137,20 @@ class _MonthlyPageState extends State<MonthlyPage> {
                           padding: EdgeInsets.symmetric(
                               vertical: 2.2 * SizeConfig.heightMultiplier!,
                               horizontal: 4.8 * SizeConfig.widthMultiplier!),
-                          child: Text(
-                            '${period.day} ${period.month} ${period.year}',
-                            style: TextStyle(
-                                fontSize: 3 * SizeConfig.textMultiplier!),
-                            textAlign: TextAlign.center,
-                          )),
+                          child: period == null
+                              ? Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: Container(
+                                    height: 1,
+                                    color: DingColors.dark(),
+                                  ),
+                                )
+                              : Text(
+                                  '${period!.day} ${period!.month} ${period!.year}',
+                                  style: TextStyle(
+                                      fontSize: 3 * SizeConfig.textMultiplier!),
+                                  textAlign: TextAlign.center,
+                                )),
                     ),
                     SvgPicture.asset(
                       'assets/images/calendar.svg',
