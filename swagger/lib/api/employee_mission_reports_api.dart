@@ -10,7 +10,7 @@ class EmployeeMissionReportsApi {
   /// ApiServicesAppEmployeemissionreportsGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetEmployeeMissionReportForViewDto> apiServicesAppEmployeemissionreportsGetallGet({ List<int>? userIdsFilter, int? organizationUnitId, int? userIdFilter, String? userNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetEmployeeMissionReportForViewDto?> apiServicesAppEmployeemissionreportsGetallGet({ List<int>? userIdsFilter, int? organizationUnitId, int? userIdFilter, String? userNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -86,7 +86,7 @@ class EmployeeMissionReportsApi {
   /// ApiServicesAppEmployeemissionreportsGetdetailedreportGet
   ///
   /// 
-  Future<List<GetDetailedEmployeeMissionReportForViewDto>> apiServicesAppEmployeemissionreportsGetdetailedreportGet({ List<int>? userIdsFilter, int? organizationUnitId, int? userIdFilter, String? userNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<List<GetDetailedEmployeeMissionReportForViewDto>?> apiServicesAppEmployeemissionreportsGetdetailedreportGet({ List<int>? userIdsFilter, int? organizationUnitId, int? userIdFilter, String? userNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -162,7 +162,7 @@ class EmployeeMissionReportsApi {
   /// ApiServicesAppEmployeemissionreportsGetemployeemissionreportstoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppEmployeemissionreportsGetemployeemissionreportstoexcelGet({ List<int>? userIdsFilter, int? organizationUnitId, String? userNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo }) async {
+  Future<FileDto?> apiServicesAppEmployeemissionreportsGetemployeemissionreportstoexcelGet({ List<int>? userIdsFilter, int? organizationUnitId, String? userNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo }) async {
     Object? postBody = null;
 
     // verify required params are set

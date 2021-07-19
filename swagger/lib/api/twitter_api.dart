@@ -10,7 +10,7 @@ class TwitterApi {
   /// ApiTwitterGetaccesstokenPost
   ///
   /// 
-  Future<TwitterGetAccessTokenResponse> apiTwitterGetaccesstokenPost({ String? token, String? verifier }) async {
+  Future<TwitterGetAccessTokenResponse?> apiTwitterGetaccesstokenPost({ String? token, String? verifier }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -65,7 +65,7 @@ class TwitterApi {
   /// ApiTwitterGetrequesttokenPost
   ///
   /// 
-  Future<TwitterGetRequestTokenResponse> apiTwitterGetrequesttokenPost() async {
+  Future<TwitterGetRequestTokenResponse?> apiTwitterGetrequesttokenPost() async {
     Object? postBody = null;
 
     // verify required params are set

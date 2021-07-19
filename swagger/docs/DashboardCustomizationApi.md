@@ -107,7 +107,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDashboardcustomizationDeletepageDelete**
-> apiServicesAppDashboardcustomizationDeletepageDelete(id, dashboardName, application)
+?> apiServicesAppDashboardcustomizationDeletepageDelete(id, dashboardName, application)
 
 ApiServicesAppDashboardcustomizationDeletepageDelete
 
@@ -153,7 +153,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDashboardcustomizationGetallwidgetdefinitionsGet**
-> List<WidgetOutput> apiServicesAppDashboardcustomizationGetallwidgetdefinitionsGet(dashboardName, application)
+> List<WidgetOutput?> apiServicesAppDashboardcustomizationGetallwidgetdefinitionsGet(dashboardName, application)
 
 ApiServicesAppDashboardcustomizationGetallwidgetdefinitionsGet
 
@@ -331,7 +331,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDashboardcustomizationRenamepagePost**
-> apiServicesAppDashboardcustomizationRenamepagePost(body)
+?> apiServicesAppDashboardcustomizationRenamepagePost(body)
 
 ApiServicesAppDashboardcustomizationRenamepagePost
 
@@ -373,7 +373,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDashboardcustomizationSavepagePost**
-> apiServicesAppDashboardcustomizationSavepagePost(body)
+?> apiServicesAppDashboardcustomizationSavepagePost(body)
 
 ApiServicesAppDashboardcustomizationSavepagePost
 

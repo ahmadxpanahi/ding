@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppNotificationDeleteallusernotificationsDelete**
-> apiServicesAppNotificationDeleteallusernotificationsDelete(state, startDate, endDate)
+?> apiServicesAppNotificationDeleteallusernotificationsDelete(state, startDate, endDate)
 
 ApiServicesAppNotificationDeleteallusernotificationsDelete
 
@@ -65,7 +65,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppNotificationDeletenotificationDelete**
-> apiServicesAppNotificationDeletenotificationDelete(id)
+?> apiServicesAppNotificationDeletenotificationDelete(id)
 
 ApiServicesAppNotificationDeletenotificationDelete
 
@@ -197,7 +197,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppNotificationSetallnotificationsasreadPost**
-> apiServicesAppNotificationSetallnotificationsasreadPost()
+?> apiServicesAppNotificationSetallnotificationsasreadPost()
 
 ApiServicesAppNotificationSetallnotificationsasreadPost
 
@@ -235,7 +235,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppNotificationSetnotificationasreadPost**
-> apiServicesAppNotificationSetnotificationasreadPost(body)
+?> apiServicesAppNotificationSetnotificationasreadPost(body)
 
 ApiServicesAppNotificationSetnotificationasreadPost
 
@@ -277,7 +277,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppNotificationUpdatenotificationsettingsPut**
-> apiServicesAppNotificationUpdatenotificationsettingsPut(body)
+?> apiServicesAppNotificationUpdatenotificationsettingsPut(body)
 
 ApiServicesAppNotificationUpdatenotificationsettingsPut
 

@@ -111,7 +111,7 @@ class DynamicPropertyApi {
   /// ApiServicesAppDynamicpropertyFindallowedinputtypePost
   ///
   /// 
-  Future<IInputType> apiServicesAppDynamicpropertyFindallowedinputtypePost({ String? name }) async {
+  Future<IInputType?> apiServicesAppDynamicpropertyFindallowedinputtypePost({ String? name }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -163,7 +163,7 @@ class DynamicPropertyApi {
   /// ApiServicesAppDynamicpropertyGetGet
   ///
   /// 
-  Future<DynamicPropertyDto> apiServicesAppDynamicpropertyGetGet({ int? id }) async {
+  Future<DynamicPropertyDto?> apiServicesAppDynamicpropertyGetGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -215,7 +215,7 @@ class DynamicPropertyApi {
   /// ApiServicesAppDynamicpropertyGetallGet
   ///
   /// 
-  Future<ListResultDtoOfDynamicPropertyDto> apiServicesAppDynamicpropertyGetallGet() async {
+  Future<ListResultDtoOfDynamicPropertyDto?> apiServicesAppDynamicpropertyGetallGet() async {
     Object? postBody = null;
 
     // verify required params are set

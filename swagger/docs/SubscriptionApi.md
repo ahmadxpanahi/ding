@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppSubscriptionDisablerecurringpaymentsPost**
-> apiServicesAppSubscriptionDisablerecurringpaymentsPost()
+?> apiServicesAppSubscriptionDisablerecurringpaymentsPost()
 
 ApiServicesAppSubscriptionDisablerecurringpaymentsPost
 
@@ -53,7 +53,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppSubscriptionEnablerecurringpaymentsPost**
-> apiServicesAppSubscriptionEnablerecurringpaymentsPost()
+?> apiServicesAppSubscriptionEnablerecurringpaymentsPost()
 
 ApiServicesAppSubscriptionEnablerecurringpaymentsPost
 
@@ -91,7 +91,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppSubscriptionSubscribedeviceeditionPost**
-> apiServicesAppSubscriptionSubscribedeviceeditionPost(body)
+?> apiServicesAppSubscriptionSubscribedeviceeditionPost(body)
 
 ApiServicesAppSubscriptionSubscribedeviceeditionPost
 

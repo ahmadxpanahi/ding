@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppOrganizationunitAddrolestoorganizationunitPost**
-> apiServicesAppOrganizationunitAddrolestoorganizationunitPost(body)
+?> apiServicesAppOrganizationunitAddrolestoorganizationunitPost(body)
 
 ApiServicesAppOrganizationunitAddrolestoorganizationunitPost
 
@@ -68,7 +68,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppOrganizationunitAdduserstoorganizationunitPost**
-> apiServicesAppOrganizationunitAdduserstoorganizationunitPost(body)
+?> apiServicesAppOrganizationunitAdduserstoorganizationunitPost(body)
 
 ApiServicesAppOrganizationunitAdduserstoorganizationunitPost
 
@@ -153,7 +153,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppOrganizationunitDeleteorganizationunitDelete**
-> apiServicesAppOrganizationunitDeleteorganizationunitDelete(id)
+?> apiServicesAppOrganizationunitDeleteorganizationunitDelete(id)
 
 ApiServicesAppOrganizationunitDeleteorganizationunitDelete
 
@@ -500,7 +500,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppOrganizationunitRemoverolefromorganizationunitDelete**
-> apiServicesAppOrganizationunitRemoverolefromorganizationunitDelete(roleId, organizationUnitId)
+?> apiServicesAppOrganizationunitRemoverolefromorganizationunitDelete(roleId, organizationUnitId)
 
 ApiServicesAppOrganizationunitRemoverolefromorganizationunitDelete
 
@@ -544,7 +544,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppOrganizationunitRemoveuserfromorganizationunitDelete**
-> apiServicesAppOrganizationunitRemoveuserfromorganizationunitDelete(userId, organizationUnitId)
+?> apiServicesAppOrganizationunitRemoveuserfromorganizationunitDelete(userId, organizationUnitId)
 
 ApiServicesAppOrganizationunitRemoveuserfromorganizationunitDelete
 

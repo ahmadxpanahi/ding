@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppVacationtypesCreateoreditPost**
-> apiServicesAppVacationtypesCreateoreditPost(body)
+?> apiServicesAppVacationtypesCreateoreditPost(body)
 
 ApiServicesAppVacationtypesCreateoreditPost
 
@@ -61,7 +61,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppVacationtypesDeleteDelete**
-> apiServicesAppVacationtypesDeleteDelete(id)
+?> apiServicesAppVacationtypesDeleteDelete(id)
 
 ApiServicesAppVacationtypesDeleteDelete
 
@@ -170,7 +170,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppVacationtypesGetalltenantvacationtypesGet**
-> List<VacationTypeDto> apiServicesAppVacationtypesGetalltenantvacationtypesGet()
+> List<VacationTypeDto?> apiServicesAppVacationtypesGetalltenantvacationtypesGet()
 
 ApiServicesAppVacationtypesGetalltenantvacationtypesGet
 

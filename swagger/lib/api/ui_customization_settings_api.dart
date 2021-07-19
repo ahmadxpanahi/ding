@@ -62,7 +62,7 @@ class UiCustomizationSettingsApi {
   /// ApiServicesAppUicustomizationsettingsGetuimanagementsettingsGet
   ///
   /// 
-  Future<List<ThemeSettingsDto>> apiServicesAppUicustomizationsettingsGetuimanagementsettingsGet() async {
+  Future<List<ThemeSettingsDto>?> apiServicesAppUicustomizationsettingsGetuimanagementsettingsGet() async {
     Object? postBody = null;
 
     // verify required params are set

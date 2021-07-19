@@ -259,7 +259,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppAuditlogGetentityhistoryobjecttypesGet**
-> List<NameValueDto> apiServicesAppAuditlogGetentityhistoryobjecttypesGet()
+> List<NameValueDto?> apiServicesAppAuditlogGetentityhistoryobjecttypesGet()
 
 ApiServicesAppAuditlogGetentityhistoryobjecttypesGet
 
@@ -298,7 +298,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppAuditlogGetentitypropertychangesGet**
-> List<EntityPropertyChangeDto> apiServicesAppAuditlogGetentitypropertychangesGet(entityChangeId)
+> List<EntityPropertyChangeDto?> apiServicesAppAuditlogGetentitypropertychangesGet(entityChangeId)
 
 ApiServicesAppAuditlogGetentitypropertychangesGet
 

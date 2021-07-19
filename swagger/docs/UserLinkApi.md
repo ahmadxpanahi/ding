@@ -102,7 +102,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserlinkLinktouserPost**
-> apiServicesAppUserlinkLinktouserPost(body)
+?> apiServicesAppUserlinkLinktouserPost(body)
 
 ApiServicesAppUserlinkLinktouserPost
 
@@ -144,7 +144,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserlinkUnlinkuserPost**
-> apiServicesAppUserlinkUnlinkuserPost(body)
+?> apiServicesAppUserlinkUnlinkuserPost(body)
 
 ApiServicesAppUserlinkUnlinkuserPost
 

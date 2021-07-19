@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppTimingGettimezonecomboboxitemsGet**
-> List<ComboboxItemDto> apiServicesAppTimingGettimezonecomboboxitemsGet(selectedTimezoneId)
+> List<ComboboxItemDto?> apiServicesAppTimingGettimezonecomboboxitemsGet(selectedTimezoneId)
 
 ApiServicesAppTimingGettimezonecomboboxitemsGet
 

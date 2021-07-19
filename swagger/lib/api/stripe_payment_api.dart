@@ -10,7 +10,7 @@ class StripePaymentApi {
   /// ApiServicesAppStripepaymentCreatepaymentsessionPost
   ///
   /// 
-  Future<String> apiServicesAppStripepaymentCreatepaymentsessionPost({ StripeCreatePaymentSessionInput? body }) async {
+  Future<String?> apiServicesAppStripepaymentCreatepaymentsessionPost({ StripeCreatePaymentSessionInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -59,7 +59,7 @@ class StripePaymentApi {
   /// ApiServicesAppStripepaymentGetconfigurationGet
   ///
   /// 
-  Future<StripeConfigurationDto> apiServicesAppStripepaymentGetconfigurationGet() async {
+  Future<StripeConfigurationDto?> apiServicesAppStripepaymentGetconfigurationGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -108,7 +108,7 @@ class StripePaymentApi {
   /// ApiServicesAppStripepaymentGetpaymentGet
   ///
   /// 
-  Future<SubscriptionPaymentDto> apiServicesAppStripepaymentGetpaymentGet({ String? stripeSessionId }) async {
+  Future<SubscriptionPaymentDto?> apiServicesAppStripepaymentGetpaymentGet({ String? stripeSessionId }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -160,7 +160,7 @@ class StripePaymentApi {
   /// ApiServicesAppStripepaymentGetpaymentresultGet
   ///
   /// 
-  Future<StripePaymentResultOutput> apiServicesAppStripepaymentGetpaymentresultGet({ int? paymentId }) async {
+  Future<StripePaymentResultOutput?> apiServicesAppStripepaymentGetpaymentresultGet({ int? paymentId }) async {
     Object? postBody = null;
 
     // verify required params are set

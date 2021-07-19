@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppDynamicentitypropertyAddPost**
-> apiServicesAppDynamicentitypropertyAddPost(body)
+?> apiServicesAppDynamicentitypropertyAddPost(body)
 
 ApiServicesAppDynamicentitypropertyAddPost
 
@@ -61,7 +61,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDynamicentitypropertyDeleteDelete**
-> apiServicesAppDynamicentitypropertyDeleteDelete(id)
+?> apiServicesAppDynamicentitypropertyDeleteDelete(id)
 
 ApiServicesAppDynamicentitypropertyDeleteDelete
 
@@ -267,7 +267,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDynamicentitypropertyUpdatePut**
-> apiServicesAppDynamicentitypropertyUpdatePut(body)
+?> apiServicesAppDynamicentitypropertyUpdatePut(body)
 
 ApiServicesAppDynamicentitypropertyUpdatePut
 

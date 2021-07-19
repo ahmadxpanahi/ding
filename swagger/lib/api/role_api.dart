@@ -111,7 +111,7 @@ class RoleApi {
   /// ApiServicesAppRoleGetroleforeditGet
   ///
   /// 
-  Future<GetRoleForEditOutput> apiServicesAppRoleGetroleforeditGet({ int? id }) async {
+  Future<GetRoleForEditOutput?> apiServicesAppRoleGetroleforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -163,7 +163,7 @@ class RoleApi {
   /// ApiServicesAppRoleGetrolesGet
   ///
   /// 
-  Future<ListResultDtoOfRoleListDto> apiServicesAppRoleGetrolesGet({ List<String>? permissions }) async {
+  Future<ListResultDtoOfRoleListDto?> apiServicesAppRoleGetrolesGet({ List<String>? permissions }) async {
     Object? postBody = null;
 
     // verify required params are set

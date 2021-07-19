@@ -108,7 +108,7 @@ class WebhookSubscriptionApi {
   /// ApiServicesAppWebhooksubscriptionGetallavailablewebhooksGet
   ///
   /// 
-  Future<ListResultDtoOfGetAllAvailableWebhooksOutput> apiServicesAppWebhooksubscriptionGetallavailablewebhooksGet() async {
+  Future<ListResultDtoOfGetAllAvailableWebhooksOutput?> apiServicesAppWebhooksubscriptionGetallavailablewebhooksGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -157,7 +157,7 @@ class WebhookSubscriptionApi {
   /// ApiServicesAppWebhooksubscriptionGetallsubscriptionsGet
   ///
   /// 
-  Future<ListResultDtoOfGetAllSubscriptionsOutput> apiServicesAppWebhooksubscriptionGetallsubscriptionsGet() async {
+  Future<ListResultDtoOfGetAllSubscriptionsOutput?> apiServicesAppWebhooksubscriptionGetallsubscriptionsGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -206,7 +206,7 @@ class WebhookSubscriptionApi {
   /// ApiServicesAppWebhooksubscriptionGetallsubscriptionsiffeaturesgrantedGet
   ///
   /// 
-  Future<ListResultDtoOfGetAllSubscriptionsOutput> apiServicesAppWebhooksubscriptionGetallsubscriptionsiffeaturesgrantedGet({ String? webhookName }) async {
+  Future<ListResultDtoOfGetAllSubscriptionsOutput?> apiServicesAppWebhooksubscriptionGetallsubscriptionsiffeaturesgrantedGet({ String? webhookName }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -258,7 +258,7 @@ class WebhookSubscriptionApi {
   /// ApiServicesAppWebhooksubscriptionGetsubscriptionGet
   ///
   /// 
-  Future<WebhookSubscription> apiServicesAppWebhooksubscriptionGetsubscriptionGet({ String? subscriptionId }) async {
+  Future<WebhookSubscription?> apiServicesAppWebhooksubscriptionGetsubscriptionGet({ String? subscriptionId }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -310,7 +310,7 @@ class WebhookSubscriptionApi {
   /// ApiServicesAppWebhooksubscriptionIssubscribedPost
   ///
   /// 
-  Future<bool> apiServicesAppWebhooksubscriptionIssubscribedPost({ String? webhookName }) async {
+  Future<bool?> apiServicesAppWebhooksubscriptionIssubscribedPost({ String? webhookName }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -362,7 +362,7 @@ class WebhookSubscriptionApi {
   /// ApiServicesAppWebhooksubscriptionPublishtestwebhookPost
   ///
   /// 
-  Future<String> apiServicesAppWebhooksubscriptionPublishtestwebhookPost() async {
+  Future<String?> apiServicesAppWebhooksubscriptionPublishtestwebhookPost() async {
     Object? postBody = null;
 
     // verify required params are set

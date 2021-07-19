@@ -160,7 +160,7 @@ class TenantDevicesApi {
   /// ApiServicesAppTenantdevicesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetTenantDeviceForViewDto> apiServicesAppTenantdevicesGetallGet({ String? filter, String? deviceSerialNumberFilter, String? tenantNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetTenantDeviceForViewDto?> apiServicesAppTenantdevicesGetallGet({ String? filter, String? deviceSerialNumberFilter, String? tenantNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -227,7 +227,7 @@ class TenantDevicesApi {
   /// ApiServicesAppTenantdevicesGetalldeviceforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfTenantDeviceDeviceLookupTableDto> apiServicesAppTenantdevicesGetalldeviceforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfTenantDeviceDeviceLookupTableDto?> apiServicesAppTenantdevicesGetalldeviceforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -288,7 +288,7 @@ class TenantDevicesApi {
   /// ApiServicesAppTenantdevicesGetalltenantdevicesGet
   ///
   /// 
-  Future<PagedResultDtoOfGetTenantDeviceForViewDto> apiServicesAppTenantdevicesGetalltenantdevicesGet({ String? filter, String? deviceSerialNumberFilter, String? tenantNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetTenantDeviceForViewDto?> apiServicesAppTenantdevicesGetalltenantdevicesGet({ String? filter, String? deviceSerialNumberFilter, String? tenantNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -355,7 +355,7 @@ class TenantDevicesApi {
   /// ApiServicesAppTenantdevicesGetalltenantforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfTenantDeviceTenantLookupTableDto> apiServicesAppTenantdevicesGetalltenantforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfTenantDeviceTenantLookupTableDto?> apiServicesAppTenantdevicesGetalltenantforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -416,7 +416,7 @@ class TenantDevicesApi {
   /// ApiServicesAppTenantdevicesGettenantdeviceforviewGet
   ///
   /// 
-  Future<GetTenantDeviceForViewDto> apiServicesAppTenantdevicesGettenantdeviceforviewGet({ int? id }) async {
+  Future<GetTenantDeviceForViewDto?> apiServicesAppTenantdevicesGettenantdeviceforviewGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -468,7 +468,7 @@ class TenantDevicesApi {
   /// ApiServicesAppTenantdevicesGettenantdevicestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppTenantdevicesGettenantdevicestoexcelGet({ String? filter, String? deviceSerialNumberFilter, String? tenantNameFilter }) async {
+  Future<FileDto?> apiServicesAppTenantdevicesGettenantdevicestoexcelGet({ String? filter, String? deviceSerialNumberFilter, String? tenantNameFilter }) async {
     Object? postBody = null;
 
     // verify required params are set

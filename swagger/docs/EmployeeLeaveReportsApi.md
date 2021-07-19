@@ -74,7 +74,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppEmployeeleavereportsGetdetailedreportGet**
-> List<GetDetailedEmployeeLeaveReportForViewDto> apiServicesAppEmployeeleavereportsGetdetailedreportGet(userIdsFilter, organizationUnitId, userIdFilter, userNameFilter, reportDateFrom, reportDateTo, sorting, skipCount, maxResultCount)
+> List<GetDetailedEmployeeLeaveReportForViewDto?> apiServicesAppEmployeeleavereportsGetdetailedreportGet(userIdsFilter, organizationUnitId, userIdFilter, userNameFilter, reportDateFrom, reportDateTo, sorting, skipCount, maxResultCount)
 
 ApiServicesAppEmployeeleavereportsGetdetailedreportGet
 

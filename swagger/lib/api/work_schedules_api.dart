@@ -10,7 +10,7 @@ class WorkSchedulesApi {
   /// ApiServicesAppWorkschedulesCalculatetotalworkhoutsPost
   ///
   /// 
-  Future<double> apiServicesAppWorkschedulesCalculatetotalworkhoutsPost({ WorkModelType? body }) async {
+  Future<double?> apiServicesAppWorkschedulesCalculatetotalworkhoutsPost({ WorkModelType? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -59,7 +59,7 @@ class WorkSchedulesApi {
   /// ApiServicesAppWorkschedulesCreateoreditPost
   ///
   /// 
-  Future<int> apiServicesAppWorkschedulesCreateoreditPost({ CreateOrEditWorkScheduleDto? body }) async {
+  Future<int?> apiServicesAppWorkschedulesCreateoreditPost({ CreateOrEditWorkScheduleDto? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -160,7 +160,7 @@ class WorkSchedulesApi {
   /// ApiServicesAppWorkschedulesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfWorkScheduleDto> apiServicesAppWorkschedulesGetallGet({ String? filter, String? nameFilter, int? workModelTypeFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfWorkScheduleDto?> apiServicesAppWorkschedulesGetallGet({ String? filter, String? nameFilter, int? workModelTypeFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -227,7 +227,7 @@ class WorkSchedulesApi {
   /// ApiServicesAppWorkschedulesGetalltenantworkschedulesGet
   ///
   /// 
-  Future<List<WorkScheduleDto>> apiServicesAppWorkschedulesGetalltenantworkschedulesGet() async {
+  Future<List<WorkScheduleDto>?> apiServicesAppWorkschedulesGetalltenantworkschedulesGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -276,7 +276,7 @@ class WorkSchedulesApi {
   /// ApiServicesAppWorkschedulesGetcurrentuserworkhoursGet
   ///
   /// 
-  Future<GetUserWorkScheduleForViewDto> apiServicesAppWorkschedulesGetcurrentuserworkhoursGet() async {
+  Future<GetUserWorkScheduleForViewDto?> apiServicesAppWorkschedulesGetcurrentuserworkhoursGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -325,7 +325,7 @@ class WorkSchedulesApi {
   /// ApiServicesAppWorkschedulesGetworkhoursGet
   ///
   /// 
-  Future<List<WorkHourDto>> apiServicesAppWorkschedulesGetworkhoursGet({ int? workScheduleId }) async {
+  Future<List<WorkHourDto>?> apiServicesAppWorkschedulesGetworkhoursGet({ int? workScheduleId }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -377,7 +377,7 @@ class WorkSchedulesApi {
   /// ApiServicesAppWorkschedulesGetworkscheduleforeditGet
   ///
   /// 
-  Future<GetWorkScheduleForEditOutput> apiServicesAppWorkschedulesGetworkscheduleforeditGet({ int? id }) async {
+  Future<GetWorkScheduleForEditOutput?> apiServicesAppWorkschedulesGetworkscheduleforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set

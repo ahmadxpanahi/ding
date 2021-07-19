@@ -10,7 +10,7 @@ class AuditLogApi {
   /// ApiServicesAppAuditlogGetauditlogsGet
   ///
   /// 
-  Future<PagedResultDtoOfAuditLogListDto> apiServicesAppAuditlogGetauditlogsGet({ DateTime? startDate, DateTime? endDate, String? userName, String? serviceName, String? methodName, String? browserInfo, bool? hasException, int? minExecutionDuration, int? maxExecutionDuration, String? sorting, int? maxResultCount, int? skipCount }) async {
+  Future<PagedResultDtoOfAuditLogListDto?> apiServicesAppAuditlogGetauditlogsGet({ DateTime? startDate, DateTime? endDate, String? userName, String? serviceName, String? methodName, String? browserInfo, bool? hasException, int? minExecutionDuration, int? maxExecutionDuration, String? sorting, int? maxResultCount, int? skipCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -95,7 +95,7 @@ class AuditLogApi {
   /// ApiServicesAppAuditlogGetauditlogstoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppAuditlogGetauditlogstoexcelGet({ DateTime? startDate, DateTime? endDate, String? userName, String? serviceName, String? methodName, String? browserInfo, bool? hasException, int? minExecutionDuration, int? maxExecutionDuration, String? sorting, int? maxResultCount, int? skipCount }) async {
+  Future<FileDto?> apiServicesAppAuditlogGetauditlogstoexcelGet({ DateTime? startDate, DateTime? endDate, String? userName, String? serviceName, String? methodName, String? browserInfo, bool? hasException, int? minExecutionDuration, int? maxExecutionDuration, String? sorting, int? maxResultCount, int? skipCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -180,7 +180,7 @@ class AuditLogApi {
   /// ApiServicesAppAuditlogGetentitychangesGet
   ///
   /// 
-  Future<PagedResultDtoOfEntityChangeListDto> apiServicesAppAuditlogGetentitychangesGet({ DateTime? startDate, DateTime? endDate, String? userName, String? entityTypeFullName, String? sorting, int? maxResultCount, int? skipCount }) async {
+  Future<PagedResultDtoOfEntityChangeListDto?> apiServicesAppAuditlogGetentitychangesGet({ DateTime? startDate, DateTime? endDate, String? userName, String? entityTypeFullName, String? sorting, int? maxResultCount, int? skipCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -250,7 +250,7 @@ class AuditLogApi {
   /// ApiServicesAppAuditlogGetentitychangestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppAuditlogGetentitychangestoexcelGet({ DateTime? startDate, DateTime? endDate, String? userName, String? entityTypeFullName, String? sorting, int? maxResultCount, int? skipCount }) async {
+  Future<FileDto?> apiServicesAppAuditlogGetentitychangestoexcelGet({ DateTime? startDate, DateTime? endDate, String? userName, String? entityTypeFullName, String? sorting, int? maxResultCount, int? skipCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -320,7 +320,7 @@ class AuditLogApi {
   /// ApiServicesAppAuditlogGetentityhistoryobjecttypesGet
   ///
   /// 
-  Future<List<NameValueDto>> apiServicesAppAuditlogGetentityhistoryobjecttypesGet() async {
+  Future<List<NameValueDto>?> apiServicesAppAuditlogGetentityhistoryobjecttypesGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -369,7 +369,7 @@ class AuditLogApi {
   /// ApiServicesAppAuditlogGetentitypropertychangesGet
   ///
   /// 
-  Future<List<EntityPropertyChangeDto>> apiServicesAppAuditlogGetentitypropertychangesGet({ int? entityChangeId }) async {
+  Future<List<EntityPropertyChangeDto>?> apiServicesAppAuditlogGetentitypropertychangesGet({ int? entityChangeId }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -421,7 +421,7 @@ class AuditLogApi {
   /// ApiServicesAppAuditlogGetentitytypechangesGet
   ///
   /// 
-  Future<PagedResultDtoOfEntityChangeListDto> apiServicesAppAuditlogGetentitytypechangesGet({ String? entityTypeFullName, String? entityId, String? sorting, int? maxResultCount, int? skipCount }) async {
+  Future<PagedResultDtoOfEntityChangeListDto?> apiServicesAppAuditlogGetentitytypechangesGet({ String? entityTypeFullName, String? entityId, String? sorting, int? maxResultCount, int? skipCount }) async {
     Object? postBody = null;
 
     // verify required params are set

@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppDynamicentitypropertyvalueAddPost**
-> apiServicesAppDynamicentitypropertyvalueAddPost(body)
+?> apiServicesAppDynamicentitypropertyvalueAddPost(body)
 
 ApiServicesAppDynamicentitypropertyvalueAddPost
 
@@ -62,7 +62,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDynamicentitypropertyvalueCleanvaluesPost**
-> apiServicesAppDynamicentitypropertyvalueCleanvaluesPost(body)
+?> apiServicesAppDynamicentitypropertyvalueCleanvaluesPost(body)
 
 ApiServicesAppDynamicentitypropertyvalueCleanvaluesPost
 
@@ -104,7 +104,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDynamicentitypropertyvalueDeleteDelete**
-> apiServicesAppDynamicentitypropertyvalueDeleteDelete(id)
+?> apiServicesAppDynamicentitypropertyvalueDeleteDelete(id)
 
 ApiServicesAppDynamicentitypropertyvalueDeleteDelete
 
@@ -279,7 +279,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDynamicentitypropertyvalueInsertorupdateallvaluesPost**
-> apiServicesAppDynamicentitypropertyvalueInsertorupdateallvaluesPost(body)
+?> apiServicesAppDynamicentitypropertyvalueInsertorupdateallvaluesPost(body)
 
 ApiServicesAppDynamicentitypropertyvalueInsertorupdateallvaluesPost
 
@@ -321,7 +321,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDynamicentitypropertyvalueUpdatePut**
-> apiServicesAppDynamicentitypropertyvalueUpdatePut(body)
+?> apiServicesAppDynamicentitypropertyvalueUpdatePut(body)
 
 ApiServicesAppDynamicentitypropertyvalueUpdatePut
 

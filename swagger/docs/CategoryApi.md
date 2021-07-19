@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppCategoryAddrolestocategoryPost**
-> apiServicesAppCategoryAddrolestocategoryPost(body)
+?> apiServicesAppCategoryAddrolestocategoryPost(body)
 
 ApiServicesAppCategoryAddrolestocategoryPost
 
@@ -70,7 +70,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppCategoryAdduserstocategoryPost**
-> apiServicesAppCategoryAdduserstocategoryPost(body)
+?> apiServicesAppCategoryAdduserstocategoryPost(body)
 
 ApiServicesAppCategoryAdduserstocategoryPost
 
@@ -155,7 +155,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppCategoryDeletecategoryDelete**
-> apiServicesAppCategoryDeletecategoryDelete(id)
+?> apiServicesAppCategoryDeletecategoryDelete(id)
 
 ApiServicesAppCategoryDeletecategoryDelete
 
@@ -592,7 +592,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppCategoryRemoverolefromcategoryDelete**
-> apiServicesAppCategoryRemoverolefromcategoryDelete(roleId, categoryId)
+?> apiServicesAppCategoryRemoverolefromcategoryDelete(roleId, categoryId)
 
 ApiServicesAppCategoryRemoverolefromcategoryDelete
 
@@ -636,7 +636,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppCategoryRemoveuserfromcategoryDelete**
-> apiServicesAppCategoryRemoveuserfromcategoryDelete(userId, categoryId)
+?> apiServicesAppCategoryRemoveuserfromcategoryDelete(userId, categoryId)
 
 ApiServicesAppCategoryRemoveuserfromcategoryDelete
 

@@ -111,7 +111,7 @@ class CitiesApi {
   /// ApiServicesAppCitiesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetCityForViewDto> apiServicesAppCitiesGetallGet({ String? filter, String? nameFilter, String? stateCodeFilter, String? countryCodeFilter, String? stateNameFilter, String? countryNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetCityForViewDto?> apiServicesAppCitiesGetallGet({ String? filter, String? nameFilter, String? stateCodeFilter, String? countryCodeFilter, String? stateNameFilter, String? countryNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -187,7 +187,7 @@ class CitiesApi {
   /// ApiServicesAppCitiesGetallcountryforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfCityCountryLookupTableDto> apiServicesAppCitiesGetallcountryforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfCityCountryLookupTableDto?> apiServicesAppCitiesGetallcountryforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -248,7 +248,7 @@ class CitiesApi {
   /// ApiServicesAppCitiesGetallstateforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfCityStateLookupTableDto> apiServicesAppCitiesGetallstateforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfCityStateLookupTableDto?> apiServicesAppCitiesGetallstateforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -309,7 +309,7 @@ class CitiesApi {
   /// ApiServicesAppCitiesGetcitiestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppCitiesGetcitiestoexcelGet({ String? filter, String? nameFilter, String? stateCodeFilter, String? countryCodeFilter, String? stateNameFilter, String? countryNameFilter }) async {
+  Future<FileDto?> apiServicesAppCitiesGetcitiestoexcelGet({ String? filter, String? nameFilter, String? stateCodeFilter, String? countryCodeFilter, String? stateNameFilter, String? countryNameFilter }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -376,7 +376,7 @@ class CitiesApi {
   /// ApiServicesAppCitiesGetcityforeditGet
   ///
   /// 
-  Future<GetCityForEditOutput> apiServicesAppCitiesGetcityforeditGet({ int? id }) async {
+  Future<GetCityForEditOutput?> apiServicesAppCitiesGetcityforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -428,7 +428,7 @@ class CitiesApi {
   /// ApiServicesAppCitiesGetcityforviewGet
   ///
   /// 
-  Future<GetCityForViewDto> apiServicesAppCitiesGetcityforviewGet({ int? id }) async {
+  Future<GetCityForViewDto?> apiServicesAppCitiesGetcityforviewGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -480,7 +480,7 @@ class CitiesApi {
   /// ApiServicesAppCitiesWholebystatePost
   ///
   /// 
-  Future<ListResultDtoOfGetCityForViewDto> apiServicesAppCitiesWholebystatePost({ int? stateId }) async {
+  Future<ListResultDtoOfGetCityForViewDto?> apiServicesAppCitiesWholebystatePost({ int? stateId }) async {
     Object? postBody = null;
 
     // verify required params are set

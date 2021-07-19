@@ -111,7 +111,7 @@ class PaymentApi {
   /// ApiServicesAppPaymentCreatepaymentPost
   ///
   /// 
-  Future<int> apiServicesAppPaymentCreatepaymentPost({ CreatePaymentDto? body }) async {
+  Future<int?> apiServicesAppPaymentCreatepaymentPost({ CreatePaymentDto? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -212,7 +212,7 @@ class PaymentApi {
   /// ApiServicesAppPaymentGetactivegatewaysGet
   ///
   /// 
-  Future<List<PaymentGatewayModel>> apiServicesAppPaymentGetactivegatewaysGet({ bool? recurringPaymentsEnabled }) async {
+  Future<List<PaymentGatewayModel>?> apiServicesAppPaymentGetactivegatewaysGet({ bool? recurringPaymentsEnabled }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -264,7 +264,7 @@ class PaymentApi {
   /// ApiServicesAppPaymentGetlastcompletedpaymentGet
   ///
   /// 
-  Future<SubscriptionPaymentDto> apiServicesAppPaymentGetlastcompletedpaymentGet() async {
+  Future<SubscriptionPaymentDto?> apiServicesAppPaymentGetlastcompletedpaymentGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -313,7 +313,7 @@ class PaymentApi {
   /// ApiServicesAppPaymentGetpaymentGet
   ///
   /// 
-  Future<SubscriptionPaymentDto> apiServicesAppPaymentGetpaymentGet({ int? paymentId }) async {
+  Future<SubscriptionPaymentDto?> apiServicesAppPaymentGetpaymentGet({ int? paymentId }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -365,7 +365,7 @@ class PaymentApi {
   /// ApiServicesAppPaymentGetpaymenthistoryGet
   ///
   /// 
-  Future<PagedResultDtoOfSubscriptionPaymentListDto> apiServicesAppPaymentGetpaymenthistoryGet({ String? sorting, int? maxResultCount, int? skipCount }) async {
+  Future<PagedResultDtoOfSubscriptionPaymentListDto?> apiServicesAppPaymentGetpaymenthistoryGet({ String? sorting, int? maxResultCount, int? skipCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -423,7 +423,7 @@ class PaymentApi {
   /// ApiServicesAppPaymentHasanypaymentPost
   ///
   /// 
-  Future<bool> apiServicesAppPaymentHasanypaymentPost() async {
+  Future<bool?> apiServicesAppPaymentHasanypaymentPost() async {
     Object? postBody = null;
 
     // verify required params are set

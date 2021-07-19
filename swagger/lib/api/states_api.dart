@@ -111,7 +111,7 @@ class StatesApi {
   /// ApiServicesAppStatesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetStateForViewDto> apiServicesAppStatesGetallGet({ String? filter, String? nameFilter, String? countryCodeFilter, String? stateCodeFilter, String? countryNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetStateForViewDto?> apiServicesAppStatesGetallGet({ String? filter, String? nameFilter, String? countryCodeFilter, String? stateCodeFilter, String? countryNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -184,7 +184,7 @@ class StatesApi {
   /// ApiServicesAppStatesGetallcountryforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfStateCountryLookupTableDto> apiServicesAppStatesGetallcountryforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfStateCountryLookupTableDto?> apiServicesAppStatesGetallcountryforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -245,7 +245,7 @@ class StatesApi {
   /// ApiServicesAppStatesGetstateforeditGet
   ///
   /// 
-  Future<GetStateForEditOutput> apiServicesAppStatesGetstateforeditGet({ int? id }) async {
+  Future<GetStateForEditOutput?> apiServicesAppStatesGetstateforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -297,7 +297,7 @@ class StatesApi {
   /// ApiServicesAppStatesGetstateforviewGet
   ///
   /// 
-  Future<GetStateForViewDto> apiServicesAppStatesGetstateforviewGet({ int? id }) async {
+  Future<GetStateForViewDto?> apiServicesAppStatesGetstateforviewGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -349,7 +349,7 @@ class StatesApi {
   /// ApiServicesAppStatesGetstatestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppStatesGetstatestoexcelGet({ String? filter, String? nameFilter, String? countryCodeFilter, String? stateCodeFilter, String? countryNameFilter }) async {
+  Future<FileDto?> apiServicesAppStatesGetstatestoexcelGet({ String? filter, String? nameFilter, String? countryCodeFilter, String? stateCodeFilter, String? countryNameFilter }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -413,7 +413,7 @@ class StatesApi {
   /// ApiServicesAppStatesWholebycountryPost
   ///
   /// 
-  Future<ListResultDtoOfGetStateForViewDto> apiServicesAppStatesWholebycountryPost({ int? countryId }) async {
+  Future<ListResultDtoOfGetStateForViewDto?> apiServicesAppStatesWholebycountryPost({ int? countryId }) async {
     Object? postBody = null;
 
     // verify required params are set

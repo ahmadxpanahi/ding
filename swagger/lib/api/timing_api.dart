@@ -10,7 +10,7 @@ class TimingApi {
   /// ApiServicesAppTimingGettimezonecomboboxitemsGet
   ///
   /// 
-  Future<List<ComboboxItemDto>> apiServicesAppTimingGettimezonecomboboxitemsGet({ String? selectedTimezoneId }) async {
+  Future<List<ComboboxItemDto>?> apiServicesAppTimingGettimezonecomboboxitemsGet({ String? selectedTimezoneId }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -62,7 +62,7 @@ class TimingApi {
   /// ApiServicesAppTimingGettimezonesGet
   ///
   /// 
-  Future<ListResultDtoOfNameValueDto> apiServicesAppTimingGettimezonesGet(String defaultTimezoneScope) async {
+  Future<ListResultDtoOfNameValueDto?> apiServicesAppTimingGettimezonesGet(String defaultTimezoneScope) async {
     Object? postBody = null;
 
     // verify required params are set

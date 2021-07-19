@@ -10,7 +10,7 @@ class WebLogApi {
   /// ApiServicesAppWeblogDownloadweblogsPost
   ///
   /// 
-  Future<FileDto> apiServicesAppWeblogDownloadweblogsPost() async {
+  Future<FileDto?> apiServicesAppWeblogDownloadweblogsPost() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -59,7 +59,7 @@ class WebLogApi {
   /// ApiServicesAppWeblogGetlatestweblogsGet
   ///
   /// 
-  Future<GetLatestWebLogsOutput> apiServicesAppWeblogGetlatestweblogsGet() async {
+  Future<GetLatestWebLogsOutput?> apiServicesAppWeblogGetlatestweblogsGet() async {
     Object? postBody = null;
 
     // verify required params are set

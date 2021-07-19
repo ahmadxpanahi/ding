@@ -111,7 +111,7 @@ class LanguageApi {
   /// ApiServicesAppLanguageGetlanguageforeditGet
   ///
   /// 
-  Future<GetLanguageForEditOutput> apiServicesAppLanguageGetlanguageforeditGet({ int? id }) async {
+  Future<GetLanguageForEditOutput?> apiServicesAppLanguageGetlanguageforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -163,7 +163,7 @@ class LanguageApi {
   /// ApiServicesAppLanguageGetlanguagesGet
   ///
   /// 
-  Future<GetLanguagesOutput> apiServicesAppLanguageGetlanguagesGet() async {
+  Future<GetLanguagesOutput?> apiServicesAppLanguageGetlanguagesGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -212,7 +212,7 @@ class LanguageApi {
   /// ApiServicesAppLanguageGetlanguagetextsGet
   ///
   /// 
-  Future<PagedResultDtoOfLanguageTextListDto> apiServicesAppLanguageGetlanguagetextsGet(String sourceName, String targetLanguageName, { int? maxResultCount, int? skipCount, String? sorting, String? baseLanguageName, String? targetValueFilter, String? filterText }) async {
+  Future<PagedResultDtoOfLanguageTextListDto?> apiServicesAppLanguageGetlanguagetextsGet(String sourceName, String targetLanguageName, { int? maxResultCount, int? skipCount, String? sorting, String? baseLanguageName, String? targetValueFilter, String? filterText }) async {
     Object? postBody = null;
 
     // verify required params are set

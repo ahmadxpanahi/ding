@@ -10,7 +10,7 @@ class DetailedEmployeeReportsApi {
   /// ApiServicesAppDetailedemployeereportsGetallGet
   ///
   /// 
-  Future<List<GetDetailedEmployeeReportForViewDto>> apiServicesAppDetailedemployeereportsGetallGet({ int? userIdFilter, String? userNameFilter, int? workScheduleIdFilter, String? workScheduleNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo }) async {
+  Future<List<GetDetailedEmployeeReportForViewDto>?> apiServicesAppDetailedemployeereportsGetallGet({ int? userIdFilter, String? userNameFilter, int? workScheduleIdFilter, String? workScheduleNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo }) async {
     Object? postBody = null;
 
     // verify required params are set

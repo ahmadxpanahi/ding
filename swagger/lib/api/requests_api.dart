@@ -160,7 +160,7 @@ class RequestsApi {
   /// ApiServicesAppRequestsGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetRequestForViewDto> apiServicesAppRequestsGetallGet({ String? filter, int? requestTypeFilter, DateTime? fromFilter, DateTime? toFilter, String? commentFilter, int? statusFilter, String? userNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetRequestForViewDto?> apiServicesAppRequestsGetallGet({ String? filter, int? requestTypeFilter, DateTime? fromFilter, DateTime? toFilter, String? commentFilter, int? statusFilter, String? userNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -239,7 +239,7 @@ class RequestsApi {
   /// ApiServicesAppRequestsGetalluserforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfRequestUserLookupTableDto> apiServicesAppRequestsGetalluserforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfRequestUserLookupTableDto?> apiServicesAppRequestsGetalluserforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -300,7 +300,7 @@ class RequestsApi {
   /// ApiServicesAppRequestsGetrequestforeditGet
   ///
   /// 
-  Future<GetRequestForEditOutput> apiServicesAppRequestsGetrequestforeditGet({ int? id }) async {
+  Future<GetRequestForEditOutput?> apiServicesAppRequestsGetrequestforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -352,7 +352,7 @@ class RequestsApi {
   /// ApiServicesAppRequestsGetrequestforviewGet
   ///
   /// 
-  Future<GetRequestForViewDto> apiServicesAppRequestsGetrequestforviewGet({ int? id }) async {
+  Future<GetRequestForViewDto?> apiServicesAppRequestsGetrequestforviewGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -404,7 +404,7 @@ class RequestsApi {
   /// ApiServicesAppRequestsGetrequeststoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppRequestsGetrequeststoexcelGet({ String? filter, int? requestTypeFilter, DateTime? fromFilter, DateTime? toFilter, String? commentFilter, int? statusFilter, String? userNameFilter }) async {
+  Future<FileDto?> apiServicesAppRequestsGetrequeststoexcelGet({ String? filter, int? requestTypeFilter, DateTime? fromFilter, DateTime? toFilter, String? commentFilter, int? statusFilter, String? userNameFilter }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -474,7 +474,7 @@ class RequestsApi {
   /// ApiServicesAppRequestsGetuserrequestsbydateGet
   ///
   /// 
-  Future<List<GetRequestForViewDto>> apiServicesAppRequestsGetuserrequestsbydateGet({ int? userId, DateTime? dateFrom, DateTime? dateTo }) async {
+  Future<List<GetRequestForViewDto>?> apiServicesAppRequestsGetuserrequestsbydateGet({ int? userId, DateTime? dateFrom, DateTime? dateTo }) async {
     Object? postBody = null;
 
     // verify required params are set

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppPaypalpaymentConfirmpaymentPost**
-> apiServicesAppPaypalpaymentConfirmpaymentPost(paymentId, paypalOrderId)
+?> apiServicesAppPaypalpaymentConfirmpaymentPost(paymentId, paypalOrderId)
 
 ApiServicesAppPaypalpaymentConfirmpaymentPost
 

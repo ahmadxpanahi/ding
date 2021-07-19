@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppTenantChangetenantadminPost**
-> apiServicesAppTenantChangetenantadminPost(body)
+?> apiServicesAppTenantChangetenantadminPost(body)
 
 ApiServicesAppTenantChangetenantadminPost
 
@@ -64,7 +64,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppTenantCreatetenantPost**
-> apiServicesAppTenantCreatetenantPost(body)
+?> apiServicesAppTenantCreatetenantPost(body)
 
 ApiServicesAppTenantCreatetenantPost
 
@@ -106,7 +106,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppTenantDeletetenantDelete**
-> apiServicesAppTenantDeletetenantDelete(id)
+?> apiServicesAppTenantDeletetenantDelete(id)
 
 ApiServicesAppTenantDeletetenantDelete
 
@@ -295,7 +295,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppTenantResettenantspecificfeaturesPost**
-> apiServicesAppTenantResettenantspecificfeaturesPost(body)
+?> apiServicesAppTenantResettenantspecificfeaturesPost(body)
 
 ApiServicesAppTenantResettenantspecificfeaturesPost
 
@@ -337,7 +337,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppTenantUnlocktenantadminPost**
-> apiServicesAppTenantUnlocktenantadminPost(body)
+?> apiServicesAppTenantUnlocktenantadminPost(body)
 
 ApiServicesAppTenantUnlocktenantadminPost
 
@@ -379,7 +379,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppTenantUpdatetenantPut**
-> apiServicesAppTenantUpdatetenantPut(body)
+?> apiServicesAppTenantUpdatetenantPut(body)
 
 ApiServicesAppTenantUpdatetenantPut
 
@@ -421,7 +421,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppTenantUpdatetenantfeaturesPut**
-> apiServicesAppTenantUpdatetenantfeaturesPut(body)
+?> apiServicesAppTenantUpdatetenantfeaturesPut(body)
 
 ApiServicesAppTenantUpdatetenantfeaturesPut
 

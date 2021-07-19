@@ -10,7 +10,7 @@ class CommonLookupApi {
   /// ApiServicesAppCommonlookupFindusersPost
   ///
   /// 
-  Future<PagedResultDtoOfNameValueDto> apiServicesAppCommonlookupFindusersPost({ FindUsersInput? body }) async {
+  Future<PagedResultDtoOfNameValueDto?> apiServicesAppCommonlookupFindusersPost({ FindUsersInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -59,7 +59,7 @@ class CommonLookupApi {
   /// ApiServicesAppCommonlookupGetdefaulteditionnameGet
   ///
   /// 
-  Future<GetDefaultEditionNameOutput> apiServicesAppCommonlookupGetdefaulteditionnameGet() async {
+  Future<GetDefaultEditionNameOutput?> apiServicesAppCommonlookupGetdefaulteditionnameGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -108,7 +108,7 @@ class CommonLookupApi {
   /// ApiServicesAppCommonlookupGeteditionsforcomboboxGet
   ///
   /// 
-  Future<ListResultDtoOfSubscribableEditionComboboxItemDto> apiServicesAppCommonlookupGeteditionsforcomboboxGet({ bool? onlyFreeItems }) async {
+  Future<ListResultDtoOfSubscribableEditionComboboxItemDto?> apiServicesAppCommonlookupGeteditionsforcomboboxGet({ bool? onlyFreeItems }) async {
     Object? postBody = null;
 
     // verify required params are set

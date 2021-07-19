@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppDevicesActivePost**
-> apiServicesAppDevicesActivePost(deviceId)
+?> apiServicesAppDevicesActivePost(deviceId)
 
 ApiServicesAppDevicesActivePost
 
@@ -70,7 +70,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDevicesAssignPost**
-> apiServicesAppDevicesAssignPost(deviceId)
+?> apiServicesAppDevicesAssignPost(deviceId)
 
 ApiServicesAppDevicesAssignPost
 
@@ -112,7 +112,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDevicesAvailablePost**
-> apiServicesAppDevicesAvailablePost(deviceId)
+?> apiServicesAppDevicesAvailablePost(deviceId)
 
 ApiServicesAppDevicesAvailablePost
 
@@ -154,7 +154,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDevicesCreateoreditPost**
-> apiServicesAppDevicesCreateoreditPost(body)
+?> apiServicesAppDevicesCreateoreditPost(body)
 
 ApiServicesAppDevicesCreateoreditPost
 
@@ -196,7 +196,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDevicesDeactivePost**
-> apiServicesAppDevicesDeactivePost(deviceId)
+?> apiServicesAppDevicesDeactivePost(deviceId)
 
 ApiServicesAppDevicesDeactivePost
 
@@ -238,7 +238,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDevicesDeleteDelete**
-> apiServicesAppDevicesDeleteDelete(id)
+?> apiServicesAppDevicesDeleteDelete(id)
 
 ApiServicesAppDevicesDeleteDelete
 
@@ -637,7 +637,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDevicesResetPost**
-> apiServicesAppDevicesResetPost(deviceId)
+?> apiServicesAppDevicesResetPost(deviceId)
 
 ApiServicesAppDevicesResetPost
 
@@ -679,7 +679,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDevicesSuspendPost**
-> apiServicesAppDevicesSuspendPost(deviceId)
+?> apiServicesAppDevicesSuspendPost(deviceId)
 
 ApiServicesAppDevicesSuspendPost
 
@@ -721,7 +721,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDevicesUpdatemydevicePut**
-> apiServicesAppDevicesUpdatemydevicePut(body)
+?> apiServicesAppDevicesUpdatemydevicePut(body)
 
 ApiServicesAppDevicesUpdatemydevicePut
 

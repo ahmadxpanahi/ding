@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppAccountActivateemailPost**
-> apiServicesAppAccountActivateemailPost(body)
+?> apiServicesAppAccountActivateemailPost(body)
 
 ApiServicesAppAccountActivateemailPost
 
@@ -410,7 +410,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppAccountSaveprofilePost**
-> apiServicesAppAccountSaveprofilePost(body)
+?> apiServicesAppAccountSaveprofilePost(body)
 
 ApiServicesAppAccountSaveprofilePost
 
@@ -452,7 +452,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppAccountSendemailactivationlinkPost**
-> apiServicesAppAccountSendemailactivationlinkPost(body)
+?> apiServicesAppAccountSendemailactivationlinkPost(body)
 
 ApiServicesAppAccountSendemailactivationlinkPost
 
@@ -494,7 +494,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppAccountSendpasswordresetcodePost**
-> apiServicesAppAccountSendpasswordresetcodePost(body)
+?> apiServicesAppAccountSendpasswordresetcodePost(body)
 
 ApiServicesAppAccountSendpasswordresetcodePost
 
@@ -536,7 +536,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppAccountSendverificationsmsPost**
-> apiServicesAppAccountSendverificationsmsPost(body)
+?> apiServicesAppAccountSendverificationsmsPost(body)
 
 ApiServicesAppAccountSendverificationsmsPost
 

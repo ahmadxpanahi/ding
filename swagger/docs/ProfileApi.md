@@ -29,7 +29,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppProfileChangelanguagePost**
-> apiServicesAppProfileChangelanguagePost(body)
+?> apiServicesAppProfileChangelanguagePost(body)
 
 ApiServicesAppProfileChangelanguagePost
 
@@ -71,7 +71,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppProfileChangepasswordPost**
-> apiServicesAppProfileChangepasswordPost(body)
+?> apiServicesAppProfileChangepasswordPost(body)
 
 ApiServicesAppProfileChangepasswordPost
 
@@ -113,7 +113,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppProfileDisablegoogleauthenticatorPost**
-> apiServicesAppProfileDisablegoogleauthenticatorPost()
+?> apiServicesAppProfileDisablegoogleauthenticatorPost()
 
 ApiServicesAppProfileDisablegoogleauthenticatorPost
 
@@ -442,7 +442,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppProfilePreparecollecteddataPost**
-> apiServicesAppProfilePreparecollecteddataPost()
+?> apiServicesAppProfilePreparecollecteddataPost()
 
 ApiServicesAppProfilePreparecollecteddataPost
 
@@ -480,7 +480,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppProfileSendverificationsmsPost**
-> apiServicesAppProfileSendverificationsmsPost(body)
+?> apiServicesAppProfileSendverificationsmsPost(body)
 
 ApiServicesAppProfileSendverificationsmsPost
 
@@ -522,7 +522,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppProfileTransferandupdateprofilepicturePost**
-> apiServicesAppProfileTransferandupdateprofilepicturePost(body)
+?> apiServicesAppProfileTransferandupdateprofilepicturePost(body)
 
 ApiServicesAppProfileTransferandupdateprofilepicturePost
 
@@ -564,7 +564,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppProfileUpdatecurrentuserprofilePut**
-> apiServicesAppProfileUpdatecurrentuserprofilePut(body)
+?> apiServicesAppProfileUpdatecurrentuserprofilePut(body)
 
 ApiServicesAppProfileUpdatecurrentuserprofilePut
 
@@ -645,7 +645,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppProfileUpdateprofilepicturePut**
-> apiServicesAppProfileUpdateprofilepicturePut(body)
+?> apiServicesAppProfileUpdateprofilepicturePut(body)
 
 ApiServicesAppProfileUpdateprofilepicturePut
 
@@ -687,7 +687,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppProfileVerifysmscodePost**
-> apiServicesAppProfileVerifysmscodePost(body)
+?> apiServicesAppProfileVerifysmscodePost(body)
 
 ApiServicesAppProfileVerifysmscodePost
 

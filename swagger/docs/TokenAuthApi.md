@@ -197,7 +197,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiTokenauthGetexternalauthenticationprovidersGet**
-> List<ExternalLoginProviderInfoModel> apiTokenauthGetexternalauthenticationprovidersGet()
+> List<ExternalLoginProviderInfoModel?> apiTokenauthGetexternalauthenticationprovidersGet()
 
 ApiTokenauthGetexternalauthenticationprovidersGet
 
@@ -322,7 +322,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiTokenauthLogoutGet**
-> apiTokenauthLogoutGet()
+?> apiTokenauthLogoutGet()
 
 ApiTokenauthLogoutGet
 
@@ -403,7 +403,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiTokenauthSendtwofactorauthcodePost**
-> apiTokenauthSendtwofactorauthcodePost(body)
+?> apiTokenauthSendtwofactorauthcodePost(body)
 
 ApiTokenauthSendtwofactorauthcodePost
 
@@ -445,7 +445,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiTokenauthTestnotificationGet**
-> apiTokenauthTestnotificationGet(message, severity)
+?> apiTokenauthTestnotificationGet(message, severity)
 
 ApiTokenauthTestnotificationGet
 

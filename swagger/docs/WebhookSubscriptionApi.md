@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppWebhooksubscriptionActivatewebhooksubscriptionPost**
-> apiServicesAppWebhooksubscriptionActivatewebhooksubscriptionPost(body)
+?> apiServicesAppWebhooksubscriptionActivatewebhooksubscriptionPost(body)
 
 ApiServicesAppWebhooksubscriptionActivatewebhooksubscriptionPost
 
@@ -63,7 +63,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppWebhooksubscriptionAddsubscriptionPost**
-> apiServicesAppWebhooksubscriptionAddsubscriptionPost(body)
+?> apiServicesAppWebhooksubscriptionAddsubscriptionPost(body)
 
 ApiServicesAppWebhooksubscriptionAddsubscriptionPost
 
@@ -351,7 +351,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppWebhooksubscriptionUpdatesubscriptionPut**
-> apiServicesAppWebhooksubscriptionUpdatesubscriptionPut(body)
+?> apiServicesAppWebhooksubscriptionUpdatesubscriptionPut(body)
 
 ApiServicesAppWebhooksubscriptionUpdatesubscriptionPut
 

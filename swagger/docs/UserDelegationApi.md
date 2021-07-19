@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppUserdelegationDelegatenewuserPost**
-> apiServicesAppUserdelegationDelegatenewuserPost(body)
+?> apiServicesAppUserdelegationDelegatenewuserPost(body)
 
 ApiServicesAppUserdelegationDelegatenewuserPost
 
@@ -58,7 +58,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserdelegationGetactiveuserdelegationsGet**
-> List<UserDelegationDto> apiServicesAppUserdelegationGetactiveuserdelegationsGet()
+> List<UserDelegationDto?> apiServicesAppUserdelegationGetactiveuserdelegationsGet()
 
 ApiServicesAppUserdelegationGetactiveuserdelegationsGet
 
@@ -144,7 +144,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserdelegationRemovedelegationDelete**
-> apiServicesAppUserdelegationRemovedelegationDelete(id)
+?> apiServicesAppUserdelegationRemovedelegationDelete(id)
 
 ApiServicesAppUserdelegationRemovedelegationDelete
 

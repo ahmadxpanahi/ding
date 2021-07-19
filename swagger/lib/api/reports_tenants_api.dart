@@ -10,7 +10,7 @@ class ReportsTenantsApi {
   /// ApiServicesAppReportstenantsGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetReportsTenantForViewDto> apiServicesAppReportstenantsGetallGet({ String? filter, DateTime? subscriptionEndDateStart, DateTime? subscriptionEndDateEnd, DateTime? creationDateStart, DateTime? creationDateEnd, String? seniorManagerNameFilter, String? seniorManagerSurnameFilter, String? seniorManagerPhoneNumberFilter, String? adminEmailAddressFilter, String? addressFilter, String? tenancyNameFilter, String? nameFilter, int? isActiveFilter, String? countryNameFilter, String? stateNameFilter, String? cityNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetReportsTenantForViewDto?> apiServicesAppReportstenantsGetallGet({ String? filter, DateTime? subscriptionEndDateStart, DateTime? subscriptionEndDateEnd, DateTime? creationDateStart, DateTime? creationDateEnd, String? seniorManagerNameFilter, String? seniorManagerSurnameFilter, String? seniorManagerPhoneNumberFilter, String? adminEmailAddressFilter, String? addressFilter, String? tenancyNameFilter, String? nameFilter, int? isActiveFilter, String? countryNameFilter, String? stateNameFilter, String? cityNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -116,7 +116,7 @@ class ReportsTenantsApi {
   /// ApiServicesAppReportstenantsGetreportstenantstoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppReportstenantsGetreportstenantstoexcelGet({ String? filter, DateTime? subscriptionEndDateStart, DateTime? subscriptionEndDateEnd, DateTime? creationDateStart, DateTime? creationDateEnd, String? seniorManagerNameFilter, String? seniorManagerSurnameFilter, String? seniorManagerPhoneNumberFilter, String? adminEmailAddressFilter, String? addressFilter, String? tenancyNameFilter, String? nameFilter, int? isActiveFilter, String? countryNameFilter, String? stateNameFilter, String? cityNameFilter }) async {
+  Future<FileDto?> apiServicesAppReportstenantsGetreportstenantstoexcelGet({ String? filter, DateTime? subscriptionEndDateStart, DateTime? subscriptionEndDateEnd, DateTime? creationDateStart, DateTime? creationDateEnd, String? seniorManagerNameFilter, String? seniorManagerSurnameFilter, String? seniorManagerPhoneNumberFilter, String? adminEmailAddressFilter, String? addressFilter, String? tenancyNameFilter, String? nameFilter, int? isActiveFilter, String? countryNameFilter, String? stateNameFilter, String? cityNameFilter }) async {
     Object? postBody = null;
 
     // verify required params are set

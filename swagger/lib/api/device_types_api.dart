@@ -111,7 +111,7 @@ class DeviceTypesApi {
   /// ApiServicesAppDevicetypesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetDeviceTypeForViewDto> apiServicesAppDevicetypesGetallGet({ String? filter, String? titleFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetDeviceTypeForViewDto?> apiServicesAppDevicetypesGetallGet({ String? filter, String? titleFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -175,7 +175,7 @@ class DeviceTypesApi {
   /// ApiServicesAppDevicetypesGetdevicetypeforeditGet
   ///
   /// 
-  Future<GetDeviceTypeForEditOutput> apiServicesAppDevicetypesGetdevicetypeforeditGet({ int? id }) async {
+  Future<GetDeviceTypeForEditOutput?> apiServicesAppDevicetypesGetdevicetypeforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -227,7 +227,7 @@ class DeviceTypesApi {
   /// ApiServicesAppDevicetypesGetdevicetypeforviewGet
   ///
   /// 
-  Future<GetDeviceTypeForViewDto> apiServicesAppDevicetypesGetdevicetypeforviewGet({ int? id }) async {
+  Future<GetDeviceTypeForViewDto?> apiServicesAppDevicetypesGetdevicetypeforviewGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -279,7 +279,7 @@ class DeviceTypesApi {
   /// ApiServicesAppDevicetypesGetdevicetypestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppDevicetypesGetdevicetypestoexcelGet({ String? filter, String? titleFilter }) async {
+  Future<FileDto?> apiServicesAppDevicetypesGetdevicetypestoexcelGet({ String? filter, String? titleFilter }) async {
     Object? postBody = null;
 
     // verify required params are set

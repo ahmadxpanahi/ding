@@ -10,7 +10,7 @@ class TokenAuthApi {
   /// ApiTokenauthAuthenticatePost
   ///
   /// 
-  Future<AuthenticateResultModel> apiTokenauthAuthenticatePost({ AuthenticateModel? body }) async {
+  Future<AuthenticateResultModel?> apiTokenauthAuthenticatePost({ AuthenticateModel? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -59,7 +59,7 @@ class TokenAuthApi {
   /// ApiTokenauthAuthenticatebytenantPost
   ///
   /// 
-  Future<AuthenticateResultModel> apiTokenauthAuthenticatebytenantPost({ AuthenticateByTenantModel? body }) async {
+  Future<AuthenticateResultModel?> apiTokenauthAuthenticatebytenantPost({ AuthenticateByTenantModel? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -108,7 +108,7 @@ class TokenAuthApi {
   /// ApiTokenauthDelegatedimpersonatedauthenticatePost
   ///
   /// 
-  Future<ImpersonatedAuthenticateResultModel> apiTokenauthDelegatedimpersonatedauthenticatePost({ int? userDelegationId, String? impersonationToken }) async {
+  Future<ImpersonatedAuthenticateResultModel?> apiTokenauthDelegatedimpersonatedauthenticatePost({ int? userDelegationId, String? impersonationToken }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -163,7 +163,7 @@ class TokenAuthApi {
   /// ApiTokenauthExternalauthenticatePost
   ///
   /// 
-  Future<ExternalAuthenticateResultModel> apiTokenauthExternalauthenticatePost({ ExternalAuthenticateModel? body }) async {
+  Future<ExternalAuthenticateResultModel?> apiTokenauthExternalauthenticatePost({ ExternalAuthenticateModel? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -212,7 +212,7 @@ class TokenAuthApi {
   /// ApiTokenauthGetexternalauthenticationprovidersGet
   ///
   /// 
-  Future<List<ExternalLoginProviderInfoModel>> apiTokenauthGetexternalauthenticationprovidersGet() async {
+  Future<List<ExternalLoginProviderInfoModel>?> apiTokenauthGetexternalauthenticationprovidersGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -261,7 +261,7 @@ class TokenAuthApi {
   /// ApiTokenauthImpersonatedauthenticatePost
   ///
   /// 
-  Future<ImpersonatedAuthenticateResultModel> apiTokenauthImpersonatedauthenticatePost({ String? impersonationToken }) async {
+  Future<ImpersonatedAuthenticateResultModel?> apiTokenauthImpersonatedauthenticatePost({ String? impersonationToken }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -313,7 +313,7 @@ class TokenAuthApi {
   /// ApiTokenauthLinkedaccountauthenticatePost
   ///
   /// 
-  Future<SwitchedAccountAuthenticateResultModel> apiTokenauthLinkedaccountauthenticatePost({ String? switchAccountToken }) async {
+  Future<SwitchedAccountAuthenticateResultModel?> apiTokenauthLinkedaccountauthenticatePost({ String? switchAccountToken }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -414,7 +414,7 @@ class TokenAuthApi {
   /// ApiTokenauthRefreshtokenPost
   ///
   /// 
-  Future<RefreshTokenResult> apiTokenauthRefreshtokenPost({ String? refreshToken }) async {
+  Future<RefreshTokenResult?> apiTokenauthRefreshtokenPost({ String? refreshToken }) async {
     Object? postBody = null;
 
     // verify required params are set

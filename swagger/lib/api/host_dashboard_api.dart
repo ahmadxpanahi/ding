@@ -10,7 +10,7 @@ class HostDashboardApi {
   /// ApiServicesAppHostdashboardGeteditiontenantstatisticsGet
   ///
   /// 
-  Future<GetEditionTenantStatisticsOutput> apiServicesAppHostdashboardGeteditiontenantstatisticsGet({ DateTime? startDate, DateTime? endDate }) async {
+  Future<GetEditionTenantStatisticsOutput?> apiServicesAppHostdashboardGeteditiontenantstatisticsGet({ DateTime? startDate, DateTime? endDate }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -65,7 +65,7 @@ class HostDashboardApi {
   /// ApiServicesAppHostdashboardGetincomestatisticsGet
   ///
   /// 
-  Future<GetIncomeStatisticsDataOutput> apiServicesAppHostdashboardGetincomestatisticsGet(String incomeStatisticsDateInterval, { DateTime? startDate, DateTime? endDate }) async {
+  Future<GetIncomeStatisticsDataOutput?> apiServicesAppHostdashboardGetincomestatisticsGet(String incomeStatisticsDateInterval, { DateTime? startDate, DateTime? endDate }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -124,7 +124,7 @@ class HostDashboardApi {
   /// ApiServicesAppHostdashboardGetrecenttenantsdataGet
   ///
   /// 
-  Future<GetRecentTenantsOutput> apiServicesAppHostdashboardGetrecenttenantsdataGet() async {
+  Future<GetRecentTenantsOutput?> apiServicesAppHostdashboardGetrecenttenantsdataGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -173,7 +173,7 @@ class HostDashboardApi {
   /// ApiServicesAppHostdashboardGetsubscriptionexpiringtenantsdataGet
   ///
   /// 
-  Future<GetExpiringTenantsOutput> apiServicesAppHostdashboardGetsubscriptionexpiringtenantsdataGet() async {
+  Future<GetExpiringTenantsOutput?> apiServicesAppHostdashboardGetsubscriptionexpiringtenantsdataGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -222,7 +222,7 @@ class HostDashboardApi {
   /// ApiServicesAppHostdashboardGettopstatsdataGet
   ///
   /// 
-  Future<TopStatsData> apiServicesAppHostdashboardGettopstatsdataGet({ DateTime? startDate, DateTime? endDate }) async {
+  Future<TopStatsData?> apiServicesAppHostdashboardGettopstatsdataGet({ DateTime? startDate, DateTime? endDate }) async {
     Object? postBody = null;
 
     // verify required params are set

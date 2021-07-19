@@ -10,7 +10,7 @@ class PermissionApi {
   /// ApiServicesAppPermissionGetallpermissionsGet
   ///
   /// 
-  Future<ListResultDtoOfFlatPermissionWithLevelDto> apiServicesAppPermissionGetallpermissionsGet() async {
+  Future<ListResultDtoOfFlatPermissionWithLevelDto?> apiServicesAppPermissionGetallpermissionsGet() async {
     Object? postBody = null;
 
     // verify required params are set

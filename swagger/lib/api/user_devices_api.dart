@@ -111,7 +111,7 @@ class UserDevicesApi {
   /// ApiServicesAppUserdevicesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetUserDeviceForViewDto> apiServicesAppUserdevicesGetallGet({ String? filter, String? userNameFilter, String? deviceNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetUserDeviceForViewDto?> apiServicesAppUserdevicesGetallGet({ String? filter, String? userNameFilter, String? deviceNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -178,7 +178,7 @@ class UserDevicesApi {
   /// ApiServicesAppUserdevicesGetalldeviceforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfUserDeviceDeviceLookupTableDto> apiServicesAppUserdevicesGetalldeviceforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfUserDeviceDeviceLookupTableDto?> apiServicesAppUserdevicesGetalldeviceforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -239,7 +239,7 @@ class UserDevicesApi {
   /// ApiServicesAppUserdevicesGetalluserforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfUserDeviceUserLookupTableDto> apiServicesAppUserdevicesGetalluserforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfUserDeviceUserLookupTableDto?> apiServicesAppUserdevicesGetalluserforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -300,7 +300,7 @@ class UserDevicesApi {
   /// ApiServicesAppUserdevicesGetuserdevicestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppUserdevicesGetuserdevicestoexcelGet({ String? filter, String? userNameFilter, String? deviceNameFilter }) async {
+  Future<FileDto?> apiServicesAppUserdevicesGetuserdevicestoexcelGet({ String? filter, String? userNameFilter, String? deviceNameFilter }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -358,7 +358,7 @@ class UserDevicesApi {
   /// ApiServicesAppUserdevicesIsindevicePost
   ///
   /// 
-  Future<bool> apiServicesAppUserdevicesIsindevicePost({ int? userId, int? deviceId }) async {
+  Future<bool?> apiServicesAppUserdevicesIsindevicePost({ int? userId, int? deviceId }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -517,7 +517,7 @@ class UserDevicesApi {
   /// ApiServicesAppUserdevicesUsersindevicecountPost
   ///
   /// 
-  Future<int> apiServicesAppUserdevicesUsersindevicecountPost({ int? deviceId }) async {
+  Future<int?> apiServicesAppUserdevicesUsersindevicecountPost({ int? deviceId }) async {
     Object? postBody = null;
 
     // verify required params are set

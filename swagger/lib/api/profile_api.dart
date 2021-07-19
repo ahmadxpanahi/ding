@@ -157,7 +157,7 @@ class ProfileApi {
   /// ApiServicesAppProfileGetcurrentuserprofileforeditGet
   ///
   /// 
-  Future<CurrentUserProfileEditDto> apiServicesAppProfileGetcurrentuserprofileforeditGet() async {
+  Future<CurrentUserProfileEditDto?> apiServicesAppProfileGetcurrentuserprofileforeditGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -206,7 +206,7 @@ class ProfileApi {
   /// ApiServicesAppProfileGetfriendprofilepictureGet
   ///
   /// 
-  Future<GetProfilePictureOutput> apiServicesAppProfileGetfriendprofilepictureGet({ int? userId, int? tenantId }) async {
+  Future<GetProfilePictureOutput?> apiServicesAppProfileGetfriendprofilepictureGet({ int? userId, int? tenantId }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -261,7 +261,7 @@ class ProfileApi {
   /// ApiServicesAppProfileGetpasswordcomplexitysettingGet
   ///
   /// 
-  Future<GetPasswordComplexitySettingOutput> apiServicesAppProfileGetpasswordcomplexitysettingGet() async {
+  Future<GetPasswordComplexitySettingOutput?> apiServicesAppProfileGetpasswordcomplexitysettingGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -310,7 +310,7 @@ class ProfileApi {
   /// ApiServicesAppProfileGetprofilepictureGet
   ///
   /// 
-  Future<GetProfilePictureOutput> apiServicesAppProfileGetprofilepictureGet() async {
+  Future<GetProfilePictureOutput?> apiServicesAppProfileGetprofilepictureGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -359,7 +359,7 @@ class ProfileApi {
   /// ApiServicesAppProfileGetprofilepicturebyidGet
   ///
   /// 
-  Future<GetProfilePictureOutput> apiServicesAppProfileGetprofilepicturebyidGet({ String? profilePictureId }) async {
+  Future<GetProfilePictureOutput?> apiServicesAppProfileGetprofilepicturebyidGet({ String? profilePictureId }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -411,7 +411,7 @@ class ProfileApi {
   /// ApiServicesAppProfileGetprofilepicturebyuserGet
   ///
   /// 
-  Future<GetProfilePictureOutput> apiServicesAppProfileGetprofilepicturebyuserGet({ int? userId }) async {
+  Future<GetProfilePictureOutput?> apiServicesAppProfileGetprofilepicturebyuserGet({ int? userId }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -463,7 +463,7 @@ class ProfileApi {
   /// ApiServicesAppProfileGetprofilepicturebyusernameGet
   ///
   /// 
-  Future<GetProfilePictureOutput> apiServicesAppProfileGetprofilepicturebyusernameGet({ String? username }) async {
+  Future<GetProfilePictureOutput?> apiServicesAppProfileGetprofilepicturebyusernameGet({ String? username }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -711,7 +711,7 @@ class ProfileApi {
   /// ApiServicesAppProfileUpdategoogleauthenticatorkeyPut
   ///
   /// 
-  Future<UpdateGoogleAuthenticatorKeyOutput> apiServicesAppProfileUpdategoogleauthenticatorkeyPut() async {
+  Future<UpdateGoogleAuthenticatorKeyOutput?> apiServicesAppProfileUpdategoogleauthenticatorkeyPut() async {
     Object? postBody = null;
 
     // verify required params are set

@@ -10,7 +10,7 @@ class UserApi {
   /// ApiServicesAppUserCreateorupdateuserPost
   ///
   /// 
-  Future<int> apiServicesAppUserCreateorupdateuserPost({ CreateOrUpdateUserInput? body }) async {
+  Future<int?> apiServicesAppUserCreateorupdateuserPost({ CreateOrUpdateUserInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -59,7 +59,7 @@ class UserApi {
   /// ApiServicesAppUserCreateuserontenantPost
   ///
   /// 
-  Future<int> apiServicesAppUserCreateuserontenantPost({ CreateUserOnTenantInput? body }) async {
+  Future<int?> apiServicesAppUserCreateuserontenantPost({ CreateUserOnTenantInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -160,7 +160,7 @@ class UserApi {
   /// ApiServicesAppUserFindusersPost
   ///
   /// 
-  Future<PagedResultDtoOfNameValueDto> apiServicesAppUserFindusersPost({ GetAllForLookupTableInput? body }) async {
+  Future<PagedResultDtoOfNameValueDto?> apiServicesAppUserFindusersPost({ GetAllForLookupTableInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -209,7 +209,7 @@ class UserApi {
   /// ApiServicesAppUserGetuserforeditGet
   ///
   /// 
-  Future<GetUserForEditOutput> apiServicesAppUserGetuserforeditGet({ int? id }) async {
+  Future<GetUserForEditOutput?> apiServicesAppUserGetuserforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -261,7 +261,7 @@ class UserApi {
   /// ApiServicesAppUserGetuserfromalltenantsGet
   ///
   /// 
-  Future<GetUserForEditOutput> apiServicesAppUserGetuserfromalltenantsGet({ int? id }) async {
+  Future<GetUserForEditOutput?> apiServicesAppUserGetuserfromalltenantsGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -313,7 +313,7 @@ class UserApi {
   /// ApiServicesAppUserGetuserpermissionsforeditGet
   ///
   /// 
-  Future<GetUserPermissionsForEditOutput> apiServicesAppUserGetuserpermissionsforeditGet({ int? id }) async {
+  Future<GetUserPermissionsForEditOutput?> apiServicesAppUserGetuserpermissionsforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -365,7 +365,7 @@ class UserApi {
   /// ApiServicesAppUserGetusersGet
   ///
   /// 
-  Future<PagedResultDtoOfUserListDto> apiServicesAppUserGetusersGet({ String? filter, List<String>? permissions, int? role, bool? onlyLockedUsers, String? genderType, DateTime? birthdate, String? bankAccount, String? address, String? homePhoneNumber, String? workPhoneNumber, String? postalCode, String? birthCertificateNumber, String? nationalCode, String? degreeType, String? occupation, String? jobTitle, String? introduceType, String? sorting, int? maxResultCount, int? skipCount }) async {
+  Future<PagedResultDtoOfUserListDto?> apiServicesAppUserGetusersGet({ String? filter, List<String>? permissions, int? role, bool? onlyLockedUsers, String? genderType, DateTime? birthdate, String? bankAccount, String? address, String? homePhoneNumber, String? workPhoneNumber, String? postalCode, String? birthCertificateNumber, String? nationalCode, String? degreeType, String? occupation, String? jobTitle, String? introduceType, String? sorting, int? maxResultCount, int? skipCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -474,7 +474,7 @@ class UserApi {
   /// ApiServicesAppUserGetuserstoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppUserGetuserstoexcelGet({ String? filter, List<String>? permissions, int? role, bool? onlyLockedUsers, String? sorting, String? genderType, DateTime? birthdate, String? bankAccount, String? address, String? homePhoneNumber, String? workPhoneNumber, String? postalCode, String? birthCertificateNumber, String? nationalCode, String? degreeType, String? occupation, String? jobTitle, String? introduceType }) async {
+  Future<FileDto?> apiServicesAppUserGetuserstoexcelGet({ String? filter, List<String>? permissions, int? role, bool? onlyLockedUsers, String? sorting, String? genderType, DateTime? birthdate, String? bankAccount, String? address, String? homePhoneNumber, String? workPhoneNumber, String? postalCode, String? birthCertificateNumber, String? nationalCode, String? degreeType, String? occupation, String? jobTitle, String? introduceType }) async {
     Object? postBody = null;
 
     // verify required params are set

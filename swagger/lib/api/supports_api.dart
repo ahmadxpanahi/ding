@@ -111,7 +111,7 @@ class SupportsApi {
   /// ApiServicesAppSupportsGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetSupportForViewDto> apiServicesAppSupportsGetallGet({ String? filter, int? tenantIdFilter, int? supportParentId, String? requestSubjectFilter, String? requestDescriptionFilter, int? requestTypeFilter, int? requestStatusFilter, String? additionalDescriptionFilter, String? deviceNameFilter, String? userNameFilter, String? supportRequestSubjectFilter, DateTime? creationDateStart, DateTime? creationDateEnd, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetSupportForViewDto?> apiServicesAppSupportsGetallGet({ String? filter, int? tenantIdFilter, int? supportParentId, String? requestSubjectFilter, String? requestDescriptionFilter, int? requestTypeFilter, int? requestStatusFilter, String? additionalDescriptionFilter, String? deviceNameFilter, String? userNameFilter, String? supportRequestSubjectFilter, DateTime? creationDateStart, DateTime? creationDateEnd, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -208,7 +208,7 @@ class SupportsApi {
   /// ApiServicesAppSupportsGetalldeviceforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfSupportDeviceLookupTableDto> apiServicesAppSupportsGetalldeviceforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfSupportDeviceLookupTableDto?> apiServicesAppSupportsGetalldeviceforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -269,7 +269,7 @@ class SupportsApi {
   /// ApiServicesAppSupportsGetallsupportforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfSupportSupportLookupTableDto> apiServicesAppSupportsGetallsupportforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfSupportSupportLookupTableDto?> apiServicesAppSupportsGetallsupportforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -330,7 +330,7 @@ class SupportsApi {
   /// ApiServicesAppSupportsGetalluserforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfSupportUserLookupTableDto> apiServicesAppSupportsGetalluserforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfSupportUserLookupTableDto?> apiServicesAppSupportsGetalluserforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -391,7 +391,7 @@ class SupportsApi {
   /// ApiServicesAppSupportsGetsupportforviewGet
   ///
   /// 
-  Future<GetSupportForViewDto> apiServicesAppSupportsGetsupportforviewGet({ int? id }) async {
+  Future<GetSupportForViewDto?> apiServicesAppSupportsGetsupportforviewGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -443,7 +443,7 @@ class SupportsApi {
   /// ApiServicesAppSupportsGetsupportstoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppSupportsGetsupportstoexcelGet({ String? filter, String? requestSubjectFilter, String? requestDescriptionFilter, int? requestTypeFilter, int? requestStatusFilter, String? additionalDescriptionFilter, String? deviceNameFilter, String? userNameFilter, String? supportRequestSubjectFilter, DateTime? creationDateStart, DateTime? creationDateEnd }) async {
+  Future<FileDto?> apiServicesAppSupportsGetsupportstoexcelGet({ String? filter, String? requestSubjectFilter, String? requestDescriptionFilter, int? requestTypeFilter, int? requestStatusFilter, String? additionalDescriptionFilter, String? deviceNameFilter, String? userNameFilter, String? supportRequestSubjectFilter, DateTime? creationDateStart, DateTime? creationDateEnd }) async {
     Object? postBody = null;
 
     // verify required params are set

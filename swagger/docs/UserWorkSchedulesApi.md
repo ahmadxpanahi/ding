@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppUserworkschedulesCreateoreditPost**
-> apiServicesAppUserworkschedulesCreateoreditPost(body)
+?> apiServicesAppUserworkschedulesCreateoreditPost(body)
 
 ApiServicesAppUserworkschedulesCreateoreditPost
 
@@ -65,7 +65,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserworkschedulesDeleteDelete**
-> apiServicesAppUserworkschedulesDeleteDelete(id)
+?> apiServicesAppUserworkschedulesDeleteDelete(id)
 
 ApiServicesAppUserworkschedulesDeleteDelete
 
@@ -481,7 +481,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserworkschedulesSaveuserworkschedulePost**
-> apiServicesAppUserworkschedulesSaveuserworkschedulePost(userId, body)
+?> apiServicesAppUserworkschedulesSaveuserworkschedulePost(userId, body)
 
 ApiServicesAppUserworkschedulesSaveuserworkschedulePost
 

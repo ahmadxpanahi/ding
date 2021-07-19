@@ -111,7 +111,7 @@ class CountriesApi {
   /// ApiServicesAppCountriesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetCountryForViewDto> apiServicesAppCountriesGetallGet({ String? filter, String? nameFilter, String? iSO3Filter, String? iSO2Filter, String? phoneCodeFilter, String? capitalFilter, String? currencyFilter, String? nativeNameFilter, String? regionFilter, String? subregionFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetCountryForViewDto?> apiServicesAppCountriesGetallGet({ String? filter, String? nameFilter, String? iSO3Filter, String? iSO2Filter, String? phoneCodeFilter, String? capitalFilter, String? currencyFilter, String? nativeNameFilter, String? regionFilter, String? subregionFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -199,7 +199,7 @@ class CountriesApi {
   /// ApiServicesAppCountriesGetcountriestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppCountriesGetcountriestoexcelGet({ String? filter, String? nameFilter, String? iSO3Filter, String? iSO2Filter, String? phoneCodeFilter, String? capitalFilter, String? currencyFilter, String? nativeNameFilter, String? regionFilter, String? subregionFilter }) async {
+  Future<FileDto?> apiServicesAppCountriesGetcountriestoexcelGet({ String? filter, String? nameFilter, String? iSO3Filter, String? iSO2Filter, String? phoneCodeFilter, String? capitalFilter, String? currencyFilter, String? nativeNameFilter, String? regionFilter, String? subregionFilter }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -278,7 +278,7 @@ class CountriesApi {
   /// ApiServicesAppCountriesGetcountryforeditGet
   ///
   /// 
-  Future<GetCountryForEditOutput> apiServicesAppCountriesGetcountryforeditGet({ int? id }) async {
+  Future<GetCountryForEditOutput?> apiServicesAppCountriesGetcountryforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -330,7 +330,7 @@ class CountriesApi {
   /// ApiServicesAppCountriesGetcountryforviewGet
   ///
   /// 
-  Future<GetCountryForViewDto> apiServicesAppCountriesGetcountryforviewGet({ int? id }) async {
+  Future<GetCountryForViewDto?> apiServicesAppCountriesGetcountryforviewGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -382,7 +382,7 @@ class CountriesApi {
   /// ApiServicesAppCountriesWholePost
   ///
   /// 
-  Future<ListResultDtoOfGetCountryForViewDto> apiServicesAppCountriesWholePost() async {
+  Future<ListResultDtoOfGetCountryForViewDto?> apiServicesAppCountriesWholePost() async {
     Object? postBody = null;
 
     // verify required params are set

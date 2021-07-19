@@ -10,7 +10,7 @@ class WebhookSendAttemptApi {
   /// ApiServicesAppWebhooksendattemptGetallsendattemptsGet
   ///
   /// 
-  Future<PagedResultDtoOfGetAllSendAttemptsOutput> apiServicesAppWebhooksendattemptGetallsendattemptsGet({ String? subscriptionId, int? maxResultCount, int? skipCount }) async {
+  Future<PagedResultDtoOfGetAllSendAttemptsOutput?> apiServicesAppWebhooksendattemptGetallsendattemptsGet({ String? subscriptionId, int? maxResultCount, int? skipCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -68,7 +68,7 @@ class WebhookSendAttemptApi {
   /// ApiServicesAppWebhooksendattemptGetallsendattemptsofwebhookeventGet
   ///
   /// 
-  Future<ListResultDtoOfGetAllSendAttemptsOfWebhookEventOutput> apiServicesAppWebhooksendattemptGetallsendattemptsofwebhookeventGet({ String? id }) async {
+  Future<ListResultDtoOfGetAllSendAttemptsOfWebhookEventOutput?> apiServicesAppWebhooksendattemptGetallsendattemptsofwebhookeventGet({ String? id }) async {
     Object? postBody = null;
 
     // verify required params are set

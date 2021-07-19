@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppDetailedemployeereportsGetallGet**
-> List<GetDetailedEmployeeReportForViewDto> apiServicesAppDetailedemployeereportsGetallGet(userIdFilter, userNameFilter, workScheduleIdFilter, workScheduleNameFilter, reportDateFrom, reportDateTo)
+> List<GetDetailedEmployeeReportForViewDto?> apiServicesAppDetailedemployeereportsGetallGet(userIdFilter, userNameFilter, workScheduleIdFilter, workScheduleNameFilter, reportDateFrom, reportDateTo)
 
 ApiServicesAppDetailedemployeereportsGetallGet
 

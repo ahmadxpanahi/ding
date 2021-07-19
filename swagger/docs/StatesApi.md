@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppStatesCreateoreditPost**
-> apiServicesAppStatesCreateoreditPost(body)
+?> apiServicesAppStatesCreateoreditPost(body)
 
 ApiServicesAppStatesCreateoreditPost
 
@@ -62,7 +62,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppStatesDeleteDelete**
-> apiServicesAppStatesDeleteDelete(id)
+?> apiServicesAppStatesDeleteDelete(id)
 
 ApiServicesAppStatesDeleteDelete
 

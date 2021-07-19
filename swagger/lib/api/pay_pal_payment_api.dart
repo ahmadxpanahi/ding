@@ -65,7 +65,7 @@ class PayPalPaymentApi {
   /// ApiServicesAppPaypalpaymentGetconfigurationGet
   ///
   /// 
-  Future<PayPalConfigurationDto> apiServicesAppPaypalpaymentGetconfigurationGet() async {
+  Future<PayPalConfigurationDto?> apiServicesAppPaypalpaymentGetconfigurationGet() async {
     Object? postBody = null;
 
     // verify required params are set

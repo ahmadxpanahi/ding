@@ -10,7 +10,7 @@ class UserLoginApi {
   /// ApiServicesAppUserloginGetrecentuserloginattemptsGet
   ///
   /// 
-  Future<ListResultDtoOfUserLoginAttemptDto> apiServicesAppUserloginGetrecentuserloginattemptsGet() async {
+  Future<ListResultDtoOfUserLoginAttemptDto?> apiServicesAppUserloginGetrecentuserloginattemptsGet() async {
     Object? postBody = null;
 
     // verify required params are set

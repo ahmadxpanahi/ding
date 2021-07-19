@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppEditiondevicesCreatePost**
-> apiServicesAppEditiondevicesCreatePost(body)
+?> apiServicesAppEditiondevicesCreatePost(body)
 
 ApiServicesAppEditiondevicesCreatePost
 
@@ -67,7 +67,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppEditiondevicesDeleteDelete**
-> apiServicesAppEditiondevicesDeleteDelete(id)
+?> apiServicesAppEditiondevicesDeleteDelete(id)
 
 ApiServicesAppEditiondevicesDeleteDelete
 
@@ -479,7 +479,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppEditiondevicesRemovealleditionfromdeviceDelete**
-> apiServicesAppEditiondevicesRemovealleditionfromdeviceDelete(deviceId)
+?> apiServicesAppEditiondevicesRemovealleditionfromdeviceDelete(deviceId)
 
 ApiServicesAppEditiondevicesRemovealleditionfromdeviceDelete
 
@@ -521,7 +521,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppEditiondevicesSavefeaturesPost**
-> apiServicesAppEditiondevicesSavefeaturesPost(body)
+?> apiServicesAppEditiondevicesSavefeaturesPost(body)
 
 ApiServicesAppEditiondevicesSavefeaturesPost
 
@@ -563,7 +563,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppEditiondevicesUpgradefeaturesPost**
-> apiServicesAppEditiondevicesUpgradefeaturesPost(body)
+?> apiServicesAppEditiondevicesUpgradefeaturesPost(body)
 
 ApiServicesAppEditiondevicesUpgradefeaturesPost
 

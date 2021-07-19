@@ -160,7 +160,7 @@ class UserClockInOutsApi {
   /// ApiServicesAppUserclockinoutsGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetUserClockInOutForViewDto> apiServicesAppUserclockinoutsGetallGet({ String? filter, DateTime? maxClockFilter, DateTime? minClockFilter, int? clockInOutTypeFilter, int? abnormalityTypeFilter, int? maxWeekNumberFilter, int? minWeekNumberFilter, String? userNameFilter, String? workScheduleNameFilter, String? workHourDayNameFilter, String? organizationUnitDisplayNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetUserClockInOutForViewDto?> apiServicesAppUserclockinoutsGetallGet({ String? filter, DateTime? maxClockFilter, DateTime? minClockFilter, int? clockInOutTypeFilter, int? abnormalityTypeFilter, int? maxWeekNumberFilter, int? minWeekNumberFilter, String? userNameFilter, String? workScheduleNameFilter, String? workHourDayNameFilter, String? organizationUnitDisplayNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -251,7 +251,7 @@ class UserClockInOutsApi {
   /// ApiServicesAppUserclockinoutsGetallorganizationunitfortabledropdownGet
   ///
   /// 
-  Future<List<UserClockInOutOrganizationUnitLookupTableDto>> apiServicesAppUserclockinoutsGetallorganizationunitfortabledropdownGet() async {
+  Future<List<UserClockInOutOrganizationUnitLookupTableDto>?> apiServicesAppUserclockinoutsGetallorganizationunitfortabledropdownGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -300,7 +300,7 @@ class UserClockInOutsApi {
   /// ApiServicesAppUserclockinoutsGetalluserfortabledropdownGet
   ///
   /// 
-  Future<List<UserClockInOutUserLookupTableDto>> apiServicesAppUserclockinoutsGetalluserfortabledropdownGet() async {
+  Future<List<UserClockInOutUserLookupTableDto>?> apiServicesAppUserclockinoutsGetalluserfortabledropdownGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -349,7 +349,7 @@ class UserClockInOutsApi {
   /// ApiServicesAppUserclockinoutsGetallworkhourfortabledropdownGet
   ///
   /// 
-  Future<List<UserClockInOutWorkHourLookupTableDto>> apiServicesAppUserclockinoutsGetallworkhourfortabledropdownGet() async {
+  Future<List<UserClockInOutWorkHourLookupTableDto>?> apiServicesAppUserclockinoutsGetallworkhourfortabledropdownGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -398,7 +398,7 @@ class UserClockInOutsApi {
   /// ApiServicesAppUserclockinoutsGetallworkschedulefortabledropdownGet
   ///
   /// 
-  Future<List<UserClockInOutWorkScheduleLookupTableDto>> apiServicesAppUserclockinoutsGetallworkschedulefortabledropdownGet() async {
+  Future<List<UserClockInOutWorkScheduleLookupTableDto>?> apiServicesAppUserclockinoutsGetallworkschedulefortabledropdownGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -447,7 +447,7 @@ class UserClockInOutsApi {
   /// ApiServicesAppUserclockinoutsGetuserclockinoutforeditGet
   ///
   /// 
-  Future<GetUserClockInOutForEditOutput> apiServicesAppUserclockinoutsGetuserclockinoutforeditGet({ int? id }) async {
+  Future<GetUserClockInOutForEditOutput?> apiServicesAppUserclockinoutsGetuserclockinoutforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -499,7 +499,7 @@ class UserClockInOutsApi {
   /// ApiServicesAppUserclockinoutsGetuserclockinoutforviewGet
   ///
   /// 
-  Future<GetUserClockInOutForViewDto> apiServicesAppUserclockinoutsGetuserclockinoutforviewGet({ int? id }) async {
+  Future<GetUserClockInOutForViewDto?> apiServicesAppUserclockinoutsGetuserclockinoutforviewGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -551,7 +551,7 @@ class UserClockInOutsApi {
   /// ApiServicesAppUserclockinoutsGetuserclocksstatusGet
   ///
   /// 
-  Future<PagedResultDtoOfGetUserClockInOutForViewDto> apiServicesAppUserclockinoutsGetuserclocksstatusGet({ DateTime? maxClockFilter, DateTime? minClockFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetUserClockInOutForViewDto?> apiServicesAppUserclockinoutsGetuserclocksstatusGet({ DateTime? maxClockFilter, DateTime? minClockFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set

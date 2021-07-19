@@ -160,7 +160,7 @@ class EnterLeavesApi {
   /// ApiServicesAppEnterleavesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetEnterLeaveForViewDto> apiServicesAppEnterleavesGetallGet({ String? filter, int? enterLeaveTypeFilter, DateTime? maxOccurDateFilter, DateTime? minOccurDateFilter, int? statusFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetEnterLeaveForViewDto?> apiServicesAppEnterleavesGetallGet({ String? filter, int? enterLeaveTypeFilter, DateTime? maxOccurDateFilter, DateTime? minOccurDateFilter, int? statusFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -233,7 +233,7 @@ class EnterLeavesApi {
   /// ApiServicesAppEnterleavesGetenterleaveforeditGet
   ///
   /// 
-  Future<GetEnterLeaveForEditOutput> apiServicesAppEnterleavesGetenterleaveforeditGet({ int? id }) async {
+  Future<GetEnterLeaveForEditOutput?> apiServicesAppEnterleavesGetenterleaveforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -285,7 +285,7 @@ class EnterLeavesApi {
   /// ApiServicesAppEnterleavesGetenterleaveforviewGet
   ///
   /// 
-  Future<GetEnterLeaveForViewDto> apiServicesAppEnterleavesGetenterleaveforviewGet({ int? id }) async {
+  Future<GetEnterLeaveForViewDto?> apiServicesAppEnterleavesGetenterleaveforviewGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -337,7 +337,7 @@ class EnterLeavesApi {
   /// ApiServicesAppEnterleavesGetenterleavestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppEnterleavesGetenterleavestoexcelGet({ String? filter, int? enterLeaveTypeFilter, DateTime? maxOccurDateFilter, DateTime? minOccurDateFilter, int? statusFilter }) async {
+  Future<FileDto?> apiServicesAppEnterleavesGetenterleavestoexcelGet({ String? filter, int? enterLeaveTypeFilter, DateTime? maxOccurDateFilter, DateTime? minOccurDateFilter, int? statusFilter }) async {
     Object? postBody = null;
 
     // verify required params are set

@@ -10,7 +10,7 @@ class TenantDashboardApi {
   /// ApiServicesAppTenantdashboardGetdailysalesGet
   ///
   /// 
-  Future<GetDailySalesOutput> apiServicesAppTenantdashboardGetdailysalesGet() async {
+  Future<GetDailySalesOutput?> apiServicesAppTenantdashboardGetdailysalesGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -59,7 +59,7 @@ class TenantDashboardApi {
   /// ApiServicesAppTenantdashboardGetdashboarddataGet
   ///
   /// 
-  Future<GetDashboardDataOutput> apiServicesAppTenantdashboardGetdashboarddataGet(String salesSummaryDatePeriod) async {
+  Future<GetDashboardDataOutput?> apiServicesAppTenantdashboardGetdashboarddataGet(String salesSummaryDatePeriod) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -112,7 +112,7 @@ class TenantDashboardApi {
   /// ApiServicesAppTenantdashboardGetgeneralstatsGet
   ///
   /// 
-  Future<GetGeneralStatsOutput> apiServicesAppTenantdashboardGetgeneralstatsGet() async {
+  Future<GetGeneralStatsOutput?> apiServicesAppTenantdashboardGetgeneralstatsGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -161,7 +161,7 @@ class TenantDashboardApi {
   /// ApiServicesAppTenantdashboardGetmemberactivityGet
   ///
   /// 
-  Future<GetMemberActivityOutput> apiServicesAppTenantdashboardGetmemberactivityGet() async {
+  Future<GetMemberActivityOutput?> apiServicesAppTenantdashboardGetmemberactivityGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -210,7 +210,7 @@ class TenantDashboardApi {
   /// ApiServicesAppTenantdashboardGetprofitshareGet
   ///
   /// 
-  Future<GetProfitShareOutput> apiServicesAppTenantdashboardGetprofitshareGet() async {
+  Future<GetProfitShareOutput?> apiServicesAppTenantdashboardGetprofitshareGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -259,7 +259,7 @@ class TenantDashboardApi {
   /// ApiServicesAppTenantdashboardGetregionalstatsGet
   ///
   /// 
-  Future<GetRegionalStatsOutput> apiServicesAppTenantdashboardGetregionalstatsGet() async {
+  Future<GetRegionalStatsOutput?> apiServicesAppTenantdashboardGetregionalstatsGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -308,7 +308,7 @@ class TenantDashboardApi {
   /// ApiServicesAppTenantdashboardGetsalessummaryGet
   ///
   /// 
-  Future<GetSalesSummaryOutput> apiServicesAppTenantdashboardGetsalessummaryGet(String salesSummaryDatePeriod) async {
+  Future<GetSalesSummaryOutput?> apiServicesAppTenantdashboardGetsalessummaryGet(String salesSummaryDatePeriod) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -361,7 +361,7 @@ class TenantDashboardApi {
   /// ApiServicesAppTenantdashboardGettopstatsGet
   ///
   /// 
-  Future<GetTopStatsOutput> apiServicesAppTenantdashboardGettopstatsGet() async {
+  Future<GetTopStatsOutput?> apiServicesAppTenantdashboardGettopstatsGet() async {
     Object? postBody = null;
 
     // verify required params are set

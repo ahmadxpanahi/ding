@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppDynamicentitypropertydefinitionGetallallowedinputtypenamesGet**
-> List<String> apiServicesAppDynamicentitypropertydefinitionGetallallowedinputtypenamesGet()
+> List<String?> apiServicesAppDynamicentitypropertydefinitionGetallallowedinputtypenamesGet()
 
 ApiServicesAppDynamicentitypropertydefinitionGetallallowedinputtypenamesGet
 
@@ -53,7 +53,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppDynamicentitypropertydefinitionGetallentitiesGet**
-> List<String> apiServicesAppDynamicentitypropertydefinitionGetallentitiesGet()
+> List<String?> apiServicesAppDynamicentitypropertydefinitionGetallentitiesGet()
 
 ApiServicesAppDynamicentitypropertydefinitionGetallentitiesGet
 

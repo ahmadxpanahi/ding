@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppLanguageCreateorupdatelanguagePost**
-> apiServicesAppLanguageCreateorupdatelanguagePost(body)
+?> apiServicesAppLanguageCreateorupdatelanguagePost(body)
 
 ApiServicesAppLanguageCreateorupdatelanguagePost
 
@@ -61,7 +61,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppLanguageDeletelanguageDelete**
-> apiServicesAppLanguageDeletelanguageDelete(id)
+?> apiServicesAppLanguageDeletelanguageDelete(id)
 
 ApiServicesAppLanguageDeletelanguageDelete
 
@@ -242,7 +242,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppLanguageSetdefaultlanguagePost**
-> apiServicesAppLanguageSetdefaultlanguagePost(body)
+?> apiServicesAppLanguageSetdefaultlanguagePost(body)
 
 ApiServicesAppLanguageSetdefaultlanguagePost
 
@@ -284,7 +284,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppLanguageUpdatelanguagetextPut**
-> apiServicesAppLanguageUpdatelanguagetextPut(body)
+?> apiServicesAppLanguageUpdatelanguagetextPut(body)
 
 ApiServicesAppLanguageUpdatelanguagetextPut
 

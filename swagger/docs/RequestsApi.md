@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppRequestsApproverequestsPost**
-> apiServicesAppRequestsApproverequestsPost(body)
+?> apiServicesAppRequestsApproverequestsPost(body)
 
 ApiServicesAppRequestsApproverequestsPost
 
@@ -64,7 +64,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppRequestsCreateoreditPost**
-> apiServicesAppRequestsCreateoreditPost(body)
+?> apiServicesAppRequestsCreateoreditPost(body)
 
 ApiServicesAppRequestsCreateoreditPost
 
@@ -106,7 +106,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppRequestsDeleteDelete**
-> apiServicesAppRequestsDeleteDelete(id)
+?> apiServicesAppRequestsDeleteDelete(id)
 
 ApiServicesAppRequestsDeleteDelete
 
@@ -399,7 +399,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppRequestsGetuserrequestsbydateGet**
-> List<GetRequestForViewDto> apiServicesAppRequestsGetuserrequestsbydateGet(userId, dateFrom, dateTo)
+> List<GetRequestForViewDto?> apiServicesAppRequestsGetuserrequestsbydateGet(userId, dateFrom, dateTo)
 
 ApiServicesAppRequestsGetuserrequestsbydateGet
 
@@ -446,7 +446,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppRequestsRejectrequestsPost**
-> apiServicesAppRequestsRejectrequestsPost(body)
+?> apiServicesAppRequestsRejectrequestsPost(body)
 
 ApiServicesAppRequestsRejectrequestsPost
 

@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppSupportsConfirmpaymentPost**
-> apiServicesAppSupportsConfirmpaymentPost(id)
+?> apiServicesAppSupportsConfirmpaymentPost(id)
 
 ApiServicesAppSupportsConfirmpaymentPost
 
@@ -64,7 +64,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppSupportsCreateoreditPost**
-> apiServicesAppSupportsCreateoreditPost(body)
+?> apiServicesAppSupportsCreateoreditPost(body)
 
 ApiServicesAppSupportsCreateoreditPost
 
@@ -432,7 +432,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppSupportsRejectPost**
-> apiServicesAppSupportsRejectPost(id)
+?> apiServicesAppSupportsRejectPost(id)
 
 ApiServicesAppSupportsRejectPost
 
@@ -474,7 +474,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppSupportsReplyPost**
-> apiServicesAppSupportsReplyPost(body)
+?> apiServicesAppSupportsReplyPost(body)
 
 ApiServicesAppSupportsReplyPost
 

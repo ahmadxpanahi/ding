@@ -111,7 +111,7 @@ class VacationTypesApi {
   /// ApiServicesAppVacationtypesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetVacationTypeForViewDto> apiServicesAppVacationtypesGetallGet({ String? filter, String? titleFilter, int? maxTotalVacationHoursFilter, int? minTotalVacationHoursFilter, int? maxVacationHoursPerMonthFilter, int? minVacationHoursPerMonthFilter, int? maxVacationHoursPerDayFilter, int? minVacationHoursPerDayFilter, int? hasLimitationVacationPerDayFilter, String? descriptionFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetVacationTypeForViewDto?> apiServicesAppVacationtypesGetallGet({ String? filter, String? titleFilter, int? maxTotalVacationHoursFilter, int? minTotalVacationHoursFilter, int? maxVacationHoursPerMonthFilter, int? minVacationHoursPerMonthFilter, int? maxVacationHoursPerDayFilter, int? minVacationHoursPerDayFilter, int? hasLimitationVacationPerDayFilter, String? descriptionFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -199,7 +199,7 @@ class VacationTypesApi {
   /// ApiServicesAppVacationtypesGetalltenantvacationtypesGet
   ///
   /// 
-  Future<List<VacationTypeDto>> apiServicesAppVacationtypesGetalltenantvacationtypesGet() async {
+  Future<List<VacationTypeDto>?> apiServicesAppVacationtypesGetalltenantvacationtypesGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -248,7 +248,7 @@ class VacationTypesApi {
   /// ApiServicesAppVacationtypesGetvacationtypeforeditGet
   ///
   /// 
-  Future<GetVacationTypeForEditOutput> apiServicesAppVacationtypesGetvacationtypeforeditGet({ int? id }) async {
+  Future<GetVacationTypeForEditOutput?> apiServicesAppVacationtypesGetvacationtypeforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -300,7 +300,7 @@ class VacationTypesApi {
   /// ApiServicesAppVacationtypesGetvacationtypeforviewGet
   ///
   /// 
-  Future<GetVacationTypeForViewDto> apiServicesAppVacationtypesGetvacationtypeforviewGet({ int? id }) async {
+  Future<GetVacationTypeForViewDto?> apiServicesAppVacationtypesGetvacationtypeforviewGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -352,7 +352,7 @@ class VacationTypesApi {
   /// ApiServicesAppVacationtypesGetvacationtypestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppVacationtypesGetvacationtypestoexcelGet({ String? filter, String? titleFilter, int? maxTotalVacationHoursFilter, int? minTotalVacationHoursFilter, int? maxVacationHoursPerMonthFilter, int? minVacationHoursPerMonthFilter, int? maxVacationHoursPerDayFilter, int? minVacationHoursPerDayFilter, int? hasLimitationVacationPerDayFilter, String? descriptionFilter }) async {
+  Future<FileDto?> apiServicesAppVacationtypesGetvacationtypestoexcelGet({ String? filter, String? titleFilter, int? maxTotalVacationHoursFilter, int? minTotalVacationHoursFilter, int? maxVacationHoursPerMonthFilter, int? minVacationHoursPerMonthFilter, int? maxVacationHoursPerDayFilter, int? minVacationHoursPerDayFilter, int? hasLimitationVacationPerDayFilter, String? descriptionFilter }) async {
     Object? postBody = null;
 
     // verify required params are set

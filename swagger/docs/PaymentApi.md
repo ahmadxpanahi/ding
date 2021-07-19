@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppPaymentBuynowsucceedPost**
-> apiServicesAppPaymentBuynowsucceedPost(paymentId)
+?> apiServicesAppPaymentBuynowsucceedPost(paymentId)
 
 ApiServicesAppPaymentBuynowsucceedPost
 
@@ -67,7 +67,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppPaymentCancelpaymentPost**
-> apiServicesAppPaymentCancelpaymentPost(body)
+?> apiServicesAppPaymentCancelpaymentPost(body)
 
 ApiServicesAppPaymentCancelpaymentPost
 
@@ -152,7 +152,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppPaymentExtendsucceedPost**
-> apiServicesAppPaymentExtendsucceedPost(paymentId)
+?> apiServicesAppPaymentExtendsucceedPost(paymentId)
 
 ApiServicesAppPaymentExtendsucceedPost
 
@@ -194,7 +194,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppPaymentGetactivegatewaysGet**
-> List<PaymentGatewayModel> apiServicesAppPaymentGetactivegatewaysGet(recurringPaymentsEnabled)
+> List<PaymentGatewayModel?> apiServicesAppPaymentGetactivegatewaysGet(recurringPaymentsEnabled)
 
 ApiServicesAppPaymentGetactivegatewaysGet
 
@@ -405,7 +405,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppPaymentNewregistrationsucceedPost**
-> apiServicesAppPaymentNewregistrationsucceedPost(paymentId)
+?> apiServicesAppPaymentNewregistrationsucceedPost(paymentId)
 
 ApiServicesAppPaymentNewregistrationsucceedPost
 
@@ -447,7 +447,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppPaymentPaymentfailedPost**
-> apiServicesAppPaymentPaymentfailedPost(paymentId)
+?> apiServicesAppPaymentPaymentfailedPost(paymentId)
 
 ApiServicesAppPaymentPaymentfailedPost
 
@@ -489,7 +489,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppPaymentSendupgraderequestPost**
-> apiServicesAppPaymentSendupgraderequestPost(paymentId)
+?> apiServicesAppPaymentSendupgraderequestPost(paymentId)
 
 ApiServicesAppPaymentSendupgraderequestPost
 
@@ -531,7 +531,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppPaymentUpgradesucceedPost**
-> apiServicesAppPaymentUpgradesucceedPost(paymentId)
+?> apiServicesAppPaymentUpgradesucceedPost(paymentId)
 
 ApiServicesAppPaymentUpgradesucceedPost
 

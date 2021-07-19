@@ -108,7 +108,7 @@ class CategoryApi {
   /// ApiServicesAppCategoryCreatecategoryPost
   ///
   /// 
-  Future<CategoryDto> apiServicesAppCategoryCreatecategoryPost({ CreateOrEditCategoryDto? body }) async {
+  Future<CategoryDto?> apiServicesAppCategoryCreatecategoryPost({ CreateOrEditCategoryDto? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -209,7 +209,7 @@ class CategoryApi {
   /// ApiServicesAppCategoryFindrolesPost
   ///
   /// 
-  Future<PagedResultDtoOfNameValueDto> apiServicesAppCategoryFindrolesPost({ FindCategoryRolesInput? body }) async {
+  Future<PagedResultDtoOfNameValueDto?> apiServicesAppCategoryFindrolesPost({ FindCategoryRolesInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -258,7 +258,7 @@ class CategoryApi {
   /// ApiServicesAppCategoryFindusersPost
   ///
   /// 
-  Future<PagedResultDtoOfNameValueDto> apiServicesAppCategoryFindusersPost({ FindCategoryUsersInput? body }) async {
+  Future<PagedResultDtoOfNameValueDto?> apiServicesAppCategoryFindusersPost({ FindCategoryUsersInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -307,7 +307,7 @@ class CategoryApi {
   /// ApiServicesAppCategoryGetcategoriesGet
   ///
   /// 
-  Future<ListResultDtoOfCategoryDto> apiServicesAppCategoryGetcategoriesGet() async {
+  Future<ListResultDtoOfCategoryDto?> apiServicesAppCategoryGetcategoriesGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -356,7 +356,7 @@ class CategoryApi {
   /// ApiServicesAppCategoryGetcategoriesbycategorytypeGet
   ///
   /// 
-  Future<ListResultDtoOfCategoryDto> apiServicesAppCategoryGetcategoriesbycategorytypeGet(String categoryType) async {
+  Future<ListResultDtoOfCategoryDto?> apiServicesAppCategoryGetcategoriesbycategorytypeGet(String categoryType) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -409,7 +409,7 @@ class CategoryApi {
   /// ApiServicesAppCategoryGetcategoriesforuserGet
   ///
   /// 
-  Future<ListResultDtoOfCategoryDto> apiServicesAppCategoryGetcategoriesforuserGet(String categoryType) async {
+  Future<ListResultDtoOfCategoryDto?> apiServicesAppCategoryGetcategoriesforuserGet(String categoryType) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -462,7 +462,7 @@ class CategoryApi {
   /// ApiServicesAppCategoryGetcategoryidbynameGet
   ///
   /// 
-  Future<CategoryDto> apiServicesAppCategoryGetcategoryidbynameGet({ String? categoryName }) async {
+  Future<CategoryDto?> apiServicesAppCategoryGetcategoryidbynameGet({ String? categoryName }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -514,7 +514,7 @@ class CategoryApi {
   /// ApiServicesAppCategoryGetcategoryrolesGet
   ///
   /// 
-  Future<PagedResultDtoOfCategoryRoleListDto> apiServicesAppCategoryGetcategoryrolesGet({ int? id, String? sorting, int? maxResultCount, int? skipCount }) async {
+  Future<PagedResultDtoOfCategoryRoleListDto?> apiServicesAppCategoryGetcategoryrolesGet({ int? id, String? sorting, int? maxResultCount, int? skipCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -575,7 +575,7 @@ class CategoryApi {
   /// ApiServicesAppCategoryGetcategoryusersGet
   ///
   /// 
-  Future<PagedResultDtoOfCategoryUserListDto> apiServicesAppCategoryGetcategoryusersGet({ int? id, String? sorting, int? maxResultCount, int? skipCount }) async {
+  Future<PagedResultDtoOfCategoryUserListDto?> apiServicesAppCategoryGetcategoryusersGet({ int? id, String? sorting, int? maxResultCount, int? skipCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -636,7 +636,7 @@ class CategoryApi {
   /// ApiServicesAppCategoryMovecategoryPost
   ///
   /// 
-  Future<CategoryDto> apiServicesAppCategoryMovecategoryPost({ MoveCategoryInput? body }) async {
+  Future<CategoryDto?> apiServicesAppCategoryMovecategoryPost({ MoveCategoryInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -795,7 +795,7 @@ class CategoryApi {
   /// ApiServicesAppCategoryUpdatecategoryPut
   ///
   /// 
-  Future<CategoryDto> apiServicesAppCategoryUpdatecategoryPut({ CreateOrEditCategoryDto? body }) async {
+  Future<CategoryDto?> apiServicesAppCategoryUpdatecategoryPut({ CreateOrEditCategoryDto? body }) async {
     Object? postBody = body;
 
     // verify required params are set

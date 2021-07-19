@@ -319,7 +319,7 @@ class DevicesApi {
   /// ApiServicesAppDevicesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetDeviceForViewDto> apiServicesAppDevicesGetallGet({ String? filter, String? serialNumberFilter, String? qRCodeFilter, String? bssIdFilter, String? ssIdFilter, String? uuIdFilter, String? majorFilter, String? minorFilter, String? nameFilter, String? deviceTypeTitleFilter, int? deviceStatusIdFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetDeviceForViewDto?> apiServicesAppDevicesGetallGet({ String? filter, String? serialNumberFilter, String? qRCodeFilter, String? bssIdFilter, String? ssIdFilter, String? uuIdFilter, String? majorFilter, String? minorFilter, String? nameFilter, String? deviceTypeTitleFilter, int? deviceStatusIdFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -410,7 +410,7 @@ class DevicesApi {
   /// ApiServicesAppDevicesGetalldevicetypeforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfDeviceDeviceTypeLookupTableDto> apiServicesAppDevicesGetalldevicetypeforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfDeviceDeviceTypeLookupTableDto?> apiServicesAppDevicesGetalldevicetypeforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -471,7 +471,7 @@ class DevicesApi {
   /// ApiServicesAppDevicesGetdeviceforeditGet
   ///
   /// 
-  Future<GetDeviceForEditOutput> apiServicesAppDevicesGetdeviceforeditGet({ int? id }) async {
+  Future<GetDeviceForEditOutput?> apiServicesAppDevicesGetdeviceforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -523,7 +523,7 @@ class DevicesApi {
   /// ApiServicesAppDevicesGetdeviceforregistrationGet
   ///
   /// 
-  Future<GetDeviceDetailForRegistrationDto> apiServicesAppDevicesGetdeviceforregistrationGet({ String? deviceEncryptedSerial }) async {
+  Future<GetDeviceDetailForRegistrationDto?> apiServicesAppDevicesGetdeviceforregistrationGet({ String? deviceEncryptedSerial }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -575,7 +575,7 @@ class DevicesApi {
   /// ApiServicesAppDevicesGetdeviceforviewGet
   ///
   /// 
-  Future<GetDeviceForViewDto> apiServicesAppDevicesGetdeviceforviewGet({ int? id }) async {
+  Future<GetDeviceForViewDto?> apiServicesAppDevicesGetdeviceforviewGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -627,7 +627,7 @@ class DevicesApi {
   /// ApiServicesAppDevicesGetdeviceserialGet
   ///
   /// 
-  Future<GetDeviceSerialDto> apiServicesAppDevicesGetdeviceserialGet(String qRCode, String password, String managerMobileNumber) async {
+  Future<GetDeviceSerialDto?> apiServicesAppDevicesGetdeviceserialGet(String qRCode, String password, String managerMobileNumber) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -688,7 +688,7 @@ class DevicesApi {
   /// ApiServicesAppDevicesGetdevicestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppDevicesGetdevicestoexcelGet({ String? filter, String? serialNumberFilter, String? qRCodeFilter, String? bssIdFilter, String? ssIdFilter, String? uuIdFilter, String? majorFilter, String? minorFilter, String? nameFilter, String? deviceTypeTitleFilter, int? deviceStatusIdFilter }) async {
+  Future<FileDto?> apiServicesAppDevicesGetdevicestoexcelGet({ String? filter, String? serialNumberFilter, String? qRCodeFilter, String? bssIdFilter, String? ssIdFilter, String? uuIdFilter, String? majorFilter, String? minorFilter, String? nameFilter, String? deviceTypeTitleFilter, int? deviceStatusIdFilter }) async {
     Object? postBody = null;
 
     // verify required params are set

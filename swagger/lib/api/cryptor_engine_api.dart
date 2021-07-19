@@ -10,7 +10,7 @@ class CryptorEngineApi {
   /// ApiServicesAppCryptorengineDecryptPost
   ///
   /// 
-  Future<String> apiServicesAppCryptorengineDecryptPost({ String? cipherString, bool? useHashing }) async {
+  Future<String?> apiServicesAppCryptorengineDecryptPost({ String? cipherString, bool? useHashing }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -65,7 +65,7 @@ class CryptorEngineApi {
   /// ApiServicesAppCryptorengineEncryptPost
   ///
   /// 
-  Future<String> apiServicesAppCryptorengineEncryptPost({ String? toEncrypt, bool? useHashing }) async {
+  Future<String?> apiServicesAppCryptorengineEncryptPost({ String? toEncrypt, bool? useHashing }) async {
     Object? postBody = null;
 
     // verify required params are set

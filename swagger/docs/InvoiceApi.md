@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppInvoiceCreateinvoicePost**
-> apiServicesAppInvoiceCreateinvoicePost(body)
+?> apiServicesAppInvoiceCreateinvoicePost(body)
 
 ApiServicesAppInvoiceCreateinvoicePost
 

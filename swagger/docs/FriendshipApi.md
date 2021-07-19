@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppFriendshipAcceptfriendshiprequestPost**
-> apiServicesAppFriendshipAcceptfriendshiprequestPost(body)
+?> apiServicesAppFriendshipAcceptfriendshiprequestPost(body)
 
 ApiServicesAppFriendshipAcceptfriendshiprequestPost
 
@@ -59,7 +59,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppFriendshipBlockuserPost**
-> apiServicesAppFriendshipBlockuserPost(body)
+?> apiServicesAppFriendshipBlockuserPost(body)
 
 ApiServicesAppFriendshipBlockuserPost
 
@@ -187,7 +187,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppFriendshipUnblockuserPost**
-> apiServicesAppFriendshipUnblockuserPost(body)
+?> apiServicesAppFriendshipUnblockuserPost(body)
 
 ApiServicesAppFriendshipUnblockuserPost
 

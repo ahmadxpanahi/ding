@@ -10,7 +10,7 @@ class ChatApi {
   /// ApiServicesAppChatGetuserchatfriendswithsettingsGet
   ///
   /// 
-  Future<GetUserChatFriendsWithSettingsOutput> apiServicesAppChatGetuserchatfriendswithsettingsGet() async {
+  Future<GetUserChatFriendsWithSettingsOutput?> apiServicesAppChatGetuserchatfriendswithsettingsGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -59,7 +59,7 @@ class ChatApi {
   /// ApiServicesAppChatGetuserchatmessagesGet
   ///
   /// 
-  Future<ListResultDtoOfChatMessageDto> apiServicesAppChatGetuserchatmessagesGet({ int? tenantId, int? userId, int? minMessageId }) async {
+  Future<ListResultDtoOfChatMessageDto?> apiServicesAppChatGetuserchatmessagesGet({ int? tenantId, int? userId, int? minMessageId }) async {
     Object? postBody = null;
 
     // verify required params are set

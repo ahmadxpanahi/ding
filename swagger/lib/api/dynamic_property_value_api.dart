@@ -111,7 +111,7 @@ class DynamicPropertyValueApi {
   /// ApiServicesAppDynamicpropertyvalueGetGet
   ///
   /// 
-  Future<DynamicPropertyValueDto> apiServicesAppDynamicpropertyvalueGetGet({ int? id }) async {
+  Future<DynamicPropertyValueDto?> apiServicesAppDynamicpropertyvalueGetGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -163,7 +163,7 @@ class DynamicPropertyValueApi {
   /// ApiServicesAppDynamicpropertyvalueGetallvaluesofdynamicpropertyGet
   ///
   /// 
-  Future<ListResultDtoOfDynamicPropertyValueDto> apiServicesAppDynamicpropertyvalueGetallvaluesofdynamicpropertyGet({ int? id }) async {
+  Future<ListResultDtoOfDynamicPropertyValueDto?> apiServicesAppDynamicpropertyvalueGetallvaluesofdynamicpropertyGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set

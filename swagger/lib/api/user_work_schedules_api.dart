@@ -111,7 +111,7 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetUserWorkScheduleForViewDto> apiServicesAppUserworkschedulesGetallGet({ String? filter, String? userNameFilter, String? workScheduleNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetUserWorkScheduleForViewDto?> apiServicesAppUserworkschedulesGetallGet({ String? filter, String? userNameFilter, String? workScheduleNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -178,7 +178,7 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesGetalluserforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfUserWorkScheduleUserLookupTableDto> apiServicesAppUserworkschedulesGetalluserforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfUserWorkScheduleUserLookupTableDto?> apiServicesAppUserworkschedulesGetalluserforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -239,7 +239,7 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesGetallworkscheduleforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfUserWorkScheduleWorkScheduleLookupTableDto> apiServicesAppUserworkschedulesGetallworkscheduleforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfUserWorkScheduleWorkScheduleLookupTableDto?> apiServicesAppUserworkschedulesGetallworkscheduleforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -300,7 +300,7 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesGetuserworkhourbydateGet
   ///
   /// 
-  Future<WorkHourDto> apiServicesAppUserworkschedulesGetuserworkhourbydateGet({ int? userId, DateTime? requestDay }) async {
+  Future<WorkHourDto?> apiServicesAppUserworkschedulesGetuserworkhourbydateGet({ int? userId, DateTime? requestDay }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -355,7 +355,7 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesGetuserworkscheduleforeditGet
   ///
   /// 
-  Future<GetUserWorkScheduleForEditOutput> apiServicesAppUserworkschedulesGetuserworkscheduleforeditGet({ int? id }) async {
+  Future<GetUserWorkScheduleForEditOutput?> apiServicesAppUserworkschedulesGetuserworkscheduleforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -407,7 +407,7 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesGetuserworkscheduleforviewGet
   ///
   /// 
-  Future<GetUserWorkScheduleForViewDto> apiServicesAppUserworkschedulesGetuserworkscheduleforviewGet({ int? id }) async {
+  Future<GetUserWorkScheduleForViewDto?> apiServicesAppUserworkschedulesGetuserworkscheduleforviewGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -459,7 +459,7 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesGetuserworkschedulestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppUserworkschedulesGetuserworkschedulestoexcelGet({ String? filter, String? userNameFilter, String? workScheduleNameFilter }) async {
+  Future<FileDto?> apiServicesAppUserworkschedulesGetuserworkschedulestoexcelGet({ String? filter, String? userNameFilter, String? workScheduleNameFilter }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -517,7 +517,7 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesIsinworkschedulePost
   ///
   /// 
-  Future<bool> apiServicesAppUserworkschedulesIsinworkschedulePost({ int? userId, int? workScheduleId }) async {
+  Future<bool?> apiServicesAppUserworkschedulesIsinworkschedulePost({ int? userId, int? workScheduleId }) async {
     Object? postBody = null;
 
     // verify required params are set

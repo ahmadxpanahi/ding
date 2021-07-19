@@ -10,7 +10,7 @@ class DemoUiComponentsApi {
   /// ApiServicesAppDemouicomponentsGetcountriesGet
   ///
   /// 
-  Future<List<NameValueOfString>> apiServicesAppDemouicomponentsGetcountriesGet({ String? searchTerm }) async {
+  Future<List<NameValueOfString>?> apiServicesAppDemouicomponentsGetcountriesGet({ String? searchTerm }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -62,7 +62,7 @@ class DemoUiComponentsApi {
   /// ApiServicesAppDemouicomponentsSendandgetdatePost
   ///
   /// 
-  Future<DateToStringOutput> apiServicesAppDemouicomponentsSendandgetdatePost({ DateTime? date }) async {
+  Future<DateToStringOutput?> apiServicesAppDemouicomponentsSendandgetdatePost({ DateTime? date }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -114,7 +114,7 @@ class DemoUiComponentsApi {
   /// ApiServicesAppDemouicomponentsSendandgetdaterangePost
   ///
   /// 
-  Future<DateToStringOutput> apiServicesAppDemouicomponentsSendandgetdaterangePost({ DateTime? startDate, DateTime? endDate }) async {
+  Future<DateToStringOutput?> apiServicesAppDemouicomponentsSendandgetdaterangePost({ DateTime? startDate, DateTime? endDate }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -169,7 +169,7 @@ class DemoUiComponentsApi {
   /// ApiServicesAppDemouicomponentsSendandgetdatetimePost
   ///
   /// 
-  Future<DateToStringOutput> apiServicesAppDemouicomponentsSendandgetdatetimePost({ DateTime? date }) async {
+  Future<DateToStringOutput?> apiServicesAppDemouicomponentsSendandgetdatetimePost({ DateTime? date }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -221,7 +221,7 @@ class DemoUiComponentsApi {
   /// ApiServicesAppDemouicomponentsSendandgetselectedcountriesPost
   ///
   /// 
-  Future<List<NameValueOfString>> apiServicesAppDemouicomponentsSendandgetselectedcountriesPost({ List<NameValueOfString>? body }) async {
+  Future<List<NameValueOfString>?> apiServicesAppDemouicomponentsSendandgetselectedcountriesPost({ List<NameValueOfString>? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -270,7 +270,7 @@ class DemoUiComponentsApi {
   /// ApiServicesAppDemouicomponentsSendandgetvaluePost
   ///
   /// 
-  Future<StringOutput> apiServicesAppDemouicomponentsSendandgetvaluePost({ String? input }) async {
+  Future<StringOutput?> apiServicesAppDemouicomponentsSendandgetvaluePost({ String? input }) async {
     Object? postBody = null;
 
     // verify required params are set

@@ -10,7 +10,7 @@ class TenantRegistrationApi {
   /// ApiServicesAppTenantregistrationGeteditionGet
   ///
   /// 
-  Future<EditionSelectDto> apiServicesAppTenantregistrationGeteditionGet({ int? editionId }) async {
+  Future<EditionSelectDto?> apiServicesAppTenantregistrationGeteditionGet({ int? editionId }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -62,7 +62,7 @@ class TenantRegistrationApi {
   /// ApiServicesAppTenantregistrationGeteditionsforselectGet
   ///
   /// 
-  Future<EditionsSelectOutput> apiServicesAppTenantregistrationGeteditionsforselectGet() async {
+  Future<EditionsSelectOutput?> apiServicesAppTenantregistrationGeteditionsforselectGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -111,7 +111,7 @@ class TenantRegistrationApi {
   /// ApiServicesAppTenantregistrationRegistertenantPost
   ///
   /// 
-  Future<RegisterTenantOutput> apiServicesAppTenantregistrationRegistertenantPost({ RegisterTenantInput? body }) async {
+  Future<RegisterTenantOutput?> apiServicesAppTenantregistrationRegistertenantPost({ RegisterTenantInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set

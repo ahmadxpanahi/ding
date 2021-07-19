@@ -10,7 +10,7 @@ class DynamicEntityPropertyDefinitionApi {
   /// ApiServicesAppDynamicentitypropertydefinitionGetallallowedinputtypenamesGet
   ///
   /// 
-  Future<List<String>> apiServicesAppDynamicentitypropertydefinitionGetallallowedinputtypenamesGet() async {
+  Future<List<String>?> apiServicesAppDynamicentitypropertydefinitionGetallallowedinputtypenamesGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -59,7 +59,7 @@ class DynamicEntityPropertyDefinitionApi {
   /// ApiServicesAppDynamicentitypropertydefinitionGetallentitiesGet
   ///
   /// 
-  Future<List<String>> apiServicesAppDynamicentitypropertydefinitionGetallentitiesGet() async {
+  Future<List<String>?> apiServicesAppDynamicentitypropertydefinitionGetallentitiesGet() async {
     Object? postBody = null;
 
     // verify required params are set

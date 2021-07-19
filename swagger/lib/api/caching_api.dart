@@ -108,7 +108,7 @@ class CachingApi {
   /// ApiServicesAppCachingGetallcachesGet
   ///
   /// 
-  Future<ListResultDtoOfCacheDto> apiServicesAppCachingGetallcachesGet() async {
+  Future<ListResultDtoOfCacheDto?> apiServicesAppCachingGetallcachesGet() async {
     Object? postBody = null;
 
     // verify required params are set

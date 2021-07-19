@@ -10,7 +10,7 @@ class UserLinkApi {
   /// ApiServicesAppUserlinkGetlinkedusersGet
   ///
   /// 
-  Future<PagedResultDtoOfLinkedUserDto> apiServicesAppUserlinkGetlinkedusersGet({ int? maxResultCount, int? skipCount, String? sorting }) async {
+  Future<PagedResultDtoOfLinkedUserDto?> apiServicesAppUserlinkGetlinkedusersGet({ int? maxResultCount, int? skipCount, String? sorting }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -68,7 +68,7 @@ class UserLinkApi {
   /// ApiServicesAppUserlinkGetrecentlyusedlinkedusersGet
   ///
   /// 
-  Future<ListResultDtoOfLinkedUserDto> apiServicesAppUserlinkGetrecentlyusedlinkedusersGet() async {
+  Future<ListResultDtoOfLinkedUserDto?> apiServicesAppUserlinkGetrecentlyusedlinkedusersGet() async {
     Object? postBody = null;
 
     // verify required params are set

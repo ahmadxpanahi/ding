@@ -111,7 +111,7 @@ class EditionApi {
   /// ApiServicesAppEditionGeteditioncomboboxitemsGet
   ///
   /// 
-  Future<List<SubscribableEditionComboboxItemDto>> apiServicesAppEditionGeteditioncomboboxitemsGet({ int? selectedEditionId, bool? addAllItem, bool? onlyFreeItems }) async {
+  Future<List<SubscribableEditionComboboxItemDto>?> apiServicesAppEditionGeteditioncomboboxitemsGet({ int? selectedEditionId, bool? addAllItem, bool? onlyFreeItems }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -169,7 +169,7 @@ class EditionApi {
   /// ApiServicesAppEditionGeteditionforeditGet
   ///
   /// 
-  Future<GetEditionEditOutput> apiServicesAppEditionGeteditionforeditGet({ int? id }) async {
+  Future<GetEditionEditOutput?> apiServicesAppEditionGeteditionforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -221,7 +221,7 @@ class EditionApi {
   /// ApiServicesAppEditionGeteditionsGet
   ///
   /// 
-  Future<ListResultDtoOfEditionListDto> apiServicesAppEditionGeteditionsGet({ String? filter, int? editionTypeFilter, int? isActiveFilter }) async {
+  Future<ListResultDtoOfEditionListDto?> apiServicesAppEditionGeteditionsGet({ String? filter, int? editionTypeFilter, int? isActiveFilter }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -279,7 +279,7 @@ class EditionApi {
   /// ApiServicesAppEditionGettenantcountGet
   ///
   /// 
-  Future<int> apiServicesAppEditionGettenantcountGet({ int? editionId }) async {
+  Future<int?> apiServicesAppEditionGettenantcountGet({ int? editionId }) async {
     Object? postBody = null;
 
     // verify required params are set

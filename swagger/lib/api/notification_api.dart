@@ -120,7 +120,7 @@ class NotificationApi {
   /// ApiServicesAppNotificationGetnotificationsettingsGet
   ///
   /// 
-  Future<GetNotificationSettingsOutput> apiServicesAppNotificationGetnotificationsettingsGet() async {
+  Future<GetNotificationSettingsOutput?> apiServicesAppNotificationGetnotificationsettingsGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -169,7 +169,7 @@ class NotificationApi {
   /// ApiServicesAppNotificationGetusernotificationsGet
   ///
   /// 
-  Future<GetNotificationsOutput> apiServicesAppNotificationGetusernotificationsGet({ String? state, DateTime? startDate, DateTime? endDate, int? maxResultCount, int? skipCount }) async {
+  Future<GetNotificationsOutput?> apiServicesAppNotificationGetusernotificationsGet({ String? state, DateTime? startDate, DateTime? endDate, int? maxResultCount, int? skipCount }) async {
     Object? postBody = null;
 
     // verify required params are set

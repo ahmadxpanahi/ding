@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppCalendarsCreateoreditPost**
-> apiServicesAppCalendarsCreateoreditPost(body)
+?> apiServicesAppCalendarsCreateoreditPost(body)
 
 ApiServicesAppCalendarsCreateoreditPost
 
@@ -62,7 +62,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppCalendarsDeleteDelete**
-> apiServicesAppCalendarsDeleteDelete(id)
+?> apiServicesAppCalendarsDeleteDelete(id)
 
 ApiServicesAppCalendarsDeleteDelete
 
@@ -337,7 +337,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppCalendarsImportfromtimeirPost**
-> apiServicesAppCalendarsImportfromtimeirPost()
+?> apiServicesAppCalendarsImportfromtimeirPost()
 
 ApiServicesAppCalendarsImportfromtimeirPost
 

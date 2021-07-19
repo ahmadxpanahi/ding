@@ -59,7 +59,7 @@ class AccountApi {
   /// ApiServicesAppAccountBacktoimpersonatorPost
   ///
   /// 
-  Future<ImpersonateOutput> apiServicesAppAccountBacktoimpersonatorPost() async {
+  Future<ImpersonateOutput?> apiServicesAppAccountBacktoimpersonatorPost() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -108,7 +108,7 @@ class AccountApi {
   /// ApiServicesAppAccountDelegatedimpersonatePost
   ///
   /// 
-  Future<ImpersonateOutput> apiServicesAppAccountDelegatedimpersonatePost({ DelegatedImpersonateInput? body }) async {
+  Future<ImpersonateOutput?> apiServicesAppAccountDelegatedimpersonatePost({ DelegatedImpersonateInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -157,7 +157,7 @@ class AccountApi {
   /// ApiServicesAppAccountGetprofileGet
   ///
   /// 
-  Future<UserEditDto> apiServicesAppAccountGetprofileGet({ int? userId }) async {
+  Future<UserEditDto?> apiServicesAppAccountGetprofileGet({ int? userId }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -209,7 +209,7 @@ class AccountApi {
   /// ApiServicesAppAccountImpersonatePost
   ///
   /// 
-  Future<ImpersonateOutput> apiServicesAppAccountImpersonatePost({ ImpersonateInput? body }) async {
+  Future<ImpersonateOutput?> apiServicesAppAccountImpersonatePost({ ImpersonateInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -258,7 +258,7 @@ class AccountApi {
   /// ApiServicesAppAccountIstenantavailablePost
   ///
   /// 
-  Future<IsTenantAvailableOutput> apiServicesAppAccountIstenantavailablePost({ IsTenantAvailableInput? body }) async {
+  Future<IsTenantAvailableOutput?> apiServicesAppAccountIstenantavailablePost({ IsTenantAvailableInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -307,7 +307,7 @@ class AccountApi {
   /// ApiServicesAppAccountRegisterPost
   ///
   /// 
-  Future<RegisterOutput> apiServicesAppAccountRegisterPost({ RegisterInput? body }) async {
+  Future<RegisterOutput?> apiServicesAppAccountRegisterPost({ RegisterInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -356,7 +356,7 @@ class AccountApi {
   /// ApiServicesAppAccountResetpasswordPost
   ///
   /// 
-  Future<ResetPasswordOutput> apiServicesAppAccountResetpasswordPost({ ResetPasswordInput? body }) async {
+  Future<ResetPasswordOutput?> apiServicesAppAccountResetpasswordPost({ ResetPasswordInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -405,7 +405,7 @@ class AccountApi {
   /// ApiServicesAppAccountResolvetenantidPost
   ///
   /// 
-  Future<int> apiServicesAppAccountResolvetenantidPost({ ResolveTenantIdInput? body }) async {
+  Future<int?> apiServicesAppAccountResolvetenantidPost({ ResolveTenantIdInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -650,7 +650,7 @@ class AccountApi {
   /// ApiServicesAppAccountSwitchtolinkedaccountPost
   ///
   /// 
-  Future<SwitchToLinkedAccountOutput> apiServicesAppAccountSwitchtolinkedaccountPost({ SwitchToLinkedAccountInput? body }) async {
+  Future<SwitchToLinkedAccountOutput?> apiServicesAppAccountSwitchtolinkedaccountPost({ SwitchToLinkedAccountInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -699,7 +699,7 @@ class AccountApi {
   /// ApiServicesAppAccountVerifyregistertokenPost
   ///
   /// 
-  Future<String> apiServicesAppAccountVerifyregistertokenPost({ String? token }) async {
+  Future<String?> apiServicesAppAccountVerifyregistertokenPost({ String? token }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -751,7 +751,7 @@ class AccountApi {
   /// ApiServicesAppAccountVerifysmscodePost
   ///
   /// 
-  Future<String> apiServicesAppAccountVerifysmscodePost({ VerifySmsCodeInputDto? body }) async {
+  Future<String?> apiServicesAppAccountVerifysmscodePost({ VerifySmsCodeInputDto? body }) async {
     Object? postBody = body;
 
     // verify required params are set

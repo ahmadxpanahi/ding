@@ -108,7 +108,7 @@ class FriendshipApi {
   /// ApiServicesAppFriendshipCreatefriendshiprequestPost
   ///
   /// 
-  Future<FriendDto> apiServicesAppFriendshipCreatefriendshiprequestPost({ CreateFriendshipRequestInput? body }) async {
+  Future<FriendDto?> apiServicesAppFriendshipCreatefriendshiprequestPost({ CreateFriendshipRequestInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -157,7 +157,7 @@ class FriendshipApi {
   /// ApiServicesAppFriendshipCreatefriendshiprequestbyusernamePost
   ///
   /// 
-  Future<FriendDto> apiServicesAppFriendshipCreatefriendshiprequestbyusernamePost({ CreateFriendshipRequestByUserNameInput? body }) async {
+  Future<FriendDto?> apiServicesAppFriendshipCreatefriendshiprequestbyusernamePost({ CreateFriendshipRequestByUserNameInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set

@@ -111,7 +111,7 @@ class PurchasingResourcesApi {
   /// ApiServicesAppPurchasingresourcesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetPurchasingResourceForViewDto> apiServicesAppPurchasingresourcesGetallGet({ String? filter, String? titleFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetPurchasingResourceForViewDto?> apiServicesAppPurchasingresourcesGetallGet({ String? filter, String? titleFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -175,7 +175,7 @@ class PurchasingResourcesApi {
   /// ApiServicesAppPurchasingresourcesGetpurchasingresourceforeditGet
   ///
   /// 
-  Future<GetPurchasingResourceForEditOutput> apiServicesAppPurchasingresourcesGetpurchasingresourceforeditGet({ int? id }) async {
+  Future<GetPurchasingResourceForEditOutput?> apiServicesAppPurchasingresourcesGetpurchasingresourceforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -227,7 +227,7 @@ class PurchasingResourcesApi {
   /// ApiServicesAppPurchasingresourcesGetpurchasingresourceforviewGet
   ///
   /// 
-  Future<GetPurchasingResourceForViewDto> apiServicesAppPurchasingresourcesGetpurchasingresourceforviewGet({ int? id }) async {
+  Future<GetPurchasingResourceForViewDto?> apiServicesAppPurchasingresourcesGetpurchasingresourceforviewGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -279,7 +279,7 @@ class PurchasingResourcesApi {
   /// ApiServicesAppPurchasingresourcesGetpurchasingresourcestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppPurchasingresourcesGetpurchasingresourcestoexcelGet({ String? filter, String? titleFilter }) async {
+  Future<FileDto?> apiServicesAppPurchasingresourcesGetpurchasingresourcestoexcelGet({ String? filter, String? titleFilter }) async {
     Object? postBody = null;
 
     // verify required params are set

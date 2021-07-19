@@ -108,7 +108,7 @@ class TenantSettingsApi {
   /// ApiServicesAppTenantsettingsGetallsettingsGet
   ///
   /// 
-  Future<TenantSettingsEditDto> apiServicesAppTenantsettingsGetallsettingsGet() async {
+  Future<TenantSettingsEditDto?> apiServicesAppTenantsettingsGetallsettingsGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -157,7 +157,7 @@ class TenantSettingsApi {
   /// ApiServicesAppTenantsettingsGetenabledsocialloginsettingsGet
   ///
   /// 
-  Future<ExternalLoginSettingsDto> apiServicesAppTenantsettingsGetenabledsocialloginsettingsGet() async {
+  Future<ExternalLoginSettingsDto?> apiServicesAppTenantsettingsGetenabledsocialloginsettingsGet() async {
     Object? postBody = null;
 
     // verify required params are set

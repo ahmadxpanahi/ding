@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppUserclockinoutsClockinoutbyrequestapprovalPost**
-> apiServicesAppUserclockinoutsClockinoutbyrequestapprovalPost(body)
+?> apiServicesAppUserclockinoutsClockinoutbyrequestapprovalPost(body)
 
 ApiServicesAppUserclockinoutsClockinoutbyrequestapprovalPost
 
@@ -65,7 +65,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserclockinoutsCreateoreditPost**
-> apiServicesAppUserclockinoutsCreateoreditPost(body)
+?> apiServicesAppUserclockinoutsCreateoreditPost(body)
 
 ApiServicesAppUserclockinoutsCreateoreditPost
 
@@ -107,7 +107,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserclockinoutsDeleteDelete**
-> apiServicesAppUserclockinoutsDeleteDelete(id)
+?> apiServicesAppUserclockinoutsDeleteDelete(id)
 
 ApiServicesAppUserclockinoutsDeleteDelete
 
@@ -218,7 +218,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserclockinoutsGetallorganizationunitfortabledropdownGet**
-> List<UserClockInOutOrganizationUnitLookupTableDto> apiServicesAppUserclockinoutsGetallorganizationunitfortabledropdownGet()
+> List<UserClockInOutOrganizationUnitLookupTableDto?> apiServicesAppUserclockinoutsGetallorganizationunitfortabledropdownGet()
 
 ApiServicesAppUserclockinoutsGetallorganizationunitfortabledropdownGet
 
@@ -257,7 +257,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserclockinoutsGetalluserfortabledropdownGet**
-> List<UserClockInOutUserLookupTableDto> apiServicesAppUserclockinoutsGetalluserfortabledropdownGet()
+> List<UserClockInOutUserLookupTableDto?> apiServicesAppUserclockinoutsGetalluserfortabledropdownGet()
 
 ApiServicesAppUserclockinoutsGetalluserfortabledropdownGet
 
@@ -296,7 +296,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserclockinoutsGetallworkhourfortabledropdownGet**
-> List<UserClockInOutWorkHourLookupTableDto> apiServicesAppUserclockinoutsGetallworkhourfortabledropdownGet()
+> List<UserClockInOutWorkHourLookupTableDto?> apiServicesAppUserclockinoutsGetallworkhourfortabledropdownGet()
 
 ApiServicesAppUserclockinoutsGetallworkhourfortabledropdownGet
 
@@ -335,7 +335,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserclockinoutsGetallworkschedulefortabledropdownGet**
-> List<UserClockInOutWorkScheduleLookupTableDto> apiServicesAppUserclockinoutsGetallworkschedulefortabledropdownGet()
+> List<UserClockInOutWorkScheduleLookupTableDto?> apiServicesAppUserclockinoutsGetallworkschedulefortabledropdownGet()
 
 ApiServicesAppUserclockinoutsGetallworkschedulefortabledropdownGet
 

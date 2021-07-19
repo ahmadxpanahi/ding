@@ -59,7 +59,7 @@ class InvoiceApi {
   /// ApiServicesAppInvoiceGetinvoiceinfoGet
   ///
   /// 
-  Future<InvoiceDto> apiServicesAppInvoiceGetinvoiceinfoGet({ int? id }) async {
+  Future<InvoiceDto?> apiServicesAppInvoiceGetinvoiceinfoGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set

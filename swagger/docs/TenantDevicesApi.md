@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppTenantdevicesAssignnewtenanttodevicePost**
-> apiServicesAppTenantdevicesAssignnewtenanttodevicePost(body)
+?> apiServicesAppTenantdevicesAssignnewtenanttodevicePost(body)
 
 ApiServicesAppTenantdevicesAssignnewtenanttodevicePost
 
@@ -64,7 +64,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppTenantdevicesCreateoreditPost**
-> apiServicesAppTenantdevicesCreateoreditPost(body)
+?> apiServicesAppTenantdevicesCreateoreditPost(body)
 
 ApiServicesAppTenantdevicesCreateoreditPost
 
@@ -106,7 +106,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppTenantdevicesDeleteDelete**
-> apiServicesAppTenantdevicesDeleteDelete(id)
+?> apiServicesAppTenantdevicesDeleteDelete(id)
 
 ApiServicesAppTenantdevicesDeleteDelete
 
@@ -442,7 +442,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppTenantdevicesRemovealltenantdevicesDelete**
-> apiServicesAppTenantdevicesRemovealltenantdevicesDelete(deviceId)
+?> apiServicesAppTenantdevicesRemovealltenantdevicesDelete(deviceId)
 
 ApiServicesAppTenantdevicesRemovealltenantdevicesDelete
 

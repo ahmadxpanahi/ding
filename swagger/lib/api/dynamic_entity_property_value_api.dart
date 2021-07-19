@@ -160,7 +160,7 @@ class DynamicEntityPropertyValueApi {
   /// ApiServicesAppDynamicentitypropertyvalueGetGet
   ///
   /// 
-  Future<DynamicEntityPropertyValueDto> apiServicesAppDynamicentitypropertyvalueGetGet({ int? id }) async {
+  Future<DynamicEntityPropertyValueDto?> apiServicesAppDynamicentitypropertyvalueGetGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -212,7 +212,7 @@ class DynamicEntityPropertyValueApi {
   /// ApiServicesAppDynamicentitypropertyvalueGetallGet
   ///
   /// 
-  Future<ListResultDtoOfDynamicEntityPropertyValueDto> apiServicesAppDynamicentitypropertyvalueGetallGet({ String? entityId, int? propertyId }) async {
+  Future<ListResultDtoOfDynamicEntityPropertyValueDto?> apiServicesAppDynamicentitypropertyvalueGetallGet({ String? entityId, int? propertyId }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -267,7 +267,7 @@ class DynamicEntityPropertyValueApi {
   /// ApiServicesAppDynamicentitypropertyvalueGetalldynamicentitypropertyvaluesGet
   ///
   /// 
-  Future<GetAllDynamicEntityPropertyValuesOutput> apiServicesAppDynamicentitypropertyvalueGetalldynamicentitypropertyvaluesGet(String entityFullName, String entityId) async {
+  Future<GetAllDynamicEntityPropertyValuesOutput?> apiServicesAppDynamicentitypropertyvalueGetalldynamicentitypropertyvaluesGet(String entityFullName, String entityId) async {
     Object? postBody = null;
 
     // verify required params are set

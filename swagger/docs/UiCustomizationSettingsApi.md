@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppUicustomizationsettingsChangethemewithdefaultvaluesPost**
-> apiServicesAppUicustomizationsettingsChangethemewithdefaultvaluesPost(themeName)
+?> apiServicesAppUicustomizationsettingsChangethemewithdefaultvaluesPost(themeName)
 
 ApiServicesAppUicustomizationsettingsChangethemewithdefaultvaluesPost
 
@@ -59,7 +59,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUicustomizationsettingsGetuimanagementsettingsGet**
-> List<ThemeSettingsDto> apiServicesAppUicustomizationsettingsGetuimanagementsettingsGet()
+> List<ThemeSettingsDto?> apiServicesAppUicustomizationsettingsGetuimanagementsettingsGet()
 
 ApiServicesAppUicustomizationsettingsGetuimanagementsettingsGet
 
@@ -98,7 +98,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUicustomizationsettingsUpdatedefaultuimanagementsettingsPut**
-> apiServicesAppUicustomizationsettingsUpdatedefaultuimanagementsettingsPut(body)
+?> apiServicesAppUicustomizationsettingsUpdatedefaultuimanagementsettingsPut(body)
 
 ApiServicesAppUicustomizationsettingsUpdatedefaultuimanagementsettingsPut
 
@@ -140,7 +140,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUicustomizationsettingsUpdateuimanagementsettingsPut**
-> apiServicesAppUicustomizationsettingsUpdateuimanagementsettingsPut(body)
+?> apiServicesAppUicustomizationsettingsUpdateuimanagementsettingsPut(body)
 
 ApiServicesAppUicustomizationsettingsUpdateuimanagementsettingsPut
 
@@ -182,7 +182,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUicustomizationsettingsUsesystemdefaultsettingsPost**
-> apiServicesAppUicustomizationsettingsUsesystemdefaultsettingsPost()
+?> apiServicesAppUicustomizationsettingsUsesystemdefaultsettingsPost()
 
 ApiServicesAppUicustomizationsettingsUsesystemdefaultsettingsPost
 

@@ -10,7 +10,7 @@ class EmployeeLeaveReportsApi {
   /// ApiServicesAppEmployeeleavereportsGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetEmployeeLeaveReportForViewDto> apiServicesAppEmployeeleavereportsGetallGet({ List<int>? userIdsFilter, int? organizationUnitId, int? userIdFilter, String? userNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetEmployeeLeaveReportForViewDto?> apiServicesAppEmployeeleavereportsGetallGet({ List<int>? userIdsFilter, int? organizationUnitId, int? userIdFilter, String? userNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -86,7 +86,7 @@ class EmployeeLeaveReportsApi {
   /// ApiServicesAppEmployeeleavereportsGetdetailedreportGet
   ///
   /// 
-  Future<List<GetDetailedEmployeeLeaveReportForViewDto>> apiServicesAppEmployeeleavereportsGetdetailedreportGet({ List<int>? userIdsFilter, int? organizationUnitId, int? userIdFilter, String? userNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<List<GetDetailedEmployeeLeaveReportForViewDto>?> apiServicesAppEmployeeleavereportsGetdetailedreportGet({ List<int>? userIdsFilter, int? organizationUnitId, int? userIdFilter, String? userNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -162,7 +162,7 @@ class EmployeeLeaveReportsApi {
   /// ApiServicesAppEmployeeleavereportsGetemployeeleavereportstoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppEmployeeleavereportsGetemployeeleavereportstoexcelGet({ List<int>? userIdsFilter, int? organizationUnitId, String? userNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo }) async {
+  Future<FileDto?> apiServicesAppEmployeeleavereportsGetemployeeleavereportstoexcelGet({ List<int>? userIdsFilter, int? organizationUnitId, String? userNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo }) async {
     Object? postBody = null;
 
     // verify required params are set

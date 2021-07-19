@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppTenantsettingsClearcustomcssPost**
-> apiServicesAppTenantsettingsClearcustomcssPost()
+?> apiServicesAppTenantsettingsClearcustomcssPost()
 
 ApiServicesAppTenantsettingsClearcustomcssPost
 
@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppTenantsettingsClearlogoPost**
-> apiServicesAppTenantsettingsClearlogoPost()
+?> apiServicesAppTenantsettingsClearlogoPost()
 
 ApiServicesAppTenantsettingsClearlogoPost
 
@@ -172,7 +172,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppTenantsettingsSendtestemailPost**
-> apiServicesAppTenantsettingsSendtestemailPost(body)
+?> apiServicesAppTenantsettingsSendtestemailPost(body)
 
 ApiServicesAppTenantsettingsSendtestemailPost
 
@@ -214,7 +214,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppTenantsettingsUpdateallsettingsPut**
-> apiServicesAppTenantsettingsUpdateallsettingsPut(body)
+?> apiServicesAppTenantsettingsUpdateallsettingsPut(body)
 
 ApiServicesAppTenantsettingsUpdateallsettingsPut
 

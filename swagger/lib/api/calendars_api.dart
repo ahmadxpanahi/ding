@@ -111,7 +111,7 @@ class CalendarsApi {
   /// ApiServicesAppCalendarsGetallGet
   ///
   /// 
-  Future<ListResultDtoOfGetCalendarForViewDto> apiServicesAppCalendarsGetallGet({ String? filter, int? yearFilter, String? cultureFilter, String? eventNameFilter, int? eventTypeFilter, int? maxResultCount }) async {
+  Future<ListResultDtoOfGetCalendarForViewDto?> apiServicesAppCalendarsGetallGet({ String? filter, int? yearFilter, String? cultureFilter, String? eventNameFilter, int? eventTypeFilter, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -178,7 +178,7 @@ class CalendarsApi {
   /// ApiServicesAppCalendarsGetcalendareventbydateGet
   ///
   /// 
-  Future<ListResultDtoOfGetCalendarForViewDto> apiServicesAppCalendarsGetcalendareventbydateGet({ DateTime? input }) async {
+  Future<ListResultDtoOfGetCalendarForViewDto?> apiServicesAppCalendarsGetcalendareventbydateGet({ DateTime? input }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -230,7 +230,7 @@ class CalendarsApi {
   /// ApiServicesAppCalendarsGetcalendarforeditGet
   ///
   /// 
-  Future<GetCalendarForEditOutput> apiServicesAppCalendarsGetcalendarforeditGet({ int? id }) async {
+  Future<GetCalendarForEditOutput?> apiServicesAppCalendarsGetcalendarforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -282,7 +282,7 @@ class CalendarsApi {
   /// ApiServicesAppCalendarsGetcalendarforviewGet
   ///
   /// 
-  Future<GetCalendarForViewDto> apiServicesAppCalendarsGetcalendarforviewGet({ int? id }) async {
+  Future<GetCalendarForViewDto?> apiServicesAppCalendarsGetcalendarforviewGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -334,7 +334,7 @@ class CalendarsApi {
   /// ApiServicesAppCalendarsGetcalendarstoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppCalendarsGetcalendarstoexcelGet({ String? filter, int? yearFilter, String? cultureFilter, String? eventNameFilter, int? eventTypeFilter }) async {
+  Future<FileDto?> apiServicesAppCalendarsGetcalendarstoexcelGet({ String? filter, int? yearFilter, String? cultureFilter, String? eventNameFilter, int? eventTypeFilter }) async {
     Object? postBody = null;
 
     // verify required params are set

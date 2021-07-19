@@ -59,7 +59,7 @@ class UserDelegationApi {
   /// ApiServicesAppUserdelegationGetactiveuserdelegationsGet
   ///
   /// 
-  Future<List<UserDelegationDto>> apiServicesAppUserdelegationGetactiveuserdelegationsGet() async {
+  Future<List<UserDelegationDto>?> apiServicesAppUserdelegationGetactiveuserdelegationsGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -108,7 +108,7 @@ class UserDelegationApi {
   /// ApiServicesAppUserdelegationGetdelegatedusersGet
   ///
   /// 
-  Future<PagedResultDtoOfUserDelegationDto> apiServicesAppUserdelegationGetdelegatedusersGet({ int? maxResultCount, int? skipCount, String? sorting }) async {
+  Future<PagedResultDtoOfUserDelegationDto?> apiServicesAppUserdelegationGetdelegatedusersGet({ int? maxResultCount, int? skipCount, String? sorting }) async {
     Object? postBody = null;
 
     // verify required params are set

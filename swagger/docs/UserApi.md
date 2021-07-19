@@ -110,7 +110,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserDeleteuserDelete**
-> apiServicesAppUserDeleteuserDelete(id)
+?> apiServicesAppUserDeleteuserDelete(id)
 
 ApiServicesAppUserDeleteuserDelete
 
@@ -482,7 +482,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserResetuserspecificpermissionsPost**
-> apiServicesAppUserResetuserspecificpermissionsPost(body)
+?> apiServicesAppUserResetuserspecificpermissionsPost(body)
 
 ApiServicesAppUserResetuserspecificpermissionsPost
 
@@ -524,7 +524,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserUnlockuserPost**
-> apiServicesAppUserUnlockuserPost(body)
+?> apiServicesAppUserUnlockuserPost(body)
 
 ApiServicesAppUserUnlockuserPost
 
@@ -566,7 +566,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserUpdateuserpermissionsPut**
-> apiServicesAppUserUpdateuserpermissionsPut(body)
+?> apiServicesAppUserUpdateuserpermissionsPut(body)
 
 ApiServicesAppUserUpdateuserpermissionsPut
 

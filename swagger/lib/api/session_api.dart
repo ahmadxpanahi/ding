@@ -10,7 +10,7 @@ class SessionApi {
   /// ApiServicesAppSessionGetcurrentlogininformationsGet
   ///
   /// 
-  Future<GetCurrentLoginInformationsOutput> apiServicesAppSessionGetcurrentlogininformationsGet() async {
+  Future<GetCurrentLoginInformationsOutput?> apiServicesAppSessionGetcurrentlogininformationsGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -59,7 +59,7 @@ class SessionApi {
   /// ApiServicesAppSessionUpdateusersignintokenPut
   ///
   /// 
-  Future<UpdateUserSignInTokenOutput> apiServicesAppSessionUpdateusersignintokenPut() async {
+  Future<UpdateUserSignInTokenOutput?> apiServicesAppSessionUpdateusersignintokenPut() async {
     Object? postBody = null;
 
     // verify required params are set

@@ -10,7 +10,7 @@ class SummaryEmployeeReportsApi {
   /// ApiServicesAppSummaryemployeereportsGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetSummaryEmployeeReportForViewDto> apiServicesAppSummaryemployeereportsGetallGet({ List<int>? userIdsFilter, int? organizationUnitId, String? userNameFilter, String? workScheduleNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetSummaryEmployeeReportForViewDto?> apiServicesAppSummaryemployeereportsGetallGet({ List<int>? userIdsFilter, int? organizationUnitId, String? userNameFilter, String? workScheduleNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -86,7 +86,7 @@ class SummaryEmployeeReportsApi {
   /// ApiServicesAppSummaryemployeereportsGetsummaryemployeereportstoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppSummaryemployeereportsGetsummaryemployeereportstoexcelGet({ List<int>? userIdsFilter, int? organizationUnitId, String? userNameFilter, String? workScheduleNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo }) async {
+  Future<FileDto?> apiServicesAppSummaryemployeereportsGetsummaryemployeereportstoexcelGet({ List<int>? userIdsFilter, int? organizationUnitId, String? userNameFilter, String? workScheduleNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo }) async {
     Object? postBody = null;
 
     // verify required params are set

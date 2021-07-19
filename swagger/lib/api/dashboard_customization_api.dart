@@ -10,7 +10,7 @@ class DashboardCustomizationApi {
   /// ApiServicesAppDashboardcustomizationAddnewpagePost
   ///
   /// 
-  Future<AddNewPageOutput> apiServicesAppDashboardcustomizationAddnewpagePost({ AddNewPageInput? body }) async {
+  Future<AddNewPageOutput?> apiServicesAppDashboardcustomizationAddnewpagePost({ AddNewPageInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -59,7 +59,7 @@ class DashboardCustomizationApi {
   /// ApiServicesAppDashboardcustomizationAddwidgetPost
   ///
   /// 
-  Future<Widget> apiServicesAppDashboardcustomizationAddwidgetPost({ AddWidgetInput? body }) async {
+  Future<Widget?> apiServicesAppDashboardcustomizationAddwidgetPost({ AddWidgetInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -166,7 +166,7 @@ class DashboardCustomizationApi {
   /// ApiServicesAppDashboardcustomizationGetallwidgetdefinitionsGet
   ///
   /// 
-  Future<List<WidgetOutput>> apiServicesAppDashboardcustomizationGetallwidgetdefinitionsGet({ String? dashboardName, String? application }) async {
+  Future<List<WidgetOutput>?> apiServicesAppDashboardcustomizationGetallwidgetdefinitionsGet({ String? dashboardName, String? application }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -221,7 +221,7 @@ class DashboardCustomizationApi {
   /// ApiServicesAppDashboardcustomizationGetdashboarddefinitionGet
   ///
   /// 
-  Future<DashboardOutput> apiServicesAppDashboardcustomizationGetdashboarddefinitionGet({ String? dashboardName, String? application }) async {
+  Future<DashboardOutput?> apiServicesAppDashboardcustomizationGetdashboarddefinitionGet({ String? dashboardName, String? application }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -276,7 +276,7 @@ class DashboardCustomizationApi {
   /// ApiServicesAppDashboardcustomizationGetsettingnameGet
   ///
   /// 
-  Future<String> apiServicesAppDashboardcustomizationGetsettingnameGet({ String? application }) async {
+  Future<String?> apiServicesAppDashboardcustomizationGetsettingnameGet({ String? application }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -328,7 +328,7 @@ class DashboardCustomizationApi {
   /// ApiServicesAppDashboardcustomizationGetuserdashboardGet
   ///
   /// 
-  Future<Dashboard> apiServicesAppDashboardcustomizationGetuserdashboardGet({ String? dashboardName, String? application }) async {
+  Future<Dashboard?> apiServicesAppDashboardcustomizationGetuserdashboardGet({ String? dashboardName, String? application }) async {
     Object? postBody = null;
 
     // verify required params are set

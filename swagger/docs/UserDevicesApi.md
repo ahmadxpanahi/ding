@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppUserdevicesCreatePost**
-> apiServicesAppUserdevicesCreatePost(body)
+?> apiServicesAppUserdevicesCreatePost(body)
 
 ApiServicesAppUserdevicesCreatePost
 
@@ -64,7 +64,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserdevicesDeleteDelete**
-> apiServicesAppUserdevicesDeleteDelete(id)
+?> apiServicesAppUserdevicesDeleteDelete(id)
 
 ApiServicesAppUserdevicesDeleteDelete
 
@@ -349,7 +349,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserdevicesRemovealluserdevicesDelete**
-> apiServicesAppUserdevicesRemovealluserdevicesDelete(deviceId)
+?> apiServicesAppUserdevicesRemovealluserdevicesDelete(deviceId)
 
 ApiServicesAppUserdevicesRemovealluserdevicesDelete
 
@@ -391,7 +391,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppUserdevicesSaveuserdevicesPost**
-> apiServicesAppUserdevicesSaveuserdevicesPost(userId, body)
+?> apiServicesAppUserdevicesSaveuserdevicesPost(userId, body)
 
 ApiServicesAppUserdevicesSaveuserdevicesPost
 

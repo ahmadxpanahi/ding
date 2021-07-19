@@ -10,7 +10,7 @@ class HostSettingsApi {
   /// ApiServicesAppHostsettingsGetallsettingsGet
   ///
   /// 
-  Future<HostSettingsEditDto> apiServicesAppHostsettingsGetallsettingsGet() async {
+  Future<HostSettingsEditDto?> apiServicesAppHostsettingsGetallsettingsGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -59,7 +59,7 @@ class HostSettingsApi {
   /// ApiServicesAppHostsettingsGetenabledsocialloginsettingsGet
   ///
   /// 
-  Future<ExternalLoginSettingsDto> apiServicesAppHostsettingsGetenabledsocialloginsettingsGet() async {
+  Future<ExternalLoginSettingsDto?> apiServicesAppHostsettingsGetenabledsocialloginsettingsGet() async {
     Object? postBody = null;
 
     // verify required params are set

@@ -108,7 +108,7 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitCreateorganizationunitPost
   ///
   /// 
-  Future<OrganizationUnitDto> apiServicesAppOrganizationunitCreateorganizationunitPost({ CreateOrganizationUnitInput? body }) async {
+  Future<OrganizationUnitDto?> apiServicesAppOrganizationunitCreateorganizationunitPost({ CreateOrganizationUnitInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -209,7 +209,7 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitFindrolesPost
   ///
   /// 
-  Future<PagedResultDtoOfNameValueDto> apiServicesAppOrganizationunitFindrolesPost({ FindOrganizationUnitRolesInput? body }) async {
+  Future<PagedResultDtoOfNameValueDto?> apiServicesAppOrganizationunitFindrolesPost({ FindOrganizationUnitRolesInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -258,7 +258,7 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitFindusersPost
   ///
   /// 
-  Future<PagedResultDtoOfNameValueDto> apiServicesAppOrganizationunitFindusersPost({ FindOrganizationUnitUsersInput? body }) async {
+  Future<PagedResultDtoOfNameValueDto?> apiServicesAppOrganizationunitFindusersPost({ FindOrganizationUnitUsersInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -307,7 +307,7 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitGetorganizationunitrolesGet
   ///
   /// 
-  Future<PagedResultDtoOfOrganizationUnitRoleListDto> apiServicesAppOrganizationunitGetorganizationunitrolesGet({ int? id, String? sorting, int? maxResultCount, int? skipCount }) async {
+  Future<PagedResultDtoOfOrganizationUnitRoleListDto?> apiServicesAppOrganizationunitGetorganizationunitrolesGet({ int? id, String? sorting, int? maxResultCount, int? skipCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -368,7 +368,7 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitGetorganizationunitsGet
   ///
   /// 
-  Future<ListResultDtoOfOrganizationUnitDto> apiServicesAppOrganizationunitGetorganizationunitsGet() async {
+  Future<ListResultDtoOfOrganizationUnitDto?> apiServicesAppOrganizationunitGetorganizationunitsGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -417,7 +417,7 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitGetorganizationunitsforuserGet
   ///
   /// 
-  Future<ListResultDtoOfOrganizationUnitDto> apiServicesAppOrganizationunitGetorganizationunitsforuserGet() async {
+  Future<ListResultDtoOfOrganizationUnitDto?> apiServicesAppOrganizationunitGetorganizationunitsforuserGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -466,7 +466,7 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitGetorganizationunitusersGet
   ///
   /// 
-  Future<PagedResultDtoOfOrganizationUnitUserListDto> apiServicesAppOrganizationunitGetorganizationunitusersGet({ int? id, String? sorting, int? maxResultCount, int? skipCount }) async {
+  Future<PagedResultDtoOfOrganizationUnitUserListDto?> apiServicesAppOrganizationunitGetorganizationunitusersGet({ int? id, String? sorting, int? maxResultCount, int? skipCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -527,7 +527,7 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitMoveorganizationunitPost
   ///
   /// 
-  Future<OrganizationUnitDto> apiServicesAppOrganizationunitMoveorganizationunitPost({ MoveOrganizationUnitInput? body }) async {
+  Future<OrganizationUnitDto?> apiServicesAppOrganizationunitMoveorganizationunitPost({ MoveOrganizationUnitInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -686,7 +686,7 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitUpdateorganizationunitPut
   ///
   /// 
-  Future<OrganizationUnitDto> apiServicesAppOrganizationunitUpdateorganizationunitPut({ UpdateOrganizationUnitInput? body }) async {
+  Future<OrganizationUnitDto?> apiServicesAppOrganizationunitUpdateorganizationunitPut({ UpdateOrganizationUnitInput? body }) async {
     Object? postBody = body;
 
     // verify required params are set

@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppEnterleavesApproverequestsPost**
-> apiServicesAppEnterleavesApproverequestsPost(body)
+?> apiServicesAppEnterleavesApproverequestsPost(body)
 
 ApiServicesAppEnterleavesApproverequestsPost
 
@@ -62,7 +62,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppEnterleavesCreateoreditPost**
-> apiServicesAppEnterleavesCreateoreditPost(body)
+?> apiServicesAppEnterleavesCreateoreditPost(body)
 
 ApiServicesAppEnterleavesCreateoreditPost
 
@@ -104,7 +104,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppEnterleavesDeleteDelete**
-> apiServicesAppEnterleavesDeleteDelete(id)
+?> apiServicesAppEnterleavesDeleteDelete(id)
 
 ApiServicesAppEnterleavesDeleteDelete
 
@@ -340,7 +340,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppEnterleavesRejectrequestsPost**
-> apiServicesAppEnterleavesRejectrequestsPost(body)
+?> apiServicesAppEnterleavesRejectrequestsPost(body)
 
 ApiServicesAppEnterleavesRejectrequestsPost
 

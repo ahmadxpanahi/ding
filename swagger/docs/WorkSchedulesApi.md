@@ -106,7 +106,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppWorkschedulesDeleteDelete**
-> apiServicesAppWorkschedulesDeleteDelete(id)
+?> apiServicesAppWorkschedulesDeleteDelete(id)
 
 ApiServicesAppWorkschedulesDeleteDelete
 
@@ -201,7 +201,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppWorkschedulesGetalltenantworkschedulesGet**
-> List<WorkScheduleDto> apiServicesAppWorkschedulesGetalltenantworkschedulesGet()
+> List<WorkScheduleDto?> apiServicesAppWorkschedulesGetalltenantworkschedulesGet()
 
 ApiServicesAppWorkschedulesGetalltenantworkschedulesGet
 
@@ -279,7 +279,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppWorkschedulesGetworkhoursGet**
-> List<WorkHourDto> apiServicesAppWorkschedulesGetworkhoursGet(workScheduleId)
+> List<WorkHourDto?> apiServicesAppWorkschedulesGetworkhoursGet(workScheduleId)
 
 ApiServicesAppWorkschedulesGetworkhoursGet
 

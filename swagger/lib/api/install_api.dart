@@ -10,7 +10,7 @@ class InstallApi {
   /// ApiServicesAppInstallCheckdatabasePost
   ///
   /// 
-  Future<CheckDatabaseOutput> apiServicesAppInstallCheckdatabasePost() async {
+  Future<CheckDatabaseOutput?> apiServicesAppInstallCheckdatabasePost() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -59,7 +59,7 @@ class InstallApi {
   /// ApiServicesAppInstallGetappsettingsjsonGet
   ///
   /// 
-  Future<AppSettingsJsonDto> apiServicesAppInstallGetappsettingsjsonGet() async {
+  Future<AppSettingsJsonDto?> apiServicesAppInstallGetappsettingsjsonGet() async {
     Object? postBody = null;
 
     // verify required params are set

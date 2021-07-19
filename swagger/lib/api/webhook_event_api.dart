@@ -10,7 +10,7 @@ class WebhookEventApi {
   /// ApiServicesAppWebhookeventGetGet
   ///
   /// 
-  Future<WebhookEvent> apiServicesAppWebhookeventGetGet({ String? id }) async {
+  Future<WebhookEvent?> apiServicesAppWebhookeventGetGet({ String? id }) async {
     Object? postBody = null;
 
     // verify required params are set

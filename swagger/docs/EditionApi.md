@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **apiServicesAppEditionCreateeditionPost**
-> apiServicesAppEditionCreateeditionPost(body)
+?> apiServicesAppEditionCreateeditionPost(body)
 
 ApiServicesAppEditionCreateeditionPost
 
@@ -62,7 +62,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppEditionDeleteeditionDelete**
-> apiServicesAppEditionDeleteeditionDelete(id)
+?> apiServicesAppEditionDeleteeditionDelete(id)
 
 ApiServicesAppEditionDeleteeditionDelete
 
@@ -104,7 +104,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppEditionGeteditioncomboboxitemsGet**
-> List<SubscribableEditionComboboxItemDto> apiServicesAppEditionGeteditioncomboboxitemsGet(selectedEditionId, addAllItem, onlyFreeItems)
+> List<SubscribableEditionComboboxItemDto?> apiServicesAppEditionGeteditioncomboboxitemsGet(selectedEditionId, addAllItem, onlyFreeItems)
 
 ApiServicesAppEditionGeteditioncomboboxitemsGet
 
@@ -284,7 +284,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppEditionMovetenantstoanothereditionPost**
-> apiServicesAppEditionMovetenantstoanothereditionPost(body)
+?> apiServicesAppEditionMovetenantstoanothereditionPost(body)
 
 ApiServicesAppEditionMovetenantstoanothereditionPost
 
@@ -326,7 +326,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiServicesAppEditionUpdateeditionPut**
-> apiServicesAppEditionUpdateeditionPut(body)
+?> apiServicesAppEditionUpdateeditionPut(body)
 
 ApiServicesAppEditionUpdateeditionPut
 

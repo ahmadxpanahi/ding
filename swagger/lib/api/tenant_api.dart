@@ -160,7 +160,7 @@ class TenantApi {
   /// ApiServicesAppTenantGettenantfeaturesforeditGet
   ///
   /// 
-  Future<GetTenantFeaturesEditOutput> apiServicesAppTenantGettenantfeaturesforeditGet({ int? id }) async {
+  Future<GetTenantFeaturesEditOutput?> apiServicesAppTenantGettenantfeaturesforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -212,7 +212,7 @@ class TenantApi {
   /// ApiServicesAppTenantGettenantforeditGet
   ///
   /// 
-  Future<TenantEditDto> apiServicesAppTenantGettenantforeditGet({ int? id }) async {
+  Future<TenantEditDto?> apiServicesAppTenantGettenantforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -264,7 +264,7 @@ class TenantApi {
   /// ApiServicesAppTenantGettenantsGet
   ///
   /// 
-  Future<PagedResultDtoOfTenantListDto> apiServicesAppTenantGettenantsGet({ String? filter, DateTime? subscriptionEndDateStart, DateTime? subscriptionEndDateEnd, DateTime? creationDateStart, DateTime? creationDateEnd, int? editionId, bool? editionIdSpecified, String? sorting, int? maxResultCount, int? skipCount }) async {
+  Future<PagedResultDtoOfTenantListDto?> apiServicesAppTenantGettenantsGet({ String? filter, DateTime? subscriptionEndDateStart, DateTime? subscriptionEndDateEnd, DateTime? creationDateStart, DateTime? creationDateEnd, int? editionId, bool? editionIdSpecified, String? sorting, int? maxResultCount, int? skipCount }) async {
     Object? postBody = null;
 
     // verify required params are set

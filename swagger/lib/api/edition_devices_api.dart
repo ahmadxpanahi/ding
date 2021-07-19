@@ -111,7 +111,7 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetEditionDeviceForViewDto> apiServicesAppEditiondevicesGetallGet({ String? filter, String? subscribableEditionDisplayNameFilter, String? deviceSerialNumberFilter, String? purchasingResourceTitleFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfGetEditionDeviceForViewDto?> apiServicesAppEditiondevicesGetallGet({ String? filter, String? subscribableEditionDisplayNameFilter, String? deviceSerialNumberFilter, String? purchasingResourceTitleFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -181,7 +181,7 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesGetallavailabledevicesGet
   ///
   /// 
-  Future<ListResultDtoOfAllAvailableDevicesDto> apiServicesAppEditiondevicesGetallavailabledevicesGet() async {
+  Future<ListResultDtoOfAllAvailableDevicesDto?> apiServicesAppEditiondevicesGetallavailabledevicesGet() async {
     Object? postBody = null;
 
     // verify required params are set
@@ -230,7 +230,7 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesGetallpurchasingresourceforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfEditionDevicePurchasingResourceLookupTableDto> apiServicesAppEditiondevicesGetallpurchasingresourceforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfEditionDevicePurchasingResourceLookupTableDto?> apiServicesAppEditiondevicesGetallpurchasingresourceforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -291,7 +291,7 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesGetallsubscribableeditionforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfEditionDeviceSubscribableEditionLookupTableDto> apiServicesAppEditiondevicesGetallsubscribableeditionforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+  Future<PagedResultDtoOfEditionDeviceSubscribableEditionLookupTableDto?> apiServicesAppEditiondevicesGetallsubscribableeditionforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -352,7 +352,7 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesGeteditiondevicebydeviceidGet
   ///
   /// 
-  Future<GetEditionDeviceForViewDto> apiServicesAppEditiondevicesGeteditiondevicebydeviceidGet({ int? deviceId }) async {
+  Future<GetEditionDeviceForViewDto?> apiServicesAppEditiondevicesGeteditiondevicebydeviceidGet({ int? deviceId }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -404,7 +404,7 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesGeteditiondeviceforeditGet
   ///
   /// 
-  Future<EditEditionDeviceFeaturesDto> apiServicesAppEditiondevicesGeteditiondeviceforeditGet({ int? id }) async {
+  Future<EditEditionDeviceFeaturesDto?> apiServicesAppEditiondevicesGeteditiondeviceforeditGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -456,7 +456,7 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesGeteditiondeviceforviewGet
   ///
   /// 
-  Future<GetEditionDeviceForViewDto> apiServicesAppEditiondevicesGeteditiondeviceforviewGet({ int? id }) async {
+  Future<GetEditionDeviceForViewDto?> apiServicesAppEditiondevicesGeteditiondeviceforviewGet({ int? id }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -508,7 +508,7 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesGeteditiondevicestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppEditiondevicesGeteditiondevicestoexcelGet({ String? filter, String? subscribableEditionDisplayNameFilter, String? deviceSerialNumberFilter, String? purchasingResourceTitleFilter }) async {
+  Future<FileDto?> apiServicesAppEditiondevicesGeteditiondevicestoexcelGet({ String? filter, String? subscribableEditionDisplayNameFilter, String? deviceSerialNumberFilter, String? purchasingResourceTitleFilter }) async {
     Object? postBody = null;
 
     // verify required params are set
