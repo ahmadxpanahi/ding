@@ -1,4 +1,5 @@
 import 'package:ding/ui/colors.dart';
+import 'package:ding/ui/size_config.dart';
 import 'package:flutter/material.dart';
 
 class SummaryReportScreen extends StatefulWidget {
@@ -10,160 +11,179 @@ class SummaryReportScreen extends StatefulWidget {
 
 class _SummaryReportScreenState extends State<SummaryReportScreen> {
 
-  Widget _summaryItem(title,leading) => Column(
+  Widget _infoContainer() => Column(
     children: [
-      Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+      Container(
+        color: Colors.white,
+        padding: EdgeInsets.symmetric(
+            horizontal: SizeConfig.widthMultiplier! * 4.5),
+        height: 15 * SizeConfig.heightMultiplier!,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text(
-              leading,
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 17,
-                  color: Colors.black),
+            Container(
+              width: 8 * SizeConfig.heightMultiplier!,
+              height: 8 * SizeConfig.heightMultiplier!,
+              decoration: BoxDecoration(
+                  color: DingColors.light(),
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                      image: NetworkImage(
+                          'https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png'),
+                      fit: BoxFit.fill)),
             ),
-            Expanded(
-              child: Text(
-                title,
-                textAlign: TextAlign.end,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 17,
-                    color: Colors.black),
-              ),
+            SizedBox(
+              width: 10,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'پژمان شفیعی',
+                  style: TextStyle(fontSize: 15),
+                ),
+                Text(
+                  'توسعه ارتباطات دینگ',
+                  style:
+                  TextStyle(fontSize: 13, fontWeight: FontWeight.w300),
+                ),
+                Text(
+                  'واحد فروش',
+                  style:
+                  TextStyle(fontSize: 13, fontWeight: FontWeight.w200),
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
+      Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: SizeConfig.widthMultiplier! * 4.5,
+            vertical: SizeConfig.heightMultiplier!),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Text(
+                  'شروع',
+                  style: TextStyle(
+                      fontSize: 2.2 * SizeConfig.textMultiplier! + 1,
+                      color: Colors.grey),
+                ),
+                SizedBox(
+                  width: SizeConfig.widthMultiplier! * 3,
+                ),
+                Text(
+                  '02 خرداد 1398',
+                  style: TextStyle(
+                      fontSize: 2.2 * SizeConfig.textMultiplier! + 1,
+                      color: DingColors.dark()),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Text(
+                  'پایان',
+                  style: TextStyle(
+                      fontSize: 2.2 * SizeConfig.textMultiplier! + 1,
+                      color: Colors.grey),
+                ),
+                SizedBox(
+                  width: SizeConfig.widthMultiplier! * 3,
+                ),
+                Text(
+                  '02 خرداد 1398',
+                  style: TextStyle(
+                      fontSize: 2.2 * SizeConfig.textMultiplier! + 1,
+                      color: DingColors.dark()),
+                ),
+              ],
             ),
           ],
         ),
       ),
-      Divider()
     ],
   );
 
+  _item(title,time) => Container(
+    color: Colors.white,
+    height: 8.5*SizeConfig.heightMultiplier!,
+    child: Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier! * 4.5,vertical: SizeConfig.heightMultiplier!),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(title,style: TextStyle(fontSize: 2.2 * SizeConfig.textMultiplier! + 1),),
+              Text(time,style: TextStyle(fontSize: 2.2 * SizeConfig.textMultiplier! + 1),),
+            ],
+          ),
+        ),
+        Divider()
+      ],
+    ),
+  );
   @override
   Widget build(BuildContext context) => Scaffold(
+    backgroundColor: DingColors.veryLight(),
     appBar: PreferredSize(
       preferredSize: Size.fromHeight(100),
       child: Container(
-        padding: EdgeInsets.only(top: 15),
+        padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
+        alignment: Alignment.center,
         color: DingColors.primary(),
-        height: 90,
+        height: 13.3 * SizeConfig.heightMultiplier!,
         child: Row(
           children: [
-            Expanded(child: SizedBox()),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'گزارش خلاصه',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 19, color: Colors.white),
-                  ),
-                  Text(
-                    'توسعه فناوری دینگ',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 15, color: Colors.white),
-                  ),
-                ],
-              ),
-            ),
             Expanded(
                 child: Align(
-                    alignment: Alignment.centerRight,
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding:
+                    EdgeInsets.only(right: 2.4 * SizeConfig.widthMultiplier!),
                     child: IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: Icon(
-                          Icons.arrow_forward_ios,
-                          size: 30,
-                          color: Colors.white,
-                        )))),
+                      color: Colors.white,
+                      icon: Icon(
+                        Icons.arrow_back_ios,
+                        size: 3 * SizeConfig.heightMultiplier!,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                )),
+            Text(
+              'گزارش خلاصه',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 2.73 * SizeConfig.textMultiplier!,
+                  color: Colors.white),
+            ),
+            Expanded(child: SizedBox())
           ],
         ),
       ),
     ),
-    body: Column(
-      children: [
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          height: 65,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'آیتا آتشگاهی',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
-                        color: Colors.black),
-                  ),
-                  Text(
-                    'نام کارمند',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
-                        color: Colors.black),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 2,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'خرداد 1400',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
-                        color: Colors.black),
-                  ),
-                  Text(
-                    'ماه انتخاب شده',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
-                        color: Colors.black),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-        Container(
-          height: 2,
-          color: DingColors.primary(),
-        ),
-        Expanded(
-          child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 5),
-                child: Column(
-                  children: [
-                    _summaryItem('مجموع ساعات طول شیفت','200:45'),
-                    _summaryItem('مجموع ساعات کارکرد','181:19'),
-                    _summaryItem('مجموع ساعات تاخیر در ورود','0:23'),
-                    _summaryItem('مجموع ساعات تعجیل در خروج','0:3'),
-                    _summaryItem('مجموع ساعات غیبت','200:45'),
-                    _summaryItem('مجموع ساعات اضافه کار','200:45'),
-                    _summaryItem('مجموع ساعات ماموریت','200:45'),
-                    _summaryItem('مجموع روز های ماموریت','1 روز'),
-                    _summaryItem('مجموع ساعات مرخصی ساعتی','200:45'),
-                    _summaryItem('مجموع روز های مرخصی','2 روز'),
-                  ],
-                ),
-              ),
-          ),
-        )
-      ],
+    body: SingleChildScrollView(
+      child: Column(
+        children: [
+          _infoContainer(),
+          _item('زمان شیفت','48:00:00'),
+          _item('زمان کاری','48:00:00'),
+          _item('زمان تاخیر','48:00:00'),
+          _item('زمان تعجیل در خروج','48:00:00'),
+          _item('زمان غیبت','48:00:00'),
+          _item('زمان اضافه کاری','48:00:00'),
+          _item('زمان ماموریت','48:00:00'),
+          _item('زمان مرخصی','48:00:00'),
+          _item('روز های مرخصی','05'),
+        ],
+      ),
     ),
   );
 }

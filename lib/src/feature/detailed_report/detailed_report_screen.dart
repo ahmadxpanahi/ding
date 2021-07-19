@@ -1,8 +1,6 @@
 import 'package:ding/ui/colors.dart';
 import 'package:ding/ui/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import '../../../domain/entity/detailed_data.dart';
 
 class DetailedReportScreen extends StatefulWidget {
   const DetailedReportScreen({Key? key}) : super(key: key);
@@ -12,6 +10,7 @@ class DetailedReportScreen extends StatefulWidget {
 }
 
 class _DetailedReportScreenState extends State<DetailedReportScreen> {
+
   Widget _infoContainer() => Column(
         children: [
           Container(
