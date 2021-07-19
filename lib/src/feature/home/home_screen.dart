@@ -1,3 +1,6 @@
+import 'package:ding/data/http/interceptor.dart';
+import 'package:ding/data/http/rest_client.dart';
+import 'package:ding/data/http/token_manager.dart';
 import 'package:ding/src/feature/advanced/advanced_screen.dart';
 import 'package:ding/src/feature/departures/departures_screen.dart';
 import 'package:ding/src/feature/home/widgets/bottom_nav.dart';
@@ -12,6 +15,10 @@ import 'package:ding/ui/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:ding/src/core/logger/logger.dart';
+import 'package:swagger/api.dart' as swagger;
+import 'dart:async';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -22,6 +29,21 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String _screenName = 'departures';
+
+  @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(Duration.zero, () async {
+        var sp = await SharedPreferences.getInstance();
+        var tokenManager = TokenManager(sp);
+        var interceptor = AccessTokenInterceptor(tokenManager);
+        var api = swagger.ApiClient(basePath: "", client: RestClient(interceptor, tokenManager));
+        var devicesApi = swagger.DevicesApi(api);
+        var response = await devicesApi.apiServicesAppDevicesGetallGet();
+        Log.e("after response...");
+    });
+  }
 
   Map<String, Widget> pages = {
     'situation': SituationScreen(),
