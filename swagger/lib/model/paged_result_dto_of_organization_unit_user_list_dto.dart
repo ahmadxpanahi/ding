@@ -32,7 +32,7 @@ class PagedResultDtoOfOrganizationUnitUserListDto {
   }
 
   static List<PagedResultDtoOfOrganizationUnitUserListDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PagedResultDtoOfOrganizationUnitUserListDto>() : json.map((value) => new PagedResultDtoOfOrganizationUnitUserListDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PagedResultDtoOfOrganizationUnitUserListDto.fromJson(value)).toList();
   }
 
   static Map<String, PagedResultDtoOfOrganizationUnitUserListDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

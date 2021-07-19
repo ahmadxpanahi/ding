@@ -60,7 +60,7 @@ class CountryDto {
   }
 
   static List<CountryDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CountryDto>() : json.map((value) => new CountryDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CountryDto.fromJson(value)).toList();
   }
 
   static Map<String, CountryDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

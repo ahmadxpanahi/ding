@@ -46,7 +46,7 @@ class FindCategoryRolesInput {
   }
 
   static List<FindCategoryRolesInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<FindCategoryRolesInput>() : json.map((value) => new FindCategoryRolesInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new FindCategoryRolesInput.fromJson(value)).toList();
   }
 
   static Map<String, FindCategoryRolesInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

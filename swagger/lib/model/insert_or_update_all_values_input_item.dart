@@ -39,7 +39,7 @@ class InsertOrUpdateAllValuesInputItem {
   }
 
   static List<InsertOrUpdateAllValuesInputItem> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<InsertOrUpdateAllValuesInputItem>() : json.map((value) => new InsertOrUpdateAllValuesInputItem.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new InsertOrUpdateAllValuesInputItem.fromJson(value)).toList();
   }
 
   static Map<String, InsertOrUpdateAllValuesInputItem> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -32,7 +32,7 @@ class Dashboard {
   }
 
   static List<Dashboard> listFromJson(List<dynamic> json) {
-    return json == null ? new List<Dashboard>() : json.map((value) => new Dashboard.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new Dashboard.fromJson(value)).toList();
   }
 
   static Map<String, Dashboard> mapFromJson(Map<String, Map<String, dynamic>> json) {

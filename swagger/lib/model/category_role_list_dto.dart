@@ -44,7 +44,7 @@ class CategoryRoleListDto {
   }
 
   static List<CategoryRoleListDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<CategoryRoleListDto>() : json.map((value) => new CategoryRoleListDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CategoryRoleListDto.fromJson(value)).toList();
   }
 
   static Map<String, CategoryRoleListDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

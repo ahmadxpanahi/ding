@@ -25,7 +25,7 @@ class SendTestEmailInput {
   }
 
   static List<SendTestEmailInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<SendTestEmailInput>() : json.map((value) => new SendTestEmailInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new SendTestEmailInput.fromJson(value)).toList();
   }
 
   static Map<String, SendTestEmailInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

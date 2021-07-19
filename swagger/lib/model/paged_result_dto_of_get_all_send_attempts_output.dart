@@ -32,7 +32,7 @@ class PagedResultDtoOfGetAllSendAttemptsOutput {
   }
 
   static List<PagedResultDtoOfGetAllSendAttemptsOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PagedResultDtoOfGetAllSendAttemptsOutput>() : json.map((value) => new PagedResultDtoOfGetAllSendAttemptsOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PagedResultDtoOfGetAllSendAttemptsOutput.fromJson(value)).toList();
   }
 
   static Map<String, PagedResultDtoOfGetAllSendAttemptsOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

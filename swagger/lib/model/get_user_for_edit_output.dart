@@ -76,7 +76,7 @@ class GetUserForEditOutput {
   }
 
   static List<GetUserForEditOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetUserForEditOutput>() : json.map((value) => new GetUserForEditOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetUserForEditOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetUserForEditOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

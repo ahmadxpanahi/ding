@@ -27,7 +27,7 @@ class GetCountryForEditOutput {
   }
 
   static List<GetCountryForEditOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetCountryForEditOutput>() : json.map((value) => new GetCountryForEditOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetCountryForEditOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetCountryForEditOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

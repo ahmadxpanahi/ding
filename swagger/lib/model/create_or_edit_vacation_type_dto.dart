@@ -67,7 +67,7 @@ class CreateOrEditVacationTypeDto {
   }
 
   static List<CreateOrEditVacationTypeDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateOrEditVacationTypeDto>() : json.map((value) => new CreateOrEditVacationTypeDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateOrEditVacationTypeDto.fromJson(value)).toList();
   }
 
   static Map<String, CreateOrEditVacationTypeDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -32,7 +32,7 @@ class GetNotificationSettingsOutput {
   }
 
   static List<GetNotificationSettingsOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetNotificationSettingsOutput>() : json.map((value) => new GetNotificationSettingsOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetNotificationSettingsOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetNotificationSettingsOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

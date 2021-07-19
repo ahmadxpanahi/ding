@@ -116,7 +116,7 @@ class GetDashboardDataOutput {
   }
 
   static List<GetDashboardDataOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetDashboardDataOutput>() : json.map((value) => new GetDashboardDataOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetDashboardDataOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetDashboardDataOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

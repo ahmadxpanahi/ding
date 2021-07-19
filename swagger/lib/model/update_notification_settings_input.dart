@@ -32,7 +32,7 @@ class UpdateNotificationSettingsInput {
   }
 
   static List<UpdateNotificationSettingsInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<UpdateNotificationSettingsInput>() : json.map((value) => new UpdateNotificationSettingsInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UpdateNotificationSettingsInput.fromJson(value)).toList();
   }
 
   static Map<String, UpdateNotificationSettingsInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

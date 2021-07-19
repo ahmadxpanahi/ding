@@ -99,7 +99,7 @@ class ChatMessageDto {
   }
 
   static List<ChatMessageDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<ChatMessageDto>() : json.map((value) => new ChatMessageDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ChatMessageDto.fromJson(value)).toList();
   }
 
   static Map<String, ChatMessageDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

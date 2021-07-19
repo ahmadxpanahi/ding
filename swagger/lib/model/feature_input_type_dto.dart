@@ -52,7 +52,7 @@ class FeatureInputTypeDto {
   }
 
   static List<FeatureInputTypeDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<FeatureInputTypeDto>() : json.map((value) => new FeatureInputTypeDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new FeatureInputTypeDto.fromJson(value)).toList();
   }
 
   static Map<String, FeatureInputTypeDto> mapFromJson(Map<String, Map<String, dynamic>>? json) {

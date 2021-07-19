@@ -32,7 +32,7 @@ class UserClockInOutWorkScheduleLookupTableDto {
   }
 
   static List<UserClockInOutWorkScheduleLookupTableDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<UserClockInOutWorkScheduleLookupTableDto>() : json.map((value) => new UserClockInOutWorkScheduleLookupTableDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UserClockInOutWorkScheduleLookupTableDto.fromJson(value)).toList();
   }
 
   static Map<String, UserClockInOutWorkScheduleLookupTableDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

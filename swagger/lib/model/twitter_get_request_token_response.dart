@@ -46,7 +46,7 @@ class TwitterGetRequestTokenResponse {
   }
 
   static List<TwitterGetRequestTokenResponse> listFromJson(List<dynamic> json) {
-    return json == null ? new List<TwitterGetRequestTokenResponse>() : json.map((value) => new TwitterGetRequestTokenResponse.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new TwitterGetRequestTokenResponse.fromJson(value)).toList();
   }
 
   static Map<String, TwitterGetRequestTokenResponse> mapFromJson(Map<String, Map<String, dynamic>> json) {

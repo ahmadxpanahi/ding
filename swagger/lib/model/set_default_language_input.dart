@@ -25,7 +25,7 @@ class SetDefaultLanguageInput {
   }
 
   static List<SetDefaultLanguageInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<SetDefaultLanguageInput>() : json.map((value) => new SetDefaultLanguageInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new SetDefaultLanguageInput.fromJson(value)).toList();
   }
 
   static Map<String, SetDefaultLanguageInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

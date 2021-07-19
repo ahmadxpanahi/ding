@@ -39,7 +39,7 @@ class FileDto {
   }
 
   static List<FileDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<FileDto>() : json.map((value) => new FileDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new FileDto.fromJson(value)).toList();
   }
 
   static Map<String, FileDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

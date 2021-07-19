@@ -85,7 +85,7 @@ class CreateOrEditSupportDto {
   }
 
   static List<CreateOrEditSupportDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateOrEditSupportDto>() : json.map((value) => new CreateOrEditSupportDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateOrEditSupportDto.fromJson(value)).toList();
   }
 
   static Map<String, CreateOrEditSupportDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

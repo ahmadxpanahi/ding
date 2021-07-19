@@ -177,7 +177,7 @@ class RegisterTenantOutput {
   }
 
   static List<RegisterTenantOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<RegisterTenantOutput>() : json.map((value) => new RegisterTenantOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new RegisterTenantOutput.fromJson(value)).toList();
   }
 
   static Map<String, RegisterTenantOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

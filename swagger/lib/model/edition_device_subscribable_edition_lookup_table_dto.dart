@@ -46,7 +46,7 @@ class EditionDeviceSubscribableEditionLookupTableDto {
   }
 
   static List<EditionDeviceSubscribableEditionLookupTableDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<EditionDeviceSubscribableEditionLookupTableDto>() : json.map((value) => new EditionDeviceSubscribableEditionLookupTableDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new EditionDeviceSubscribableEditionLookupTableDto.fromJson(value)).toList();
   }
 
   static Map<String, EditionDeviceSubscribableEditionLookupTableDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

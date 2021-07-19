@@ -39,7 +39,7 @@ class LinkToUserInput {
   }
 
   static List<LinkToUserInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<LinkToUserInput>() : json.map((value) => new LinkToUserInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new LinkToUserInput.fromJson(value)).toList();
   }
 
   static Map<String, LinkToUserInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

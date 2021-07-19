@@ -74,7 +74,7 @@ class EntityChangeListDto {
   }
 
   static List<EntityChangeListDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<EntityChangeListDto>() : json.map((value) => new EntityChangeListDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new EntityChangeListDto.fromJson(value)).toList();
   }
 
   static Map<String, EntityChangeListDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

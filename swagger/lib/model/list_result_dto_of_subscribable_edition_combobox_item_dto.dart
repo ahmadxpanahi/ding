@@ -25,7 +25,7 @@ class ListResultDtoOfSubscribableEditionComboboxItemDto {
   }
 
   static List<ListResultDtoOfSubscribableEditionComboboxItemDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ListResultDtoOfSubscribableEditionComboboxItemDto>() : json.map((value) => new ListResultDtoOfSubscribableEditionComboboxItemDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ListResultDtoOfSubscribableEditionComboboxItemDto.fromJson(value)).toList();
   }
 
   static Map<String, ListResultDtoOfSubscribableEditionComboboxItemDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

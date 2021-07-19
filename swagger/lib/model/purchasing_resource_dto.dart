@@ -32,7 +32,7 @@ class PurchasingResourceDto {
   }
 
   static List<PurchasingResourceDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PurchasingResourceDto>() : json.map((value) => new PurchasingResourceDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PurchasingResourceDto.fromJson(value)).toList();
   }
 
   static Map<String, PurchasingResourceDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -34,7 +34,7 @@ class CancelPaymentDto {
   }
 
   static List<CancelPaymentDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CancelPaymentDto>() : json.map((value) => new CancelPaymentDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CancelPaymentDto.fromJson(value)).toList();
   }
 
   static Map<String, CancelPaymentDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -48,7 +48,7 @@ class CreateUserOnTenantInput {
   }
 
   static List<CreateUserOnTenantInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateUserOnTenantInput>() : json.map((value) => new CreateUserOnTenantInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateUserOnTenantInput.fromJson(value)).toList();
   }
 
   static Map<String, CreateUserOnTenantInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

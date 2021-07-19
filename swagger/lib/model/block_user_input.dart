@@ -32,7 +32,7 @@ class BlockUserInput {
   }
 
   static List<BlockUserInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<BlockUserInput>() : json.map((value) => new BlockUserInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new BlockUserInput.fromJson(value)).toList();
   }
 
   static Map<String, BlockUserInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

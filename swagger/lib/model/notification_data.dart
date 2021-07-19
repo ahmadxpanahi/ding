@@ -34,7 +34,7 @@ class NotificationData {
   }
 
   static List<NotificationData> listFromJson(List<dynamic> json) {
-    return json == null ? new List<NotificationData>() : json.map((value) => new NotificationData.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new NotificationData.fromJson(value)).toList();
   }
 
   static Map<String, NotificationData> mapFromJson(Map<String, Map<String, dynamic>>? json) {

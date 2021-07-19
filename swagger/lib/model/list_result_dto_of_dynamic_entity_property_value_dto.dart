@@ -25,7 +25,7 @@ class ListResultDtoOfDynamicEntityPropertyValueDto {
   }
 
   static List<ListResultDtoOfDynamicEntityPropertyValueDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ListResultDtoOfDynamicEntityPropertyValueDto>() : json.map((value) => new ListResultDtoOfDynamicEntityPropertyValueDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ListResultDtoOfDynamicEntityPropertyValueDto.fromJson(value)).toList();
   }
 
   static Map<String, ListResultDtoOfDynamicEntityPropertyValueDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

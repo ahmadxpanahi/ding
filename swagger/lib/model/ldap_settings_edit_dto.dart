@@ -53,7 +53,7 @@ class LdapSettingsEditDto {
   }
 
   static List<LdapSettingsEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<LdapSettingsEditDto>() : json.map((value) => new LdapSettingsEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new LdapSettingsEditDto.fromJson(value)).toList();
   }
 
   static Map<String, LdapSettingsEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

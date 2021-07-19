@@ -25,7 +25,7 @@ class ThemeFooterSettingsDto {
   }
 
   static List<ThemeFooterSettingsDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ThemeFooterSettingsDto>() : json.map((value) => new ThemeFooterSettingsDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ThemeFooterSettingsDto.fromJson(value)).toList();
   }
 
   static Map<String, ThemeFooterSettingsDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -218,7 +218,7 @@ class UserEditDto {
   }
 
   static List<UserEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<UserEditDto>() : json.map((value) => new UserEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UserEditDto.fromJson(value)).toList();
   }
 
   static Map<String, UserEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

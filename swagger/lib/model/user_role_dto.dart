@@ -53,7 +53,7 @@ class UserRoleDto {
   }
 
   static List<UserRoleDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<UserRoleDto>() : json.map((value) => new UserRoleDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UserRoleDto.fromJson(value)).toList();
   }
 
   static Map<String, UserRoleDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -32,7 +32,7 @@ class PagedResultDtoOfGetVacationTypeForViewDto {
   }
 
   static List<PagedResultDtoOfGetVacationTypeForViewDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PagedResultDtoOfGetVacationTypeForViewDto>() : json.map((value) => new PagedResultDtoOfGetVacationTypeForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PagedResultDtoOfGetVacationTypeForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, PagedResultDtoOfGetVacationTypeForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

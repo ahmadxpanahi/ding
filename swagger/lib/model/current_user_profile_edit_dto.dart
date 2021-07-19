@@ -81,7 +81,7 @@ class CurrentUserProfileEditDto {
   }
 
   static List<CurrentUserProfileEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CurrentUserProfileEditDto>() : json.map((value) => new CurrentUserProfileEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CurrentUserProfileEditDto.fromJson(value)).toList();
   }
 
   static Map<String, CurrentUserProfileEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

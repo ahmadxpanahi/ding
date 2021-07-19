@@ -34,7 +34,7 @@ class IValueValidator {
   }
 
   static List<IValueValidator> listFromJson(List<dynamic> json) {
-    return json == null ? new List<IValueValidator>() : json.map((value) => new IValueValidator.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new IValueValidator.fromJson(value)).toList();
   }
 
   static Map<String, IValueValidator> mapFromJson(Map<String, Map<String, dynamic>>? json) {

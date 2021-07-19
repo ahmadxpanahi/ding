@@ -32,7 +32,7 @@ class MoveTenantsToAnotherEditionDto {
   }
 
   static List<MoveTenantsToAnotherEditionDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<MoveTenantsToAnotherEditionDto>() : json.map((value) => new MoveTenantsToAnotherEditionDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new MoveTenantsToAnotherEditionDto.fromJson(value)).toList();
   }
 
   static Map<String, MoveTenantsToAnotherEditionDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

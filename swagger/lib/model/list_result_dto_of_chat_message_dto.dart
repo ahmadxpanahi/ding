@@ -25,7 +25,7 @@ class ListResultDtoOfChatMessageDto {
   }
 
   static List<ListResultDtoOfChatMessageDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ListResultDtoOfChatMessageDto>() : json.map((value) => new ListResultDtoOfChatMessageDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ListResultDtoOfChatMessageDto.fromJson(value)).toList();
   }
 
   static Map<String, ListResultDtoOfChatMessageDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

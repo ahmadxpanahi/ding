@@ -55,7 +55,7 @@ class GetAllDynamicEntityPropertyValuesOutputItem {
   }
 
   static List<GetAllDynamicEntityPropertyValuesOutputItem> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetAllDynamicEntityPropertyValuesOutputItem>() : json.map((value) => new GetAllDynamicEntityPropertyValuesOutputItem.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetAllDynamicEntityPropertyValuesOutputItem.fromJson(value)).toList();
   }
 
   static Map<String, GetAllDynamicEntityPropertyValuesOutputItem> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -39,7 +39,7 @@ class GoogleExternalLoginProviderSettings {
   }
 
   static List<GoogleExternalLoginProviderSettings> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GoogleExternalLoginProviderSettings>() : json.map((value) => new GoogleExternalLoginProviderSettings.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GoogleExternalLoginProviderSettings.fromJson(value)).toList();
   }
 
   static Map<String, GoogleExternalLoginProviderSettings> mapFromJson(Map<String, Map<String, dynamic>> json) {

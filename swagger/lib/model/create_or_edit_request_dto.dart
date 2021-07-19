@@ -67,7 +67,7 @@ class CreateOrEditRequestDto {
   }
 
   static List<CreateOrEditRequestDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateOrEditRequestDto>() : json.map((value) => new CreateOrEditRequestDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateOrEditRequestDto.fromJson(value)).toList();
   }
 
   static Map<String, CreateOrEditRequestDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

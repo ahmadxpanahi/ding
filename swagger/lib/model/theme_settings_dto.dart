@@ -70,7 +70,7 @@ class ThemeSettingsDto {
   }
 
   static List<ThemeSettingsDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ThemeSettingsDto>() : json.map((value) => new ThemeSettingsDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ThemeSettingsDto.fromJson(value)).toList();
   }
 
   static Map<String, ThemeSettingsDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

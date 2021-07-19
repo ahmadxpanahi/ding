@@ -53,7 +53,7 @@ class OpenIdConnectExternalLoginProviderSettings {
   }
 
   static List<OpenIdConnectExternalLoginProviderSettings> listFromJson(List<dynamic> json) {
-    return json == null ? new List<OpenIdConnectExternalLoginProviderSettings>() : json.map((value) => new OpenIdConnectExternalLoginProviderSettings.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new OpenIdConnectExternalLoginProviderSettings.fromJson(value)).toList();
   }
 
   static Map<String, OpenIdConnectExternalLoginProviderSettings> mapFromJson(Map<String, Map<String, dynamic>> json) {

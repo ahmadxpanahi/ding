@@ -55,7 +55,7 @@ class UiCustomizationSettingsDto {
   }
 
   static List<UiCustomizationSettingsDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<UiCustomizationSettingsDto>() : json.map((value) => new UiCustomizationSettingsDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UiCustomizationSettingsDto.fromJson(value)).toList();
   }
 
   static Map<String, UiCustomizationSettingsDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

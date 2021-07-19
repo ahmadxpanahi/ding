@@ -25,7 +25,7 @@ class GetIncomeStatisticsDataOutput {
   }
 
   static List<GetIncomeStatisticsDataOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetIncomeStatisticsDataOutput>() : json.map((value) => new GetIncomeStatisticsDataOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetIncomeStatisticsDataOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetIncomeStatisticsDataOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

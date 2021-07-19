@@ -27,7 +27,7 @@ class CreateOrUpdateLanguageInput {
   }
 
   static List<CreateOrUpdateLanguageInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateOrUpdateLanguageInput>() : json.map((value) => new CreateOrUpdateLanguageInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateOrUpdateLanguageInput.fromJson(value)).toList();
   }
 
   static Map<String, CreateOrUpdateLanguageInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

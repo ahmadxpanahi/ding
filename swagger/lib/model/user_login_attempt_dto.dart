@@ -65,7 +65,7 @@ class UserLoginAttemptDto {
   }
 
   static List<UserLoginAttemptDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<UserLoginAttemptDto>() : json.map((value) => new UserLoginAttemptDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UserLoginAttemptDto.fromJson(value)).toList();
   }
 
   static Map<String, UserLoginAttemptDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

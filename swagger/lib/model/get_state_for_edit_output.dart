@@ -34,7 +34,7 @@ class GetStateForEditOutput {
   }
 
   static List<GetStateForEditOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetStateForEditOutput>() : json.map((value) => new GetStateForEditOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetStateForEditOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetStateForEditOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

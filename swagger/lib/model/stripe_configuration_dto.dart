@@ -25,7 +25,7 @@ class StripeConfigurationDto {
   }
 
   static List<StripeConfigurationDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<StripeConfigurationDto>() : json.map((value) => new StripeConfigurationDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new StripeConfigurationDto.fromJson(value)).toList();
   }
 
   static Map<String, StripeConfigurationDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

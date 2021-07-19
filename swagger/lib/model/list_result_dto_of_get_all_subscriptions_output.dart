@@ -25,7 +25,7 @@ class ListResultDtoOfGetAllSubscriptionsOutput {
   }
 
   static List<ListResultDtoOfGetAllSubscriptionsOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ListResultDtoOfGetAllSubscriptionsOutput>() : json.map((value) => new ListResultDtoOfGetAllSubscriptionsOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ListResultDtoOfGetAllSubscriptionsOutput.fromJson(value)).toList();
   }
 
   static Map<String, ListResultDtoOfGetAllSubscriptionsOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

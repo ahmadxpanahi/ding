@@ -25,7 +25,7 @@ class ThemeLayoutSettingsDto {
   }
 
   static List<ThemeLayoutSettingsDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ThemeLayoutSettingsDto>() : json.map((value) => new ThemeLayoutSettingsDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ThemeLayoutSettingsDto.fromJson(value)).toList();
   }
 
   static Map<String, ThemeLayoutSettingsDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

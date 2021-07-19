@@ -46,7 +46,7 @@ class WidgetOutput {
   }
 
   static List<WidgetOutput> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<WidgetOutput>() : json.map((value) => new WidgetOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new WidgetOutput.fromJson(value)).toList();
   }
 
   static Map<String, WidgetOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

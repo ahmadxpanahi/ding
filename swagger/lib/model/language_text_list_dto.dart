@@ -39,7 +39,7 @@ class LanguageTextListDto {
   }
 
   static List<LanguageTextListDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<LanguageTextListDto>() : json.map((value) => new LanguageTextListDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new LanguageTextListDto.fromJson(value)).toList();
   }
 
   static Map<String, LanguageTextListDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

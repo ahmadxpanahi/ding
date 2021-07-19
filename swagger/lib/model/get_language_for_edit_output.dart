@@ -41,7 +41,7 @@ class GetLanguageForEditOutput {
   }
 
   static List<GetLanguageForEditOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetLanguageForEditOutput>() : json.map((value) => new GetLanguageForEditOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetLanguageForEditOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetLanguageForEditOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

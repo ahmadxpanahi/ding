@@ -83,7 +83,7 @@ class CreateOrEditEnterLeaveDto {
   }
 
   static List<CreateOrEditEnterLeaveDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateOrEditEnterLeaveDto>() : json.map((value) => new CreateOrEditEnterLeaveDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateOrEditEnterLeaveDto.fromJson(value)).toList();
   }
 
   static Map<String, CreateOrEditEnterLeaveDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

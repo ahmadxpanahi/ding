@@ -32,7 +32,7 @@ class GetLanguagesOutput {
   }
 
   static List<GetLanguagesOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetLanguagesOutput>() : json.map((value) => new GetLanguagesOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetLanguagesOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetLanguagesOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

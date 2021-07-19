@@ -25,7 +25,7 @@ class AddNewPageOutput {
   }
 
   static List<AddNewPageOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<AddNewPageOutput>() : json.map((value) => new AddNewPageOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new AddNewPageOutput.fromJson(value)).toList();
   }
 
   static Map<String, AddNewPageOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -103,7 +103,7 @@ class ApplicationLanguageListDto {
   }
 
   static List<ApplicationLanguageListDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<ApplicationLanguageListDto>() : json.map((value) => new ApplicationLanguageListDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ApplicationLanguageListDto.fromJson(value)).toList();
   }
 
   static Map<String, ApplicationLanguageListDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

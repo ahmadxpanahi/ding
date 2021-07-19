@@ -25,7 +25,7 @@ class GetRegionalStatsOutput {
   }
 
   static List<GetRegionalStatsOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetRegionalStatsOutput>() : json.map((value) => new GetRegionalStatsOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetRegionalStatsOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetRegionalStatsOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

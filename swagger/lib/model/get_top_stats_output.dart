@@ -46,7 +46,7 @@ class GetTopStatsOutput {
   }
 
   static List<GetTopStatsOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetTopStatsOutput>() : json.map((value) => new GetTopStatsOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetTopStatsOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetTopStatsOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

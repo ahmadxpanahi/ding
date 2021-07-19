@@ -53,7 +53,7 @@ class AllAvailableDevicesDto {
   }
 
   static List<AllAvailableDevicesDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<AllAvailableDevicesDto>() : json.map((value) => new AllAvailableDevicesDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new AllAvailableDevicesDto.fromJson(value)).toList();
   }
 
   static Map<String, AllAvailableDevicesDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

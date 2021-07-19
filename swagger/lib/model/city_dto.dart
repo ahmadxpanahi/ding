@@ -74,7 +74,7 @@ class CityDto {
   }
 
   static List<CityDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CityDto>() : json.map((value) => new CityDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CityDto.fromJson(value)).toList();
   }
 
   static Map<String, CityDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

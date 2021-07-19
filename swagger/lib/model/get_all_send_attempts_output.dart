@@ -67,7 +67,7 @@ class GetAllSendAttemptsOutput {
   }
 
   static List<GetAllSendAttemptsOutput> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetAllSendAttemptsOutput>() : json.map((value) => new GetAllSendAttemptsOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetAllSendAttemptsOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetAllSendAttemptsOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

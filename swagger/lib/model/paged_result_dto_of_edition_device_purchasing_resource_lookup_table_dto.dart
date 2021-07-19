@@ -32,7 +32,7 @@ class PagedResultDtoOfEditionDevicePurchasingResourceLookupTableDto {
   }
 
   static List<PagedResultDtoOfEditionDevicePurchasingResourceLookupTableDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PagedResultDtoOfEditionDevicePurchasingResourceLookupTableDto>() : json.map((value) => new PagedResultDtoOfEditionDevicePurchasingResourceLookupTableDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PagedResultDtoOfEditionDevicePurchasingResourceLookupTableDto.fromJson(value)).toList();
   }
 
   static Map<String, PagedResultDtoOfEditionDevicePurchasingResourceLookupTableDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

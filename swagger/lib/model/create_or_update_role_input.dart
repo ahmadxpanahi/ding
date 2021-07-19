@@ -34,7 +34,7 @@ class CreateOrUpdateRoleInput {
   }
 
   static List<CreateOrUpdateRoleInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateOrUpdateRoleInput>() : json.map((value) => new CreateOrUpdateRoleInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateOrUpdateRoleInput.fromJson(value)).toList();
   }
 
   static Map<String, CreateOrUpdateRoleInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

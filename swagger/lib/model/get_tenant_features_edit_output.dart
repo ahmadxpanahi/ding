@@ -32,7 +32,7 @@ class GetTenantFeaturesEditOutput {
   }
 
   static List<GetTenantFeaturesEditOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetTenantFeaturesEditOutput>() : json.map((value) => new GetTenantFeaturesEditOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetTenantFeaturesEditOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetTenantFeaturesEditOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -69,7 +69,7 @@ class GetSupportForViewDto {
   }
 
   static List<GetSupportForViewDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetSupportForViewDto>() : json.map((value) => new GetSupportForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetSupportForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, GetSupportForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

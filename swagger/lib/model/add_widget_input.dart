@@ -60,7 +60,7 @@ class AddWidgetInput {
   }
 
   static List<AddWidgetInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<AddWidgetInput>() : json.map((value) => new AddWidgetInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new AddWidgetInput.fromJson(value)).toList();
   }
 
   static Map<String, AddWidgetInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

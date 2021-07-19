@@ -32,7 +32,7 @@ class TwitterExternalLoginProviderSettings {
   }
 
   static List<TwitterExternalLoginProviderSettings> listFromJson(List<dynamic> json) {
-    return json == null ? new List<TwitterExternalLoginProviderSettings>() : json.map((value) => new TwitterExternalLoginProviderSettings.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new TwitterExternalLoginProviderSettings.fromJson(value)).toList();
   }
 
   static Map<String, TwitterExternalLoginProviderSettings> mapFromJson(Map<String, Map<String, dynamic>> json) {

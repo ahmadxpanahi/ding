@@ -39,7 +39,7 @@ class RefreshTokenResult {
   }
 
   static List<RefreshTokenResult> listFromJson(List<dynamic> json) {
-    return json == null ? new List<RefreshTokenResult>() : json.map((value) => new RefreshTokenResult.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new RefreshTokenResult.fromJson(value)).toList();
   }
 
   static Map<String, RefreshTokenResult> mapFromJson(Map<String, Map<String, dynamic>> json) {

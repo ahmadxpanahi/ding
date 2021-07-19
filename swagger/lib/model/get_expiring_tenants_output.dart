@@ -49,7 +49,7 @@ class GetExpiringTenantsOutput {
   }
 
   static List<GetExpiringTenantsOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetExpiringTenantsOutput>() : json.map((value) => new GetExpiringTenantsOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetExpiringTenantsOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetExpiringTenantsOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

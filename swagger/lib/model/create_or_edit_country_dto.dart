@@ -109,7 +109,7 @@ class CreateOrEditCountryDto {
   }
 
   static List<CreateOrEditCountryDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateOrEditCountryDto>() : json.map((value) => new CreateOrEditCountryDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateOrEditCountryDto.fromJson(value)).toList();
   }
 
   static Map<String, CreateOrEditCountryDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

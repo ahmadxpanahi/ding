@@ -60,7 +60,7 @@ class DynamicPropertyDto {
   }
 
   static List<DynamicPropertyDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<DynamicPropertyDto>() : json.map((value) => new DynamicPropertyDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new DynamicPropertyDto.fromJson(value)).toList();
   }
 
   static Map<String, DynamicPropertyDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

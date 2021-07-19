@@ -39,7 +39,7 @@ class ActivateEmailInput {
   }
 
   static List<ActivateEmailInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ActivateEmailInput>() : json.map((value) => new ActivateEmailInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ActivateEmailInput.fromJson(value)).toList();
   }
 
   static Map<String, ActivateEmailInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

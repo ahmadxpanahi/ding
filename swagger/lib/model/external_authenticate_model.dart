@@ -53,7 +53,7 @@ class ExternalAuthenticateModel {
   }
 
   static List<ExternalAuthenticateModel> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ExternalAuthenticateModel>() : json.map((value) => new ExternalAuthenticateModel.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ExternalAuthenticateModel.fromJson(value)).toList();
   }
 
   static Map<String, ExternalAuthenticateModel> mapFromJson(Map<String, Map<String, dynamic>> json) {

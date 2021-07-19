@@ -32,7 +32,7 @@ class CleanValuesInput {
   }
 
   static List<CleanValuesInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CleanValuesInput>() : json.map((value) => new CleanValuesInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CleanValuesInput.fromJson(value)).toList();
   }
 
   static Map<String, CleanValuesInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

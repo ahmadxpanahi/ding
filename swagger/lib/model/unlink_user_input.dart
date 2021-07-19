@@ -32,7 +32,7 @@ class UnlinkUserInput {
   }
 
   static List<UnlinkUserInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<UnlinkUserInput>() : json.map((value) => new UnlinkUserInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UnlinkUserInput.fromJson(value)).toList();
   }
 
   static Map<String, UnlinkUserInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

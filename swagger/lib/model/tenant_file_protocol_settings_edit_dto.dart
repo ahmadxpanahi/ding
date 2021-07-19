@@ -67,7 +67,7 @@ class TenantFileProtocolSettingsEditDto {
   }
 
   static List<TenantFileProtocolSettingsEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<TenantFileProtocolSettingsEditDto>() : json.map((value) => new TenantFileProtocolSettingsEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new TenantFileProtocolSettingsEditDto.fromJson(value)).toList();
   }
 
   static Map<String, TenantFileProtocolSettingsEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

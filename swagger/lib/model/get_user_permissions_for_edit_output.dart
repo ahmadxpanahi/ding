@@ -32,7 +32,7 @@ class GetUserPermissionsForEditOutput {
   }
 
   static List<GetUserPermissionsForEditOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetUserPermissionsForEditOutput>() : json.map((value) => new GetUserPermissionsForEditOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetUserPermissionsForEditOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetUserPermissionsForEditOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

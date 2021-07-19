@@ -32,7 +32,7 @@ class PagedResultDtoOfLanguageTextListDto {
   }
 
   static List<PagedResultDtoOfLanguageTextListDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PagedResultDtoOfLanguageTextListDto>() : json.map((value) => new PagedResultDtoOfLanguageTextListDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PagedResultDtoOfLanguageTextListDto.fromJson(value)).toList();
   }
 
   static Map<String, PagedResultDtoOfLanguageTextListDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

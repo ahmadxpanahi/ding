@@ -32,7 +32,7 @@ class ExpiringTenant {
   }
 
   static List<ExpiringTenant> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<ExpiringTenant>() : json.map((value) => new ExpiringTenant.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ExpiringTenant.fromJson(value)).toList();
   }
 
   static Map<String, ExpiringTenant> mapFromJson(Map<String, Map<String, dynamic>> json) {

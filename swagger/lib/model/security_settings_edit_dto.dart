@@ -68,7 +68,7 @@ class SecuritySettingsEditDto {
   }
 
   static List<SecuritySettingsEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<SecuritySettingsEditDto>() : json.map((value) => new SecuritySettingsEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new SecuritySettingsEditDto.fromJson(value)).toList();
   }
 
   static Map<String, SecuritySettingsEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

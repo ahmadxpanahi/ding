@@ -32,7 +32,7 @@ class HostBillingSettingsEditDto {
   }
 
   static List<HostBillingSettingsEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<HostBillingSettingsEditDto>() : json.map((value) => new HostBillingSettingsEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new HostBillingSettingsEditDto.fromJson(value)).toList();
   }
 
   static Map<String, HostBillingSettingsEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

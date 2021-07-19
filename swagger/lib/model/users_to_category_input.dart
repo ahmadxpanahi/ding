@@ -32,7 +32,7 @@ class UsersToCategoryInput {
   }
 
   static List<UsersToCategoryInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<UsersToCategoryInput>() : json.map((value) => new UsersToCategoryInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UsersToCategoryInput.fromJson(value)).toList();
   }
 
   static Map<String, UsersToCategoryInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

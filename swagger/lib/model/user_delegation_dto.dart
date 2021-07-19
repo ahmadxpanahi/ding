@@ -42,7 +42,7 @@ class UserDelegationDto {
   }
 
   static List<UserDelegationDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<UserDelegationDto>() : json.map((value) => new UserDelegationDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UserDelegationDto.fromJson(value)).toList();
   }
 
   static Map<String, UserDelegationDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

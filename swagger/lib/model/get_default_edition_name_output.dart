@@ -25,7 +25,7 @@ class GetDefaultEditionNameOutput {
   }
 
   static List<GetDefaultEditionNameOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetDefaultEditionNameOutput>() : json.map((value) => new GetDefaultEditionNameOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetDefaultEditionNameOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetDefaultEditionNameOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

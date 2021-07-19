@@ -32,7 +32,7 @@ class ChangePasswordInput {
   }
 
   static List<ChangePasswordInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ChangePasswordInput>() : json.map((value) => new ChangePasswordInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ChangePasswordInput.fromJson(value)).toList();
   }
 
   static Map<String, ChangePasswordInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

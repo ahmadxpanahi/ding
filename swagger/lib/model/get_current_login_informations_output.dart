@@ -72,7 +72,7 @@ class GetCurrentLoginInformationsOutput {
   }
 
   static List<GetCurrentLoginInformationsOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetCurrentLoginInformationsOutput>() : json.map((value) => new GetCurrentLoginInformationsOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetCurrentLoginInformationsOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetCurrentLoginInformationsOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

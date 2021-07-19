@@ -25,7 +25,7 @@ class SendPasswordResetCodeInput {
   }
 
   static List<SendPasswordResetCodeInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<SendPasswordResetCodeInput>() : json.map((value) => new SendPasswordResetCodeInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new SendPasswordResetCodeInput.fromJson(value)).toList();
   }
 
   static Map<String, SendPasswordResetCodeInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

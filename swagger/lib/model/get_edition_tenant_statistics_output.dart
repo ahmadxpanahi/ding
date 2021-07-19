@@ -25,7 +25,7 @@ class GetEditionTenantStatisticsOutput {
   }
 
   static List<GetEditionTenantStatisticsOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetEditionTenantStatisticsOutput>() : json.map((value) => new GetEditionTenantStatisticsOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetEditionTenantStatisticsOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetEditionTenantStatisticsOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

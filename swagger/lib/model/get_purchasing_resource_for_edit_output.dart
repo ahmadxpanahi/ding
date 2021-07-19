@@ -27,7 +27,7 @@ class GetPurchasingResourceForEditOutput {
   }
 
   static List<GetPurchasingResourceForEditOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetPurchasingResourceForEditOutput>() : json.map((value) => new GetPurchasingResourceForEditOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetPurchasingResourceForEditOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetPurchasingResourceForEditOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -53,7 +53,7 @@ class RegionalStatCountry {
   }
 
   static List<RegionalStatCountry> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<RegionalStatCountry>() : json.map((value) => new RegionalStatCountry.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new RegionalStatCountry.fromJson(value)).toList();
   }
 
   static Map<String, RegionalStatCountry> mapFromJson(Map<String, Map<String, dynamic>> json) {

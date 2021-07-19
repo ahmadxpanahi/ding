@@ -71,7 +71,7 @@ class InstallDto {
   }
 
   static List<InstallDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<InstallDto>() : json.map((value) => new InstallDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new InstallDto.fromJson(value)).toList();
   }
 
   static Map<String, InstallDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

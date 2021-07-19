@@ -60,7 +60,7 @@ class EmployeeLeaveReportDto {
   }
 
   static List<EmployeeLeaveReportDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<EmployeeLeaveReportDto>() : json.map((value) => new EmployeeLeaveReportDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new EmployeeLeaveReportDto.fromJson(value)).toList();
   }
 
   static Map<String, EmployeeLeaveReportDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -34,7 +34,7 @@ class GetDeviceForEditOutput {
   }
 
   static List<GetDeviceForEditOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetDeviceForEditOutput>() : json.map((value) => new GetDeviceForEditOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetDeviceForEditOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetDeviceForEditOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

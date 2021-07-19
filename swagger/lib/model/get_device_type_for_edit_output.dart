@@ -27,7 +27,7 @@ class GetDeviceTypeForEditOutput {
   }
 
   static List<GetDeviceTypeForEditOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetDeviceTypeForEditOutput>() : json.map((value) => new GetDeviceTypeForEditOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetDeviceTypeForEditOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetDeviceTypeForEditOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

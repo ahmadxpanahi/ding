@@ -41,7 +41,7 @@ class GetCityForEditOutput {
   }
 
   static List<GetCityForEditOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetCityForEditOutput>() : json.map((value) => new GetCityForEditOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetCityForEditOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetCityForEditOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

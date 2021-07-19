@@ -39,7 +39,7 @@ class UpdateUserSignInTokenOutput {
   }
 
   static List<UpdateUserSignInTokenOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<UpdateUserSignInTokenOutput>() : json.map((value) => new UpdateUserSignInTokenOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UpdateUserSignInTokenOutput.fromJson(value)).toList();
   }
 
   static Map<String, UpdateUserSignInTokenOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

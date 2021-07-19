@@ -60,7 +60,7 @@ class ResetPasswordInput {
   }
 
   static List<ResetPasswordInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ResetPasswordInput>() : json.map((value) => new ResetPasswordInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ResetPasswordInput.fromJson(value)).toList();
   }
 
   static Map<String, ResetPasswordInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -83,7 +83,7 @@ class GetDeviceDetailForRegistrationDto {
   }
 
   static List<GetDeviceDetailForRegistrationDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetDeviceDetailForRegistrationDto>() : json.map((value) => new GetDeviceDetailForRegistrationDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetDeviceDetailForRegistrationDto.fromJson(value)).toList();
   }
 
   static Map<String, GetDeviceDetailForRegistrationDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

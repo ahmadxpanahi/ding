@@ -67,7 +67,7 @@ class UpdateProfilePictureByUserInput {
   }
 
   static List<UpdateProfilePictureByUserInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<UpdateProfilePictureByUserInput>() : json.map((value) => new UpdateProfilePictureByUserInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UpdateProfilePictureByUserInput.fromJson(value)).toList();
   }
 
   static Map<String, UpdateProfilePictureByUserInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -32,7 +32,7 @@ class EditionsSelectOutput {
   }
 
   static List<EditionsSelectOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<EditionsSelectOutput>() : json.map((value) => new EditionsSelectOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new EditionsSelectOutput.fromJson(value)).toList();
   }
 
   static Map<String, EditionsSelectOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

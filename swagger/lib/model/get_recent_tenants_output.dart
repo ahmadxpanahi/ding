@@ -44,7 +44,7 @@ class GetRecentTenantsOutput {
   }
 
   static List<GetRecentTenantsOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetRecentTenantsOutput>() : json.map((value) => new GetRecentTenantsOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetRecentTenantsOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetRecentTenantsOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

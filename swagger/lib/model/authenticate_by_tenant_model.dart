@@ -81,7 +81,7 @@ class AuthenticateByTenantModel {
   }
 
   static List<AuthenticateByTenantModel> listFromJson(List<dynamic> json) {
-    return json == null ? new List<AuthenticateByTenantModel>() : json.map((value) => new AuthenticateByTenantModel.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new AuthenticateByTenantModel.fromJson(value)).toList();
   }
 
   static Map<String, AuthenticateByTenantModel> mapFromJson(Map<String, Map<String, dynamic>> json) {

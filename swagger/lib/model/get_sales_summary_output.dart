@@ -53,7 +53,7 @@ class GetSalesSummaryOutput {
   }
 
   static List<GetSalesSummaryOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetSalesSummaryOutput>() : json.map((value) => new GetSalesSummaryOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetSalesSummaryOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetSalesSummaryOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

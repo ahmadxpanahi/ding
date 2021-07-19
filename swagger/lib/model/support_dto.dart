@@ -85,7 +85,7 @@ class SupportDto {
   }
 
   static List<SupportDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<SupportDto>() : json.map((value) => new SupportDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new SupportDto.fromJson(value)).toList();
   }
 
   static Map<String, SupportDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

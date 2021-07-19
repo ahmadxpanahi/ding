@@ -39,7 +39,7 @@ class TenantDeviceDeviceLookupTableDto {
   }
 
   static List<TenantDeviceDeviceLookupTableDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<TenantDeviceDeviceLookupTableDto>() : json.map((value) => new TenantDeviceDeviceLookupTableDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new TenantDeviceDeviceLookupTableDto.fromJson(value)).toList();
   }
 
   static Map<String, TenantDeviceDeviceLookupTableDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -67,7 +67,7 @@ class WebhookSubscription {
   }
 
   static List<WebhookSubscription> listFromJson(List<dynamic> json) {
-    return json == null ? new List<WebhookSubscription>() : json.map((value) => new WebhookSubscription.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new WebhookSubscription.fromJson(value)).toList();
   }
 
   static Map<String, WebhookSubscription> mapFromJson(Map<String, Map<String, dynamic>> json) {

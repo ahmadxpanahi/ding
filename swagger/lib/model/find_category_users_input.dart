@@ -46,7 +46,7 @@ class FindCategoryUsersInput {
   }
 
   static List<FindCategoryUsersInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<FindCategoryUsersInput>() : json.map((value) => new FindCategoryUsersInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new FindCategoryUsersInput.fromJson(value)).toList();
   }
 
   static Map<String, FindCategoryUsersInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

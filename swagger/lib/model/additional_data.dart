@@ -46,7 +46,7 @@ class AdditionalData {
   }
 
   static List<AdditionalData> listFromJson(List<dynamic> json) {
-    return json == null ? new List<AdditionalData>() : json.map((value) => new AdditionalData.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new AdditionalData.fromJson(value)).toList();
   }
 
   static Map<String, AdditionalData> mapFromJson(Map<String, Map<String, dynamic>> json) {

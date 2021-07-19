@@ -65,7 +65,7 @@ class ApplicationInfoDto {
   }
 
   static List<ApplicationInfoDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ApplicationInfoDto>() : json.map((value) => new ApplicationInfoDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ApplicationInfoDto.fromJson(value)).toList();
   }
 
   static Map<String, ApplicationInfoDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

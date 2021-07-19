@@ -46,7 +46,7 @@ class FindOrganizationUnitRolesInput {
   }
 
   static List<FindOrganizationUnitRolesInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<FindOrganizationUnitRolesInput>() : json.map((value) => new FindOrganizationUnitRolesInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new FindOrganizationUnitRolesInput.fromJson(value)).toList();
   }
 
   static Map<String, FindOrganizationUnitRolesInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

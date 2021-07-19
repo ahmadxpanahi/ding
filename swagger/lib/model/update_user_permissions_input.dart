@@ -32,7 +32,7 @@ class UpdateUserPermissionsInput {
   }
 
   static List<UpdateUserPermissionsInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<UpdateUserPermissionsInput>() : json.map((value) => new UpdateUserPermissionsInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UpdateUserPermissionsInput.fromJson(value)).toList();
   }
 
   static Map<String, UpdateUserPermissionsInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

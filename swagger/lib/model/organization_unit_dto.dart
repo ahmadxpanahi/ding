@@ -84,7 +84,7 @@ class OrganizationUnitDto {
   }
 
   static List<OrganizationUnitDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<OrganizationUnitDto>() : json.map((value) => new OrganizationUnitDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new OrganizationUnitDto.fromJson(value)).toList();
   }
 
   static Map<String, OrganizationUnitDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

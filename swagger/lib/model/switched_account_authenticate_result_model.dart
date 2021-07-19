@@ -39,7 +39,7 @@ class SwitchedAccountAuthenticateResultModel {
   }
 
   static List<SwitchedAccountAuthenticateResultModel> listFromJson(List<dynamic> json) {
-    return json == null ? new List<SwitchedAccountAuthenticateResultModel>() : json.map((value) => new SwitchedAccountAuthenticateResultModel.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new SwitchedAccountAuthenticateResultModel.fromJson(value)).toList();
   }
 
   static Map<String, SwitchedAccountAuthenticateResultModel> mapFromJson(Map<String, Map<String, dynamic>> json) {

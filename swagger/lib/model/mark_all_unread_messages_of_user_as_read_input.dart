@@ -32,7 +32,7 @@ class MarkAllUnreadMessagesOfUserAsReadInput {
   }
 
   static List<MarkAllUnreadMessagesOfUserAsReadInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<MarkAllUnreadMessagesOfUserAsReadInput>() : json.map((value) => new MarkAllUnreadMessagesOfUserAsReadInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new MarkAllUnreadMessagesOfUserAsReadInput.fromJson(value)).toList();
   }
 
   static Map<String, MarkAllUnreadMessagesOfUserAsReadInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

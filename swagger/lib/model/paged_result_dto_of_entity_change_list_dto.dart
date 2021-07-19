@@ -32,7 +32,7 @@ class PagedResultDtoOfEntityChangeListDto {
   }
 
   static List<PagedResultDtoOfEntityChangeListDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PagedResultDtoOfEntityChangeListDto>() : json.map((value) => new PagedResultDtoOfEntityChangeListDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PagedResultDtoOfEntityChangeListDto.fromJson(value)).toList();
   }
 
   static Map<String, PagedResultDtoOfEntityChangeListDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

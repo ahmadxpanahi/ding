@@ -32,7 +32,7 @@ class CreateOrEditPurchasingResourceDto {
   }
 
   static List<CreateOrEditPurchasingResourceDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateOrEditPurchasingResourceDto>() : json.map((value) => new CreateOrEditPurchasingResourceDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateOrEditPurchasingResourceDto.fromJson(value)).toList();
   }
 
   static Map<String, CreateOrEditPurchasingResourceDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

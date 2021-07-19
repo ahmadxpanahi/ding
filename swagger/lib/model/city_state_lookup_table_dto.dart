@@ -32,7 +32,7 @@ class CityStateLookupTableDto {
   }
 
   static List<CityStateLookupTableDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<CityStateLookupTableDto>() : json.map((value) => new CityStateLookupTableDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CityStateLookupTableDto.fromJson(value)).toList();
   }
 
   static Map<String, CityStateLookupTableDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

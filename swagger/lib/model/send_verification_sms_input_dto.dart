@@ -25,7 +25,7 @@ class SendVerificationSmsInputDto {
   }
 
   static List<SendVerificationSmsInputDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<SendVerificationSmsInputDto>() : json.map((value) => new SendVerificationSmsInputDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new SendVerificationSmsInputDto.fromJson(value)).toList();
   }
 
   static Map<String, SendVerificationSmsInputDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

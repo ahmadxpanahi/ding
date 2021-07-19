@@ -55,7 +55,7 @@ class GetUserClockInOutForViewDto {
   }
 
   static List<GetUserClockInOutForViewDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetUserClockInOutForViewDto>() : json.map((value) => new GetUserClockInOutForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetUserClockInOutForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, GetUserClockInOutForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

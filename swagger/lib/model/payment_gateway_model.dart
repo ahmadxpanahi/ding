@@ -34,7 +34,7 @@ class PaymentGatewayModel {
   }
 
   static List<PaymentGatewayModel> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PaymentGatewayModel>() : json.map((value) => new PaymentGatewayModel.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PaymentGatewayModel.fromJson(value)).toList();
   }
 
   static Map<String, PaymentGatewayModel> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -46,7 +46,7 @@ class GetAllSubscriptionsOutput {
   }
 
   static List<GetAllSubscriptionsOutput> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetAllSubscriptionsOutput>() : json.map((value) => new GetAllSubscriptionsOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetAllSubscriptionsOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetAllSubscriptionsOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -41,7 +41,7 @@ class GetEmployeeMissionReportForViewDto {
   }
 
   static List<GetEmployeeMissionReportForViewDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetEmployeeMissionReportForViewDto>() : json.map((value) => new GetEmployeeMissionReportForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetEmployeeMissionReportForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, GetEmployeeMissionReportForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

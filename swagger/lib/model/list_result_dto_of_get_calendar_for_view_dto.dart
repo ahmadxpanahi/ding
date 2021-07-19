@@ -25,7 +25,7 @@ class ListResultDtoOfGetCalendarForViewDto {
   }
 
   static List<ListResultDtoOfGetCalendarForViewDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ListResultDtoOfGetCalendarForViewDto>() : json.map((value) => new ListResultDtoOfGetCalendarForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ListResultDtoOfGetCalendarForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, ListResultDtoOfGetCalendarForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

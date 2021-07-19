@@ -39,7 +39,7 @@ class ComboboxItemDto {
   }
 
   static List<ComboboxItemDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<ComboboxItemDto>() : json.map((value) => new ComboboxItemDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ComboboxItemDto.fromJson(value)).toList();
   }
 
   static Map<String, ComboboxItemDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

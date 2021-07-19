@@ -84,7 +84,7 @@ class TenantNotification {
   }
 
   static List<TenantNotification> listFromJson(List<dynamic> json) {
-    return json == null ? new List<TenantNotification>() : json.map((value) => new TenantNotification.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new TenantNotification.fromJson(value)).toList();
   }
 
   static Map<String, TenantNotification> mapFromJson(Map<String, Map<String, dynamic>>? json) {

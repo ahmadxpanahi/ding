@@ -37,7 +37,7 @@ class IncomeStastistic {
   }
 
   static List<IncomeStastistic> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<IncomeStastistic>() : json.map((value) => new IncomeStastistic.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new IncomeStastistic.fromJson(value)).toList();
   }
 
   static Map<String, IncomeStastistic> mapFromJson(Map<String, Map<String, dynamic>> json) {

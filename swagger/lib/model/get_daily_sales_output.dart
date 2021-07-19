@@ -25,7 +25,7 @@ class GetDailySalesOutput {
   }
 
   static List<GetDailySalesOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetDailySalesOutput>() : json.map((value) => new GetDailySalesOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetDailySalesOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetDailySalesOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

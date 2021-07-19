@@ -53,7 +53,7 @@ class FindUsersInput {
   }
 
   static List<FindUsersInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<FindUsersInput>() : json.map((value) => new FindUsersInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new FindUsersInput.fromJson(value)).toList();
   }
 
   static Map<String, FindUsersInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

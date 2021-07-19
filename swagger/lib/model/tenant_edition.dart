@@ -32,7 +32,7 @@ class TenantEdition {
   }
 
   static List<TenantEdition> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<TenantEdition>() : json.map((value) => new TenantEdition.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new TenantEdition.fromJson(value)).toList();
   }
 
   static Map<String, TenantEdition> mapFromJson(Map<String, Map<String, dynamic>> json) {

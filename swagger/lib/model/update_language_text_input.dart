@@ -46,7 +46,7 @@ class UpdateLanguageTextInput {
   }
 
   static List<UpdateLanguageTextInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<UpdateLanguageTextInput>() : json.map((value) => new UpdateLanguageTextInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UpdateLanguageTextInput.fromJson(value)).toList();
   }
 
   static Map<String, UpdateLanguageTextInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

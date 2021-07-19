@@ -74,7 +74,7 @@ class AuthenticateModel {
   }
 
   static List<AuthenticateModel> listFromJson(List<dynamic> json) {
-    return json == null ? new List<AuthenticateModel>() : json.map((value) => new AuthenticateModel.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new AuthenticateModel.fromJson(value)).toList();
   }
 
   static Map<String, AuthenticateModel> mapFromJson(Map<String, Map<String, dynamic>> json) {

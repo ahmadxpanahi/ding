@@ -39,7 +39,7 @@ class UserLockOutSettingsEditDto {
   }
 
   static List<UserLockOutSettingsEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<UserLockOutSettingsEditDto>() : json.map((value) => new UserLockOutSettingsEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UserLockOutSettingsEditDto.fromJson(value)).toList();
   }
 
   static Map<String, UserLockOutSettingsEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

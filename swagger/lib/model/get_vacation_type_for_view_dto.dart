@@ -27,7 +27,7 @@ class GetVacationTypeForViewDto {
   }
 
   static List<GetVacationTypeForViewDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetVacationTypeForViewDto>() : json.map((value) => new GetVacationTypeForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetVacationTypeForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, GetVacationTypeForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

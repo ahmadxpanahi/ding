@@ -60,7 +60,7 @@ class UserLoginInfoDto {
   }
 
   static List<UserLoginInfoDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<UserLoginInfoDto>() : json.map((value) => new UserLoginInfoDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UserLoginInfoDto.fromJson(value)).toList();
   }
 
   static Map<String, UserLoginInfoDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

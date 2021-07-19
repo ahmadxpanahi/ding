@@ -25,7 +25,7 @@ class ListResultDtoOfUserLoginAttemptDto {
   }
 
   static List<ListResultDtoOfUserLoginAttemptDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ListResultDtoOfUserLoginAttemptDto>() : json.map((value) => new ListResultDtoOfUserLoginAttemptDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ListResultDtoOfUserLoginAttemptDto.fromJson(value)).toList();
   }
 
   static Map<String, ListResultDtoOfUserLoginAttemptDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

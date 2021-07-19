@@ -43,7 +43,7 @@ class IInputType {
   }
 
   static List<IInputType> listFromJson(List<dynamic> json) {
-    return json == null ? new List<IInputType>() : json.map((value) => new IInputType.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new IInputType.fromJson(value)).toList();
   }
 
   static Map<String, IInputType> mapFromJson(Map<String, Map<String, dynamic>>? json) {

@@ -25,7 +25,7 @@ class RegisterOutput {
   }
 
   static List<RegisterOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<RegisterOutput>() : json.map((value) => new RegisterOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new RegisterOutput.fromJson(value)).toList();
   }
 
   static Map<String, RegisterOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

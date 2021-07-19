@@ -25,7 +25,7 @@ class TenantOtherSettingsEditDto {
   }
 
   static List<TenantOtherSettingsEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<TenantOtherSettingsEditDto>() : json.map((value) => new TenantOtherSettingsEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new TenantOtherSettingsEditDto.fromJson(value)).toList();
   }
 
   static Map<String, TenantOtherSettingsEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -39,7 +39,7 @@ class GetAllAvailableWebhooksOutput {
   }
 
   static List<GetAllAvailableWebhooksOutput> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetAllAvailableWebhooksOutput>() : json.map((value) => new GetAllAvailableWebhooksOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetAllAvailableWebhooksOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetAllAvailableWebhooksOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

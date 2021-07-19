@@ -32,7 +32,7 @@ class PagedResultDtoOfStateCountryLookupTableDto {
   }
 
   static List<PagedResultDtoOfStateCountryLookupTableDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PagedResultDtoOfStateCountryLookupTableDto>() : json.map((value) => new PagedResultDtoOfStateCountryLookupTableDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PagedResultDtoOfStateCountryLookupTableDto.fromJson(value)).toList();
   }
 
   static Map<String, PagedResultDtoOfStateCountryLookupTableDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

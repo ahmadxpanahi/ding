@@ -41,7 +41,7 @@ class GetUserWorkScheduleForEditOutput {
   }
 
   static List<GetUserWorkScheduleForEditOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetUserWorkScheduleForEditOutput>() : json.map((value) => new GetUserWorkScheduleForEditOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetUserWorkScheduleForEditOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetUserWorkScheduleForEditOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

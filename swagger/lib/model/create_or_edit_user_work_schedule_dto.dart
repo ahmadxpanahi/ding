@@ -39,7 +39,7 @@ class CreateOrEditUserWorkScheduleDto {
   }
 
   static List<CreateOrEditUserWorkScheduleDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateOrEditUserWorkScheduleDto>() : json.map((value) => new CreateOrEditUserWorkScheduleDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateOrEditUserWorkScheduleDto.fromJson(value)).toList();
   }
 
   static Map<String, CreateOrEditUserWorkScheduleDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

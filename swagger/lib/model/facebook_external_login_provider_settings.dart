@@ -32,7 +32,7 @@ class FacebookExternalLoginProviderSettings {
   }
 
   static List<FacebookExternalLoginProviderSettings> listFromJson(List<dynamic> json) {
-    return json == null ? new List<FacebookExternalLoginProviderSettings>() : json.map((value) => new FacebookExternalLoginProviderSettings.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new FacebookExternalLoginProviderSettings.fromJson(value)).toList();
   }
 
   static Map<String, FacebookExternalLoginProviderSettings> mapFromJson(Map<String, Map<String, dynamic>> json) {

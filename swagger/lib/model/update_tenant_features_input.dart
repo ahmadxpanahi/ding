@@ -32,7 +32,7 @@ class UpdateTenantFeaturesInput {
   }
 
   static List<UpdateTenantFeaturesInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<UpdateTenantFeaturesInput>() : json.map((value) => new UpdateTenantFeaturesInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UpdateTenantFeaturesInput.fromJson(value)).toList();
   }
 
   static Map<String, UpdateTenantFeaturesInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -25,7 +25,7 @@ class ListResultDtoOfEditionListDto {
   }
 
   static List<ListResultDtoOfEditionListDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ListResultDtoOfEditionListDto>() : json.map((value) => new ListResultDtoOfEditionListDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ListResultDtoOfEditionListDto.fromJson(value)).toList();
   }
 
   static Map<String, ListResultDtoOfEditionListDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -69,7 +69,7 @@ class HostUserManagementSettingsEditDto {
   }
 
   static List<HostUserManagementSettingsEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<HostUserManagementSettingsEditDto>() : json.map((value) => new HostUserManagementSettingsEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new HostUserManagementSettingsEditDto.fromJson(value)).toList();
   }
 
   static Map<String, HostUserManagementSettingsEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

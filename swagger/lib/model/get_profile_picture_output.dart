@@ -25,7 +25,7 @@ class GetProfilePictureOutput {
   }
 
   static List<GetProfilePictureOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetProfilePictureOutput>() : json.map((value) => new GetProfilePictureOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetProfilePictureOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetProfilePictureOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

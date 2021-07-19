@@ -41,7 +41,7 @@ class GetRoleForEditOutput {
   }
 
   static List<GetRoleForEditOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetRoleForEditOutput>() : json.map((value) => new GetRoleForEditOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetRoleForEditOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetRoleForEditOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

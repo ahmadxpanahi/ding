@@ -25,7 +25,7 @@ class ResolveTenantIdInput {
   }
 
   static List<ResolveTenantIdInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ResolveTenantIdInput>() : json.map((value) => new ResolveTenantIdInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ResolveTenantIdInput.fromJson(value)).toList();
   }
 
   static Map<String, ResolveTenantIdInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

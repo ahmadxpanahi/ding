@@ -34,7 +34,7 @@ class GetEnterLeaveForViewDto {
   }
 
   static List<GetEnterLeaveForViewDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetEnterLeaveForViewDto>() : json.map((value) => new GetEnterLeaveForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetEnterLeaveForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, GetEnterLeaveForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

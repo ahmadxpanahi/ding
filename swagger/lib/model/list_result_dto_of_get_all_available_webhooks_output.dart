@@ -25,7 +25,7 @@ class ListResultDtoOfGetAllAvailableWebhooksOutput {
   }
 
   static List<ListResultDtoOfGetAllAvailableWebhooksOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ListResultDtoOfGetAllAvailableWebhooksOutput>() : json.map((value) => new ListResultDtoOfGetAllAvailableWebhooksOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ListResultDtoOfGetAllAvailableWebhooksOutput.fromJson(value)).toList();
   }
 
   static Map<String, ListResultDtoOfGetAllAvailableWebhooksOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

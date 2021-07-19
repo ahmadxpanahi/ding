@@ -32,7 +32,7 @@ class VerifySmsCodeInputDto {
   }
 
   static List<VerifySmsCodeInputDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<VerifySmsCodeInputDto>() : json.map((value) => new VerifySmsCodeInputDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new VerifySmsCodeInputDto.fromJson(value)).toList();
   }
 
   static Map<String, VerifySmsCodeInputDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

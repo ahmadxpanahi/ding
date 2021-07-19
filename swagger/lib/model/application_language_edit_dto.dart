@@ -46,7 +46,7 @@ class ApplicationLanguageEditDto {
   }
 
   static List<ApplicationLanguageEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ApplicationLanguageEditDto>() : json.map((value) => new ApplicationLanguageEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ApplicationLanguageEditDto.fromJson(value)).toList();
   }
 
   static Map<String, ApplicationLanguageEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

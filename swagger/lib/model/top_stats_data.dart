@@ -46,7 +46,7 @@ class TopStatsData {
   }
 
   static List<TopStatsData> listFromJson(List<dynamic> json) {
-    return json == null ? new List<TopStatsData>() : json.map((value) => new TopStatsData.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new TopStatsData.fromJson(value)).toList();
   }
 
   static Map<String, TopStatsData> mapFromJson(Map<String, Map<String, dynamic>> json) {

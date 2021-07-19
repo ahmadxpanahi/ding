@@ -53,7 +53,7 @@ class MemberActivity {
   }
 
   static List<MemberActivity> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<MemberActivity>() : json.map((value) => new MemberActivity.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new MemberActivity.fromJson(value)).toList();
   }
 
   static Map<String, MemberActivity> mapFromJson(Map<String, Map<String, dynamic>> json) {

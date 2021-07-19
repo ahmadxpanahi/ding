@@ -32,7 +32,7 @@ class RequestUserLookupTableDto {
   }
 
   static List<RequestUserLookupTableDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<RequestUserLookupTableDto>() : json.map((value) => new RequestUserLookupTableDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new RequestUserLookupTableDto.fromJson(value)).toList();
   }
 
   static Map<String, RequestUserLookupTableDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

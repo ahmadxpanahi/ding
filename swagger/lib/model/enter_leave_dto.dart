@@ -67,7 +67,7 @@ class EnterLeaveDto {
   }
 
   static List<EnterLeaveDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<EnterLeaveDto>() : json.map((value) => new EnterLeaveDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new EnterLeaveDto.fromJson(value)).toList();
   }
 
   static Map<String, EnterLeaveDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

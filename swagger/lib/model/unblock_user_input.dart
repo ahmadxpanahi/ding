@@ -32,7 +32,7 @@ class UnblockUserInput {
   }
 
   static List<UnblockUserInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<UnblockUserInput>() : json.map((value) => new UnblockUserInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UnblockUserInput.fromJson(value)).toList();
   }
 
   static Map<String, UnblockUserInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

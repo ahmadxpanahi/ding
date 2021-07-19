@@ -55,7 +55,7 @@ class GetUserDeviceForViewDto {
   }
 
   static List<GetUserDeviceForViewDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetUserDeviceForViewDto>() : json.map((value) => new GetUserDeviceForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetUserDeviceForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, GetUserDeviceForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

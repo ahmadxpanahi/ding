@@ -32,7 +32,7 @@ class SendTwoFactorAuthCodeModel {
   }
 
   static List<SendTwoFactorAuthCodeModel> listFromJson(List<dynamic> json) {
-    return json == null ? new List<SendTwoFactorAuthCodeModel>() : json.map((value) => new SendTwoFactorAuthCodeModel.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new SendTwoFactorAuthCodeModel.fromJson(value)).toList();
   }
 
   static Map<String, SendTwoFactorAuthCodeModel> mapFromJson(Map<String, Map<String, dynamic>> json) {

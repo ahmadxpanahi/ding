@@ -121,7 +121,7 @@ class AuditLogListDto {
   }
 
   static List<AuditLogListDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<AuditLogListDto>() : json.map((value) => new AuditLogListDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new AuditLogListDto.fromJson(value)).toList();
   }
 
   static Map<String, AuditLogListDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

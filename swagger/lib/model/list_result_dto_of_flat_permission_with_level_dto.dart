@@ -25,7 +25,7 @@ class ListResultDtoOfFlatPermissionWithLevelDto {
   }
 
   static List<ListResultDtoOfFlatPermissionWithLevelDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ListResultDtoOfFlatPermissionWithLevelDto>() : json.map((value) => new ListResultDtoOfFlatPermissionWithLevelDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ListResultDtoOfFlatPermissionWithLevelDto.fromJson(value)).toList();
   }
 
   static Map<String, ListResultDtoOfFlatPermissionWithLevelDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

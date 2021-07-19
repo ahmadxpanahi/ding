@@ -46,7 +46,7 @@ class SessionTimeOutSettingsEditDto {
   }
 
   static List<SessionTimeOutSettingsEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<SessionTimeOutSettingsEditDto>() : json.map((value) => new SessionTimeOutSettingsEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new SessionTimeOutSettingsEditDto.fromJson(value)).toList();
   }
 
   static Map<String, SessionTimeOutSettingsEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

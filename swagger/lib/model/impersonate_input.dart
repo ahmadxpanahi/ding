@@ -32,7 +32,7 @@ class ImpersonateInput {
   }
 
   static List<ImpersonateInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ImpersonateInput>() : json.map((value) => new ImpersonateInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ImpersonateInput.fromJson(value)).toList();
   }
 
   static Map<String, ImpersonateInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -39,7 +39,7 @@ class RoleEditDto {
   }
 
   static List<RoleEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<RoleEditDto>() : json.map((value) => new RoleEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new RoleEditDto.fromJson(value)).toList();
   }
 
   static Map<String, RoleEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

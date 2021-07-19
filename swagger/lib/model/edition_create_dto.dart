@@ -83,7 +83,7 @@ class EditionCreateDto {
   }
 
   static List<EditionCreateDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<EditionCreateDto>() : json.map((value) => new EditionCreateDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new EditionCreateDto.fromJson(value)).toList();
   }
 
   static Map<String, EditionCreateDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

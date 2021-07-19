@@ -201,7 +201,7 @@ class TenantListDto {
   }
 
   static List<TenantListDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<TenantListDto>() : json.map((value) => new TenantListDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new TenantListDto.fromJson(value)).toList();
   }
 
   static Map<String, TenantListDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

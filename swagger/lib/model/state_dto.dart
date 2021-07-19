@@ -53,7 +53,7 @@ class StateDto {
   }
 
   static List<StateDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<StateDto>() : json.map((value) => new StateDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new StateDto.fromJson(value)).toList();
   }
 
   static Map<String, StateDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

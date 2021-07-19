@@ -74,7 +74,7 @@ class GetUserWorkScheduleForViewDto {
   }
 
   static List<GetUserWorkScheduleForViewDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetUserWorkScheduleForViewDto>() : json.map((value) => new GetUserWorkScheduleForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetUserWorkScheduleForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, GetUserWorkScheduleForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

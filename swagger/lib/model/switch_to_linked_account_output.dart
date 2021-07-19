@@ -32,7 +32,7 @@ class SwitchToLinkedAccountOutput {
   }
 
   static List<SwitchToLinkedAccountOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<SwitchToLinkedAccountOutput>() : json.map((value) => new SwitchToLinkedAccountOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new SwitchToLinkedAccountOutput.fromJson(value)).toList();
   }
 
   static Map<String, SwitchToLinkedAccountOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

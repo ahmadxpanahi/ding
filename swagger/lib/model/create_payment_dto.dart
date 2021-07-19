@@ -64,7 +64,7 @@ class CreatePaymentDto {
   }
 
   static List<CreatePaymentDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreatePaymentDto>() : json.map((value) => new CreatePaymentDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreatePaymentDto.fromJson(value)).toList();
   }
 
   static Map<String, CreatePaymentDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

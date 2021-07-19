@@ -25,7 +25,7 @@ class IsTenantAvailableInput {
   }
 
   static List<IsTenantAvailableInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<IsTenantAvailableInput>() : json.map((value) => new IsTenantAvailableInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new IsTenantAvailableInput.fromJson(value)).toList();
   }
 
   static Map<String, IsTenantAvailableInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

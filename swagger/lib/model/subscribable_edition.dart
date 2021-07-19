@@ -133,7 +133,7 @@ class SubscribableEdition {
   }
 
   static List<SubscribableEdition> listFromJson(List<dynamic> json) {
-    return json == null ? new List<SubscribableEdition>() : json.map((value) => new SubscribableEdition.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new SubscribableEdition.fromJson(value)).toList();
   }
 
   static Map<String, SubscribableEdition> mapFromJson(Map<String, Map<String, dynamic>> json) {

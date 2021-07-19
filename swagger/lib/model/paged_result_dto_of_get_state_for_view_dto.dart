@@ -32,7 +32,7 @@ class PagedResultDtoOfGetStateForViewDto {
   }
 
   static List<PagedResultDtoOfGetStateForViewDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PagedResultDtoOfGetStateForViewDto>() : json.map((value) => new PagedResultDtoOfGetStateForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PagedResultDtoOfGetStateForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, PagedResultDtoOfGetStateForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -27,7 +27,7 @@ class GetEnterLeaveForEditOutput {
   }
 
   static List<GetEnterLeaveForEditOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetEnterLeaveForEditOutput>() : json.map((value) => new GetEnterLeaveForEditOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetEnterLeaveForEditOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetEnterLeaveForEditOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

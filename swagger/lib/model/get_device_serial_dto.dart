@@ -32,7 +32,7 @@ class GetDeviceSerialDto {
   }
 
   static List<GetDeviceSerialDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetDeviceSerialDto>() : json.map((value) => new GetDeviceSerialDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetDeviceSerialDto.fromJson(value)).toList();
   }
 
   static Map<String, GetDeviceSerialDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

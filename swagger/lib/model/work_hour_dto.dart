@@ -104,7 +104,7 @@ class WorkHourDto {
   }
 
   static List<WorkHourDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<WorkHourDto>() : json.map((value) => new WorkHourDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new WorkHourDto.fromJson(value)).toList();
   }
 
   static Map<String, WorkHourDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

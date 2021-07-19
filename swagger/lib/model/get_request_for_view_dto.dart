@@ -41,7 +41,7 @@ class GetRequestForViewDto {
   }
 
   static List<GetRequestForViewDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetRequestForViewDto>() : json.map((value) => new GetRequestForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetRequestForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, GetRequestForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

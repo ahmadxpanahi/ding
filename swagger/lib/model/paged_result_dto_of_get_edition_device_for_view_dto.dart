@@ -32,7 +32,7 @@ class PagedResultDtoOfGetEditionDeviceForViewDto {
   }
 
   static List<PagedResultDtoOfGetEditionDeviceForViewDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PagedResultDtoOfGetEditionDeviceForViewDto>() : json.map((value) => new PagedResultDtoOfGetEditionDeviceForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PagedResultDtoOfGetEditionDeviceForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, PagedResultDtoOfGetEditionDeviceForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

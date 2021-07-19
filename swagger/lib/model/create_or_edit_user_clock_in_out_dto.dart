@@ -97,7 +97,7 @@ class CreateOrEditUserClockInOutDto {
   }
 
   static List<CreateOrEditUserClockInOutDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateOrEditUserClockInOutDto>() : json.map((value) => new CreateOrEditUserClockInOutDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateOrEditUserClockInOutDto.fromJson(value)).toList();
   }
 
   static Map<String, CreateOrEditUserClockInOutDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

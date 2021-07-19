@@ -81,7 +81,7 @@ class EmailSettingsEditDto {
   }
 
   static List<EmailSettingsEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<EmailSettingsEditDto>() : json.map((value) => new EmailSettingsEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new EmailSettingsEditDto.fromJson(value)).toList();
   }
 
   static Map<String, EmailSettingsEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

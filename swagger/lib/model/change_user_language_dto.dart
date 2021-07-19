@@ -25,7 +25,7 @@ class ChangeUserLanguageDto {
   }
 
   static List<ChangeUserLanguageDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ChangeUserLanguageDto>() : json.map((value) => new ChangeUserLanguageDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ChangeUserLanguageDto.fromJson(value)).toList();
   }
 
   static Map<String, ChangeUserLanguageDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

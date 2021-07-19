@@ -25,7 +25,7 @@ class DateToStringOutput {
   }
 
   static List<DateToStringOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<DateToStringOutput>() : json.map((value) => new DateToStringOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new DateToStringOutput.fromJson(value)).toList();
   }
 
   static Map<String, DateToStringOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

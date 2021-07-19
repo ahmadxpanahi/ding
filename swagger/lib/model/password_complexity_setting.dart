@@ -53,7 +53,7 @@ class PasswordComplexitySetting {
   }
 
   static List<PasswordComplexitySetting> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PasswordComplexitySetting>() : json.map((value) => new PasswordComplexitySetting.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PasswordComplexitySetting.fromJson(value)).toList();
   }
 
   static Map<String, PasswordComplexitySetting> mapFromJson(Map<String, Map<String, dynamic>> json) {

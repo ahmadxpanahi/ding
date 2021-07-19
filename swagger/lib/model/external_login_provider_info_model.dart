@@ -39,7 +39,7 @@ class ExternalLoginProviderInfoModel {
   }
 
   static List<ExternalLoginProviderInfoModel> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ExternalLoginProviderInfoModel>() : json.map((value) => new ExternalLoginProviderInfoModel.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ExternalLoginProviderInfoModel.fromJson(value)).toList();
   }
 
   static Map<String, ExternalLoginProviderInfoModel> mapFromJson(Map<String, Map<String, dynamic>> json) {

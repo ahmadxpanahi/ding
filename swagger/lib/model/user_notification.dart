@@ -57,7 +57,7 @@ class UserNotification {
   }
 
   static List<UserNotification> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<UserNotification>() : json.map((value) => new UserNotification.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UserNotification.fromJson(value)).toList();
   }
 
   static Map<String, UserNotification> mapFromJson(Map<String, Map<String, dynamic>> json) {

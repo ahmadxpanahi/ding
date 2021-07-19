@@ -128,7 +128,7 @@ class ExternalLoginProviderSettingsEditDto {
   }
 
   static List<ExternalLoginProviderSettingsEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ExternalLoginProviderSettingsEditDto>() : json.map((value) => new ExternalLoginProviderSettingsEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ExternalLoginProviderSettingsEditDto.fromJson(value)).toList();
   }
 
   static Map<String, ExternalLoginProviderSettingsEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

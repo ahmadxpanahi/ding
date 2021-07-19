@@ -39,7 +39,7 @@ class SavePageInput {
   }
 
   static List<SavePageInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<SavePageInput>() : json.map((value) => new SavePageInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new SavePageInput.fromJson(value)).toList();
   }
 
   static Map<String, SavePageInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -32,7 +32,7 @@ class PagedResultDtoOfSupportSupportLookupTableDto {
   }
 
   static List<PagedResultDtoOfSupportSupportLookupTableDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PagedResultDtoOfSupportSupportLookupTableDto>() : json.map((value) => new PagedResultDtoOfSupportSupportLookupTableDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PagedResultDtoOfSupportSupportLookupTableDto.fromJson(value)).toList();
   }
 
   static Map<String, PagedResultDtoOfSupportSupportLookupTableDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

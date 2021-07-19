@@ -32,7 +32,7 @@ class LocalizableComboboxItemDto {
   }
 
   static List<LocalizableComboboxItemDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<LocalizableComboboxItemDto>() : json.map((value) => new LocalizableComboboxItemDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new LocalizableComboboxItemDto.fromJson(value)).toList();
   }
 
   static Map<String, LocalizableComboboxItemDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -69,7 +69,7 @@ class CreateOrUpdateUserInput {
   }
 
   static List<CreateOrUpdateUserInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateOrUpdateUserInput>() : json.map((value) => new CreateOrUpdateUserInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateOrUpdateUserInput.fromJson(value)).toList();
   }
 
   static Map<String, CreateOrUpdateUserInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

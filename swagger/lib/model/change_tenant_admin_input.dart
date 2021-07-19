@@ -46,7 +46,7 @@ class ChangeTenantAdminInput {
   }
 
   static List<ChangeTenantAdminInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ChangeTenantAdminInput>() : json.map((value) => new ChangeTenantAdminInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ChangeTenantAdminInput.fromJson(value)).toList();
   }
 
   static Map<String, ChangeTenantAdminInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

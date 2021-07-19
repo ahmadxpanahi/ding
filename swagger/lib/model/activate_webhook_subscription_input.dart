@@ -32,7 +32,7 @@ class ActivateWebhookSubscriptionInput {
   }
 
   static List<ActivateWebhookSubscriptionInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ActivateWebhookSubscriptionInput>() : json.map((value) => new ActivateWebhookSubscriptionInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ActivateWebhookSubscriptionInput.fromJson(value)).toList();
   }
 
   static Map<String, ActivateWebhookSubscriptionInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

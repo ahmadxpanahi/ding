@@ -46,7 +46,7 @@ class RenamePageInput {
   }
 
   static List<RenamePageInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<RenamePageInput>() : json.map((value) => new RenamePageInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new RenamePageInput.fromJson(value)).toList();
   }
 
   static Map<String, RenamePageInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

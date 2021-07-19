@@ -25,7 +25,7 @@ class EntityDtoOfInt64 {
   }
 
   static List<EntityDtoOfInt64> listFromJson(List<dynamic> json) {
-    return json == null ? new List<EntityDtoOfInt64>() : json.map((value) => new EntityDtoOfInt64.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new EntityDtoOfInt64.fromJson(value)).toList();
   }
 
   static Map<String, EntityDtoOfInt64> mapFromJson(Map<String, Map<String, dynamic>> json) {

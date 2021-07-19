@@ -32,7 +32,7 @@ class PagedResultDtoOfUserWorkScheduleWorkScheduleLookupTableDto {
   }
 
   static List<PagedResultDtoOfUserWorkScheduleWorkScheduleLookupTableDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PagedResultDtoOfUserWorkScheduleWorkScheduleLookupTableDto>() : json.map((value) => new PagedResultDtoOfUserWorkScheduleWorkScheduleLookupTableDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PagedResultDtoOfUserWorkScheduleWorkScheduleLookupTableDto.fromJson(value)).toList();
   }
 
   static Map<String, PagedResultDtoOfUserWorkScheduleWorkScheduleLookupTableDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

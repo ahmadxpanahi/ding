@@ -32,7 +32,7 @@ class WidgetFilterOutput {
   }
 
   static List<WidgetFilterOutput> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<WidgetFilterOutput>() : json.map((value) => new WidgetFilterOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new WidgetFilterOutput.fromJson(value)).toList();
   }
 
   static Map<String, WidgetFilterOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

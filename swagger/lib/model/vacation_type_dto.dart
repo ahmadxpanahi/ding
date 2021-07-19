@@ -67,7 +67,7 @@ class VacationTypeDto {
   }
 
   static List<VacationTypeDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<VacationTypeDto>() : json.map((value) => new VacationTypeDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new VacationTypeDto.fromJson(value)).toList();
   }
 
   static Map<String, VacationTypeDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

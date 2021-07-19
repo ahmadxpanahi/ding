@@ -39,7 +39,7 @@ class SalesSummaryData {
   }
 
   static List<SalesSummaryData> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<SalesSummaryData>() : json.map((value) => new SalesSummaryData.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new SalesSummaryData.fromJson(value)).toList();
   }
 
   static Map<String, SalesSummaryData> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -25,7 +25,7 @@ class EntityDtoOfGuid {
   }
 
   static List<EntityDtoOfGuid> listFromJson(List<dynamic> json) {
-    return json == null ? new List<EntityDtoOfGuid>() : json.map((value) => new EntityDtoOfGuid.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new EntityDtoOfGuid.fromJson(value)).toList();
   }
 
   static Map<String, EntityDtoOfGuid> mapFromJson(Map<String, Map<String, dynamic>> json) {

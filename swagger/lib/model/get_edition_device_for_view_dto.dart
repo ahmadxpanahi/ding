@@ -78,7 +78,7 @@ class GetEditionDeviceForViewDto {
   }
 
   static List<GetEditionDeviceForViewDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetEditionDeviceForViewDto>() : json.map((value) => new GetEditionDeviceForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetEditionDeviceForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, GetEditionDeviceForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

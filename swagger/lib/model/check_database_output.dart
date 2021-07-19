@@ -25,7 +25,7 @@ class CheckDatabaseOutput {
   }
 
   static List<CheckDatabaseOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CheckDatabaseOutput>() : json.map((value) => new CheckDatabaseOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CheckDatabaseOutput.fromJson(value)).toList();
   }
 
   static Map<String, CheckDatabaseOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

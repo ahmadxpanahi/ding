@@ -41,7 +41,7 @@ class MoveCategoryInput {
   }
 
   static List<MoveCategoryInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<MoveCategoryInput>() : json.map((value) => new MoveCategoryInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new MoveCategoryInput.fromJson(value)).toList();
   }
 
   static Map<String, MoveCategoryInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

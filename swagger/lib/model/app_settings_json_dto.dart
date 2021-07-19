@@ -39,7 +39,7 @@ class AppSettingsJsonDto {
   }
 
   static List<AppSettingsJsonDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<AppSettingsJsonDto>() : json.map((value) => new AppSettingsJsonDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new AppSettingsJsonDto.fromJson(value)).toList();
   }
 
   static Map<String, AppSettingsJsonDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

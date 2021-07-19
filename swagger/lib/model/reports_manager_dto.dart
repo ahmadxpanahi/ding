@@ -112,7 +112,7 @@ class ReportsManagerDto {
   }
 
   static List<ReportsManagerDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ReportsManagerDto>() : json.map((value) => new ReportsManagerDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ReportsManagerDto.fromJson(value)).toList();
   }
 
   static Map<String, ReportsManagerDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -39,7 +39,7 @@ class StripeCreatePaymentSessionInput {
   }
 
   static List<StripeCreatePaymentSessionInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<StripeCreatePaymentSessionInput>() : json.map((value) => new StripeCreatePaymentSessionInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new StripeCreatePaymentSessionInput.fromJson(value)).toList();
   }
 
   static Map<String, StripeCreatePaymentSessionInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

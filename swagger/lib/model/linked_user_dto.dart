@@ -46,7 +46,7 @@ class LinkedUserDto {
   }
 
   static List<LinkedUserDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<LinkedUserDto>() : json.map((value) => new LinkedUserDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new LinkedUserDto.fromJson(value)).toList();
   }
 
   static Map<String, LinkedUserDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

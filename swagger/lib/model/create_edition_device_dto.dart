@@ -118,7 +118,7 @@ class CreateEditionDeviceDto {
   }
 
   static List<CreateEditionDeviceDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateEditionDeviceDto>() : json.map((value) => new CreateEditionDeviceDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateEditionDeviceDto.fromJson(value)).toList();
   }
 
   static Map<String, CreateEditionDeviceDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

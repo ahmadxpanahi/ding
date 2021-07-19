@@ -63,7 +63,7 @@ class WebhookEvent {
   }
 
   static List<WebhookEvent> listFromJson(List<dynamic> json) {
-    return json == null ? new List<WebhookEvent>() : json.map((value) => new WebhookEvent.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new WebhookEvent.fromJson(value)).toList();
   }
 
   static Map<String, WebhookEvent> mapFromJson(Map<String, Map<String, dynamic>> json) {

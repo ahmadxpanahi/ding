@@ -32,7 +32,7 @@ class PagedResultDtoOfGetUserClockInOutForViewDto {
   }
 
   static List<PagedResultDtoOfGetUserClockInOutForViewDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PagedResultDtoOfGetUserClockInOutForViewDto>() : json.map((value) => new PagedResultDtoOfGetUserClockInOutForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PagedResultDtoOfGetUserClockInOutForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, PagedResultDtoOfGetUserClockInOutForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -53,7 +53,7 @@ class WsFederationExternalLoginProviderSettings {
   }
 
   static List<WsFederationExternalLoginProviderSettings> listFromJson(List<dynamic> json) {
-    return json == null ? new List<WsFederationExternalLoginProviderSettings>() : json.map((value) => new WsFederationExternalLoginProviderSettings.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new WsFederationExternalLoginProviderSettings.fromJson(value)).toList();
   }
 
   static Map<String, WsFederationExternalLoginProviderSettings> mapFromJson(Map<String, Map<String, dynamic>> json) {

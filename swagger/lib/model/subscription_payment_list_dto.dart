@@ -126,7 +126,7 @@ class SubscriptionPaymentListDto {
   }
 
   static List<SubscriptionPaymentListDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<SubscriptionPaymentListDto>() : json.map((value) => new SubscriptionPaymentListDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new SubscriptionPaymentListDto.fromJson(value)).toList();
   }
 
   static Map<String, SubscriptionPaymentListDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

@@ -32,7 +32,7 @@ class NotificationSubscriptionDto {
   }
 
   static List<NotificationSubscriptionDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<NotificationSubscriptionDto>() : json.map((value) => new NotificationSubscriptionDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new NotificationSubscriptionDto.fromJson(value)).toList();
   }
 
   static Map<String, NotificationSubscriptionDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

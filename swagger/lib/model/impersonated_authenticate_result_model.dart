@@ -39,7 +39,7 @@ class ImpersonatedAuthenticateResultModel {
   }
 
   static List<ImpersonatedAuthenticateResultModel> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ImpersonatedAuthenticateResultModel>() : json.map((value) => new ImpersonatedAuthenticateResultModel.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ImpersonatedAuthenticateResultModel.fromJson(value)).toList();
   }
 
   static Map<String, ImpersonatedAuthenticateResultModel> mapFromJson(Map<String, Map<String, dynamic>> json) {

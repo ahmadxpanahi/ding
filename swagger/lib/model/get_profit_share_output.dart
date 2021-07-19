@@ -25,7 +25,7 @@ class GetProfitShareOutput {
   }
 
   static List<GetProfitShareOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetProfitShareOutput>() : json.map((value) => new GetProfitShareOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetProfitShareOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetProfitShareOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

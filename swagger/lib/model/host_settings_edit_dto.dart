@@ -90,7 +90,7 @@ class HostSettingsEditDto {
   }
 
   static List<HostSettingsEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<HostSettingsEditDto>() : json.map((value) => new HostSettingsEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new HostSettingsEditDto.fromJson(value)).toList();
   }
 
   static Map<String, HostSettingsEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

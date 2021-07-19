@@ -39,7 +39,7 @@ class GetGeneralStatsOutput {
   }
 
   static List<GetGeneralStatsOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetGeneralStatsOutput>() : json.map((value) => new GetGeneralStatsOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetGeneralStatsOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetGeneralStatsOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

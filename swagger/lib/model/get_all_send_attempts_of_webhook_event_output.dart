@@ -65,7 +65,7 @@ class GetAllSendAttemptsOfWebhookEventOutput {
   }
 
   static List<GetAllSendAttemptsOfWebhookEventOutput> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetAllSendAttemptsOfWebhookEventOutput>() : json.map((value) => new GetAllSendAttemptsOfWebhookEventOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetAllSendAttemptsOfWebhookEventOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetAllSendAttemptsOfWebhookEventOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

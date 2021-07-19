@@ -39,7 +39,7 @@ class AddNewPageInput {
   }
 
   static List<AddNewPageInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<AddNewPageInput>() : json.map((value) => new AddNewPageInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new AddNewPageInput.fromJson(value)).toList();
   }
 
   static Map<String, AddNewPageInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

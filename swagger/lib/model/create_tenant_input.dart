@@ -203,7 +203,7 @@ class CreateTenantInput {
   }
 
   static List<CreateTenantInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateTenantInput>() : json.map((value) => new CreateTenantInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateTenantInput.fromJson(value)).toList();
   }
 
   static Map<String, CreateTenantInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

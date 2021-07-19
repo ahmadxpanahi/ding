@@ -32,7 +32,7 @@ class CreateFriendshipRequestInput {
   }
 
   static List<CreateFriendshipRequestInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateFriendshipRequestInput>() : json.map((value) => new CreateFriendshipRequestInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateFriendshipRequestInput.fromJson(value)).toList();
   }
 
   static Map<String, CreateFriendshipRequestInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

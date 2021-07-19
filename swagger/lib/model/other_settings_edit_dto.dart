@@ -25,7 +25,7 @@ class OtherSettingsEditDto {
   }
 
   static List<OtherSettingsEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<OtherSettingsEditDto>() : json.map((value) => new OtherSettingsEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new OtherSettingsEditDto.fromJson(value)).toList();
   }
 
   static Map<String, OtherSettingsEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

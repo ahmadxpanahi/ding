@@ -74,7 +74,7 @@ class CalendarDto {
   }
 
   static List<CalendarDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CalendarDto>() : json.map((value) => new CalendarDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CalendarDto.fromJson(value)).toList();
   }
 
   static Map<String, CalendarDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

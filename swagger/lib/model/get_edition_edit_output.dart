@@ -41,7 +41,7 @@ class GetEditionEditOutput {
   }
 
   static List<GetEditionEditOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetEditionEditOutput>() : json.map((value) => new GetEditionEditOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetEditionEditOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetEditionEditOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

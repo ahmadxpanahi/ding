@@ -25,7 +25,7 @@ class DelegatedImpersonateInput {
   }
 
   static List<DelegatedImpersonateInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<DelegatedImpersonateInput>() : json.map((value) => new DelegatedImpersonateInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new DelegatedImpersonateInput.fromJson(value)).toList();
   }
 
   static Map<String, DelegatedImpersonateInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

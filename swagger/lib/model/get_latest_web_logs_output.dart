@@ -25,7 +25,7 @@ class GetLatestWebLogsOutput {
   }
 
   static List<GetLatestWebLogsOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetLatestWebLogsOutput>() : json.map((value) => new GetLatestWebLogsOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetLatestWebLogsOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetLatestWebLogsOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

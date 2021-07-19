@@ -46,7 +46,7 @@ class GetAllForLookupTableInput {
   }
 
   static List<GetAllForLookupTableInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetAllForLookupTableInput>() : json.map((value) => new GetAllForLookupTableInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetAllForLookupTableInput.fromJson(value)).toList();
   }
 
   static Map<String, GetAllForLookupTableInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

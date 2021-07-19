@@ -37,7 +37,7 @@ class RecentTenant {
   }
 
   static List<RecentTenant> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<RecentTenant>() : json.map((value) => new RecentTenant.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new RecentTenant.fromJson(value)).toList();
   }
 
   static Map<String, RecentTenant> mapFromJson(Map<String, Map<String, dynamic>> json) {

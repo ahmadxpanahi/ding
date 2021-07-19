@@ -225,7 +225,7 @@ class RegisterInput {
   }
 
   static List<RegisterInput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<RegisterInput>() : json.map((value) => new RegisterInput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new RegisterInput.fromJson(value)).toList();
   }
 
   static Map<String, RegisterInput> mapFromJson(Map<String, Map<String, dynamic>> json) {

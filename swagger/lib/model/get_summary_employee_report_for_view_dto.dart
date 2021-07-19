@@ -48,7 +48,7 @@ class GetSummaryEmployeeReportForViewDto {
   }
 
   static List<GetSummaryEmployeeReportForViewDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetSummaryEmployeeReportForViewDto>() : json.map((value) => new GetSummaryEmployeeReportForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetSummaryEmployeeReportForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, GetSummaryEmployeeReportForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

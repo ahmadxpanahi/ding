@@ -27,7 +27,7 @@ class GetPurchasingResourceForViewDto {
   }
 
   static List<GetPurchasingResourceForViewDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetPurchasingResourceForViewDto>() : json.map((value) => new GetPurchasingResourceForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetPurchasingResourceForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, GetPurchasingResourceForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

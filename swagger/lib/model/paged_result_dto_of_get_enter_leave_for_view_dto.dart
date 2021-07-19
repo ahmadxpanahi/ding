@@ -32,7 +32,7 @@ class PagedResultDtoOfGetEnterLeaveForViewDto {
   }
 
   static List<PagedResultDtoOfGetEnterLeaveForViewDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<PagedResultDtoOfGetEnterLeaveForViewDto>() : json.map((value) => new PagedResultDtoOfGetEnterLeaveForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new PagedResultDtoOfGetEnterLeaveForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, PagedResultDtoOfGetEnterLeaveForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

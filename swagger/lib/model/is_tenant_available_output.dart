@@ -41,7 +41,7 @@ class IsTenantAvailableOutput {
   }
 
   static List<IsTenantAvailableOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<IsTenantAvailableOutput>() : json.map((value) => new IsTenantAvailableOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new IsTenantAvailableOutput.fromJson(value)).toList();
   }
 
   static Map<String, IsTenantAvailableOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

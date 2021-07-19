@@ -32,7 +32,7 @@ class MicrosoftExternalLoginProviderSettings {
   }
 
   static List<MicrosoftExternalLoginProviderSettings> listFromJson(List<dynamic> json) {
-    return json == null ? new List<MicrosoftExternalLoginProviderSettings>() : json.map((value) => new MicrosoftExternalLoginProviderSettings.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new MicrosoftExternalLoginProviderSettings.fromJson(value)).toList();
   }
 
   static Map<String, MicrosoftExternalLoginProviderSettings> mapFromJson(Map<String, Map<String, dynamic>> json) {

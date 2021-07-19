@@ -32,7 +32,7 @@ class JsonClaimMapDto {
   }
 
   static List<JsonClaimMapDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<JsonClaimMapDto>() : json.map((value) => new JsonClaimMapDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new JsonClaimMapDto.fromJson(value)).toList();
   }
 
   static Map<String, JsonClaimMapDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

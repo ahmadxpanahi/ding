@@ -48,7 +48,7 @@ class GetReportsManagerForViewDto {
   }
 
   static List<GetReportsManagerForViewDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<GetReportsManagerForViewDto>() : json.map((value) => new GetReportsManagerForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetReportsManagerForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, GetReportsManagerForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

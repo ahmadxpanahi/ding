@@ -46,7 +46,7 @@ class CreateOrEditCategoryDto {
   }
 
   static List<CreateOrEditCategoryDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<CreateOrEditCategoryDto>() : json.map((value) => new CreateOrEditCategoryDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CreateOrEditCategoryDto.fromJson(value)).toList();
   }
 
   static Map<String, CreateOrEditCategoryDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

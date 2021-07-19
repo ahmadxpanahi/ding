@@ -25,7 +25,7 @@ class StripePaymentResultOutput {
   }
 
   static List<StripePaymentResultOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<StripePaymentResultOutput>() : json.map((value) => new StripePaymentResultOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new StripePaymentResultOutput.fromJson(value)).toList();
   }
 
   static Map<String, StripePaymentResultOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

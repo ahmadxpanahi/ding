@@ -69,7 +69,7 @@ class FlatFeatureSelectDto {
   }
 
   static List<FlatFeatureSelectDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<FlatFeatureSelectDto>() : json.map((value) => new FlatFeatureSelectDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new FlatFeatureSelectDto.fromJson(value)).toList();
   }
 
   static Map<String, FlatFeatureSelectDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

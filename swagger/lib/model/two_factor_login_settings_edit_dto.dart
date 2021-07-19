@@ -60,7 +60,7 @@ class TwoFactorLoginSettingsEditDto {
   }
 
   static List<TwoFactorLoginSettingsEditDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<TwoFactorLoginSettingsEditDto>() : json.map((value) => new TwoFactorLoginSettingsEditDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new TwoFactorLoginSettingsEditDto.fromJson(value)).toList();
   }
 
   static Map<String, TwoFactorLoginSettingsEditDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

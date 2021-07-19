@@ -27,7 +27,7 @@ class GetPasswordComplexitySettingOutput {
   }
 
   static List<GetPasswordComplexitySettingOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetPasswordComplexitySettingOutput>() : json.map((value) => new GetPasswordComplexitySettingOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetPasswordComplexitySettingOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetPasswordComplexitySettingOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

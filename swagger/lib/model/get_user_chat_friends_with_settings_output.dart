@@ -30,7 +30,7 @@ class GetUserChatFriendsWithSettingsOutput {
   }
 
   static List<GetUserChatFriendsWithSettingsOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetUserChatFriendsWithSettingsOutput>() : json.map((value) => new GetUserChatFriendsWithSettingsOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetUserChatFriendsWithSettingsOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetUserChatFriendsWithSettingsOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

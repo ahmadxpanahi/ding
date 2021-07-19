@@ -39,7 +39,7 @@ class Page {
   }
 
   static List<Page> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<Page>() : json.map((value) => new Page.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new Page.fromJson(value)).toList();
   }
 
   static Map<String, Page> mapFromJson(Map<String, Map<String, dynamic>> json) {

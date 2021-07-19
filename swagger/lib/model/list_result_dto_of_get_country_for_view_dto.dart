@@ -25,7 +25,7 @@ class ListResultDtoOfGetCountryForViewDto {
   }
 
   static List<ListResultDtoOfGetCountryForViewDto> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ListResultDtoOfGetCountryForViewDto>() : json.map((value) => new ListResultDtoOfGetCountryForViewDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new ListResultDtoOfGetCountryForViewDto.fromJson(value)).toList();
   }
 
   static Map<String, ListResultDtoOfGetCountryForViewDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

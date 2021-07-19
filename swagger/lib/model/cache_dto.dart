@@ -25,7 +25,7 @@ class CacheDto {
   }
 
   static List<CacheDto> listFromJson(List<dynamic>? json) {
-    return json == null ? new List<CacheDto>() : json.map((value) => new CacheDto.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new CacheDto.fromJson(value)).toList();
   }
 
   static Map<String, CacheDto> mapFromJson(Map<String, Map<String, dynamic>> json) {

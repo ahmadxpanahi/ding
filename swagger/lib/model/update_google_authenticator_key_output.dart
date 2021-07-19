@@ -25,7 +25,7 @@ class UpdateGoogleAuthenticatorKeyOutput {
   }
 
   static List<UpdateGoogleAuthenticatorKeyOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<UpdateGoogleAuthenticatorKeyOutput>() : json.map((value) => new UpdateGoogleAuthenticatorKeyOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new UpdateGoogleAuthenticatorKeyOutput.fromJson(value)).toList();
   }
 
   static Map<String, UpdateGoogleAuthenticatorKeyOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {

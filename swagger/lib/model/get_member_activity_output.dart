@@ -25,7 +25,7 @@ class GetMemberActivityOutput {
   }
 
   static List<GetMemberActivityOutput> listFromJson(List<dynamic> json) {
-    return json == null ? new List<GetMemberActivityOutput>() : json.map((value) => new GetMemberActivityOutput.fromJson(value)).toList();
+    return json == null ? [] : json.map((value) => new GetMemberActivityOutput.fromJson(value)).toList();
   }
 
   static Map<String, GetMemberActivityOutput> mapFromJson(Map<String, Map<String, dynamic>> json) {
