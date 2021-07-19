@@ -2,25 +2,25 @@ part of swagger.api;
 
 class GetSupportForViewDto {
   
-  SupportDto support = null;
+  SupportDto? support = null;
   
 
-  ListResultDtoOfGetSupportForViewDto childAnswers = null;
+  ListResultDtoOfGetSupportForViewDto? childAnswers = null;
   
 
-  String tenant = null;
+  String? tenant = null;
   
 
-  String deviceName = null;
+  String? deviceName = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  String supportRequestSubject = null;
+  String? supportRequestSubject = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
   GetSupportForViewDto();
 
@@ -29,7 +29,7 @@ class GetSupportForViewDto {
     return 'GetSupportForViewDto[support=$support, childAnswers=$childAnswers, tenant=$tenant, deviceName=$deviceName, userName=$userName, supportRequestSubject=$supportRequestSubject, creationTime=$creationTime, ]';
   }
 
-  GetSupportForViewDto.fromJson(Map<String, dynamic> json) {
+  GetSupportForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     support =
       
@@ -64,11 +64,11 @@ class GetSupportForViewDto {
       'deviceName': deviceName,
       'userName': userName,
       'supportRequestSubject': supportRequestSubject,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String()
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String()
      };
   }
 
-  static List<GetSupportForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetSupportForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetSupportForViewDto>() : json.map((value) => new GetSupportForViewDto.fromJson(value)).toList();
   }
 

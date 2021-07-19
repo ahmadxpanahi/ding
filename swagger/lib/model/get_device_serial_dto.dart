@@ -2,10 +2,10 @@ part of swagger.api;
 
 class GetDeviceSerialDto {
   
-  String encryptedSerialNumber = null;
+  String? encryptedSerialNumber = null;
   
 
-  String encryptedManagerMobileNumber = null;
+  String? encryptedManagerMobileNumber = null;
   
   GetDeviceSerialDto();
 
@@ -14,7 +14,7 @@ class GetDeviceSerialDto {
     return 'GetDeviceSerialDto[encryptedSerialNumber=$encryptedSerialNumber, encryptedManagerMobileNumber=$encryptedManagerMobileNumber, ]';
   }
 
-  GetDeviceSerialDto.fromJson(Map<String, dynamic> json) {
+  GetDeviceSerialDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     encryptedSerialNumber =
         json['encryptedSerialNumber']

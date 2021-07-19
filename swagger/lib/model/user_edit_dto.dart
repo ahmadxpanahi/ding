@@ -2,88 +2,88 @@ part of swagger.api;
 
 class UserEditDto {
   
-  int id = null;
+  int? id = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  String surname = null;
+  String? surname = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  String emailAddress = null;
+  String? emailAddress = null;
   
 
-  String phoneNumber = null;
+  String? phoneNumber = null;
   
 
-  String password = null;
+  String? password = null;
   
 
-  bool isActive = null;
+  bool? isActive = null;
   
 
-  bool shouldChangePasswordOnNextLogin = null;
+  bool? shouldChangePasswordOnNextLogin = null;
   
 
-  bool isTwoFactorEnabled = null;
+  bool? isTwoFactorEnabled = null;
   
 
-  bool isLockoutEnabled = null;
+  bool? isLockoutEnabled = null;
   
 
-  GenderType genderType = null;
+  GenderType? genderType = null;
   
 
-  DateTime birthdate = null;
+  DateTime? birthdate = null;
   
 
-  String bankAccount = null;
+  String? bankAccount = null;
   
 
-  int countryId = null;
+  int? countryId = null;
   
 
-  int stateId = null;
+  int? stateId = null;
   
 
-  int cityId = null;
+  int? cityId = null;
   
 
-  String address = null;
+  String? address = null;
   
 
-  String homePhoneNumber = null;
+  String? homePhoneNumber = null;
   
 
-  String workPhoneNumber = null;
+  String? workPhoneNumber = null;
   
 
-  String postalCode = null;
+  String? postalCode = null;
   
 
-  String birthCertificateNumber = null;
+  String? birthCertificateNumber = null;
   
 
-  String nationalCode = null;
+  String? nationalCode = null;
   
 
-  DegreeType degreeType = null;
+  DegreeType? degreeType = null;
   
 
-  String occupation = null;
+  String? occupation = null;
   
 
-  String jobTitle = null;
+  String? jobTitle = null;
   
 
-  IntroduceType introduceType = null;
+  IntroduceType? introduceType = null;
   
 
-  int vacationTypeId = null;
+  int? vacationTypeId = null;
   
   UserEditDto();
 
@@ -92,7 +92,7 @@ class UserEditDto {
     return 'UserEditDto[id=$id, name=$name, surname=$surname, userName=$userName, emailAddress=$emailAddress, phoneNumber=$phoneNumber, password=$password, isActive=$isActive, shouldChangePasswordOnNextLogin=$shouldChangePasswordOnNextLogin, isTwoFactorEnabled=$isTwoFactorEnabled, isLockoutEnabled=$isLockoutEnabled, genderType=$genderType, birthdate=$birthdate, bankAccount=$bankAccount, countryId=$countryId, stateId=$stateId, cityId=$cityId, address=$address, homePhoneNumber=$homePhoneNumber, workPhoneNumber=$workPhoneNumber, postalCode=$postalCode, birthCertificateNumber=$birthCertificateNumber, nationalCode=$nationalCode, degreeType=$degreeType, occupation=$occupation, jobTitle=$jobTitle, introduceType=$introduceType, vacationTypeId=$vacationTypeId, ]';
   }
 
-  UserEditDto.fromJson(Map<String, dynamic> json) {
+  UserEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']
@@ -198,7 +198,7 @@ class UserEditDto {
       'isTwoFactorEnabled': isTwoFactorEnabled,
       'isLockoutEnabled': isLockoutEnabled,
       'genderType': genderType,
-      'birthdate': birthdate == null ? '' : birthdate.toUtc().toIso8601String(),
+      'birthdate': birthdate == null ? '' : birthdate!.toUtc().toIso8601String(),
       'bankAccount': bankAccount,
       'countryId': countryId,
       'stateId': stateId,

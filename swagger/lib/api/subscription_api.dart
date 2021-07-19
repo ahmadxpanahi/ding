@@ -5,13 +5,13 @@ part of swagger.api;
 class SubscriptionApi {
   final ApiClient apiClient;
 
-  SubscriptionApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  SubscriptionApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppSubscriptionDisablerecurringpaymentsPost
   ///
   /// 
   Future apiServicesAppSubscriptionDisablerecurringpaymentsPost() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class SubscriptionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -60,7 +60,7 @@ class SubscriptionApi {
   ///
   /// 
   Future apiServicesAppSubscriptionEnablerecurringpaymentsPost() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class SubscriptionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class SubscriptionApi {
   /// ApiServicesAppSubscriptionSubscribedeviceeditionPost
   ///
   /// 
-  Future apiServicesAppSubscriptionSubscribedeviceeditionPost({ SubscriptionDeviceEditionDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppSubscriptionSubscribedeviceeditionPost({ SubscriptionDeviceEditionDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -136,14 +136,14 @@ class SubscriptionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

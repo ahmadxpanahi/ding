@@ -2,10 +2,10 @@ part of swagger.api;
 
 class SwitchToLinkedAccountOutput {
   
-  String switchAccountToken = null;
+  String? switchAccountToken = null;
   
 
-  String tenancyName = null;
+  String? tenancyName = null;
   
   SwitchToLinkedAccountOutput();
 
@@ -14,7 +14,7 @@ class SwitchToLinkedAccountOutput {
     return 'SwitchToLinkedAccountOutput[switchAccountToken=$switchAccountToken, tenancyName=$tenancyName, ]';
   }
 
-  SwitchToLinkedAccountOutput.fromJson(Map<String, dynamic> json) {
+  SwitchToLinkedAccountOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     switchAccountToken =
         json['switchAccountToken']

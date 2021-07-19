@@ -2,22 +2,22 @@ part of swagger.api;
 
 class AddWidgetInput {
   
-  String widgetId = null;
+  String? widgetId = null;
   
 
-  String pageId = null;
+  String? pageId = null;
   
 
-  String dashboardName = null;
+  String? dashboardName = null;
   
 
-  int width = null;
+  int? width = null;
   
 
-  int height = null;
+  int? height = null;
   
 
-  String application = null;
+  String? application = null;
   
   AddWidgetInput();
 
@@ -26,7 +26,7 @@ class AddWidgetInput {
     return 'AddWidgetInput[widgetId=$widgetId, pageId=$pageId, dashboardName=$dashboardName, width=$width, height=$height, application=$application, ]';
   }
 
-  AddWidgetInput.fromJson(Map<String, dynamic> json) {
+  AddWidgetInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     widgetId =
         json['widgetId']

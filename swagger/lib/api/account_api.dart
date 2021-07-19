@@ -5,13 +5,13 @@ part of swagger.api;
 class AccountApi {
   final ApiClient apiClient;
 
-  AccountApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  AccountApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppAccountActivateemailPost
   ///
   /// 
-  Future apiServicesAppAccountActivateemailPost({ ActivateEmailInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppAccountActivateemailPost({ ActivateEmailInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -60,7 +60,7 @@ class AccountApi {
   ///
   /// 
   Future<ImpersonateOutput> apiServicesAppAccountBacktoimpersonatorPost() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class AccountApi {
   /// ApiServicesAppAccountDelegatedimpersonatePost
   ///
   /// 
-  Future<ImpersonateOutput> apiServicesAppAccountDelegatedimpersonatePost({ DelegatedImpersonateInput body }) async {
-    Object postBody = body;
+  Future<ImpersonateOutput> apiServicesAppAccountDelegatedimpersonatePost({ DelegatedImpersonateInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -136,14 +136,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -157,8 +157,8 @@ class AccountApi {
   /// ApiServicesAppAccountGetprofileGet
   ///
   /// 
-  Future<UserEditDto> apiServicesAppAccountGetprofileGet({ int userId }) async {
-    Object postBody = null;
+  Future<UserEditDto> apiServicesAppAccountGetprofileGet({ int? userId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -188,14 +188,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -209,8 +209,8 @@ class AccountApi {
   /// ApiServicesAppAccountImpersonatePost
   ///
   /// 
-  Future<ImpersonateOutput> apiServicesAppAccountImpersonatePost({ ImpersonateInput body }) async {
-    Object postBody = body;
+  Future<ImpersonateOutput> apiServicesAppAccountImpersonatePost({ ImpersonateInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -237,14 +237,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -258,8 +258,8 @@ class AccountApi {
   /// ApiServicesAppAccountIstenantavailablePost
   ///
   /// 
-  Future<IsTenantAvailableOutput> apiServicesAppAccountIstenantavailablePost({ IsTenantAvailableInput body }) async {
-    Object postBody = body;
+  Future<IsTenantAvailableOutput> apiServicesAppAccountIstenantavailablePost({ IsTenantAvailableInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -286,14 +286,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -307,8 +307,8 @@ class AccountApi {
   /// ApiServicesAppAccountRegisterPost
   ///
   /// 
-  Future<RegisterOutput> apiServicesAppAccountRegisterPost({ RegisterInput body }) async {
-    Object postBody = body;
+  Future<RegisterOutput> apiServicesAppAccountRegisterPost({ RegisterInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -335,14 +335,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -356,8 +356,8 @@ class AccountApi {
   /// ApiServicesAppAccountResetpasswordPost
   ///
   /// 
-  Future<ResetPasswordOutput> apiServicesAppAccountResetpasswordPost({ ResetPasswordInput body }) async {
-    Object postBody = body;
+  Future<ResetPasswordOutput> apiServicesAppAccountResetpasswordPost({ ResetPasswordInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -384,14 +384,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -405,8 +405,8 @@ class AccountApi {
   /// ApiServicesAppAccountResolvetenantidPost
   ///
   /// 
-  Future<int> apiServicesAppAccountResolvetenantidPost({ ResolveTenantIdInput body }) async {
-    Object postBody = body;
+  Future<int> apiServicesAppAccountResolvetenantidPost({ ResolveTenantIdInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -433,14 +433,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -454,8 +454,8 @@ class AccountApi {
   /// ApiServicesAppAccountSaveprofilePost
   ///
   /// 
-  Future apiServicesAppAccountSaveprofilePost({ UserEditDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppAccountSaveprofilePost({ UserEditDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -482,14 +482,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -503,8 +503,8 @@ class AccountApi {
   /// ApiServicesAppAccountSendemailactivationlinkPost
   ///
   /// 
-  Future apiServicesAppAccountSendemailactivationlinkPost({ SendEmailActivationLinkInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppAccountSendemailactivationlinkPost({ SendEmailActivationLinkInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -531,14 +531,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -552,8 +552,8 @@ class AccountApi {
   /// ApiServicesAppAccountSendpasswordresetcodePost
   ///
   /// 
-  Future apiServicesAppAccountSendpasswordresetcodePost({ SendPasswordResetCodeInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppAccountSendpasswordresetcodePost({ SendPasswordResetCodeInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -580,14 +580,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -601,8 +601,8 @@ class AccountApi {
   /// ApiServicesAppAccountSendverificationsmsPost
   ///
   /// 
-  Future apiServicesAppAccountSendverificationsmsPost({ SendVerificationSmsInputDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppAccountSendverificationsmsPost({ SendVerificationSmsInputDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -629,14 +629,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -650,8 +650,8 @@ class AccountApi {
   /// ApiServicesAppAccountSwitchtolinkedaccountPost
   ///
   /// 
-  Future<SwitchToLinkedAccountOutput> apiServicesAppAccountSwitchtolinkedaccountPost({ SwitchToLinkedAccountInput body }) async {
-    Object postBody = body;
+  Future<SwitchToLinkedAccountOutput> apiServicesAppAccountSwitchtolinkedaccountPost({ SwitchToLinkedAccountInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -678,14 +678,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -699,8 +699,8 @@ class AccountApi {
   /// ApiServicesAppAccountVerifyregistertokenPost
   ///
   /// 
-  Future<String> apiServicesAppAccountVerifyregistertokenPost({ String token }) async {
-    Object postBody = null;
+  Future<String> apiServicesAppAccountVerifyregistertokenPost({ String? token }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -730,14 +730,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -751,8 +751,8 @@ class AccountApi {
   /// ApiServicesAppAccountVerifysmscodePost
   ///
   /// 
-  Future<String> apiServicesAppAccountVerifysmscodePost({ VerifySmsCodeInputDto body }) async {
-    Object postBody = body;
+  Future<String> apiServicesAppAccountVerifysmscodePost({ VerifySmsCodeInputDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -779,14 +779,14 @@ class AccountApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

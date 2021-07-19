@@ -2,7 +2,7 @@ part of swagger.api;
 
 class RequestType {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   RequestType._internal(this.value);
 

@@ -2,19 +2,19 @@ part of swagger.api;
 
 class UserRoleDto {
   
-  int roleId = null;
+  int? roleId = null;
   
 
-  String roleName = null;
+  String? roleName = null;
   
 
-  String roleDisplayName = null;
+  String? roleDisplayName = null;
   
 
-  bool isAssigned = null;
+  bool? isAssigned = null;
   
 
-  bool inheritedFromOrganizationUnit = null;
+  bool? inheritedFromOrganizationUnit = null;
   
   UserRoleDto();
 
@@ -23,7 +23,7 @@ class UserRoleDto {
     return 'UserRoleDto[roleId=$roleId, roleName=$roleName, roleDisplayName=$roleDisplayName, isAssigned=$isAssigned, inheritedFromOrganizationUnit=$inheritedFromOrganizationUnit, ]';
   }
 
-  UserRoleDto.fromJson(Map<String, dynamic> json) {
+  UserRoleDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     roleId =
         json['roleId']
@@ -52,7 +52,7 @@ class UserRoleDto {
      };
   }
 
-  static List<UserRoleDto> listFromJson(List<dynamic> json) {
+  static List<UserRoleDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<UserRoleDto>() : json.map((value) => new UserRoleDto.fromJson(value)).toList();
   }
 

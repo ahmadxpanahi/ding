@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetDefaultEditionNameOutput {
   
-  String name = null;
+  String? name = null;
   
   GetDefaultEditionNameOutput();
 
@@ -11,7 +11,7 @@ class GetDefaultEditionNameOutput {
     return 'GetDefaultEditionNameOutput[name=$name, ]';
   }
 
-  GetDefaultEditionNameOutput.fromJson(Map<String, dynamic> json) {
+  GetDefaultEditionNameOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']

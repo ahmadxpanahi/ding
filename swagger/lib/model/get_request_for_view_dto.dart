@@ -2,13 +2,13 @@ part of swagger.api;
 
 class GetRequestForViewDto {
   
-  RequestDto request = null;
+  RequestDto? request = null;
   
 
-  String substituteUser = null;
+  String? substituteUser = null;
   
 
-  String requestByUser = null;
+  String? requestByUser = null;
   
   GetRequestForViewDto();
 
@@ -17,7 +17,7 @@ class GetRequestForViewDto {
     return 'GetRequestForViewDto[request=$request, substituteUser=$substituteUser, requestByUser=$requestByUser, ]';
   }
 
-  GetRequestForViewDto.fromJson(Map<String, dynamic> json) {
+  GetRequestForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     request =
       
@@ -40,7 +40,7 @@ class GetRequestForViewDto {
      };
   }
 
-  static List<GetRequestForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetRequestForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetRequestForViewDto>() : json.map((value) => new GetRequestForViewDto.fromJson(value)).toList();
   }
 

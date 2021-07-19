@@ -2,16 +2,16 @@ part of swagger.api;
 
 class AdditionalData {
   
-  Map<String, String> paypal = {};
+  Map<String, String>? paypal = {};
   
 
-  Map<String, String> stripe = {};
+  Map<String, String>? stripe = {};
   
 
-  Map<String, String> shetab = {};
+  Map<String, String>? shetab = {};
   
 
-  Map<String, String> directRequest = {};
+  Map<String, String>? directRequest = {};
   
   AdditionalData();
 
@@ -20,7 +20,7 @@ class AdditionalData {
     return 'AdditionalData[paypal=$paypal, stripe=$stripe, shetab=$shetab, directRequest=$directRequest, ]';
   }
 
-  AdditionalData.fromJson(Map<String, dynamic> json) {
+  AdditionalData.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     paypal =
         json['Paypal']

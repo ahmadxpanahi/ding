@@ -5,13 +5,13 @@ part of swagger.api;
 class SessionApi {
   final ApiClient apiClient;
 
-  SessionApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  SessionApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppSessionGetcurrentlogininformationsGet
   ///
   /// 
   Future<GetCurrentLoginInformationsOutput> apiServicesAppSessionGetcurrentlogininformationsGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class SessionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -60,7 +60,7 @@ class SessionApi {
   ///
   /// 
   Future<UpdateUserSignInTokenOutput> apiServicesAppSessionUpdateusersignintokenPut() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class SessionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

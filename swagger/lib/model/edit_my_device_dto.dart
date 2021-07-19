@@ -2,10 +2,10 @@ part of swagger.api;
 
 class EditMyDeviceDto {
   
-  String name = null;
+  String? name = null;
   
 
-  int id = null;
+  int? id = null;
   
   EditMyDeviceDto();
 
@@ -14,7 +14,7 @@ class EditMyDeviceDto {
     return 'EditMyDeviceDto[name=$name, id=$id, ]';
   }
 
-  EditMyDeviceDto.fromJson(Map<String, dynamic> json) {
+  EditMyDeviceDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']

@@ -2,7 +2,7 @@ part of swagger.api;
 
 class HttpStatusCode {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   HttpStatusCode._internal(this.value);
 

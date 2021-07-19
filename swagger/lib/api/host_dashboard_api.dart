@@ -5,13 +5,13 @@ part of swagger.api;
 class HostDashboardApi {
   final ApiClient apiClient;
 
-  HostDashboardApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  HostDashboardApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppHostdashboardGeteditiontenantstatisticsGet
   ///
   /// 
-  Future<GetEditionTenantStatisticsOutput> apiServicesAppHostdashboardGeteditiontenantstatisticsGet({ DateTime startDate, DateTime endDate }) async {
-    Object postBody = null;
+  Future<GetEditionTenantStatisticsOutput> apiServicesAppHostdashboardGeteditiontenantstatisticsGet({ DateTime? startDate, DateTime? endDate }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -44,14 +44,14 @@ class HostDashboardApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -65,8 +65,8 @@ class HostDashboardApi {
   /// ApiServicesAppHostdashboardGetincomestatisticsGet
   ///
   /// 
-  Future<GetIncomeStatisticsDataOutput> apiServicesAppHostdashboardGetincomestatisticsGet(String incomeStatisticsDateInterval, { DateTime startDate, DateTime endDate }) async {
-    Object postBody = null;
+  Future<GetIncomeStatisticsDataOutput> apiServicesAppHostdashboardGetincomestatisticsGet(String incomeStatisticsDateInterval, { DateTime? startDate, DateTime? endDate }) async {
+    Object? postBody = null;
 
     // verify required params are set
     if(incomeStatisticsDateInterval == null) {
@@ -103,14 +103,14 @@ class HostDashboardApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -125,7 +125,7 @@ class HostDashboardApi {
   ///
   /// 
   Future<GetRecentTenantsOutput> apiServicesAppHostdashboardGetrecenttenantsdataGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -152,14 +152,14 @@ class HostDashboardApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -174,7 +174,7 @@ class HostDashboardApi {
   ///
   /// 
   Future<GetExpiringTenantsOutput> apiServicesAppHostdashboardGetsubscriptionexpiringtenantsdataGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -201,14 +201,14 @@ class HostDashboardApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -222,8 +222,8 @@ class HostDashboardApi {
   /// ApiServicesAppHostdashboardGettopstatsdataGet
   ///
   /// 
-  Future<TopStatsData> apiServicesAppHostdashboardGettopstatsdataGet({ DateTime startDate, DateTime endDate }) async {
-    Object postBody = null;
+  Future<TopStatsData> apiServicesAppHostdashboardGettopstatsdataGet({ DateTime? startDate, DateTime? endDate }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -256,14 +256,14 @@ class HostDashboardApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

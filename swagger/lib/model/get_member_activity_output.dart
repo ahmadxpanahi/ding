@@ -11,7 +11,7 @@ class GetMemberActivityOutput {
     return 'GetMemberActivityOutput[memberActivities=$memberActivities, ]';
   }
 
-  GetMemberActivityOutput.fromJson(Map<String, dynamic> json) {
+  GetMemberActivityOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     memberActivities =
       MemberActivity.listFromJson(json['memberActivities'])

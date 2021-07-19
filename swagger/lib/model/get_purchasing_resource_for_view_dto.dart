@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetPurchasingResourceForViewDto {
   
-  PurchasingResourceDto purchasingResource = null;
+  PurchasingResourceDto? purchasingResource = null;
   
   GetPurchasingResourceForViewDto();
 
@@ -11,7 +11,7 @@ class GetPurchasingResourceForViewDto {
     return 'GetPurchasingResourceForViewDto[purchasingResource=$purchasingResource, ]';
   }
 
-  GetPurchasingResourceForViewDto.fromJson(Map<String, dynamic> json) {
+  GetPurchasingResourceForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     purchasingResource =
       
@@ -26,7 +26,7 @@ class GetPurchasingResourceForViewDto {
      };
   }
 
-  static List<GetPurchasingResourceForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetPurchasingResourceForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetPurchasingResourceForViewDto>() : json.map((value) => new GetPurchasingResourceForViewDto.fromJson(value)).toList();
   }
 

@@ -2,10 +2,10 @@ part of swagger.api;
 
 class ActivateWebhookSubscriptionInput {
   
-  String subscriptionId = null;
+  String? subscriptionId = null;
   
 
-  bool isActive = null;
+  bool? isActive = null;
   
   ActivateWebhookSubscriptionInput();
 
@@ -14,7 +14,7 @@ class ActivateWebhookSubscriptionInput {
     return 'ActivateWebhookSubscriptionInput[subscriptionId=$subscriptionId, isActive=$isActive, ]';
   }
 
-  ActivateWebhookSubscriptionInput.fromJson(Map<String, dynamic> json) {
+  ActivateWebhookSubscriptionInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     subscriptionId =
         json['subscriptionId']

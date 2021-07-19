@@ -11,7 +11,7 @@ class ListResultDtoOfGetStateForViewDto {
     return 'ListResultDtoOfGetStateForViewDto[items=$items, ]';
   }
 
-  ListResultDtoOfGetStateForViewDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfGetStateForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       GetStateForViewDto.listFromJson(json['items'])

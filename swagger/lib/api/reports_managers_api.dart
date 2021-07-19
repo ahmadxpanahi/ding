@@ -5,13 +5,13 @@ part of swagger.api;
 class ReportsManagersApi {
   final ApiClient apiClient;
 
-  ReportsManagersApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  ReportsManagersApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppReportsmanagersGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetReportsManagerForViewDto> apiServicesAppReportsmanagersGetallGet({ String filter, DateTime subscriptionEndDateStart, DateTime subscriptionEndDateEnd, DateTime creationDateStart, DateTime creationDateEnd, String seniorManagerNameFilter, String seniorManagerSurnameFilter, String seniorManagerPhoneNumberFilter, String adminEmailAddressFilter, String addressFilter, String tenancyNameFilter, String nameFilter, int isActiveFilter, String countryNameFilter, String stateNameFilter, String cityNameFilter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetReportsManagerForViewDto> apiServicesAppReportsmanagersGetallGet({ String? filter, DateTime? subscriptionEndDateStart, DateTime? subscriptionEndDateEnd, DateTime? creationDateStart, DateTime? creationDateEnd, String? seniorManagerNameFilter, String? seniorManagerSurnameFilter, String? seniorManagerPhoneNumberFilter, String? adminEmailAddressFilter, String? addressFilter, String? tenancyNameFilter, String? nameFilter, int? isActiveFilter, String? countryNameFilter, String? stateNameFilter, String? cityNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -95,14 +95,14 @@ class ReportsManagersApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -116,8 +116,8 @@ class ReportsManagersApi {
   /// ApiServicesAppReportsmanagersGetreportsmanagerstoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppReportsmanagersGetreportsmanagerstoexcelGet({ String filter, DateTime subscriptionEndDateStart, DateTime subscriptionEndDateEnd, DateTime creationDateStart, DateTime creationDateEnd, String seniorManagerNameFilter, String seniorManagerSurnameFilter, String seniorManagerPhoneNumberFilter, String adminEmailAddressFilter, String addressFilter, String tenancyNameFilter, String nameFilter, int isActiveFilter, String countryNameFilter, String stateNameFilter, String cityNameFilter }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppReportsmanagersGetreportsmanagerstoexcelGet({ String? filter, DateTime? subscriptionEndDateStart, DateTime? subscriptionEndDateEnd, DateTime? creationDateStart, DateTime? creationDateEnd, String? seniorManagerNameFilter, String? seniorManagerSurnameFilter, String? seniorManagerPhoneNumberFilter, String? adminEmailAddressFilter, String? addressFilter, String? tenancyNameFilter, String? nameFilter, int? isActiveFilter, String? countryNameFilter, String? stateNameFilter, String? cityNameFilter }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -192,14 +192,14 @@ class ReportsManagersApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

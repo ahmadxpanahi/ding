@@ -2,7 +2,7 @@ part of swagger.api;
 
 class CreateOrUpdateLanguageInput {
   
-  ApplicationLanguageEditDto language = null;
+  ApplicationLanguageEditDto? language = null;
   
   CreateOrUpdateLanguageInput();
 
@@ -11,7 +11,7 @@ class CreateOrUpdateLanguageInput {
     return 'CreateOrUpdateLanguageInput[language=$language, ]';
   }
 
-  CreateOrUpdateLanguageInput.fromJson(Map<String, dynamic> json) {
+  CreateOrUpdateLanguageInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     language =
       

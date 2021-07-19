@@ -2,10 +2,10 @@ part of swagger.api;
 
 class CreateFriendshipRequestByUserNameInput {
   
-  String tenancyName = null;
+  String? tenancyName = null;
   
 
-  String userName = null;
+  String? userName = null;
   
   CreateFriendshipRequestByUserNameInput();
 
@@ -14,7 +14,7 @@ class CreateFriendshipRequestByUserNameInput {
     return 'CreateFriendshipRequestByUserNameInput[tenancyName=$tenancyName, userName=$userName, ]';
   }
 
-  CreateFriendshipRequestByUserNameInput.fromJson(Map<String, dynamic> json) {
+  CreateFriendshipRequestByUserNameInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenancyName =
         json['tenancyName']

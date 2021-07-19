@@ -2,13 +2,13 @@ part of swagger.api;
 
 class GetRecentTenantsOutput {
   
-  int recentTenantsDayCount = null;
+  int? recentTenantsDayCount = null;
   
 
-  int maxRecentTenantsShownCount = null;
+  int? maxRecentTenantsShownCount = null;
   
 
-  DateTime tenantCreationStartDate = null;
+  DateTime? tenantCreationStartDate = null;
   
 
   List<RecentTenant> recentTenants = [];
@@ -20,7 +20,7 @@ class GetRecentTenantsOutput {
     return 'GetRecentTenantsOutput[recentTenantsDayCount=$recentTenantsDayCount, maxRecentTenantsShownCount=$maxRecentTenantsShownCount, tenantCreationStartDate=$tenantCreationStartDate, recentTenants=$recentTenants, ]';
   }
 
-  GetRecentTenantsOutput.fromJson(Map<String, dynamic> json) {
+  GetRecentTenantsOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     recentTenantsDayCount =
         json['recentTenantsDayCount']
@@ -38,7 +38,7 @@ class GetRecentTenantsOutput {
     return {
       'recentTenantsDayCount': recentTenantsDayCount,
       'maxRecentTenantsShownCount': maxRecentTenantsShownCount,
-      'tenantCreationStartDate': tenantCreationStartDate == null ? '' : tenantCreationStartDate.toUtc().toIso8601String(),
+      'tenantCreationStartDate': tenantCreationStartDate == null ? '' : tenantCreationStartDate!.toUtc().toIso8601String(),
       'recentTenants': recentTenants
      };
   }

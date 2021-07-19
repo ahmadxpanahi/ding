@@ -2,7 +2,7 @@ part of swagger.api;
 
 class DeviceStatus {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   DeviceStatus._internal(this.value);
 

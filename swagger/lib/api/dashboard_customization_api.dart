@@ -5,13 +5,13 @@ part of swagger.api;
 class DashboardCustomizationApi {
   final ApiClient apiClient;
 
-  DashboardCustomizationApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  DashboardCustomizationApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppDashboardcustomizationAddnewpagePost
   ///
   /// 
-  Future<AddNewPageOutput> apiServicesAppDashboardcustomizationAddnewpagePost({ AddNewPageInput body }) async {
-    Object postBody = body;
+  Future<AddNewPageOutput> apiServicesAppDashboardcustomizationAddnewpagePost({ AddNewPageInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class DashboardCustomizationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class DashboardCustomizationApi {
   /// ApiServicesAppDashboardcustomizationAddwidgetPost
   ///
   /// 
-  Future<Widget> apiServicesAppDashboardcustomizationAddwidgetPost({ AddWidgetInput body }) async {
-    Object postBody = body;
+  Future<Widget> apiServicesAppDashboardcustomizationAddwidgetPost({ AddWidgetInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class DashboardCustomizationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class DashboardCustomizationApi {
   /// ApiServicesAppDashboardcustomizationDeletepageDelete
   ///
   /// 
-  Future apiServicesAppDashboardcustomizationDeletepageDelete({ String id, String dashboardName, String application }) async {
-    Object postBody = null;
+  Future apiServicesAppDashboardcustomizationDeletepageDelete({ String? id, String? dashboardName, String? application }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -145,14 +145,14 @@ class DashboardCustomizationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -166,8 +166,8 @@ class DashboardCustomizationApi {
   /// ApiServicesAppDashboardcustomizationGetallwidgetdefinitionsGet
   ///
   /// 
-  Future<List<WidgetOutput>> apiServicesAppDashboardcustomizationGetallwidgetdefinitionsGet({ String dashboardName, String application }) async {
-    Object postBody = null;
+  Future<List<WidgetOutput>> apiServicesAppDashboardcustomizationGetallwidgetdefinitionsGet({ String? dashboardName, String? application }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -200,14 +200,14 @@ class DashboardCustomizationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -221,8 +221,8 @@ class DashboardCustomizationApi {
   /// ApiServicesAppDashboardcustomizationGetdashboarddefinitionGet
   ///
   /// 
-  Future<DashboardOutput> apiServicesAppDashboardcustomizationGetdashboarddefinitionGet({ String dashboardName, String application }) async {
-    Object postBody = null;
+  Future<DashboardOutput> apiServicesAppDashboardcustomizationGetdashboarddefinitionGet({ String? dashboardName, String? application }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -255,14 +255,14 @@ class DashboardCustomizationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -276,8 +276,8 @@ class DashboardCustomizationApi {
   /// ApiServicesAppDashboardcustomizationGetsettingnameGet
   ///
   /// 
-  Future<String> apiServicesAppDashboardcustomizationGetsettingnameGet({ String application }) async {
-    Object postBody = null;
+  Future<String> apiServicesAppDashboardcustomizationGetsettingnameGet({ String? application }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -307,14 +307,14 @@ class DashboardCustomizationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -328,8 +328,8 @@ class DashboardCustomizationApi {
   /// ApiServicesAppDashboardcustomizationGetuserdashboardGet
   ///
   /// 
-  Future<Dashboard> apiServicesAppDashboardcustomizationGetuserdashboardGet({ String dashboardName, String application }) async {
-    Object postBody = null;
+  Future<Dashboard> apiServicesAppDashboardcustomizationGetuserdashboardGet({ String? dashboardName, String? application }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -362,14 +362,14 @@ class DashboardCustomizationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -383,8 +383,8 @@ class DashboardCustomizationApi {
   /// ApiServicesAppDashboardcustomizationRenamepagePost
   ///
   /// 
-  Future apiServicesAppDashboardcustomizationRenamepagePost({ RenamePageInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppDashboardcustomizationRenamepagePost({ RenamePageInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -411,14 +411,14 @@ class DashboardCustomizationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -432,8 +432,8 @@ class DashboardCustomizationApi {
   /// ApiServicesAppDashboardcustomizationSavepagePost
   ///
   /// 
-  Future apiServicesAppDashboardcustomizationSavepagePost({ SavePageInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppDashboardcustomizationSavepagePost({ SavePageInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -460,14 +460,14 @@ class DashboardCustomizationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

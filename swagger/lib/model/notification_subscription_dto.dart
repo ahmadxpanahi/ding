@@ -2,10 +2,10 @@ part of swagger.api;
 
 class NotificationSubscriptionDto {
   
-  String name = null;
+  String? name = null;
   
 
-  bool isSubscribed = null;
+  bool? isSubscribed = null;
   
   NotificationSubscriptionDto();
 
@@ -14,7 +14,7 @@ class NotificationSubscriptionDto {
     return 'NotificationSubscriptionDto[name=$name, isSubscribed=$isSubscribed, ]';
   }
 
-  NotificationSubscriptionDto.fromJson(Map<String, dynamic> json) {
+  NotificationSubscriptionDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']
@@ -31,7 +31,7 @@ class NotificationSubscriptionDto {
      };
   }
 
-  static List<NotificationSubscriptionDto> listFromJson(List<dynamic> json) {
+  static List<NotificationSubscriptionDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<NotificationSubscriptionDto>() : json.map((value) => new NotificationSubscriptionDto.fromJson(value)).toList();
   }
 

@@ -2,10 +2,10 @@ part of swagger.api;
 
 class PurchasingResourceDto {
   
-  String title = null;
+  String? title = null;
   
 
-  int id = null;
+  int? id = null;
   
   PurchasingResourceDto();
 
@@ -14,7 +14,7 @@ class PurchasingResourceDto {
     return 'PurchasingResourceDto[title=$title, id=$id, ]';
   }
 
-  PurchasingResourceDto.fromJson(Map<String, dynamic> json) {
+  PurchasingResourceDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     title =
         json['title']

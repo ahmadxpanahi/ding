@@ -2,16 +2,16 @@ part of swagger.api;
 
 class OrganizationUnitRoleListDto {
   
-  String displayName = null;
+  String? displayName = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  DateTime addedTime = null;
+  DateTime? addedTime = null;
   
 
-  int id = null;
+  int? id = null;
   
   OrganizationUnitRoleListDto();
 
@@ -20,7 +20,7 @@ class OrganizationUnitRoleListDto {
     return 'OrganizationUnitRoleListDto[displayName=$displayName, name=$name, addedTime=$addedTime, id=$id, ]';
   }
 
-  OrganizationUnitRoleListDto.fromJson(Map<String, dynamic> json) {
+  OrganizationUnitRoleListDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     displayName =
         json['displayName']
@@ -38,12 +38,12 @@ class OrganizationUnitRoleListDto {
     return {
       'displayName': displayName,
       'name': name,
-      'addedTime': addedTime == null ? '' : addedTime.toUtc().toIso8601String(),
+      'addedTime': addedTime == null ? '' : addedTime!.toUtc().toIso8601String(),
       'id': id
      };
   }
 
-  static List<OrganizationUnitRoleListDto> listFromJson(List<dynamic> json) {
+  static List<OrganizationUnitRoleListDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<OrganizationUnitRoleListDto>() : json.map((value) => new OrganizationUnitRoleListDto.fromJson(value)).toList();
   }
 

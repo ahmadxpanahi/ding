@@ -2,7 +2,7 @@ part of swagger.api;
 
 class CreateInvoiceDto {
   
-  int subscriptionPaymentId = null;
+  int? subscriptionPaymentId = null;
   
   CreateInvoiceDto();
 
@@ -11,7 +11,7 @@ class CreateInvoiceDto {
     return 'CreateInvoiceDto[subscriptionPaymentId=$subscriptionPaymentId, ]';
   }
 
-  CreateInvoiceDto.fromJson(Map<String, dynamic> json) {
+  CreateInvoiceDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     subscriptionPaymentId =
         json['subscriptionPaymentId']

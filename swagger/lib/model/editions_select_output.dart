@@ -14,7 +14,7 @@ class EditionsSelectOutput {
     return 'EditionsSelectOutput[allFeatures=$allFeatures, editionsWithFeatures=$editionsWithFeatures, ]';
   }
 
-  EditionsSelectOutput.fromJson(Map<String, dynamic> json) {
+  EditionsSelectOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     allFeatures =
       FlatFeatureSelectDto.listFromJson(json['allFeatures'])

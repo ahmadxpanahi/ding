@@ -2,16 +2,16 @@ part of swagger.api;
 
 class EditionDeviceSubscribableEditionLookupTableDto {
   
-  int id = null;
+  int? id = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  double price = null;
+  double? price = null;
   
 
-  int dayCount = null;
+  int? dayCount = null;
   
   EditionDeviceSubscribableEditionLookupTableDto();
 
@@ -20,7 +20,7 @@ class EditionDeviceSubscribableEditionLookupTableDto {
     return 'EditionDeviceSubscribableEditionLookupTableDto[id=$id, displayName=$displayName, price=$price, dayCount=$dayCount, ]';
   }
 
-  EditionDeviceSubscribableEditionLookupTableDto.fromJson(Map<String, dynamic> json) {
+  EditionDeviceSubscribableEditionLookupTableDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']
@@ -45,7 +45,7 @@ class EditionDeviceSubscribableEditionLookupTableDto {
      };
   }
 
-  static List<EditionDeviceSubscribableEditionLookupTableDto> listFromJson(List<dynamic> json) {
+  static List<EditionDeviceSubscribableEditionLookupTableDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<EditionDeviceSubscribableEditionLookupTableDto>() : json.map((value) => new EditionDeviceSubscribableEditionLookupTableDto.fromJson(value)).toList();
   }
 

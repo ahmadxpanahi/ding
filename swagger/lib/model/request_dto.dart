@@ -2,34 +2,34 @@ part of swagger.api;
 
 class RequestDto {
   
-  RequestType requestType = null;
+  RequestType? requestType = null;
   
 
-  DateTime from = null;
+  DateTime? from = null;
   
 
-  DateTime to = null;
+  DateTime? to = null;
   
 
-  String comment = null;
+  String? comment = null;
   
 
-  RequestStatus status = null;
+  RequestStatus? status = null;
   
 
-  String rejectReason = null;
+  String? rejectReason = null;
   
 
-  int substituteUserId = null;
+  int? substituteUserId = null;
   
 
-  int creatorUserId = null;
+  int? creatorUserId = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  int id = null;
+  int? id = null;
   
   RequestDto();
 
@@ -38,7 +38,7 @@ class RequestDto {
     return 'RequestDto[requestType=$requestType, from=$from, to=$to, comment=$comment, status=$status, rejectReason=$rejectReason, substituteUserId=$substituteUserId, creatorUserId=$creatorUserId, creationTime=$creationTime, id=$id, ]';
   }
 
-  RequestDto.fromJson(Map<String, dynamic> json) {
+  RequestDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     requestType =
       
@@ -73,14 +73,14 @@ class RequestDto {
   Map<String, dynamic> toJson() {
     return {
       'requestType': requestType,
-      'from': from == null ? '' : from.toUtc().toIso8601String(),
-      'to': to == null ? '' : to.toUtc().toIso8601String(),
+      'from': from == null ? '' : from!.toUtc().toIso8601String(),
+      'to': to == null ? '' : to!.toUtc().toIso8601String(),
       'comment': comment,
       'status': status,
       'rejectReason': rejectReason,
       'substituteUserId': substituteUserId,
       'creatorUserId': creatorUserId,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
       'id': id
      };
   }

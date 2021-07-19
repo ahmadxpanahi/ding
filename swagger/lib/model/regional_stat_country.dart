@@ -2,19 +2,19 @@ part of swagger.api;
 
 class RegionalStatCountry {
   
-  String countryName = null;
+  String? countryName = null;
   
 
-  double sales = null;
+  double? sales = null;
   
 
   List<int> change = [];
   
 
-  double averagePrice = null;
+  double? averagePrice = null;
   
 
-  double totalPrice = null;
+  double? totalPrice = null;
   
   RegionalStatCountry();
 
@@ -23,7 +23,7 @@ class RegionalStatCountry {
     return 'RegionalStatCountry[countryName=$countryName, sales=$sales, change=$change, averagePrice=$averagePrice, totalPrice=$totalPrice, ]';
   }
 
-  RegionalStatCountry.fromJson(Map<String, dynamic> json) {
+  RegionalStatCountry.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     countryName =
         json['countryName']
@@ -52,7 +52,7 @@ class RegionalStatCountry {
      };
   }
 
-  static List<RegionalStatCountry> listFromJson(List<dynamic> json) {
+  static List<RegionalStatCountry> listFromJson(List<dynamic>? json) {
     return json == null ? new List<RegionalStatCountry>() : json.map((value) => new RegionalStatCountry.fromJson(value)).toList();
   }
 

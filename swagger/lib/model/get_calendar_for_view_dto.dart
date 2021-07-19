@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetCalendarForViewDto {
   
-  CalendarDto calendar = null;
+  CalendarDto? calendar = null;
   
   GetCalendarForViewDto();
 
@@ -11,7 +11,7 @@ class GetCalendarForViewDto {
     return 'GetCalendarForViewDto[calendar=$calendar, ]';
   }
 
-  GetCalendarForViewDto.fromJson(Map<String, dynamic> json) {
+  GetCalendarForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     calendar =
       
@@ -26,7 +26,7 @@ class GetCalendarForViewDto {
      };
   }
 
-  static List<GetCalendarForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetCalendarForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetCalendarForViewDto>() : json.map((value) => new GetCalendarForViewDto.fromJson(value)).toList();
   }
 

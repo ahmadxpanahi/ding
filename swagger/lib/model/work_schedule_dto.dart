@@ -2,34 +2,34 @@ part of swagger.api;
 
 class WorkScheduleDto {
   
-  String name = null;
+  String? name = null;
   
 
-  WorkModelType workModelType = null;
+  WorkModelType? workModelType = null;
   
 
-  bool isCalendarHolidayEnable = null;
+  bool? isCalendarHolidayEnable = null;
   
 
-  String workingTotalTime = null;
+  String? workingTotalTime = null;
   
 
-  DateTime startDate = null;
+  DateTime? startDate = null;
   
 
-  DateTime endDate = null;
+  DateTime? endDate = null;
   
 
-  int usersCount = null;
+  int? usersCount = null;
   
 
   List<WorkHourDto> workHours = [];
   
 
-  bool isAssigned = null;
+  bool? isAssigned = null;
   
 
-  int id = null;
+  int? id = null;
   
   WorkScheduleDto();
 
@@ -38,7 +38,7 @@ class WorkScheduleDto {
     return 'WorkScheduleDto[name=$name, workModelType=$workModelType, isCalendarHolidayEnable=$isCalendarHolidayEnable, workingTotalTime=$workingTotalTime, startDate=$startDate, endDate=$endDate, usersCount=$usersCount, workHours=$workHours, isAssigned=$isAssigned, id=$id, ]';
   }
 
-  WorkScheduleDto.fromJson(Map<String, dynamic> json) {
+  WorkScheduleDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']
@@ -76,8 +76,8 @@ class WorkScheduleDto {
       'workModelType': workModelType,
       'isCalendarHolidayEnable': isCalendarHolidayEnable,
       'workingTotalTime': workingTotalTime,
-      'startDate': startDate == null ? '' : startDate.toUtc().toIso8601String(),
-      'endDate': endDate == null ? '' : endDate.toUtc().toIso8601String(),
+      'startDate': startDate == null ? '' : startDate!.toUtc().toIso8601String(),
+      'endDate': endDate == null ? '' : endDate!.toUtc().toIso8601String(),
       'usersCount': usersCount,
       'workHours': workHours,
       'isAssigned': isAssigned,
@@ -85,7 +85,7 @@ class WorkScheduleDto {
      };
   }
 
-  static List<WorkScheduleDto> listFromJson(List<dynamic> json) {
+  static List<WorkScheduleDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<WorkScheduleDto>() : json.map((value) => new WorkScheduleDto.fromJson(value)).toList();
   }
 

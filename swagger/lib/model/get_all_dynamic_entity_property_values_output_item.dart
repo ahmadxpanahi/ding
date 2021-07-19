@@ -2,13 +2,13 @@ part of swagger.api;
 
 class GetAllDynamicEntityPropertyValuesOutputItem {
   
-  int dynamicEntityPropertyId = null;
+  int? dynamicEntityPropertyId = null;
   
 
-  String propertyName = null;
+  String? propertyName = null;
   
 
-  IInputType inputType = null;
+  IInputType? inputType = null;
   
 
   List<String> selectedValues = [];
@@ -23,7 +23,7 @@ class GetAllDynamicEntityPropertyValuesOutputItem {
     return 'GetAllDynamicEntityPropertyValuesOutputItem[dynamicEntityPropertyId=$dynamicEntityPropertyId, propertyName=$propertyName, inputType=$inputType, selectedValues=$selectedValues, allValuesInputTypeHas=$allValuesInputTypeHas, ]';
   }
 
-  GetAllDynamicEntityPropertyValuesOutputItem.fromJson(Map<String, dynamic> json) {
+  GetAllDynamicEntityPropertyValuesOutputItem.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     dynamicEntityPropertyId =
         json['dynamicEntityPropertyId']
@@ -54,7 +54,7 @@ class GetAllDynamicEntityPropertyValuesOutputItem {
      };
   }
 
-  static List<GetAllDynamicEntityPropertyValuesOutputItem> listFromJson(List<dynamic> json) {
+  static List<GetAllDynamicEntityPropertyValuesOutputItem> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetAllDynamicEntityPropertyValuesOutputItem>() : json.map((value) => new GetAllDynamicEntityPropertyValuesOutputItem.fromJson(value)).toList();
   }
 

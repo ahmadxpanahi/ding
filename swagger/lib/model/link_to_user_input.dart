@@ -2,13 +2,13 @@ part of swagger.api;
 
 class LinkToUserInput {
   
-  String tenancyName = null;
+  String? tenancyName = null;
   
 
-  String usernameOrEmailAddress = null;
+  String? usernameOrEmailAddress = null;
   
 
-  String password = null;
+  String? password = null;
   
   LinkToUserInput();
 
@@ -17,7 +17,7 @@ class LinkToUserInput {
     return 'LinkToUserInput[tenancyName=$tenancyName, usernameOrEmailAddress=$usernameOrEmailAddress, password=$password, ]';
   }
 
-  LinkToUserInput.fromJson(Map<String, dynamic> json) {
+  LinkToUserInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenancyName =
         json['tenancyName']

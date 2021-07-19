@@ -2,25 +2,25 @@ part of swagger.api;
 
 class EnterLeaveDto {
   
-  EnteringLeavingType enterLeaveType = null;
+  EnteringLeavingType? enterLeaveType = null;
   
 
-  DateTime occurDate = null;
+  DateTime? occurDate = null;
   
 
-  String occurTime = null;
+  String? occurTime = null;
   
 
-  RequestStatus status = null;
+  RequestStatus? status = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  int creatorUserId = null;
+  int? creatorUserId = null;
   
 
-  int id = null;
+  int? id = null;
   
   EnterLeaveDto();
 
@@ -29,7 +29,7 @@ class EnterLeaveDto {
     return 'EnterLeaveDto[enterLeaveType=$enterLeaveType, occurDate=$occurDate, occurTime=$occurTime, status=$status, creationTime=$creationTime, creatorUserId=$creatorUserId, id=$id, ]';
   }
 
-  EnterLeaveDto.fromJson(Map<String, dynamic> json) {
+  EnterLeaveDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     enterLeaveType =
       
@@ -57,10 +57,10 @@ class EnterLeaveDto {
   Map<String, dynamic> toJson() {
     return {
       'enterLeaveType': enterLeaveType,
-      'occurDate': occurDate == null ? '' : occurDate.toUtc().toIso8601String(),
+      'occurDate': occurDate == null ? '' : occurDate!.toUtc().toIso8601String(),
       'occurTime': occurTime,
       'status': status,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
       'creatorUserId': creatorUserId,
       'id': id
      };

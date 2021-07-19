@@ -2,43 +2,43 @@ part of swagger.api;
 
 class AuthenticateResultModel {
   
-  String accessToken = null;
+  String? accessToken = null;
   
 
-  String encryptedAccessToken = null;
+  String? encryptedAccessToken = null;
   
 
-  int expireInSeconds = null;
+  int? expireInSeconds = null;
   
 
-  bool shouldResetPassword = null;
+  bool? shouldResetPassword = null;
   
 
-  String passwordResetCode = null;
+  String? passwordResetCode = null;
   
 
-  int userId = null;
+  int? userId = null;
   
 
-  bool requiresTwoFactorVerification = null;
+  bool? requiresTwoFactorVerification = null;
   
 
   List<String> twoFactorAuthProviders = [];
   
 
-  String twoFactorRememberClientToken = null;
+  String? twoFactorRememberClientToken = null;
   
 
-  String returnUrl = null;
+  String? returnUrl = null;
   
 
-  String refreshToken = null;
+  String? refreshToken = null;
   
 
-  int refreshTokenExpireInSeconds = null;
+  int? refreshTokenExpireInSeconds = null;
   
 
-  int tenantId = null;
+  int? tenantId = null;
   
   AuthenticateResultModel();
 
@@ -47,7 +47,7 @@ class AuthenticateResultModel {
     return 'AuthenticateResultModel[accessToken=$accessToken, encryptedAccessToken=$encryptedAccessToken, expireInSeconds=$expireInSeconds, shouldResetPassword=$shouldResetPassword, passwordResetCode=$passwordResetCode, userId=$userId, requiresTwoFactorVerification=$requiresTwoFactorVerification, twoFactorAuthProviders=$twoFactorAuthProviders, twoFactorRememberClientToken=$twoFactorRememberClientToken, returnUrl=$returnUrl, refreshToken=$refreshToken, refreshTokenExpireInSeconds=$refreshTokenExpireInSeconds, tenantId=$tenantId, ]';
   }
 
-  AuthenticateResultModel.fromJson(Map<String, dynamic> json) {
+  AuthenticateResultModel.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     accessToken =
         json['accessToken']

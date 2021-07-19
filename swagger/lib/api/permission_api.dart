@@ -5,13 +5,13 @@ part of swagger.api;
 class PermissionApi {
   final ApiClient apiClient;
 
-  PermissionApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  PermissionApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppPermissionGetallpermissionsGet
   ///
   /// 
   Future<ListResultDtoOfFlatPermissionWithLevelDto> apiServicesAppPermissionGetallpermissionsGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class PermissionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

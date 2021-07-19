@@ -2,13 +2,13 @@ part of swagger.api;
 
 class CreateOrEditTenantDeviceDto {
   
-  int deviceId = null;
+  int? deviceId = null;
   
 
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  int id = null;
+  int? id = null;
   
   CreateOrEditTenantDeviceDto();
 
@@ -17,7 +17,7 @@ class CreateOrEditTenantDeviceDto {
     return 'CreateOrEditTenantDeviceDto[deviceId=$deviceId, tenantId=$tenantId, id=$id, ]';
   }
 
-  CreateOrEditTenantDeviceDto.fromJson(Map<String, dynamic> json) {
+  CreateOrEditTenantDeviceDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     deviceId =
         json['deviceId']

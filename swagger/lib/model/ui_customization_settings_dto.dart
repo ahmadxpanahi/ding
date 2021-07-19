@@ -2,19 +2,19 @@ part of swagger.api;
 
 class UiCustomizationSettingsDto {
   
-  ThemeSettingsDto baseSettings = null;
+  ThemeSettingsDto? baseSettings = null;
   
 
-  bool isLeftMenuUsed = null;
+  bool? isLeftMenuUsed = null;
   
 
-  bool isTopMenuUsed = null;
+  bool? isTopMenuUsed = null;
   
 
-  bool isTabMenuUsed = null;
+  bool? isTabMenuUsed = null;
   
 
-  bool allowMenuScroll = null;
+  bool? allowMenuScroll = null;
   
   UiCustomizationSettingsDto();
 
@@ -23,7 +23,7 @@ class UiCustomizationSettingsDto {
     return 'UiCustomizationSettingsDto[baseSettings=$baseSettings, isLeftMenuUsed=$isLeftMenuUsed, isTopMenuUsed=$isTopMenuUsed, isTabMenuUsed=$isTabMenuUsed, allowMenuScroll=$allowMenuScroll, ]';
   }
 
-  UiCustomizationSettingsDto.fromJson(Map<String, dynamic> json) {
+  UiCustomizationSettingsDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     baseSettings =
       

@@ -2,10 +2,10 @@ part of swagger.api;
 
 class AppSettingsJsonDto {
   
-  String webSiteUrl = null;
+  String? webSiteUrl = null;
   
 
-  String serverSiteUrl = null;
+  String? serverSiteUrl = null;
   
 
   List<NameValue> languages = [];
@@ -17,7 +17,7 @@ class AppSettingsJsonDto {
     return 'AppSettingsJsonDto[webSiteUrl=$webSiteUrl, serverSiteUrl=$serverSiteUrl, languages=$languages, ]';
   }
 
-  AppSettingsJsonDto.fromJson(Map<String, dynamic> json) {
+  AppSettingsJsonDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     webSiteUrl =
         json['webSiteUrl']

@@ -11,7 +11,7 @@ class GetAllDynamicEntityPropertyValuesOutput {
     return 'GetAllDynamicEntityPropertyValuesOutput[items=$items, ]';
   }
 
-  GetAllDynamicEntityPropertyValuesOutput.fromJson(Map<String, dynamic> json) {
+  GetAllDynamicEntityPropertyValuesOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       GetAllDynamicEntityPropertyValuesOutputItem.listFromJson(json['items'])

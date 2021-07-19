@@ -11,7 +11,7 @@ class ListResultDtoOfDynamicEntityPropertyDto {
     return 'ListResultDtoOfDynamicEntityPropertyDto[items=$items, ]';
   }
 
-  ListResultDtoOfDynamicEntityPropertyDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfDynamicEntityPropertyDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       DynamicEntityPropertyDto.listFromJson(json['items'])

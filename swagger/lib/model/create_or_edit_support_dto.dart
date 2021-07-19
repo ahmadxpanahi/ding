@@ -2,31 +2,31 @@ part of swagger.api;
 
 class CreateOrEditSupportDto {
   
-  String requestSubject = null;
+  String? requestSubject = null;
   
 
-  String requestDescription = null;
+  String? requestDescription = null;
   
 
-  SupportType requestType = null;
+  SupportType? requestType = null;
   
 
-  SupportStatus requestStatus = null;
+  SupportStatus? requestStatus = null;
   
 
-  String additionalDescription = null;
+  String? additionalDescription = null;
   
 
-  int deviceId = null;
+  int? deviceId = null;
   
 
-  int requestUserId = null;
+  int? requestUserId = null;
   
 
-  int supportParentId = null;
+  int? supportParentId = null;
   
 
-  int id = null;
+  int? id = null;
   
   CreateOrEditSupportDto();
 
@@ -35,7 +35,7 @@ class CreateOrEditSupportDto {
     return 'CreateOrEditSupportDto[requestSubject=$requestSubject, requestDescription=$requestDescription, requestType=$requestType, requestStatus=$requestStatus, additionalDescription=$additionalDescription, deviceId=$deviceId, requestUserId=$requestUserId, supportParentId=$supportParentId, id=$id, ]';
   }
 
-  CreateOrEditSupportDto.fromJson(Map<String, dynamic> json) {
+  CreateOrEditSupportDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     requestSubject =
         json['requestSubject']

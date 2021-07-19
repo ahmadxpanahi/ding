@@ -5,13 +5,13 @@ part of swagger.api;
 class ReportsDevicesApi {
   final ApiClient apiClient;
 
-  ReportsDevicesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  ReportsDevicesApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppReportsdevicesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetDeviceForViewDto> apiServicesAppReportsdevicesGetallGet({ String filter, String serialNumberFilter, String qRCodeFilter, String bssIdFilter, String ssIdFilter, String uuIdFilter, String majorFilter, String minorFilter, String nameFilter, String deviceTypeTitleFilter, int deviceStatusIdFilter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetDeviceForViewDto> apiServicesAppReportsdevicesGetallGet({ String? filter, String? serialNumberFilter, String? qRCodeFilter, String? bssIdFilter, String? ssIdFilter, String? uuIdFilter, String? majorFilter, String? minorFilter, String? nameFilter, String? deviceTypeTitleFilter, int? deviceStatusIdFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -80,14 +80,14 @@ class ReportsDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -101,8 +101,8 @@ class ReportsDevicesApi {
   /// ApiServicesAppReportsdevicesGetdevicestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppReportsdevicesGetdevicestoexcelGet({ String filter, String serialNumberFilter, String qRCodeFilter, String bssIdFilter, String ssIdFilter, String uuIdFilter, String majorFilter, String minorFilter, String nameFilter, String deviceTypeTitleFilter, int deviceStatusIdFilter }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppReportsdevicesGetdevicestoexcelGet({ String? filter, String? serialNumberFilter, String? qRCodeFilter, String? bssIdFilter, String? ssIdFilter, String? uuIdFilter, String? majorFilter, String? minorFilter, String? nameFilter, String? deviceTypeTitleFilter, int? deviceStatusIdFilter }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -162,14 +162,14 @@ class ReportsDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

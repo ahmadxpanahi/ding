@@ -2,10 +2,10 @@ part of swagger.api;
 
 class VerifySmsCodeInputDto {
   
-  String code = null;
+  String? code = null;
   
 
-  String phoneNumber = null;
+  String? phoneNumber = null;
   
   VerifySmsCodeInputDto();
 
@@ -14,7 +14,7 @@ class VerifySmsCodeInputDto {
     return 'VerifySmsCodeInputDto[code=$code, phoneNumber=$phoneNumber, ]';
   }
 
-  VerifySmsCodeInputDto.fromJson(Map<String, dynamic> json) {
+  VerifySmsCodeInputDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     code =
         json['code']

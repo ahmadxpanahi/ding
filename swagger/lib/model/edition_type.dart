@@ -2,7 +2,7 @@ part of swagger.api;
 
 class EditionType {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   EditionType._internal(this.value);
 

@@ -5,13 +5,13 @@ part of swagger.api;
 class CountriesApi {
   final ApiClient apiClient;
 
-  CountriesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  CountriesApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppCountriesCreateoreditPost
   ///
   /// 
-  Future apiServicesAppCountriesCreateoreditPost({ CreateOrEditCountryDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppCountriesCreateoreditPost({ CreateOrEditCountryDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class CountriesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class CountriesApi {
   /// ApiServicesAppCountriesDeleteDelete
   ///
   /// 
-  Future apiServicesAppCountriesDeleteDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppCountriesDeleteDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -90,14 +90,14 @@ class CountriesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -111,8 +111,8 @@ class CountriesApi {
   /// ApiServicesAppCountriesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetCountryForViewDto> apiServicesAppCountriesGetallGet({ String filter, String nameFilter, String iSO3Filter, String iSO2Filter, String phoneCodeFilter, String capitalFilter, String currencyFilter, String nativeNameFilter, String regionFilter, String subregionFilter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetCountryForViewDto> apiServicesAppCountriesGetallGet({ String? filter, String? nameFilter, String? iSO3Filter, String? iSO2Filter, String? phoneCodeFilter, String? capitalFilter, String? currencyFilter, String? nativeNameFilter, String? regionFilter, String? subregionFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -178,14 +178,14 @@ class CountriesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -199,8 +199,8 @@ class CountriesApi {
   /// ApiServicesAppCountriesGetcountriestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppCountriesGetcountriestoexcelGet({ String filter, String nameFilter, String iSO3Filter, String iSO2Filter, String phoneCodeFilter, String capitalFilter, String currencyFilter, String nativeNameFilter, String regionFilter, String subregionFilter }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppCountriesGetcountriestoexcelGet({ String? filter, String? nameFilter, String? iSO3Filter, String? iSO2Filter, String? phoneCodeFilter, String? capitalFilter, String? currencyFilter, String? nativeNameFilter, String? regionFilter, String? subregionFilter }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -257,14 +257,14 @@ class CountriesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -278,8 +278,8 @@ class CountriesApi {
   /// ApiServicesAppCountriesGetcountryforeditGet
   ///
   /// 
-  Future<GetCountryForEditOutput> apiServicesAppCountriesGetcountryforeditGet({ int id }) async {
-    Object postBody = null;
+  Future<GetCountryForEditOutput> apiServicesAppCountriesGetcountryforeditGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -309,14 +309,14 @@ class CountriesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -330,8 +330,8 @@ class CountriesApi {
   /// ApiServicesAppCountriesGetcountryforviewGet
   ///
   /// 
-  Future<GetCountryForViewDto> apiServicesAppCountriesGetcountryforviewGet({ int id }) async {
-    Object postBody = null;
+  Future<GetCountryForViewDto> apiServicesAppCountriesGetcountryforviewGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -361,14 +361,14 @@ class CountriesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -383,7 +383,7 @@ class CountriesApi {
   ///
   /// 
   Future<ListResultDtoOfGetCountryForViewDto> apiServicesAppCountriesWholePost() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -410,14 +410,14 @@ class CountriesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

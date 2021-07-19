@@ -2,13 +2,13 @@ part of swagger.api;
 
 class PayPalConfigurationDto {
   
-  String clientId = null;
+  String? clientId = null;
   
 
-  String demoUsername = null;
+  String? demoUsername = null;
   
 
-  String demoPassword = null;
+  String? demoPassword = null;
   
   PayPalConfigurationDto();
 
@@ -17,7 +17,7 @@ class PayPalConfigurationDto {
     return 'PayPalConfigurationDto[clientId=$clientId, demoUsername=$demoUsername, demoPassword=$demoPassword, ]';
   }
 
-  PayPalConfigurationDto.fromJson(Map<String, dynamic> json) {
+  PayPalConfigurationDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     clientId =
         json['clientId']

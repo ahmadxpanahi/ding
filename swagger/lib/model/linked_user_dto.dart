@@ -2,16 +2,16 @@ part of swagger.api;
 
 class LinkedUserDto {
   
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  String tenancyName = null;
+  String? tenancyName = null;
   
 
-  String username = null;
+  String? username = null;
   
 
-  int id = null;
+  int? id = null;
   
   LinkedUserDto();
 
@@ -20,7 +20,7 @@ class LinkedUserDto {
     return 'LinkedUserDto[tenantId=$tenantId, tenancyName=$tenancyName, username=$username, id=$id, ]';
   }
 
-  LinkedUserDto.fromJson(Map<String, dynamic> json) {
+  LinkedUserDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenantId =
         json['tenantId']
@@ -45,7 +45,7 @@ class LinkedUserDto {
      };
   }
 
-  static List<LinkedUserDto> listFromJson(List<dynamic> json) {
+  static List<LinkedUserDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<LinkedUserDto>() : json.map((value) => new LinkedUserDto.fromJson(value)).toList();
   }
 

@@ -2,7 +2,7 @@ part of swagger.api;
 
 class DegreeType {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   DegreeType._internal(this.value);
 

@@ -2,10 +2,10 @@ part of swagger.api;
 
 class JsonClaimMapDto {
   
-  String claim = null;
+  String? claim = null;
   
 
-  String key = null;
+  String? key = null;
   
   JsonClaimMapDto();
 
@@ -14,7 +14,7 @@ class JsonClaimMapDto {
     return 'JsonClaimMapDto[claim=$claim, key=$key, ]';
   }
 
-  JsonClaimMapDto.fromJson(Map<String, dynamic> json) {
+  JsonClaimMapDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     claim =
         json['claim']
@@ -31,7 +31,7 @@ class JsonClaimMapDto {
      };
   }
 
-  static List<JsonClaimMapDto> listFromJson(List<dynamic> json) {
+  static List<JsonClaimMapDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<JsonClaimMapDto>() : json.map((value) => new JsonClaimMapDto.fromJson(value)).toList();
   }
 

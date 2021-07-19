@@ -2,10 +2,10 @@ part of swagger.api;
 
 class MicrosoftExternalLoginProviderSettings {
   
-  String clientId = null;
+  String? clientId = null;
   
 
-  String clientSecret = null;
+  String? clientSecret = null;
   
   MicrosoftExternalLoginProviderSettings();
 
@@ -14,7 +14,7 @@ class MicrosoftExternalLoginProviderSettings {
     return 'MicrosoftExternalLoginProviderSettings[clientId=$clientId, clientSecret=$clientSecret, ]';
   }
 
-  MicrosoftExternalLoginProviderSettings.fromJson(Map<String, dynamic> json) {
+  MicrosoftExternalLoginProviderSettings.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     clientId =
         json['clientId']

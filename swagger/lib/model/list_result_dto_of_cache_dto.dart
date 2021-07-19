@@ -11,7 +11,7 @@ class ListResultDtoOfCacheDto {
     return 'ListResultDtoOfCacheDto[items=$items, ]';
   }
 
-  ListResultDtoOfCacheDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfCacheDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       CacheDto.listFromJson(json['items'])

@@ -5,13 +5,13 @@ part of swagger.api;
 class DynamicPropertyApi {
   final ApiClient apiClient;
 
-  DynamicPropertyApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  DynamicPropertyApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppDynamicpropertyAddPost
   ///
   /// 
-  Future apiServicesAppDynamicpropertyAddPost({ DynamicPropertyDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppDynamicpropertyAddPost({ DynamicPropertyDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class DynamicPropertyApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class DynamicPropertyApi {
   /// ApiServicesAppDynamicpropertyDeleteDelete
   ///
   /// 
-  Future apiServicesAppDynamicpropertyDeleteDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppDynamicpropertyDeleteDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -90,14 +90,14 @@ class DynamicPropertyApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -111,8 +111,8 @@ class DynamicPropertyApi {
   /// ApiServicesAppDynamicpropertyFindallowedinputtypePost
   ///
   /// 
-  Future<IInputType> apiServicesAppDynamicpropertyFindallowedinputtypePost({ String name }) async {
-    Object postBody = null;
+  Future<IInputType> apiServicesAppDynamicpropertyFindallowedinputtypePost({ String? name }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -142,14 +142,14 @@ class DynamicPropertyApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -163,8 +163,8 @@ class DynamicPropertyApi {
   /// ApiServicesAppDynamicpropertyGetGet
   ///
   /// 
-  Future<DynamicPropertyDto> apiServicesAppDynamicpropertyGetGet({ int id }) async {
-    Object postBody = null;
+  Future<DynamicPropertyDto> apiServicesAppDynamicpropertyGetGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -194,14 +194,14 @@ class DynamicPropertyApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -216,7 +216,7 @@ class DynamicPropertyApi {
   ///
   /// 
   Future<ListResultDtoOfDynamicPropertyDto> apiServicesAppDynamicpropertyGetallGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -243,14 +243,14 @@ class DynamicPropertyApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -264,8 +264,8 @@ class DynamicPropertyApi {
   /// ApiServicesAppDynamicpropertyUpdatePut
   ///
   /// 
-  Future apiServicesAppDynamicpropertyUpdatePut({ DynamicPropertyDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppDynamicpropertyUpdatePut({ DynamicPropertyDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -292,14 +292,14 @@ class DynamicPropertyApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

@@ -2,7 +2,7 @@ part of swagger.api;
 
 class CheckDatabaseOutput {
   
-  bool isDatabaseExist = null;
+  bool? isDatabaseExist = null;
   
   CheckDatabaseOutput();
 
@@ -11,7 +11,7 @@ class CheckDatabaseOutput {
     return 'CheckDatabaseOutput[isDatabaseExist=$isDatabaseExist, ]';
   }
 
-  CheckDatabaseOutput.fromJson(Map<String, dynamic> json) {
+  CheckDatabaseOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     isDatabaseExist =
         json['isDatabaseExist']

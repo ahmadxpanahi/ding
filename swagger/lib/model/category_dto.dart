@@ -2,37 +2,37 @@ part of swagger.api;
 
 class CategoryDto {
   
-  CategoryType categoryType = null;
+  CategoryType? categoryType = null;
   
 
-  int parentId = null;
+  int? parentId = null;
   
 
-  String code = null;
+  String? code = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  int memberCount = null;
+  int? memberCount = null;
   
 
-  int roleCount = null;
+  int? roleCount = null;
   
 
-  DateTime lastModificationTime = null;
+  DateTime? lastModificationTime = null;
   
 
-  int lastModifierUserId = null;
+  int? lastModifierUserId = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  int creatorUserId = null;
+  int? creatorUserId = null;
   
 
-  int id = null;
+  int? id = null;
   
   CategoryDto();
 
@@ -41,7 +41,7 @@ class CategoryDto {
     return 'CategoryDto[categoryType=$categoryType, parentId=$parentId, code=$code, displayName=$displayName, memberCount=$memberCount, roleCount=$roleCount, lastModificationTime=$lastModificationTime, lastModifierUserId=$lastModifierUserId, creationTime=$creationTime, creatorUserId=$creatorUserId, id=$id, ]';
   }
 
-  CategoryDto.fromJson(Map<String, dynamic> json) {
+  CategoryDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     categoryType =
       
@@ -84,15 +84,15 @@ class CategoryDto {
       'displayName': displayName,
       'memberCount': memberCount,
       'roleCount': roleCount,
-      'lastModificationTime': lastModificationTime == null ? '' : lastModificationTime.toUtc().toIso8601String(),
+      'lastModificationTime': lastModificationTime == null ? '' : lastModificationTime!.toUtc().toIso8601String(),
       'lastModifierUserId': lastModifierUserId,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
       'creatorUserId': creatorUserId,
       'id': id
      };
   }
 
-  static List<CategoryDto> listFromJson(List<dynamic> json) {
+  static List<CategoryDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<CategoryDto>() : json.map((value) => new CategoryDto.fromJson(value)).toList();
   }
 

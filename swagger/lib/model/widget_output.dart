@@ -2,13 +2,13 @@ part of swagger.api;
 
 class WidgetOutput {
   
-  String id = null;
+  String? id = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  String description = null;
+  String? description = null;
   
 
   List<WidgetFilterOutput> filters = [];
@@ -20,7 +20,7 @@ class WidgetOutput {
     return 'WidgetOutput[id=$id, name=$name, description=$description, filters=$filters, ]';
   }
 
-  WidgetOutput.fromJson(Map<String, dynamic> json) {
+  WidgetOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']
@@ -45,7 +45,7 @@ class WidgetOutput {
      };
   }
 
-  static List<WidgetOutput> listFromJson(List<dynamic> json) {
+  static List<WidgetOutput> listFromJson(List<dynamic>? json) {
     return json == null ? new List<WidgetOutput>() : json.map((value) => new WidgetOutput.fromJson(value)).toList();
   }
 

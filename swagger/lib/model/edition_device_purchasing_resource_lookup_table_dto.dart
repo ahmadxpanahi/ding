@@ -2,10 +2,10 @@ part of swagger.api;
 
 class EditionDevicePurchasingResourceLookupTableDto {
   
-  int id = null;
+  int? id = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
   EditionDevicePurchasingResourceLookupTableDto();
 
@@ -14,7 +14,7 @@ class EditionDevicePurchasingResourceLookupTableDto {
     return 'EditionDevicePurchasingResourceLookupTableDto[id=$id, displayName=$displayName, ]';
   }
 
-  EditionDevicePurchasingResourceLookupTableDto.fromJson(Map<String, dynamic> json) {
+  EditionDevicePurchasingResourceLookupTableDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']
@@ -31,7 +31,7 @@ class EditionDevicePurchasingResourceLookupTableDto {
      };
   }
 
-  static List<EditionDevicePurchasingResourceLookupTableDto> listFromJson(List<dynamic> json) {
+  static List<EditionDevicePurchasingResourceLookupTableDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<EditionDevicePurchasingResourceLookupTableDto>() : json.map((value) => new EditionDevicePurchasingResourceLookupTableDto.fromJson(value)).toList();
   }
 

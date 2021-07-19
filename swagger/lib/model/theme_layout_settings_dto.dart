@@ -2,7 +2,7 @@ part of swagger.api;
 
 class ThemeLayoutSettingsDto {
   
-  String layoutType = null;
+  String? layoutType = null;
   
   ThemeLayoutSettingsDto();
 
@@ -11,7 +11,7 @@ class ThemeLayoutSettingsDto {
     return 'ThemeLayoutSettingsDto[layoutType=$layoutType, ]';
   }
 
-  ThemeLayoutSettingsDto.fromJson(Map<String, dynamic> json) {
+  ThemeLayoutSettingsDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     layoutType =
         json['layoutType']

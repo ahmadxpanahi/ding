@@ -14,7 +14,7 @@ class GetUserPermissionsForEditOutput {
     return 'GetUserPermissionsForEditOutput[permissions=$permissions, grantedPermissionNames=$grantedPermissionNames, ]';
   }
 
-  GetUserPermissionsForEditOutput.fromJson(Map<String, dynamic> json) {
+  GetUserPermissionsForEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     permissions =
       FlatPermissionDto.listFromJson(json['permissions'])

@@ -5,13 +5,13 @@ part of swagger.api;
 class ChatApi {
   final ApiClient apiClient;
 
-  ChatApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  ChatApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppChatGetuserchatfriendswithsettingsGet
   ///
   /// 
   Future<GetUserChatFriendsWithSettingsOutput> apiServicesAppChatGetuserchatfriendswithsettingsGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class ChatApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class ChatApi {
   /// ApiServicesAppChatGetuserchatmessagesGet
   ///
   /// 
-  Future<ListResultDtoOfChatMessageDto> apiServicesAppChatGetuserchatmessagesGet({ int tenantId, int userId, int minMessageId }) async {
-    Object postBody = null;
+  Future<ListResultDtoOfChatMessageDto> apiServicesAppChatGetuserchatmessagesGet({ int? tenantId, int? userId, int? minMessageId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -96,14 +96,14 @@ class ChatApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -117,8 +117,8 @@ class ChatApi {
   /// ApiServicesAppChatMarkallunreadmessagesofuserasreadPost
   ///
   /// 
-  Future apiServicesAppChatMarkallunreadmessagesofuserasreadPost({ MarkAllUnreadMessagesOfUserAsReadInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppChatMarkallunreadmessagesofuserasreadPost({ MarkAllUnreadMessagesOfUserAsReadInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -145,14 +145,14 @@ class ChatApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

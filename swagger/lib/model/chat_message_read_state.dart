@@ -2,7 +2,7 @@ part of swagger.api;
 
 class ChatMessageReadState {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   ChatMessageReadState._internal(this.value);
 

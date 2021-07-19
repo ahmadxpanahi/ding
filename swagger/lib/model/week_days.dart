@@ -2,7 +2,7 @@ part of swagger.api;
 
 class WeekDays {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   WeekDays._internal(this.value);
 

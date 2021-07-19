@@ -5,7 +5,7 @@ class UsersToOrganizationUnitInput {
   List<int> userIds = [];
   
 
-  int organizationUnitId = null;
+  int? organizationUnitId = null;
    // range from 1 to //
   UsersToOrganizationUnitInput();
 
@@ -14,7 +14,7 @@ class UsersToOrganizationUnitInput {
     return 'UsersToOrganizationUnitInput[userIds=$userIds, organizationUnitId=$organizationUnitId, ]';
   }
 
-  UsersToOrganizationUnitInput.fromJson(Map<String, dynamic> json) {
+  UsersToOrganizationUnitInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userIds =
         (json['userIds'] as List).map((item) => item as int).toList()

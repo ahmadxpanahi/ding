@@ -5,13 +5,13 @@ part of swagger.api;
 class SupportsApi {
   final ApiClient apiClient;
 
-  SupportsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  SupportsApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppSupportsConfirmpaymentPost
   ///
   /// 
-  Future apiServicesAppSupportsConfirmpaymentPost({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppSupportsConfirmpaymentPost({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -41,14 +41,14 @@ class SupportsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -62,8 +62,8 @@ class SupportsApi {
   /// ApiServicesAppSupportsCreateoreditPost
   ///
   /// 
-  Future apiServicesAppSupportsCreateoreditPost({ CreateOrEditSupportDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppSupportsCreateoreditPost({ CreateOrEditSupportDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -90,14 +90,14 @@ class SupportsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -111,8 +111,8 @@ class SupportsApi {
   /// ApiServicesAppSupportsGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetSupportForViewDto> apiServicesAppSupportsGetallGet({ String filter, int tenantIdFilter, int supportParentId, String requestSubjectFilter, String requestDescriptionFilter, int requestTypeFilter, int requestStatusFilter, String additionalDescriptionFilter, String deviceNameFilter, String userNameFilter, String supportRequestSubjectFilter, DateTime creationDateStart, DateTime creationDateEnd, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetSupportForViewDto> apiServicesAppSupportsGetallGet({ String? filter, int? tenantIdFilter, int? supportParentId, String? requestSubjectFilter, String? requestDescriptionFilter, int? requestTypeFilter, int? requestStatusFilter, String? additionalDescriptionFilter, String? deviceNameFilter, String? userNameFilter, String? supportRequestSubjectFilter, DateTime? creationDateStart, DateTime? creationDateEnd, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -187,14 +187,14 @@ class SupportsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -208,8 +208,8 @@ class SupportsApi {
   /// ApiServicesAppSupportsGetalldeviceforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfSupportDeviceLookupTableDto> apiServicesAppSupportsGetalldeviceforlookuptableGet({ String filter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfSupportDeviceLookupTableDto> apiServicesAppSupportsGetalldeviceforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -248,14 +248,14 @@ class SupportsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -269,8 +269,8 @@ class SupportsApi {
   /// ApiServicesAppSupportsGetallsupportforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfSupportSupportLookupTableDto> apiServicesAppSupportsGetallsupportforlookuptableGet({ String filter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfSupportSupportLookupTableDto> apiServicesAppSupportsGetallsupportforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -309,14 +309,14 @@ class SupportsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -330,8 +330,8 @@ class SupportsApi {
   /// ApiServicesAppSupportsGetalluserforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfSupportUserLookupTableDto> apiServicesAppSupportsGetalluserforlookuptableGet({ String filter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfSupportUserLookupTableDto> apiServicesAppSupportsGetalluserforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -370,14 +370,14 @@ class SupportsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -391,8 +391,8 @@ class SupportsApi {
   /// ApiServicesAppSupportsGetsupportforviewGet
   ///
   /// 
-  Future<GetSupportForViewDto> apiServicesAppSupportsGetsupportforviewGet({ int id }) async {
-    Object postBody = null;
+  Future<GetSupportForViewDto> apiServicesAppSupportsGetsupportforviewGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -422,14 +422,14 @@ class SupportsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -443,8 +443,8 @@ class SupportsApi {
   /// ApiServicesAppSupportsGetsupportstoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppSupportsGetsupportstoexcelGet({ String filter, String requestSubjectFilter, String requestDescriptionFilter, int requestTypeFilter, int requestStatusFilter, String additionalDescriptionFilter, String deviceNameFilter, String userNameFilter, String supportRequestSubjectFilter, DateTime creationDateStart, DateTime creationDateEnd }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppSupportsGetsupportstoexcelGet({ String? filter, String? requestSubjectFilter, String? requestDescriptionFilter, int? requestTypeFilter, int? requestStatusFilter, String? additionalDescriptionFilter, String? deviceNameFilter, String? userNameFilter, String? supportRequestSubjectFilter, DateTime? creationDateStart, DateTime? creationDateEnd }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -504,14 +504,14 @@ class SupportsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -525,8 +525,8 @@ class SupportsApi {
   /// ApiServicesAppSupportsRejectPost
   ///
   /// 
-  Future apiServicesAppSupportsRejectPost({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppSupportsRejectPost({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -556,14 +556,14 @@ class SupportsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -577,8 +577,8 @@ class SupportsApi {
   /// ApiServicesAppSupportsReplyPost
   ///
   /// 
-  Future apiServicesAppSupportsReplyPost({ CreateOrEditSupportDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppSupportsReplyPost({ CreateOrEditSupportDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -605,14 +605,14 @@ class SupportsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

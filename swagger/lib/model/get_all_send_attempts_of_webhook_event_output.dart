@@ -2,25 +2,25 @@ part of swagger.api;
 
 class GetAllSendAttemptsOfWebhookEventOutput {
   
-  String id = null;
+  String? id = null;
   
 
-  String webhookUri = null;
+  String? webhookUri = null;
   
 
-  String webhookSubscriptionId = null;
+  String? webhookSubscriptionId = null;
   
 
-  String response = null;
+  String? response = null;
   
 
-  HttpStatusCode responseStatusCode = null;
+  HttpStatusCode? responseStatusCode = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  DateTime lastModificationTime = null;
+  DateTime? lastModificationTime = null;
   
   GetAllSendAttemptsOfWebhookEventOutput();
 
@@ -29,7 +29,7 @@ class GetAllSendAttemptsOfWebhookEventOutput {
     return 'GetAllSendAttemptsOfWebhookEventOutput[id=$id, webhookUri=$webhookUri, webhookSubscriptionId=$webhookSubscriptionId, response=$response, responseStatusCode=$responseStatusCode, creationTime=$creationTime, lastModificationTime=$lastModificationTime, ]';
   }
 
-  GetAllSendAttemptsOfWebhookEventOutput.fromJson(Map<String, dynamic> json) {
+  GetAllSendAttemptsOfWebhookEventOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']
@@ -59,12 +59,12 @@ class GetAllSendAttemptsOfWebhookEventOutput {
       'webhookSubscriptionId': webhookSubscriptionId,
       'response': response,
       'responseStatusCode': responseStatusCode,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
-      'lastModificationTime': lastModificationTime == null ? '' : lastModificationTime.toUtc().toIso8601String()
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
+      'lastModificationTime': lastModificationTime == null ? '' : lastModificationTime!.toUtc().toIso8601String()
      };
   }
 
-  static List<GetAllSendAttemptsOfWebhookEventOutput> listFromJson(List<dynamic> json) {
+  static List<GetAllSendAttemptsOfWebhookEventOutput> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetAllSendAttemptsOfWebhookEventOutput>() : json.map((value) => new GetAllSendAttemptsOfWebhookEventOutput.fromJson(value)).toList();
   }
 

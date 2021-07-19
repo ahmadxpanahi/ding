@@ -2,13 +2,13 @@ part of swagger.api;
 
 class GoogleExternalLoginProviderSettings {
   
-  String clientId = null;
+  String? clientId = null;
   
 
-  String clientSecret = null;
+  String? clientSecret = null;
   
 
-  String userInfoEndpoint = null;
+  String? userInfoEndpoint = null;
   
   GoogleExternalLoginProviderSettings();
 
@@ -17,7 +17,7 @@ class GoogleExternalLoginProviderSettings {
     return 'GoogleExternalLoginProviderSettings[clientId=$clientId, clientSecret=$clientSecret, userInfoEndpoint=$userInfoEndpoint, ]';
   }
 
-  GoogleExternalLoginProviderSettings.fromJson(Map<String, dynamic> json) {
+  GoogleExternalLoginProviderSettings.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     clientId =
         json['clientId']

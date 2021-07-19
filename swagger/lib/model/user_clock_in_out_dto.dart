@@ -2,31 +2,31 @@ part of swagger.api;
 
 class UserClockInOutDto {
   
-  DateTime clock = null;
+  DateTime? clock = null;
   
 
-  UserClockInOutType clockInOutType = null;
+  UserClockInOutType? clockInOutType = null;
   
 
-  UserWorkScheduleAbnormalities abnormalityType = null;
+  UserWorkScheduleAbnormalities? abnormalityType = null;
   
 
-  int weekNumber = null;
+  int? weekNumber = null;
   
 
-  int userId = null;
+  int? userId = null;
   
 
-  int workScheduleId = null;
+  int? workScheduleId = null;
   
 
-  int workHourId = null;
+  int? workHourId = null;
   
 
-  int organizationUnitId = null;
+  int? organizationUnitId = null;
   
 
-  int id = null;
+  int? id = null;
   
   UserClockInOutDto();
 
@@ -35,7 +35,7 @@ class UserClockInOutDto {
     return 'UserClockInOutDto[clock=$clock, clockInOutType=$clockInOutType, abnormalityType=$abnormalityType, weekNumber=$weekNumber, userId=$userId, workScheduleId=$workScheduleId, workHourId=$workHourId, organizationUnitId=$organizationUnitId, id=$id, ]';
   }
 
-  UserClockInOutDto.fromJson(Map<String, dynamic> json) {
+  UserClockInOutDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     clock = json['clock'] == null ? null : DateTime.parse(json['clock']);
     clockInOutType =
@@ -70,7 +70,7 @@ class UserClockInOutDto {
 
   Map<String, dynamic> toJson() {
     return {
-      'clock': clock == null ? '' : clock.toUtc().toIso8601String(),
+      'clock': clock == null ? '' : clock!.toUtc().toIso8601String(),
       'clockInOutType': clockInOutType,
       'abnormalityType': abnormalityType,
       'weekNumber': weekNumber,

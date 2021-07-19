@@ -2,10 +2,10 @@ part of swagger.api;
 
 class GeneralSettingsEditDto {
   
-  String timezone = null;
+  String? timezone = null;
   
 
-  String timezoneForComparison = null;
+  String? timezoneForComparison = null;
   
   GeneralSettingsEditDto();
 
@@ -14,7 +14,7 @@ class GeneralSettingsEditDto {
     return 'GeneralSettingsEditDto[timezone=$timezone, timezoneForComparison=$timezoneForComparison, ]';
   }
 
-  GeneralSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  GeneralSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     timezone =
         json['timezone']

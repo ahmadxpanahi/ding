@@ -2,25 +2,25 @@ part of swagger.api;
 
 class FlatFeatureSelectDto {
   
-  String parentName = null;
+  String? parentName = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  String description = null;
+  String? description = null;
   
 
-  String defaultValue = null;
+  String? defaultValue = null;
   
 
-  IInputType inputType = null;
+  IInputType? inputType = null;
   
 
-  String textHtmlColor = null;
+  String? textHtmlColor = null;
   
   FlatFeatureSelectDto();
 
@@ -29,7 +29,7 @@ class FlatFeatureSelectDto {
     return 'FlatFeatureSelectDto[parentName=$parentName, name=$name, displayName=$displayName, description=$description, defaultValue=$defaultValue, inputType=$inputType, textHtmlColor=$textHtmlColor, ]';
   }
 
-  FlatFeatureSelectDto.fromJson(Map<String, dynamic> json) {
+  FlatFeatureSelectDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     parentName =
         json['parentName']
@@ -68,7 +68,7 @@ class FlatFeatureSelectDto {
      };
   }
 
-  static List<FlatFeatureSelectDto> listFromJson(List<dynamic> json) {
+  static List<FlatFeatureSelectDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<FlatFeatureSelectDto>() : json.map((value) => new FlatFeatureSelectDto.fromJson(value)).toList();
   }
 

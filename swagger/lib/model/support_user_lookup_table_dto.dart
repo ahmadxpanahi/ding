@@ -2,10 +2,10 @@ part of swagger.api;
 
 class SupportUserLookupTableDto {
   
-  int id = null;
+  int? id = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
   SupportUserLookupTableDto();
 
@@ -14,7 +14,7 @@ class SupportUserLookupTableDto {
     return 'SupportUserLookupTableDto[id=$id, displayName=$displayName, ]';
   }
 
-  SupportUserLookupTableDto.fromJson(Map<String, dynamic> json) {
+  SupportUserLookupTableDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']
@@ -31,7 +31,7 @@ class SupportUserLookupTableDto {
      };
   }
 
-  static List<SupportUserLookupTableDto> listFromJson(List<dynamic> json) {
+  static List<SupportUserLookupTableDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<SupportUserLookupTableDto>() : json.map((value) => new SupportUserLookupTableDto.fromJson(value)).toList();
   }
 

@@ -11,7 +11,7 @@ class GetDailySalesOutput {
     return 'GetDailySalesOutput[dailySales=$dailySales, ]';
   }
 
-  GetDailySalesOutput.fromJson(Map<String, dynamic> json) {
+  GetDailySalesOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     dailySales =
         (json['dailySales'] as List).map((item) => item as int).toList()

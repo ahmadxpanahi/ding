@@ -2,88 +2,88 @@ part of swagger.api;
 
 class UserListDto {
   
-  String name = null;
+  String? name = null;
   
 
-  String surname = null;
+  String? surname = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  String emailAddress = null;
+  String? emailAddress = null;
   
 
-  String phoneNumber = null;
+  String? phoneNumber = null;
   
 
-  String profilePictureId = null;
+  String? profilePictureId = null;
   
 
-  bool isEmailConfirmed = null;
+  bool? isEmailConfirmed = null;
   
 
   List<UserListRoleDto> roles = [];
   
 
-  bool isActive = null;
+  bool? isActive = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  GenderType genderType = null;
+  GenderType? genderType = null;
   
 
-  DateTime birthdate = null;
+  DateTime? birthdate = null;
   
 
-  String bankAccount = null;
+  String? bankAccount = null;
   
 
-  int countryId = null;
+  int? countryId = null;
   
 
-  int stateId = null;
+  int? stateId = null;
   
 
-  int cityId = null;
+  int? cityId = null;
   
 
-  String address = null;
+  String? address = null;
   
 
-  String homePhoneNumber = null;
+  String? homePhoneNumber = null;
   
 
-  String workPhoneNumber = null;
+  String? workPhoneNumber = null;
   
 
-  String postalCode = null;
+  String? postalCode = null;
   
 
-  String birthCertificateNumber = null;
+  String? birthCertificateNumber = null;
   
 
-  String nationalCode = null;
+  String? nationalCode = null;
   
 
-  DegreeType degreeType = null;
+  DegreeType? degreeType = null;
   
 
-  String occupation = null;
+  String? occupation = null;
   
 
-  String jobTitle = null;
+  String? jobTitle = null;
   
 
-  IntroduceType introduceType = null;
+  IntroduceType? introduceType = null;
   
 
-  int vacationTypeId = null;
+  int? vacationTypeId = null;
   
 
-  int id = null;
+  int? id = null;
   
   UserListDto();
 
@@ -92,7 +92,7 @@ class UserListDto {
     return 'UserListDto[name=$name, surname=$surname, userName=$userName, emailAddress=$emailAddress, phoneNumber=$phoneNumber, profilePictureId=$profilePictureId, isEmailConfirmed=$isEmailConfirmed, roles=$roles, isActive=$isActive, creationTime=$creationTime, genderType=$genderType, birthdate=$birthdate, bankAccount=$bankAccount, countryId=$countryId, stateId=$stateId, cityId=$cityId, address=$address, homePhoneNumber=$homePhoneNumber, workPhoneNumber=$workPhoneNumber, postalCode=$postalCode, birthCertificateNumber=$birthCertificateNumber, nationalCode=$nationalCode, degreeType=$degreeType, occupation=$occupation, jobTitle=$jobTitle, introduceType=$introduceType, vacationTypeId=$vacationTypeId, id=$id, ]';
   }
 
-  UserListDto.fromJson(Map<String, dynamic> json) {
+  UserListDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']
@@ -193,9 +193,9 @@ class UserListDto {
       'isEmailConfirmed': isEmailConfirmed,
       'roles': roles,
       'isActive': isActive,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
       'genderType': genderType,
-      'birthdate': birthdate == null ? '' : birthdate.toUtc().toIso8601String(),
+      'birthdate': birthdate == null ? '' : birthdate!.toUtc().toIso8601String(),
       'bankAccount': bankAccount,
       'countryId': countryId,
       'stateId': stateId,
@@ -215,7 +215,7 @@ class UserListDto {
      };
   }
 
-  static List<UserListDto> listFromJson(List<dynamic> json) {
+  static List<UserListDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<UserListDto>() : json.map((value) => new UserListDto.fromJson(value)).toList();
   }
 

@@ -2,13 +2,13 @@ part of swagger.api;
 
 class SupportDeviceLookupTableDto {
   
-  int id = null;
+  int? id = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  String serialNumber = null;
+  String? serialNumber = null;
   
   SupportDeviceLookupTableDto();
 
@@ -17,7 +17,7 @@ class SupportDeviceLookupTableDto {
     return 'SupportDeviceLookupTableDto[id=$id, displayName=$displayName, serialNumber=$serialNumber, ]';
   }
 
-  SupportDeviceLookupTableDto.fromJson(Map<String, dynamic> json) {
+  SupportDeviceLookupTableDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']
@@ -38,7 +38,7 @@ class SupportDeviceLookupTableDto {
      };
   }
 
-  static List<SupportDeviceLookupTableDto> listFromJson(List<dynamic> json) {
+  static List<SupportDeviceLookupTableDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<SupportDeviceLookupTableDto>() : json.map((value) => new SupportDeviceLookupTableDto.fromJson(value)).toList();
   }
 

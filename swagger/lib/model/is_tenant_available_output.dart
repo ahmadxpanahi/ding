@@ -2,13 +2,13 @@ part of swagger.api;
 
 class IsTenantAvailableOutput {
   
-  TenantAvailabilityState state = null;
+  TenantAvailabilityState? state = null;
   
 
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  String serverRootAddress = null;
+  String? serverRootAddress = null;
   
   IsTenantAvailableOutput();
 
@@ -17,7 +17,7 @@ class IsTenantAvailableOutput {
     return 'IsTenantAvailableOutput[state=$state, tenantId=$tenantId, serverRootAddress=$serverRootAddress, ]';
   }
 
-  IsTenantAvailableOutput.fromJson(Map<String, dynamic> json) {
+  IsTenantAvailableOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     state =
       

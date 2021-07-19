@@ -5,13 +5,13 @@ part of swagger.api;
 class CryptorEngineApi {
   final ApiClient apiClient;
 
-  CryptorEngineApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  CryptorEngineApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppCryptorengineDecryptPost
   ///
   /// 
-  Future<String> apiServicesAppCryptorengineDecryptPost({ String cipherString, bool useHashing }) async {
-    Object postBody = null;
+  Future<String> apiServicesAppCryptorengineDecryptPost({ String? cipherString, bool? useHashing }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -44,14 +44,14 @@ class CryptorEngineApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -65,8 +65,8 @@ class CryptorEngineApi {
   /// ApiServicesAppCryptorengineEncryptPost
   ///
   /// 
-  Future<String> apiServicesAppCryptorengineEncryptPost({ String toEncrypt, bool useHashing }) async {
-    Object postBody = null;
+  Future<String> apiServicesAppCryptorengineEncryptPost({ String? toEncrypt, bool? useHashing }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -99,14 +99,14 @@ class CryptorEngineApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

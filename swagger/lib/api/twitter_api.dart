@@ -5,13 +5,13 @@ part of swagger.api;
 class TwitterApi {
   final ApiClient apiClient;
 
-  TwitterApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  TwitterApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiTwitterGetaccesstokenPost
   ///
   /// 
-  Future<TwitterGetAccessTokenResponse> apiTwitterGetaccesstokenPost({ String token, String verifier }) async {
-    Object postBody = null;
+  Future<TwitterGetAccessTokenResponse> apiTwitterGetaccesstokenPost({ String? token, String? verifier }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -44,14 +44,14 @@ class TwitterApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -66,7 +66,7 @@ class TwitterApi {
   ///
   /// 
   Future<TwitterGetRequestTokenResponse> apiTwitterGetrequesttokenPost() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -93,14 +93,14 @@ class TwitterApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

@@ -15,7 +15,7 @@ Iterable<QueryParam> _convertParametersForCollectionFormat(
     return params;
   }
 
-  List values = value as List;
+  List values = value;
 
   // get the collection format
   collectionFormat = (collectionFormat == null || collectionFormat.isEmpty)

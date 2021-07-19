@@ -2,10 +2,10 @@ part of swagger.api;
 
 class TwitterExternalLoginProviderSettings {
   
-  String consumerKey = null;
+  String? consumerKey = null;
   
 
-  String consumerSecret = null;
+  String? consumerSecret = null;
   
   TwitterExternalLoginProviderSettings();
 
@@ -14,7 +14,7 @@ class TwitterExternalLoginProviderSettings {
     return 'TwitterExternalLoginProviderSettings[consumerKey=$consumerKey, consumerSecret=$consumerSecret, ]';
   }
 
-  TwitterExternalLoginProviderSettings.fromJson(Map<String, dynamic> json) {
+  TwitterExternalLoginProviderSettings.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     consumerKey =
         json['consumerKey']

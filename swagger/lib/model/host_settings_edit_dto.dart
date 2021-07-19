@@ -2,28 +2,28 @@ part of swagger.api;
 
 class HostSettingsEditDto {
   
-  GeneralSettingsEditDto general = null;
+  GeneralSettingsEditDto? general = null;
   
 
-  HostUserManagementSettingsEditDto userManagement = null;
+  HostUserManagementSettingsEditDto? userManagement = null;
   
 
-  EmailSettingsEditDto email = null;
+  EmailSettingsEditDto? email = null;
   
 
-  TenantManagementSettingsEditDto tenantManagement = null;
+  TenantManagementSettingsEditDto? tenantManagement = null;
   
 
-  SecuritySettingsEditDto security = null;
+  SecuritySettingsEditDto? security = null;
   
 
-  HostBillingSettingsEditDto billing = null;
+  HostBillingSettingsEditDto? billing = null;
   
 
-  OtherSettingsEditDto otherSettings = null;
+  OtherSettingsEditDto? otherSettings = null;
   
 
-  ExternalLoginProviderSettingsEditDto externalLoginProviderSettings = null;
+  ExternalLoginProviderSettingsEditDto? externalLoginProviderSettings = null;
   
   HostSettingsEditDto();
 
@@ -32,7 +32,7 @@ class HostSettingsEditDto {
     return 'HostSettingsEditDto[general=$general, userManagement=$userManagement, email=$email, tenantManagement=$tenantManagement, security=$security, billing=$billing, otherSettings=$otherSettings, externalLoginProviderSettings=$externalLoginProviderSettings, ]';
   }
 
-  HostSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  HostSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     general =
       

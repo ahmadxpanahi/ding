@@ -2,13 +2,13 @@ part of swagger.api;
 
 class UserWorkScheduleDto {
   
-  int userId = null;
+  int? userId = null;
   
 
-  int workScheduleId = null;
+  int? workScheduleId = null;
   
 
-  int id = null;
+  int? id = null;
   
   UserWorkScheduleDto();
 
@@ -17,7 +17,7 @@ class UserWorkScheduleDto {
     return 'UserWorkScheduleDto[userId=$userId, workScheduleId=$workScheduleId, id=$id, ]';
   }
 
-  UserWorkScheduleDto.fromJson(Map<String, dynamic> json) {
+  UserWorkScheduleDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userId =
         json['userId']

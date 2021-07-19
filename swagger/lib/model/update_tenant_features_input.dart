@@ -2,7 +2,7 @@ part of swagger.api;
 
 class UpdateTenantFeaturesInput {
   
-  int id = null;
+  int? id = null;
    // range from 1 to 2147483647//
 
   List<NameValueDto> featureValues = [];
@@ -14,7 +14,7 @@ class UpdateTenantFeaturesInput {
     return 'UpdateTenantFeaturesInput[id=$id, featureValues=$featureValues, ]';
   }
 
-  UpdateTenantFeaturesInput.fromJson(Map<String, dynamic> json) {
+  UpdateTenantFeaturesInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']

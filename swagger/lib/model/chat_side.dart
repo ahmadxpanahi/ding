@@ -2,7 +2,7 @@ part of swagger.api;
 
 class ChatSide {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   ChatSide._internal(this.value);
 

@@ -11,7 +11,7 @@ class GetProfitShareOutput {
     return 'GetProfitShareOutput[profitShares=$profitShares, ]';
   }
 
-  GetProfitShareOutput.fromJson(Map<String, dynamic> json) {
+  GetProfitShareOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     profitShares =
         (json['profitShares'] as List).map((item) => item as int).toList()

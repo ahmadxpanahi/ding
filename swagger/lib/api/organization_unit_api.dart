@@ -5,13 +5,13 @@ part of swagger.api;
 class OrganizationUnitApi {
   final ApiClient apiClient;
 
-  OrganizationUnitApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  OrganizationUnitApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppOrganizationunitAddrolestoorganizationunitPost
   ///
   /// 
-  Future apiServicesAppOrganizationunitAddrolestoorganizationunitPost({ RolesToOrganizationUnitInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppOrganizationunitAddrolestoorganizationunitPost({ RolesToOrganizationUnitInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class OrganizationUnitApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitAdduserstoorganizationunitPost
   ///
   /// 
-  Future apiServicesAppOrganizationunitAdduserstoorganizationunitPost({ UsersToOrganizationUnitInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppOrganizationunitAdduserstoorganizationunitPost({ UsersToOrganizationUnitInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class OrganizationUnitApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitCreateorganizationunitPost
   ///
   /// 
-  Future<OrganizationUnitDto> apiServicesAppOrganizationunitCreateorganizationunitPost({ CreateOrganizationUnitInput body }) async {
-    Object postBody = body;
+  Future<OrganizationUnitDto> apiServicesAppOrganizationunitCreateorganizationunitPost({ CreateOrganizationUnitInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -136,14 +136,14 @@ class OrganizationUnitApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -157,8 +157,8 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitDeleteorganizationunitDelete
   ///
   /// 
-  Future apiServicesAppOrganizationunitDeleteorganizationunitDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppOrganizationunitDeleteorganizationunitDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -188,14 +188,14 @@ class OrganizationUnitApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -209,8 +209,8 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitFindrolesPost
   ///
   /// 
-  Future<PagedResultDtoOfNameValueDto> apiServicesAppOrganizationunitFindrolesPost({ FindOrganizationUnitRolesInput body }) async {
-    Object postBody = body;
+  Future<PagedResultDtoOfNameValueDto> apiServicesAppOrganizationunitFindrolesPost({ FindOrganizationUnitRolesInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -237,14 +237,14 @@ class OrganizationUnitApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -258,8 +258,8 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitFindusersPost
   ///
   /// 
-  Future<PagedResultDtoOfNameValueDto> apiServicesAppOrganizationunitFindusersPost({ FindOrganizationUnitUsersInput body }) async {
-    Object postBody = body;
+  Future<PagedResultDtoOfNameValueDto> apiServicesAppOrganizationunitFindusersPost({ FindOrganizationUnitUsersInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -286,14 +286,14 @@ class OrganizationUnitApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -307,8 +307,8 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitGetorganizationunitrolesGet
   ///
   /// 
-  Future<PagedResultDtoOfOrganizationUnitRoleListDto> apiServicesAppOrganizationunitGetorganizationunitrolesGet({ int id, String sorting, int maxResultCount, int skipCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfOrganizationUnitRoleListDto> apiServicesAppOrganizationunitGetorganizationunitrolesGet({ int? id, String? sorting, int? maxResultCount, int? skipCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -347,14 +347,14 @@ class OrganizationUnitApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -369,7 +369,7 @@ class OrganizationUnitApi {
   ///
   /// 
   Future<ListResultDtoOfOrganizationUnitDto> apiServicesAppOrganizationunitGetorganizationunitsGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -396,14 +396,14 @@ class OrganizationUnitApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -418,7 +418,7 @@ class OrganizationUnitApi {
   ///
   /// 
   Future<ListResultDtoOfOrganizationUnitDto> apiServicesAppOrganizationunitGetorganizationunitsforuserGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -445,14 +445,14 @@ class OrganizationUnitApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -466,8 +466,8 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitGetorganizationunitusersGet
   ///
   /// 
-  Future<PagedResultDtoOfOrganizationUnitUserListDto> apiServicesAppOrganizationunitGetorganizationunitusersGet({ int id, String sorting, int maxResultCount, int skipCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfOrganizationUnitUserListDto> apiServicesAppOrganizationunitGetorganizationunitusersGet({ int? id, String? sorting, int? maxResultCount, int? skipCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -506,14 +506,14 @@ class OrganizationUnitApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -527,8 +527,8 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitMoveorganizationunitPost
   ///
   /// 
-  Future<OrganizationUnitDto> apiServicesAppOrganizationunitMoveorganizationunitPost({ MoveOrganizationUnitInput body }) async {
-    Object postBody = body;
+  Future<OrganizationUnitDto> apiServicesAppOrganizationunitMoveorganizationunitPost({ MoveOrganizationUnitInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -555,14 +555,14 @@ class OrganizationUnitApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -576,8 +576,8 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitRemoverolefromorganizationunitDelete
   ///
   /// 
-  Future apiServicesAppOrganizationunitRemoverolefromorganizationunitDelete({ int roleId, int organizationUnitId }) async {
-    Object postBody = null;
+  Future apiServicesAppOrganizationunitRemoverolefromorganizationunitDelete({ int? roleId, int? organizationUnitId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -610,14 +610,14 @@ class OrganizationUnitApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -631,8 +631,8 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitRemoveuserfromorganizationunitDelete
   ///
   /// 
-  Future apiServicesAppOrganizationunitRemoveuserfromorganizationunitDelete({ int userId, int organizationUnitId }) async {
-    Object postBody = null;
+  Future apiServicesAppOrganizationunitRemoveuserfromorganizationunitDelete({ int? userId, int? organizationUnitId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -665,14 +665,14 @@ class OrganizationUnitApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -686,8 +686,8 @@ class OrganizationUnitApi {
   /// ApiServicesAppOrganizationunitUpdateorganizationunitPut
   ///
   /// 
-  Future<OrganizationUnitDto> apiServicesAppOrganizationunitUpdateorganizationunitPut({ UpdateOrganizationUnitInput body }) async {
-    Object postBody = body;
+  Future<OrganizationUnitDto> apiServicesAppOrganizationunitUpdateorganizationunitPut({ UpdateOrganizationUnitInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -714,14 +714,14 @@ class OrganizationUnitApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

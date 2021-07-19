@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetAllEntitiesHasDynamicPropertyOutput {
   
-  String entityFullName = null;
+  String? entityFullName = null;
   
   GetAllEntitiesHasDynamicPropertyOutput();
 
@@ -11,7 +11,7 @@ class GetAllEntitiesHasDynamicPropertyOutput {
     return 'GetAllEntitiesHasDynamicPropertyOutput[entityFullName=$entityFullName, ]';
   }
 
-  GetAllEntitiesHasDynamicPropertyOutput.fromJson(Map<String, dynamic> json) {
+  GetAllEntitiesHasDynamicPropertyOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     entityFullName =
         json['entityFullName']
@@ -24,7 +24,7 @@ class GetAllEntitiesHasDynamicPropertyOutput {
      };
   }
 
-  static List<GetAllEntitiesHasDynamicPropertyOutput> listFromJson(List<dynamic> json) {
+  static List<GetAllEntitiesHasDynamicPropertyOutput> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetAllEntitiesHasDynamicPropertyOutput>() : json.map((value) => new GetAllEntitiesHasDynamicPropertyOutput.fromJson(value)).toList();
   }
 

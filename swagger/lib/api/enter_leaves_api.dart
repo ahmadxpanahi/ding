@@ -5,13 +5,13 @@ part of swagger.api;
 class EnterLeavesApi {
   final ApiClient apiClient;
 
-  EnterLeavesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  EnterLeavesApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppEnterleavesApproverequestsPost
   ///
   /// 
-  Future apiServicesAppEnterleavesApproverequestsPost({ List<GetEnterLeaveForViewDto> body }) async {
-    Object postBody = body;
+  Future apiServicesAppEnterleavesApproverequestsPost({ List<GetEnterLeaveForViewDto>? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class EnterLeavesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class EnterLeavesApi {
   /// ApiServicesAppEnterleavesCreateoreditPost
   ///
   /// 
-  Future apiServicesAppEnterleavesCreateoreditPost({ CreateOrEditEnterLeaveDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppEnterleavesCreateoreditPost({ CreateOrEditEnterLeaveDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class EnterLeavesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class EnterLeavesApi {
   /// ApiServicesAppEnterleavesDeleteDelete
   ///
   /// 
-  Future apiServicesAppEnterleavesDeleteDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppEnterleavesDeleteDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -139,14 +139,14 @@ class EnterLeavesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -160,8 +160,8 @@ class EnterLeavesApi {
   /// ApiServicesAppEnterleavesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetEnterLeaveForViewDto> apiServicesAppEnterleavesGetallGet({ String filter, int enterLeaveTypeFilter, DateTime maxOccurDateFilter, DateTime minOccurDateFilter, int statusFilter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetEnterLeaveForViewDto> apiServicesAppEnterleavesGetallGet({ String? filter, int? enterLeaveTypeFilter, DateTime? maxOccurDateFilter, DateTime? minOccurDateFilter, int? statusFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -212,14 +212,14 @@ class EnterLeavesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -233,8 +233,8 @@ class EnterLeavesApi {
   /// ApiServicesAppEnterleavesGetenterleaveforeditGet
   ///
   /// 
-  Future<GetEnterLeaveForEditOutput> apiServicesAppEnterleavesGetenterleaveforeditGet({ int id }) async {
-    Object postBody = null;
+  Future<GetEnterLeaveForEditOutput> apiServicesAppEnterleavesGetenterleaveforeditGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -264,14 +264,14 @@ class EnterLeavesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -285,8 +285,8 @@ class EnterLeavesApi {
   /// ApiServicesAppEnterleavesGetenterleaveforviewGet
   ///
   /// 
-  Future<GetEnterLeaveForViewDto> apiServicesAppEnterleavesGetenterleaveforviewGet({ int id }) async {
-    Object postBody = null;
+  Future<GetEnterLeaveForViewDto> apiServicesAppEnterleavesGetenterleaveforviewGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -316,14 +316,14 @@ class EnterLeavesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -337,8 +337,8 @@ class EnterLeavesApi {
   /// ApiServicesAppEnterleavesGetenterleavestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppEnterleavesGetenterleavestoexcelGet({ String filter, int enterLeaveTypeFilter, DateTime maxOccurDateFilter, DateTime minOccurDateFilter, int statusFilter }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppEnterleavesGetenterleavestoexcelGet({ String? filter, int? enterLeaveTypeFilter, DateTime? maxOccurDateFilter, DateTime? minOccurDateFilter, int? statusFilter }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -380,14 +380,14 @@ class EnterLeavesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -401,8 +401,8 @@ class EnterLeavesApi {
   /// ApiServicesAppEnterleavesRejectrequestsPost
   ///
   /// 
-  Future apiServicesAppEnterleavesRejectrequestsPost({ List<GetEnterLeaveForViewDto> body }) async {
-    Object postBody = body;
+  Future apiServicesAppEnterleavesRejectrequestsPost({ List<GetEnterLeaveForViewDto>? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -429,14 +429,14 @@ class EnterLeavesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

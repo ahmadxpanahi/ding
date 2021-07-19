@@ -2,31 +2,31 @@ part of swagger.api;
 
 class SupportDto {
   
-  String requestSubject = null;
+  String? requestSubject = null;
   
 
-  SupportType requestType = null;
+  SupportType? requestType = null;
   
 
-  SupportStatus requestStatus = null;
+  SupportStatus? requestStatus = null;
   
 
-  String requestDescription = null;
+  String? requestDescription = null;
   
 
-  String additionalDescription = null;
+  String? additionalDescription = null;
   
 
-  int deviceId = null;
+  int? deviceId = null;
   
 
-  int requestUserId = null;
+  int? requestUserId = null;
   
 
-  int supportParentId = null;
+  int? supportParentId = null;
   
 
-  int id = null;
+  int? id = null;
   
   SupportDto();
 
@@ -35,7 +35,7 @@ class SupportDto {
     return 'SupportDto[requestSubject=$requestSubject, requestType=$requestType, requestStatus=$requestStatus, requestDescription=$requestDescription, additionalDescription=$additionalDescription, deviceId=$deviceId, requestUserId=$requestUserId, supportParentId=$supportParentId, id=$id, ]';
   }
 
-  SupportDto.fromJson(Map<String, dynamic> json) {
+  SupportDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     requestSubject =
         json['requestSubject']

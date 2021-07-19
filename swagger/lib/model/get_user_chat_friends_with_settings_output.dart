@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetUserChatFriendsWithSettingsOutput {
   
-  DateTime serverTime = null;
+  DateTime? serverTime = null;
   
 
   List<FriendDto> friends = [];
@@ -14,7 +14,7 @@ class GetUserChatFriendsWithSettingsOutput {
     return 'GetUserChatFriendsWithSettingsOutput[serverTime=$serverTime, friends=$friends, ]';
   }
 
-  GetUserChatFriendsWithSettingsOutput.fromJson(Map<String, dynamic> json) {
+  GetUserChatFriendsWithSettingsOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     serverTime = json['serverTime'] == null ? null : DateTime.parse(json['serverTime']);
     friends =
@@ -24,7 +24,7 @@ class GetUserChatFriendsWithSettingsOutput {
 
   Map<String, dynamic> toJson() {
     return {
-      'serverTime': serverTime == null ? '' : serverTime.toUtc().toIso8601String(),
+      'serverTime': serverTime == null ? '' : serverTime!.toUtc().toIso8601String(),
       'friends': friends
      };
   }

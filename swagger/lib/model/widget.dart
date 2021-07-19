@@ -2,19 +2,19 @@ part of swagger.api;
 
 class Widget {
   
-  String widgetId = null;
+  String? widgetId = null;
   
 
-  int height = null;
+  int? height = null;
   
 
-  int width = null;
+  int? width = null;
   
 
-  int positionX = null;
+  int? positionX = null;
   
 
-  int positionY = null;
+  int? positionY = null;
   
   Widget();
 
@@ -23,7 +23,7 @@ class Widget {
     return 'Widget[widgetId=$widgetId, height=$height, width=$width, positionX=$positionX, positionY=$positionY, ]';
   }
 
-  Widget.fromJson(Map<String, dynamic> json) {
+  Widget.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     widgetId =
         json['widgetId']
@@ -52,7 +52,7 @@ class Widget {
      };
   }
 
-  static List<Widget> listFromJson(List<dynamic> json) {
+  static List<Widget> listFromJson(List<dynamic>? json) {
     return json == null ? new List<Widget>() : json.map((value) => new Widget.fromJson(value)).toList();
   }
 

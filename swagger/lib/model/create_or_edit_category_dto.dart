@@ -2,16 +2,16 @@ part of swagger.api;
 
 class CreateOrEditCategoryDto {
   
-  int categoryType = 1;
+  int? categoryType = 1;
   
 
-  int parentId = null;
+  int? parentId = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  int id = null;
+  int? id = null;
   
   CreateOrEditCategoryDto();
 
@@ -20,7 +20,7 @@ class CreateOrEditCategoryDto {
     return 'CreateOrEditCategoryDto[categoryType=$categoryType, parentId=$parentId, displayName=$displayName, id=$id, ]';
   }
 
-  CreateOrEditCategoryDto.fromJson(Map<String, dynamic> json) {
+  CreateOrEditCategoryDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     categoryType =
         json['categoryType']

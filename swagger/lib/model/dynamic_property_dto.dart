@@ -2,22 +2,22 @@ part of swagger.api;
 
 class DynamicPropertyDto {
   
-  String propertyName = null;
+  String? propertyName = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  String inputType = null;
+  String? inputType = null;
   
 
-  String permission = null;
+  String? permission = null;
   
 
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  int id = null;
+  int? id = null;
   
   DynamicPropertyDto();
 
@@ -26,7 +26,7 @@ class DynamicPropertyDto {
     return 'DynamicPropertyDto[propertyName=$propertyName, displayName=$displayName, inputType=$inputType, permission=$permission, tenantId=$tenantId, id=$id, ]';
   }
 
-  DynamicPropertyDto.fromJson(Map<String, dynamic> json) {
+  DynamicPropertyDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     propertyName =
         json['propertyName']
@@ -59,7 +59,7 @@ class DynamicPropertyDto {
      };
   }
 
-  static List<DynamicPropertyDto> listFromJson(List<dynamic> json) {
+  static List<DynamicPropertyDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<DynamicPropertyDto>() : json.map((value) => new DynamicPropertyDto.fromJson(value)).toList();
   }
 

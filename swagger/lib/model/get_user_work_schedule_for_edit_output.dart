@@ -2,13 +2,13 @@ part of swagger.api;
 
 class GetUserWorkScheduleForEditOutput {
   
-  CreateOrEditUserWorkScheduleDto userWorkSchedule = null;
+  CreateOrEditUserWorkScheduleDto? userWorkSchedule = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  String workScheduleName = null;
+  String? workScheduleName = null;
   
   GetUserWorkScheduleForEditOutput();
 
@@ -17,7 +17,7 @@ class GetUserWorkScheduleForEditOutput {
     return 'GetUserWorkScheduleForEditOutput[userWorkSchedule=$userWorkSchedule, userName=$userName, workScheduleName=$workScheduleName, ]';
   }
 
-  GetUserWorkScheduleForEditOutput.fromJson(Map<String, dynamic> json) {
+  GetUserWorkScheduleForEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userWorkSchedule =
       

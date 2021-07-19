@@ -2,13 +2,13 @@ part of swagger.api;
 
 class RoleEditDto {
   
-  int id = null;
+  int? id = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  bool isDefault = null;
+  bool? isDefault = null;
   
   RoleEditDto();
 
@@ -17,7 +17,7 @@ class RoleEditDto {
     return 'RoleEditDto[id=$id, displayName=$displayName, isDefault=$isDefault, ]';
   }
 
-  RoleEditDto.fromJson(Map<String, dynamic> json) {
+  RoleEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']

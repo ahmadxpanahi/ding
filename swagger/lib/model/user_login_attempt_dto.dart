@@ -2,25 +2,25 @@ part of swagger.api;
 
 class UserLoginAttemptDto {
   
-  String tenancyName = null;
+  String? tenancyName = null;
   
 
-  String userNameOrEmail = null;
+  String? userNameOrEmail = null;
   
 
-  String clientIpAddress = null;
+  String? clientIpAddress = null;
   
 
-  String clientName = null;
+  String? clientName = null;
   
 
-  String browserInfo = null;
+  String? browserInfo = null;
   
 
-  String result = null;
+  String? result = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
   UserLoginAttemptDto();
 
@@ -29,7 +29,7 @@ class UserLoginAttemptDto {
     return 'UserLoginAttemptDto[tenancyName=$tenancyName, userNameOrEmail=$userNameOrEmail, clientIpAddress=$clientIpAddress, clientName=$clientName, browserInfo=$browserInfo, result=$result, creationTime=$creationTime, ]';
   }
 
-  UserLoginAttemptDto.fromJson(Map<String, dynamic> json) {
+  UserLoginAttemptDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenancyName =
         json['tenancyName']
@@ -60,11 +60,11 @@ class UserLoginAttemptDto {
       'clientName': clientName,
       'browserInfo': browserInfo,
       'result': result,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String()
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String()
      };
   }
 
-  static List<UserLoginAttemptDto> listFromJson(List<dynamic> json) {
+  static List<UserLoginAttemptDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<UserLoginAttemptDto>() : json.map((value) => new UserLoginAttemptDto.fromJson(value)).toList();
   }
 

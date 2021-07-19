@@ -2,13 +2,13 @@ part of swagger.api;
 
 class TenantBillingSettingsEditDto {
   
-  String legalName = null;
+  String? legalName = null;
   
 
-  String address = null;
+  String? address = null;
   
 
-  String taxVatNo = null;
+  String? taxVatNo = null;
   
   TenantBillingSettingsEditDto();
 
@@ -17,7 +17,7 @@ class TenantBillingSettingsEditDto {
     return 'TenantBillingSettingsEditDto[legalName=$legalName, address=$address, taxVatNo=$taxVatNo, ]';
   }
 
-  TenantBillingSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  TenantBillingSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     legalName =
         json['legalName']

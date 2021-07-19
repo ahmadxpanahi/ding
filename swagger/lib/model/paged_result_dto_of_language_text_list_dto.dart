@@ -2,7 +2,7 @@ part of swagger.api;
 
 class PagedResultDtoOfLanguageTextListDto {
   
-  int totalCount = null;
+  int? totalCount = null;
   
 
   List<LanguageTextListDto> items = [];
@@ -14,7 +14,7 @@ class PagedResultDtoOfLanguageTextListDto {
     return 'PagedResultDtoOfLanguageTextListDto[totalCount=$totalCount, items=$items, ]';
   }
 
-  PagedResultDtoOfLanguageTextListDto.fromJson(Map<String, dynamic> json) {
+  PagedResultDtoOfLanguageTextListDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     totalCount =
         json['totalCount']

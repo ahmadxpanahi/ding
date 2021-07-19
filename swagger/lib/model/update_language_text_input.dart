@@ -2,16 +2,16 @@ part of swagger.api;
 
 class UpdateLanguageTextInput {
   
-  String languageName = null;
+  String? languageName = null;
   
 
-  String sourceName = null;
+  String? sourceName = null;
   
 
-  String key = null;
+  String? key = null;
   
 
-  String value = null;
+  String? value = null;
   
   UpdateLanguageTextInput();
 
@@ -20,7 +20,7 @@ class UpdateLanguageTextInput {
     return 'UpdateLanguageTextInput[languageName=$languageName, sourceName=$sourceName, key=$key, value=$value, ]';
   }
 
-  UpdateLanguageTextInput.fromJson(Map<String, dynamic> json) {
+  UpdateLanguageTextInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     languageName =
         json['languageName']

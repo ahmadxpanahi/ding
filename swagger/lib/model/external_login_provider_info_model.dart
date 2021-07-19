@@ -2,13 +2,13 @@ part of swagger.api;
 
 class ExternalLoginProviderInfoModel {
   
-  String name = null;
+  String? name = null;
   
 
-  String clientId = null;
+  String? clientId = null;
   
 
-  Map<String, String> additionalParams = {};
+  Map<String, String>? additionalParams = {};
   
   ExternalLoginProviderInfoModel();
 
@@ -17,7 +17,7 @@ class ExternalLoginProviderInfoModel {
     return 'ExternalLoginProviderInfoModel[name=$name, clientId=$clientId, additionalParams=$additionalParams, ]';
   }
 
-  ExternalLoginProviderInfoModel.fromJson(Map<String, dynamic> json) {
+  ExternalLoginProviderInfoModel.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']

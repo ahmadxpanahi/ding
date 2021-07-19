@@ -2,55 +2,55 @@ part of swagger.api;
 
 class SubscribableEdition {
   
-  int expiringEditionId = null;
+  int? expiringEditionId = null;
   
 
-  double price = null;
+  double? price = null;
   
 
-  int dayCount = null;
+  int? dayCount = null;
   
 
-  EditionType editionType = null;
+  EditionType? editionType = null;
   
 
-  int trialDayCount = null;
+  int? trialDayCount = null;
   
 
-  int waitingDayAfterExpire = null;
+  int? waitingDayAfterExpire = null;
   
 
-  bool isActive = null;
+  bool? isActive = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  bool isDeleted = null;
+  bool? isDeleted = null;
   
 
-  int deleterUserId = null;
+  int? deleterUserId = null;
   
 
-  DateTime deletionTime = null;
+  DateTime? deletionTime = null;
   
 
-  DateTime lastModificationTime = null;
+  DateTime? lastModificationTime = null;
   
 
-  int lastModifierUserId = null;
+  int? lastModifierUserId = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  int creatorUserId = null;
+  int? creatorUserId = null;
   
 
-  int id = null;
+  int? id = null;
   
   SubscribableEdition();
 
@@ -59,7 +59,7 @@ class SubscribableEdition {
     return 'SubscribableEdition[expiringEditionId=$expiringEditionId, price=$price, dayCount=$dayCount, editionType=$editionType, trialDayCount=$trialDayCount, waitingDayAfterExpire=$waitingDayAfterExpire, isActive=$isActive, name=$name, displayName=$displayName, isDeleted=$isDeleted, deleterUserId=$deleterUserId, deletionTime=$deletionTime, lastModificationTime=$lastModificationTime, lastModifierUserId=$lastModifierUserId, creationTime=$creationTime, creatorUserId=$creatorUserId, id=$id, ]';
   }
 
-  SubscribableEdition.fromJson(Map<String, dynamic> json) {
+  SubscribableEdition.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     expiringEditionId =
         json['expiringEditionId']
@@ -123,10 +123,10 @@ class SubscribableEdition {
       'displayName': displayName,
       'isDeleted': isDeleted,
       'deleterUserId': deleterUserId,
-      'deletionTime': deletionTime == null ? '' : deletionTime.toUtc().toIso8601String(),
-      'lastModificationTime': lastModificationTime == null ? '' : lastModificationTime.toUtc().toIso8601String(),
+      'deletionTime': deletionTime == null ? '' : deletionTime!.toUtc().toIso8601String(),
+      'lastModificationTime': lastModificationTime == null ? '' : lastModificationTime!.toUtc().toIso8601String(),
       'lastModifierUserId': lastModifierUserId,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
       'creatorUserId': creatorUserId,
       'id': id
      };

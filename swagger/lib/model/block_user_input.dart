@@ -2,10 +2,10 @@ part of swagger.api;
 
 class BlockUserInput {
   
-  int userId = null;
+  int? userId = null;
    // range from 1 to //
 
-  int tenantId = null;
+  int? tenantId = null;
   
   BlockUserInput();
 
@@ -14,7 +14,7 @@ class BlockUserInput {
     return 'BlockUserInput[userId=$userId, tenantId=$tenantId, ]';
   }
 
-  BlockUserInput.fromJson(Map<String, dynamic> json) {
+  BlockUserInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userId =
         json['userId']

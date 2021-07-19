@@ -2,7 +2,7 @@ part of swagger.api;
 
 class SubscriptionPaymentStatus {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   SubscriptionPaymentStatus._internal(this.value);
 

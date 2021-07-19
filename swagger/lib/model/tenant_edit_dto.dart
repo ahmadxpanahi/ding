@@ -2,76 +2,76 @@ part of swagger.api;
 
 class TenantEditDto {
   
-  String tenancyName = null;
+  String? tenancyName = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  String connectionString = null;
+  String? connectionString = null;
   
 
-  int editionId = null;
+  int? editionId = null;
   
 
-  bool isActive = null;
+  bool? isActive = null;
   
 
-  DateTime subscriptionEndDateUtc = null;
+  DateTime? subscriptionEndDateUtc = null;
   
 
-  bool isInTrialPeriod = null;
+  bool? isInTrialPeriod = null;
   
 
-  String seniorManagerName = null;
+  String? seniorManagerName = null;
   
 
-  String seniorManagerSurname = null;
+  String? seniorManagerSurname = null;
   
 
-  String seniorManagerPhoneNumber = null;
+  String? seniorManagerPhoneNumber = null;
   
 
-  String adminEmailAddress = null;
+  String? adminEmailAddress = null;
   
 
-  int countryId = null;
+  int? countryId = null;
   
 
-  int stateId = null;
+  int? stateId = null;
   
 
-  int cityId = null;
+  int? cityId = null;
   
 
-  String address = null;
+  String? address = null;
   
 
-  double latitude = null;
+  double? latitude = null;
   
 
-  double longitude = null;
+  double? longitude = null;
   
 
-  String businessTypes = null;
+  String? businessTypes = null;
   
 
-  bool hasWebService = null;
+  bool? hasWebService = null;
   
 
-  DateTime lastEnterExitTime = null;
+  DateTime? lastEnterExitTime = null;
   
 
-  int purchasedUsers = null;
+  int? purchasedUsers = null;
   
 
-  int usedUsers = null;
+  int? usedUsers = null;
   
 
-  bool isVIP = null;
+  bool? isVIP = null;
   
 
-  int id = null;
+  int? id = null;
   
   TenantEditDto();
 
@@ -80,7 +80,7 @@ class TenantEditDto {
     return 'TenantEditDto[tenancyName=$tenancyName, name=$name, connectionString=$connectionString, editionId=$editionId, isActive=$isActive, subscriptionEndDateUtc=$subscriptionEndDateUtc, isInTrialPeriod=$isInTrialPeriod, seniorManagerName=$seniorManagerName, seniorManagerSurname=$seniorManagerSurname, seniorManagerPhoneNumber=$seniorManagerPhoneNumber, adminEmailAddress=$adminEmailAddress, countryId=$countryId, stateId=$stateId, cityId=$cityId, address=$address, latitude=$latitude, longitude=$longitude, businessTypes=$businessTypes, hasWebService=$hasWebService, lastEnterExitTime=$lastEnterExitTime, purchasedUsers=$purchasedUsers, usedUsers=$usedUsers, isVIP=$isVIP, id=$id, ]';
   }
 
-  TenantEditDto.fromJson(Map<String, dynamic> json) {
+  TenantEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenancyName =
         json['tenancyName']
@@ -159,7 +159,7 @@ class TenantEditDto {
       'connectionString': connectionString,
       'editionId': editionId,
       'isActive': isActive,
-      'subscriptionEndDateUtc': subscriptionEndDateUtc == null ? '' : subscriptionEndDateUtc.toUtc().toIso8601String(),
+      'subscriptionEndDateUtc': subscriptionEndDateUtc == null ? '' : subscriptionEndDateUtc!.toUtc().toIso8601String(),
       'isInTrialPeriod': isInTrialPeriod,
       'seniorManagerName': seniorManagerName,
       'seniorManagerSurname': seniorManagerSurname,
@@ -173,7 +173,7 @@ class TenantEditDto {
       'longitude': longitude,
       'businessTypes': businessTypes,
       'hasWebService': hasWebService,
-      'lastEnterExitTime': lastEnterExitTime == null ? '' : lastEnterExitTime.toUtc().toIso8601String(),
+      'lastEnterExitTime': lastEnterExitTime == null ? '' : lastEnterExitTime!.toUtc().toIso8601String(),
       'purchasedUsers': purchasedUsers,
       'usedUsers': usedUsers,
       'isVIP': isVIP,

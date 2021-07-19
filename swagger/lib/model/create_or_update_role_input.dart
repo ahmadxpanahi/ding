@@ -2,7 +2,7 @@ part of swagger.api;
 
 class CreateOrUpdateRoleInput {
   
-  RoleEditDto role = null;
+  RoleEditDto? role = null;
   
 
   List<String> grantedPermissionNames = [];
@@ -14,7 +14,7 @@ class CreateOrUpdateRoleInput {
     return 'CreateOrUpdateRoleInput[role=$role, grantedPermissionNames=$grantedPermissionNames, ]';
   }
 
-  CreateOrUpdateRoleInput.fromJson(Map<String, dynamic> json) {
+  CreateOrUpdateRoleInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     role =
       

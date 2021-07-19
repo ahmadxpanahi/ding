@@ -2,19 +2,19 @@ part of swagger.api;
 
 class FlatPermissionDto {
   
-  String parentName = null;
+  String? parentName = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  String description = null;
+  String? description = null;
   
 
-  bool isGrantedByDefault = null;
+  bool? isGrantedByDefault = null;
   
   FlatPermissionDto();
 
@@ -23,7 +23,7 @@ class FlatPermissionDto {
     return 'FlatPermissionDto[parentName=$parentName, name=$name, displayName=$displayName, description=$description, isGrantedByDefault=$isGrantedByDefault, ]';
   }
 
-  FlatPermissionDto.fromJson(Map<String, dynamic> json) {
+  FlatPermissionDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     parentName =
         json['parentName']
@@ -52,7 +52,7 @@ class FlatPermissionDto {
      };
   }
 
-  static List<FlatPermissionDto> listFromJson(List<dynamic> json) {
+  static List<FlatPermissionDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<FlatPermissionDto>() : json.map((value) => new FlatPermissionDto.fromJson(value)).toList();
   }
 

@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetProfilePictureOutput {
   
-  String profilePicture = null;
+  String? profilePicture = null;
   
   GetProfilePictureOutput();
 
@@ -11,7 +11,7 @@ class GetProfilePictureOutput {
     return 'GetProfilePictureOutput[profilePicture=$profilePicture, ]';
   }
 
-  GetProfilePictureOutput.fromJson(Map<String, dynamic> json) {
+  GetProfilePictureOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     profilePicture =
         json['profilePicture']

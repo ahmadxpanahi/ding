@@ -2,7 +2,7 @@ part of swagger.api;
 
 class PagedResultDtoOfGetPurchasingResourceForViewDto {
   
-  int totalCount = null;
+  int? totalCount = null;
   
 
   List<GetPurchasingResourceForViewDto> items = [];
@@ -14,7 +14,7 @@ class PagedResultDtoOfGetPurchasingResourceForViewDto {
     return 'PagedResultDtoOfGetPurchasingResourceForViewDto[totalCount=$totalCount, items=$items, ]';
   }
 
-  PagedResultDtoOfGetPurchasingResourceForViewDto.fromJson(Map<String, dynamic> json) {
+  PagedResultDtoOfGetPurchasingResourceForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     totalCount =
         json['totalCount']

@@ -2,13 +2,13 @@ part of swagger.api;
 
 class IInputType {
   
-  String name = null;
+  String? name = null;
   
 
   Map<String, Object> attributes = {};
   
 
-  IValueValidator validator = null;
+  IValueValidator? validator = null;
   
   IInputType();
 
@@ -17,7 +17,7 @@ class IInputType {
     return 'IInputType[name=$name, attributes=$attributes, validator=$validator, ]';
   }
 
-  IInputType.fromJson(Map<String, dynamic> json) {
+  IInputType.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']
@@ -46,7 +46,7 @@ class IInputType {
     return json == null ? new List<IInputType>() : json.map((value) => new IInputType.fromJson(value)).toList();
   }
 
-  static Map<String, IInputType> mapFromJson(Map<String, Map<String, dynamic>> json) {
+  static Map<String, IInputType> mapFromJson(Map<String, Map<String, dynamic>>? json) {
     var map = new Map<String, IInputType>();
     if (json != null && json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) => map[key] = new IInputType.fromJson(value));

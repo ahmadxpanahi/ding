@@ -11,7 +11,7 @@ class ListResultDtoOfGetAllSendAttemptsOfWebhookEventOutput {
     return 'ListResultDtoOfGetAllSendAttemptsOfWebhookEventOutput[items=$items, ]';
   }
 
-  ListResultDtoOfGetAllSendAttemptsOfWebhookEventOutput.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfGetAllSendAttemptsOfWebhookEventOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       GetAllSendAttemptsOfWebhookEventOutput.listFromJson(json['items'])

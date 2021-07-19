@@ -2,13 +2,13 @@ part of swagger.api;
 
 class StripeCreatePaymentSessionInput {
   
-  int paymentId = null;
+  int? paymentId = null;
   
 
-  String successUrl = null;
+  String? successUrl = null;
   
 
-  String cancelUrl = null;
+  String? cancelUrl = null;
   
   StripeCreatePaymentSessionInput();
 
@@ -17,7 +17,7 @@ class StripeCreatePaymentSessionInput {
     return 'StripeCreatePaymentSessionInput[paymentId=$paymentId, successUrl=$successUrl, cancelUrl=$cancelUrl, ]';
   }
 
-  StripeCreatePaymentSessionInput.fromJson(Map<String, dynamic> json) {
+  StripeCreatePaymentSessionInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     paymentId =
         json['paymentId']

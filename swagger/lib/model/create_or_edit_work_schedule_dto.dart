@@ -2,25 +2,25 @@ part of swagger.api;
 
 class CreateOrEditWorkScheduleDto {
   
-  String name = null;
+  String? name = null;
   
 
-  WorkModelType workModelType = null;
+  WorkModelType? workModelType = null;
   
 
-  bool isCalendarHolidayEnable = null;
+  bool? isCalendarHolidayEnable = null;
   
 
-  DateTime startDate = null;
+  DateTime? startDate = null;
   
 
-  DateTime endDate = null;
+  DateTime? endDate = null;
   
 
   List<WorkHourDto> workHours = [];
   
 
-  int id = null;
+  int? id = null;
   
   CreateOrEditWorkScheduleDto();
 
@@ -29,7 +29,7 @@ class CreateOrEditWorkScheduleDto {
     return 'CreateOrEditWorkScheduleDto[name=$name, workModelType=$workModelType, isCalendarHolidayEnable=$isCalendarHolidayEnable, startDate=$startDate, endDate=$endDate, workHours=$workHours, id=$id, ]';
   }
 
-  CreateOrEditWorkScheduleDto.fromJson(Map<String, dynamic> json) {
+  CreateOrEditWorkScheduleDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']
@@ -57,8 +57,8 @@ class CreateOrEditWorkScheduleDto {
       'name': name,
       'workModelType': workModelType,
       'isCalendarHolidayEnable': isCalendarHolidayEnable,
-      'startDate': startDate == null ? '' : startDate.toUtc().toIso8601String(),
-      'endDate': endDate == null ? '' : endDate.toUtc().toIso8601String(),
+      'startDate': startDate == null ? '' : startDate!.toUtc().toIso8601String(),
+      'endDate': endDate == null ? '' : endDate!.toUtc().toIso8601String(),
       'workHours': workHours,
       'id': id
      };

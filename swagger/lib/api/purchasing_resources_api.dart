@@ -5,13 +5,13 @@ part of swagger.api;
 class PurchasingResourcesApi {
   final ApiClient apiClient;
 
-  PurchasingResourcesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  PurchasingResourcesApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppPurchasingresourcesCreateoreditPost
   ///
   /// 
-  Future apiServicesAppPurchasingresourcesCreateoreditPost({ CreateOrEditPurchasingResourceDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppPurchasingresourcesCreateoreditPost({ CreateOrEditPurchasingResourceDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class PurchasingResourcesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class PurchasingResourcesApi {
   /// ApiServicesAppPurchasingresourcesDeleteDelete
   ///
   /// 
-  Future apiServicesAppPurchasingresourcesDeleteDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppPurchasingresourcesDeleteDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -90,14 +90,14 @@ class PurchasingResourcesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -111,8 +111,8 @@ class PurchasingResourcesApi {
   /// ApiServicesAppPurchasingresourcesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetPurchasingResourceForViewDto> apiServicesAppPurchasingresourcesGetallGet({ String filter, String titleFilter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetPurchasingResourceForViewDto> apiServicesAppPurchasingresourcesGetallGet({ String? filter, String? titleFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -154,14 +154,14 @@ class PurchasingResourcesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -175,8 +175,8 @@ class PurchasingResourcesApi {
   /// ApiServicesAppPurchasingresourcesGetpurchasingresourceforeditGet
   ///
   /// 
-  Future<GetPurchasingResourceForEditOutput> apiServicesAppPurchasingresourcesGetpurchasingresourceforeditGet({ int id }) async {
-    Object postBody = null;
+  Future<GetPurchasingResourceForEditOutput> apiServicesAppPurchasingresourcesGetpurchasingresourceforeditGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -206,14 +206,14 @@ class PurchasingResourcesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -227,8 +227,8 @@ class PurchasingResourcesApi {
   /// ApiServicesAppPurchasingresourcesGetpurchasingresourceforviewGet
   ///
   /// 
-  Future<GetPurchasingResourceForViewDto> apiServicesAppPurchasingresourcesGetpurchasingresourceforviewGet({ int id }) async {
-    Object postBody = null;
+  Future<GetPurchasingResourceForViewDto> apiServicesAppPurchasingresourcesGetpurchasingresourceforviewGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -258,14 +258,14 @@ class PurchasingResourcesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -279,8 +279,8 @@ class PurchasingResourcesApi {
   /// ApiServicesAppPurchasingresourcesGetpurchasingresourcestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppPurchasingresourcesGetpurchasingresourcestoexcelGet({ String filter, String titleFilter }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppPurchasingresourcesGetpurchasingresourcestoexcelGet({ String? filter, String? titleFilter }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -313,14 +313,14 @@ class PurchasingResourcesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

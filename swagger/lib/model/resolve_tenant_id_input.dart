@@ -2,7 +2,7 @@ part of swagger.api;
 
 class ResolveTenantIdInput {
   
-  String c = null;
+  String? c = null;
   
   ResolveTenantIdInput();
 
@@ -11,7 +11,7 @@ class ResolveTenantIdInput {
     return 'ResolveTenantIdInput[c=$c, ]';
   }
 
-  ResolveTenantIdInput.fromJson(Map<String, dynamic> json) {
+  ResolveTenantIdInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     c =
         json['c']

@@ -2,7 +2,7 @@ part of swagger.api;
 
 class NotificationData {
   
-  String type = null;
+  String? type = null;
   
 
   Map<String, Object> properties = {};
@@ -14,7 +14,7 @@ class NotificationData {
     return 'NotificationData[type=$type, properties=$properties, ]';
   }
 
-  NotificationData.fromJson(Map<String, dynamic> json) {
+  NotificationData.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     type =
         json['type']
@@ -37,7 +37,7 @@ class NotificationData {
     return json == null ? new List<NotificationData>() : json.map((value) => new NotificationData.fromJson(value)).toList();
   }
 
-  static Map<String, NotificationData> mapFromJson(Map<String, Map<String, dynamic>> json) {
+  static Map<String, NotificationData> mapFromJson(Map<String, Map<String, dynamic>>? json) {
     var map = new Map<String, NotificationData>();
     if (json != null && json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) => map[key] = new NotificationData.fromJson(value));

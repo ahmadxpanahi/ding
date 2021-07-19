@@ -2,25 +2,25 @@ part of swagger.api;
 
 class EditionInfoDto {
   
-  String displayName = null;
+  String? displayName = null;
   
 
-  int trialDayCount = null;
+  int? trialDayCount = null;
   
 
-  double monthlyPrice = null;
+  double? monthlyPrice = null;
   
 
-  double annualPrice = null;
+  double? annualPrice = null;
   
 
-  bool isHighestEdition = null;
+  bool? isHighestEdition = null;
   
 
-  bool isFree = null;
+  bool? isFree = null;
   
 
-  int id = null;
+  int? id = null;
   
   EditionInfoDto();
 
@@ -29,7 +29,7 @@ class EditionInfoDto {
     return 'EditionInfoDto[displayName=$displayName, trialDayCount=$trialDayCount, monthlyPrice=$monthlyPrice, annualPrice=$annualPrice, isHighestEdition=$isHighestEdition, isFree=$isFree, id=$id, ]';
   }
 
-  EditionInfoDto.fromJson(Map<String, dynamic> json) {
+  EditionInfoDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     displayName =
         json['displayName']

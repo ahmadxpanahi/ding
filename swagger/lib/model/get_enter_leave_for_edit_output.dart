@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetEnterLeaveForEditOutput {
   
-  CreateOrEditEnterLeaveDto enterLeave = null;
+  CreateOrEditEnterLeaveDto? enterLeave = null;
   
   GetEnterLeaveForEditOutput();
 
@@ -11,7 +11,7 @@ class GetEnterLeaveForEditOutput {
     return 'GetEnterLeaveForEditOutput[enterLeave=$enterLeave, ]';
   }
 
-  GetEnterLeaveForEditOutput.fromJson(Map<String, dynamic> json) {
+  GetEnterLeaveForEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     enterLeave =
       

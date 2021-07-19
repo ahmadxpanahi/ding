@@ -2,31 +2,31 @@ part of swagger.api;
 
 class GetDeviceDetailForRegistrationDto {
   
-  DeviceDto device = null;
+  DeviceDto? device = null;
   
 
-  String deviceName = null;
+  String? deviceName = null;
   
 
-  String deviceQRCode = null;
+  String? deviceQRCode = null;
   
 
-  String deviceTypeName = null;
+  String? deviceTypeName = null;
   
 
-  int editionId = null;
+  int? editionId = null;
   
 
-  String editionDisplayName = null;
+  String? editionDisplayName = null;
   
 
-  double price = null;
+  double? price = null;
   
 
-  int dayCount = null;
+  int? dayCount = null;
   
 
-  int locationsCount = null;
+  int? locationsCount = null;
   
   GetDeviceDetailForRegistrationDto();
 
@@ -35,7 +35,7 @@ class GetDeviceDetailForRegistrationDto {
     return 'GetDeviceDetailForRegistrationDto[device=$device, deviceName=$deviceName, deviceQRCode=$deviceQRCode, deviceTypeName=$deviceTypeName, editionId=$editionId, editionDisplayName=$editionDisplayName, price=$price, dayCount=$dayCount, locationsCount=$locationsCount, ]';
   }
 
-  GetDeviceDetailForRegistrationDto.fromJson(Map<String, dynamic> json) {
+  GetDeviceDetailForRegistrationDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     device =
       

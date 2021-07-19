@@ -5,13 +5,13 @@ part of swagger.api;
 class LanguageApi {
   final ApiClient apiClient;
 
-  LanguageApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  LanguageApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppLanguageCreateorupdatelanguagePost
   ///
   /// 
-  Future apiServicesAppLanguageCreateorupdatelanguagePost({ CreateOrUpdateLanguageInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppLanguageCreateorupdatelanguagePost({ CreateOrUpdateLanguageInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class LanguageApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class LanguageApi {
   /// ApiServicesAppLanguageDeletelanguageDelete
   ///
   /// 
-  Future apiServicesAppLanguageDeletelanguageDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppLanguageDeletelanguageDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -90,14 +90,14 @@ class LanguageApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -111,8 +111,8 @@ class LanguageApi {
   /// ApiServicesAppLanguageGetlanguageforeditGet
   ///
   /// 
-  Future<GetLanguageForEditOutput> apiServicesAppLanguageGetlanguageforeditGet({ int id }) async {
-    Object postBody = null;
+  Future<GetLanguageForEditOutput> apiServicesAppLanguageGetlanguageforeditGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -142,14 +142,14 @@ class LanguageApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -164,7 +164,7 @@ class LanguageApi {
   ///
   /// 
   Future<GetLanguagesOutput> apiServicesAppLanguageGetlanguagesGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -191,14 +191,14 @@ class LanguageApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -212,8 +212,8 @@ class LanguageApi {
   /// ApiServicesAppLanguageGetlanguagetextsGet
   ///
   /// 
-  Future<PagedResultDtoOfLanguageTextListDto> apiServicesAppLanguageGetlanguagetextsGet(String sourceName, String targetLanguageName, { int maxResultCount, int skipCount, String sorting, String baseLanguageName, String targetValueFilter, String filterText }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfLanguageTextListDto> apiServicesAppLanguageGetlanguagetextsGet(String sourceName, String targetLanguageName, { int? maxResultCount, int? skipCount, String? sorting, String? baseLanguageName, String? targetValueFilter, String? filterText }) async {
+    Object? postBody = null;
 
     // verify required params are set
     if(sourceName == null) {
@@ -266,14 +266,14 @@ class LanguageApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -287,8 +287,8 @@ class LanguageApi {
   /// ApiServicesAppLanguageSetdefaultlanguagePost
   ///
   /// 
-  Future apiServicesAppLanguageSetdefaultlanguagePost({ SetDefaultLanguageInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppLanguageSetdefaultlanguagePost({ SetDefaultLanguageInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -315,14 +315,14 @@ class LanguageApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -336,8 +336,8 @@ class LanguageApi {
   /// ApiServicesAppLanguageUpdatelanguagetextPut
   ///
   /// 
-  Future apiServicesAppLanguageUpdatelanguagetextPut({ UpdateLanguageTextInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppLanguageUpdatelanguagetextPut({ UpdateLanguageTextInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -364,14 +364,14 @@ class LanguageApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

@@ -2,22 +2,22 @@ part of swagger.api;
 
 class RoleListDto {
   
-  String name = null;
+  String? name = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  bool isStatic = null;
+  bool? isStatic = null;
   
 
-  bool isDefault = null;
+  bool? isDefault = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  int id = null;
+  int? id = null;
   
   RoleListDto();
 
@@ -26,7 +26,7 @@ class RoleListDto {
     return 'RoleListDto[name=$name, displayName=$displayName, isStatic=$isStatic, isDefault=$isDefault, creationTime=$creationTime, id=$id, ]';
   }
 
-  RoleListDto.fromJson(Map<String, dynamic> json) {
+  RoleListDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']
@@ -52,12 +52,12 @@ class RoleListDto {
       'displayName': displayName,
       'isStatic': isStatic,
       'isDefault': isDefault,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
       'id': id
      };
   }
 
-  static List<RoleListDto> listFromJson(List<dynamic> json) {
+  static List<RoleListDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<RoleListDto>() : json.map((value) => new RoleListDto.fromJson(value)).toList();
   }
 

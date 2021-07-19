@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetLanguageForEditOutput {
   
-  ApplicationLanguageEditDto language = null;
+  ApplicationLanguageEditDto? language = null;
   
 
   List<ComboboxItemDto> languageNames = [];
@@ -17,7 +17,7 @@ class GetLanguageForEditOutput {
     return 'GetLanguageForEditOutput[language=$language, languageNames=$languageNames, flags=$flags, ]';
   }
 
-  GetLanguageForEditOutput.fromJson(Map<String, dynamic> json) {
+  GetLanguageForEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     language =
       

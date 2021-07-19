@@ -2,10 +2,10 @@ part of swagger.api;
 
 class CancelPaymentDto {
   
-  String paymentId = null;
+  String? paymentId = null;
   
 
-  SubscriptionPaymentGatewayType gateway = null;
+  SubscriptionPaymentGatewayType? gateway = null;
   
   CancelPaymentDto();
 
@@ -14,7 +14,7 @@ class CancelPaymentDto {
     return 'CancelPaymentDto[paymentId=$paymentId, gateway=$gateway, ]';
   }
 
-  CancelPaymentDto.fromJson(Map<String, dynamic> json) {
+  CancelPaymentDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     paymentId =
         json['paymentId']

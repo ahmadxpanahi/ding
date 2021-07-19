@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetLanguagesOutput {
   
-  String defaultLanguageName = null;
+  String? defaultLanguageName = null;
   
 
   List<ApplicationLanguageListDto> items = [];
@@ -14,7 +14,7 @@ class GetLanguagesOutput {
     return 'GetLanguagesOutput[defaultLanguageName=$defaultLanguageName, items=$items, ]';
   }
 
-  GetLanguagesOutput.fromJson(Map<String, dynamic> json) {
+  GetLanguagesOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     defaultLanguageName =
         json['defaultLanguageName']

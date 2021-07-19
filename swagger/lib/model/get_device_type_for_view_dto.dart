@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetDeviceTypeForViewDto {
   
-  DeviceTypeDto deviceType = null;
+  DeviceTypeDto? deviceType = null;
   
   GetDeviceTypeForViewDto();
 
@@ -11,7 +11,7 @@ class GetDeviceTypeForViewDto {
     return 'GetDeviceTypeForViewDto[deviceType=$deviceType, ]';
   }
 
-  GetDeviceTypeForViewDto.fromJson(Map<String, dynamic> json) {
+  GetDeviceTypeForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     deviceType =
       
@@ -26,7 +26,7 @@ class GetDeviceTypeForViewDto {
      };
   }
 
-  static List<GetDeviceTypeForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetDeviceTypeForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetDeviceTypeForViewDto>() : json.map((value) => new GetDeviceTypeForViewDto.fromJson(value)).toList();
   }
 

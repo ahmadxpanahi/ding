@@ -2,7 +2,7 @@ part of swagger.api;
 
 class UpdateEditionDto {
   
-  EditionEditDto edition = null;
+  EditionEditDto? edition = null;
   
 
   List<NameValueDto> featureValues = [];
@@ -14,7 +14,7 @@ class UpdateEditionDto {
     return 'UpdateEditionDto[edition=$edition, featureValues=$featureValues, ]';
   }
 
-  UpdateEditionDto.fromJson(Map<String, dynamic> json) {
+  UpdateEditionDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     edition =
       

@@ -5,13 +5,13 @@ part of swagger.api;
 class CommonLookupApi {
   final ApiClient apiClient;
 
-  CommonLookupApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  CommonLookupApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppCommonlookupFindusersPost
   ///
   /// 
-  Future<PagedResultDtoOfNameValueDto> apiServicesAppCommonlookupFindusersPost({ FindUsersInput body }) async {
-    Object postBody = body;
+  Future<PagedResultDtoOfNameValueDto> apiServicesAppCommonlookupFindusersPost({ FindUsersInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class CommonLookupApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -60,7 +60,7 @@ class CommonLookupApi {
   ///
   /// 
   Future<GetDefaultEditionNameOutput> apiServicesAppCommonlookupGetdefaulteditionnameGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class CommonLookupApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class CommonLookupApi {
   /// ApiServicesAppCommonlookupGeteditionsforcomboboxGet
   ///
   /// 
-  Future<ListResultDtoOfSubscribableEditionComboboxItemDto> apiServicesAppCommonlookupGeteditionsforcomboboxGet({ bool onlyFreeItems }) async {
-    Object postBody = null;
+  Future<ListResultDtoOfSubscribableEditionComboboxItemDto> apiServicesAppCommonlookupGeteditionsforcomboboxGet({ bool? onlyFreeItems }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -139,14 +139,14 @@ class CommonLookupApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

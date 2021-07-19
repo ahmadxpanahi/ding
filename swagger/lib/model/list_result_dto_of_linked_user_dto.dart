@@ -11,7 +11,7 @@ class ListResultDtoOfLinkedUserDto {
     return 'ListResultDtoOfLinkedUserDto[items=$items, ]';
   }
 
-  ListResultDtoOfLinkedUserDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfLinkedUserDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       LinkedUserDto.listFromJson(json['items'])

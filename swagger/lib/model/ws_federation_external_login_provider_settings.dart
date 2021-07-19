@@ -2,19 +2,19 @@ part of swagger.api;
 
 class WsFederationExternalLoginProviderSettings {
   
-  String clientId = null;
+  String? clientId = null;
   
 
-  String tenant = null;
+  String? tenant = null;
   
 
-  String metaDataAddress = null;
+  String? metaDataAddress = null;
   
 
-  String wtrealm = null;
+  String? wtrealm = null;
   
 
-  String authority = null;
+  String? authority = null;
   
   WsFederationExternalLoginProviderSettings();
 
@@ -23,7 +23,7 @@ class WsFederationExternalLoginProviderSettings {
     return 'WsFederationExternalLoginProviderSettings[clientId=$clientId, tenant=$tenant, metaDataAddress=$metaDataAddress, wtrealm=$wtrealm, authority=$authority, ]';
   }
 
-  WsFederationExternalLoginProviderSettings.fromJson(Map<String, dynamic> json) {
+  WsFederationExternalLoginProviderSettings.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     clientId =
         json['clientId']

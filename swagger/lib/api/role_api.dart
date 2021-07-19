@@ -5,13 +5,13 @@ part of swagger.api;
 class RoleApi {
   final ApiClient apiClient;
 
-  RoleApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  RoleApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppRoleCreateorupdaterolePost
   ///
   /// 
-  Future apiServicesAppRoleCreateorupdaterolePost({ CreateOrUpdateRoleInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppRoleCreateorupdaterolePost({ CreateOrUpdateRoleInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class RoleApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class RoleApi {
   /// ApiServicesAppRoleDeleteroleDelete
   ///
   /// 
-  Future apiServicesAppRoleDeleteroleDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppRoleDeleteroleDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -90,14 +90,14 @@ class RoleApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -111,8 +111,8 @@ class RoleApi {
   /// ApiServicesAppRoleGetroleforeditGet
   ///
   /// 
-  Future<GetRoleForEditOutput> apiServicesAppRoleGetroleforeditGet({ int id }) async {
-    Object postBody = null;
+  Future<GetRoleForEditOutput> apiServicesAppRoleGetroleforeditGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -142,14 +142,14 @@ class RoleApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -163,8 +163,8 @@ class RoleApi {
   /// ApiServicesAppRoleGetrolesGet
   ///
   /// 
-  Future<ListResultDtoOfRoleListDto> apiServicesAppRoleGetrolesGet({ List<String> permissions }) async {
-    Object postBody = null;
+  Future<ListResultDtoOfRoleListDto> apiServicesAppRoleGetrolesGet({ List<String>? permissions }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -194,14 +194,14 @@ class RoleApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

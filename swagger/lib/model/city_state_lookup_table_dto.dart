@@ -2,10 +2,10 @@ part of swagger.api;
 
 class CityStateLookupTableDto {
   
-  int id = null;
+  int? id = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
   CityStateLookupTableDto();
 
@@ -14,7 +14,7 @@ class CityStateLookupTableDto {
     return 'CityStateLookupTableDto[id=$id, displayName=$displayName, ]';
   }
 
-  CityStateLookupTableDto.fromJson(Map<String, dynamic> json) {
+  CityStateLookupTableDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']
@@ -31,7 +31,7 @@ class CityStateLookupTableDto {
      };
   }
 
-  static List<CityStateLookupTableDto> listFromJson(List<dynamic> json) {
+  static List<CityStateLookupTableDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<CityStateLookupTableDto>() : json.map((value) => new CityStateLookupTableDto.fromJson(value)).toList();
   }
 

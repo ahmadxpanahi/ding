@@ -2,13 +2,13 @@ part of swagger.api;
 
 class UserLockOutSettingsEditDto {
   
-  bool isEnabled = null;
+  bool? isEnabled = null;
   
 
-  int maxFailedAccessAttemptsBeforeLockout = null;
+  int? maxFailedAccessAttemptsBeforeLockout = null;
   
 
-  int defaultAccountLockoutSeconds = null;
+  int? defaultAccountLockoutSeconds = null;
   
   UserLockOutSettingsEditDto();
 
@@ -17,7 +17,7 @@ class UserLockOutSettingsEditDto {
     return 'UserLockOutSettingsEditDto[isEnabled=$isEnabled, maxFailedAccessAttemptsBeforeLockout=$maxFailedAccessAttemptsBeforeLockout, defaultAccountLockoutSeconds=$defaultAccountLockoutSeconds, ]';
   }
 
-  UserLockOutSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  UserLockOutSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     isEnabled =
         json['isEnabled']

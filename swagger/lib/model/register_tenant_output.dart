@@ -2,73 +2,73 @@ part of swagger.api;
 
 class RegisterTenantOutput {
   
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  String tenancyName = null;
+  String? tenancyName = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  String emailAddress = null;
+  String? emailAddress = null;
   
 
-  bool isTenantActive = null;
+  bool? isTenantActive = null;
   
 
-  bool isActive = null;
+  bool? isActive = null;
   
 
-  bool isEmailConfirmationRequired = null;
+  bool? isEmailConfirmationRequired = null;
   
 
-  String seniorManagerName = null;
+  String? seniorManagerName = null;
   
 
-  String seniorManagerSurname = null;
+  String? seniorManagerSurname = null;
   
 
-  String seniorManagerPhoneNumber = null;
+  String? seniorManagerPhoneNumber = null;
   
 
-  int countryId = null;
+  int? countryId = null;
   
 
-  int stateId = null;
+  int? stateId = null;
   
 
-  int cityId = null;
+  int? cityId = null;
   
 
-  String address = null;
+  String? address = null;
   
 
-  double latitude = null;
+  double? latitude = null;
   
 
-  double longitude = null;
+  double? longitude = null;
   
 
-  String businessTypes = null;
+  String? businessTypes = null;
   
 
-  bool hasWebService = null;
+  bool? hasWebService = null;
   
 
-  DateTime lastEnterExitTime = null;
+  DateTime? lastEnterExitTime = null;
   
 
-  int purchasedUsers = null;
+  int? purchasedUsers = null;
   
 
-  int usedUsers = null;
+  int? usedUsers = null;
   
 
-  bool isVIP = null;
+  bool? isVIP = null;
   
   RegisterTenantOutput();
 
@@ -77,7 +77,7 @@ class RegisterTenantOutput {
     return 'RegisterTenantOutput[tenantId=$tenantId, tenancyName=$tenancyName, name=$name, userName=$userName, emailAddress=$emailAddress, isTenantActive=$isTenantActive, isActive=$isActive, isEmailConfirmationRequired=$isEmailConfirmationRequired, seniorManagerName=$seniorManagerName, seniorManagerSurname=$seniorManagerSurname, seniorManagerPhoneNumber=$seniorManagerPhoneNumber, countryId=$countryId, stateId=$stateId, cityId=$cityId, address=$address, latitude=$latitude, longitude=$longitude, businessTypes=$businessTypes, hasWebService=$hasWebService, lastEnterExitTime=$lastEnterExitTime, purchasedUsers=$purchasedUsers, usedUsers=$usedUsers, isVIP=$isVIP, ]';
   }
 
-  RegisterTenantOutput.fromJson(Map<String, dynamic> json) {
+  RegisterTenantOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenantId =
         json['tenantId']
@@ -169,7 +169,7 @@ class RegisterTenantOutput {
       'longitude': longitude,
       'businessTypes': businessTypes,
       'hasWebService': hasWebService,
-      'lastEnterExitTime': lastEnterExitTime == null ? '' : lastEnterExitTime.toUtc().toIso8601String(),
+      'lastEnterExitTime': lastEnterExitTime == null ? '' : lastEnterExitTime!.toUtc().toIso8601String(),
       'purchasedUsers': purchasedUsers,
       'usedUsers': usedUsers,
       'isVIP': isVIP

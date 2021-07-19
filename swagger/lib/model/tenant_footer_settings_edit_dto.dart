@@ -2,10 +2,10 @@ part of swagger.api;
 
 class TenantFooterSettingsEditDto {
   
-  String footerBody = null;
+  String? footerBody = null;
   
 
-  String copyrightText = null;
+  String? copyrightText = null;
   
   TenantFooterSettingsEditDto();
 
@@ -14,7 +14,7 @@ class TenantFooterSettingsEditDto {
     return 'TenantFooterSettingsEditDto[footerBody=$footerBody, copyrightText=$copyrightText, ]';
   }
 
-  TenantFooterSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  TenantFooterSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     footerBody =
         json['footerBody']

@@ -5,13 +5,13 @@ part of swagger.api;
 class DynamicEntityPropertyDefinitionApi {
   final ApiClient apiClient;
 
-  DynamicEntityPropertyDefinitionApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  DynamicEntityPropertyDefinitionApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppDynamicentitypropertydefinitionGetallallowedinputtypenamesGet
   ///
   /// 
   Future<List<String>> apiServicesAppDynamicentitypropertydefinitionGetallallowedinputtypenamesGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class DynamicEntityPropertyDefinitionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -60,7 +60,7 @@ class DynamicEntityPropertyDefinitionApi {
   ///
   /// 
   Future<List<String>> apiServicesAppDynamicentitypropertydefinitionGetallentitiesGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class DynamicEntityPropertyDefinitionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

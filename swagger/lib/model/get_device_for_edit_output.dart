@@ -2,10 +2,10 @@ part of swagger.api;
 
 class GetDeviceForEditOutput {
   
-  CreateOrEditDeviceDto device = null;
+  CreateOrEditDeviceDto? device = null;
   
 
-  String deviceTypeTitle = null;
+  String? deviceTypeTitle = null;
   
   GetDeviceForEditOutput();
 
@@ -14,7 +14,7 @@ class GetDeviceForEditOutput {
     return 'GetDeviceForEditOutput[device=$device, deviceTypeTitle=$deviceTypeTitle, ]';
   }
 
-  GetDeviceForEditOutput.fromJson(Map<String, dynamic> json) {
+  GetDeviceForEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     device =
       

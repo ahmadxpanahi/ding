@@ -2,31 +2,31 @@ part of swagger.api;
 
 class EditEditionDeviceFeaturesDto {
   
-  int editionId = null;
+  int? editionId = null;
   
 
-  int deviceId = null;
+  int? deviceId = null;
   
 
-  String editionName = null;
+  String? editionName = null;
   
 
-  int dayCount = null;
+  int? dayCount = null;
   
 
-  int trialDayCount = null;
+  int? trialDayCount = null;
   
 
-  int waitingDayAfterExpire = null;
+  int? waitingDayAfterExpire = null;
   
 
-  int maxUserCount = null;
+  int? maxUserCount = null;
   
 
-  int maxLocationCount = null;
+  int? maxLocationCount = null;
   
 
-  int id = null;
+  int? id = null;
   
   EditEditionDeviceFeaturesDto();
 
@@ -35,7 +35,7 @@ class EditEditionDeviceFeaturesDto {
     return 'EditEditionDeviceFeaturesDto[editionId=$editionId, deviceId=$deviceId, editionName=$editionName, dayCount=$dayCount, trialDayCount=$trialDayCount, waitingDayAfterExpire=$waitingDayAfterExpire, maxUserCount=$maxUserCount, maxLocationCount=$maxLocationCount, id=$id, ]';
   }
 
-  EditEditionDeviceFeaturesDto.fromJson(Map<String, dynamic> json) {
+  EditEditionDeviceFeaturesDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     editionId =
         json['editionId']

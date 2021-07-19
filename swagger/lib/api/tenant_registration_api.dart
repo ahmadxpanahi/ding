@@ -5,13 +5,13 @@ part of swagger.api;
 class TenantRegistrationApi {
   final ApiClient apiClient;
 
-  TenantRegistrationApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  TenantRegistrationApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppTenantregistrationGeteditionGet
   ///
   /// 
-  Future<EditionSelectDto> apiServicesAppTenantregistrationGeteditionGet({ int editionId }) async {
-    Object postBody = null;
+  Future<EditionSelectDto> apiServicesAppTenantregistrationGeteditionGet({ int? editionId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -41,14 +41,14 @@ class TenantRegistrationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -63,7 +63,7 @@ class TenantRegistrationApi {
   ///
   /// 
   Future<EditionsSelectOutput> apiServicesAppTenantregistrationGeteditionsforselectGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -90,14 +90,14 @@ class TenantRegistrationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -111,8 +111,8 @@ class TenantRegistrationApi {
   /// ApiServicesAppTenantregistrationRegistertenantPost
   ///
   /// 
-  Future<RegisterTenantOutput> apiServicesAppTenantregistrationRegistertenantPost({ RegisterTenantInput body }) async {
-    Object postBody = body;
+  Future<RegisterTenantOutput> apiServicesAppTenantregistrationRegistertenantPost({ RegisterTenantInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -139,14 +139,14 @@ class TenantRegistrationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

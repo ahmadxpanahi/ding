@@ -2,7 +2,7 @@ part of swagger.api;
 
 class NotificationSeverity {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   NotificationSeverity._internal(this.value);
 

@@ -2,10 +2,10 @@ part of swagger.api;
 
 class HostBillingSettingsEditDto {
   
-  String legalName = null;
+  String? legalName = null;
   
 
-  String address = null;
+  String? address = null;
   
   HostBillingSettingsEditDto();
 
@@ -14,7 +14,7 @@ class HostBillingSettingsEditDto {
     return 'HostBillingSettingsEditDto[legalName=$legalName, address=$address, ]';
   }
 
-  HostBillingSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  HostBillingSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     legalName =
         json['legalName']

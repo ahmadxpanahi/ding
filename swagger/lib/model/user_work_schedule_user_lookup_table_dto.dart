@@ -2,10 +2,10 @@ part of swagger.api;
 
 class UserWorkScheduleUserLookupTableDto {
   
-  int id = null;
+  int? id = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
   UserWorkScheduleUserLookupTableDto();
 
@@ -14,7 +14,7 @@ class UserWorkScheduleUserLookupTableDto {
     return 'UserWorkScheduleUserLookupTableDto[id=$id, displayName=$displayName, ]';
   }
 
-  UserWorkScheduleUserLookupTableDto.fromJson(Map<String, dynamic> json) {
+  UserWorkScheduleUserLookupTableDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']
@@ -31,7 +31,7 @@ class UserWorkScheduleUserLookupTableDto {
      };
   }
 
-  static List<UserWorkScheduleUserLookupTableDto> listFromJson(List<dynamic> json) {
+  static List<UserWorkScheduleUserLookupTableDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<UserWorkScheduleUserLookupTableDto>() : json.map((value) => new UserWorkScheduleUserLookupTableDto.fromJson(value)).toList();
   }
 

@@ -2,7 +2,7 @@ part of swagger.api;
 
 class ChangeUserLanguageDto {
   
-  String languageName = null;
+  String? languageName = null;
   
   ChangeUserLanguageDto();
 
@@ -11,7 +11,7 @@ class ChangeUserLanguageDto {
     return 'ChangeUserLanguageDto[languageName=$languageName, ]';
   }
 
-  ChangeUserLanguageDto.fromJson(Map<String, dynamic> json) {
+  ChangeUserLanguageDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     languageName =
         json['languageName']

@@ -2,28 +2,28 @@ part of swagger.api;
 
 class GetUserWorkScheduleForViewDto {
   
-  UserWorkScheduleDto userWorkSchedule = null;
+  UserWorkScheduleDto? userWorkSchedule = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  String workScheduleName = null;
+  String? workScheduleName = null;
   
 
-  WorkModelType workModelType = null;
+  WorkModelType? workModelType = null;
   
 
-  String workingTotalTime = null;
+  String? workingTotalTime = null;
   
 
   List<WorkHourDto> workHours = [];
   
 
-  DateTime startDate = null;
+  DateTime? startDate = null;
   
 
-  DateTime endDate = null;
+  DateTime? endDate = null;
   
   GetUserWorkScheduleForViewDto();
 
@@ -32,7 +32,7 @@ class GetUserWorkScheduleForViewDto {
     return 'GetUserWorkScheduleForViewDto[userWorkSchedule=$userWorkSchedule, userName=$userName, workScheduleName=$workScheduleName, workModelType=$workModelType, workingTotalTime=$workingTotalTime, workHours=$workHours, startDate=$startDate, endDate=$endDate, ]';
   }
 
-  GetUserWorkScheduleForViewDto.fromJson(Map<String, dynamic> json) {
+  GetUserWorkScheduleForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userWorkSchedule =
       
@@ -68,12 +68,12 @@ class GetUserWorkScheduleForViewDto {
       'workModelType': workModelType,
       'workingTotalTime': workingTotalTime,
       'workHours': workHours,
-      'startDate': startDate == null ? '' : startDate.toUtc().toIso8601String(),
-      'endDate': endDate == null ? '' : endDate.toUtc().toIso8601String()
+      'startDate': startDate == null ? '' : startDate!.toUtc().toIso8601String(),
+      'endDate': endDate == null ? '' : endDate!.toUtc().toIso8601String()
      };
   }
 
-  static List<GetUserWorkScheduleForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetUserWorkScheduleForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetUserWorkScheduleForViewDto>() : json.map((value) => new GetUserWorkScheduleForViewDto.fromJson(value)).toList();
   }
 

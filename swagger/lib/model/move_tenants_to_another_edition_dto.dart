@@ -2,10 +2,10 @@ part of swagger.api;
 
 class MoveTenantsToAnotherEditionDto {
   
-  int sourceEditionId = null;
+  int? sourceEditionId = null;
    // range from 1 to 2147483647//
 
-  int targetEditionId = null;
+  int? targetEditionId = null;
    // range from 1 to 2147483647//
   MoveTenantsToAnotherEditionDto();
 
@@ -14,7 +14,7 @@ class MoveTenantsToAnotherEditionDto {
     return 'MoveTenantsToAnotherEditionDto[sourceEditionId=$sourceEditionId, targetEditionId=$targetEditionId, ]';
   }
 
-  MoveTenantsToAnotherEditionDto.fromJson(Map<String, dynamic> json) {
+  MoveTenantsToAnotherEditionDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     sourceEditionId =
         json['sourceEditionId']

@@ -2,7 +2,7 @@ part of swagger.api;
 
 class EditionWithFeaturesDto {
   
-  EditionSelectDto edition = null;
+  EditionSelectDto? edition = null;
   
 
   List<NameValueDto> featureValues = [];
@@ -14,7 +14,7 @@ class EditionWithFeaturesDto {
     return 'EditionWithFeaturesDto[edition=$edition, featureValues=$featureValues, ]';
   }
 
-  EditionWithFeaturesDto.fromJson(Map<String, dynamic> json) {
+  EditionWithFeaturesDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     edition =
       
@@ -33,7 +33,7 @@ class EditionWithFeaturesDto {
      };
   }
 
-  static List<EditionWithFeaturesDto> listFromJson(List<dynamic> json) {
+  static List<EditionWithFeaturesDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<EditionWithFeaturesDto>() : json.map((value) => new EditionWithFeaturesDto.fromJson(value)).toList();
   }
 

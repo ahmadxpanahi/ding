@@ -2,13 +2,13 @@ part of swagger.api;
 
 class CreateOrEditUserWorkScheduleDto {
   
-  int userId = null;
+  int? userId = null;
   
 
-  int workScheduleId = null;
+  int? workScheduleId = null;
   
 
-  int id = null;
+  int? id = null;
   
   CreateOrEditUserWorkScheduleDto();
 
@@ -17,7 +17,7 @@ class CreateOrEditUserWorkScheduleDto {
     return 'CreateOrEditUserWorkScheduleDto[userId=$userId, workScheduleId=$workScheduleId, id=$id, ]';
   }
 
-  CreateOrEditUserWorkScheduleDto.fromJson(Map<String, dynamic> json) {
+  CreateOrEditUserWorkScheduleDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userId =
         json['userId']

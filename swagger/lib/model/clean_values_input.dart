@@ -2,10 +2,10 @@ part of swagger.api;
 
 class CleanValuesInput {
   
-  int dynamicEntityPropertyId = null;
+  int? dynamicEntityPropertyId = null;
   
 
-  String entityId = null;
+  String? entityId = null;
   
   CleanValuesInput();
 
@@ -14,7 +14,7 @@ class CleanValuesInput {
     return 'CleanValuesInput[dynamicEntityPropertyId=$dynamicEntityPropertyId, entityId=$entityId, ]';
   }
 
-  CleanValuesInput.fromJson(Map<String, dynamic> json) {
+  CleanValuesInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     dynamicEntityPropertyId =
         json['dynamicEntityPropertyId']

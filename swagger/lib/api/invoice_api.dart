@@ -5,13 +5,13 @@ part of swagger.api;
 class InvoiceApi {
   final ApiClient apiClient;
 
-  InvoiceApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  InvoiceApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppInvoiceCreateinvoicePost
   ///
   /// 
-  Future apiServicesAppInvoiceCreateinvoicePost({ CreateInvoiceDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppInvoiceCreateinvoicePost({ CreateInvoiceDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class InvoiceApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class InvoiceApi {
   /// ApiServicesAppInvoiceGetinvoiceinfoGet
   ///
   /// 
-  Future<InvoiceDto> apiServicesAppInvoiceGetinvoiceinfoGet({ int id }) async {
-    Object postBody = null;
+  Future<InvoiceDto> apiServicesAppInvoiceGetinvoiceinfoGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -90,14 +90,14 @@ class InvoiceApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

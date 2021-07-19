@@ -2,28 +2,28 @@ part of swagger.api;
 
 class CityDto {
   
-  String name = null;
+  String? name = null;
   
 
-  String stateCode = null;
+  String? stateCode = null;
   
 
-  String countryCode = null;
+  String? countryCode = null;
   
 
-  double latitude = null;
+  double? latitude = null;
   
 
-  double longitude = null;
+  double? longitude = null;
   
 
-  int stateId = null;
+  int? stateId = null;
   
 
-  int countryId = null;
+  int? countryId = null;
   
 
-  int id = null;
+  int? id = null;
   
   CityDto();
 
@@ -32,7 +32,7 @@ class CityDto {
     return 'CityDto[name=$name, stateCode=$stateCode, countryCode=$countryCode, latitude=$latitude, longitude=$longitude, stateId=$stateId, countryId=$countryId, id=$id, ]';
   }
 
-  CityDto.fromJson(Map<String, dynamic> json) {
+  CityDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']

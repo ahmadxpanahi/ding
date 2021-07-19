@@ -2,37 +2,37 @@ part of swagger.api;
 
 class EditionListDto {
   
-  EditionType editionType = null;
+  EditionType? editionType = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  double price = null;
+  double? price = null;
   
 
-  int dayCount = null;
+  int? dayCount = null;
   
 
-  int waitingDayAfterExpire = null;
+  int? waitingDayAfterExpire = null;
   
 
-  int trialDayCount = null;
+  int? trialDayCount = null;
   
 
-  String expiringEditionDisplayName = null;
+  String? expiringEditionDisplayName = null;
   
 
-  bool isActive = null;
+  bool? isActive = null;
   
 
   List<NameValue> featureValues = [];
   
 
-  int id = null;
+  int? id = null;
   
   EditionListDto();
 
@@ -41,7 +41,7 @@ class EditionListDto {
     return 'EditionListDto[editionType=$editionType, name=$name, displayName=$displayName, price=$price, dayCount=$dayCount, waitingDayAfterExpire=$waitingDayAfterExpire, trialDayCount=$trialDayCount, expiringEditionDisplayName=$expiringEditionDisplayName, isActive=$isActive, featureValues=$featureValues, id=$id, ]';
   }
 
-  EditionListDto.fromJson(Map<String, dynamic> json) {
+  EditionListDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     editionType =
       
@@ -96,7 +96,7 @@ class EditionListDto {
      };
   }
 
-  static List<EditionListDto> listFromJson(List<dynamic> json) {
+  static List<EditionListDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<EditionListDto>() : json.map((value) => new EditionListDto.fromJson(value)).toList();
   }
 

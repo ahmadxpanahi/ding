@@ -11,7 +11,7 @@ class ListResultDtoOfDynamicPropertyValueDto {
     return 'ListResultDtoOfDynamicPropertyValueDto[items=$items, ]';
   }
 
-  ListResultDtoOfDynamicPropertyValueDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfDynamicPropertyValueDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       DynamicPropertyValueDto.listFromJson(json['items'])

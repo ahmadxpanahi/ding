@@ -2,34 +2,34 @@ part of swagger.api;
 
 class TenantSettingsEditDto {
   
-  GeneralSettingsEditDto general = null;
+  GeneralSettingsEditDto? general = null;
   
 
-  TenantUserManagementSettingsEditDto userManagement = null;
+  TenantUserManagementSettingsEditDto? userManagement = null;
   
 
-  TenantEmailSettingsEditDto email = null;
+  TenantEmailSettingsEditDto? email = null;
   
 
-  LdapSettingsEditDto ldap = null;
+  LdapSettingsEditDto? ldap = null;
   
 
-  SecuritySettingsEditDto security = null;
+  SecuritySettingsEditDto? security = null;
   
 
-  TenantBillingSettingsEditDto billing = null;
+  TenantBillingSettingsEditDto? billing = null;
   
 
-  TenantFooterSettingsEditDto footer = null;
+  TenantFooterSettingsEditDto? footer = null;
   
 
-  TenantFileProtocolSettingsEditDto fileProtocol = null;
+  TenantFileProtocolSettingsEditDto? fileProtocol = null;
   
 
-  TenantOtherSettingsEditDto otherSettings = null;
+  TenantOtherSettingsEditDto? otherSettings = null;
   
 
-  ExternalLoginProviderSettingsEditDto externalLoginProviderSettings = null;
+  ExternalLoginProviderSettingsEditDto? externalLoginProviderSettings = null;
   
   TenantSettingsEditDto();
 
@@ -38,7 +38,7 @@ class TenantSettingsEditDto {
     return 'TenantSettingsEditDto[general=$general, userManagement=$userManagement, email=$email, ldap=$ldap, security=$security, billing=$billing, footer=$footer, fileProtocol=$fileProtocol, otherSettings=$otherSettings, externalLoginProviderSettings=$externalLoginProviderSettings, ]';
   }
 
-  TenantSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  TenantSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     general =
       

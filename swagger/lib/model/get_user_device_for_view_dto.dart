@@ -2,19 +2,19 @@ part of swagger.api;
 
 class GetUserDeviceForViewDto {
   
-  UserDeviceDto userDevice = null;
+  UserDeviceDto? userDevice = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  String userPhoneNumber = null;
+  String? userPhoneNumber = null;
   
 
-  String deviceName = null;
+  String? deviceName = null;
   
 
-  String deviceSerialNumber = null;
+  String? deviceSerialNumber = null;
   
   GetUserDeviceForViewDto();
 
@@ -23,7 +23,7 @@ class GetUserDeviceForViewDto {
     return 'GetUserDeviceForViewDto[userDevice=$userDevice, userName=$userName, userPhoneNumber=$userPhoneNumber, deviceName=$deviceName, deviceSerialNumber=$deviceSerialNumber, ]';
   }
 
-  GetUserDeviceForViewDto.fromJson(Map<String, dynamic> json) {
+  GetUserDeviceForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userDevice =
       
@@ -54,7 +54,7 @@ class GetUserDeviceForViewDto {
      };
   }
 
-  static List<GetUserDeviceForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetUserDeviceForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetUserDeviceForViewDto>() : json.map((value) => new GetUserDeviceForViewDto.fromJson(value)).toList();
   }
 

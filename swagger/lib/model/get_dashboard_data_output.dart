@@ -2,40 +2,40 @@ part of swagger.api;
 
 class GetDashboardDataOutput {
   
-  int totalProfit = null;
+  int? totalProfit = null;
   
 
-  int newFeedbacks = null;
+  int? newFeedbacks = null;
   
 
-  int newOrders = null;
+  int? newOrders = null;
   
 
-  int newUsers = null;
+  int? newUsers = null;
   
 
   List<SalesSummaryData> salesSummary = [];
   
 
-  int totalSales = null;
+  int? totalSales = null;
   
 
-  int revenue = null;
+  int? revenue = null;
   
 
-  int expenses = null;
+  int? expenses = null;
   
 
-  int growth = null;
+  int? growth = null;
   
 
-  int transactionPercent = null;
+  int? transactionPercent = null;
   
 
-  int newVisitPercent = null;
+  int? newVisitPercent = null;
   
 
-  int bouncePercent = null;
+  int? bouncePercent = null;
   
 
   List<int> dailySales = [];
@@ -50,7 +50,7 @@ class GetDashboardDataOutput {
     return 'GetDashboardDataOutput[totalProfit=$totalProfit, newFeedbacks=$newFeedbacks, newOrders=$newOrders, newUsers=$newUsers, salesSummary=$salesSummary, totalSales=$totalSales, revenue=$revenue, expenses=$expenses, growth=$growth, transactionPercent=$transactionPercent, newVisitPercent=$newVisitPercent, bouncePercent=$bouncePercent, dailySales=$dailySales, profitShares=$profitShares, ]';
   }
 
-  GetDashboardDataOutput.fromJson(Map<String, dynamic> json) {
+  GetDashboardDataOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     totalProfit =
         json['totalProfit']

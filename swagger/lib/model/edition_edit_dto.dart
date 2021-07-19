@@ -2,31 +2,31 @@ part of swagger.api;
 
 class EditionEditDto {
   
-  int id = null;
+  int? id = null;
   
 
-  EditionType editionType = null;
+  EditionType? editionType = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  double price = null;
+  double? price = null;
   
 
-  int dayCount = null;
+  int? dayCount = null;
   
 
-  int trialDayCount = null;
+  int? trialDayCount = null;
   
 
-  int waitingDayAfterExpire = null;
+  int? waitingDayAfterExpire = null;
   
 
-  int expiringEditionId = null;
+  int? expiringEditionId = null;
   
 
-  bool isActive = null;
+  bool? isActive = null;
   
   EditionEditDto();
 
@@ -35,7 +35,7 @@ class EditionEditDto {
     return 'EditionEditDto[id=$id, editionType=$editionType, displayName=$displayName, price=$price, dayCount=$dayCount, trialDayCount=$trialDayCount, waitingDayAfterExpire=$waitingDayAfterExpire, expiringEditionId=$expiringEditionId, isActive=$isActive, ]';
   }
 
-  EditionEditDto.fromJson(Map<String, dynamic> json) {
+  EditionEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']

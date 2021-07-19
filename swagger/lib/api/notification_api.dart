@@ -5,13 +5,13 @@ part of swagger.api;
 class NotificationApi {
   final ApiClient apiClient;
 
-  NotificationApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  NotificationApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppNotificationDeleteallusernotificationsDelete
   ///
   /// 
-  Future apiServicesAppNotificationDeleteallusernotificationsDelete({ String state, DateTime startDate, DateTime endDate }) async {
-    Object postBody = null;
+  Future apiServicesAppNotificationDeleteallusernotificationsDelete({ String? state, DateTime? startDate, DateTime? endDate }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -47,14 +47,14 @@ class NotificationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -68,8 +68,8 @@ class NotificationApi {
   /// ApiServicesAppNotificationDeletenotificationDelete
   ///
   /// 
-  Future apiServicesAppNotificationDeletenotificationDelete({ String id }) async {
-    Object postBody = null;
+  Future apiServicesAppNotificationDeletenotificationDelete({ String? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -99,14 +99,14 @@ class NotificationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -121,7 +121,7 @@ class NotificationApi {
   ///
   /// 
   Future<GetNotificationSettingsOutput> apiServicesAppNotificationGetnotificationsettingsGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -148,14 +148,14 @@ class NotificationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -169,8 +169,8 @@ class NotificationApi {
   /// ApiServicesAppNotificationGetusernotificationsGet
   ///
   /// 
-  Future<GetNotificationsOutput> apiServicesAppNotificationGetusernotificationsGet({ String state, DateTime startDate, DateTime endDate, int maxResultCount, int skipCount }) async {
-    Object postBody = null;
+  Future<GetNotificationsOutput> apiServicesAppNotificationGetusernotificationsGet({ String? state, DateTime? startDate, DateTime? endDate, int? maxResultCount, int? skipCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -212,14 +212,14 @@ class NotificationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -234,7 +234,7 @@ class NotificationApi {
   ///
   /// 
   Future apiServicesAppNotificationSetallnotificationsasreadPost() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -261,14 +261,14 @@ class NotificationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -282,8 +282,8 @@ class NotificationApi {
   /// ApiServicesAppNotificationSetnotificationasreadPost
   ///
   /// 
-  Future apiServicesAppNotificationSetnotificationasreadPost({ EntityDtoOfGuid body }) async {
-    Object postBody = body;
+  Future apiServicesAppNotificationSetnotificationasreadPost({ EntityDtoOfGuid? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -310,14 +310,14 @@ class NotificationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -331,8 +331,8 @@ class NotificationApi {
   /// ApiServicesAppNotificationUpdatenotificationsettingsPut
   ///
   /// 
-  Future apiServicesAppNotificationUpdatenotificationsettingsPut({ UpdateNotificationSettingsInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppNotificationUpdatenotificationsettingsPut({ UpdateNotificationSettingsInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -359,14 +359,14 @@ class NotificationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

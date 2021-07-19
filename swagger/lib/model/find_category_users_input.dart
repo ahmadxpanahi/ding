@@ -2,16 +2,16 @@ part of swagger.api;
 
 class FindCategoryUsersInput {
   
-  int categoryId = null;
+  int? categoryId = null;
   
 
-  int maxResultCount = null;
+  int? maxResultCount = null;
    // range from 1 to 1000//
 
-  int skipCount = null;
+  int? skipCount = null;
    // range from 0 to 2147483647//
 
-  String filter = null;
+  String? filter = null;
   
   FindCategoryUsersInput();
 
@@ -20,7 +20,7 @@ class FindCategoryUsersInput {
     return 'FindCategoryUsersInput[categoryId=$categoryId, maxResultCount=$maxResultCount, skipCount=$skipCount, filter=$filter, ]';
   }
 
-  FindCategoryUsersInput.fromJson(Map<String, dynamic> json) {
+  FindCategoryUsersInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     categoryId =
         json['categoryId']

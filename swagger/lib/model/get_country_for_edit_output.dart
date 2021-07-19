@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetCountryForEditOutput {
   
-  CreateOrEditCountryDto country = null;
+  CreateOrEditCountryDto? country = null;
   
   GetCountryForEditOutput();
 
@@ -11,7 +11,7 @@ class GetCountryForEditOutput {
     return 'GetCountryForEditOutput[country=$country, ]';
   }
 
-  GetCountryForEditOutput.fromJson(Map<String, dynamic> json) {
+  GetCountryForEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     country =
       

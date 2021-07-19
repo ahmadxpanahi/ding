@@ -2,13 +2,13 @@ part of swagger.api;
 
 class IncomeStastistic {
   
-  String label = null;
+  String? label = null;
   
 
-  DateTime date = null;
+  DateTime? date = null;
   
 
-  double amount = null;
+  double? amount = null;
   
   IncomeStastistic();
 
@@ -17,7 +17,7 @@ class IncomeStastistic {
     return 'IncomeStastistic[label=$label, date=$date, amount=$amount, ]';
   }
 
-  IncomeStastistic.fromJson(Map<String, dynamic> json) {
+  IncomeStastistic.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     label =
         json['label']
@@ -31,12 +31,12 @@ class IncomeStastistic {
   Map<String, dynamic> toJson() {
     return {
       'label': label,
-      'date': date == null ? '' : date.toUtc().toIso8601String(),
+      'date': date == null ? '' : date!.toUtc().toIso8601String(),
       'amount': amount
      };
   }
 
-  static List<IncomeStastistic> listFromJson(List<dynamic> json) {
+  static List<IncomeStastistic> listFromJson(List<dynamic>? json) {
     return json == null ? new List<IncomeStastistic>() : json.map((value) => new IncomeStastistic.fromJson(value)).toList();
   }
 

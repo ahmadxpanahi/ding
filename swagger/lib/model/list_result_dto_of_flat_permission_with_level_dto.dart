@@ -11,7 +11,7 @@ class ListResultDtoOfFlatPermissionWithLevelDto {
     return 'ListResultDtoOfFlatPermissionWithLevelDto[items=$items, ]';
   }
 
-  ListResultDtoOfFlatPermissionWithLevelDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfFlatPermissionWithLevelDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       FlatPermissionWithLevelDto.listFromJson(json['items'])

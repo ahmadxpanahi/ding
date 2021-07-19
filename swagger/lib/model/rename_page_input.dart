@@ -2,16 +2,16 @@ part of swagger.api;
 
 class RenamePageInput {
   
-  String dashboardName = null;
+  String? dashboardName = null;
   
 
-  String id = null;
+  String? id = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  String application = null;
+  String? application = null;
   
   RenamePageInput();
 
@@ -20,7 +20,7 @@ class RenamePageInput {
     return 'RenamePageInput[dashboardName=$dashboardName, id=$id, name=$name, application=$application, ]';
   }
 
-  RenamePageInput.fromJson(Map<String, dynamic> json) {
+  RenamePageInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     dashboardName =
         json['dashboardName']

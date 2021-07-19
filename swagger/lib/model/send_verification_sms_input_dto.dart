@@ -2,7 +2,7 @@ part of swagger.api;
 
 class SendVerificationSmsInputDto {
   
-  String phoneNumber = null;
+  String? phoneNumber = null;
   
   SendVerificationSmsInputDto();
 
@@ -11,7 +11,7 @@ class SendVerificationSmsInputDto {
     return 'SendVerificationSmsInputDto[phoneNumber=$phoneNumber, ]';
   }
 
-  SendVerificationSmsInputDto.fromJson(Map<String, dynamic> json) {
+  SendVerificationSmsInputDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     phoneNumber =
         json['phoneNumber']

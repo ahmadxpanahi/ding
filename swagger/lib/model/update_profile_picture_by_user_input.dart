@@ -2,25 +2,25 @@ part of swagger.api;
 
 class UpdateProfilePictureByUserInput {
   
-  int userId = null;
+  int? userId = null;
   
 
-  String fileToken = null;
+  String? fileToken = null;
   
 
-  String imageByte = null;
+  String? imageByte = null;
   
 
-  int x = null;
+  int? x = null;
   
 
-  int y = null;
+  int? y = null;
   
 
-  int width = null;
+  int? width = null;
   
 
-  int height = null;
+  int? height = null;
   
   UpdateProfilePictureByUserInput();
 
@@ -29,7 +29,7 @@ class UpdateProfilePictureByUserInput {
     return 'UpdateProfilePictureByUserInput[userId=$userId, fileToken=$fileToken, imageByte=$imageByte, x=$x, y=$y, width=$width, height=$height, ]';
   }
 
-  UpdateProfilePictureByUserInput.fromJson(Map<String, dynamic> json) {
+  UpdateProfilePictureByUserInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userId =
         json['userId']

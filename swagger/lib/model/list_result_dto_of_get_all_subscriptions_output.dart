@@ -11,7 +11,7 @@ class ListResultDtoOfGetAllSubscriptionsOutput {
     return 'ListResultDtoOfGetAllSubscriptionsOutput[items=$items, ]';
   }
 
-  ListResultDtoOfGetAllSubscriptionsOutput.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfGetAllSubscriptionsOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       GetAllSubscriptionsOutput.listFromJson(json['items'])

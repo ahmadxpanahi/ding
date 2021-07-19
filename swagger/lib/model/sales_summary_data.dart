@@ -2,13 +2,13 @@ part of swagger.api;
 
 class SalesSummaryData {
   
-  String period = null;
+  String? period = null;
   
 
-  int sales = null;
+  int? sales = null;
   
 
-  int profit = null;
+  int? profit = null;
   
   SalesSummaryData();
 
@@ -17,7 +17,7 @@ class SalesSummaryData {
     return 'SalesSummaryData[period=$period, sales=$sales, profit=$profit, ]';
   }
 
-  SalesSummaryData.fromJson(Map<String, dynamic> json) {
+  SalesSummaryData.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     period =
         json['period']
@@ -38,7 +38,7 @@ class SalesSummaryData {
      };
   }
 
-  static List<SalesSummaryData> listFromJson(List<dynamic> json) {
+  static List<SalesSummaryData> listFromJson(List<dynamic>? json) {
     return json == null ? new List<SalesSummaryData>() : json.map((value) => new SalesSummaryData.fromJson(value)).toList();
   }
 

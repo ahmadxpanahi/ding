@@ -2,13 +2,13 @@ part of swagger.api;
 
 class GetEmployeeLeaveReportForViewDto {
   
-  EmployeeLeaveReportDto employeeLeaveReport = null;
+  EmployeeLeaveReportDto? employeeLeaveReport = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  int userId = null;
+  int? userId = null;
   
   GetEmployeeLeaveReportForViewDto();
 
@@ -17,7 +17,7 @@ class GetEmployeeLeaveReportForViewDto {
     return 'GetEmployeeLeaveReportForViewDto[employeeLeaveReport=$employeeLeaveReport, userName=$userName, userId=$userId, ]';
   }
 
-  GetEmployeeLeaveReportForViewDto.fromJson(Map<String, dynamic> json) {
+  GetEmployeeLeaveReportForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     employeeLeaveReport =
       
@@ -40,7 +40,7 @@ class GetEmployeeLeaveReportForViewDto {
      };
   }
 
-  static List<GetEmployeeLeaveReportForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetEmployeeLeaveReportForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetEmployeeLeaveReportForViewDto>() : json.map((value) => new GetEmployeeLeaveReportForViewDto.fromJson(value)).toList();
   }
 

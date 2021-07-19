@@ -2,13 +2,13 @@ part of swagger.api;
 
 class GetGeneralStatsOutput {
   
-  int transactionPercent = null;
+  int? transactionPercent = null;
   
 
-  int newVisitPercent = null;
+  int? newVisitPercent = null;
   
 
-  int bouncePercent = null;
+  int? bouncePercent = null;
   
   GetGeneralStatsOutput();
 
@@ -17,7 +17,7 @@ class GetGeneralStatsOutput {
     return 'GetGeneralStatsOutput[transactionPercent=$transactionPercent, newVisitPercent=$newVisitPercent, bouncePercent=$bouncePercent, ]';
   }
 
-  GetGeneralStatsOutput.fromJson(Map<String, dynamic> json) {
+  GetGeneralStatsOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     transactionPercent =
         json['transactionPercent']

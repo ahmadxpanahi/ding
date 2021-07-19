@@ -2,16 +2,16 @@ part of swagger.api;
 
 class GetAllForLookupTableInput {
   
-  String filter = null;
+  String? filter = null;
   
 
-  String sorting = null;
+  String? sorting = null;
   
 
-  int skipCount = null;
+  int? skipCount = null;
    // range from 0 to 2147483647//
 
-  int maxResultCount = null;
+  int? maxResultCount = null;
    // range from 1 to 2147483647//
   GetAllForLookupTableInput();
 
@@ -20,7 +20,7 @@ class GetAllForLookupTableInput {
     return 'GetAllForLookupTableInput[filter=$filter, sorting=$sorting, skipCount=$skipCount, maxResultCount=$maxResultCount, ]';
   }
 
-  GetAllForLookupTableInput.fromJson(Map<String, dynamic> json) {
+  GetAllForLookupTableInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     filter =
         json['filter']

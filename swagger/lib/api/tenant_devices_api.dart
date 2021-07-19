@@ -5,13 +5,13 @@ part of swagger.api;
 class TenantDevicesApi {
   final ApiClient apiClient;
 
-  TenantDevicesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  TenantDevicesApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppTenantdevicesAssignnewtenanttodevicePost
   ///
   /// 
-  Future apiServicesAppTenantdevicesAssignnewtenanttodevicePost({ CreateOrEditTenantDeviceDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppTenantdevicesAssignnewtenanttodevicePost({ CreateOrEditTenantDeviceDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class TenantDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class TenantDevicesApi {
   /// ApiServicesAppTenantdevicesCreateoreditPost
   ///
   /// 
-  Future apiServicesAppTenantdevicesCreateoreditPost({ CreateOrEditTenantDeviceDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppTenantdevicesCreateoreditPost({ CreateOrEditTenantDeviceDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class TenantDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class TenantDevicesApi {
   /// ApiServicesAppTenantdevicesDeleteDelete
   ///
   /// 
-  Future apiServicesAppTenantdevicesDeleteDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppTenantdevicesDeleteDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -139,14 +139,14 @@ class TenantDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -160,8 +160,8 @@ class TenantDevicesApi {
   /// ApiServicesAppTenantdevicesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetTenantDeviceForViewDto> apiServicesAppTenantdevicesGetallGet({ String filter, String deviceSerialNumberFilter, String tenantNameFilter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetTenantDeviceForViewDto> apiServicesAppTenantdevicesGetallGet({ String? filter, String? deviceSerialNumberFilter, String? tenantNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -206,14 +206,14 @@ class TenantDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -227,8 +227,8 @@ class TenantDevicesApi {
   /// ApiServicesAppTenantdevicesGetalldeviceforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfTenantDeviceDeviceLookupTableDto> apiServicesAppTenantdevicesGetalldeviceforlookuptableGet({ String filter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfTenantDeviceDeviceLookupTableDto> apiServicesAppTenantdevicesGetalldeviceforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -267,14 +267,14 @@ class TenantDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -288,8 +288,8 @@ class TenantDevicesApi {
   /// ApiServicesAppTenantdevicesGetalltenantdevicesGet
   ///
   /// 
-  Future<PagedResultDtoOfGetTenantDeviceForViewDto> apiServicesAppTenantdevicesGetalltenantdevicesGet({ String filter, String deviceSerialNumberFilter, String tenantNameFilter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetTenantDeviceForViewDto> apiServicesAppTenantdevicesGetalltenantdevicesGet({ String? filter, String? deviceSerialNumberFilter, String? tenantNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -334,14 +334,14 @@ class TenantDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -355,8 +355,8 @@ class TenantDevicesApi {
   /// ApiServicesAppTenantdevicesGetalltenantforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfTenantDeviceTenantLookupTableDto> apiServicesAppTenantdevicesGetalltenantforlookuptableGet({ String filter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfTenantDeviceTenantLookupTableDto> apiServicesAppTenantdevicesGetalltenantforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -395,14 +395,14 @@ class TenantDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -416,8 +416,8 @@ class TenantDevicesApi {
   /// ApiServicesAppTenantdevicesGettenantdeviceforviewGet
   ///
   /// 
-  Future<GetTenantDeviceForViewDto> apiServicesAppTenantdevicesGettenantdeviceforviewGet({ int id }) async {
-    Object postBody = null;
+  Future<GetTenantDeviceForViewDto> apiServicesAppTenantdevicesGettenantdeviceforviewGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -447,14 +447,14 @@ class TenantDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -468,8 +468,8 @@ class TenantDevicesApi {
   /// ApiServicesAppTenantdevicesGettenantdevicestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppTenantdevicesGettenantdevicestoexcelGet({ String filter, String deviceSerialNumberFilter, String tenantNameFilter }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppTenantdevicesGettenantdevicestoexcelGet({ String? filter, String? deviceSerialNumberFilter, String? tenantNameFilter }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -505,14 +505,14 @@ class TenantDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -526,8 +526,8 @@ class TenantDevicesApi {
   /// ApiServicesAppTenantdevicesRemovealltenantdevicesDelete
   ///
   /// 
-  Future apiServicesAppTenantdevicesRemovealltenantdevicesDelete({ int deviceId }) async {
-    Object postBody = null;
+  Future apiServicesAppTenantdevicesRemovealltenantdevicesDelete({ int? deviceId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -557,14 +557,14 @@ class TenantDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

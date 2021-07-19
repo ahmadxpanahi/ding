@@ -2,52 +2,52 @@ part of swagger.api;
 
 class GetTenantDeviceForViewDto {
   
-  TenantDeviceDto tenantDevice = null;
+  TenantDeviceDto? tenantDevice = null;
   
 
-  String deviceSerialNumber = null;
+  String? deviceSerialNumber = null;
   
 
-  String tenantName = null;
+  String? tenantName = null;
   
 
-  String tenancyCodeName = null;
+  String? tenancyCodeName = null;
   
 
-  String deviceName = null;
+  String? deviceName = null;
   
 
-  String deviceQRCode = null;
+  String? deviceQRCode = null;
   
 
-  String deviceTypeName = null;
+  String? deviceTypeName = null;
   
 
-  DeviceStatus deviceStatus = null;
+  DeviceStatus? deviceStatus = null;
   
 
-  String editionDisplayName = null;
+  String? editionDisplayName = null;
   
 
-  double price = null;
+  double? price = null;
   
 
-  int dayCount = null;
+  int? dayCount = null;
   
 
-  int maxUserCount = null;
+  int? maxUserCount = null;
   
 
-  int maxLocationCount = null;
+  int? maxLocationCount = null;
   
 
-  int usedUserCount = null;
+  int? usedUserCount = null;
   
 
-  int usedLocationCount = null;
+  int? usedLocationCount = null;
   
 
-  String purchasingResourceTitle = null;
+  String? purchasingResourceTitle = null;
   
   GetTenantDeviceForViewDto();
 
@@ -56,7 +56,7 @@ class GetTenantDeviceForViewDto {
     return 'GetTenantDeviceForViewDto[tenantDevice=$tenantDevice, deviceSerialNumber=$deviceSerialNumber, tenantName=$tenantName, tenancyCodeName=$tenancyCodeName, deviceName=$deviceName, deviceQRCode=$deviceQRCode, deviceTypeName=$deviceTypeName, deviceStatus=$deviceStatus, editionDisplayName=$editionDisplayName, price=$price, dayCount=$dayCount, maxUserCount=$maxUserCount, maxLocationCount=$maxLocationCount, usedUserCount=$usedUserCount, usedLocationCount=$usedLocationCount, purchasingResourceTitle=$purchasingResourceTitle, ]';
   }
 
-  GetTenantDeviceForViewDto.fromJson(Map<String, dynamic> json) {
+  GetTenantDeviceForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenantDevice =
       
@@ -133,7 +133,7 @@ class GetTenantDeviceForViewDto {
      };
   }
 
-  static List<GetTenantDeviceForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetTenantDeviceForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetTenantDeviceForViewDto>() : json.map((value) => new GetTenantDeviceForViewDto.fromJson(value)).toList();
   }
 

@@ -2,7 +2,7 @@ part of swagger.api;
 
 class IsTenantAvailableInput {
   
-  String tenancyName = null;
+  String? tenancyName = null;
   
   IsTenantAvailableInput();
 
@@ -11,7 +11,7 @@ class IsTenantAvailableInput {
     return 'IsTenantAvailableInput[tenancyName=$tenancyName, ]';
   }
 
-  IsTenantAvailableInput.fromJson(Map<String, dynamic> json) {
+  IsTenantAvailableInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenancyName =
         json['tenancyName']

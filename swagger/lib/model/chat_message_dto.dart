@@ -2,37 +2,37 @@ part of swagger.api;
 
 class ChatMessageDto {
   
-  int userId = null;
+  int? userId = null;
   
 
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  int targetUserId = null;
+  int? targetUserId = null;
   
 
-  int targetTenantId = null;
+  int? targetTenantId = null;
   
 
-  ChatSide side = null;
+  ChatSide? side = null;
   
 
-  ChatMessageReadState readState = null;
+  ChatMessageReadState? readState = null;
   
 
-  ChatMessageReadState receiverReadState = null;
+  ChatMessageReadState? receiverReadState = null;
   
 
-  String message = null;
+  String? message = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  String sharedMessageId = null;
+  String? sharedMessageId = null;
   
 
-  int id = null;
+  int? id = null;
   
   ChatMessageDto();
 
@@ -41,7 +41,7 @@ class ChatMessageDto {
     return 'ChatMessageDto[userId=$userId, tenantId=$tenantId, targetUserId=$targetUserId, targetTenantId=$targetTenantId, side=$side, readState=$readState, receiverReadState=$receiverReadState, message=$message, creationTime=$creationTime, sharedMessageId=$sharedMessageId, id=$id, ]';
   }
 
-  ChatMessageDto.fromJson(Map<String, dynamic> json) {
+  ChatMessageDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userId =
         json['userId']
@@ -92,13 +92,13 @@ class ChatMessageDto {
       'readState': readState,
       'receiverReadState': receiverReadState,
       'message': message,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
       'sharedMessageId': sharedMessageId,
       'id': id
      };
   }
 
-  static List<ChatMessageDto> listFromJson(List<dynamic> json) {
+  static List<ChatMessageDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<ChatMessageDto>() : json.map((value) => new ChatMessageDto.fromJson(value)).toList();
   }
 

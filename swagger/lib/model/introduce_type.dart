@@ -2,7 +2,7 @@ part of swagger.api;
 
 class IntroduceType {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   IntroduceType._internal(this.value);
 

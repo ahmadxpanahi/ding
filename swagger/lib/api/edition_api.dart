@@ -5,13 +5,13 @@ part of swagger.api;
 class EditionApi {
   final ApiClient apiClient;
 
-  EditionApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  EditionApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppEditionCreateeditionPost
   ///
   /// 
-  Future apiServicesAppEditionCreateeditionPost({ CreateEditionDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppEditionCreateeditionPost({ CreateEditionDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class EditionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class EditionApi {
   /// ApiServicesAppEditionDeleteeditionDelete
   ///
   /// 
-  Future apiServicesAppEditionDeleteeditionDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppEditionDeleteeditionDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -90,14 +90,14 @@ class EditionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -111,8 +111,8 @@ class EditionApi {
   /// ApiServicesAppEditionGeteditioncomboboxitemsGet
   ///
   /// 
-  Future<List<SubscribableEditionComboboxItemDto>> apiServicesAppEditionGeteditioncomboboxitemsGet({ int selectedEditionId, bool addAllItem, bool onlyFreeItems }) async {
-    Object postBody = null;
+  Future<List<SubscribableEditionComboboxItemDto>> apiServicesAppEditionGeteditioncomboboxitemsGet({ int? selectedEditionId, bool? addAllItem, bool? onlyFreeItems }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -148,14 +148,14 @@ class EditionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -169,8 +169,8 @@ class EditionApi {
   /// ApiServicesAppEditionGeteditionforeditGet
   ///
   /// 
-  Future<GetEditionEditOutput> apiServicesAppEditionGeteditionforeditGet({ int id }) async {
-    Object postBody = null;
+  Future<GetEditionEditOutput> apiServicesAppEditionGeteditionforeditGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -200,14 +200,14 @@ class EditionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -221,8 +221,8 @@ class EditionApi {
   /// ApiServicesAppEditionGeteditionsGet
   ///
   /// 
-  Future<ListResultDtoOfEditionListDto> apiServicesAppEditionGeteditionsGet({ String filter, int editionTypeFilter, int isActiveFilter }) async {
-    Object postBody = null;
+  Future<ListResultDtoOfEditionListDto> apiServicesAppEditionGeteditionsGet({ String? filter, int? editionTypeFilter, int? isActiveFilter }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -258,14 +258,14 @@ class EditionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -279,8 +279,8 @@ class EditionApi {
   /// ApiServicesAppEditionGettenantcountGet
   ///
   /// 
-  Future<int> apiServicesAppEditionGettenantcountGet({ int editionId }) async {
-    Object postBody = null;
+  Future<int> apiServicesAppEditionGettenantcountGet({ int? editionId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -310,14 +310,14 @@ class EditionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -331,8 +331,8 @@ class EditionApi {
   /// ApiServicesAppEditionMovetenantstoanothereditionPost
   ///
   /// 
-  Future apiServicesAppEditionMovetenantstoanothereditionPost({ MoveTenantsToAnotherEditionDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppEditionMovetenantstoanothereditionPost({ MoveTenantsToAnotherEditionDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -359,14 +359,14 @@ class EditionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -380,8 +380,8 @@ class EditionApi {
   /// ApiServicesAppEditionUpdateeditionPut
   ///
   /// 
-  Future apiServicesAppEditionUpdateeditionPut({ UpdateEditionDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppEditionUpdateeditionPut({ UpdateEditionDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -408,14 +408,14 @@ class EditionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

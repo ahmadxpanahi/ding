@@ -2,10 +2,10 @@ part of swagger.api;
 
 class ChangePasswordInput {
   
-  String currentPassword = null;
+  String? currentPassword = null;
   
 
-  String newPassword = null;
+  String? newPassword = null;
   
   ChangePasswordInput();
 
@@ -14,7 +14,7 @@ class ChangePasswordInput {
     return 'ChangePasswordInput[currentPassword=$currentPassword, newPassword=$newPassword, ]';
   }
 
-  ChangePasswordInput.fromJson(Map<String, dynamic> json) {
+  ChangePasswordInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     currentPassword =
         json['currentPassword']

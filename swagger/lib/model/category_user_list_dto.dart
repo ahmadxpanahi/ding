@@ -2,25 +2,25 @@ part of swagger.api;
 
 class CategoryUserListDto {
   
-  String name = null;
+  String? name = null;
   
 
-  String surname = null;
+  String? surname = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  String emailAddress = null;
+  String? emailAddress = null;
   
 
-  String profilePictureId = null;
+  String? profilePictureId = null;
   
 
-  DateTime addedTime = null;
+  DateTime? addedTime = null;
   
 
-  int id = null;
+  int? id = null;
   
   CategoryUserListDto();
 
@@ -29,7 +29,7 @@ class CategoryUserListDto {
     return 'CategoryUserListDto[name=$name, surname=$surname, userName=$userName, emailAddress=$emailAddress, profilePictureId=$profilePictureId, addedTime=$addedTime, id=$id, ]';
   }
 
-  CategoryUserListDto.fromJson(Map<String, dynamic> json) {
+  CategoryUserListDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']
@@ -59,12 +59,12 @@ class CategoryUserListDto {
       'userName': userName,
       'emailAddress': emailAddress,
       'profilePictureId': profilePictureId,
-      'addedTime': addedTime == null ? '' : addedTime.toUtc().toIso8601String(),
+      'addedTime': addedTime == null ? '' : addedTime!.toUtc().toIso8601String(),
       'id': id
      };
   }
 
-  static List<CategoryUserListDto> listFromJson(List<dynamic> json) {
+  static List<CategoryUserListDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<CategoryUserListDto>() : json.map((value) => new CategoryUserListDto.fromJson(value)).toList();
   }
 

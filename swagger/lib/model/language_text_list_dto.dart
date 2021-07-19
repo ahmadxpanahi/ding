@@ -2,13 +2,13 @@ part of swagger.api;
 
 class LanguageTextListDto {
   
-  String key = null;
+  String? key = null;
   
 
-  String baseValue = null;
+  String? baseValue = null;
   
 
-  String targetValue = null;
+  String? targetValue = null;
   
   LanguageTextListDto();
 
@@ -17,7 +17,7 @@ class LanguageTextListDto {
     return 'LanguageTextListDto[key=$key, baseValue=$baseValue, targetValue=$targetValue, ]';
   }
 
-  LanguageTextListDto.fromJson(Map<String, dynamic> json) {
+  LanguageTextListDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     key =
         json['key']
@@ -38,7 +38,7 @@ class LanguageTextListDto {
      };
   }
 
-  static List<LanguageTextListDto> listFromJson(List<dynamic> json) {
+  static List<LanguageTextListDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<LanguageTextListDto>() : json.map((value) => new LanguageTextListDto.fromJson(value)).toList();
   }
 

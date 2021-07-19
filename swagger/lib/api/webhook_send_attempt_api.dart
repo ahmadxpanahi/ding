@@ -5,13 +5,13 @@ part of swagger.api;
 class WebhookSendAttemptApi {
   final ApiClient apiClient;
 
-  WebhookSendAttemptApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  WebhookSendAttemptApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppWebhooksendattemptGetallsendattemptsGet
   ///
   /// 
-  Future<PagedResultDtoOfGetAllSendAttemptsOutput> apiServicesAppWebhooksendattemptGetallsendattemptsGet({ String subscriptionId, int maxResultCount, int skipCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetAllSendAttemptsOutput> apiServicesAppWebhooksendattemptGetallsendattemptsGet({ String? subscriptionId, int? maxResultCount, int? skipCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -47,14 +47,14 @@ class WebhookSendAttemptApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -68,8 +68,8 @@ class WebhookSendAttemptApi {
   /// ApiServicesAppWebhooksendattemptGetallsendattemptsofwebhookeventGet
   ///
   /// 
-  Future<ListResultDtoOfGetAllSendAttemptsOfWebhookEventOutput> apiServicesAppWebhooksendattemptGetallsendattemptsofwebhookeventGet({ String id }) async {
-    Object postBody = null;
+  Future<ListResultDtoOfGetAllSendAttemptsOfWebhookEventOutput> apiServicesAppWebhooksendattemptGetallsendattemptsofwebhookeventGet({ String? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -99,14 +99,14 @@ class WebhookSendAttemptApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -120,8 +120,8 @@ class WebhookSendAttemptApi {
   /// ApiServicesAppWebhooksendattemptResendPost
   ///
   /// 
-  Future apiServicesAppWebhooksendattemptResendPost({ String sendAttemptId }) async {
-    Object postBody = null;
+  Future apiServicesAppWebhooksendattemptResendPost({ String? sendAttemptId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -151,14 +151,14 @@ class WebhookSendAttemptApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

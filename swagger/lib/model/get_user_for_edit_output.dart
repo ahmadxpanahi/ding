@@ -2,10 +2,10 @@ part of swagger.api;
 
 class GetUserForEditOutput {
   
-  String profilePictureId = null;
+  String? profilePictureId = null;
   
 
-  UserEditDto user = null;
+  UserEditDto? user = null;
   
 
   List<UserRoleDto> roles = [];
@@ -32,7 +32,7 @@ class GetUserForEditOutput {
     return 'GetUserForEditOutput[profilePictureId=$profilePictureId, user=$user, roles=$roles, devices=$devices, workSchedules=$workSchedules, vacationTypes=$vacationTypes, allOrganizationUnits=$allOrganizationUnits, memberedOrganizationUnits=$memberedOrganizationUnits, ]';
   }
 
-  GetUserForEditOutput.fromJson(Map<String, dynamic> json) {
+  GetUserForEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     profilePictureId =
         json['profilePictureId']

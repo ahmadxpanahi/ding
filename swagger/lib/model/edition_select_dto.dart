@@ -2,40 +2,40 @@ part of swagger.api;
 
 class EditionSelectDto {
   
-  int id = null;
+  int? id = null;
   
 
-  EditionType editionType = null;
+  EditionType? editionType = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  int expiringEditionId = null;
+  int? expiringEditionId = null;
   
 
-  double price = null;
+  double? price = null;
   
 
-  int dayCount = null;
+  int? dayCount = null;
   
 
-  int trialDayCount = null;
+  int? trialDayCount = null;
   
 
-  int waitingDayAfterExpire = null;
+  int? waitingDayAfterExpire = null;
   
 
-  bool isFree = null;
+  bool? isFree = null;
   
 
-  bool isActive = null;
+  bool? isActive = null;
   
 
-  AdditionalData additionalData = null;
+  AdditionalData? additionalData = null;
   
   EditionSelectDto();
 
@@ -44,7 +44,7 @@ class EditionSelectDto {
     return 'EditionSelectDto[id=$id, editionType=$editionType, name=$name, displayName=$displayName, expiringEditionId=$expiringEditionId, price=$price, dayCount=$dayCount, trialDayCount=$trialDayCount, waitingDayAfterExpire=$waitingDayAfterExpire, isFree=$isFree, isActive=$isActive, additionalData=$additionalData, ]';
   }
 
-  EditionSelectDto.fromJson(Map<String, dynamic> json) {
+  EditionSelectDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']

@@ -2,13 +2,13 @@ part of swagger.api;
 
 class GetDeviceForViewDto {
   
-  DeviceDto device = null;
+  DeviceDto? device = null;
   
 
-  String deviceName = null;
+  String? deviceName = null;
   
 
-  String deviceTypeTitle = null;
+  String? deviceTypeTitle = null;
   
   GetDeviceForViewDto();
 
@@ -17,7 +17,7 @@ class GetDeviceForViewDto {
     return 'GetDeviceForViewDto[device=$device, deviceName=$deviceName, deviceTypeTitle=$deviceTypeTitle, ]';
   }
 
-  GetDeviceForViewDto.fromJson(Map<String, dynamic> json) {
+  GetDeviceForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     device =
       
@@ -40,7 +40,7 @@ class GetDeviceForViewDto {
      };
   }
 
-  static List<GetDeviceForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetDeviceForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetDeviceForViewDto>() : json.map((value) => new GetDeviceForViewDto.fromJson(value)).toList();
   }
 

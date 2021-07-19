@@ -2,10 +2,10 @@ part of swagger.api;
 
 class ResetPasswordOutput {
   
-  bool canLogin = null;
+  bool? canLogin = null;
   
 
-  String userName = null;
+  String? userName = null;
   
   ResetPasswordOutput();
 
@@ -14,7 +14,7 @@ class ResetPasswordOutput {
     return 'ResetPasswordOutput[canLogin=$canLogin, userName=$userName, ]';
   }
 
-  ResetPasswordOutput.fromJson(Map<String, dynamic> json) {
+  ResetPasswordOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     canLogin =
         json['canLogin']

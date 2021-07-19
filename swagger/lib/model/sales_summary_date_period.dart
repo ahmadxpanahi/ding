@@ -2,7 +2,7 @@ part of swagger.api;
 
 class SalesSummaryDatePeriod {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   SalesSummaryDatePeriod._internal(this.value);
 

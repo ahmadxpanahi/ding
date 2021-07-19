@@ -2,10 +2,10 @@ part of swagger.api;
 
 class PaymentGatewayModel {
   
-  SubscriptionPaymentGatewayType gatewayType = null;
+  SubscriptionPaymentGatewayType? gatewayType = null;
   
 
-  bool supportsRecurringPayments = null;
+  bool? supportsRecurringPayments = null;
   
   PaymentGatewayModel();
 
@@ -14,7 +14,7 @@ class PaymentGatewayModel {
     return 'PaymentGatewayModel[gatewayType=$gatewayType, supportsRecurringPayments=$supportsRecurringPayments, ]';
   }
 
-  PaymentGatewayModel.fromJson(Map<String, dynamic> json) {
+  PaymentGatewayModel.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     gatewayType =
       

@@ -2,13 +2,13 @@ part of swagger.api;
 
 class CreateUserDelegationDto {
   
-  int targetUserId = null;
+  int? targetUserId = null;
    // range from 1 to //
 
-  DateTime startTime = null;
+  DateTime? startTime = null;
   
 
-  DateTime endTime = null;
+  DateTime? endTime = null;
   
   CreateUserDelegationDto();
 
@@ -17,7 +17,7 @@ class CreateUserDelegationDto {
     return 'CreateUserDelegationDto[targetUserId=$targetUserId, startTime=$startTime, endTime=$endTime, ]';
   }
 
-  CreateUserDelegationDto.fromJson(Map<String, dynamic> json) {
+  CreateUserDelegationDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     targetUserId =
         json['targetUserId']
@@ -29,8 +29,8 @@ class CreateUserDelegationDto {
   Map<String, dynamic> toJson() {
     return {
       'targetUserId': targetUserId,
-      'startTime': startTime == null ? '' : startTime.toUtc().toIso8601String(),
-      'endTime': endTime == null ? '' : endTime.toUtc().toIso8601String()
+      'startTime': startTime == null ? '' : startTime!.toUtc().toIso8601String(),
+      'endTime': endTime == null ? '' : endTime!.toUtc().toIso8601String()
      };
   }
 

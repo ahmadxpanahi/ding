@@ -2,7 +2,7 @@ part of swagger.api;
 
 class CreateOrUpdateUserInput {
   
-  UserEditDto user = null;
+  UserEditDto? user = null;
   
 
   List<String> assignedRoleNames = [];
@@ -14,10 +14,10 @@ class CreateOrUpdateUserInput {
   List<String> assignedWorkSchedulesId = [];
   
 
-  bool sendActivationEmail = null;
+  bool? sendActivationEmail = null;
   
 
-  bool setRandomPassword = null;
+  bool? setRandomPassword = null;
   
 
   List<int> organizationUnits = [];
@@ -29,7 +29,7 @@ class CreateOrUpdateUserInput {
     return 'CreateOrUpdateUserInput[user=$user, assignedRoleNames=$assignedRoleNames, assignedDevicesId=$assignedDevicesId, assignedWorkSchedulesId=$assignedWorkSchedulesId, sendActivationEmail=$sendActivationEmail, setRandomPassword=$setRandomPassword, organizationUnits=$organizationUnits, ]';
   }
 
-  CreateOrUpdateUserInput.fromJson(Map<String, dynamic> json) {
+  CreateOrUpdateUserInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     user =
       

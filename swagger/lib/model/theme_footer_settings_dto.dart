@@ -2,7 +2,7 @@ part of swagger.api;
 
 class ThemeFooterSettingsDto {
   
-  bool fixedFooter = null;
+  bool? fixedFooter = null;
   
   ThemeFooterSettingsDto();
 
@@ -11,7 +11,7 @@ class ThemeFooterSettingsDto {
     return 'ThemeFooterSettingsDto[fixedFooter=$fixedFooter, ]';
   }
 
-  ThemeFooterSettingsDto.fromJson(Map<String, dynamic> json) {
+  ThemeFooterSettingsDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     fixedFooter =
         json['fixedFooter']

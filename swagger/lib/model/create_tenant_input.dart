@@ -2,85 +2,85 @@ part of swagger.api;
 
 class CreateTenantInput {
   
-  String tenancyName = null;
+  String? tenancyName = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  String adminEmailAddress = null;
+  String? adminEmailAddress = null;
   
 
-  String adminPassword = null;
+  String? adminPassword = null;
   
 
-  String connectionString = null;
+  String? connectionString = null;
   
 
-  bool shouldChangePasswordOnNextLogin = null;
+  bool? shouldChangePasswordOnNextLogin = null;
   
 
-  bool sendActivationEmail = null;
+  bool? sendActivationEmail = null;
   
 
-  bool sendActivationSMS = null;
+  bool? sendActivationSMS = null;
   
 
-  int editionId = null;
+  int? editionId = null;
   
 
-  bool isActive = null;
+  bool? isActive = null;
   
 
-  DateTime subscriptionEndDateUtc = null;
+  DateTime? subscriptionEndDateUtc = null;
   
 
-  bool isInTrialPeriod = null;
+  bool? isInTrialPeriod = null;
   
 
-  String seniorManagerName = null;
+  String? seniorManagerName = null;
   
 
-  String seniorManagerSurname = null;
+  String? seniorManagerSurname = null;
   
 
-  String seniorManagerPhoneNumber = null;
+  String? seniorManagerPhoneNumber = null;
   
 
-  int countryId = null;
+  int? countryId = null;
   
 
-  int stateId = null;
+  int? stateId = null;
   
 
-  int cityId = null;
+  int? cityId = null;
   
 
-  String address = null;
+  String? address = null;
   
 
-  double latitude = null;
+  double? latitude = null;
   
 
-  double longitude = null;
+  double? longitude = null;
   
 
-  String businessTypes = null;
+  String? businessTypes = null;
   
 
-  bool hasWebService = null;
+  bool? hasWebService = null;
   
 
-  DateTime lastEnterExitTime = null;
+  DateTime? lastEnterExitTime = null;
   
 
-  int purchasedUsers = null;
+  int? purchasedUsers = null;
   
 
-  int usedUsers = null;
+  int? usedUsers = null;
   
 
-  bool isVIP = null;
+  bool? isVIP = null;
   
   CreateTenantInput();
 
@@ -89,7 +89,7 @@ class CreateTenantInput {
     return 'CreateTenantInput[tenancyName=$tenancyName, name=$name, adminEmailAddress=$adminEmailAddress, adminPassword=$adminPassword, connectionString=$connectionString, shouldChangePasswordOnNextLogin=$shouldChangePasswordOnNextLogin, sendActivationEmail=$sendActivationEmail, sendActivationSMS=$sendActivationSMS, editionId=$editionId, isActive=$isActive, subscriptionEndDateUtc=$subscriptionEndDateUtc, isInTrialPeriod=$isInTrialPeriod, seniorManagerName=$seniorManagerName, seniorManagerSurname=$seniorManagerSurname, seniorManagerPhoneNumber=$seniorManagerPhoneNumber, countryId=$countryId, stateId=$stateId, cityId=$cityId, address=$address, latitude=$latitude, longitude=$longitude, businessTypes=$businessTypes, hasWebService=$hasWebService, lastEnterExitTime=$lastEnterExitTime, purchasedUsers=$purchasedUsers, usedUsers=$usedUsers, isVIP=$isVIP, ]';
   }
 
-  CreateTenantInput.fromJson(Map<String, dynamic> json) {
+  CreateTenantInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenancyName =
         json['tenancyName']
@@ -182,7 +182,7 @@ class CreateTenantInput {
       'sendActivationSMS': sendActivationSMS,
       'editionId': editionId,
       'isActive': isActive,
-      'subscriptionEndDateUtc': subscriptionEndDateUtc == null ? '' : subscriptionEndDateUtc.toUtc().toIso8601String(),
+      'subscriptionEndDateUtc': subscriptionEndDateUtc == null ? '' : subscriptionEndDateUtc!.toUtc().toIso8601String(),
       'isInTrialPeriod': isInTrialPeriod,
       'seniorManagerName': seniorManagerName,
       'seniorManagerSurname': seniorManagerSurname,
@@ -195,7 +195,7 @@ class CreateTenantInput {
       'longitude': longitude,
       'businessTypes': businessTypes,
       'hasWebService': hasWebService,
-      'lastEnterExitTime': lastEnterExitTime == null ? '' : lastEnterExitTime.toUtc().toIso8601String(),
+      'lastEnterExitTime': lastEnterExitTime == null ? '' : lastEnterExitTime!.toUtc().toIso8601String(),
       'purchasedUsers': purchasedUsers,
       'usedUsers': usedUsers,
       'isVIP': isVIP

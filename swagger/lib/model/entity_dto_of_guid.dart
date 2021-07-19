@@ -2,7 +2,7 @@ part of swagger.api;
 
 class EntityDtoOfGuid {
   
-  String id = null;
+  String? id = null;
   
   EntityDtoOfGuid();
 
@@ -11,7 +11,7 @@ class EntityDtoOfGuid {
     return 'EntityDtoOfGuid[id=$id, ]';
   }
 
-  EntityDtoOfGuid.fromJson(Map<String, dynamic> json) {
+  EntityDtoOfGuid.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']

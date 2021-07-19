@@ -2,7 +2,7 @@ part of swagger.api;
 
 class PagedResultDtoOfGetEnterLeaveForViewDto {
   
-  int totalCount = null;
+  int? totalCount = null;
   
 
   List<GetEnterLeaveForViewDto> items = [];
@@ -14,7 +14,7 @@ class PagedResultDtoOfGetEnterLeaveForViewDto {
     return 'PagedResultDtoOfGetEnterLeaveForViewDto[totalCount=$totalCount, items=$items, ]';
   }
 
-  PagedResultDtoOfGetEnterLeaveForViewDto.fromJson(Map<String, dynamic> json) {
+  PagedResultDtoOfGetEnterLeaveForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     totalCount =
         json['totalCount']

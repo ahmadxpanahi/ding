@@ -2,13 +2,13 @@ part of swagger.api;
 
 class FileDto {
   
-  String fileName = null;
+  String? fileName = null;
   
 
-  String fileType = null;
+  String? fileType = null;
   
 
-  String fileToken = null;
+  String? fileToken = null;
   
   FileDto();
 
@@ -17,7 +17,7 @@ class FileDto {
     return 'FileDto[fileName=$fileName, fileType=$fileType, fileToken=$fileToken, ]';
   }
 
-  FileDto.fromJson(Map<String, dynamic> json) {
+  FileDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     fileName =
         json['fileName']

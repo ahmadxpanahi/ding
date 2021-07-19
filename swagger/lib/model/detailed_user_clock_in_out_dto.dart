@@ -2,13 +2,13 @@ part of swagger.api;
 
 class DetailedUserClockInOutDto {
   
-  DateTime clock = null;
+  DateTime? clock = null;
   
 
-  String clockString = null;
+  String? clockString = null;
   
 
-  UserClockInOutType clockInOutType = null;
+  UserClockInOutType? clockInOutType = null;
   
   DetailedUserClockInOutDto();
 
@@ -17,7 +17,7 @@ class DetailedUserClockInOutDto {
     return 'DetailedUserClockInOutDto[clock=$clock, clockString=$clockString, clockInOutType=$clockInOutType, ]';
   }
 
-  DetailedUserClockInOutDto.fromJson(Map<String, dynamic> json) {
+  DetailedUserClockInOutDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     clock = json['clock'] == null ? null : DateTime.parse(json['clock']);
     clockString =
@@ -32,13 +32,13 @@ class DetailedUserClockInOutDto {
 
   Map<String, dynamic> toJson() {
     return {
-      'clock': clock == null ? '' : clock.toUtc().toIso8601String(),
+      'clock': clock == null ? '' : clock!.toUtc().toIso8601String(),
       'clockString': clockString,
       'clockInOutType': clockInOutType
      };
   }
 
-  static List<DetailedUserClockInOutDto> listFromJson(List<dynamic> json) {
+  static List<DetailedUserClockInOutDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<DetailedUserClockInOutDto>() : json.map((value) => new DetailedUserClockInOutDto.fromJson(value)).toList();
   }
 

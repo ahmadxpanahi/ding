@@ -2,19 +2,19 @@ part of swagger.api;
 
 class GetUserClockInOutForViewDto {
   
-  UserClockInOutDto userClockInOut = null;
+  UserClockInOutDto? userClockInOut = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  String workScheduleName = null;
+  String? workScheduleName = null;
   
 
-  String workHourDayName = null;
+  String? workHourDayName = null;
   
 
-  String organizationUnitDisplayName = null;
+  String? organizationUnitDisplayName = null;
   
   GetUserClockInOutForViewDto();
 
@@ -23,7 +23,7 @@ class GetUserClockInOutForViewDto {
     return 'GetUserClockInOutForViewDto[userClockInOut=$userClockInOut, userName=$userName, workScheduleName=$workScheduleName, workHourDayName=$workHourDayName, organizationUnitDisplayName=$organizationUnitDisplayName, ]';
   }
 
-  GetUserClockInOutForViewDto.fromJson(Map<String, dynamic> json) {
+  GetUserClockInOutForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userClockInOut =
       
@@ -54,7 +54,7 @@ class GetUserClockInOutForViewDto {
      };
   }
 
-  static List<GetUserClockInOutForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetUserClockInOutForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetUserClockInOutForViewDto>() : json.map((value) => new GetUserClockInOutForViewDto.fromJson(value)).toList();
   }
 

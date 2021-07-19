@@ -2,10 +2,10 @@ part of swagger.api;
 
 class UpdateOrganizationUnitInput {
   
-  int id = null;
+  int? id = null;
    // range from 1 to //
 
-  String displayName = null;
+  String? displayName = null;
   
   UpdateOrganizationUnitInput();
 
@@ -14,7 +14,7 @@ class UpdateOrganizationUnitInput {
     return 'UpdateOrganizationUnitInput[id=$id, displayName=$displayName, ]';
   }
 
-  UpdateOrganizationUnitInput.fromJson(Map<String, dynamic> json) {
+  UpdateOrganizationUnitInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']

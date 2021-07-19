@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetPasswordComplexitySettingOutput {
   
-  PasswordComplexitySetting setting = null;
+  PasswordComplexitySetting? setting = null;
   
   GetPasswordComplexitySettingOutput();
 
@@ -11,7 +11,7 @@ class GetPasswordComplexitySettingOutput {
     return 'GetPasswordComplexitySettingOutput[setting=$setting, ]';
   }
 
-  GetPasswordComplexitySettingOutput.fromJson(Map<String, dynamic> json) {
+  GetPasswordComplexitySettingOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     setting =
       

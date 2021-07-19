@@ -2,28 +2,28 @@ part of swagger.api;
 
 class CreateOrEditCalendarDto {
   
-  int year = null;
+  int? year = null;
   
 
-  String month = null;
+  String? month = null;
   
 
-  String day = null;
+  String? day = null;
   
 
-  String culture = null;
+  String? culture = null;
   
 
-  String eventName = null;
+  String? eventName = null;
   
 
-  DateTime eventDate = null;
+  DateTime? eventDate = null;
   
 
-  EventType eventType = null;
+  EventType? eventType = null;
   
 
-  int id = null;
+  int? id = null;
   
   CreateOrEditCalendarDto();
 
@@ -32,7 +32,7 @@ class CreateOrEditCalendarDto {
     return 'CreateOrEditCalendarDto[year=$year, month=$month, day=$day, culture=$culture, eventName=$eventName, eventDate=$eventDate, eventType=$eventType, id=$id, ]';
   }
 
-  CreateOrEditCalendarDto.fromJson(Map<String, dynamic> json) {
+  CreateOrEditCalendarDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     year =
         json['year']
@@ -67,7 +67,7 @@ class CreateOrEditCalendarDto {
       'day': day,
       'culture': culture,
       'eventName': eventName,
-      'eventDate': eventDate == null ? '' : eventDate.toUtc().toIso8601String(),
+      'eventDate': eventDate == null ? '' : eventDate!.toUtc().toIso8601String(),
       'eventType': eventType,
       'id': id
      };

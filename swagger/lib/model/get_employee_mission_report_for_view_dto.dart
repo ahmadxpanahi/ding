@@ -2,13 +2,13 @@ part of swagger.api;
 
 class GetEmployeeMissionReportForViewDto {
   
-  EmployeeMissionReportDto employeeMissionReport = null;
+  EmployeeMissionReportDto? employeeMissionReport = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  int userId = null;
+  int? userId = null;
   
   GetEmployeeMissionReportForViewDto();
 
@@ -17,7 +17,7 @@ class GetEmployeeMissionReportForViewDto {
     return 'GetEmployeeMissionReportForViewDto[employeeMissionReport=$employeeMissionReport, userName=$userName, userId=$userId, ]';
   }
 
-  GetEmployeeMissionReportForViewDto.fromJson(Map<String, dynamic> json) {
+  GetEmployeeMissionReportForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     employeeMissionReport =
       
@@ -40,7 +40,7 @@ class GetEmployeeMissionReportForViewDto {
      };
   }
 
-  static List<GetEmployeeMissionReportForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetEmployeeMissionReportForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetEmployeeMissionReportForViewDto>() : json.map((value) => new GetEmployeeMissionReportForViewDto.fromJson(value)).toList();
   }
 

@@ -2,7 +2,7 @@ part of swagger.api;
 
 class IValueValidator {
   
-  String name = null;
+  String? name = null;
   
 
   Map<String, Object> attributes = {};
@@ -14,7 +14,7 @@ class IValueValidator {
     return 'IValueValidator[name=$name, attributes=$attributes, ]';
   }
 
-  IValueValidator.fromJson(Map<String, dynamic> json) {
+  IValueValidator.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']
@@ -37,7 +37,7 @@ class IValueValidator {
     return json == null ? new List<IValueValidator>() : json.map((value) => new IValueValidator.fromJson(value)).toList();
   }
 
-  static Map<String, IValueValidator> mapFromJson(Map<String, Map<String, dynamic>> json) {
+  static Map<String, IValueValidator> mapFromJson(Map<String, Map<String, dynamic>>? json) {
     var map = new Map<String, IValueValidator>();
     if (json != null && json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) => map[key] = new IValueValidator.fromJson(value));

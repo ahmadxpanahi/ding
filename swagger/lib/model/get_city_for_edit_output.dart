@@ -2,13 +2,13 @@ part of swagger.api;
 
 class GetCityForEditOutput {
   
-  CreateOrEditCityDto city = null;
+  CreateOrEditCityDto? city = null;
   
 
-  String stateName = null;
+  String? stateName = null;
   
 
-  String countryName = null;
+  String? countryName = null;
   
   GetCityForEditOutput();
 
@@ -17,7 +17,7 @@ class GetCityForEditOutput {
     return 'GetCityForEditOutput[city=$city, stateName=$stateName, countryName=$countryName, ]';
   }
 
-  GetCityForEditOutput.fromJson(Map<String, dynamic> json) {
+  GetCityForEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     city =
       

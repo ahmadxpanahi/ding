@@ -5,13 +5,13 @@ part of swagger.api;
 class UserLinkApi {
   final ApiClient apiClient;
 
-  UserLinkApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  UserLinkApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppUserlinkGetlinkedusersGet
   ///
   /// 
-  Future<PagedResultDtoOfLinkedUserDto> apiServicesAppUserlinkGetlinkedusersGet({ int maxResultCount, int skipCount, String sorting }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfLinkedUserDto> apiServicesAppUserlinkGetlinkedusersGet({ int? maxResultCount, int? skipCount, String? sorting }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -47,14 +47,14 @@ class UserLinkApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -69,7 +69,7 @@ class UserLinkApi {
   ///
   /// 
   Future<ListResultDtoOfLinkedUserDto> apiServicesAppUserlinkGetrecentlyusedlinkedusersGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -96,14 +96,14 @@ class UserLinkApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -117,8 +117,8 @@ class UserLinkApi {
   /// ApiServicesAppUserlinkLinktouserPost
   ///
   /// 
-  Future apiServicesAppUserlinkLinktouserPost({ LinkToUserInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppUserlinkLinktouserPost({ LinkToUserInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -145,14 +145,14 @@ class UserLinkApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -166,8 +166,8 @@ class UserLinkApi {
   /// ApiServicesAppUserlinkUnlinkuserPost
   ///
   /// 
-  Future apiServicesAppUserlinkUnlinkuserPost({ UnlinkUserInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppUserlinkUnlinkuserPost({ UnlinkUserInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -194,14 +194,14 @@ class UserLinkApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

@@ -11,7 +11,7 @@ class ListResultDtoOfRoleListDto {
     return 'ListResultDtoOfRoleListDto[items=$items, ]';
   }
 
-  ListResultDtoOfRoleListDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfRoleListDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       RoleListDto.listFromJson(json['items'])

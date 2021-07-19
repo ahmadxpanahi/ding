@@ -5,13 +5,13 @@ part of swagger.api;
 class FriendshipApi {
   final ApiClient apiClient;
 
-  FriendshipApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  FriendshipApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppFriendshipAcceptfriendshiprequestPost
   ///
   /// 
-  Future apiServicesAppFriendshipAcceptfriendshiprequestPost({ AcceptFriendshipRequestInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppFriendshipAcceptfriendshiprequestPost({ AcceptFriendshipRequestInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class FriendshipApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class FriendshipApi {
   /// ApiServicesAppFriendshipBlockuserPost
   ///
   /// 
-  Future apiServicesAppFriendshipBlockuserPost({ BlockUserInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppFriendshipBlockuserPost({ BlockUserInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class FriendshipApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class FriendshipApi {
   /// ApiServicesAppFriendshipCreatefriendshiprequestPost
   ///
   /// 
-  Future<FriendDto> apiServicesAppFriendshipCreatefriendshiprequestPost({ CreateFriendshipRequestInput body }) async {
-    Object postBody = body;
+  Future<FriendDto> apiServicesAppFriendshipCreatefriendshiprequestPost({ CreateFriendshipRequestInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -136,14 +136,14 @@ class FriendshipApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -157,8 +157,8 @@ class FriendshipApi {
   /// ApiServicesAppFriendshipCreatefriendshiprequestbyusernamePost
   ///
   /// 
-  Future<FriendDto> apiServicesAppFriendshipCreatefriendshiprequestbyusernamePost({ CreateFriendshipRequestByUserNameInput body }) async {
-    Object postBody = body;
+  Future<FriendDto> apiServicesAppFriendshipCreatefriendshiprequestbyusernamePost({ CreateFriendshipRequestByUserNameInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -185,14 +185,14 @@ class FriendshipApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -206,8 +206,8 @@ class FriendshipApi {
   /// ApiServicesAppFriendshipUnblockuserPost
   ///
   /// 
-  Future apiServicesAppFriendshipUnblockuserPost({ UnblockUserInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppFriendshipUnblockuserPost({ UnblockUserInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -234,14 +234,14 @@ class FriendshipApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

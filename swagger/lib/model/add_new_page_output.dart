@@ -2,7 +2,7 @@ part of swagger.api;
 
 class AddNewPageOutput {
   
-  String pageId = null;
+  String? pageId = null;
   
   AddNewPageOutput();
 
@@ -11,7 +11,7 @@ class AddNewPageOutput {
     return 'AddNewPageOutput[pageId=$pageId, ]';
   }
 
-  AddNewPageOutput.fromJson(Map<String, dynamic> json) {
+  AddNewPageOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     pageId =
         json['pageId']

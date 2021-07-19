@@ -2,22 +2,22 @@ part of swagger.api;
 
 class ThemeSettingsDto {
   
-  String theme = null;
+  String? theme = null;
   
 
-  ThemeLayoutSettingsDto layout = null;
+  ThemeLayoutSettingsDto? layout = null;
   
 
-  ThemeHeaderSettingsDto header = null;
+  ThemeHeaderSettingsDto? header = null;
   
 
-  ThemeSubHeaderSettingsDto subHeader = null;
+  ThemeSubHeaderSettingsDto? subHeader = null;
   
 
-  ThemeMenuSettingsDto menu = null;
+  ThemeMenuSettingsDto? menu = null;
   
 
-  ThemeFooterSettingsDto footer = null;
+  ThemeFooterSettingsDto? footer = null;
   
   ThemeSettingsDto();
 
@@ -26,7 +26,7 @@ class ThemeSettingsDto {
     return 'ThemeSettingsDto[theme=$theme, layout=$layout, header=$header, subHeader=$subHeader, menu=$menu, footer=$footer, ]';
   }
 
-  ThemeSettingsDto.fromJson(Map<String, dynamic> json) {
+  ThemeSettingsDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     theme =
         json['theme']

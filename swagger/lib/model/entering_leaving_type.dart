@@ -2,7 +2,7 @@ part of swagger.api;
 
 class EnteringLeavingType {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   EnteringLeavingType._internal(this.value);
 

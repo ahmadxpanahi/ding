@@ -2,22 +2,22 @@ part of swagger.api;
 
 class CountryDto {
   
-  String name = null;
+  String? name = null;
   
 
-  String isO3 = null;
+  String? isO3 = null;
   
 
-  String capital = null;
+  String? capital = null;
   
 
-  String currency = null;
+  String? currency = null;
   
 
-  String region = null;
+  String? region = null;
   
 
-  int id = null;
+  int? id = null;
   
   CountryDto();
 
@@ -26,7 +26,7 @@ class CountryDto {
     return 'CountryDto[name=$name, isO3=$isO3, capital=$capital, currency=$currency, region=$region, id=$id, ]';
   }
 
-  CountryDto.fromJson(Map<String, dynamic> json) {
+  CountryDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']

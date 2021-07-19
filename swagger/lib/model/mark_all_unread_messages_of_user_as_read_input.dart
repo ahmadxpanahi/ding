@@ -2,10 +2,10 @@ part of swagger.api;
 
 class MarkAllUnreadMessagesOfUserAsReadInput {
   
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  int userId = null;
+  int? userId = null;
   
   MarkAllUnreadMessagesOfUserAsReadInput();
 
@@ -14,7 +14,7 @@ class MarkAllUnreadMessagesOfUserAsReadInput {
     return 'MarkAllUnreadMessagesOfUserAsReadInput[tenantId=$tenantId, userId=$userId, ]';
   }
 
-  MarkAllUnreadMessagesOfUserAsReadInput.fromJson(Map<String, dynamic> json) {
+  MarkAllUnreadMessagesOfUserAsReadInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenantId =
         json['tenantId']

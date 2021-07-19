@@ -2,10 +2,10 @@ part of swagger.api;
 
 class InsertOrUpdateAllValuesInputItem {
   
-  String entityId = null;
+  String? entityId = null;
   
 
-  int dynamicEntityPropertyId = null;
+  int? dynamicEntityPropertyId = null;
   
 
   List<String> values = [];
@@ -17,7 +17,7 @@ class InsertOrUpdateAllValuesInputItem {
     return 'InsertOrUpdateAllValuesInputItem[entityId=$entityId, dynamicEntityPropertyId=$dynamicEntityPropertyId, values=$values, ]';
   }
 
-  InsertOrUpdateAllValuesInputItem.fromJson(Map<String, dynamic> json) {
+  InsertOrUpdateAllValuesInputItem.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     entityId =
         json['entityId']
@@ -38,7 +38,7 @@ class InsertOrUpdateAllValuesInputItem {
      };
   }
 
-  static List<InsertOrUpdateAllValuesInputItem> listFromJson(List<dynamic> json) {
+  static List<InsertOrUpdateAllValuesInputItem> listFromJson(List<dynamic>? json) {
     return json == null ? new List<InsertOrUpdateAllValuesInputItem>() : json.map((value) => new InsertOrUpdateAllValuesInputItem.fromJson(value)).toList();
   }
 

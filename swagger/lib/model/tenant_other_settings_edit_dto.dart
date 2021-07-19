@@ -2,7 +2,7 @@ part of swagger.api;
 
 class TenantOtherSettingsEditDto {
   
-  bool isQuickThemeSelectEnabled = null;
+  bool? isQuickThemeSelectEnabled = null;
   
   TenantOtherSettingsEditDto();
 
@@ -11,7 +11,7 @@ class TenantOtherSettingsEditDto {
     return 'TenantOtherSettingsEditDto[isQuickThemeSelectEnabled=$isQuickThemeSelectEnabled, ]';
   }
 
-  TenantOtherSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  TenantOtherSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     isQuickThemeSelectEnabled =
         json['isQuickThemeSelectEnabled']

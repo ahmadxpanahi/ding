@@ -2,7 +2,7 @@ part of swagger.api;
 
 class FriendshipState {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   FriendshipState._internal(this.value);
 

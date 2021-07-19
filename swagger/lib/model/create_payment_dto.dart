@@ -2,22 +2,22 @@ part of swagger.api;
 
 class CreatePaymentDto {
   
-  int editionId = null;
+  int? editionId = null;
   
 
-  int deviceId = null;
+  int? deviceId = null;
   
 
-  EditionType editionType = null;
+  EditionType? editionType = null;
   
 
-  SubscriptionPaymentGatewayType subscriptionPaymentGatewayType = null;
+  SubscriptionPaymentGatewayType? subscriptionPaymentGatewayType = null;
   
 
-  String successUrl = null;
+  String? successUrl = null;
   
 
-  String errorUrl = null;
+  String? errorUrl = null;
   
   CreatePaymentDto();
 
@@ -26,7 +26,7 @@ class CreatePaymentDto {
     return 'CreatePaymentDto[editionId=$editionId, deviceId=$deviceId, editionType=$editionType, subscriptionPaymentGatewayType=$subscriptionPaymentGatewayType, successUrl=$successUrl, errorUrl=$errorUrl, ]';
   }
 
-  CreatePaymentDto.fromJson(Map<String, dynamic> json) {
+  CreatePaymentDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     editionId =
         json['editionId']

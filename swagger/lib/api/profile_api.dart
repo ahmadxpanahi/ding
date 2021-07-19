@@ -5,13 +5,13 @@ part of swagger.api;
 class ProfileApi {
   final ApiClient apiClient;
 
-  ProfileApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  ProfileApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppProfileChangelanguagePost
   ///
   /// 
-  Future apiServicesAppProfileChangelanguagePost({ ChangeUserLanguageDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppProfileChangelanguagePost({ ChangeUserLanguageDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class ProfileApi {
   /// ApiServicesAppProfileChangepasswordPost
   ///
   /// 
-  Future apiServicesAppProfileChangepasswordPost({ ChangePasswordInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppProfileChangepasswordPost({ ChangePasswordInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -109,7 +109,7 @@ class ProfileApi {
   ///
   /// 
   Future apiServicesAppProfileDisablegoogleauthenticatorPost() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -136,14 +136,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -158,7 +158,7 @@ class ProfileApi {
   ///
   /// 
   Future<CurrentUserProfileEditDto> apiServicesAppProfileGetcurrentuserprofileforeditGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -185,14 +185,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -206,8 +206,8 @@ class ProfileApi {
   /// ApiServicesAppProfileGetfriendprofilepictureGet
   ///
   /// 
-  Future<GetProfilePictureOutput> apiServicesAppProfileGetfriendprofilepictureGet({ int userId, int tenantId }) async {
-    Object postBody = null;
+  Future<GetProfilePictureOutput> apiServicesAppProfileGetfriendprofilepictureGet({ int? userId, int? tenantId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -240,14 +240,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -262,7 +262,7 @@ class ProfileApi {
   ///
   /// 
   Future<GetPasswordComplexitySettingOutput> apiServicesAppProfileGetpasswordcomplexitysettingGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -289,14 +289,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -311,7 +311,7 @@ class ProfileApi {
   ///
   /// 
   Future<GetProfilePictureOutput> apiServicesAppProfileGetprofilepictureGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -338,14 +338,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -359,8 +359,8 @@ class ProfileApi {
   /// ApiServicesAppProfileGetprofilepicturebyidGet
   ///
   /// 
-  Future<GetProfilePictureOutput> apiServicesAppProfileGetprofilepicturebyidGet({ String profilePictureId }) async {
-    Object postBody = null;
+  Future<GetProfilePictureOutput> apiServicesAppProfileGetprofilepicturebyidGet({ String? profilePictureId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -390,14 +390,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -411,8 +411,8 @@ class ProfileApi {
   /// ApiServicesAppProfileGetprofilepicturebyuserGet
   ///
   /// 
-  Future<GetProfilePictureOutput> apiServicesAppProfileGetprofilepicturebyuserGet({ int userId }) async {
-    Object postBody = null;
+  Future<GetProfilePictureOutput> apiServicesAppProfileGetprofilepicturebyuserGet({ int? userId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -442,14 +442,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -463,8 +463,8 @@ class ProfileApi {
   /// ApiServicesAppProfileGetprofilepicturebyusernameGet
   ///
   /// 
-  Future<GetProfilePictureOutput> apiServicesAppProfileGetprofilepicturebyusernameGet({ String username }) async {
-    Object postBody = null;
+  Future<GetProfilePictureOutput> apiServicesAppProfileGetprofilepicturebyusernameGet({ String? username }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -494,14 +494,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -516,7 +516,7 @@ class ProfileApi {
   ///
   /// 
   Future apiServicesAppProfilePreparecollecteddataPost() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -543,14 +543,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -564,8 +564,8 @@ class ProfileApi {
   /// ApiServicesAppProfileSendverificationsmsPost
   ///
   /// 
-  Future apiServicesAppProfileSendverificationsmsPost({ SendVerificationSmsInputDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppProfileSendverificationsmsPost({ SendVerificationSmsInputDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -592,14 +592,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -613,8 +613,8 @@ class ProfileApi {
   /// ApiServicesAppProfileTransferandupdateprofilepicturePost
   ///
   /// 
-  Future apiServicesAppProfileTransferandupdateprofilepicturePost({ UpdateProfilePictureByUserInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppProfileTransferandupdateprofilepicturePost({ UpdateProfilePictureByUserInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -641,14 +641,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -662,8 +662,8 @@ class ProfileApi {
   /// ApiServicesAppProfileUpdatecurrentuserprofilePut
   ///
   /// 
-  Future apiServicesAppProfileUpdatecurrentuserprofilePut({ CurrentUserProfileEditDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppProfileUpdatecurrentuserprofilePut({ CurrentUserProfileEditDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -690,14 +690,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -712,7 +712,7 @@ class ProfileApi {
   ///
   /// 
   Future<UpdateGoogleAuthenticatorKeyOutput> apiServicesAppProfileUpdategoogleauthenticatorkeyPut() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -739,14 +739,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -760,8 +760,8 @@ class ProfileApi {
   /// ApiServicesAppProfileUpdateprofilepicturePut
   ///
   /// 
-  Future apiServicesAppProfileUpdateprofilepicturePut({ UpdateProfilePictureInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppProfileUpdateprofilepicturePut({ UpdateProfilePictureInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -788,14 +788,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -809,8 +809,8 @@ class ProfileApi {
   /// ApiServicesAppProfileVerifysmscodePost
   ///
   /// 
-  Future apiServicesAppProfileVerifysmscodePost({ VerifySmsCodeInputDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppProfileVerifysmscodePost({ VerifySmsCodeInputDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -837,14 +837,14 @@ class ProfileApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

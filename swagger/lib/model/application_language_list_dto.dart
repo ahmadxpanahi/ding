@@ -2,43 +2,43 @@ part of swagger.api;
 
 class ApplicationLanguageListDto {
   
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  String icon = null;
+  String? icon = null;
   
 
-  bool isDisabled = null;
+  bool? isDisabled = null;
   
 
-  bool isDeleted = null;
+  bool? isDeleted = null;
   
 
-  int deleterUserId = null;
+  int? deleterUserId = null;
   
 
-  DateTime deletionTime = null;
+  DateTime? deletionTime = null;
   
 
-  DateTime lastModificationTime = null;
+  DateTime? lastModificationTime = null;
   
 
-  int lastModifierUserId = null;
+  int? lastModifierUserId = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  int creatorUserId = null;
+  int? creatorUserId = null;
   
 
-  int id = null;
+  int? id = null;
   
   ApplicationLanguageListDto();
 
@@ -47,7 +47,7 @@ class ApplicationLanguageListDto {
     return 'ApplicationLanguageListDto[tenantId=$tenantId, name=$name, displayName=$displayName, icon=$icon, isDisabled=$isDisabled, isDeleted=$isDeleted, deleterUserId=$deleterUserId, deletionTime=$deletionTime, lastModificationTime=$lastModificationTime, lastModifierUserId=$lastModifierUserId, creationTime=$creationTime, creatorUserId=$creatorUserId, id=$id, ]';
   }
 
-  ApplicationLanguageListDto.fromJson(Map<String, dynamic> json) {
+  ApplicationLanguageListDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenantId =
         json['tenantId']
@@ -93,16 +93,16 @@ class ApplicationLanguageListDto {
       'isDisabled': isDisabled,
       'isDeleted': isDeleted,
       'deleterUserId': deleterUserId,
-      'deletionTime': deletionTime == null ? '' : deletionTime.toUtc().toIso8601String(),
-      'lastModificationTime': lastModificationTime == null ? '' : lastModificationTime.toUtc().toIso8601String(),
+      'deletionTime': deletionTime == null ? '' : deletionTime!.toUtc().toIso8601String(),
+      'lastModificationTime': lastModificationTime == null ? '' : lastModificationTime!.toUtc().toIso8601String(),
       'lastModifierUserId': lastModifierUserId,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
       'creatorUserId': creatorUserId,
       'id': id
      };
   }
 
-  static List<ApplicationLanguageListDto> listFromJson(List<dynamic> json) {
+  static List<ApplicationLanguageListDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<ApplicationLanguageListDto>() : json.map((value) => new ApplicationLanguageListDto.fromJson(value)).toList();
   }
 

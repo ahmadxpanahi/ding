@@ -5,13 +5,13 @@ part of swagger.api;
 class UserWorkSchedulesApi {
   final ApiClient apiClient;
 
-  UserWorkSchedulesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  UserWorkSchedulesApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppUserworkschedulesCreateoreditPost
   ///
   /// 
-  Future apiServicesAppUserworkschedulesCreateoreditPost({ CreateOrEditUserWorkScheduleDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppUserworkschedulesCreateoreditPost({ CreateOrEditUserWorkScheduleDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class UserWorkSchedulesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesDeleteDelete
   ///
   /// 
-  Future apiServicesAppUserworkschedulesDeleteDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppUserworkschedulesDeleteDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -90,14 +90,14 @@ class UserWorkSchedulesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -111,8 +111,8 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetUserWorkScheduleForViewDto> apiServicesAppUserworkschedulesGetallGet({ String filter, String userNameFilter, String workScheduleNameFilter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetUserWorkScheduleForViewDto> apiServicesAppUserworkschedulesGetallGet({ String? filter, String? userNameFilter, String? workScheduleNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -157,14 +157,14 @@ class UserWorkSchedulesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -178,8 +178,8 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesGetalluserforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfUserWorkScheduleUserLookupTableDto> apiServicesAppUserworkschedulesGetalluserforlookuptableGet({ String filter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfUserWorkScheduleUserLookupTableDto> apiServicesAppUserworkschedulesGetalluserforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -218,14 +218,14 @@ class UserWorkSchedulesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -239,8 +239,8 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesGetallworkscheduleforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfUserWorkScheduleWorkScheduleLookupTableDto> apiServicesAppUserworkschedulesGetallworkscheduleforlookuptableGet({ String filter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfUserWorkScheduleWorkScheduleLookupTableDto> apiServicesAppUserworkschedulesGetallworkscheduleforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -279,14 +279,14 @@ class UserWorkSchedulesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -300,8 +300,8 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesGetuserworkhourbydateGet
   ///
   /// 
-  Future<WorkHourDto> apiServicesAppUserworkschedulesGetuserworkhourbydateGet({ int userId, DateTime requestDay }) async {
-    Object postBody = null;
+  Future<WorkHourDto> apiServicesAppUserworkschedulesGetuserworkhourbydateGet({ int? userId, DateTime? requestDay }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -334,14 +334,14 @@ class UserWorkSchedulesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -355,8 +355,8 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesGetuserworkscheduleforeditGet
   ///
   /// 
-  Future<GetUserWorkScheduleForEditOutput> apiServicesAppUserworkschedulesGetuserworkscheduleforeditGet({ int id }) async {
-    Object postBody = null;
+  Future<GetUserWorkScheduleForEditOutput> apiServicesAppUserworkschedulesGetuserworkscheduleforeditGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -386,14 +386,14 @@ class UserWorkSchedulesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -407,8 +407,8 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesGetuserworkscheduleforviewGet
   ///
   /// 
-  Future<GetUserWorkScheduleForViewDto> apiServicesAppUserworkschedulesGetuserworkscheduleforviewGet({ int id }) async {
-    Object postBody = null;
+  Future<GetUserWorkScheduleForViewDto> apiServicesAppUserworkschedulesGetuserworkscheduleforviewGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -438,14 +438,14 @@ class UserWorkSchedulesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -459,8 +459,8 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesGetuserworkschedulestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppUserworkschedulesGetuserworkschedulestoexcelGet({ String filter, String userNameFilter, String workScheduleNameFilter }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppUserworkschedulesGetuserworkschedulestoexcelGet({ String? filter, String? userNameFilter, String? workScheduleNameFilter }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -496,14 +496,14 @@ class UserWorkSchedulesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -517,8 +517,8 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesIsinworkschedulePost
   ///
   /// 
-  Future<bool> apiServicesAppUserworkschedulesIsinworkschedulePost({ int userId, int workScheduleId }) async {
-    Object postBody = null;
+  Future<bool> apiServicesAppUserworkschedulesIsinworkschedulePost({ int? userId, int? workScheduleId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -551,14 +551,14 @@ class UserWorkSchedulesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -572,8 +572,8 @@ class UserWorkSchedulesApi {
   /// ApiServicesAppUserworkschedulesSaveuserworkschedulePost
   ///
   /// 
-  Future apiServicesAppUserworkschedulesSaveuserworkschedulePost({ int userId, List<String> body }) async {
-    Object postBody = body;
+  Future apiServicesAppUserworkschedulesSaveuserworkschedulePost({ int? userId, List<String>? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -603,14 +603,14 @@ class UserWorkSchedulesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

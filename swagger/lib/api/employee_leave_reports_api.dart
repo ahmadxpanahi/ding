@@ -5,13 +5,13 @@ part of swagger.api;
 class EmployeeLeaveReportsApi {
   final ApiClient apiClient;
 
-  EmployeeLeaveReportsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  EmployeeLeaveReportsApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppEmployeeleavereportsGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetEmployeeLeaveReportForViewDto> apiServicesAppEmployeeleavereportsGetallGet({ List<int> userIdsFilter, int organizationUnitId, int userIdFilter, String userNameFilter, DateTime reportDateFrom, DateTime reportDateTo, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetEmployeeLeaveReportForViewDto> apiServicesAppEmployeeleavereportsGetallGet({ List<int>? userIdsFilter, int? organizationUnitId, int? userIdFilter, String? userNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -65,14 +65,14 @@ class EmployeeLeaveReportsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -86,8 +86,8 @@ class EmployeeLeaveReportsApi {
   /// ApiServicesAppEmployeeleavereportsGetdetailedreportGet
   ///
   /// 
-  Future<List<GetDetailedEmployeeLeaveReportForViewDto>> apiServicesAppEmployeeleavereportsGetdetailedreportGet({ List<int> userIdsFilter, int organizationUnitId, int userIdFilter, String userNameFilter, DateTime reportDateFrom, DateTime reportDateTo, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<List<GetDetailedEmployeeLeaveReportForViewDto>> apiServicesAppEmployeeleavereportsGetdetailedreportGet({ List<int>? userIdsFilter, int? organizationUnitId, int? userIdFilter, String? userNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -141,14 +141,14 @@ class EmployeeLeaveReportsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -162,8 +162,8 @@ class EmployeeLeaveReportsApi {
   /// ApiServicesAppEmployeeleavereportsGetemployeeleavereportstoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppEmployeeleavereportsGetemployeeleavereportstoexcelGet({ List<int> userIdsFilter, int organizationUnitId, String userNameFilter, DateTime reportDateFrom, DateTime reportDateTo }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppEmployeeleavereportsGetemployeeleavereportstoexcelGet({ List<int>? userIdsFilter, int? organizationUnitId, String? userNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -205,14 +205,14 @@ class EmployeeLeaveReportsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

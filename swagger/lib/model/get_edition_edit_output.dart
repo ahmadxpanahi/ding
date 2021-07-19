@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetEditionEditOutput {
   
-  EditionEditDto edition = null;
+  EditionEditDto? edition = null;
   
 
   List<NameValueDto> featureValues = [];
@@ -17,7 +17,7 @@ class GetEditionEditOutput {
     return 'GetEditionEditOutput[edition=$edition, featureValues=$featureValues, features=$features, ]';
   }
 
-  GetEditionEditOutput.fromJson(Map<String, dynamic> json) {
+  GetEditionEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     edition =
       

@@ -2,19 +2,19 @@ part of swagger.api;
 
 class MemberActivity {
   
-  String name = null;
+  String? name = null;
   
 
-  String earnings = null;
+  String? earnings = null;
   
 
-  int cases = null;
+  int? cases = null;
   
 
-  int closed = null;
+  int? closed = null;
   
 
-  String rate = null;
+  String? rate = null;
   
   MemberActivity();
 
@@ -23,7 +23,7 @@ class MemberActivity {
     return 'MemberActivity[name=$name, earnings=$earnings, cases=$cases, closed=$closed, rate=$rate, ]';
   }
 
-  MemberActivity.fromJson(Map<String, dynamic> json) {
+  MemberActivity.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']
@@ -52,7 +52,7 @@ class MemberActivity {
      };
   }
 
-  static List<MemberActivity> listFromJson(List<dynamic> json) {
+  static List<MemberActivity> listFromJson(List<dynamic>? json) {
     return json == null ? new List<MemberActivity>() : json.map((value) => new MemberActivity.fromJson(value)).toList();
   }
 

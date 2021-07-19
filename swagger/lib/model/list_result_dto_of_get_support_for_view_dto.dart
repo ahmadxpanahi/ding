@@ -11,7 +11,7 @@ class ListResultDtoOfGetSupportForViewDto {
     return 'ListResultDtoOfGetSupportForViewDto[items=$items, ]';
   }
 
-  ListResultDtoOfGetSupportForViewDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfGetSupportForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       GetSupportForViewDto.listFromJson(json['items'])

@@ -2,31 +2,31 @@ part of swagger.api;
 
 class CurrentUserProfileEditDto {
   
-  String name = null;
+  String? name = null;
   
 
-  String surname = null;
+  String? surname = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  String emailAddress = null;
+  String? emailAddress = null;
   
 
-  String phoneNumber = null;
+  String? phoneNumber = null;
   
 
-  bool isPhoneNumberConfirmed = null;
+  bool? isPhoneNumberConfirmed = null;
   
 
-  String timezone = null;
+  String? timezone = null;
   
 
-  String qrCodeSetupImageUrl = null;
+  String? qrCodeSetupImageUrl = null;
   
 
-  bool isGoogleAuthenticatorEnabled = null;
+  bool? isGoogleAuthenticatorEnabled = null;
   
   CurrentUserProfileEditDto();
 
@@ -35,7 +35,7 @@ class CurrentUserProfileEditDto {
     return 'CurrentUserProfileEditDto[name=$name, surname=$surname, userName=$userName, emailAddress=$emailAddress, phoneNumber=$phoneNumber, isPhoneNumberConfirmed=$isPhoneNumberConfirmed, timezone=$timezone, qrCodeSetupImageUrl=$qrCodeSetupImageUrl, isGoogleAuthenticatorEnabled=$isGoogleAuthenticatorEnabled, ]';
   }
 
-  CurrentUserProfileEditDto.fromJson(Map<String, dynamic> json) {
+  CurrentUserProfileEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']

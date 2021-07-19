@@ -2,16 +2,16 @@ part of swagger.api;
 
 class ApplicationLanguageEditDto {
   
-  int id = null;
+  int? id = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  String icon = null;
+  String? icon = null;
   
 
-  bool isEnabled = null;
+  bool? isEnabled = null;
   
   ApplicationLanguageEditDto();
 
@@ -20,7 +20,7 @@ class ApplicationLanguageEditDto {
     return 'ApplicationLanguageEditDto[id=$id, name=$name, icon=$icon, isEnabled=$isEnabled, ]';
   }
 
-  ApplicationLanguageEditDto.fromJson(Map<String, dynamic> json) {
+  ApplicationLanguageEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']

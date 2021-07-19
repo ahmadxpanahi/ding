@@ -2,19 +2,19 @@ part of swagger.api;
 
 class PasswordComplexitySetting {
   
-  bool requireDigit = null;
+  bool? requireDigit = null;
   
 
-  bool requireLowercase = null;
+  bool? requireLowercase = null;
   
 
-  bool requireNonAlphanumeric = null;
+  bool? requireNonAlphanumeric = null;
   
 
-  bool requireUppercase = null;
+  bool? requireUppercase = null;
   
 
-  int requiredLength = null;
+  int? requiredLength = null;
   
   PasswordComplexitySetting();
 
@@ -23,7 +23,7 @@ class PasswordComplexitySetting {
     return 'PasswordComplexitySetting[requireDigit=$requireDigit, requireLowercase=$requireLowercase, requireNonAlphanumeric=$requireNonAlphanumeric, requireUppercase=$requireUppercase, requiredLength=$requiredLength, ]';
   }
 
-  PasswordComplexitySetting.fromJson(Map<String, dynamic> json) {
+  PasswordComplexitySetting.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     requireDigit =
         json['requireDigit']

@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetPurchasingResourceForEditOutput {
   
-  CreateOrEditPurchasingResourceDto purchasingResource = null;
+  CreateOrEditPurchasingResourceDto? purchasingResource = null;
   
   GetPurchasingResourceForEditOutput();
 
@@ -11,7 +11,7 @@ class GetPurchasingResourceForEditOutput {
     return 'GetPurchasingResourceForEditOutput[purchasingResource=$purchasingResource, ]';
   }
 
-  GetPurchasingResourceForEditOutput.fromJson(Map<String, dynamic> json) {
+  GetPurchasingResourceForEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     purchasingResource =
       

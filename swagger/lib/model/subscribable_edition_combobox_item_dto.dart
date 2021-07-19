@@ -2,13 +2,13 @@ part of swagger.api;
 
 class SubscribableEditionComboboxItemDto {
   
-  String value = null;
+  String? value = null;
   
 
-  String displayText = null;
+  String? displayText = null;
   
 
-  bool isSelected = null;
+  bool? isSelected = null;
   
   SubscribableEditionComboboxItemDto();
 
@@ -17,7 +17,7 @@ class SubscribableEditionComboboxItemDto {
     return 'SubscribableEditionComboboxItemDto[value=$value, displayText=$displayText, isSelected=$isSelected, ]';
   }
 
-  SubscribableEditionComboboxItemDto.fromJson(Map<String, dynamic> json) {
+  SubscribableEditionComboboxItemDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     value =
         json['value']
@@ -38,7 +38,7 @@ class SubscribableEditionComboboxItemDto {
      };
   }
 
-  static List<SubscribableEditionComboboxItemDto> listFromJson(List<dynamic> json) {
+  static List<SubscribableEditionComboboxItemDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<SubscribableEditionComboboxItemDto>() : json.map((value) => new SubscribableEditionComboboxItemDto.fromJson(value)).toList();
   }
 

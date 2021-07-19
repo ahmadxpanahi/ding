@@ -2,7 +2,7 @@ part of swagger.api;
 
 class UserNotificationState {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   UserNotificationState._internal(this.value);
 

@@ -2,16 +2,16 @@ part of swagger.api;
 
 class FeatureInputTypeDto {
   
-  String name = null;
+  String? name = null;
   
 
   Map<String, Object> attributes = {};
   
 
-  IValueValidator validator = null;
+  IValueValidator? validator = null;
   
 
-  LocalizableComboboxItemSourceDto itemSource = null;
+  LocalizableComboboxItemSourceDto? itemSource = null;
   
   FeatureInputTypeDto();
 
@@ -20,7 +20,7 @@ class FeatureInputTypeDto {
     return 'FeatureInputTypeDto[name=$name, attributes=$attributes, validator=$validator, itemSource=$itemSource, ]';
   }
 
-  FeatureInputTypeDto.fromJson(Map<String, dynamic> json) {
+  FeatureInputTypeDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']
@@ -55,7 +55,7 @@ class FeatureInputTypeDto {
     return json == null ? new List<FeatureInputTypeDto>() : json.map((value) => new FeatureInputTypeDto.fromJson(value)).toList();
   }
 
-  static Map<String, FeatureInputTypeDto> mapFromJson(Map<String, Map<String, dynamic>> json) {
+  static Map<String, FeatureInputTypeDto> mapFromJson(Map<String, Map<String, dynamic>>? json) {
     var map = new Map<String, FeatureInputTypeDto>();
     if (json != null && json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) => map[key] = new FeatureInputTypeDto.fromJson(value));

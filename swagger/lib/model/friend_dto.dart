@@ -2,28 +2,28 @@ part of swagger.api;
 
 class FriendDto {
   
-  int friendUserId = null;
+  int? friendUserId = null;
   
 
-  int friendTenantId = null;
+  int? friendTenantId = null;
   
 
-  String friendUserName = null;
+  String? friendUserName = null;
   
 
-  String friendTenancyName = null;
+  String? friendTenancyName = null;
   
 
-  String friendProfilePictureId = null;
+  String? friendProfilePictureId = null;
   
 
-  int unreadMessageCount = null;
+  int? unreadMessageCount = null;
   
 
-  bool isOnline = null;
+  bool? isOnline = null;
   
 
-  FriendshipState state = null;
+  FriendshipState? state = null;
   
   FriendDto();
 
@@ -32,7 +32,7 @@ class FriendDto {
     return 'FriendDto[friendUserId=$friendUserId, friendTenantId=$friendTenantId, friendUserName=$friendUserName, friendTenancyName=$friendTenancyName, friendProfilePictureId=$friendProfilePictureId, unreadMessageCount=$unreadMessageCount, isOnline=$isOnline, state=$state, ]';
   }
 
-  FriendDto.fromJson(Map<String, dynamic> json) {
+  FriendDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     friendUserId =
         json['friendUserId']
@@ -75,7 +75,7 @@ class FriendDto {
      };
   }
 
-  static List<FriendDto> listFromJson(List<dynamic> json) {
+  static List<FriendDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<FriendDto>() : json.map((value) => new FriendDto.fromJson(value)).toList();
   }
 

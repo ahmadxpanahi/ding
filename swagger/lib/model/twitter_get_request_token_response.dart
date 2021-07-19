@@ -2,16 +2,16 @@ part of swagger.api;
 
 class TwitterGetRequestTokenResponse {
   
-  String token = null;
+  String? token = null;
   
 
-  String secret = null;
+  String? secret = null;
   
 
-  bool confirmed = null;
+  bool? confirmed = null;
   
 
-  String redirectUrl = null;
+  String? redirectUrl = null;
   
   TwitterGetRequestTokenResponse();
 
@@ -20,7 +20,7 @@ class TwitterGetRequestTokenResponse {
     return 'TwitterGetRequestTokenResponse[token=$token, secret=$secret, confirmed=$confirmed, redirectUrl=$redirectUrl, ]';
   }
 
-  TwitterGetRequestTokenResponse.fromJson(Map<String, dynamic> json) {
+  TwitterGetRequestTokenResponse.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     token =
         json['token']

@@ -2,10 +2,10 @@ part of swagger.api;
 
 class CreateOrganizationUnitInput {
   
-  int parentId = null;
+  int? parentId = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
   CreateOrganizationUnitInput();
 
@@ -14,7 +14,7 @@ class CreateOrganizationUnitInput {
     return 'CreateOrganizationUnitInput[parentId=$parentId, displayName=$displayName, ]';
   }
 
-  CreateOrganizationUnitInput.fromJson(Map<String, dynamic> json) {
+  CreateOrganizationUnitInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     parentId =
         json['parentId']

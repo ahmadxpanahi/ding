@@ -2,10 +2,10 @@ part of swagger.api;
 
 class ImpersonateInput {
   
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  int userId = null;
+  int? userId = null;
    // range from 1 to //
   ImpersonateInput();
 
@@ -14,7 +14,7 @@ class ImpersonateInput {
     return 'ImpersonateInput[tenantId=$tenantId, userId=$userId, ]';
   }
 
-  ImpersonateInput.fromJson(Map<String, dynamic> json) {
+  ImpersonateInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenantId =
         json['tenantId']

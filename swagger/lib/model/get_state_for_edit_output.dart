@@ -2,10 +2,10 @@ part of swagger.api;
 
 class GetStateForEditOutput {
   
-  CreateOrEditStateDto state = null;
+  CreateOrEditStateDto? state = null;
   
 
-  String countryName = null;
+  String? countryName = null;
   
   GetStateForEditOutput();
 
@@ -14,7 +14,7 @@ class GetStateForEditOutput {
     return 'GetStateForEditOutput[state=$state, countryName=$countryName, ]';
   }
 
-  GetStateForEditOutput.fromJson(Map<String, dynamic> json) {
+  GetStateForEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     state =
       

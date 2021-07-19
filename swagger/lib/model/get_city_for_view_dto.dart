@@ -2,13 +2,13 @@ part of swagger.api;
 
 class GetCityForViewDto {
   
-  CityDto city = null;
+  CityDto? city = null;
   
 
-  String stateName = null;
+  String? stateName = null;
   
 
-  String countryName = null;
+  String? countryName = null;
   
   GetCityForViewDto();
 
@@ -17,7 +17,7 @@ class GetCityForViewDto {
     return 'GetCityForViewDto[city=$city, stateName=$stateName, countryName=$countryName, ]';
   }
 
-  GetCityForViewDto.fromJson(Map<String, dynamic> json) {
+  GetCityForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     city =
       
@@ -40,7 +40,7 @@ class GetCityForViewDto {
      };
   }
 
-  static List<GetCityForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetCityForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetCityForViewDto>() : json.map((value) => new GetCityForViewDto.fromJson(value)).toList();
   }
 

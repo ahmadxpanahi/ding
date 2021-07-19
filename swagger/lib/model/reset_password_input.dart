@@ -2,22 +2,22 @@ part of swagger.api;
 
 class ResetPasswordInput {
   
-  int userId = null;
+  int? userId = null;
   
 
-  String resetCode = null;
+  String? resetCode = null;
   
 
-  String password = null;
+  String? password = null;
   
 
-  String returnUrl = null;
+  String? returnUrl = null;
   
 
-  String singleSignIn = null;
+  String? singleSignIn = null;
   
 
-  String c = null;
+  String? c = null;
   
   ResetPasswordInput();
 
@@ -26,7 +26,7 @@ class ResetPasswordInput {
     return 'ResetPasswordInput[userId=$userId, resetCode=$resetCode, password=$password, returnUrl=$returnUrl, singleSignIn=$singleSignIn, c=$c, ]';
   }
 
-  ResetPasswordInput.fromJson(Map<String, dynamic> json) {
+  ResetPasswordInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userId =
         json['userId']

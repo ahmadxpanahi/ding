@@ -5,13 +5,13 @@ part of swagger.api;
 class CalendarsApi {
   final ApiClient apiClient;
 
-  CalendarsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  CalendarsApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppCalendarsCreateoreditPost
   ///
   /// 
-  Future apiServicesAppCalendarsCreateoreditPost({ CreateOrEditCalendarDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppCalendarsCreateoreditPost({ CreateOrEditCalendarDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class CalendarsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class CalendarsApi {
   /// ApiServicesAppCalendarsDeleteDelete
   ///
   /// 
-  Future apiServicesAppCalendarsDeleteDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppCalendarsDeleteDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -90,14 +90,14 @@ class CalendarsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -111,8 +111,8 @@ class CalendarsApi {
   /// ApiServicesAppCalendarsGetallGet
   ///
   /// 
-  Future<ListResultDtoOfGetCalendarForViewDto> apiServicesAppCalendarsGetallGet({ String filter, int yearFilter, String cultureFilter, String eventNameFilter, int eventTypeFilter, int maxResultCount }) async {
-    Object postBody = null;
+  Future<ListResultDtoOfGetCalendarForViewDto> apiServicesAppCalendarsGetallGet({ String? filter, int? yearFilter, String? cultureFilter, String? eventNameFilter, int? eventTypeFilter, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -157,14 +157,14 @@ class CalendarsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -178,8 +178,8 @@ class CalendarsApi {
   /// ApiServicesAppCalendarsGetcalendareventbydateGet
   ///
   /// 
-  Future<ListResultDtoOfGetCalendarForViewDto> apiServicesAppCalendarsGetcalendareventbydateGet({ DateTime input }) async {
-    Object postBody = null;
+  Future<ListResultDtoOfGetCalendarForViewDto> apiServicesAppCalendarsGetcalendareventbydateGet({ DateTime? input }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -209,14 +209,14 @@ class CalendarsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -230,8 +230,8 @@ class CalendarsApi {
   /// ApiServicesAppCalendarsGetcalendarforeditGet
   ///
   /// 
-  Future<GetCalendarForEditOutput> apiServicesAppCalendarsGetcalendarforeditGet({ int id }) async {
-    Object postBody = null;
+  Future<GetCalendarForEditOutput> apiServicesAppCalendarsGetcalendarforeditGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -261,14 +261,14 @@ class CalendarsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -282,8 +282,8 @@ class CalendarsApi {
   /// ApiServicesAppCalendarsGetcalendarforviewGet
   ///
   /// 
-  Future<GetCalendarForViewDto> apiServicesAppCalendarsGetcalendarforviewGet({ int id }) async {
-    Object postBody = null;
+  Future<GetCalendarForViewDto> apiServicesAppCalendarsGetcalendarforviewGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -313,14 +313,14 @@ class CalendarsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -334,8 +334,8 @@ class CalendarsApi {
   /// ApiServicesAppCalendarsGetcalendarstoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppCalendarsGetcalendarstoexcelGet({ String filter, int yearFilter, String cultureFilter, String eventNameFilter, int eventTypeFilter }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppCalendarsGetcalendarstoexcelGet({ String? filter, int? yearFilter, String? cultureFilter, String? eventNameFilter, int? eventTypeFilter }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -377,14 +377,14 @@ class CalendarsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -399,7 +399,7 @@ class CalendarsApi {
   ///
   /// 
   Future apiServicesAppCalendarsImportfromtimeirPost() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -426,14 +426,14 @@ class CalendarsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

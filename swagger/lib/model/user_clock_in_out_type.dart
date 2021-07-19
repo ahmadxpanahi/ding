@@ -2,7 +2,7 @@ part of swagger.api;
 
 class UserClockInOutType {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   UserClockInOutType._internal(this.value);
 

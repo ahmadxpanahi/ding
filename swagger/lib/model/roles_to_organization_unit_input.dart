@@ -5,7 +5,7 @@ class RolesToOrganizationUnitInput {
   List<int> roleIds = [];
   
 
-  int organizationUnitId = null;
+  int? organizationUnitId = null;
    // range from 1 to //
   RolesToOrganizationUnitInput();
 
@@ -14,7 +14,7 @@ class RolesToOrganizationUnitInput {
     return 'RolesToOrganizationUnitInput[roleIds=$roleIds, organizationUnitId=$organizationUnitId, ]';
   }
 
-  RolesToOrganizationUnitInput.fromJson(Map<String, dynamic> json) {
+  RolesToOrganizationUnitInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     roleIds =
         (json['roleIds'] as List).map((item) => item as int).toList()

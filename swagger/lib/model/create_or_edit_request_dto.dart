@@ -2,25 +2,25 @@ part of swagger.api;
 
 class CreateOrEditRequestDto {
   
-  RequestType requestType = null;
+  RequestType? requestType = null;
   
 
-  DateTime from = null;
+  DateTime? from = null;
   
 
-  DateTime to = null;
+  DateTime? to = null;
   
 
-  String comment = null;
+  String? comment = null;
   
 
-  RequestStatus status = null;
+  RequestStatus? status = null;
   
 
-  int substituteUserId = null;
+  int? substituteUserId = null;
   
 
-  int id = null;
+  int? id = null;
   
   CreateOrEditRequestDto();
 
@@ -29,7 +29,7 @@ class CreateOrEditRequestDto {
     return 'CreateOrEditRequestDto[requestType=$requestType, from=$from, to=$to, comment=$comment, status=$status, substituteUserId=$substituteUserId, id=$id, ]';
   }
 
-  CreateOrEditRequestDto.fromJson(Map<String, dynamic> json) {
+  CreateOrEditRequestDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     requestType =
       
@@ -57,8 +57,8 @@ class CreateOrEditRequestDto {
   Map<String, dynamic> toJson() {
     return {
       'requestType': requestType,
-      'from': from == null ? '' : from.toUtc().toIso8601String(),
-      'to': to == null ? '' : to.toUtc().toIso8601String(),
+      'from': from == null ? '' : from!.toUtc().toIso8601String(),
+      'to': to == null ? '' : to!.toUtc().toIso8601String(),
       'comment': comment,
       'status': status,
       'substituteUserId': substituteUserId,

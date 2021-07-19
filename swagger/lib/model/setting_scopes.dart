@@ -2,7 +2,7 @@ part of swagger.api;
 
 class SettingScopes {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   SettingScopes._internal(this.value);
 

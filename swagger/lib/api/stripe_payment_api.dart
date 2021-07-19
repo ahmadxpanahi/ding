@@ -5,13 +5,13 @@ part of swagger.api;
 class StripePaymentApi {
   final ApiClient apiClient;
 
-  StripePaymentApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  StripePaymentApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppStripepaymentCreatepaymentsessionPost
   ///
   /// 
-  Future<String> apiServicesAppStripepaymentCreatepaymentsessionPost({ StripeCreatePaymentSessionInput body }) async {
-    Object postBody = body;
+  Future<String> apiServicesAppStripepaymentCreatepaymentsessionPost({ StripeCreatePaymentSessionInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class StripePaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -60,7 +60,7 @@ class StripePaymentApi {
   ///
   /// 
   Future<StripeConfigurationDto> apiServicesAppStripepaymentGetconfigurationGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class StripePaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class StripePaymentApi {
   /// ApiServicesAppStripepaymentGetpaymentGet
   ///
   /// 
-  Future<SubscriptionPaymentDto> apiServicesAppStripepaymentGetpaymentGet({ String stripeSessionId }) async {
-    Object postBody = null;
+  Future<SubscriptionPaymentDto> apiServicesAppStripepaymentGetpaymentGet({ String? stripeSessionId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -139,14 +139,14 @@ class StripePaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -160,8 +160,8 @@ class StripePaymentApi {
   /// ApiServicesAppStripepaymentGetpaymentresultGet
   ///
   /// 
-  Future<StripePaymentResultOutput> apiServicesAppStripepaymentGetpaymentresultGet({ int paymentId }) async {
-    Object postBody = null;
+  Future<StripePaymentResultOutput> apiServicesAppStripepaymentGetpaymentresultGet({ int? paymentId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -191,14 +191,14 @@ class StripePaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

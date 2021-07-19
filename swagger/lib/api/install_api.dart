@@ -5,13 +5,13 @@ part of swagger.api;
 class InstallApi {
   final ApiClient apiClient;
 
-  InstallApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  InstallApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppInstallCheckdatabasePost
   ///
   /// 
   Future<CheckDatabaseOutput> apiServicesAppInstallCheckdatabasePost() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class InstallApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -60,7 +60,7 @@ class InstallApi {
   ///
   /// 
   Future<AppSettingsJsonDto> apiServicesAppInstallGetappsettingsjsonGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class InstallApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class InstallApi {
   /// ApiServicesAppInstallSetupPost
   ///
   /// 
-  Future apiServicesAppInstallSetupPost({ InstallDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppInstallSetupPost({ InstallDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -136,14 +136,14 @@ class InstallApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

@@ -2,7 +2,7 @@ part of swagger.api;
 
 class DelegatedImpersonateInput {
   
-  int userDelegationId = null;
+  int? userDelegationId = null;
   
   DelegatedImpersonateInput();
 
@@ -11,7 +11,7 @@ class DelegatedImpersonateInput {
     return 'DelegatedImpersonateInput[userDelegationId=$userDelegationId, ]';
   }
 
-  DelegatedImpersonateInput.fromJson(Map<String, dynamic> json) {
+  DelegatedImpersonateInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userDelegationId =
         json['userDelegationId']

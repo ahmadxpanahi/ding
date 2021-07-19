@@ -11,7 +11,7 @@ class ListResultDtoOfGetAllAvailableWebhooksOutput {
     return 'ListResultDtoOfGetAllAvailableWebhooksOutput[items=$items, ]';
   }
 
-  ListResultDtoOfGetAllAvailableWebhooksOutput.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfGetAllAvailableWebhooksOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       GetAllAvailableWebhooksOutput.listFromJson(json['items'])

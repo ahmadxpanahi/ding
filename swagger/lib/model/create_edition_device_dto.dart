@@ -2,46 +2,46 @@ part of swagger.api;
 
 class CreateEditionDeviceDto {
   
-  int editionId = null;
+  int? editionId = null;
   
 
   List<AllAvailableDevicesDto> devices = [];
   
 
-  int deviceId = null;
+  int? deviceId = null;
   
 
-  int purchasingResourceId = null;
+  int? purchasingResourceId = null;
   
 
-  EditionType editionType = null;
+  EditionType? editionType = null;
   
 
-  String editionName = null;
+  String? editionName = null;
   
 
-  double editionPrice = null;
+  double? editionPrice = null;
   
 
-  int dayCount = null;
+  int? dayCount = null;
   
 
-  int trialDayCount = null;
+  int? trialDayCount = null;
   
 
-  int waitingDayAfterExpire = null;
+  int? waitingDayAfterExpire = null;
   
 
-  int expiringEditionId = null;
+  int? expiringEditionId = null;
   
 
-  int maxUserCount = null;
+  int? maxUserCount = null;
   
 
-  int maxLocationCount = null;
+  int? maxLocationCount = null;
   
 
-  int id = null;
+  int? id = null;
   
   CreateEditionDeviceDto();
 
@@ -50,7 +50,7 @@ class CreateEditionDeviceDto {
     return 'CreateEditionDeviceDto[editionId=$editionId, devices=$devices, deviceId=$deviceId, purchasingResourceId=$purchasingResourceId, editionType=$editionType, editionName=$editionName, editionPrice=$editionPrice, dayCount=$dayCount, trialDayCount=$trialDayCount, waitingDayAfterExpire=$waitingDayAfterExpire, expiringEditionId=$expiringEditionId, maxUserCount=$maxUserCount, maxLocationCount=$maxLocationCount, id=$id, ]';
   }
 
-  CreateEditionDeviceDto.fromJson(Map<String, dynamic> json) {
+  CreateEditionDeviceDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     editionId =
         json['editionId']

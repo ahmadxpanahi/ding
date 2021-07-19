@@ -2,7 +2,7 @@ part of swagger.api;
 
 class PagedResultDtoOfGetUserClockInOutForViewDto {
   
-  int totalCount = null;
+  int? totalCount = null;
   
 
   List<GetUserClockInOutForViewDto> items = [];
@@ -14,7 +14,7 @@ class PagedResultDtoOfGetUserClockInOutForViewDto {
     return 'PagedResultDtoOfGetUserClockInOutForViewDto[totalCount=$totalCount, items=$items, ]';
   }
 
-  PagedResultDtoOfGetUserClockInOutForViewDto.fromJson(Map<String, dynamic> json) {
+  PagedResultDtoOfGetUserClockInOutForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     totalCount =
         json['totalCount']

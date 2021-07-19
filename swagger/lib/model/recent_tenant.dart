@@ -2,13 +2,13 @@ part of swagger.api;
 
 class RecentTenant {
   
-  int id = null;
+  int? id = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
   RecentTenant();
 
@@ -17,7 +17,7 @@ class RecentTenant {
     return 'RecentTenant[id=$id, name=$name, creationTime=$creationTime, ]';
   }
 
-  RecentTenant.fromJson(Map<String, dynamic> json) {
+  RecentTenant.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']
@@ -32,11 +32,11 @@ class RecentTenant {
     return {
       'id': id,
       'name': name,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String()
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String()
      };
   }
 
-  static List<RecentTenant> listFromJson(List<dynamic> json) {
+  static List<RecentTenant> listFromJson(List<dynamic>? json) {
     return json == null ? new List<RecentTenant>() : json.map((value) => new RecentTenant.fromJson(value)).toList();
   }
 

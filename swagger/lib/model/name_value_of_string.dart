@@ -2,10 +2,10 @@ part of swagger.api;
 
 class NameValueOfString {
   
-  String name = null;
+  String? name = null;
   
 
-  String value = null;
+  String? value = null;
   
   NameValueOfString();
 
@@ -14,7 +14,7 @@ class NameValueOfString {
     return 'NameValueOfString[name=$name, value=$value, ]';
   }
 
-  NameValueOfString.fromJson(Map<String, dynamic> json) {
+  NameValueOfString.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']

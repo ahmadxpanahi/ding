@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetCalendarForEditOutput {
   
-  CreateOrEditCalendarDto calendar = null;
+  CreateOrEditCalendarDto? calendar = null;
   
   GetCalendarForEditOutput();
 
@@ -11,7 +11,7 @@ class GetCalendarForEditOutput {
     return 'GetCalendarForEditOutput[calendar=$calendar, ]';
   }
 
-  GetCalendarForEditOutput.fromJson(Map<String, dynamic> json) {
+  GetCalendarForEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     calendar =
       

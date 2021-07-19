@@ -2,16 +2,16 @@ part of swagger.api;
 
 class FindOrganizationUnitRolesInput {
   
-  int organizationUnitId = null;
+  int? organizationUnitId = null;
   
 
-  int maxResultCount = null;
+  int? maxResultCount = null;
    // range from 1 to 1000//
 
-  int skipCount = null;
+  int? skipCount = null;
    // range from 0 to 2147483647//
 
-  String filter = null;
+  String? filter = null;
   
   FindOrganizationUnitRolesInput();
 
@@ -20,7 +20,7 @@ class FindOrganizationUnitRolesInput {
     return 'FindOrganizationUnitRolesInput[organizationUnitId=$organizationUnitId, maxResultCount=$maxResultCount, skipCount=$skipCount, filter=$filter, ]';
   }
 
-  FindOrganizationUnitRolesInput.fromJson(Map<String, dynamic> json) {
+  FindOrganizationUnitRolesInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     organizationUnitId =
         json['organizationUnitId']

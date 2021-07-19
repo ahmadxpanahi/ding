@@ -5,13 +5,13 @@ part of swagger.api;
 class DemoUiComponentsApi {
   final ApiClient apiClient;
 
-  DemoUiComponentsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  DemoUiComponentsApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppDemouicomponentsGetcountriesGet
   ///
   /// 
-  Future<List<NameValueOfString>> apiServicesAppDemouicomponentsGetcountriesGet({ String searchTerm }) async {
-    Object postBody = null;
+  Future<List<NameValueOfString>> apiServicesAppDemouicomponentsGetcountriesGet({ String? searchTerm }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -41,14 +41,14 @@ class DemoUiComponentsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -62,8 +62,8 @@ class DemoUiComponentsApi {
   /// ApiServicesAppDemouicomponentsSendandgetdatePost
   ///
   /// 
-  Future<DateToStringOutput> apiServicesAppDemouicomponentsSendandgetdatePost({ DateTime date }) async {
-    Object postBody = null;
+  Future<DateToStringOutput> apiServicesAppDemouicomponentsSendandgetdatePost({ DateTime? date }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -93,14 +93,14 @@ class DemoUiComponentsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -114,8 +114,8 @@ class DemoUiComponentsApi {
   /// ApiServicesAppDemouicomponentsSendandgetdaterangePost
   ///
   /// 
-  Future<DateToStringOutput> apiServicesAppDemouicomponentsSendandgetdaterangePost({ DateTime startDate, DateTime endDate }) async {
-    Object postBody = null;
+  Future<DateToStringOutput> apiServicesAppDemouicomponentsSendandgetdaterangePost({ DateTime? startDate, DateTime? endDate }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -148,14 +148,14 @@ class DemoUiComponentsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -169,8 +169,8 @@ class DemoUiComponentsApi {
   /// ApiServicesAppDemouicomponentsSendandgetdatetimePost
   ///
   /// 
-  Future<DateToStringOutput> apiServicesAppDemouicomponentsSendandgetdatetimePost({ DateTime date }) async {
-    Object postBody = null;
+  Future<DateToStringOutput> apiServicesAppDemouicomponentsSendandgetdatetimePost({ DateTime? date }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -200,14 +200,14 @@ class DemoUiComponentsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -221,8 +221,8 @@ class DemoUiComponentsApi {
   /// ApiServicesAppDemouicomponentsSendandgetselectedcountriesPost
   ///
   /// 
-  Future<List<NameValueOfString>> apiServicesAppDemouicomponentsSendandgetselectedcountriesPost({ List<NameValueOfString> body }) async {
-    Object postBody = body;
+  Future<List<NameValueOfString>> apiServicesAppDemouicomponentsSendandgetselectedcountriesPost({ List<NameValueOfString>? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -249,14 +249,14 @@ class DemoUiComponentsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -270,8 +270,8 @@ class DemoUiComponentsApi {
   /// ApiServicesAppDemouicomponentsSendandgetvaluePost
   ///
   /// 
-  Future<StringOutput> apiServicesAppDemouicomponentsSendandgetvaluePost({ String input }) async {
-    Object postBody = null;
+  Future<StringOutput> apiServicesAppDemouicomponentsSendandgetvaluePost({ String? input }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -301,14 +301,14 @@ class DemoUiComponentsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

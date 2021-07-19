@@ -2,7 +2,7 @@ part of swagger.api;
 
 class SendTestEmailInput {
   
-  String emailAddress = null;
+  String? emailAddress = null;
   
   SendTestEmailInput();
 
@@ -11,7 +11,7 @@ class SendTestEmailInput {
     return 'SendTestEmailInput[emailAddress=$emailAddress, ]';
   }
 
-  SendTestEmailInput.fromJson(Map<String, dynamic> json) {
+  SendTestEmailInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     emailAddress =
         json['emailAddress']

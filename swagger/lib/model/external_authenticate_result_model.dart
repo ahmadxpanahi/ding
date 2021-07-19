@@ -2,25 +2,25 @@ part of swagger.api;
 
 class ExternalAuthenticateResultModel {
   
-  String accessToken = null;
+  String? accessToken = null;
   
 
-  String encryptedAccessToken = null;
+  String? encryptedAccessToken = null;
   
 
-  int expireInSeconds = null;
+  int? expireInSeconds = null;
   
 
-  bool waitingForActivation = null;
+  bool? waitingForActivation = null;
   
 
-  String returnUrl = null;
+  String? returnUrl = null;
   
 
-  String refreshToken = null;
+  String? refreshToken = null;
   
 
-  int refreshTokenExpireInSeconds = null;
+  int? refreshTokenExpireInSeconds = null;
   
   ExternalAuthenticateResultModel();
 
@@ -29,7 +29,7 @@ class ExternalAuthenticateResultModel {
     return 'ExternalAuthenticateResultModel[accessToken=$accessToken, encryptedAccessToken=$encryptedAccessToken, expireInSeconds=$expireInSeconds, waitingForActivation=$waitingForActivation, returnUrl=$returnUrl, refreshToken=$refreshToken, refreshTokenExpireInSeconds=$refreshTokenExpireInSeconds, ]';
   }
 
-  ExternalAuthenticateResultModel.fromJson(Map<String, dynamic> json) {
+  ExternalAuthenticateResultModel.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     accessToken =
         json['accessToken']

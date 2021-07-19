@@ -2,13 +2,13 @@ part of swagger.api;
 
 class SubscriptionDeviceEditionDto {
   
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  int deviceId = null;
+  int? deviceId = null;
   
 
-  EditionSelectDto editionSelect = null;
+  EditionSelectDto? editionSelect = null;
   
   SubscriptionDeviceEditionDto();
 
@@ -17,7 +17,7 @@ class SubscriptionDeviceEditionDto {
     return 'SubscriptionDeviceEditionDto[tenantId=$tenantId, deviceId=$deviceId, editionSelect=$editionSelect, ]';
   }
 
-  SubscriptionDeviceEditionDto.fromJson(Map<String, dynamic> json) {
+  SubscriptionDeviceEditionDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenantId =
         json['tenantId']

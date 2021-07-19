@@ -2,7 +2,7 @@ part of swagger.api;
 
 class StripeConfigurationDto {
   
-  String publishableKey = null;
+  String? publishableKey = null;
   
   StripeConfigurationDto();
 
@@ -11,7 +11,7 @@ class StripeConfigurationDto {
     return 'StripeConfigurationDto[publishableKey=$publishableKey, ]';
   }
 
-  StripeConfigurationDto.fromJson(Map<String, dynamic> json) {
+  StripeConfigurationDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     publishableKey =
         json['publishableKey']

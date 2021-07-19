@@ -2,16 +2,16 @@ part of swagger.api;
 
 class GetSummaryEmployeeReportForViewDto {
   
-  SummaryEmployeeReportDto summaryEmployeeReport = null;
+  SummaryEmployeeReportDto? summaryEmployeeReport = null;
   
 
-  int userId = null;
+  int? userId = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  String workScheduleName = null;
+  String? workScheduleName = null;
   
   GetSummaryEmployeeReportForViewDto();
 
@@ -20,7 +20,7 @@ class GetSummaryEmployeeReportForViewDto {
     return 'GetSummaryEmployeeReportForViewDto[summaryEmployeeReport=$summaryEmployeeReport, userId=$userId, userName=$userName, workScheduleName=$workScheduleName, ]';
   }
 
-  GetSummaryEmployeeReportForViewDto.fromJson(Map<String, dynamic> json) {
+  GetSummaryEmployeeReportForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     summaryEmployeeReport =
       
@@ -47,7 +47,7 @@ class GetSummaryEmployeeReportForViewDto {
      };
   }
 
-  static List<GetSummaryEmployeeReportForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetSummaryEmployeeReportForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetSummaryEmployeeReportForViewDto>() : json.map((value) => new GetSummaryEmployeeReportForViewDto.fromJson(value)).toList();
   }
 

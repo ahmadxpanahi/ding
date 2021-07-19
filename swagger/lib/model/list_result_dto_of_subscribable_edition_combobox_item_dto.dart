@@ -11,7 +11,7 @@ class ListResultDtoOfSubscribableEditionComboboxItemDto {
     return 'ListResultDtoOfSubscribableEditionComboboxItemDto[items=$items, ]';
   }
 
-  ListResultDtoOfSubscribableEditionComboboxItemDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfSubscribableEditionComboboxItemDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       SubscribableEditionComboboxItemDto.listFromJson(json['items'])

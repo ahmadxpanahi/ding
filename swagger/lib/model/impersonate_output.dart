@@ -2,10 +2,10 @@ part of swagger.api;
 
 class ImpersonateOutput {
   
-  String impersonationToken = null;
+  String? impersonationToken = null;
   
 
-  String tenancyName = null;
+  String? tenancyName = null;
   
   ImpersonateOutput();
 
@@ -14,7 +14,7 @@ class ImpersonateOutput {
     return 'ImpersonateOutput[impersonationToken=$impersonationToken, tenancyName=$tenancyName, ]';
   }
 
-  ImpersonateOutput.fromJson(Map<String, dynamic> json) {
+  ImpersonateOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     impersonationToken =
         json['impersonationToken']

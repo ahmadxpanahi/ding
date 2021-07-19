@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetVacationTypeForEditOutput {
   
-  CreateOrEditVacationTypeDto vacationType = null;
+  CreateOrEditVacationTypeDto? vacationType = null;
   
   GetVacationTypeForEditOutput();
 
@@ -11,7 +11,7 @@ class GetVacationTypeForEditOutput {
     return 'GetVacationTypeForEditOutput[vacationType=$vacationType, ]';
   }
 
-  GetVacationTypeForEditOutput.fromJson(Map<String, dynamic> json) {
+  GetVacationTypeForEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     vacationType =
       

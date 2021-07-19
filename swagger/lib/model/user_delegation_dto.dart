@@ -2,16 +2,16 @@ part of swagger.api;
 
 class UserDelegationDto {
   
-  String username = null;
+  String? username = null;
   
 
-  DateTime startTime = null;
+  DateTime? startTime = null;
   
 
-  DateTime endTime = null;
+  DateTime? endTime = null;
   
 
-  int id = null;
+  int? id = null;
   
   UserDelegationDto();
 
@@ -20,7 +20,7 @@ class UserDelegationDto {
     return 'UserDelegationDto[username=$username, startTime=$startTime, endTime=$endTime, id=$id, ]';
   }
 
-  UserDelegationDto.fromJson(Map<String, dynamic> json) {
+  UserDelegationDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     username =
         json['username']
@@ -35,13 +35,13 @@ class UserDelegationDto {
   Map<String, dynamic> toJson() {
     return {
       'username': username,
-      'startTime': startTime == null ? '' : startTime.toUtc().toIso8601String(),
-      'endTime': endTime == null ? '' : endTime.toUtc().toIso8601String(),
+      'startTime': startTime == null ? '' : startTime!.toUtc().toIso8601String(),
+      'endTime': endTime == null ? '' : endTime!.toUtc().toIso8601String(),
       'id': id
      };
   }
 
-  static List<UserDelegationDto> listFromJson(List<dynamic> json) {
+  static List<UserDelegationDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<UserDelegationDto>() : json.map((value) => new UserDelegationDto.fromJson(value)).toList();
   }
 

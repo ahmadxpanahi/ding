@@ -2,10 +2,10 @@ part of swagger.api;
 
 class SavePageInput {
   
-  String dashboardName = null;
+  String? dashboardName = null;
   
 
-  String application = null;
+  String? application = null;
   
 
   List<Page> pages = [];
@@ -17,7 +17,7 @@ class SavePageInput {
     return 'SavePageInput[dashboardName=$dashboardName, application=$application, pages=$pages, ]';
   }
 
-  SavePageInput.fromJson(Map<String, dynamic> json) {
+  SavePageInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     dashboardName =
         json['dashboardName']

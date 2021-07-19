@@ -2,10 +2,10 @@ part of swagger.api;
 
 class Page {
   
-  String id = null;
+  String? id = null;
   
 
-  String name = null;
+  String? name = null;
   
 
   List<Widget> widgets = [];
@@ -17,7 +17,7 @@ class Page {
     return 'Page[id=$id, name=$name, widgets=$widgets, ]';
   }
 
-  Page.fromJson(Map<String, dynamic> json) {
+  Page.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']
@@ -38,7 +38,7 @@ class Page {
      };
   }
 
-  static List<Page> listFromJson(List<dynamic> json) {
+  static List<Page> listFromJson(List<dynamic>? json) {
     return json == null ? new List<Page>() : json.map((value) => new Page.fromJson(value)).toList();
   }
 

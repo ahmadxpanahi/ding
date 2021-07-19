@@ -2,9 +2,9 @@ part of swagger.api;
 
 class ApiException implements Exception {
   int code = 0;
-  String message = null;
-  Exception innerException = null;
-  StackTrace stackTrace = null;
+  String? message = null;
+  Exception? innerException = null;
+  StackTrace? stackTrace = null;
 
   ApiException(this.code, this.message);
 

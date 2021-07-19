@@ -2,7 +2,7 @@ part of swagger.api;
 
 class SubscriptionStartType {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   SubscriptionStartType._internal(this.value);
 

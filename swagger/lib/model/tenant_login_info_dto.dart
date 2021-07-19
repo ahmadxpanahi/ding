@@ -2,46 +2,46 @@ part of swagger.api;
 
 class TenantLoginInfoDto {
   
-  String tenancyName = null;
+  String? tenancyName = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  String logoId = null;
+  String? logoId = null;
   
 
-  String logoFileType = null;
+  String? logoFileType = null;
   
 
-  String customCssId = null;
+  String? customCssId = null;
   
 
-  DateTime subscriptionEndDateUtc = null;
+  DateTime? subscriptionEndDateUtc = null;
   
 
-  bool isInTrialPeriod = null;
+  bool? isInTrialPeriod = null;
   
 
-  SubscriptionPaymentType subscriptionPaymentType = null;
+  SubscriptionPaymentType? subscriptionPaymentType = null;
   
 
-  EditionInfoDto edition = null;
+  EditionInfoDto? edition = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  int dayCount = null;
+  int? dayCount = null;
   
 
-  String subscriptionDateString = null;
+  String? subscriptionDateString = null;
   
 
-  String creationTimeString = null;
+  String? creationTimeString = null;
   
 
-  int id = null;
+  int? id = null;
   
   TenantLoginInfoDto();
 
@@ -50,7 +50,7 @@ class TenantLoginInfoDto {
     return 'TenantLoginInfoDto[tenancyName=$tenancyName, name=$name, logoId=$logoId, logoFileType=$logoFileType, customCssId=$customCssId, subscriptionEndDateUtc=$subscriptionEndDateUtc, isInTrialPeriod=$isInTrialPeriod, subscriptionPaymentType=$subscriptionPaymentType, edition=$edition, creationTime=$creationTime, dayCount=$dayCount, subscriptionDateString=$subscriptionDateString, creationTimeString=$creationTimeString, id=$id, ]';
   }
 
-  TenantLoginInfoDto.fromJson(Map<String, dynamic> json) {
+  TenantLoginInfoDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenancyName =
         json['tenancyName']
@@ -103,11 +103,11 @@ class TenantLoginInfoDto {
       'logoId': logoId,
       'logoFileType': logoFileType,
       'customCssId': customCssId,
-      'subscriptionEndDateUtc': subscriptionEndDateUtc == null ? '' : subscriptionEndDateUtc.toUtc().toIso8601String(),
+      'subscriptionEndDateUtc': subscriptionEndDateUtc == null ? '' : subscriptionEndDateUtc!.toUtc().toIso8601String(),
       'isInTrialPeriod': isInTrialPeriod,
       'subscriptionPaymentType': subscriptionPaymentType,
       'edition': edition,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
       'dayCount': dayCount,
       'subscriptionDateString': subscriptionDateString,
       'creationTimeString': creationTimeString,

@@ -2,7 +2,7 @@ part of swagger.api;
 
 class TenantAvailabilityState {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   TenantAvailabilityState._internal(this.value);
 

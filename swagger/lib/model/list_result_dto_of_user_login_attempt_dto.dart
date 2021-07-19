@@ -11,7 +11,7 @@ class ListResultDtoOfUserLoginAttemptDto {
     return 'ListResultDtoOfUserLoginAttemptDto[items=$items, ]';
   }
 
-  ListResultDtoOfUserLoginAttemptDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfUserLoginAttemptDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       UserLoginAttemptDto.listFromJson(json['items'])

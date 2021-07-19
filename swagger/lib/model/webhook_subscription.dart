@@ -2,25 +2,25 @@ part of swagger.api;
 
 class WebhookSubscription {
   
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  String webhookUri = null;
+  String? webhookUri = null;
   
 
-  String secret = null;
+  String? secret = null;
   
 
-  bool isActive = null;
+  bool? isActive = null;
   
 
   List<String> webhooks = [];
   
 
-  Map<String, String> headers = {};
+  Map<String, String>? headers = {};
   
 
-  String id = null;
+  String? id = null;
   
   WebhookSubscription();
 
@@ -29,7 +29,7 @@ class WebhookSubscription {
     return 'WebhookSubscription[tenantId=$tenantId, webhookUri=$webhookUri, secret=$secret, isActive=$isActive, webhooks=$webhooks, headers=$headers, id=$id, ]';
   }
 
-  WebhookSubscription.fromJson(Map<String, dynamic> json) {
+  WebhookSubscription.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenantId =
         json['tenantId']

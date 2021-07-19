@@ -11,7 +11,7 @@ class ListResultDtoOfGetCalendarForViewDto {
     return 'ListResultDtoOfGetCalendarForViewDto[items=$items, ]';
   }
 
-  ListResultDtoOfGetCalendarForViewDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfGetCalendarForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       GetCalendarForViewDto.listFromJson(json['items'])

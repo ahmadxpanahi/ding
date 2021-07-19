@@ -2,28 +2,28 @@ part of swagger.api;
 
 class GetEditionDeviceForViewDto {
   
-  EditionDeviceDto editionDevice = null;
+  EditionDeviceDto? editionDevice = null;
   
 
-  String deviceName = null;
+  String? deviceName = null;
   
 
-  String deviceSerialNumber = null;
+  String? deviceSerialNumber = null;
   
 
-  String deviceTypeName = null;
+  String? deviceTypeName = null;
   
 
-  DeviceStatus deviceStatus = null;
+  DeviceStatus? deviceStatus = null;
   
 
-  int usedUserCount = null;
+  int? usedUserCount = null;
   
 
-  int usedLocationCount = null;
+  int? usedLocationCount = null;
   
 
-  String purchasingResourceTitle = null;
+  String? purchasingResourceTitle = null;
   
   GetEditionDeviceForViewDto();
 
@@ -32,7 +32,7 @@ class GetEditionDeviceForViewDto {
     return 'GetEditionDeviceForViewDto[editionDevice=$editionDevice, deviceName=$deviceName, deviceSerialNumber=$deviceSerialNumber, deviceTypeName=$deviceTypeName, deviceStatus=$deviceStatus, usedUserCount=$usedUserCount, usedLocationCount=$usedLocationCount, purchasingResourceTitle=$purchasingResourceTitle, ]';
   }
 
-  GetEditionDeviceForViewDto.fromJson(Map<String, dynamic> json) {
+  GetEditionDeviceForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     editionDevice =
       
@@ -77,7 +77,7 @@ class GetEditionDeviceForViewDto {
      };
   }
 
-  static List<GetEditionDeviceForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetEditionDeviceForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetEditionDeviceForViewDto>() : json.map((value) => new GetEditionDeviceForViewDto.fromJson(value)).toList();
   }
 

@@ -5,13 +5,13 @@ part of swagger.api;
 class AuditLogApi {
   final ApiClient apiClient;
 
-  AuditLogApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  AuditLogApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppAuditlogGetauditlogsGet
   ///
   /// 
-  Future<PagedResultDtoOfAuditLogListDto> apiServicesAppAuditlogGetauditlogsGet({ DateTime startDate, DateTime endDate, String userName, String serviceName, String methodName, String browserInfo, bool hasException, int minExecutionDuration, int maxExecutionDuration, String sorting, int maxResultCount, int skipCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfAuditLogListDto> apiServicesAppAuditlogGetauditlogsGet({ DateTime? startDate, DateTime? endDate, String? userName, String? serviceName, String? methodName, String? browserInfo, bool? hasException, int? minExecutionDuration, int? maxExecutionDuration, String? sorting, int? maxResultCount, int? skipCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -74,14 +74,14 @@ class AuditLogApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -95,8 +95,8 @@ class AuditLogApi {
   /// ApiServicesAppAuditlogGetauditlogstoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppAuditlogGetauditlogstoexcelGet({ DateTime startDate, DateTime endDate, String userName, String serviceName, String methodName, String browserInfo, bool hasException, int minExecutionDuration, int maxExecutionDuration, String sorting, int maxResultCount, int skipCount }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppAuditlogGetauditlogstoexcelGet({ DateTime? startDate, DateTime? endDate, String? userName, String? serviceName, String? methodName, String? browserInfo, bool? hasException, int? minExecutionDuration, int? maxExecutionDuration, String? sorting, int? maxResultCount, int? skipCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -159,14 +159,14 @@ class AuditLogApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -180,8 +180,8 @@ class AuditLogApi {
   /// ApiServicesAppAuditlogGetentitychangesGet
   ///
   /// 
-  Future<PagedResultDtoOfEntityChangeListDto> apiServicesAppAuditlogGetentitychangesGet({ DateTime startDate, DateTime endDate, String userName, String entityTypeFullName, String sorting, int maxResultCount, int skipCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfEntityChangeListDto> apiServicesAppAuditlogGetentitychangesGet({ DateTime? startDate, DateTime? endDate, String? userName, String? entityTypeFullName, String? sorting, int? maxResultCount, int? skipCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -229,14 +229,14 @@ class AuditLogApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -250,8 +250,8 @@ class AuditLogApi {
   /// ApiServicesAppAuditlogGetentitychangestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppAuditlogGetentitychangestoexcelGet({ DateTime startDate, DateTime endDate, String userName, String entityTypeFullName, String sorting, int maxResultCount, int skipCount }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppAuditlogGetentitychangestoexcelGet({ DateTime? startDate, DateTime? endDate, String? userName, String? entityTypeFullName, String? sorting, int? maxResultCount, int? skipCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -299,14 +299,14 @@ class AuditLogApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -321,7 +321,7 @@ class AuditLogApi {
   ///
   /// 
   Future<List<NameValueDto>> apiServicesAppAuditlogGetentityhistoryobjecttypesGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -348,14 +348,14 @@ class AuditLogApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -369,8 +369,8 @@ class AuditLogApi {
   /// ApiServicesAppAuditlogGetentitypropertychangesGet
   ///
   /// 
-  Future<List<EntityPropertyChangeDto>> apiServicesAppAuditlogGetentitypropertychangesGet({ int entityChangeId }) async {
-    Object postBody = null;
+  Future<List<EntityPropertyChangeDto>> apiServicesAppAuditlogGetentitypropertychangesGet({ int? entityChangeId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -400,14 +400,14 @@ class AuditLogApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -421,8 +421,8 @@ class AuditLogApi {
   /// ApiServicesAppAuditlogGetentitytypechangesGet
   ///
   /// 
-  Future<PagedResultDtoOfEntityChangeListDto> apiServicesAppAuditlogGetentitytypechangesGet({ String entityTypeFullName, String entityId, String sorting, int maxResultCount, int skipCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfEntityChangeListDto> apiServicesAppAuditlogGetentitytypechangesGet({ String? entityTypeFullName, String? entityId, String? sorting, int? maxResultCount, int? skipCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -464,14 +464,14 @@ class AuditLogApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

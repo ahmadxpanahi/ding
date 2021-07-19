@@ -2,10 +2,10 @@ part of swagger.api;
 
 class LocalizableComboboxItemDto {
   
-  String value = null;
+  String? value = null;
   
 
-  String displayText = null;
+  String? displayText = null;
   
   LocalizableComboboxItemDto();
 
@@ -14,7 +14,7 @@ class LocalizableComboboxItemDto {
     return 'LocalizableComboboxItemDto[value=$value, displayText=$displayText, ]';
   }
 
-  LocalizableComboboxItemDto.fromJson(Map<String, dynamic> json) {
+  LocalizableComboboxItemDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     value =
         json['value']
@@ -31,7 +31,7 @@ class LocalizableComboboxItemDto {
      };
   }
 
-  static List<LocalizableComboboxItemDto> listFromJson(List<dynamic> json) {
+  static List<LocalizableComboboxItemDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<LocalizableComboboxItemDto>() : json.map((value) => new LocalizableComboboxItemDto.fromJson(value)).toList();
   }
 

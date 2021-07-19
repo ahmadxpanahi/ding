@@ -2,16 +2,16 @@ part of swagger.api;
 
 class SessionTimeOutSettingsEditDto {
   
-  bool isEnabled = null;
+  bool? isEnabled = null;
   
 
-  int timeOutSecond = null;
+  int? timeOutSecond = null;
    // range from 10 to 2147483647//
 
-  int showTimeOutNotificationSecond = null;
+  int? showTimeOutNotificationSecond = null;
    // range from 10 to 2147483647//
 
-  bool showLockScreenWhenTimedOut = null;
+  bool? showLockScreenWhenTimedOut = null;
   
   SessionTimeOutSettingsEditDto();
 
@@ -20,7 +20,7 @@ class SessionTimeOutSettingsEditDto {
     return 'SessionTimeOutSettingsEditDto[isEnabled=$isEnabled, timeOutSecond=$timeOutSecond, showTimeOutNotificationSecond=$showTimeOutNotificationSecond, showLockScreenWhenTimedOut=$showLockScreenWhenTimedOut, ]';
   }
 
-  SessionTimeOutSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  SessionTimeOutSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     isEnabled =
         json['isEnabled']

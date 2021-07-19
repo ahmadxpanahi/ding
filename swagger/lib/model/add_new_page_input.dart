@@ -2,13 +2,13 @@ part of swagger.api;
 
 class AddNewPageInput {
   
-  String dashboardName = null;
+  String? dashboardName = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  String application = null;
+  String? application = null;
   
   AddNewPageInput();
 
@@ -17,7 +17,7 @@ class AddNewPageInput {
     return 'AddNewPageInput[dashboardName=$dashboardName, name=$name, application=$application, ]';
   }
 
-  AddNewPageInput.fromJson(Map<String, dynamic> json) {
+  AddNewPageInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     dashboardName =
         json['dashboardName']

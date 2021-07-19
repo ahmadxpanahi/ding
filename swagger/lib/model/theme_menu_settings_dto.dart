@@ -2,31 +2,31 @@ part of swagger.api;
 
 class ThemeMenuSettingsDto {
   
-  String position = null;
+  String? position = null;
   
 
-  String asideSkin = null;
+  String? asideSkin = null;
   
 
-  bool fixedAside = null;
+  bool? fixedAside = null;
   
 
-  bool allowAsideMinimizing = null;
+  bool? allowAsideMinimizing = null;
   
 
-  bool defaultMinimizedAside = null;
+  bool? defaultMinimizedAside = null;
   
 
-  String submenuToggle = null;
+  String? submenuToggle = null;
   
 
-  bool searchActive = null;
+  bool? searchActive = null;
   
 
-  bool enableSecondary = null;
+  bool? enableSecondary = null;
   
 
-  bool hoverableAside = null;
+  bool? hoverableAside = null;
   
   ThemeMenuSettingsDto();
 
@@ -35,7 +35,7 @@ class ThemeMenuSettingsDto {
     return 'ThemeMenuSettingsDto[position=$position, asideSkin=$asideSkin, fixedAside=$fixedAside, allowAsideMinimizing=$allowAsideMinimizing, defaultMinimizedAside=$defaultMinimizedAside, submenuToggle=$submenuToggle, searchActive=$searchActive, enableSecondary=$enableSecondary, hoverableAside=$hoverableAside, ]';
   }
 
-  ThemeMenuSettingsDto.fromJson(Map<String, dynamic> json) {
+  ThemeMenuSettingsDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     position =
         json['position']

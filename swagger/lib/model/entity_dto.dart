@@ -2,7 +2,7 @@ part of swagger.api;
 
 class EntityDto {
   
-  int id = null;
+  int? id = null;
   
   EntityDto();
 
@@ -11,7 +11,7 @@ class EntityDto {
     return 'EntityDto[id=$id, ]';
   }
 
-  EntityDto.fromJson(Map<String, dynamic> json) {
+  EntityDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']

@@ -2,19 +2,19 @@ part of swagger.api;
 
 class GetUserClockInOutForEditOutput {
   
-  CreateOrEditUserClockInOutDto userClockInOut = null;
+  CreateOrEditUserClockInOutDto? userClockInOut = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  String workScheduleName = null;
+  String? workScheduleName = null;
   
 
-  String workHourDayName = null;
+  String? workHourDayName = null;
   
 
-  String organizationUnitDisplayName = null;
+  String? organizationUnitDisplayName = null;
   
   GetUserClockInOutForEditOutput();
 
@@ -23,7 +23,7 @@ class GetUserClockInOutForEditOutput {
     return 'GetUserClockInOutForEditOutput[userClockInOut=$userClockInOut, userName=$userName, workScheduleName=$workScheduleName, workHourDayName=$workHourDayName, organizationUnitDisplayName=$organizationUnitDisplayName, ]';
   }
 
-  GetUserClockInOutForEditOutput.fromJson(Map<String, dynamic> json) {
+  GetUserClockInOutForEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userClockInOut =
       

@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetVacationTypeForViewDto {
   
-  VacationTypeDto vacationType = null;
+  VacationTypeDto? vacationType = null;
   
   GetVacationTypeForViewDto();
 
@@ -11,7 +11,7 @@ class GetVacationTypeForViewDto {
     return 'GetVacationTypeForViewDto[vacationType=$vacationType, ]';
   }
 
-  GetVacationTypeForViewDto.fromJson(Map<String, dynamic> json) {
+  GetVacationTypeForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     vacationType =
       
@@ -26,7 +26,7 @@ class GetVacationTypeForViewDto {
      };
   }
 
-  static List<GetVacationTypeForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetVacationTypeForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetVacationTypeForViewDto>() : json.map((value) => new GetVacationTypeForViewDto.fromJson(value)).toList();
   }
 

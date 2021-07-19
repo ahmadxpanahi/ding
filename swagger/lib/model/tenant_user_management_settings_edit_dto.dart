@@ -2,31 +2,31 @@ part of swagger.api;
 
 class TenantUserManagementSettingsEditDto {
   
-  bool allowSelfRegistration = null;
+  bool? allowSelfRegistration = null;
   
 
-  bool isNewRegisteredUserActiveByDefault = null;
+  bool? isNewRegisteredUserActiveByDefault = null;
   
 
-  bool isEmailConfirmationRequiredForLogin = null;
+  bool? isEmailConfirmationRequiredForLogin = null;
   
 
-  bool useCaptchaOnRegistration = null;
+  bool? useCaptchaOnRegistration = null;
   
 
-  bool useCaptchaOnLogin = null;
+  bool? useCaptchaOnLogin = null;
   
 
-  bool isCookieConsentEnabled = null;
+  bool? isCookieConsentEnabled = null;
   
 
-  bool isQuickThemeSelectEnabled = null;
+  bool? isQuickThemeSelectEnabled = null;
   
 
-  bool allowUsingGravatarProfilePicture = null;
+  bool? allowUsingGravatarProfilePicture = null;
   
 
-  SessionTimeOutSettingsEditDto sessionTimeOutSettings = null;
+  SessionTimeOutSettingsEditDto? sessionTimeOutSettings = null;
   
   TenantUserManagementSettingsEditDto();
 
@@ -35,7 +35,7 @@ class TenantUserManagementSettingsEditDto {
     return 'TenantUserManagementSettingsEditDto[allowSelfRegistration=$allowSelfRegistration, isNewRegisteredUserActiveByDefault=$isNewRegisteredUserActiveByDefault, isEmailConfirmationRequiredForLogin=$isEmailConfirmationRequiredForLogin, useCaptchaOnRegistration=$useCaptchaOnRegistration, useCaptchaOnLogin=$useCaptchaOnLogin, isCookieConsentEnabled=$isCookieConsentEnabled, isQuickThemeSelectEnabled=$isQuickThemeSelectEnabled, allowUsingGravatarProfilePicture=$allowUsingGravatarProfilePicture, sessionTimeOutSettings=$sessionTimeOutSettings, ]';
   }
 
-  TenantUserManagementSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  TenantUserManagementSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     allowSelfRegistration =
         json['allowSelfRegistration']

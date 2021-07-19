@@ -2,31 +2,31 @@ part of swagger.api;
 
 class EmailSettingsEditDto {
   
-  String defaultFromAddress = null;
+  String? defaultFromAddress = null;
   
 
-  String defaultFromDisplayName = null;
+  String? defaultFromDisplayName = null;
   
 
-  String smtpHost = null;
+  String? smtpHost = null;
   
 
-  int smtpPort = null;
+  int? smtpPort = null;
   
 
-  String smtpUserName = null;
+  String? smtpUserName = null;
   
 
-  String smtpPassword = null;
+  String? smtpPassword = null;
   
 
-  String smtpDomain = null;
+  String? smtpDomain = null;
   
 
-  bool smtpEnableSsl = null;
+  bool? smtpEnableSsl = null;
   
 
-  bool smtpUseDefaultCredentials = null;
+  bool? smtpUseDefaultCredentials = null;
   
   EmailSettingsEditDto();
 
@@ -35,7 +35,7 @@ class EmailSettingsEditDto {
     return 'EmailSettingsEditDto[defaultFromAddress=$defaultFromAddress, defaultFromDisplayName=$defaultFromDisplayName, smtpHost=$smtpHost, smtpPort=$smtpPort, smtpUserName=$smtpUserName, smtpPassword=$smtpPassword, smtpDomain=$smtpDomain, smtpEnableSsl=$smtpEnableSsl, smtpUseDefaultCredentials=$smtpUseDefaultCredentials, ]';
   }
 
-  EmailSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  EmailSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     defaultFromAddress =
         json['defaultFromAddress']

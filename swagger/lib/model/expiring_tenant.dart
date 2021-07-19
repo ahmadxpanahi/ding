@@ -2,10 +2,10 @@ part of swagger.api;
 
 class ExpiringTenant {
   
-  String tenantName = null;
+  String? tenantName = null;
   
 
-  int remainingDayCount = null;
+  int? remainingDayCount = null;
   
   ExpiringTenant();
 
@@ -14,7 +14,7 @@ class ExpiringTenant {
     return 'ExpiringTenant[tenantName=$tenantName, remainingDayCount=$remainingDayCount, ]';
   }
 
-  ExpiringTenant.fromJson(Map<String, dynamic> json) {
+  ExpiringTenant.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenantName =
         json['tenantName']
@@ -31,7 +31,7 @@ class ExpiringTenant {
      };
   }
 
-  static List<ExpiringTenant> listFromJson(List<dynamic> json) {
+  static List<ExpiringTenant> listFromJson(List<dynamic>? json) {
     return json == null ? new List<ExpiringTenant>() : json.map((value) => new ExpiringTenant.fromJson(value)).toList();
   }
 

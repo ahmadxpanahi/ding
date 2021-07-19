@@ -2,34 +2,34 @@ part of swagger.api;
 
 class OrganizationUnitDto {
   
-  int parentId = null;
+  int? parentId = null;
   
 
-  String code = null;
+  String? code = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  int memberCount = null;
+  int? memberCount = null;
   
 
-  int roleCount = null;
+  int? roleCount = null;
   
 
-  DateTime lastModificationTime = null;
+  DateTime? lastModificationTime = null;
   
 
-  int lastModifierUserId = null;
+  int? lastModifierUserId = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  int creatorUserId = null;
+  int? creatorUserId = null;
   
 
-  int id = null;
+  int? id = null;
   
   OrganizationUnitDto();
 
@@ -38,7 +38,7 @@ class OrganizationUnitDto {
     return 'OrganizationUnitDto[parentId=$parentId, code=$code, displayName=$displayName, memberCount=$memberCount, roleCount=$roleCount, lastModificationTime=$lastModificationTime, lastModifierUserId=$lastModifierUserId, creationTime=$creationTime, creatorUserId=$creatorUserId, id=$id, ]';
   }
 
-  OrganizationUnitDto.fromJson(Map<String, dynamic> json) {
+  OrganizationUnitDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     parentId =
         json['parentId']
@@ -75,15 +75,15 @@ class OrganizationUnitDto {
       'displayName': displayName,
       'memberCount': memberCount,
       'roleCount': roleCount,
-      'lastModificationTime': lastModificationTime == null ? '' : lastModificationTime.toUtc().toIso8601String(),
+      'lastModificationTime': lastModificationTime == null ? '' : lastModificationTime!.toUtc().toIso8601String(),
       'lastModifierUserId': lastModifierUserId,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
       'creatorUserId': creatorUserId,
       'id': id
      };
   }
 
-  static List<OrganizationUnitDto> listFromJson(List<dynamic> json) {
+  static List<OrganizationUnitDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<OrganizationUnitDto>() : json.map((value) => new OrganizationUnitDto.fromJson(value)).toList();
   }
 

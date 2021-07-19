@@ -5,13 +5,13 @@ part of swagger.api;
 class StatesApi {
   final ApiClient apiClient;
 
-  StatesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  StatesApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppStatesCreateoreditPost
   ///
   /// 
-  Future apiServicesAppStatesCreateoreditPost({ CreateOrEditStateDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppStatesCreateoreditPost({ CreateOrEditStateDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class StatesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class StatesApi {
   /// ApiServicesAppStatesDeleteDelete
   ///
   /// 
-  Future apiServicesAppStatesDeleteDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppStatesDeleteDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -90,14 +90,14 @@ class StatesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -111,8 +111,8 @@ class StatesApi {
   /// ApiServicesAppStatesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetStateForViewDto> apiServicesAppStatesGetallGet({ String filter, String nameFilter, String countryCodeFilter, String stateCodeFilter, String countryNameFilter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetStateForViewDto> apiServicesAppStatesGetallGet({ String? filter, String? nameFilter, String? countryCodeFilter, String? stateCodeFilter, String? countryNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -163,14 +163,14 @@ class StatesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -184,8 +184,8 @@ class StatesApi {
   /// ApiServicesAppStatesGetallcountryforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfStateCountryLookupTableDto> apiServicesAppStatesGetallcountryforlookuptableGet({ String filter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfStateCountryLookupTableDto> apiServicesAppStatesGetallcountryforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -224,14 +224,14 @@ class StatesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -245,8 +245,8 @@ class StatesApi {
   /// ApiServicesAppStatesGetstateforeditGet
   ///
   /// 
-  Future<GetStateForEditOutput> apiServicesAppStatesGetstateforeditGet({ int id }) async {
-    Object postBody = null;
+  Future<GetStateForEditOutput> apiServicesAppStatesGetstateforeditGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -276,14 +276,14 @@ class StatesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -297,8 +297,8 @@ class StatesApi {
   /// ApiServicesAppStatesGetstateforviewGet
   ///
   /// 
-  Future<GetStateForViewDto> apiServicesAppStatesGetstateforviewGet({ int id }) async {
-    Object postBody = null;
+  Future<GetStateForViewDto> apiServicesAppStatesGetstateforviewGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -328,14 +328,14 @@ class StatesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -349,8 +349,8 @@ class StatesApi {
   /// ApiServicesAppStatesGetstatestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppStatesGetstatestoexcelGet({ String filter, String nameFilter, String countryCodeFilter, String stateCodeFilter, String countryNameFilter }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppStatesGetstatestoexcelGet({ String? filter, String? nameFilter, String? countryCodeFilter, String? stateCodeFilter, String? countryNameFilter }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -392,14 +392,14 @@ class StatesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -413,8 +413,8 @@ class StatesApi {
   /// ApiServicesAppStatesWholebycountryPost
   ///
   /// 
-  Future<ListResultDtoOfGetStateForViewDto> apiServicesAppStatesWholebycountryPost({ int countryId }) async {
-    Object postBody = null;
+  Future<ListResultDtoOfGetStateForViewDto> apiServicesAppStatesWholebycountryPost({ int? countryId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -444,14 +444,14 @@ class StatesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

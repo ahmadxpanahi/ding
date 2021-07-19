@@ -2,7 +2,7 @@ part of swagger.api;
 
 class EventType {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   EventType._internal(this.value);
 

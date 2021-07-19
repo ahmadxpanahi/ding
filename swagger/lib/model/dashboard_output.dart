@@ -2,7 +2,7 @@ part of swagger.api;
 
 class DashboardOutput {
   
-  String name = null;
+  String? name = null;
   
 
   List<WidgetOutput> widgets = [];
@@ -14,7 +14,7 @@ class DashboardOutput {
     return 'DashboardOutput[name=$name, widgets=$widgets, ]';
   }
 
-  DashboardOutput.fromJson(Map<String, dynamic> json) {
+  DashboardOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']

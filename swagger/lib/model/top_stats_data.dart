@@ -2,16 +2,16 @@ part of swagger.api;
 
 class TopStatsData {
   
-  int newTenantsCount = null;
+  int? newTenantsCount = null;
   
 
-  double newSubscriptionAmount = null;
+  double? newSubscriptionAmount = null;
   
 
-  int dashboardPlaceholder1 = null;
+  int? dashboardPlaceholder1 = null;
   
 
-  int dashboardPlaceholder2 = null;
+  int? dashboardPlaceholder2 = null;
   
   TopStatsData();
 
@@ -20,7 +20,7 @@ class TopStatsData {
     return 'TopStatsData[newTenantsCount=$newTenantsCount, newSubscriptionAmount=$newSubscriptionAmount, dashboardPlaceholder1=$dashboardPlaceholder1, dashboardPlaceholder2=$dashboardPlaceholder2, ]';
   }
 
-  TopStatsData.fromJson(Map<String, dynamic> json) {
+  TopStatsData.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     newTenantsCount =
         json['newTenantsCount']

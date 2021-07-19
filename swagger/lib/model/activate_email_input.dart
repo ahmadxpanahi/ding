@@ -2,13 +2,13 @@ part of swagger.api;
 
 class ActivateEmailInput {
   
-  int userId = null;
+  int? userId = null;
   
 
-  String confirmationCode = null;
+  String? confirmationCode = null;
   
 
-  String c = null;
+  String? c = null;
   
   ActivateEmailInput();
 
@@ -17,7 +17,7 @@ class ActivateEmailInput {
     return 'ActivateEmailInput[userId=$userId, confirmationCode=$confirmationCode, c=$c, ]';
   }
 
-  ActivateEmailInput.fromJson(Map<String, dynamic> json) {
+  ActivateEmailInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userId =
         json['userId']

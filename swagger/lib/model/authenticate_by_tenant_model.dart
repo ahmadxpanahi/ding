@@ -2,31 +2,31 @@ part of swagger.api;
 
 class AuthenticateByTenantModel {
   
-  String tenancyName = null;
+  String? tenancyName = null;
   
 
-  String userNameOrEmailAddress = null;
+  String? userNameOrEmailAddress = null;
   
 
-  String password = null;
+  String? password = null;
   
 
-  String twoFactorVerificationCode = null;
+  String? twoFactorVerificationCode = null;
   
 
-  bool rememberClient = null;
+  bool? rememberClient = null;
   
 
-  String twoFactorRememberClientToken = null;
+  String? twoFactorRememberClientToken = null;
   
 
-  bool singleSignIn = null;
+  bool? singleSignIn = null;
   
 
-  String returnUrl = null;
+  String? returnUrl = null;
   
 
-  String captchaResponse = null;
+  String? captchaResponse = null;
   
   AuthenticateByTenantModel();
 
@@ -35,7 +35,7 @@ class AuthenticateByTenantModel {
     return 'AuthenticateByTenantModel[tenancyName=$tenancyName, userNameOrEmailAddress=$userNameOrEmailAddress, password=$password, twoFactorVerificationCode=$twoFactorVerificationCode, rememberClient=$rememberClient, twoFactorRememberClientToken=$twoFactorRememberClientToken, singleSignIn=$singleSignIn, returnUrl=$returnUrl, captchaResponse=$captchaResponse, ]';
   }
 
-  AuthenticateByTenantModel.fromJson(Map<String, dynamic> json) {
+  AuthenticateByTenantModel.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenancyName =
         json['tenancyName']

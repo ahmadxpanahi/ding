@@ -2,25 +2,25 @@ part of swagger.api;
 
 class VacationTypeDto {
   
-  String title = null;
+  String? title = null;
   
 
-  int totalVacationHours = null;
+  int? totalVacationHours = null;
   
 
-  int vacationHoursPerMonth = null;
+  int? vacationHoursPerMonth = null;
   
 
-  int vacationHoursPerDay = null;
+  int? vacationHoursPerDay = null;
   
 
-  bool hasLimitationVacationPerDay = null;
+  bool? hasLimitationVacationPerDay = null;
   
 
-  bool isAssigned = null;
+  bool? isAssigned = null;
   
 
-  int id = null;
+  int? id = null;
   
   VacationTypeDto();
 
@@ -29,7 +29,7 @@ class VacationTypeDto {
     return 'VacationTypeDto[title=$title, totalVacationHours=$totalVacationHours, vacationHoursPerMonth=$vacationHoursPerMonth, vacationHoursPerDay=$vacationHoursPerDay, hasLimitationVacationPerDay=$hasLimitationVacationPerDay, isAssigned=$isAssigned, id=$id, ]';
   }
 
-  VacationTypeDto.fromJson(Map<String, dynamic> json) {
+  VacationTypeDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     title =
         json['title']
@@ -66,7 +66,7 @@ class VacationTypeDto {
      };
   }
 
-  static List<VacationTypeDto> listFromJson(List<dynamic> json) {
+  static List<VacationTypeDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<VacationTypeDto>() : json.map((value) => new VacationTypeDto.fromJson(value)).toList();
   }
 

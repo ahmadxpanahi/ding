@@ -5,13 +5,13 @@ part of swagger.api;
 class UserClockInOutsApi {
   final ApiClient apiClient;
 
-  UserClockInOutsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  UserClockInOutsApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppUserclockinoutsClockinoutbyrequestapprovalPost
   ///
   /// 
-  Future apiServicesAppUserclockinoutsClockinoutbyrequestapprovalPost({ CreateOrEditUserClockInOutDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppUserclockinoutsClockinoutbyrequestapprovalPost({ CreateOrEditUserClockInOutDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class UserClockInOutsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class UserClockInOutsApi {
   /// ApiServicesAppUserclockinoutsCreateoreditPost
   ///
   /// 
-  Future apiServicesAppUserclockinoutsCreateoreditPost({ CreateOrEditUserClockInOutDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppUserclockinoutsCreateoreditPost({ CreateOrEditUserClockInOutDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class UserClockInOutsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class UserClockInOutsApi {
   /// ApiServicesAppUserclockinoutsDeleteDelete
   ///
   /// 
-  Future apiServicesAppUserclockinoutsDeleteDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppUserclockinoutsDeleteDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -139,14 +139,14 @@ class UserClockInOutsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -160,8 +160,8 @@ class UserClockInOutsApi {
   /// ApiServicesAppUserclockinoutsGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetUserClockInOutForViewDto> apiServicesAppUserclockinoutsGetallGet({ String filter, DateTime maxClockFilter, DateTime minClockFilter, int clockInOutTypeFilter, int abnormalityTypeFilter, int maxWeekNumberFilter, int minWeekNumberFilter, String userNameFilter, String workScheduleNameFilter, String workHourDayNameFilter, String organizationUnitDisplayNameFilter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetUserClockInOutForViewDto> apiServicesAppUserclockinoutsGetallGet({ String? filter, DateTime? maxClockFilter, DateTime? minClockFilter, int? clockInOutTypeFilter, int? abnormalityTypeFilter, int? maxWeekNumberFilter, int? minWeekNumberFilter, String? userNameFilter, String? workScheduleNameFilter, String? workHourDayNameFilter, String? organizationUnitDisplayNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -230,14 +230,14 @@ class UserClockInOutsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -252,7 +252,7 @@ class UserClockInOutsApi {
   ///
   /// 
   Future<List<UserClockInOutOrganizationUnitLookupTableDto>> apiServicesAppUserclockinoutsGetallorganizationunitfortabledropdownGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -279,14 +279,14 @@ class UserClockInOutsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -301,7 +301,7 @@ class UserClockInOutsApi {
   ///
   /// 
   Future<List<UserClockInOutUserLookupTableDto>> apiServicesAppUserclockinoutsGetalluserfortabledropdownGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -328,14 +328,14 @@ class UserClockInOutsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -350,7 +350,7 @@ class UserClockInOutsApi {
   ///
   /// 
   Future<List<UserClockInOutWorkHourLookupTableDto>> apiServicesAppUserclockinoutsGetallworkhourfortabledropdownGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -377,14 +377,14 @@ class UserClockInOutsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -399,7 +399,7 @@ class UserClockInOutsApi {
   ///
   /// 
   Future<List<UserClockInOutWorkScheduleLookupTableDto>> apiServicesAppUserclockinoutsGetallworkschedulefortabledropdownGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -426,14 +426,14 @@ class UserClockInOutsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -447,8 +447,8 @@ class UserClockInOutsApi {
   /// ApiServicesAppUserclockinoutsGetuserclockinoutforeditGet
   ///
   /// 
-  Future<GetUserClockInOutForEditOutput> apiServicesAppUserclockinoutsGetuserclockinoutforeditGet({ int id }) async {
-    Object postBody = null;
+  Future<GetUserClockInOutForEditOutput> apiServicesAppUserclockinoutsGetuserclockinoutforeditGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -478,14 +478,14 @@ class UserClockInOutsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -499,8 +499,8 @@ class UserClockInOutsApi {
   /// ApiServicesAppUserclockinoutsGetuserclockinoutforviewGet
   ///
   /// 
-  Future<GetUserClockInOutForViewDto> apiServicesAppUserclockinoutsGetuserclockinoutforviewGet({ int id }) async {
-    Object postBody = null;
+  Future<GetUserClockInOutForViewDto> apiServicesAppUserclockinoutsGetuserclockinoutforviewGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -530,14 +530,14 @@ class UserClockInOutsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -551,8 +551,8 @@ class UserClockInOutsApi {
   /// ApiServicesAppUserclockinoutsGetuserclocksstatusGet
   ///
   /// 
-  Future<PagedResultDtoOfGetUserClockInOutForViewDto> apiServicesAppUserclockinoutsGetuserclocksstatusGet({ DateTime maxClockFilter, DateTime minClockFilter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetUserClockInOutForViewDto> apiServicesAppUserclockinoutsGetuserclocksstatusGet({ DateTime? maxClockFilter, DateTime? minClockFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -594,14 +594,14 @@ class UserClockInOutsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

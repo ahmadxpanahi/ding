@@ -2,25 +2,25 @@ part of swagger.api;
 
 class CreateOrEditVacationTypeDto {
   
-  String title = null;
+  String? title = null;
   
 
-  int totalVacationHours = null;
+  int? totalVacationHours = null;
   
 
-  int vacationHoursPerMonth = null;
+  int? vacationHoursPerMonth = null;
   
 
-  int vacationHoursPerDay = null;
+  int? vacationHoursPerDay = null;
   
 
-  bool hasLimitationVacationPerDay = null;
+  bool? hasLimitationVacationPerDay = null;
   
 
-  String description = null;
+  String? description = null;
   
 
-  int id = null;
+  int? id = null;
   
   CreateOrEditVacationTypeDto();
 
@@ -29,7 +29,7 @@ class CreateOrEditVacationTypeDto {
     return 'CreateOrEditVacationTypeDto[title=$title, totalVacationHours=$totalVacationHours, vacationHoursPerMonth=$vacationHoursPerMonth, vacationHoursPerDay=$vacationHoursPerDay, hasLimitationVacationPerDay=$hasLimitationVacationPerDay, description=$description, id=$id, ]';
   }
 
-  CreateOrEditVacationTypeDto.fromJson(Map<String, dynamic> json) {
+  CreateOrEditVacationTypeDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     title =
         json['title']

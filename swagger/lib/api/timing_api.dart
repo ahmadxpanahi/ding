@@ -5,13 +5,13 @@ part of swagger.api;
 class TimingApi {
   final ApiClient apiClient;
 
-  TimingApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  TimingApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppTimingGettimezonecomboboxitemsGet
   ///
   /// 
-  Future<List<ComboboxItemDto>> apiServicesAppTimingGettimezonecomboboxitemsGet({ String selectedTimezoneId }) async {
-    Object postBody = null;
+  Future<List<ComboboxItemDto>> apiServicesAppTimingGettimezonecomboboxitemsGet({ String? selectedTimezoneId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -41,14 +41,14 @@ class TimingApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -63,7 +63,7 @@ class TimingApi {
   ///
   /// 
   Future<ListResultDtoOfNameValueDto> apiServicesAppTimingGettimezonesGet(String defaultTimezoneScope) async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
     if(defaultTimezoneScope == null) {
@@ -94,14 +94,14 @@ class TimingApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

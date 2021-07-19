@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetNotificationSettingsOutput {
   
-  bool receiveNotifications = null;
+  bool? receiveNotifications = null;
   
 
   List<NotificationSubscriptionWithDisplayNameDto> notifications = [];
@@ -14,7 +14,7 @@ class GetNotificationSettingsOutput {
     return 'GetNotificationSettingsOutput[receiveNotifications=$receiveNotifications, notifications=$notifications, ]';
   }
 
-  GetNotificationSettingsOutput.fromJson(Map<String, dynamic> json) {
+  GetNotificationSettingsOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     receiveNotifications =
         json['receiveNotifications']

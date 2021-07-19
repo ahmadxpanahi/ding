@@ -2,43 +2,43 @@ part of swagger.api;
 
 class CreateOrEditCountryDto {
   
-  String name = null;
+  String? name = null;
   
 
-  String isO3 = null;
+  String? isO3 = null;
   
 
-  String isO2 = null;
+  String? isO2 = null;
   
 
-  String phoneCode = null;
+  String? phoneCode = null;
   
 
-  String capital = null;
+  String? capital = null;
   
 
-  String currency = null;
+  String? currency = null;
   
 
-  String nativeName = null;
+  String? nativeName = null;
   
 
-  String region = null;
+  String? region = null;
   
 
-  String subregion = null;
+  String? subregion = null;
   
 
-  String timezones = null;
+  String? timezones = null;
   
 
-  String emoji = null;
+  String? emoji = null;
   
 
-  String emojiUnicode = null;
+  String? emojiUnicode = null;
   
 
-  int id = null;
+  int? id = null;
   
   CreateOrEditCountryDto();
 
@@ -47,7 +47,7 @@ class CreateOrEditCountryDto {
     return 'CreateOrEditCountryDto[name=$name, isO3=$isO3, isO2=$isO2, phoneCode=$phoneCode, capital=$capital, currency=$currency, nativeName=$nativeName, region=$region, subregion=$subregion, timezones=$timezones, emoji=$emoji, emojiUnicode=$emojiUnicode, id=$id, ]';
   }
 
-  CreateOrEditCountryDto.fromJson(Map<String, dynamic> json) {
+  CreateOrEditCountryDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']

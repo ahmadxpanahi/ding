@@ -26,7 +26,7 @@ class ApiClient {
      _defaultHeaderMap[key] = value;
   }
 
-  dynamic _deserialize(dynamic value, String targetType) {
+  dynamic _deserialize(dynamic value, String? targetType) {
     try {
       switch (targetType) {
         case 'String':
@@ -973,14 +973,14 @@ class ApiClient {
           return new WsFederationExternalLoginProviderSettings.fromJson(value);
         default:
           {
-            Match match;
+            Match? match;
             if (value is List &&
-                (match = _RegList.firstMatch(targetType)) != null) {
-              var newTargetType = match[1];
+                (match = _RegList.firstMatch(targetType!)) != null) {
+              var newTargetType = match![1];
               return value.map((v) => _deserialize(v, newTargetType)).toList();
             } else if (value is Map &&
-                (match = _RegMap.firstMatch(targetType)) != null) {
-              var newTargetType = match[1];
+                (match = _RegMap.firstMatch(targetType!)) != null) {
+              var newTargetType = match![1];
               return new Map.fromIterables(value.keys,
                   value.values.map((v) => _deserialize(v, newTargetType)));
             }
@@ -1002,7 +1002,7 @@ class ApiClient {
     return _deserialize(decodedJson, targetType);
   }
 
-  String serialize(Object obj) {
+  String serialize(Object? obj) {
     String serialized = '';
     if (obj == null) {
       serialized = '';
@@ -1014,16 +1014,16 @@ class ApiClient {
 
   // We don't use a Map<String, String> for queryParams.
   // If collectionFormat is 'multi' a key might appear multiple times.
-  Future<Response> invokeAPI(String path,
+  Future<Response?> invokeAPI(String path,
                              String method,
                              Iterable<QueryParam> queryParams,
-                             Object body,
+                             Object? body,
                              Map<String, String> headerParams,
                              Map<String, String> formParams,
                              String contentType,
                              List<String> authNames) async {
 
-    _updateParamsForAuth(authNames, queryParams, headerParams);
+    _updateParamsForAuth(authNames, queryParams as List<QueryParam>, headerParams);
 
     var ps = queryParams.where((p) => p.value != null).map((p) => '${p.name}=${p.value}');
     String queryString = ps.isNotEmpty ?
@@ -1064,7 +1064,7 @@ class ApiClient {
   /// @param authNames The authentications to apply
   void _updateParamsForAuth(List<String> authNames, List<QueryParam> queryParams, Map<String, String> headerParams) {
     authNames.forEach((authName) {
-      Authentication auth = _authentications[authName];
+      Authentication? auth = _authentications[authName];
       if (auth == null) throw new ArgumentError("Authentication undefined: " + authName);
       auth.applyToParams(queryParams, headerParams);
     });

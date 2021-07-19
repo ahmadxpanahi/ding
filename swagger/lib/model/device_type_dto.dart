@@ -2,10 +2,10 @@ part of swagger.api;
 
 class DeviceTypeDto {
   
-  String title = null;
+  String? title = null;
   
 
-  int id = null;
+  int? id = null;
   
   DeviceTypeDto();
 
@@ -14,7 +14,7 @@ class DeviceTypeDto {
     return 'DeviceTypeDto[title=$title, id=$id, ]';
   }
 
-  DeviceTypeDto.fromJson(Map<String, dynamic> json) {
+  DeviceTypeDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     title =
         json['title']

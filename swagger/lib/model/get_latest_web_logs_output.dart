@@ -11,7 +11,7 @@ class GetLatestWebLogsOutput {
     return 'GetLatestWebLogsOutput[latestWebLogLines=$latestWebLogLines, ]';
   }
 
-  GetLatestWebLogsOutput.fromJson(Map<String, dynamic> json) {
+  GetLatestWebLogsOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     latestWebLogLines =
         (json['latestWebLogLines'] as List).map((item) => item as String).toList()

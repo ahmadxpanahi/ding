@@ -2,16 +2,16 @@ part of swagger.api;
 
 class GetSalesSummaryOutput {
   
-  int totalSales = null;
+  int? totalSales = null;
   
 
-  int revenue = null;
+  int? revenue = null;
   
 
-  int expenses = null;
+  int? expenses = null;
   
 
-  int growth = null;
+  int? growth = null;
   
 
   List<SalesSummaryData> salesSummary = [];
@@ -23,7 +23,7 @@ class GetSalesSummaryOutput {
     return 'GetSalesSummaryOutput[totalSales=$totalSales, revenue=$revenue, expenses=$expenses, growth=$growth, salesSummary=$salesSummary, ]';
   }
 
-  GetSalesSummaryOutput.fromJson(Map<String, dynamic> json) {
+  GetSalesSummaryOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     totalSales =
         json['totalSales']

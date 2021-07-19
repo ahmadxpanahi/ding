@@ -2,7 +2,7 @@ part of swagger.api;
 
 class UpdateUserPermissionsInput {
   
-  int id = null;
+  int? id = null;
    // range from 1 to 2147483647//
 
   List<String> grantedPermissionNames = [];
@@ -14,7 +14,7 @@ class UpdateUserPermissionsInput {
     return 'UpdateUserPermissionsInput[id=$id, grantedPermissionNames=$grantedPermissionNames, ]';
   }
 
-  UpdateUserPermissionsInput.fromJson(Map<String, dynamic> json) {
+  UpdateUserPermissionsInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']

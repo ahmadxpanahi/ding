@@ -2,10 +2,10 @@ part of swagger.api;
 
 class AcceptFriendshipRequestInput {
   
-  int userId = null;
+  int? userId = null;
    // range from 1 to //
 
-  int tenantId = null;
+  int? tenantId = null;
   
   AcceptFriendshipRequestInput();
 
@@ -14,7 +14,7 @@ class AcceptFriendshipRequestInput {
     return 'AcceptFriendshipRequestInput[userId=$userId, tenantId=$tenantId, ]';
   }
 
-  AcceptFriendshipRequestInput.fromJson(Map<String, dynamic> json) {
+  AcceptFriendshipRequestInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userId =
         json['userId']

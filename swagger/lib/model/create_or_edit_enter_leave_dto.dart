@@ -2,31 +2,31 @@ part of swagger.api;
 
 class CreateOrEditEnterLeaveDto {
   
-  EnteringLeavingType enterLeaveType = null;
+  EnteringLeavingType? enterLeaveType = null;
   
 
-  DateTime occurDate = null;
+  DateTime? occurDate = null;
   
 
-  String occurTime = null;
+  String? occurTime = null;
   
 
-  String comment = null;
+  String? comment = null;
   
 
-  RequestStatus status = null;
+  RequestStatus? status = null;
   
 
-  String rejectReason = null;
+  String? rejectReason = null;
   
 
-  int rejectByUserId = null;
+  int? rejectByUserId = null;
   
 
-  int approverUserId = null;
+  int? approverUserId = null;
   
 
-  int id = null;
+  int? id = null;
   
   CreateOrEditEnterLeaveDto();
 
@@ -35,7 +35,7 @@ class CreateOrEditEnterLeaveDto {
     return 'CreateOrEditEnterLeaveDto[enterLeaveType=$enterLeaveType, occurDate=$occurDate, occurTime=$occurTime, comment=$comment, status=$status, rejectReason=$rejectReason, rejectByUserId=$rejectByUserId, approverUserId=$approverUserId, id=$id, ]';
   }
 
-  CreateOrEditEnterLeaveDto.fromJson(Map<String, dynamic> json) {
+  CreateOrEditEnterLeaveDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     enterLeaveType =
       
@@ -71,7 +71,7 @@ class CreateOrEditEnterLeaveDto {
   Map<String, dynamic> toJson() {
     return {
       'enterLeaveType': enterLeaveType,
-      'occurDate': occurDate == null ? '' : occurDate.toUtc().toIso8601String(),
+      'occurDate': occurDate == null ? '' : occurDate!.toUtc().toIso8601String(),
       'occurTime': occurTime,
       'comment': comment,
       'status': status,

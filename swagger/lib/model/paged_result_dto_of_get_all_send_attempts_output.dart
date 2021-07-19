@@ -2,7 +2,7 @@ part of swagger.api;
 
 class PagedResultDtoOfGetAllSendAttemptsOutput {
   
-  int totalCount = null;
+  int? totalCount = null;
   
 
   List<GetAllSendAttemptsOutput> items = [];
@@ -14,7 +14,7 @@ class PagedResultDtoOfGetAllSendAttemptsOutput {
     return 'PagedResultDtoOfGetAllSendAttemptsOutput[totalCount=$totalCount, items=$items, ]';
   }
 
-  PagedResultDtoOfGetAllSendAttemptsOutput.fromJson(Map<String, dynamic> json) {
+  PagedResultDtoOfGetAllSendAttemptsOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     totalCount =
         json['totalCount']

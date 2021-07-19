@@ -2,13 +2,13 @@ part of swagger.api;
 
 class SwitchedAccountAuthenticateResultModel {
   
-  String accessToken = null;
+  String? accessToken = null;
   
 
-  String encryptedAccessToken = null;
+  String? encryptedAccessToken = null;
   
 
-  int expireInSeconds = null;
+  int? expireInSeconds = null;
   
   SwitchedAccountAuthenticateResultModel();
 
@@ -17,7 +17,7 @@ class SwitchedAccountAuthenticateResultModel {
     return 'SwitchedAccountAuthenticateResultModel[accessToken=$accessToken, encryptedAccessToken=$encryptedAccessToken, expireInSeconds=$expireInSeconds, ]';
   }
 
-  SwitchedAccountAuthenticateResultModel.fromJson(Map<String, dynamic> json) {
+  SwitchedAccountAuthenticateResultModel.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     accessToken =
         json['accessToken']

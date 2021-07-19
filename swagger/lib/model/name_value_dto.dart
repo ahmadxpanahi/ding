@@ -2,10 +2,10 @@ part of swagger.api;
 
 class NameValueDto {
   
-  String name = null;
+  String? name = null;
   
 
-  String value = null;
+  String? value = null;
   
   NameValueDto();
 
@@ -14,7 +14,7 @@ class NameValueDto {
     return 'NameValueDto[name=$name, value=$value, ]';
   }
 
-  NameValueDto.fromJson(Map<String, dynamic> json) {
+  NameValueDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']
@@ -31,7 +31,7 @@ class NameValueDto {
      };
   }
 
-  static List<NameValueDto> listFromJson(List<dynamic> json) {
+  static List<NameValueDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<NameValueDto>() : json.map((value) => new NameValueDto.fromJson(value)).toList();
   }
 

@@ -2,40 +2,40 @@ part of swagger.api;
 
 class CreateOrEditDeviceDto {
   
-  String serialNumber = null;
+  String? serialNumber = null;
   
 
-  String qrCode = null;
+  String? qrCode = null;
   
 
-  String password = null;
+  String? password = null;
   
 
-  String bssId = null;
+  String? bssId = null;
   
 
-  String ssId = null;
+  String? ssId = null;
   
 
-  String uuId = null;
+  String? uuId = null;
   
 
-  String major = null;
+  String? major = null;
   
 
-  String minor = null;
+  String? minor = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  int deviceType = null;
+  int? deviceType = null;
   
 
-  DeviceStatus deviceStatus = null;
+  DeviceStatus? deviceStatus = null;
   
 
-  int id = null;
+  int? id = null;
   
   CreateOrEditDeviceDto();
 
@@ -44,7 +44,7 @@ class CreateOrEditDeviceDto {
     return 'CreateOrEditDeviceDto[serialNumber=$serialNumber, qrCode=$qrCode, password=$password, bssId=$bssId, ssId=$ssId, uuId=$uuId, major=$major, minor=$minor, name=$name, deviceType=$deviceType, deviceStatus=$deviceStatus, id=$id, ]';
   }
 
-  CreateOrEditDeviceDto.fromJson(Map<String, dynamic> json) {
+  CreateOrEditDeviceDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     serialNumber =
         json['serialNumber']

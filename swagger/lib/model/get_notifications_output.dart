@@ -2,10 +2,10 @@ part of swagger.api;
 
 class GetNotificationsOutput {
   
-  int unreadCount = null;
+  int? unreadCount = null;
   
 
-  int totalCount = null;
+  int? totalCount = null;
   
 
   List<UserNotification> items = [];
@@ -17,7 +17,7 @@ class GetNotificationsOutput {
     return 'GetNotificationsOutput[unreadCount=$unreadCount, totalCount=$totalCount, items=$items, ]';
   }
 
-  GetNotificationsOutput.fromJson(Map<String, dynamic> json) {
+  GetNotificationsOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     unreadCount =
         json['unreadCount']

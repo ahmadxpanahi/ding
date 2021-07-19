@@ -11,7 +11,7 @@ class ListResultDtoOfAllAvailableDevicesDto {
     return 'ListResultDtoOfAllAvailableDevicesDto[items=$items, ]';
   }
 
-  ListResultDtoOfAllAvailableDevicesDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfAllAvailableDevicesDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       AllAvailableDevicesDto.listFromJson(json['items'])

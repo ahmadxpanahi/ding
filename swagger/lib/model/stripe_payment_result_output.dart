@@ -2,7 +2,7 @@ part of swagger.api;
 
 class StripePaymentResultOutput {
   
-  bool paymentDone = null;
+  bool? paymentDone = null;
   
   StripePaymentResultOutput();
 
@@ -11,7 +11,7 @@ class StripePaymentResultOutput {
     return 'StripePaymentResultOutput[paymentDone=$paymentDone, ]';
   }
 
-  StripePaymentResultOutput.fromJson(Map<String, dynamic> json) {
+  StripePaymentResultOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     paymentDone =
         json['paymentDone']

@@ -2,31 +2,31 @@ part of swagger.api;
 
 class TenantNotification {
   
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  String notificationName = null;
+  String? notificationName = null;
   
 
-  NotificationData data = null;
+  NotificationData? data = null;
   
 
-  String entityType = null;
+  String? entityType = null;
   
 
-  String entityTypeName = null;
+  String? entityTypeName = null;
   
 
-  Object entityId = null;
+  Object? entityId = null;
   
 
-  NotificationSeverity severity = null;
+  NotificationSeverity? severity = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  String id = null;
+  String? id = null;
   
   TenantNotification();
 
@@ -35,7 +35,7 @@ class TenantNotification {
     return 'TenantNotification[tenantId=$tenantId, notificationName=$notificationName, data=$data, entityType=$entityType, entityTypeName=$entityTypeName, entityId=$entityId, severity=$severity, creationTime=$creationTime, id=$id, ]';
   }
 
-  TenantNotification.fromJson(Map<String, dynamic> json) {
+  TenantNotification.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenantId =
         json['tenantId']
@@ -78,7 +78,7 @@ class TenantNotification {
       'entityTypeName': entityTypeName,
       'entityId': entityId,
       'severity': severity,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
       'id': id
      };
   }
@@ -87,7 +87,7 @@ class TenantNotification {
     return json == null ? new List<TenantNotification>() : json.map((value) => new TenantNotification.fromJson(value)).toList();
   }
 
-  static Map<String, TenantNotification> mapFromJson(Map<String, Map<String, dynamic>> json) {
+  static Map<String, TenantNotification> mapFromJson(Map<String, Map<String, dynamic>>? json) {
     var map = new Map<String, TenantNotification>();
     if (json != null && json.length > 0) {
       json.forEach((String key, Map<String, dynamic> value) => map[key] = new TenantNotification.fromJson(value));

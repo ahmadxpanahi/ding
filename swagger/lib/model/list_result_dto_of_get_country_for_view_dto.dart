@@ -11,7 +11,7 @@ class ListResultDtoOfGetCountryForViewDto {
     return 'ListResultDtoOfGetCountryForViewDto[items=$items, ]';
   }
 
-  ListResultDtoOfGetCountryForViewDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfGetCountryForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       GetCountryForViewDto.listFromJson(json['items'])

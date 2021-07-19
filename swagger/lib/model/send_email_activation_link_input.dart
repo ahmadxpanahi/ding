@@ -2,7 +2,7 @@ part of swagger.api;
 
 class SendEmailActivationLinkInput {
   
-  String emailAddress = null;
+  String? emailAddress = null;
   
   SendEmailActivationLinkInput();
 
@@ -11,7 +11,7 @@ class SendEmailActivationLinkInput {
     return 'SendEmailActivationLinkInput[emailAddress=$emailAddress, ]';
   }
 
-  SendEmailActivationLinkInput.fromJson(Map<String, dynamic> json) {
+  SendEmailActivationLinkInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     emailAddress =
         json['emailAddress']

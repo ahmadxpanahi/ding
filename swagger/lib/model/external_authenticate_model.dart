@@ -2,19 +2,19 @@ part of swagger.api;
 
 class ExternalAuthenticateModel {
   
-  String authProvider = null;
+  String? authProvider = null;
   
 
-  String providerKey = null;
+  String? providerKey = null;
   
 
-  String providerAccessCode = null;
+  String? providerAccessCode = null;
   
 
-  String returnUrl = null;
+  String? returnUrl = null;
   
 
-  bool singleSignIn = null;
+  bool? singleSignIn = null;
   
   ExternalAuthenticateModel();
 
@@ -23,7 +23,7 @@ class ExternalAuthenticateModel {
     return 'ExternalAuthenticateModel[authProvider=$authProvider, providerKey=$providerKey, providerAccessCode=$providerAccessCode, returnUrl=$returnUrl, singleSignIn=$singleSignIn, ]';
   }
 
-  ExternalAuthenticateModel.fromJson(Map<String, dynamic> json) {
+  ExternalAuthenticateModel.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     authProvider =
         json['authProvider']

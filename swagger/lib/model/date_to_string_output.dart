@@ -2,7 +2,7 @@ part of swagger.api;
 
 class DateToStringOutput {
   
-  String dateString = null;
+  String? dateString = null;
   
   DateToStringOutput();
 
@@ -11,7 +11,7 @@ class DateToStringOutput {
     return 'DateToStringOutput[dateString=$dateString, ]';
   }
 
-  DateToStringOutput.fromJson(Map<String, dynamic> json) {
+  DateToStringOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     dateString =
         json['dateString']

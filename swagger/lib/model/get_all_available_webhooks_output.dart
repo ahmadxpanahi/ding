@@ -2,13 +2,13 @@ part of swagger.api;
 
 class GetAllAvailableWebhooksOutput {
   
-  String name = null;
+  String? name = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
 
-  String description = null;
+  String? description = null;
   
   GetAllAvailableWebhooksOutput();
 
@@ -17,7 +17,7 @@ class GetAllAvailableWebhooksOutput {
     return 'GetAllAvailableWebhooksOutput[name=$name, displayName=$displayName, description=$description, ]';
   }
 
-  GetAllAvailableWebhooksOutput.fromJson(Map<String, dynamic> json) {
+  GetAllAvailableWebhooksOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']
@@ -38,7 +38,7 @@ class GetAllAvailableWebhooksOutput {
      };
   }
 
-  static List<GetAllAvailableWebhooksOutput> listFromJson(List<dynamic> json) {
+  static List<GetAllAvailableWebhooksOutput> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetAllAvailableWebhooksOutput>() : json.map((value) => new GetAllAvailableWebhooksOutput.fromJson(value)).toList();
   }
 

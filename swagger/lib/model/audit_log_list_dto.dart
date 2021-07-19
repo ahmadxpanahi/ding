@@ -2,49 +2,49 @@ part of swagger.api;
 
 class AuditLogListDto {
   
-  int userId = null;
+  int? userId = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  int impersonatorTenantId = null;
+  int? impersonatorTenantId = null;
   
 
-  int impersonatorUserId = null;
+  int? impersonatorUserId = null;
   
 
-  String serviceName = null;
+  String? serviceName = null;
   
 
-  String methodName = null;
+  String? methodName = null;
   
 
-  String parameters = null;
+  String? parameters = null;
   
 
-  DateTime executionTime = null;
+  DateTime? executionTime = null;
   
 
-  int executionDuration = null;
+  int? executionDuration = null;
   
 
-  String clientIpAddress = null;
+  String? clientIpAddress = null;
   
 
-  String clientName = null;
+  String? clientName = null;
   
 
-  String browserInfo = null;
+  String? browserInfo = null;
   
 
-  String exception = null;
+  String? exception = null;
   
 
-  String customData = null;
+  String? customData = null;
   
 
-  int id = null;
+  int? id = null;
   
   AuditLogListDto();
 
@@ -53,7 +53,7 @@ class AuditLogListDto {
     return 'AuditLogListDto[userId=$userId, userName=$userName, impersonatorTenantId=$impersonatorTenantId, impersonatorUserId=$impersonatorUserId, serviceName=$serviceName, methodName=$methodName, parameters=$parameters, executionTime=$executionTime, executionDuration=$executionDuration, clientIpAddress=$clientIpAddress, clientName=$clientName, browserInfo=$browserInfo, exception=$exception, customData=$customData, id=$id, ]';
   }
 
-  AuditLogListDto.fromJson(Map<String, dynamic> json) {
+  AuditLogListDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userId =
         json['userId']
@@ -109,7 +109,7 @@ class AuditLogListDto {
       'serviceName': serviceName,
       'methodName': methodName,
       'parameters': parameters,
-      'executionTime': executionTime == null ? '' : executionTime.toUtc().toIso8601String(),
+      'executionTime': executionTime == null ? '' : executionTime!.toUtc().toIso8601String(),
       'executionDuration': executionDuration,
       'clientIpAddress': clientIpAddress,
       'clientName': clientName,
@@ -120,7 +120,7 @@ class AuditLogListDto {
      };
   }
 
-  static List<AuditLogListDto> listFromJson(List<dynamic> json) {
+  static List<AuditLogListDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<AuditLogListDto>() : json.map((value) => new AuditLogListDto.fromJson(value)).toList();
   }
 

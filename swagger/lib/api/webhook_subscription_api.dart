@@ -5,13 +5,13 @@ part of swagger.api;
 class WebhookSubscriptionApi {
   final ApiClient apiClient;
 
-  WebhookSubscriptionApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  WebhookSubscriptionApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppWebhooksubscriptionActivatewebhooksubscriptionPost
   ///
   /// 
-  Future apiServicesAppWebhooksubscriptionActivatewebhooksubscriptionPost({ ActivateWebhookSubscriptionInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppWebhooksubscriptionActivatewebhooksubscriptionPost({ ActivateWebhookSubscriptionInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class WebhookSubscriptionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class WebhookSubscriptionApi {
   /// ApiServicesAppWebhooksubscriptionAddsubscriptionPost
   ///
   /// 
-  Future apiServicesAppWebhooksubscriptionAddsubscriptionPost({ WebhookSubscription body }) async {
-    Object postBody = body;
+  Future apiServicesAppWebhooksubscriptionAddsubscriptionPost({ WebhookSubscription? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class WebhookSubscriptionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -109,7 +109,7 @@ class WebhookSubscriptionApi {
   ///
   /// 
   Future<ListResultDtoOfGetAllAvailableWebhooksOutput> apiServicesAppWebhooksubscriptionGetallavailablewebhooksGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -136,14 +136,14 @@ class WebhookSubscriptionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -158,7 +158,7 @@ class WebhookSubscriptionApi {
   ///
   /// 
   Future<ListResultDtoOfGetAllSubscriptionsOutput> apiServicesAppWebhooksubscriptionGetallsubscriptionsGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -185,14 +185,14 @@ class WebhookSubscriptionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -206,8 +206,8 @@ class WebhookSubscriptionApi {
   /// ApiServicesAppWebhooksubscriptionGetallsubscriptionsiffeaturesgrantedGet
   ///
   /// 
-  Future<ListResultDtoOfGetAllSubscriptionsOutput> apiServicesAppWebhooksubscriptionGetallsubscriptionsiffeaturesgrantedGet({ String webhookName }) async {
-    Object postBody = null;
+  Future<ListResultDtoOfGetAllSubscriptionsOutput> apiServicesAppWebhooksubscriptionGetallsubscriptionsiffeaturesgrantedGet({ String? webhookName }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -237,14 +237,14 @@ class WebhookSubscriptionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -258,8 +258,8 @@ class WebhookSubscriptionApi {
   /// ApiServicesAppWebhooksubscriptionGetsubscriptionGet
   ///
   /// 
-  Future<WebhookSubscription> apiServicesAppWebhooksubscriptionGetsubscriptionGet({ String subscriptionId }) async {
-    Object postBody = null;
+  Future<WebhookSubscription> apiServicesAppWebhooksubscriptionGetsubscriptionGet({ String? subscriptionId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -289,14 +289,14 @@ class WebhookSubscriptionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -310,8 +310,8 @@ class WebhookSubscriptionApi {
   /// ApiServicesAppWebhooksubscriptionIssubscribedPost
   ///
   /// 
-  Future<bool> apiServicesAppWebhooksubscriptionIssubscribedPost({ String webhookName }) async {
-    Object postBody = null;
+  Future<bool> apiServicesAppWebhooksubscriptionIssubscribedPost({ String? webhookName }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -341,14 +341,14 @@ class WebhookSubscriptionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -363,7 +363,7 @@ class WebhookSubscriptionApi {
   ///
   /// 
   Future<String> apiServicesAppWebhooksubscriptionPublishtestwebhookPost() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -390,14 +390,14 @@ class WebhookSubscriptionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -411,8 +411,8 @@ class WebhookSubscriptionApi {
   /// ApiServicesAppWebhooksubscriptionUpdatesubscriptionPut
   ///
   /// 
-  Future apiServicesAppWebhooksubscriptionUpdatesubscriptionPut({ WebhookSubscription body }) async {
-    Object postBody = body;
+  Future apiServicesAppWebhooksubscriptionUpdatesubscriptionPut({ WebhookSubscription? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -439,14 +439,14 @@ class WebhookSubscriptionApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

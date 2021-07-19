@@ -2,22 +2,22 @@ part of swagger.api;
 
 class SecuritySettingsEditDto {
   
-  bool allowOneConcurrentLoginPerUser = null;
+  bool? allowOneConcurrentLoginPerUser = null;
   
 
-  bool useDefaultPasswordComplexitySettings = null;
+  bool? useDefaultPasswordComplexitySettings = null;
   
 
-  PasswordComplexitySetting passwordComplexity = null;
+  PasswordComplexitySetting? passwordComplexity = null;
   
 
-  PasswordComplexitySetting defaultPasswordComplexity = null;
+  PasswordComplexitySetting? defaultPasswordComplexity = null;
   
 
-  UserLockOutSettingsEditDto userLockOut = null;
+  UserLockOutSettingsEditDto? userLockOut = null;
   
 
-  TwoFactorLoginSettingsEditDto twoFactorLogin = null;
+  TwoFactorLoginSettingsEditDto? twoFactorLogin = null;
   
   SecuritySettingsEditDto();
 
@@ -26,7 +26,7 @@ class SecuritySettingsEditDto {
     return 'SecuritySettingsEditDto[allowOneConcurrentLoginPerUser=$allowOneConcurrentLoginPerUser, useDefaultPasswordComplexitySettings=$useDefaultPasswordComplexitySettings, passwordComplexity=$passwordComplexity, defaultPasswordComplexity=$defaultPasswordComplexity, userLockOut=$userLockOut, twoFactorLogin=$twoFactorLogin, ]';
   }
 
-  SecuritySettingsEditDto.fromJson(Map<String, dynamic> json) {
+  SecuritySettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     allowOneConcurrentLoginPerUser =
         json['allowOneConcurrentLoginPerUser']

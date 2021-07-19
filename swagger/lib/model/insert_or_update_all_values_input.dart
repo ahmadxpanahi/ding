@@ -11,7 +11,7 @@ class InsertOrUpdateAllValuesInput {
     return 'InsertOrUpdateAllValuesInput[items=$items, ]';
   }
 
-  InsertOrUpdateAllValuesInput.fromJson(Map<String, dynamic> json) {
+  InsertOrUpdateAllValuesInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       InsertOrUpdateAllValuesInputItem.listFromJson(json['items'])

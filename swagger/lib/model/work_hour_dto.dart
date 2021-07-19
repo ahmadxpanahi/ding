@@ -2,40 +2,40 @@ part of swagger.api;
 
 class WorkHourDto {
   
-  int weekNumber = null;
+  int? weekNumber = null;
   
 
-  WeekDays weekDay = null;
+  WeekDays? weekDay = null;
   
 
-  String dayName = null;
+  String? dayName = null;
   
 
-  String startingOvertime = null;
+  String? startingOvertime = null;
   
 
-  String hourFrom = null;
+  String? hourFrom = null;
   
 
-  String hourTo = null;
+  String? hourTo = null;
   
 
-  String endingOvertime = null;
+  String? endingOvertime = null;
   
 
-  String respiteOvertime = null;
+  String? respiteOvertime = null;
   
 
-  String totalHours = null;
+  String? totalHours = null;
   
 
-  String flexibilityDuration = null;
+  String? flexibilityDuration = null;
   
 
-  bool isHolidayEnable = null;
+  bool? isHolidayEnable = null;
   
 
-  int id = null;
+  int? id = null;
   
   WorkHourDto();
 
@@ -44,7 +44,7 @@ class WorkHourDto {
     return 'WorkHourDto[weekNumber=$weekNumber, weekDay=$weekDay, dayName=$dayName, startingOvertime=$startingOvertime, hourFrom=$hourFrom, hourTo=$hourTo, endingOvertime=$endingOvertime, respiteOvertime=$respiteOvertime, totalHours=$totalHours, flexibilityDuration=$flexibilityDuration, isHolidayEnable=$isHolidayEnable, id=$id, ]';
   }
 
-  WorkHourDto.fromJson(Map<String, dynamic> json) {
+  WorkHourDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     weekNumber =
         json['weekNumber']
@@ -103,7 +103,7 @@ class WorkHourDto {
      };
   }
 
-  static List<WorkHourDto> listFromJson(List<dynamic> json) {
+  static List<WorkHourDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<WorkHourDto>() : json.map((value) => new WorkHourDto.fromJson(value)).toList();
   }
 

@@ -2,13 +2,13 @@ part of swagger.api;
 
 class ImpersonatedAuthenticateResultModel {
   
-  String accessToken = null;
+  String? accessToken = null;
   
 
-  String encryptedAccessToken = null;
+  String? encryptedAccessToken = null;
   
 
-  int expireInSeconds = null;
+  int? expireInSeconds = null;
   
   ImpersonatedAuthenticateResultModel();
 
@@ -17,7 +17,7 @@ class ImpersonatedAuthenticateResultModel {
     return 'ImpersonatedAuthenticateResultModel[accessToken=$accessToken, encryptedAccessToken=$encryptedAccessToken, expireInSeconds=$expireInSeconds, ]';
   }
 
-  ImpersonatedAuthenticateResultModel.fromJson(Map<String, dynamic> json) {
+  ImpersonatedAuthenticateResultModel.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     accessToken =
         json['accessToken']

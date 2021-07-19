@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetCountryForViewDto {
   
-  CountryDto country = null;
+  CountryDto? country = null;
   
   GetCountryForViewDto();
 
@@ -11,7 +11,7 @@ class GetCountryForViewDto {
     return 'GetCountryForViewDto[country=$country, ]';
   }
 
-  GetCountryForViewDto.fromJson(Map<String, dynamic> json) {
+  GetCountryForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     country =
       
@@ -26,7 +26,7 @@ class GetCountryForViewDto {
      };
   }
 
-  static List<GetCountryForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetCountryForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetCountryForViewDto>() : json.map((value) => new GetCountryForViewDto.fromJson(value)).toList();
   }
 

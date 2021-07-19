@@ -2,46 +2,46 @@ part of swagger.api;
 
 class ReportsTenantDto {
   
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  DateTime subscriptionEndDateUtc = null;
+  DateTime? subscriptionEndDateUtc = null;
   
 
-  String seniorManagerName = null;
+  String? seniorManagerName = null;
   
 
-  String seniorManagerSurname = null;
+  String? seniorManagerSurname = null;
   
 
-  String seniorManagerPhoneNumber = null;
+  String? seniorManagerPhoneNumber = null;
   
 
-  String adminEmailAddress = null;
+  String? adminEmailAddress = null;
   
 
-  String address = null;
+  String? address = null;
   
 
-  String tenancyName = null;
+  String? tenancyName = null;
   
 
-  String name = null;
+  String? name = null;
   
 
-  bool isActive = null;
+  bool? isActive = null;
   
 
-  int countryId = null;
+  int? countryId = null;
   
 
-  int stateId = null;
+  int? stateId = null;
   
 
-  int cityId = null;
+  int? cityId = null;
   
 
-  int id = null;
+  int? id = null;
   
   ReportsTenantDto();
 
@@ -50,7 +50,7 @@ class ReportsTenantDto {
     return 'ReportsTenantDto[creationTime=$creationTime, subscriptionEndDateUtc=$subscriptionEndDateUtc, seniorManagerName=$seniorManagerName, seniorManagerSurname=$seniorManagerSurname, seniorManagerPhoneNumber=$seniorManagerPhoneNumber, adminEmailAddress=$adminEmailAddress, address=$address, tenancyName=$tenancyName, name=$name, isActive=$isActive, countryId=$countryId, stateId=$stateId, cityId=$cityId, id=$id, ]';
   }
 
-  ReportsTenantDto.fromJson(Map<String, dynamic> json) {
+  ReportsTenantDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     creationTime = json['creationTime'] == null ? null : DateTime.parse(json['creationTime']);
     subscriptionEndDateUtc = json['subscriptionEndDateUtc'] == null ? null : DateTime.parse(json['subscriptionEndDateUtc']);
@@ -94,8 +94,8 @@ class ReportsTenantDto {
 
   Map<String, dynamic> toJson() {
     return {
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
-      'subscriptionEndDateUtc': subscriptionEndDateUtc == null ? '' : subscriptionEndDateUtc.toUtc().toIso8601String(),
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
+      'subscriptionEndDateUtc': subscriptionEndDateUtc == null ? '' : subscriptionEndDateUtc!.toUtc().toIso8601String(),
       'seniorManagerName': seniorManagerName,
       'seniorManagerSurname': seniorManagerSurname,
       'seniorManagerPhoneNumber': seniorManagerPhoneNumber,

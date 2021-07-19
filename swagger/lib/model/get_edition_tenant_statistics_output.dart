@@ -11,7 +11,7 @@ class GetEditionTenantStatisticsOutput {
     return 'GetEditionTenantStatisticsOutput[editionStatistics=$editionStatistics, ]';
   }
 
-  GetEditionTenantStatisticsOutput.fromJson(Map<String, dynamic> json) {
+  GetEditionTenantStatisticsOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     editionStatistics =
       TenantEdition.listFromJson(json['editionStatistics'])

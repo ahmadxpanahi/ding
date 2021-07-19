@@ -2,7 +2,7 @@ part of swagger.api;
 
 class EntityDtoOfInt64 {
   
-  int id = null;
+  int? id = null;
   
   EntityDtoOfInt64();
 
@@ -11,7 +11,7 @@ class EntityDtoOfInt64 {
     return 'EntityDtoOfInt64[id=$id, ]';
   }
 
-  EntityDtoOfInt64.fromJson(Map<String, dynamic> json) {
+  EntityDtoOfInt64.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']

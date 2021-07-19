@@ -2,13 +2,13 @@ part of swagger.api;
 
 class UpdateUserSignInTokenOutput {
   
-  String signInToken = null;
+  String? signInToken = null;
   
 
-  String encodedUserId = null;
+  String? encodedUserId = null;
   
 
-  String encodedTenantId = null;
+  String? encodedTenantId = null;
   
   UpdateUserSignInTokenOutput();
 
@@ -17,7 +17,7 @@ class UpdateUserSignInTokenOutput {
     return 'UpdateUserSignInTokenOutput[signInToken=$signInToken, encodedUserId=$encodedUserId, encodedTenantId=$encodedTenantId, ]';
   }
 
-  UpdateUserSignInTokenOutput.fromJson(Map<String, dynamic> json) {
+  UpdateUserSignInTokenOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     signInToken =
         json['signInToken']

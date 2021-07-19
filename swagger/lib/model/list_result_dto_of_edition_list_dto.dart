@@ -11,7 +11,7 @@ class ListResultDtoOfEditionListDto {
     return 'ListResultDtoOfEditionListDto[items=$items, ]';
   }
 
-  ListResultDtoOfEditionListDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfEditionListDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       EditionListDto.listFromJson(json['items'])

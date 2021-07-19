@@ -2,19 +2,19 @@ part of swagger.api;
 
 class DynamicEntityPropertyDto {
   
-  String entityFullName = null;
+  String? entityFullName = null;
   
 
-  String dynamicPropertyName = null;
+  String? dynamicPropertyName = null;
   
 
-  int dynamicPropertyId = null;
+  int? dynamicPropertyId = null;
   
 
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  int id = null;
+  int? id = null;
   
   DynamicEntityPropertyDto();
 
@@ -23,7 +23,7 @@ class DynamicEntityPropertyDto {
     return 'DynamicEntityPropertyDto[entityFullName=$entityFullName, dynamicPropertyName=$dynamicPropertyName, dynamicPropertyId=$dynamicPropertyId, tenantId=$tenantId, id=$id, ]';
   }
 
-  DynamicEntityPropertyDto.fromJson(Map<String, dynamic> json) {
+  DynamicEntityPropertyDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     entityFullName =
         json['entityFullName']
@@ -52,7 +52,7 @@ class DynamicEntityPropertyDto {
      };
   }
 
-  static List<DynamicEntityPropertyDto> listFromJson(List<dynamic> json) {
+  static List<DynamicEntityPropertyDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<DynamicEntityPropertyDto>() : json.map((value) => new DynamicEntityPropertyDto.fromJson(value)).toList();
   }
 

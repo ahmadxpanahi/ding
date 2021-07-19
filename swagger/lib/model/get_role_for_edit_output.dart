@@ -2,7 +2,7 @@ part of swagger.api;
 
 class GetRoleForEditOutput {
   
-  RoleEditDto role = null;
+  RoleEditDto? role = null;
   
 
   List<FlatPermissionDto> permissions = [];
@@ -17,7 +17,7 @@ class GetRoleForEditOutput {
     return 'GetRoleForEditOutput[role=$role, permissions=$permissions, grantedPermissionNames=$grantedPermissionNames, ]';
   }
 
-  GetRoleForEditOutput.fromJson(Map<String, dynamic> json) {
+  GetRoleForEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     role =
       

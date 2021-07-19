@@ -2,7 +2,7 @@ part of swagger.api;
 
 class CreateEditionDto {
   
-  EditionCreateDto edition = null;
+  EditionCreateDto? edition = null;
   
 
   List<NameValueDto> featureValues = [];
@@ -14,7 +14,7 @@ class CreateEditionDto {
     return 'CreateEditionDto[edition=$edition, featureValues=$featureValues, ]';
   }
 
-  CreateEditionDto.fromJson(Map<String, dynamic> json) {
+  CreateEditionDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     edition =
       

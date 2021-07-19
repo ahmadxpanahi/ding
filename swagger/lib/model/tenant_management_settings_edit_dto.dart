@@ -2,16 +2,16 @@ part of swagger.api;
 
 class TenantManagementSettingsEditDto {
   
-  bool allowSelfRegistration = null;
+  bool? allowSelfRegistration = null;
   
 
-  bool isNewRegisteredTenantActiveByDefault = null;
+  bool? isNewRegisteredTenantActiveByDefault = null;
   
 
-  bool useCaptchaOnRegistration = null;
+  bool? useCaptchaOnRegistration = null;
   
 
-  int defaultEditionId = null;
+  int? defaultEditionId = null;
   
   TenantManagementSettingsEditDto();
 
@@ -20,7 +20,7 @@ class TenantManagementSettingsEditDto {
     return 'TenantManagementSettingsEditDto[allowSelfRegistration=$allowSelfRegistration, isNewRegisteredTenantActiveByDefault=$isNewRegisteredTenantActiveByDefault, useCaptchaOnRegistration=$useCaptchaOnRegistration, defaultEditionId=$defaultEditionId, ]';
   }
 
-  TenantManagementSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  TenantManagementSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     allowSelfRegistration =
         json['allowSelfRegistration']

@@ -2,10 +2,10 @@ part of swagger.api;
 
 class GetEnterLeaveForViewDto {
   
-  EnterLeaveDto enterLeave = null;
+  EnterLeaveDto? enterLeave = null;
   
 
-  String requestByUser = null;
+  String? requestByUser = null;
   
   GetEnterLeaveForViewDto();
 
@@ -14,7 +14,7 @@ class GetEnterLeaveForViewDto {
     return 'GetEnterLeaveForViewDto[enterLeave=$enterLeave, requestByUser=$requestByUser, ]';
   }
 
-  GetEnterLeaveForViewDto.fromJson(Map<String, dynamic> json) {
+  GetEnterLeaveForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     enterLeave =
       
@@ -33,7 +33,7 @@ class GetEnterLeaveForViewDto {
      };
   }
 
-  static List<GetEnterLeaveForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetEnterLeaveForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetEnterLeaveForViewDto>() : json.map((value) => new GetEnterLeaveForViewDto.fromJson(value)).toList();
   }
 

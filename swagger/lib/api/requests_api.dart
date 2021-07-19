@@ -5,13 +5,13 @@ part of swagger.api;
 class RequestsApi {
   final ApiClient apiClient;
 
-  RequestsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  RequestsApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppRequestsApproverequestsPost
   ///
   /// 
-  Future apiServicesAppRequestsApproverequestsPost({ List<GetRequestForViewDto> body }) async {
-    Object postBody = body;
+  Future apiServicesAppRequestsApproverequestsPost({ List<GetRequestForViewDto>? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class RequestsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class RequestsApi {
   /// ApiServicesAppRequestsCreateoreditPost
   ///
   /// 
-  Future apiServicesAppRequestsCreateoreditPost({ CreateOrEditRequestDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppRequestsCreateoreditPost({ CreateOrEditRequestDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class RequestsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class RequestsApi {
   /// ApiServicesAppRequestsDeleteDelete
   ///
   /// 
-  Future apiServicesAppRequestsDeleteDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppRequestsDeleteDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -139,14 +139,14 @@ class RequestsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -160,8 +160,8 @@ class RequestsApi {
   /// ApiServicesAppRequestsGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetRequestForViewDto> apiServicesAppRequestsGetallGet({ String filter, int requestTypeFilter, DateTime fromFilter, DateTime toFilter, String commentFilter, int statusFilter, String userNameFilter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetRequestForViewDto> apiServicesAppRequestsGetallGet({ String? filter, int? requestTypeFilter, DateTime? fromFilter, DateTime? toFilter, String? commentFilter, int? statusFilter, String? userNameFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -218,14 +218,14 @@ class RequestsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -239,8 +239,8 @@ class RequestsApi {
   /// ApiServicesAppRequestsGetalluserforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfRequestUserLookupTableDto> apiServicesAppRequestsGetalluserforlookuptableGet({ String filter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfRequestUserLookupTableDto> apiServicesAppRequestsGetalluserforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -279,14 +279,14 @@ class RequestsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -300,8 +300,8 @@ class RequestsApi {
   /// ApiServicesAppRequestsGetrequestforeditGet
   ///
   /// 
-  Future<GetRequestForEditOutput> apiServicesAppRequestsGetrequestforeditGet({ int id }) async {
-    Object postBody = null;
+  Future<GetRequestForEditOutput> apiServicesAppRequestsGetrequestforeditGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -331,14 +331,14 @@ class RequestsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -352,8 +352,8 @@ class RequestsApi {
   /// ApiServicesAppRequestsGetrequestforviewGet
   ///
   /// 
-  Future<GetRequestForViewDto> apiServicesAppRequestsGetrequestforviewGet({ int id }) async {
-    Object postBody = null;
+  Future<GetRequestForViewDto> apiServicesAppRequestsGetrequestforviewGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -383,14 +383,14 @@ class RequestsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -404,8 +404,8 @@ class RequestsApi {
   /// ApiServicesAppRequestsGetrequeststoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppRequestsGetrequeststoexcelGet({ String filter, int requestTypeFilter, DateTime fromFilter, DateTime toFilter, String commentFilter, int statusFilter, String userNameFilter }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppRequestsGetrequeststoexcelGet({ String? filter, int? requestTypeFilter, DateTime? fromFilter, DateTime? toFilter, String? commentFilter, int? statusFilter, String? userNameFilter }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -453,14 +453,14 @@ class RequestsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -474,8 +474,8 @@ class RequestsApi {
   /// ApiServicesAppRequestsGetuserrequestsbydateGet
   ///
   /// 
-  Future<List<GetRequestForViewDto>> apiServicesAppRequestsGetuserrequestsbydateGet({ int userId, DateTime dateFrom, DateTime dateTo }) async {
-    Object postBody = null;
+  Future<List<GetRequestForViewDto>> apiServicesAppRequestsGetuserrequestsbydateGet({ int? userId, DateTime? dateFrom, DateTime? dateTo }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -511,14 +511,14 @@ class RequestsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -532,8 +532,8 @@ class RequestsApi {
   /// ApiServicesAppRequestsRejectrequestsPost
   ///
   /// 
-  Future apiServicesAppRequestsRejectrequestsPost({ List<GetRequestForViewDto> body }) async {
-    Object postBody = body;
+  Future apiServicesAppRequestsRejectrequestsPost({ List<GetRequestForViewDto>? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -560,14 +560,14 @@ class RequestsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

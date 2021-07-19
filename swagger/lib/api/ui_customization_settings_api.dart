@@ -5,13 +5,13 @@ part of swagger.api;
 class UiCustomizationSettingsApi {
   final ApiClient apiClient;
 
-  UiCustomizationSettingsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  UiCustomizationSettingsApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppUicustomizationsettingsChangethemewithdefaultvaluesPost
   ///
   /// 
-  Future apiServicesAppUicustomizationsettingsChangethemewithdefaultvaluesPost({ String themeName }) async {
-    Object postBody = null;
+  Future apiServicesAppUicustomizationsettingsChangethemewithdefaultvaluesPost({ String? themeName }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -41,14 +41,14 @@ class UiCustomizationSettingsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -63,7 +63,7 @@ class UiCustomizationSettingsApi {
   ///
   /// 
   Future<List<ThemeSettingsDto>> apiServicesAppUicustomizationsettingsGetuimanagementsettingsGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -90,14 +90,14 @@ class UiCustomizationSettingsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -111,8 +111,8 @@ class UiCustomizationSettingsApi {
   /// ApiServicesAppUicustomizationsettingsUpdatedefaultuimanagementsettingsPut
   ///
   /// 
-  Future apiServicesAppUicustomizationsettingsUpdatedefaultuimanagementsettingsPut({ ThemeSettingsDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppUicustomizationsettingsUpdatedefaultuimanagementsettingsPut({ ThemeSettingsDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -139,14 +139,14 @@ class UiCustomizationSettingsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -160,8 +160,8 @@ class UiCustomizationSettingsApi {
   /// ApiServicesAppUicustomizationsettingsUpdateuimanagementsettingsPut
   ///
   /// 
-  Future apiServicesAppUicustomizationsettingsUpdateuimanagementsettingsPut({ ThemeSettingsDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppUicustomizationsettingsUpdateuimanagementsettingsPut({ ThemeSettingsDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -188,14 +188,14 @@ class UiCustomizationSettingsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -210,7 +210,7 @@ class UiCustomizationSettingsApi {
   ///
   /// 
   Future apiServicesAppUicustomizationsettingsUsesystemdefaultsettingsPost() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -237,14 +237,14 @@ class UiCustomizationSettingsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

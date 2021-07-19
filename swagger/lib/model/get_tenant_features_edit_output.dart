@@ -14,7 +14,7 @@ class GetTenantFeaturesEditOutput {
     return 'GetTenantFeaturesEditOutput[featureValues=$featureValues, features=$features, ]';
   }
 
-  GetTenantFeaturesEditOutput.fromJson(Map<String, dynamic> json) {
+  GetTenantFeaturesEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     featureValues =
       NameValueDto.listFromJson(json['featureValues'])

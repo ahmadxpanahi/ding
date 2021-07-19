@@ -2,16 +2,16 @@ part of swagger.api;
 
 class TwitterGetAccessTokenResponse {
   
-  String accessToken = null;
+  String? accessToken = null;
   
 
-  String accessTokenSecret = null;
+  String? accessTokenSecret = null;
   
 
-  String userId = null;
+  String? userId = null;
   
 
-  String userName = null;
+  String? userName = null;
   
   TwitterGetAccessTokenResponse();
 
@@ -20,7 +20,7 @@ class TwitterGetAccessTokenResponse {
     return 'TwitterGetAccessTokenResponse[accessToken=$accessToken, accessTokenSecret=$accessTokenSecret, userId=$userId, userName=$userName, ]';
   }
 
-  TwitterGetAccessTokenResponse.fromJson(Map<String, dynamic> json) {
+  TwitterGetAccessTokenResponse.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     accessToken =
         json['accessToken']

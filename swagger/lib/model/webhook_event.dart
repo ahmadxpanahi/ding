@@ -2,25 +2,25 @@ part of swagger.api;
 
 class WebhookEvent {
   
-  String webhookName = null;
+  String? webhookName = null;
   
 
-  String data = null;
+  String? data = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  bool isDeleted = null;
+  bool? isDeleted = null;
   
 
-  DateTime deletionTime = null;
+  DateTime? deletionTime = null;
   
 
-  String id = null;
+  String? id = null;
   
   WebhookEvent();
 
@@ -29,7 +29,7 @@ class WebhookEvent {
     return 'WebhookEvent[webhookName=$webhookName, data=$data, creationTime=$creationTime, tenantId=$tenantId, isDeleted=$isDeleted, deletionTime=$deletionTime, id=$id, ]';
   }
 
-  WebhookEvent.fromJson(Map<String, dynamic> json) {
+  WebhookEvent.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     webhookName =
         json['webhookName']
@@ -54,10 +54,10 @@ class WebhookEvent {
     return {
       'webhookName': webhookName,
       'data': data,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
       'tenantId': tenantId,
       'isDeleted': isDeleted,
-      'deletionTime': deletionTime == null ? '' : deletionTime.toUtc().toIso8601String(),
+      'deletionTime': deletionTime == null ? '' : deletionTime!.toUtc().toIso8601String(),
       'id': id
      };
   }

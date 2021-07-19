@@ -2,7 +2,7 @@ part of swagger.api;
 
 class ChartDateInterval {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   ChartDateInterval._internal(this.value);
 

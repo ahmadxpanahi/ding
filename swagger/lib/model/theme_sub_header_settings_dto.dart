@@ -2,19 +2,19 @@ part of swagger.api;
 
 class ThemeSubHeaderSettingsDto {
   
-  bool fixedSubHeader = null;
+  bool? fixedSubHeader = null;
   
 
-  String subheaderStyle = null;
+  String? subheaderStyle = null;
   
 
-  int subheaderSize = null;
+  int? subheaderSize = null;
   
 
-  String titleStlye = null;
+  String? titleStlye = null;
   
 
-  String containerStyle = null;
+  String? containerStyle = null;
   
   ThemeSubHeaderSettingsDto();
 
@@ -23,7 +23,7 @@ class ThemeSubHeaderSettingsDto {
     return 'ThemeSubHeaderSettingsDto[fixedSubHeader=$fixedSubHeader, subheaderStyle=$subheaderStyle, subheaderSize=$subheaderSize, titleStlye=$titleStlye, containerStyle=$containerStyle, ]';
   }
 
-  ThemeSubHeaderSettingsDto.fromJson(Map<String, dynamic> json) {
+  ThemeSubHeaderSettingsDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     fixedSubHeader =
         json['fixedSubHeader']

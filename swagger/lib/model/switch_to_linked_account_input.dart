@@ -2,10 +2,10 @@ part of swagger.api;
 
 class SwitchToLinkedAccountInput {
   
-  int targetTenantId = null;
+  int? targetTenantId = null;
   
 
-  int targetUserId = null;
+  int? targetUserId = null;
    // range from 1 to //
   SwitchToLinkedAccountInput();
 
@@ -14,7 +14,7 @@ class SwitchToLinkedAccountInput {
     return 'SwitchToLinkedAccountInput[targetTenantId=$targetTenantId, targetUserId=$targetUserId, ]';
   }
 
-  SwitchToLinkedAccountInput.fromJson(Map<String, dynamic> json) {
+  SwitchToLinkedAccountInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     targetTenantId =
         json['targetTenantId']

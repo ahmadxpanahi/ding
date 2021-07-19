@@ -2,10 +2,10 @@ part of swagger.api;
 
 class CreateOrEditPurchasingResourceDto {
   
-  String title = null;
+  String? title = null;
   
 
-  int id = null;
+  int? id = null;
   
   CreateOrEditPurchasingResourceDto();
 
@@ -14,7 +14,7 @@ class CreateOrEditPurchasingResourceDto {
     return 'CreateOrEditPurchasingResourceDto[title=$title, id=$id, ]';
   }
 
-  CreateOrEditPurchasingResourceDto.fromJson(Map<String, dynamic> json) {
+  CreateOrEditPurchasingResourceDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     title =
         json['title']

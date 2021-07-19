@@ -11,7 +11,7 @@ class LocalizableComboboxItemSourceDto {
     return 'LocalizableComboboxItemSourceDto[items=$items, ]';
   }
 
-  LocalizableComboboxItemSourceDto.fromJson(Map<String, dynamic> json) {
+  LocalizableComboboxItemSourceDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       LocalizableComboboxItemDto.listFromJson(json['items'])

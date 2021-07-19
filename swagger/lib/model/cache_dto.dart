@@ -2,7 +2,7 @@ part of swagger.api;
 
 class CacheDto {
   
-  String name = null;
+  String? name = null;
   
   CacheDto();
 
@@ -11,7 +11,7 @@ class CacheDto {
     return 'CacheDto[name=$name, ]';
   }
 
-  CacheDto.fromJson(Map<String, dynamic> json) {
+  CacheDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']
@@ -24,7 +24,7 @@ class CacheDto {
      };
   }
 
-  static List<CacheDto> listFromJson(List<dynamic> json) {
+  static List<CacheDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<CacheDto>() : json.map((value) => new CacheDto.fromJson(value)).toList();
   }
 

@@ -2,13 +2,13 @@ part of swagger.api;
 
 class ComboboxItemDto {
   
-  String value = null;
+  String? value = null;
   
 
-  String displayText = null;
+  String? displayText = null;
   
 
-  bool isSelected = null;
+  bool? isSelected = null;
   
   ComboboxItemDto();
 
@@ -17,7 +17,7 @@ class ComboboxItemDto {
     return 'ComboboxItemDto[value=$value, displayText=$displayText, isSelected=$isSelected, ]';
   }
 
-  ComboboxItemDto.fromJson(Map<String, dynamic> json) {
+  ComboboxItemDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     value =
         json['value']
@@ -38,7 +38,7 @@ class ComboboxItemDto {
      };
   }
 
-  static List<ComboboxItemDto> listFromJson(List<dynamic> json) {
+  static List<ComboboxItemDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<ComboboxItemDto>() : json.map((value) => new ComboboxItemDto.fromJson(value)).toList();
   }
 

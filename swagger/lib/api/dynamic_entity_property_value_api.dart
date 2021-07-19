@@ -5,13 +5,13 @@ part of swagger.api;
 class DynamicEntityPropertyValueApi {
   final ApiClient apiClient;
 
-  DynamicEntityPropertyValueApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  DynamicEntityPropertyValueApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppDynamicentitypropertyvalueAddPost
   ///
   /// 
-  Future apiServicesAppDynamicentitypropertyvalueAddPost({ DynamicEntityPropertyValueDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppDynamicentitypropertyvalueAddPost({ DynamicEntityPropertyValueDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class DynamicEntityPropertyValueApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class DynamicEntityPropertyValueApi {
   /// ApiServicesAppDynamicentitypropertyvalueCleanvaluesPost
   ///
   /// 
-  Future apiServicesAppDynamicentitypropertyvalueCleanvaluesPost({ CleanValuesInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppDynamicentitypropertyvalueCleanvaluesPost({ CleanValuesInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class DynamicEntityPropertyValueApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class DynamicEntityPropertyValueApi {
   /// ApiServicesAppDynamicentitypropertyvalueDeleteDelete
   ///
   /// 
-  Future apiServicesAppDynamicentitypropertyvalueDeleteDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppDynamicentitypropertyvalueDeleteDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -139,14 +139,14 @@ class DynamicEntityPropertyValueApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -160,8 +160,8 @@ class DynamicEntityPropertyValueApi {
   /// ApiServicesAppDynamicentitypropertyvalueGetGet
   ///
   /// 
-  Future<DynamicEntityPropertyValueDto> apiServicesAppDynamicentitypropertyvalueGetGet({ int id }) async {
-    Object postBody = null;
+  Future<DynamicEntityPropertyValueDto> apiServicesAppDynamicentitypropertyvalueGetGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -191,14 +191,14 @@ class DynamicEntityPropertyValueApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -212,8 +212,8 @@ class DynamicEntityPropertyValueApi {
   /// ApiServicesAppDynamicentitypropertyvalueGetallGet
   ///
   /// 
-  Future<ListResultDtoOfDynamicEntityPropertyValueDto> apiServicesAppDynamicentitypropertyvalueGetallGet({ String entityId, int propertyId }) async {
-    Object postBody = null;
+  Future<ListResultDtoOfDynamicEntityPropertyValueDto> apiServicesAppDynamicentitypropertyvalueGetallGet({ String? entityId, int? propertyId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -246,14 +246,14 @@ class DynamicEntityPropertyValueApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -268,7 +268,7 @@ class DynamicEntityPropertyValueApi {
   ///
   /// 
   Future<GetAllDynamicEntityPropertyValuesOutput> apiServicesAppDynamicentitypropertyvalueGetalldynamicentitypropertyvaluesGet(String entityFullName, String entityId) async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
     if(entityFullName == null) {
@@ -303,14 +303,14 @@ class DynamicEntityPropertyValueApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -324,8 +324,8 @@ class DynamicEntityPropertyValueApi {
   /// ApiServicesAppDynamicentitypropertyvalueInsertorupdateallvaluesPost
   ///
   /// 
-  Future apiServicesAppDynamicentitypropertyvalueInsertorupdateallvaluesPost({ InsertOrUpdateAllValuesInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppDynamicentitypropertyvalueInsertorupdateallvaluesPost({ InsertOrUpdateAllValuesInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -352,14 +352,14 @@ class DynamicEntityPropertyValueApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -373,8 +373,8 @@ class DynamicEntityPropertyValueApi {
   /// ApiServicesAppDynamicentitypropertyvalueUpdatePut
   ///
   /// 
-  Future apiServicesAppDynamicentitypropertyvalueUpdatePut({ DynamicEntityPropertyValueDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppDynamicentitypropertyvalueUpdatePut({ DynamicEntityPropertyValueDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -401,14 +401,14 @@ class DynamicEntityPropertyValueApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

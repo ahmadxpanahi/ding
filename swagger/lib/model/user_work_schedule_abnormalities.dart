@@ -2,7 +2,7 @@ part of swagger.api;
 
 class UserWorkScheduleAbnormalities {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   UserWorkScheduleAbnormalities._internal(this.value);
 

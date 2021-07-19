@@ -2,19 +2,19 @@ part of swagger.api;
 
 class FindUsersInput {
   
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  bool excludeCurrentUser = null;
+  bool? excludeCurrentUser = null;
   
 
-  int maxResultCount = null;
+  int? maxResultCount = null;
    // range from 1 to 1000//
 
-  int skipCount = null;
+  int? skipCount = null;
    // range from 0 to 2147483647//
 
-  String filter = null;
+  String? filter = null;
   
   FindUsersInput();
 
@@ -23,7 +23,7 @@ class FindUsersInput {
     return 'FindUsersInput[tenantId=$tenantId, excludeCurrentUser=$excludeCurrentUser, maxResultCount=$maxResultCount, skipCount=$skipCount, filter=$filter, ]';
   }
 
-  FindUsersInput.fromJson(Map<String, dynamic> json) {
+  FindUsersInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenantId =
         json['tenantId']

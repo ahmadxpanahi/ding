@@ -2,19 +2,19 @@ part of swagger.api;
 
 class AllAvailableDevicesDto {
   
-  int id = null;
+  int? id = null;
   
 
-  String deviceName = null;
+  String? deviceName = null;
   
 
-  String deviceSerialNumber = null;
+  String? deviceSerialNumber = null;
   
 
-  String deviceTypeName = null;
+  String? deviceTypeName = null;
   
 
-  int deviceStatus = null;
+  int? deviceStatus = null;
   
   AllAvailableDevicesDto();
 
@@ -23,7 +23,7 @@ class AllAvailableDevicesDto {
     return 'AllAvailableDevicesDto[id=$id, deviceName=$deviceName, deviceSerialNumber=$deviceSerialNumber, deviceTypeName=$deviceTypeName, deviceStatus=$deviceStatus, ]';
   }
 
-  AllAvailableDevicesDto.fromJson(Map<String, dynamic> json) {
+  AllAvailableDevicesDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']
@@ -52,7 +52,7 @@ class AllAvailableDevicesDto {
      };
   }
 
-  static List<AllAvailableDevicesDto> listFromJson(List<dynamic> json) {
+  static List<AllAvailableDevicesDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<AllAvailableDevicesDto>() : json.map((value) => new AllAvailableDevicesDto.fromJson(value)).toList();
   }
 

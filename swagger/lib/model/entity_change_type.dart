@@ -2,7 +2,7 @@ part of swagger.api;
 
 class EntityChangeType {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   EntityChangeType._internal(this.value);
 

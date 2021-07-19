@@ -11,7 +11,7 @@ class ExternalLoginSettingsDto {
     return 'ExternalLoginSettingsDto[enabledSocialLoginSettings=$enabledSocialLoginSettings, ]';
   }
 
-  ExternalLoginSettingsDto.fromJson(Map<String, dynamic> json) {
+  ExternalLoginSettingsDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     enabledSocialLoginSettings =
         (json['enabledSocialLoginSettings'] as List).map((item) => item as String).toList()

@@ -2,19 +2,19 @@ part of swagger.api;
 
 class LdapSettingsEditDto {
   
-  bool isModuleEnabled = null;
+  bool? isModuleEnabled = null;
   
 
-  bool isEnabled = null;
+  bool? isEnabled = null;
   
 
-  String domain = null;
+  String? domain = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  String password = null;
+  String? password = null;
   
   LdapSettingsEditDto();
 
@@ -23,7 +23,7 @@ class LdapSettingsEditDto {
     return 'LdapSettingsEditDto[isModuleEnabled=$isModuleEnabled, isEnabled=$isEnabled, domain=$domain, userName=$userName, password=$password, ]';
   }
 
-  LdapSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  LdapSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     isModuleEnabled =
         json['isModuleEnabled']

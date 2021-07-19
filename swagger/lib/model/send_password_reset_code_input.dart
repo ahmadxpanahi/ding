@@ -2,7 +2,7 @@ part of swagger.api;
 
 class SendPasswordResetCodeInput {
   
-  String userNameOrEmailOrMobile = null;
+  String? userNameOrEmailOrMobile = null;
   
   SendPasswordResetCodeInput();
 
@@ -11,7 +11,7 @@ class SendPasswordResetCodeInput {
     return 'SendPasswordResetCodeInput[userNameOrEmailOrMobile=$userNameOrEmailOrMobile, ]';
   }
 
-  SendPasswordResetCodeInput.fromJson(Map<String, dynamic> json) {
+  SendPasswordResetCodeInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userNameOrEmailOrMobile =
         json['userNameOrEmailOrMobile']

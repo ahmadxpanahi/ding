@@ -2,22 +2,22 @@ part of swagger.api;
 
 class EmployeeLeaveReportDto {
   
-  int totalApprovedLeaveRequestDays = null;
+  int? totalApprovedLeaveRequestDays = null;
   
 
-  String totalApprovedLeaveRequestHours = null;
+  String? totalApprovedLeaveRequestHours = null;
   
 
-  String totalRejectedLeaveRequestHours = null;
+  String? totalRejectedLeaveRequestHours = null;
   
 
-  String remainingLeavePermissionHours = null;
+  String? remainingLeavePermissionHours = null;
   
 
-  int remainingLeavePermissionDays = null;
+  int? remainingLeavePermissionDays = null;
   
 
-  int userId = null;
+  int? userId = null;
   
   EmployeeLeaveReportDto();
 
@@ -26,7 +26,7 @@ class EmployeeLeaveReportDto {
     return 'EmployeeLeaveReportDto[totalApprovedLeaveRequestDays=$totalApprovedLeaveRequestDays, totalApprovedLeaveRequestHours=$totalApprovedLeaveRequestHours, totalRejectedLeaveRequestHours=$totalRejectedLeaveRequestHours, remainingLeavePermissionHours=$remainingLeavePermissionHours, remainingLeavePermissionDays=$remainingLeavePermissionDays, userId=$userId, ]';
   }
 
-  EmployeeLeaveReportDto.fromJson(Map<String, dynamic> json) {
+  EmployeeLeaveReportDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     totalApprovedLeaveRequestDays =
         json['totalApprovedLeaveRequestDays']

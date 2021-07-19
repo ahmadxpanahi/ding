@@ -2,10 +2,10 @@ part of swagger.api;
 
 class UserListRoleDto {
   
-  int roleId = null;
+  int? roleId = null;
   
 
-  String roleName = null;
+  String? roleName = null;
   
   UserListRoleDto();
 
@@ -14,7 +14,7 @@ class UserListRoleDto {
     return 'UserListRoleDto[roleId=$roleId, roleName=$roleName, ]';
   }
 
-  UserListRoleDto.fromJson(Map<String, dynamic> json) {
+  UserListRoleDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     roleId =
         json['roleId']
@@ -31,7 +31,7 @@ class UserListRoleDto {
      };
   }
 
-  static List<UserListRoleDto> listFromJson(List<dynamic> json) {
+  static List<UserListRoleDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<UserListRoleDto>() : json.map((value) => new UserListRoleDto.fromJson(value)).toList();
   }
 

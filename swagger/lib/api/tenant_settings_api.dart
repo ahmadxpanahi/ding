@@ -5,13 +5,13 @@ part of swagger.api;
 class TenantSettingsApi {
   final ApiClient apiClient;
 
-  TenantSettingsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  TenantSettingsApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppTenantsettingsClearcustomcssPost
   ///
   /// 
   Future apiServicesAppTenantsettingsClearcustomcssPost() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class TenantSettingsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -60,7 +60,7 @@ class TenantSettingsApi {
   ///
   /// 
   Future apiServicesAppTenantsettingsClearlogoPost() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class TenantSettingsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -109,7 +109,7 @@ class TenantSettingsApi {
   ///
   /// 
   Future<TenantSettingsEditDto> apiServicesAppTenantsettingsGetallsettingsGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -136,14 +136,14 @@ class TenantSettingsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -158,7 +158,7 @@ class TenantSettingsApi {
   ///
   /// 
   Future<ExternalLoginSettingsDto> apiServicesAppTenantsettingsGetenabledsocialloginsettingsGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -185,14 +185,14 @@ class TenantSettingsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -206,8 +206,8 @@ class TenantSettingsApi {
   /// ApiServicesAppTenantsettingsSendtestemailPost
   ///
   /// 
-  Future apiServicesAppTenantsettingsSendtestemailPost({ SendTestEmailInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppTenantsettingsSendtestemailPost({ SendTestEmailInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -234,14 +234,14 @@ class TenantSettingsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -255,8 +255,8 @@ class TenantSettingsApi {
   /// ApiServicesAppTenantsettingsUpdateallsettingsPut
   ///
   /// 
-  Future apiServicesAppTenantsettingsUpdateallsettingsPut({ TenantSettingsEditDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppTenantsettingsUpdateallsettingsPut({ TenantSettingsEditDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -283,14 +283,14 @@ class TenantSettingsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

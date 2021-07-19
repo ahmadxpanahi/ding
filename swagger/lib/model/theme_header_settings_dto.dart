@@ -2,16 +2,16 @@ part of swagger.api;
 
 class ThemeHeaderSettingsDto {
   
-  bool desktopFixedHeader = null;
+  bool? desktopFixedHeader = null;
   
 
-  bool mobileFixedHeader = null;
+  bool? mobileFixedHeader = null;
   
 
-  String headerSkin = null;
+  String? headerSkin = null;
   
 
-  String minimizeDesktopHeaderType = null;
+  String? minimizeDesktopHeaderType = null;
   
   ThemeHeaderSettingsDto();
 
@@ -20,7 +20,7 @@ class ThemeHeaderSettingsDto {
     return 'ThemeHeaderSettingsDto[desktopFixedHeader=$desktopFixedHeader, mobileFixedHeader=$mobileFixedHeader, headerSkin=$headerSkin, minimizeDesktopHeaderType=$minimizeDesktopHeaderType, ]';
   }
 
-  ThemeHeaderSettingsDto.fromJson(Map<String, dynamic> json) {
+  ThemeHeaderSettingsDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     desktopFixedHeader =
         json['desktopFixedHeader']

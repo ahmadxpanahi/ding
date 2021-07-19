@@ -2,16 +2,16 @@ part of swagger.api;
 
 class CreateUserOnTenantInput {
   
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  UserEditDto user = null;
+  UserEditDto? user = null;
   
 
-  bool sendActivationEmail = null;
+  bool? sendActivationEmail = null;
   
 
-  bool setRandomPassword = null;
+  bool? setRandomPassword = null;
   
   CreateUserOnTenantInput();
 
@@ -20,7 +20,7 @@ class CreateUserOnTenantInput {
     return 'CreateUserOnTenantInput[tenantId=$tenantId, user=$user, sendActivationEmail=$sendActivationEmail, setRandomPassword=$setRandomPassword, ]';
   }
 
-  CreateUserOnTenantInput.fromJson(Map<String, dynamic> json) {
+  CreateUserOnTenantInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenantId =
         json['tenantId']

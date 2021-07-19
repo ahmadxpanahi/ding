@@ -2,25 +2,25 @@ part of swagger.api;
 
 class TenantFileProtocolSettingsEditDto {
   
-  bool isFTPProtocol = null;
+  bool? isFTPProtocol = null;
   
 
-  String ftpRootAddress = null;
+  String? ftpRootAddress = null;
   
 
-  String ftpUser = null;
+  String? ftpUser = null;
   
 
-  String ftpPassword = null;
+  String? ftpPassword = null;
   
 
-  bool isFileProtocol = null;
+  bool? isFileProtocol = null;
   
 
-  String path = null;
+  String? path = null;
   
 
-  String mediaRootAddress = null;
+  String? mediaRootAddress = null;
   
   TenantFileProtocolSettingsEditDto();
 
@@ -29,7 +29,7 @@ class TenantFileProtocolSettingsEditDto {
     return 'TenantFileProtocolSettingsEditDto[isFTPProtocol=$isFTPProtocol, ftpRootAddress=$ftpRootAddress, ftpUser=$ftpUser, ftpPassword=$ftpPassword, isFileProtocol=$isFileProtocol, path=$path, mediaRootAddress=$mediaRootAddress, ]';
   }
 
-  TenantFileProtocolSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  TenantFileProtocolSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     isFTPProtocol =
         json['isFTPProtocol']

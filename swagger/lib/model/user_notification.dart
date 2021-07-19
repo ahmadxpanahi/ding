@@ -2,19 +2,19 @@ part of swagger.api;
 
 class UserNotification {
   
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  int userId = null;
+  int? userId = null;
   
 
-  UserNotificationState state = null;
+  UserNotificationState? state = null;
   
 
-  TenantNotification notification = null;
+  TenantNotification? notification = null;
   
 
-  String id = null;
+  String? id = null;
   
   UserNotification();
 
@@ -23,7 +23,7 @@ class UserNotification {
     return 'UserNotification[tenantId=$tenantId, userId=$userId, state=$state, notification=$notification, id=$id, ]';
   }
 
-  UserNotification.fromJson(Map<String, dynamic> json) {
+  UserNotification.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenantId =
         json['tenantId']
@@ -56,7 +56,7 @@ class UserNotification {
      };
   }
 
-  static List<UserNotification> listFromJson(List<dynamic> json) {
+  static List<UserNotification> listFromJson(List<dynamic>? json) {
     return json == null ? new List<UserNotification>() : json.map((value) => new UserNotification.fromJson(value)).toList();
   }
 

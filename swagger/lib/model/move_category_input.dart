@@ -2,13 +2,13 @@ part of swagger.api;
 
 class MoveCategoryInput {
   
-  int id = null;
+  int? id = null;
    // range from 1 to //
 
-  CategoryType categoryType = null;
+  CategoryType? categoryType = null;
   
 
-  int newParentId = null;
+  int? newParentId = null;
   
   MoveCategoryInput();
 
@@ -17,7 +17,7 @@ class MoveCategoryInput {
     return 'MoveCategoryInput[id=$id, categoryType=$categoryType, newParentId=$newParentId, ]';
   }
 
-  MoveCategoryInput.fromJson(Map<String, dynamic> json) {
+  MoveCategoryInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']

@@ -2,34 +2,34 @@ part of swagger.api;
 
 class TenantEmailSettingsEditDto {
   
-  bool useHostDefaultEmailSettings = null;
+  bool? useHostDefaultEmailSettings = null;
   
 
-  String defaultFromAddress = null;
+  String? defaultFromAddress = null;
   
 
-  String defaultFromDisplayName = null;
+  String? defaultFromDisplayName = null;
   
 
-  String smtpHost = null;
+  String? smtpHost = null;
   
 
-  int smtpPort = null;
+  int? smtpPort = null;
   
 
-  String smtpUserName = null;
+  String? smtpUserName = null;
   
 
-  String smtpPassword = null;
+  String? smtpPassword = null;
   
 
-  String smtpDomain = null;
+  String? smtpDomain = null;
   
 
-  bool smtpEnableSsl = null;
+  bool? smtpEnableSsl = null;
   
 
-  bool smtpUseDefaultCredentials = null;
+  bool? smtpUseDefaultCredentials = null;
   
   TenantEmailSettingsEditDto();
 
@@ -38,7 +38,7 @@ class TenantEmailSettingsEditDto {
     return 'TenantEmailSettingsEditDto[useHostDefaultEmailSettings=$useHostDefaultEmailSettings, defaultFromAddress=$defaultFromAddress, defaultFromDisplayName=$defaultFromDisplayName, smtpHost=$smtpHost, smtpPort=$smtpPort, smtpUserName=$smtpUserName, smtpPassword=$smtpPassword, smtpDomain=$smtpDomain, smtpEnableSsl=$smtpEnableSsl, smtpUseDefaultCredentials=$smtpUseDefaultCredentials, ]';
   }
 
-  TenantEmailSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  TenantEmailSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     useHostDefaultEmailSettings =
         json['useHostDefaultEmailSettings']

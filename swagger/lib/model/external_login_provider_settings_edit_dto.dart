@@ -2,43 +2,43 @@ part of swagger.api;
 
 class ExternalLoginProviderSettingsEditDto {
   
-  bool facebookIsDeactivated = null;
+  bool? facebookIsDeactivated = null;
   
 
-  FacebookExternalLoginProviderSettings facebook = null;
+  FacebookExternalLoginProviderSettings? facebook = null;
   
 
-  bool googleIsDeactivated = null;
+  bool? googleIsDeactivated = null;
   
 
-  GoogleExternalLoginProviderSettings google = null;
+  GoogleExternalLoginProviderSettings? google = null;
   
 
-  bool twitterIsDeactivated = null;
+  bool? twitterIsDeactivated = null;
   
 
-  TwitterExternalLoginProviderSettings twitter = null;
+  TwitterExternalLoginProviderSettings? twitter = null;
   
 
-  bool microsoftIsDeactivated = null;
+  bool? microsoftIsDeactivated = null;
   
 
-  MicrosoftExternalLoginProviderSettings microsoft = null;
+  MicrosoftExternalLoginProviderSettings? microsoft = null;
   
 
-  bool openIdConnectIsDeactivated = null;
+  bool? openIdConnectIsDeactivated = null;
   
 
-  OpenIdConnectExternalLoginProviderSettings openIdConnect = null;
+  OpenIdConnectExternalLoginProviderSettings? openIdConnect = null;
   
 
   List<JsonClaimMapDto> openIdConnectClaimsMapping = [];
   
 
-  bool wsFederationIsDeactivated = null;
+  bool? wsFederationIsDeactivated = null;
   
 
-  WsFederationExternalLoginProviderSettings wsFederation = null;
+  WsFederationExternalLoginProviderSettings? wsFederation = null;
   
 
   List<JsonClaimMapDto> wsFederationClaimsMapping = [];
@@ -50,7 +50,7 @@ class ExternalLoginProviderSettingsEditDto {
     return 'ExternalLoginProviderSettingsEditDto[facebookIsDeactivated=$facebookIsDeactivated, facebook=$facebook, googleIsDeactivated=$googleIsDeactivated, google=$google, twitterIsDeactivated=$twitterIsDeactivated, twitter=$twitter, microsoftIsDeactivated=$microsoftIsDeactivated, microsoft=$microsoft, openIdConnectIsDeactivated=$openIdConnectIsDeactivated, openIdConnect=$openIdConnect, openIdConnectClaimsMapping=$openIdConnectClaimsMapping, wsFederationIsDeactivated=$wsFederationIsDeactivated, wsFederation=$wsFederation, wsFederationClaimsMapping=$wsFederationClaimsMapping, ]';
   }
 
-  ExternalLoginProviderSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  ExternalLoginProviderSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     facebookIsDeactivated =
         json['facebook_IsDeactivated']

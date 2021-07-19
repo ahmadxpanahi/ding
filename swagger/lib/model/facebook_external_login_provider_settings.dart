@@ -2,10 +2,10 @@ part of swagger.api;
 
 class FacebookExternalLoginProviderSettings {
   
-  String appId = null;
+  String? appId = null;
   
 
-  String appSecret = null;
+  String? appSecret = null;
   
   FacebookExternalLoginProviderSettings();
 
@@ -14,7 +14,7 @@ class FacebookExternalLoginProviderSettings {
     return 'FacebookExternalLoginProviderSettings[appId=$appId, appSecret=$appSecret, ]';
   }
 
-  FacebookExternalLoginProviderSettings.fromJson(Map<String, dynamic> json) {
+  FacebookExternalLoginProviderSettings.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     appId =
         json['appId']

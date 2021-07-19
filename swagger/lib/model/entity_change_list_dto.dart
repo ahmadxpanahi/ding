@@ -2,28 +2,28 @@ part of swagger.api;
 
 class EntityChangeListDto {
   
-  int userId = null;
+  int? userId = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  DateTime changeTime = null;
+  DateTime? changeTime = null;
   
 
-  String entityTypeFullName = null;
+  String? entityTypeFullName = null;
   
 
-  EntityChangeType changeType = null;
+  EntityChangeType? changeType = null;
   
 
-  String changeTypeName = null;
+  String? changeTypeName = null;
   
 
-  int entityChangeSetId = null;
+  int? entityChangeSetId = null;
   
 
-  int id = null;
+  int? id = null;
   
   EntityChangeListDto();
 
@@ -32,7 +32,7 @@ class EntityChangeListDto {
     return 'EntityChangeListDto[userId=$userId, userName=$userName, changeTime=$changeTime, entityTypeFullName=$entityTypeFullName, changeType=$changeType, changeTypeName=$changeTypeName, entityChangeSetId=$entityChangeSetId, id=$id, ]';
   }
 
-  EntityChangeListDto.fromJson(Map<String, dynamic> json) {
+  EntityChangeListDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userId =
         json['userId']
@@ -64,7 +64,7 @@ class EntityChangeListDto {
     return {
       'userId': userId,
       'userName': userName,
-      'changeTime': changeTime == null ? '' : changeTime.toUtc().toIso8601String(),
+      'changeTime': changeTime == null ? '' : changeTime!.toUtc().toIso8601String(),
       'entityTypeFullName': entityTypeFullName,
       'changeType': changeType,
       'changeTypeName': changeTypeName,
@@ -73,7 +73,7 @@ class EntityChangeListDto {
      };
   }
 
-  static List<EntityChangeListDto> listFromJson(List<dynamic> json) {
+  static List<EntityChangeListDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<EntityChangeListDto>() : json.map((value) => new EntityChangeListDto.fromJson(value)).toList();
   }
 

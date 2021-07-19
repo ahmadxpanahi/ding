@@ -2,7 +2,7 @@ part of swagger.api;
 
 class UpdateGoogleAuthenticatorKeyOutput {
   
-  String qrCodeSetupImageUrl = null;
+  String? qrCodeSetupImageUrl = null;
   
   UpdateGoogleAuthenticatorKeyOutput();
 
@@ -11,7 +11,7 @@ class UpdateGoogleAuthenticatorKeyOutput {
     return 'UpdateGoogleAuthenticatorKeyOutput[qrCodeSetupImageUrl=$qrCodeSetupImageUrl, ]';
   }
 
-  UpdateGoogleAuthenticatorKeyOutput.fromJson(Map<String, dynamic> json) {
+  UpdateGoogleAuthenticatorKeyOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     qrCodeSetupImageUrl =
         json['qrCodeSetupImageUrl']

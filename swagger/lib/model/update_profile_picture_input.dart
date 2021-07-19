@@ -2,22 +2,22 @@ part of swagger.api;
 
 class UpdateProfilePictureInput {
   
-  String fileToken = null;
+  String? fileToken = null;
   
 
-  int x = null;
+  int? x = null;
   
 
-  int y = null;
+  int? y = null;
   
 
-  int width = null;
+  int? width = null;
   
 
-  int height = null;
+  int? height = null;
   
 
-  bool useGravatarProfilePicture = null;
+  bool? useGravatarProfilePicture = null;
   
   UpdateProfilePictureInput();
 
@@ -26,7 +26,7 @@ class UpdateProfilePictureInput {
     return 'UpdateProfilePictureInput[fileToken=$fileToken, x=$x, y=$y, width=$width, height=$height, useGravatarProfilePicture=$useGravatarProfilePicture, ]';
   }
 
-  UpdateProfilePictureInput.fromJson(Map<String, dynamic> json) {
+  UpdateProfilePictureInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     fileToken =
         json['fileToken']

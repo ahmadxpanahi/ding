@@ -2,25 +2,25 @@ part of swagger.api;
 
 class EntityPropertyChangeDto {
   
-  int entityChangeId = null;
+  int? entityChangeId = null;
   
 
-  String newValue = null;
+  String? newValue = null;
   
 
-  String originalValue = null;
+  String? originalValue = null;
   
 
-  String propertyName = null;
+  String? propertyName = null;
   
 
-  String propertyTypeFullName = null;
+  String? propertyTypeFullName = null;
   
 
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  int id = null;
+  int? id = null;
   
   EntityPropertyChangeDto();
 
@@ -29,7 +29,7 @@ class EntityPropertyChangeDto {
     return 'EntityPropertyChangeDto[entityChangeId=$entityChangeId, newValue=$newValue, originalValue=$originalValue, propertyName=$propertyName, propertyTypeFullName=$propertyTypeFullName, tenantId=$tenantId, id=$id, ]';
   }
 
-  EntityPropertyChangeDto.fromJson(Map<String, dynamic> json) {
+  EntityPropertyChangeDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     entityChangeId =
         json['entityChangeId']

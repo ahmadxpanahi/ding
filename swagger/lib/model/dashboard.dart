@@ -2,7 +2,7 @@ part of swagger.api;
 
 class Dashboard {
   
-  String dashboardName = null;
+  String? dashboardName = null;
   
 
   List<Page> pages = [];
@@ -14,7 +14,7 @@ class Dashboard {
     return 'Dashboard[dashboardName=$dashboardName, pages=$pages, ]';
   }
 
-  Dashboard.fromJson(Map<String, dynamic> json) {
+  Dashboard.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     dashboardName =
         json['dashboardName']

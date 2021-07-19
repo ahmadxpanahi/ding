@@ -2,7 +2,7 @@ part of swagger.api;
 
 class RegisterOutput {
   
-  bool canLogin = null;
+  bool? canLogin = null;
   
   RegisterOutput();
 
@@ -11,7 +11,7 @@ class RegisterOutput {
     return 'RegisterOutput[canLogin=$canLogin, ]';
   }
 
-  RegisterOutput.fromJson(Map<String, dynamic> json) {
+  RegisterOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     canLogin =
         json['canLogin']

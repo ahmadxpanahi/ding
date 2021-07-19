@@ -2,16 +2,16 @@ part of swagger.api;
 
 class GetDetailedEmployeeReportForViewDto {
   
-  String reportDate = null;
+  String? reportDate = null;
   
 
-  String reportWeekDay = null;
+  String? reportWeekDay = null;
   
 
   List<DetailedUserClockInOutDto> userClockInOutList = [];
   
 
-  SummaryEmployeeReportDto employeeReport = null;
+  SummaryEmployeeReportDto? employeeReport = null;
   
   GetDetailedEmployeeReportForViewDto();
 
@@ -20,7 +20,7 @@ class GetDetailedEmployeeReportForViewDto {
     return 'GetDetailedEmployeeReportForViewDto[reportDate=$reportDate, reportWeekDay=$reportWeekDay, userClockInOutList=$userClockInOutList, employeeReport=$employeeReport, ]';
   }
 
-  GetDetailedEmployeeReportForViewDto.fromJson(Map<String, dynamic> json) {
+  GetDetailedEmployeeReportForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     reportDate =
         json['reportDate']

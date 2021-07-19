@@ -2,10 +2,10 @@ part of swagger.api;
 
 class GetRequestForEditOutput {
   
-  CreateOrEditRequestDto request = null;
+  CreateOrEditRequestDto? request = null;
   
 
-  String userName = null;
+  String? userName = null;
   
   GetRequestForEditOutput();
 
@@ -14,7 +14,7 @@ class GetRequestForEditOutput {
     return 'GetRequestForEditOutput[request=$request, userName=$userName, ]';
   }
 
-  GetRequestForEditOutput.fromJson(Map<String, dynamic> json) {
+  GetRequestForEditOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     request =
       

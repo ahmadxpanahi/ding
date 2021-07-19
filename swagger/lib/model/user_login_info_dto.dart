@@ -2,22 +2,22 @@ part of swagger.api;
 
 class UserLoginInfoDto {
   
-  String name = null;
+  String? name = null;
   
 
-  String surname = null;
+  String? surname = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  String emailAddress = null;
+  String? emailAddress = null;
   
 
-  String profilePictureId = null;
+  String? profilePictureId = null;
   
 
-  int id = null;
+  int? id = null;
   
   UserLoginInfoDto();
 
@@ -26,7 +26,7 @@ class UserLoginInfoDto {
     return 'UserLoginInfoDto[name=$name, surname=$surname, userName=$userName, emailAddress=$emailAddress, profilePictureId=$profilePictureId, id=$id, ]';
   }
 
-  UserLoginInfoDto.fromJson(Map<String, dynamic> json) {
+  UserLoginInfoDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']

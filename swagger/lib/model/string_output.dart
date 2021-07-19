@@ -2,7 +2,7 @@ part of swagger.api;
 
 class StringOutput {
   
-  String output = null;
+  String? output = null;
   
   StringOutput();
 
@@ -11,7 +11,7 @@ class StringOutput {
     return 'StringOutput[output=$output, ]';
   }
 
-  StringOutput.fromJson(Map<String, dynamic> json) {
+  StringOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     output =
         json['output']

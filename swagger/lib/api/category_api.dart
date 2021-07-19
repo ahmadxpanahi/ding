@@ -5,13 +5,13 @@ part of swagger.api;
 class CategoryApi {
   final ApiClient apiClient;
 
-  CategoryApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  CategoryApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppCategoryAddrolestocategoryPost
   ///
   /// 
-  Future apiServicesAppCategoryAddrolestocategoryPost({ RolesToCategoryInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppCategoryAddrolestocategoryPost({ RolesToCategoryInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class CategoryApi {
   /// ApiServicesAppCategoryAdduserstocategoryPost
   ///
   /// 
-  Future apiServicesAppCategoryAdduserstocategoryPost({ UsersToCategoryInput body }) async {
-    Object postBody = body;
+  Future apiServicesAppCategoryAdduserstocategoryPost({ UsersToCategoryInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class CategoryApi {
   /// ApiServicesAppCategoryCreatecategoryPost
   ///
   /// 
-  Future<CategoryDto> apiServicesAppCategoryCreatecategoryPost({ CreateOrEditCategoryDto body }) async {
-    Object postBody = body;
+  Future<CategoryDto> apiServicesAppCategoryCreatecategoryPost({ CreateOrEditCategoryDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -136,14 +136,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -157,8 +157,8 @@ class CategoryApi {
   /// ApiServicesAppCategoryDeletecategoryDelete
   ///
   /// 
-  Future apiServicesAppCategoryDeletecategoryDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppCategoryDeletecategoryDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -188,14 +188,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -209,8 +209,8 @@ class CategoryApi {
   /// ApiServicesAppCategoryFindrolesPost
   ///
   /// 
-  Future<PagedResultDtoOfNameValueDto> apiServicesAppCategoryFindrolesPost({ FindCategoryRolesInput body }) async {
-    Object postBody = body;
+  Future<PagedResultDtoOfNameValueDto> apiServicesAppCategoryFindrolesPost({ FindCategoryRolesInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -237,14 +237,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -258,8 +258,8 @@ class CategoryApi {
   /// ApiServicesAppCategoryFindusersPost
   ///
   /// 
-  Future<PagedResultDtoOfNameValueDto> apiServicesAppCategoryFindusersPost({ FindCategoryUsersInput body }) async {
-    Object postBody = body;
+  Future<PagedResultDtoOfNameValueDto> apiServicesAppCategoryFindusersPost({ FindCategoryUsersInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -286,14 +286,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -308,7 +308,7 @@ class CategoryApi {
   ///
   /// 
   Future<ListResultDtoOfCategoryDto> apiServicesAppCategoryGetcategoriesGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -335,14 +335,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -357,7 +357,7 @@ class CategoryApi {
   ///
   /// 
   Future<ListResultDtoOfCategoryDto> apiServicesAppCategoryGetcategoriesbycategorytypeGet(String categoryType) async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
     if(categoryType == null) {
@@ -388,14 +388,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -410,7 +410,7 @@ class CategoryApi {
   ///
   /// 
   Future<ListResultDtoOfCategoryDto> apiServicesAppCategoryGetcategoriesforuserGet(String categoryType) async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
     if(categoryType == null) {
@@ -441,14 +441,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -462,8 +462,8 @@ class CategoryApi {
   /// ApiServicesAppCategoryGetcategoryidbynameGet
   ///
   /// 
-  Future<CategoryDto> apiServicesAppCategoryGetcategoryidbynameGet({ String categoryName }) async {
-    Object postBody = null;
+  Future<CategoryDto> apiServicesAppCategoryGetcategoryidbynameGet({ String? categoryName }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -493,14 +493,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -514,8 +514,8 @@ class CategoryApi {
   /// ApiServicesAppCategoryGetcategoryrolesGet
   ///
   /// 
-  Future<PagedResultDtoOfCategoryRoleListDto> apiServicesAppCategoryGetcategoryrolesGet({ int id, String sorting, int maxResultCount, int skipCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfCategoryRoleListDto> apiServicesAppCategoryGetcategoryrolesGet({ int? id, String? sorting, int? maxResultCount, int? skipCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -554,14 +554,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -575,8 +575,8 @@ class CategoryApi {
   /// ApiServicesAppCategoryGetcategoryusersGet
   ///
   /// 
-  Future<PagedResultDtoOfCategoryUserListDto> apiServicesAppCategoryGetcategoryusersGet({ int id, String sorting, int maxResultCount, int skipCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfCategoryUserListDto> apiServicesAppCategoryGetcategoryusersGet({ int? id, String? sorting, int? maxResultCount, int? skipCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -615,14 +615,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -636,8 +636,8 @@ class CategoryApi {
   /// ApiServicesAppCategoryMovecategoryPost
   ///
   /// 
-  Future<CategoryDto> apiServicesAppCategoryMovecategoryPost({ MoveCategoryInput body }) async {
-    Object postBody = body;
+  Future<CategoryDto> apiServicesAppCategoryMovecategoryPost({ MoveCategoryInput? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -664,14 +664,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -685,8 +685,8 @@ class CategoryApi {
   /// ApiServicesAppCategoryRemoverolefromcategoryDelete
   ///
   /// 
-  Future apiServicesAppCategoryRemoverolefromcategoryDelete({ int roleId, int categoryId }) async {
-    Object postBody = null;
+  Future apiServicesAppCategoryRemoverolefromcategoryDelete({ int? roleId, int? categoryId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -719,14 +719,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -740,8 +740,8 @@ class CategoryApi {
   /// ApiServicesAppCategoryRemoveuserfromcategoryDelete
   ///
   /// 
-  Future apiServicesAppCategoryRemoveuserfromcategoryDelete({ int userId, int categoryId }) async {
-    Object postBody = null;
+  Future apiServicesAppCategoryRemoveuserfromcategoryDelete({ int? userId, int? categoryId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -774,14 +774,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -795,8 +795,8 @@ class CategoryApi {
   /// ApiServicesAppCategoryUpdatecategoryPut
   ///
   /// 
-  Future<CategoryDto> apiServicesAppCategoryUpdatecategoryPut({ CreateOrEditCategoryDto body }) async {
-    Object postBody = body;
+  Future<CategoryDto> apiServicesAppCategoryUpdatecategoryPut({ CreateOrEditCategoryDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -823,14 +823,14 @@ class CategoryApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

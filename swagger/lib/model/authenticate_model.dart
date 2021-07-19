@@ -2,28 +2,28 @@ part of swagger.api;
 
 class AuthenticateModel {
   
-  String userNameOrEmailAddress = null;
+  String? userNameOrEmailAddress = null;
   
 
-  String password = null;
+  String? password = null;
   
 
-  String twoFactorVerificationCode = null;
+  String? twoFactorVerificationCode = null;
   
 
-  bool rememberClient = null;
+  bool? rememberClient = null;
   
 
-  String twoFactorRememberClientToken = null;
+  String? twoFactorRememberClientToken = null;
   
 
-  bool singleSignIn = null;
+  bool? singleSignIn = null;
   
 
-  String returnUrl = null;
+  String? returnUrl = null;
   
 
-  String captchaResponse = null;
+  String? captchaResponse = null;
   
   AuthenticateModel();
 
@@ -32,7 +32,7 @@ class AuthenticateModel {
     return 'AuthenticateModel[userNameOrEmailAddress=$userNameOrEmailAddress, password=$password, twoFactorVerificationCode=$twoFactorVerificationCode, rememberClient=$rememberClient, twoFactorRememberClientToken=$twoFactorRememberClientToken, singleSignIn=$singleSignIn, returnUrl=$returnUrl, captchaResponse=$captchaResponse, ]';
   }
 
-  AuthenticateModel.fromJson(Map<String, dynamic> json) {
+  AuthenticateModel.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userNameOrEmailAddress =
         json['userNameOrEmailAddress']

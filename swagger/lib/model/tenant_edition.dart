@@ -2,10 +2,10 @@ part of swagger.api;
 
 class TenantEdition {
   
-  String label = null;
+  String? label = null;
   
 
-  int value = null;
+  int? value = null;
   
   TenantEdition();
 
@@ -14,7 +14,7 @@ class TenantEdition {
     return 'TenantEdition[label=$label, value=$value, ]';
   }
 
-  TenantEdition.fromJson(Map<String, dynamic> json) {
+  TenantEdition.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     label =
         json['label']
@@ -31,7 +31,7 @@ class TenantEdition {
      };
   }
 
-  static List<TenantEdition> listFromJson(List<dynamic> json) {
+  static List<TenantEdition> listFromJson(List<dynamic>? json) {
     return json == null ? new List<TenantEdition>() : json.map((value) => new TenantEdition.fromJson(value)).toList();
   }
 

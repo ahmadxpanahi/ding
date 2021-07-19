@@ -2,10 +2,10 @@ part of swagger.api;
 
 class UserClockInOutOrganizationUnitLookupTableDto {
   
-  int id = null;
+  int? id = null;
   
 
-  String displayName = null;
+  String? displayName = null;
   
   UserClockInOutOrganizationUnitLookupTableDto();
 
@@ -14,7 +14,7 @@ class UserClockInOutOrganizationUnitLookupTableDto {
     return 'UserClockInOutOrganizationUnitLookupTableDto[id=$id, displayName=$displayName, ]';
   }
 
-  UserClockInOutOrganizationUnitLookupTableDto.fromJson(Map<String, dynamic> json) {
+  UserClockInOutOrganizationUnitLookupTableDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']

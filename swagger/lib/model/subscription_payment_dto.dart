@@ -2,55 +2,55 @@ part of swagger.api;
 
 class SubscriptionPaymentDto {
   
-  String description = null;
+  String? description = null;
   
 
-  SubscriptionPaymentGatewayType gateway = null;
+  SubscriptionPaymentGatewayType? gateway = null;
   
 
-  double amount = null;
+  double? amount = null;
   
 
-  int editionId = null;
+  int? editionId = null;
   
 
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  int dayCount = null;
+  int? dayCount = null;
   
 
-  String paymentId = null;
+  String? paymentId = null;
   
 
-  String payerId = null;
+  String? payerId = null;
   
 
-  String editionDisplayName = null;
+  String? editionDisplayName = null;
   
 
-  int invoiceNo = null;
+  int? invoiceNo = null;
   
 
-  SubscriptionPaymentStatus status = null;
+  SubscriptionPaymentStatus? status = null;
   
 
-  bool isRecurring = null;
+  bool? isRecurring = null;
   
 
-  String externalPaymentId = null;
+  String? externalPaymentId = null;
   
 
-  String successUrl = null;
+  String? successUrl = null;
   
 
-  String errorUrl = null;
+  String? errorUrl = null;
   
 
-  EditionType editionType = null;
+  EditionType? editionType = null;
   
 
-  int id = null;
+  int? id = null;
   
   SubscriptionPaymentDto();
 
@@ -59,7 +59,7 @@ class SubscriptionPaymentDto {
     return 'SubscriptionPaymentDto[description=$description, gateway=$gateway, amount=$amount, editionId=$editionId, tenantId=$tenantId, dayCount=$dayCount, paymentId=$paymentId, payerId=$payerId, editionDisplayName=$editionDisplayName, invoiceNo=$invoiceNo, status=$status, isRecurring=$isRecurring, externalPaymentId=$externalPaymentId, successUrl=$successUrl, errorUrl=$errorUrl, editionType=$editionType, id=$id, ]';
   }
 
-  SubscriptionPaymentDto.fromJson(Map<String, dynamic> json) {
+  SubscriptionPaymentDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     description =
         json['description']

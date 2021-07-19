@@ -2,16 +2,16 @@ part of swagger.api;
 
 class GetReportsTenantForViewDto {
   
-  ReportsTenantDto reportsTenant = null;
+  ReportsTenantDto? reportsTenant = null;
   
 
-  String countryName = null;
+  String? countryName = null;
   
 
-  String stateName = null;
+  String? stateName = null;
   
 
-  String cityName = null;
+  String? cityName = null;
   
   GetReportsTenantForViewDto();
 
@@ -20,7 +20,7 @@ class GetReportsTenantForViewDto {
     return 'GetReportsTenantForViewDto[reportsTenant=$reportsTenant, countryName=$countryName, stateName=$stateName, cityName=$cityName, ]';
   }
 
-  GetReportsTenantForViewDto.fromJson(Map<String, dynamic> json) {
+  GetReportsTenantForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     reportsTenant =
       
@@ -47,7 +47,7 @@ class GetReportsTenantForViewDto {
      };
   }
 
-  static List<GetReportsTenantForViewDto> listFromJson(List<dynamic> json) {
+  static List<GetReportsTenantForViewDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetReportsTenantForViewDto>() : json.map((value) => new GetReportsTenantForViewDto.fromJson(value)).toList();
   }
 

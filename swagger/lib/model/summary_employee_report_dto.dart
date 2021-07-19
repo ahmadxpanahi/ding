@@ -2,46 +2,46 @@ part of swagger.api;
 
 class SummaryEmployeeReportDto {
   
-  String shiftLength = null;
+  String? shiftLength = null;
   
 
-  String totalAttendance = null;
+  String? totalAttendance = null;
   
 
-  String totalOvertime = null;
+  String? totalOvertime = null;
   
 
-  String totalHolidayWorks = null;
+  String? totalHolidayWorks = null;
   
 
-  String totalDelay = null;
+  String? totalDelay = null;
   
 
-  String totalHurry = null;
+  String? totalHurry = null;
   
 
-  String totalLeave = null;
+  String? totalLeave = null;
   
 
-  String totalAbsence = null;
+  String? totalAbsence = null;
   
 
-  String totalMission = null;
+  String? totalMission = null;
   
 
-  int daysOfLeave = null;
+  int? daysOfLeave = null;
   
 
-  int daysOfMission = null;
+  int? daysOfMission = null;
   
 
-  int daysOfAttendance = null;
+  int? daysOfAttendance = null;
   
 
-  int userId = null;
+  int? userId = null;
   
 
-  int workScheduleId = null;
+  int? workScheduleId = null;
   
   SummaryEmployeeReportDto();
 
@@ -50,7 +50,7 @@ class SummaryEmployeeReportDto {
     return 'SummaryEmployeeReportDto[shiftLength=$shiftLength, totalAttendance=$totalAttendance, totalOvertime=$totalOvertime, totalHolidayWorks=$totalHolidayWorks, totalDelay=$totalDelay, totalHurry=$totalHurry, totalLeave=$totalLeave, totalAbsence=$totalAbsence, totalMission=$totalMission, daysOfLeave=$daysOfLeave, daysOfMission=$daysOfMission, daysOfAttendance=$daysOfAttendance, userId=$userId, workScheduleId=$workScheduleId, ]';
   }
 
-  SummaryEmployeeReportDto.fromJson(Map<String, dynamic> json) {
+  SummaryEmployeeReportDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     shiftLength =
         json['shiftLength']

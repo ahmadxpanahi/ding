@@ -2,16 +2,16 @@ part of swagger.api;
 
 class ChangeTenantAdminInput {
   
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  int userId = null;
+  int? userId = null;
   
 
-  int oldUserId = null;
+  int? oldUserId = null;
   
 
-  bool isOldManagerDeactive = null;
+  bool? isOldManagerDeactive = null;
   
   ChangeTenantAdminInput();
 
@@ -20,7 +20,7 @@ class ChangeTenantAdminInput {
     return 'ChangeTenantAdminInput[tenantId=$tenantId, userId=$userId, oldUserId=$oldUserId, isOldManagerDeactive=$isOldManagerDeactive, ]';
   }
 
-  ChangeTenantAdminInput.fromJson(Map<String, dynamic> json) {
+  ChangeTenantAdminInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenantId =
         json['tenantId']

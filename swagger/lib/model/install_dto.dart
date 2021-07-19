@@ -2,25 +2,25 @@ part of swagger.api;
 
 class InstallDto {
   
-  String connectionString = null;
+  String? connectionString = null;
   
 
-  String adminPassword = null;
+  String? adminPassword = null;
   
 
-  String webSiteUrl = null;
+  String? webSiteUrl = null;
   
 
-  String serverUrl = null;
+  String? serverUrl = null;
   
 
-  String defaultLanguage = null;
+  String? defaultLanguage = null;
   
 
-  EmailSettingsEditDto smtpSettings = null;
+  EmailSettingsEditDto? smtpSettings = null;
   
 
-  HostBillingSettingsEditDto billInfo = null;
+  HostBillingSettingsEditDto? billInfo = null;
   
   InstallDto();
 
@@ -29,7 +29,7 @@ class InstallDto {
     return 'InstallDto[connectionString=$connectionString, adminPassword=$adminPassword, webSiteUrl=$webSiteUrl, serverUrl=$serverUrl, defaultLanguage=$defaultLanguage, smtpSettings=$smtpSettings, billInfo=$billInfo, ]';
   }
 
-  InstallDto.fromJson(Map<String, dynamic> json) {
+  InstallDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     connectionString =
         json['connectionString']

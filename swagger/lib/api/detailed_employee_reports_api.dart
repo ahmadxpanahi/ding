@@ -5,13 +5,13 @@ part of swagger.api;
 class DetailedEmployeeReportsApi {
   final ApiClient apiClient;
 
-  DetailedEmployeeReportsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  DetailedEmployeeReportsApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppDetailedemployeereportsGetallGet
   ///
   /// 
-  Future<List<GetDetailedEmployeeReportForViewDto>> apiServicesAppDetailedemployeereportsGetallGet({ int userIdFilter, String userNameFilter, int workScheduleIdFilter, String workScheduleNameFilter, DateTime reportDateFrom, DateTime reportDateTo }) async {
-    Object postBody = null;
+  Future<List<GetDetailedEmployeeReportForViewDto>> apiServicesAppDetailedemployeereportsGetallGet({ int? userIdFilter, String? userNameFilter, int? workScheduleIdFilter, String? workScheduleNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -56,14 +56,14 @@ class DetailedEmployeeReportsApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

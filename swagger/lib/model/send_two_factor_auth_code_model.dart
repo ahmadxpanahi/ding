@@ -2,10 +2,10 @@ part of swagger.api;
 
 class SendTwoFactorAuthCodeModel {
   
-  int userId = null;
+  int? userId = null;
    // range from 1 to //
 
-  String provider = null;
+  String? provider = null;
   
   SendTwoFactorAuthCodeModel();
 
@@ -14,7 +14,7 @@ class SendTwoFactorAuthCodeModel {
     return 'SendTwoFactorAuthCodeModel[userId=$userId, provider=$provider, ]';
   }
 
-  SendTwoFactorAuthCodeModel.fromJson(Map<String, dynamic> json) {
+  SendTwoFactorAuthCodeModel.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userId =
         json['userId']

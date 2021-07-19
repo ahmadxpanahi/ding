@@ -2,40 +2,40 @@ part of swagger.api;
 
 class InvoiceDto {
   
-  double totalPrice = null;
+  double? totalPrice = null;
   
 
-  double deductionPrice = null;
+  double? deductionPrice = null;
   
 
-  SubscribableEdition subscribableEdition = null;
+  SubscribableEdition? subscribableEdition = null;
   
 
-  int remainingDaysCount = null;
+  int? remainingDaysCount = null;
   
 
-  int maxUserCount = null;
+  int? maxUserCount = null;
   
 
-  int maxLocationCount = null;
+  int? maxLocationCount = null;
   
 
-  String invoiceNo = null;
+  String? invoiceNo = null;
   
 
-  DateTime invoiceDate = null;
+  DateTime? invoiceDate = null;
   
 
-  String tenantLegalName = null;
+  String? tenantLegalName = null;
   
 
   List<String> tenantAddress = [];
   
 
-  String tenantTaxNo = null;
+  String? tenantTaxNo = null;
   
 
-  String hostLegalName = null;
+  String? hostLegalName = null;
   
 
   List<String> hostAddress = [];
@@ -47,7 +47,7 @@ class InvoiceDto {
     return 'InvoiceDto[totalPrice=$totalPrice, deductionPrice=$deductionPrice, subscribableEdition=$subscribableEdition, remainingDaysCount=$remainingDaysCount, maxUserCount=$maxUserCount, maxLocationCount=$maxLocationCount, invoiceNo=$invoiceNo, invoiceDate=$invoiceDate, tenantLegalName=$tenantLegalName, tenantAddress=$tenantAddress, tenantTaxNo=$tenantTaxNo, hostLegalName=$hostLegalName, hostAddress=$hostAddress, ]';
   }
 
-  InvoiceDto.fromJson(Map<String, dynamic> json) {
+  InvoiceDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     totalPrice =
         json['totalPrice'] == null ? null : json['totalPrice'].toDouble()
@@ -99,7 +99,7 @@ class InvoiceDto {
       'maxUserCount': maxUserCount,
       'maxLocationCount': maxLocationCount,
       'invoiceNo': invoiceNo,
-      'invoiceDate': invoiceDate == null ? '' : invoiceDate.toUtc().toIso8601String(),
+      'invoiceDate': invoiceDate == null ? '' : invoiceDate!.toUtc().toIso8601String(),
       'tenantLegalName': tenantLegalName,
       'tenantAddress': tenantAddress,
       'tenantTaxNo': tenantTaxNo,

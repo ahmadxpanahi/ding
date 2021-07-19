@@ -2,7 +2,7 @@ part of swagger.api;
 
 class SetDefaultLanguageInput {
   
-  String name = null;
+  String? name = null;
   
   SetDefaultLanguageInput();
 
@@ -11,7 +11,7 @@ class SetDefaultLanguageInput {
     return 'SetDefaultLanguageInput[name=$name, ]';
   }
 
-  SetDefaultLanguageInput.fromJson(Map<String, dynamic> json) {
+  SetDefaultLanguageInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']

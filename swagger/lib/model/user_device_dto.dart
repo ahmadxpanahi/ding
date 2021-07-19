@@ -2,25 +2,25 @@ part of swagger.api;
 
 class UserDeviceDto {
   
-  int userId = null;
+  int? userId = null;
   
 
-  int deviceId = null;
+  int? deviceId = null;
   
 
-  String deviceName = null;
+  String? deviceName = null;
   
 
-  String deviceSerialNumber = null;
+  String? deviceSerialNumber = null;
   
 
-  String deviceTypeName = null;
+  String? deviceTypeName = null;
   
 
-  bool isAssigned = null;
+  bool? isAssigned = null;
   
 
-  int id = null;
+  int? id = null;
   
   UserDeviceDto();
 
@@ -29,7 +29,7 @@ class UserDeviceDto {
     return 'UserDeviceDto[userId=$userId, deviceId=$deviceId, deviceName=$deviceName, deviceSerialNumber=$deviceSerialNumber, deviceTypeName=$deviceTypeName, isAssigned=$isAssigned, id=$id, ]';
   }
 
-  UserDeviceDto.fromJson(Map<String, dynamic> json) {
+  UserDeviceDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userId =
         json['userId']

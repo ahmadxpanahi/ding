@@ -5,7 +5,7 @@ class UsersToCategoryInput {
   List<int> userIds = [];
   
 
-  int categoryId = null;
+  int? categoryId = null;
    // range from 1 to //
   UsersToCategoryInput();
 
@@ -14,7 +14,7 @@ class UsersToCategoryInput {
     return 'UsersToCategoryInput[userIds=$userIds, categoryId=$categoryId, ]';
   }
 
-  UsersToCategoryInput.fromJson(Map<String, dynamic> json) {
+  UsersToCategoryInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userIds =
         (json['userIds'] as List).map((item) => item as int).toList()

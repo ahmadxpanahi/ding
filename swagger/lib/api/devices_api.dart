@@ -5,13 +5,13 @@ part of swagger.api;
 class DevicesApi {
   final ApiClient apiClient;
 
-  DevicesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  DevicesApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppDevicesActivePost
   ///
   /// 
-  Future apiServicesAppDevicesActivePost({ int deviceId }) async {
-    Object postBody = null;
+  Future apiServicesAppDevicesActivePost({ int? deviceId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -41,14 +41,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -62,8 +62,8 @@ class DevicesApi {
   /// ApiServicesAppDevicesAssignPost
   ///
   /// 
-  Future apiServicesAppDevicesAssignPost({ int deviceId }) async {
-    Object postBody = null;
+  Future apiServicesAppDevicesAssignPost({ int? deviceId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -93,14 +93,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -114,8 +114,8 @@ class DevicesApi {
   /// ApiServicesAppDevicesAvailablePost
   ///
   /// 
-  Future apiServicesAppDevicesAvailablePost({ int deviceId }) async {
-    Object postBody = null;
+  Future apiServicesAppDevicesAvailablePost({ int? deviceId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -145,14 +145,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -166,8 +166,8 @@ class DevicesApi {
   /// ApiServicesAppDevicesCreateoreditPost
   ///
   /// 
-  Future apiServicesAppDevicesCreateoreditPost({ CreateOrEditDeviceDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppDevicesCreateoreditPost({ CreateOrEditDeviceDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -194,14 +194,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -215,8 +215,8 @@ class DevicesApi {
   /// ApiServicesAppDevicesDeactivePost
   ///
   /// 
-  Future apiServicesAppDevicesDeactivePost({ int deviceId }) async {
-    Object postBody = null;
+  Future apiServicesAppDevicesDeactivePost({ int? deviceId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -246,14 +246,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -267,8 +267,8 @@ class DevicesApi {
   /// ApiServicesAppDevicesDeleteDelete
   ///
   /// 
-  Future apiServicesAppDevicesDeleteDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppDevicesDeleteDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -298,14 +298,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -319,8 +319,8 @@ class DevicesApi {
   /// ApiServicesAppDevicesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetDeviceForViewDto> apiServicesAppDevicesGetallGet({ String filter, String serialNumberFilter, String qRCodeFilter, String bssIdFilter, String ssIdFilter, String uuIdFilter, String majorFilter, String minorFilter, String nameFilter, String deviceTypeTitleFilter, int deviceStatusIdFilter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetDeviceForViewDto> apiServicesAppDevicesGetallGet({ String? filter, String? serialNumberFilter, String? qRCodeFilter, String? bssIdFilter, String? ssIdFilter, String? uuIdFilter, String? majorFilter, String? minorFilter, String? nameFilter, String? deviceTypeTitleFilter, int? deviceStatusIdFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -389,14 +389,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -410,8 +410,8 @@ class DevicesApi {
   /// ApiServicesAppDevicesGetalldevicetypeforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfDeviceDeviceTypeLookupTableDto> apiServicesAppDevicesGetalldevicetypeforlookuptableGet({ String filter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfDeviceDeviceTypeLookupTableDto> apiServicesAppDevicesGetalldevicetypeforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -450,14 +450,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -471,8 +471,8 @@ class DevicesApi {
   /// ApiServicesAppDevicesGetdeviceforeditGet
   ///
   /// 
-  Future<GetDeviceForEditOutput> apiServicesAppDevicesGetdeviceforeditGet({ int id }) async {
-    Object postBody = null;
+  Future<GetDeviceForEditOutput> apiServicesAppDevicesGetdeviceforeditGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -502,14 +502,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -523,8 +523,8 @@ class DevicesApi {
   /// ApiServicesAppDevicesGetdeviceforregistrationGet
   ///
   /// 
-  Future<GetDeviceDetailForRegistrationDto> apiServicesAppDevicesGetdeviceforregistrationGet({ String deviceEncryptedSerial }) async {
-    Object postBody = null;
+  Future<GetDeviceDetailForRegistrationDto> apiServicesAppDevicesGetdeviceforregistrationGet({ String? deviceEncryptedSerial }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -554,14 +554,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -575,8 +575,8 @@ class DevicesApi {
   /// ApiServicesAppDevicesGetdeviceforviewGet
   ///
   /// 
-  Future<GetDeviceForViewDto> apiServicesAppDevicesGetdeviceforviewGet({ int id }) async {
-    Object postBody = null;
+  Future<GetDeviceForViewDto> apiServicesAppDevicesGetdeviceforviewGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -606,14 +606,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -628,7 +628,7 @@ class DevicesApi {
   ///
   /// 
   Future<GetDeviceSerialDto> apiServicesAppDevicesGetdeviceserialGet(String qRCode, String password, String managerMobileNumber) async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
     if(qRCode == null) {
@@ -667,14 +667,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -688,8 +688,8 @@ class DevicesApi {
   /// ApiServicesAppDevicesGetdevicestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppDevicesGetdevicestoexcelGet({ String filter, String serialNumberFilter, String qRCodeFilter, String bssIdFilter, String ssIdFilter, String uuIdFilter, String majorFilter, String minorFilter, String nameFilter, String deviceTypeTitleFilter, int deviceStatusIdFilter }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppDevicesGetdevicestoexcelGet({ String? filter, String? serialNumberFilter, String? qRCodeFilter, String? bssIdFilter, String? ssIdFilter, String? uuIdFilter, String? majorFilter, String? minorFilter, String? nameFilter, String? deviceTypeTitleFilter, int? deviceStatusIdFilter }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -749,14 +749,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -770,8 +770,8 @@ class DevicesApi {
   /// ApiServicesAppDevicesResetPost
   ///
   /// 
-  Future apiServicesAppDevicesResetPost({ int deviceId }) async {
-    Object postBody = null;
+  Future apiServicesAppDevicesResetPost({ int? deviceId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -801,14 +801,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -822,8 +822,8 @@ class DevicesApi {
   /// ApiServicesAppDevicesSuspendPost
   ///
   /// 
-  Future apiServicesAppDevicesSuspendPost({ int deviceId }) async {
-    Object postBody = null;
+  Future apiServicesAppDevicesSuspendPost({ int? deviceId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -853,14 +853,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -874,8 +874,8 @@ class DevicesApi {
   /// ApiServicesAppDevicesUpdatemydevicePut
   ///
   /// 
-  Future apiServicesAppDevicesUpdatemydevicePut({ EditMyDeviceDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppDevicesUpdatemydevicePut({ EditMyDeviceDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -902,14 +902,14 @@ class DevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

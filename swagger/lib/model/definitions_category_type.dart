@@ -2,7 +2,7 @@ part of swagger.api;
 
 class DefinitionsCategoryType {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   DefinitionsCategoryType._internal(this.value);
 

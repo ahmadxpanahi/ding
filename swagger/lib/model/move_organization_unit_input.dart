@@ -2,10 +2,10 @@ part of swagger.api;
 
 class MoveOrganizationUnitInput {
   
-  int id = null;
+  int? id = null;
    // range from 1 to //
 
-  int newParentId = null;
+  int? newParentId = null;
   
   MoveOrganizationUnitInput();
 
@@ -14,7 +14,7 @@ class MoveOrganizationUnitInput {
     return 'MoveOrganizationUnitInput[id=$id, newParentId=$newParentId, ]';
   }
 
-  MoveOrganizationUnitInput.fromJson(Map<String, dynamic> json) {
+  MoveOrganizationUnitInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
         json['id']

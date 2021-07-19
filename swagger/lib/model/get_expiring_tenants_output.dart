@@ -5,16 +5,16 @@ class GetExpiringTenantsOutput {
   List<ExpiringTenant> expiringTenants = [];
   
 
-  int subscriptionEndAlertDayCount = null;
+  int? subscriptionEndAlertDayCount = null;
   
 
-  int maxExpiringTenantsShownCount = null;
+  int? maxExpiringTenantsShownCount = null;
   
 
-  DateTime subscriptionEndDateStart = null;
+  DateTime? subscriptionEndDateStart = null;
   
 
-  DateTime subscriptionEndDateEnd = null;
+  DateTime? subscriptionEndDateEnd = null;
   
   GetExpiringTenantsOutput();
 
@@ -23,7 +23,7 @@ class GetExpiringTenantsOutput {
     return 'GetExpiringTenantsOutput[expiringTenants=$expiringTenants, subscriptionEndAlertDayCount=$subscriptionEndAlertDayCount, maxExpiringTenantsShownCount=$maxExpiringTenantsShownCount, subscriptionEndDateStart=$subscriptionEndDateStart, subscriptionEndDateEnd=$subscriptionEndDateEnd, ]';
   }
 
-  GetExpiringTenantsOutput.fromJson(Map<String, dynamic> json) {
+  GetExpiringTenantsOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     expiringTenants =
       ExpiringTenant.listFromJson(json['expiringTenants'])
@@ -43,8 +43,8 @@ class GetExpiringTenantsOutput {
       'expiringTenants': expiringTenants,
       'subscriptionEndAlertDayCount': subscriptionEndAlertDayCount,
       'maxExpiringTenantsShownCount': maxExpiringTenantsShownCount,
-      'subscriptionEndDateStart': subscriptionEndDateStart == null ? '' : subscriptionEndDateStart.toUtc().toIso8601String(),
-      'subscriptionEndDateEnd': subscriptionEndDateEnd == null ? '' : subscriptionEndDateEnd.toUtc().toIso8601String()
+      'subscriptionEndDateStart': subscriptionEndDateStart == null ? '' : subscriptionEndDateStart!.toUtc().toIso8601String(),
+      'subscriptionEndDateEnd': subscriptionEndDateEnd == null ? '' : subscriptionEndDateEnd!.toUtc().toIso8601String()
      };
   }
 

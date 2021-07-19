@@ -2,19 +2,19 @@ part of swagger.api;
 
 class DeviceDto {
   
-  String serialNumber = null;
+  String? serialNumber = null;
   
 
-  String qrCode = null;
+  String? qrCode = null;
   
 
-  int deviceType = null;
+  int? deviceType = null;
   
 
-  DeviceStatus deviceStatus = null;
+  DeviceStatus? deviceStatus = null;
   
 
-  int id = null;
+  int? id = null;
   
   DeviceDto();
 
@@ -23,7 +23,7 @@ class DeviceDto {
     return 'DeviceDto[serialNumber=$serialNumber, qrCode=$qrCode, deviceType=$deviceType, deviceStatus=$deviceStatus, id=$id, ]';
   }
 
-  DeviceDto.fromJson(Map<String, dynamic> json) {
+  DeviceDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     serialNumber =
         json['serialNumber']

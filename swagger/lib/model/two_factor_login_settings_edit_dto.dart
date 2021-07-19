@@ -2,22 +2,22 @@ part of swagger.api;
 
 class TwoFactorLoginSettingsEditDto {
   
-  bool isEnabledForApplication = null;
+  bool? isEnabledForApplication = null;
   
 
-  bool isEnabled = null;
+  bool? isEnabled = null;
   
 
-  bool isEmailProviderEnabled = null;
+  bool? isEmailProviderEnabled = null;
   
 
-  bool isSmsProviderEnabled = null;
+  bool? isSmsProviderEnabled = null;
   
 
-  bool isRememberBrowserEnabled = null;
+  bool? isRememberBrowserEnabled = null;
   
 
-  bool isGoogleAuthenticatorEnabled = null;
+  bool? isGoogleAuthenticatorEnabled = null;
   
   TwoFactorLoginSettingsEditDto();
 
@@ -26,7 +26,7 @@ class TwoFactorLoginSettingsEditDto {
     return 'TwoFactorLoginSettingsEditDto[isEnabledForApplication=$isEnabledForApplication, isEnabled=$isEnabled, isEmailProviderEnabled=$isEmailProviderEnabled, isSmsProviderEnabled=$isSmsProviderEnabled, isRememberBrowserEnabled=$isRememberBrowserEnabled, isGoogleAuthenticatorEnabled=$isGoogleAuthenticatorEnabled, ]';
   }
 
-  TwoFactorLoginSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  TwoFactorLoginSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     isEnabledForApplication =
         json['isEnabledForApplication']

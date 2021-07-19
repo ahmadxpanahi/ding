@@ -2,52 +2,52 @@ part of swagger.api;
 
 class SubscriptionPaymentListDto {
   
-  String gateway = null;
+  String? gateway = null;
   
 
-  double amount = null;
+  double? amount = null;
   
 
-  int editionId = null;
+  int? editionId = null;
   
 
-  int dayCount = null;
+  int? dayCount = null;
   
 
-  String paymentPeriodType = null;
+  String? paymentPeriodType = null;
   
 
-  String externalPaymentId = null;
+  String? externalPaymentId = null;
   
 
-  String payerId = null;
+  String? payerId = null;
   
 
-  String status = null;
+  String? status = null;
   
 
-  String editionDisplayName = null;
+  String? editionDisplayName = null;
   
 
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  String invoiceNo = null;
+  String? invoiceNo = null;
   
 
-  DateTime lastModificationTime = null;
+  DateTime? lastModificationTime = null;
   
 
-  int lastModifierUserId = null;
+  int? lastModifierUserId = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  int creatorUserId = null;
+  int? creatorUserId = null;
   
 
-  int id = null;
+  int? id = null;
   
   SubscriptionPaymentListDto();
 
@@ -56,7 +56,7 @@ class SubscriptionPaymentListDto {
     return 'SubscriptionPaymentListDto[gateway=$gateway, amount=$amount, editionId=$editionId, dayCount=$dayCount, paymentPeriodType=$paymentPeriodType, externalPaymentId=$externalPaymentId, payerId=$payerId, status=$status, editionDisplayName=$editionDisplayName, tenantId=$tenantId, invoiceNo=$invoiceNo, lastModificationTime=$lastModificationTime, lastModifierUserId=$lastModifierUserId, creationTime=$creationTime, creatorUserId=$creatorUserId, id=$id, ]';
   }
 
-  SubscriptionPaymentListDto.fromJson(Map<String, dynamic> json) {
+  SubscriptionPaymentListDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     gateway =
         json['gateway']
@@ -117,15 +117,15 @@ class SubscriptionPaymentListDto {
       'editionDisplayName': editionDisplayName,
       'tenantId': tenantId,
       'invoiceNo': invoiceNo,
-      'lastModificationTime': lastModificationTime == null ? '' : lastModificationTime.toUtc().toIso8601String(),
+      'lastModificationTime': lastModificationTime == null ? '' : lastModificationTime!.toUtc().toIso8601String(),
       'lastModifierUserId': lastModifierUserId,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
       'creatorUserId': creatorUserId,
       'id': id
      };
   }
 
-  static List<SubscriptionPaymentListDto> listFromJson(List<dynamic> json) {
+  static List<SubscriptionPaymentListDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<SubscriptionPaymentListDto>() : json.map((value) => new SubscriptionPaymentListDto.fromJson(value)).toList();
   }
 

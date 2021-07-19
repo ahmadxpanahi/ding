@@ -2,91 +2,91 @@ part of swagger.api;
 
 class RegisterInput {
   
-  String name = null;
+  String? name = null;
   
 
-  String surname = null;
+  String? surname = null;
   
 
-  String userName = null;
+  String? userName = null;
   
 
-  String emailAddress = null;
+  String? emailAddress = null;
   
 
-  String phoneNumber = null;
+  String? phoneNumber = null;
   
 
-  String password = null;
+  String? password = null;
   
 
-  String captchaResponse = null;
+  String? captchaResponse = null;
   
 
-  String smsVerification = null;
+  String? smsVerification = null;
   
 
-  String code = null;
+  String? code = null;
   
 
-  GenderType genderType = null;
+  GenderType? genderType = null;
   
 
-  String nickName = null;
+  String? nickName = null;
   
 
-  DateTime birthdate = null;
+  DateTime? birthdate = null;
   
 
-  String bankAccount = null;
+  String? bankAccount = null;
   
 
-  int regionId = null;
+  int? regionId = null;
   
 
-  String address = null;
+  String? address = null;
   
 
-  String homePhoneNumber = null;
+  String? homePhoneNumber = null;
   
 
-  String workPhoneNumber = null;
+  String? workPhoneNumber = null;
   
 
-  String postalCode = null;
+  String? postalCode = null;
   
 
-  String birthCertificateNumber = null;
+  String? birthCertificateNumber = null;
   
 
-  String nationalCode = null;
+  String? nationalCode = null;
   
 
-  DegreeType degreeType = null;
+  DegreeType? degreeType = null;
   
 
-  String occupation = null;
+  String? occupation = null;
   
 
-  String jobTitle = null;
+  String? jobTitle = null;
   
 
-  IntroduceType introduceType = null;
+  IntroduceType? introduceType = null;
   
 
-  double credit = null;
+  double? credit = null;
   
 
-  double balance = null;
+  double? balance = null;
   
 
-  double fundRange = null;
+  double? fundRange = null;
   
 
-  int remainQuestionCount = null;
+  int? remainQuestionCount = null;
   
 
-  int accessDaysCount = null;
+  int? accessDaysCount = null;
   
   RegisterInput();
 
@@ -95,7 +95,7 @@ class RegisterInput {
     return 'RegisterInput[name=$name, surname=$surname, userName=$userName, emailAddress=$emailAddress, phoneNumber=$phoneNumber, password=$password, captchaResponse=$captchaResponse, smsVerification=$smsVerification, code=$code, genderType=$genderType, nickName=$nickName, birthdate=$birthdate, bankAccount=$bankAccount, regionId=$regionId, address=$address, homePhoneNumber=$homePhoneNumber, workPhoneNumber=$workPhoneNumber, postalCode=$postalCode, birthCertificateNumber=$birthCertificateNumber, nationalCode=$nationalCode, degreeType=$degreeType, occupation=$occupation, jobTitle=$jobTitle, introduceType=$introduceType, credit=$credit, balance=$balance, fundRange=$fundRange, remainQuestionCount=$remainQuestionCount, accessDaysCount=$accessDaysCount, ]';
   }
 
-  RegisterInput.fromJson(Map<String, dynamic> json) {
+  RegisterInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     name =
         json['name']
@@ -203,7 +203,7 @@ class RegisterInput {
       'code': code,
       'genderType': genderType,
       'nickName': nickName,
-      'birthdate': birthdate == null ? '' : birthdate.toUtc().toIso8601String(),
+      'birthdate': birthdate == null ? '' : birthdate!.toUtc().toIso8601String(),
       'bankAccount': bankAccount,
       'regionId': regionId,
       'address': address,

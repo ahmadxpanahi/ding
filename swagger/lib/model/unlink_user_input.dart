@@ -2,10 +2,10 @@ part of swagger.api;
 
 class UnlinkUserInput {
   
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  int userId = null;
+  int? userId = null;
   
   UnlinkUserInput();
 
@@ -14,7 +14,7 @@ class UnlinkUserInput {
     return 'UnlinkUserInput[tenantId=$tenantId, userId=$userId, ]';
   }
 
-  UnlinkUserInput.fromJson(Map<String, dynamic> json) {
+  UnlinkUserInput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     tenantId =
         json['tenantId']

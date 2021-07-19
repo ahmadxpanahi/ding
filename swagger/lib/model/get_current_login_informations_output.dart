@@ -2,22 +2,22 @@ part of swagger.api;
 
 class GetCurrentLoginInformationsOutput {
   
-  UserLoginInfoDto user = null;
+  UserLoginInfoDto? user = null;
   
 
-  UserLoginInfoDto impersonatorUser = null;
+  UserLoginInfoDto? impersonatorUser = null;
   
 
-  TenantLoginInfoDto tenant = null;
+  TenantLoginInfoDto? tenant = null;
   
 
-  TenantLoginInfoDto impersonatorTenant = null;
+  TenantLoginInfoDto? impersonatorTenant = null;
   
 
-  ApplicationInfoDto application = null;
+  ApplicationInfoDto? application = null;
   
 
-  UiCustomizationSettingsDto theme = null;
+  UiCustomizationSettingsDto? theme = null;
   
   GetCurrentLoginInformationsOutput();
 
@@ -26,7 +26,7 @@ class GetCurrentLoginInformationsOutput {
     return 'GetCurrentLoginInformationsOutput[user=$user, impersonatorUser=$impersonatorUser, tenant=$tenant, impersonatorTenant=$impersonatorTenant, application=$application, theme=$theme, ]';
   }
 
-  GetCurrentLoginInformationsOutput.fromJson(Map<String, dynamic> json) {
+  GetCurrentLoginInformationsOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     user =
       

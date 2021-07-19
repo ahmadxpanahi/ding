@@ -11,7 +11,7 @@ class GetIncomeStatisticsDataOutput {
     return 'GetIncomeStatisticsDataOutput[incomeStatistics=$incomeStatistics, ]';
   }
 
-  GetIncomeStatisticsDataOutput.fromJson(Map<String, dynamic> json) {
+  GetIncomeStatisticsDataOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     incomeStatistics =
       IncomeStastistic.listFromJson(json['incomeStatistics'])

@@ -5,13 +5,13 @@ part of swagger.api;
 class EditionDevicesApi {
   final ApiClient apiClient;
 
-  EditionDevicesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  EditionDevicesApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppEditiondevicesCreatePost
   ///
   /// 
-  Future apiServicesAppEditiondevicesCreatePost({ CreateEditionDeviceDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppEditiondevicesCreatePost({ CreateEditionDeviceDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class EditionDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesDeleteDelete
   ///
   /// 
-  Future apiServicesAppEditiondevicesDeleteDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppEditiondevicesDeleteDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -90,14 +90,14 @@ class EditionDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -111,8 +111,8 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesGetallGet
   ///
   /// 
-  Future<PagedResultDtoOfGetEditionDeviceForViewDto> apiServicesAppEditiondevicesGetallGet({ String filter, String subscribableEditionDisplayNameFilter, String deviceSerialNumberFilter, String purchasingResourceTitleFilter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfGetEditionDeviceForViewDto> apiServicesAppEditiondevicesGetallGet({ String? filter, String? subscribableEditionDisplayNameFilter, String? deviceSerialNumberFilter, String? purchasingResourceTitleFilter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -160,14 +160,14 @@ class EditionDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -182,7 +182,7 @@ class EditionDevicesApi {
   ///
   /// 
   Future<ListResultDtoOfAllAvailableDevicesDto> apiServicesAppEditiondevicesGetallavailabledevicesGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -209,14 +209,14 @@ class EditionDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -230,8 +230,8 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesGetallpurchasingresourceforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfEditionDevicePurchasingResourceLookupTableDto> apiServicesAppEditiondevicesGetallpurchasingresourceforlookuptableGet({ String filter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfEditionDevicePurchasingResourceLookupTableDto> apiServicesAppEditiondevicesGetallpurchasingresourceforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -270,14 +270,14 @@ class EditionDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -291,8 +291,8 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesGetallsubscribableeditionforlookuptableGet
   ///
   /// 
-  Future<PagedResultDtoOfEditionDeviceSubscribableEditionLookupTableDto> apiServicesAppEditiondevicesGetallsubscribableeditionforlookuptableGet({ String filter, String sorting, int skipCount, int maxResultCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfEditionDeviceSubscribableEditionLookupTableDto> apiServicesAppEditiondevicesGetallsubscribableeditionforlookuptableGet({ String? filter, String? sorting, int? skipCount, int? maxResultCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -331,14 +331,14 @@ class EditionDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -352,8 +352,8 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesGeteditiondevicebydeviceidGet
   ///
   /// 
-  Future<GetEditionDeviceForViewDto> apiServicesAppEditiondevicesGeteditiondevicebydeviceidGet({ int deviceId }) async {
-    Object postBody = null;
+  Future<GetEditionDeviceForViewDto> apiServicesAppEditiondevicesGeteditiondevicebydeviceidGet({ int? deviceId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -383,14 +383,14 @@ class EditionDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -404,8 +404,8 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesGeteditiondeviceforeditGet
   ///
   /// 
-  Future<EditEditionDeviceFeaturesDto> apiServicesAppEditiondevicesGeteditiondeviceforeditGet({ int id }) async {
-    Object postBody = null;
+  Future<EditEditionDeviceFeaturesDto> apiServicesAppEditiondevicesGeteditiondeviceforeditGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -435,14 +435,14 @@ class EditionDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -456,8 +456,8 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesGeteditiondeviceforviewGet
   ///
   /// 
-  Future<GetEditionDeviceForViewDto> apiServicesAppEditiondevicesGeteditiondeviceforviewGet({ int id }) async {
-    Object postBody = null;
+  Future<GetEditionDeviceForViewDto> apiServicesAppEditiondevicesGeteditiondeviceforviewGet({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -487,14 +487,14 @@ class EditionDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -508,8 +508,8 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesGeteditiondevicestoexcelGet
   ///
   /// 
-  Future<FileDto> apiServicesAppEditiondevicesGeteditiondevicestoexcelGet({ String filter, String subscribableEditionDisplayNameFilter, String deviceSerialNumberFilter, String purchasingResourceTitleFilter }) async {
-    Object postBody = null;
+  Future<FileDto> apiServicesAppEditiondevicesGeteditiondevicestoexcelGet({ String? filter, String? subscribableEditionDisplayNameFilter, String? deviceSerialNumberFilter, String? purchasingResourceTitleFilter }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -548,14 +548,14 @@ class EditionDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -569,8 +569,8 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesRemovealleditionfromdeviceDelete
   ///
   /// 
-  Future apiServicesAppEditiondevicesRemovealleditionfromdeviceDelete({ int deviceId }) async {
-    Object postBody = null;
+  Future apiServicesAppEditiondevicesRemovealleditionfromdeviceDelete({ int? deviceId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -600,14 +600,14 @@ class EditionDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -621,8 +621,8 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesSavefeaturesPost
   ///
   /// 
-  Future apiServicesAppEditiondevicesSavefeaturesPost({ EditEditionDeviceFeaturesDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppEditiondevicesSavefeaturesPost({ EditEditionDeviceFeaturesDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -649,14 +649,14 @@ class EditionDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -670,8 +670,8 @@ class EditionDevicesApi {
   /// ApiServicesAppEditiondevicesUpgradefeaturesPost
   ///
   /// 
-  Future apiServicesAppEditiondevicesUpgradefeaturesPost({ EditEditionDeviceFeaturesDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppEditiondevicesUpgradefeaturesPost({ EditEditionDeviceFeaturesDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -698,14 +698,14 @@ class EditionDevicesApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

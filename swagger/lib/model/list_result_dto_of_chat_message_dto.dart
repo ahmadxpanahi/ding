@@ -11,7 +11,7 @@ class ListResultDtoOfChatMessageDto {
     return 'ListResultDtoOfChatMessageDto[items=$items, ]';
   }
 
-  ListResultDtoOfChatMessageDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfChatMessageDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       ChatMessageDto.listFromJson(json['items'])

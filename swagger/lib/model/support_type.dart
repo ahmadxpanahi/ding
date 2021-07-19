@@ -2,7 +2,7 @@ part of swagger.api;
 
 class SupportType {
   /// The underlying value of this enum member.
-  int value;
+  int? value;
 
   SupportType._internal(this.value);
 

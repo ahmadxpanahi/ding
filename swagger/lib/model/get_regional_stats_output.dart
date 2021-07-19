@@ -11,7 +11,7 @@ class GetRegionalStatsOutput {
     return 'GetRegionalStatsOutput[stats=$stats, ]';
   }
 
-  GetRegionalStatsOutput.fromJson(Map<String, dynamic> json) {
+  GetRegionalStatsOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     stats =
       RegionalStatCountry.listFromJson(json['stats'])

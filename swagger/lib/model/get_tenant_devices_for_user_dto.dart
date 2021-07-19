@@ -2,40 +2,40 @@ part of swagger.api;
 
 class GetTenantDevicesForUserDto {
   
-  int userId = null;
+  int? userId = null;
   
 
-  int deviceId = null;
+  int? deviceId = null;
   
 
-  String deviceName = null;
+  String? deviceName = null;
   
 
-  String deviceSerialNumber = null;
+  String? deviceSerialNumber = null;
   
 
-  String deviceTypeName = null;
+  String? deviceTypeName = null;
   
 
-  int dayCount = null;
+  int? dayCount = null;
   
 
-  int maxUserCount = null;
+  int? maxUserCount = null;
   
 
-  int maxLocationCount = null;
+  int? maxLocationCount = null;
   
 
-  int usedUserCount = null;
+  int? usedUserCount = null;
   
 
-  int usedLocationCount = null;
+  int? usedLocationCount = null;
   
 
-  bool isAssigned = null;
+  bool? isAssigned = null;
   
 
-  int id = null;
+  int? id = null;
   
   GetTenantDevicesForUserDto();
 
@@ -44,7 +44,7 @@ class GetTenantDevicesForUserDto {
     return 'GetTenantDevicesForUserDto[userId=$userId, deviceId=$deviceId, deviceName=$deviceName, deviceSerialNumber=$deviceSerialNumber, deviceTypeName=$deviceTypeName, dayCount=$dayCount, maxUserCount=$maxUserCount, maxLocationCount=$maxLocationCount, usedUserCount=$usedUserCount, usedLocationCount=$usedLocationCount, isAssigned=$isAssigned, id=$id, ]';
   }
 
-  GetTenantDevicesForUserDto.fromJson(Map<String, dynamic> json) {
+  GetTenantDevicesForUserDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     userId =
         json['userId']
@@ -101,7 +101,7 @@ class GetTenantDevicesForUserDto {
      };
   }
 
-  static List<GetTenantDevicesForUserDto> listFromJson(List<dynamic> json) {
+  static List<GetTenantDevicesForUserDto> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetTenantDevicesForUserDto>() : json.map((value) => new GetTenantDevicesForUserDto.fromJson(value)).toList();
   }
 

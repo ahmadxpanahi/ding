@@ -2,22 +2,22 @@ part of swagger.api;
 
 class EmployeeMissionReportDto {
   
-  int totalApprovedMissionRequestDays = null;
+  int? totalApprovedMissionRequestDays = null;
   
 
-  String totalApprovedMissionRequestHours = null;
+  String? totalApprovedMissionRequestHours = null;
   
 
-  String totalRejectedMissionRequestHours = null;
+  String? totalRejectedMissionRequestHours = null;
   
 
-  String remainingMissionPermissionHours = null;
+  String? remainingMissionPermissionHours = null;
   
 
-  int remainingMissionPermissionDays = null;
+  int? remainingMissionPermissionDays = null;
   
 
-  int userId = null;
+  int? userId = null;
   
   EmployeeMissionReportDto();
 
@@ -26,7 +26,7 @@ class EmployeeMissionReportDto {
     return 'EmployeeMissionReportDto[totalApprovedMissionRequestDays=$totalApprovedMissionRequestDays, totalApprovedMissionRequestHours=$totalApprovedMissionRequestHours, totalRejectedMissionRequestHours=$totalRejectedMissionRequestHours, remainingMissionPermissionHours=$remainingMissionPermissionHours, remainingMissionPermissionDays=$remainingMissionPermissionDays, userId=$userId, ]';
   }
 
-  EmployeeMissionReportDto.fromJson(Map<String, dynamic> json) {
+  EmployeeMissionReportDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     totalApprovedMissionRequestDays =
         json['totalApprovedMissionRequestDays']

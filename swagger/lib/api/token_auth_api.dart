@@ -5,13 +5,13 @@ part of swagger.api;
 class TokenAuthApi {
   final ApiClient apiClient;
 
-  TokenAuthApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  TokenAuthApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiTokenauthAuthenticatePost
   ///
   /// 
-  Future<AuthenticateResultModel> apiTokenauthAuthenticatePost({ AuthenticateModel body }) async {
-    Object postBody = body;
+  Future<AuthenticateResultModel> apiTokenauthAuthenticatePost({ AuthenticateModel? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class TokenAuthApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -59,8 +59,8 @@ class TokenAuthApi {
   /// ApiTokenauthAuthenticatebytenantPost
   ///
   /// 
-  Future<AuthenticateResultModel> apiTokenauthAuthenticatebytenantPost({ AuthenticateByTenantModel body }) async {
-    Object postBody = body;
+  Future<AuthenticateResultModel> apiTokenauthAuthenticatebytenantPost({ AuthenticateByTenantModel? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class TokenAuthApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class TokenAuthApi {
   /// ApiTokenauthDelegatedimpersonatedauthenticatePost
   ///
   /// 
-  Future<ImpersonatedAuthenticateResultModel> apiTokenauthDelegatedimpersonatedauthenticatePost({ int userDelegationId, String impersonationToken }) async {
-    Object postBody = null;
+  Future<ImpersonatedAuthenticateResultModel> apiTokenauthDelegatedimpersonatedauthenticatePost({ int? userDelegationId, String? impersonationToken }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -142,14 +142,14 @@ class TokenAuthApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -163,8 +163,8 @@ class TokenAuthApi {
   /// ApiTokenauthExternalauthenticatePost
   ///
   /// 
-  Future<ExternalAuthenticateResultModel> apiTokenauthExternalauthenticatePost({ ExternalAuthenticateModel body }) async {
-    Object postBody = body;
+  Future<ExternalAuthenticateResultModel> apiTokenauthExternalauthenticatePost({ ExternalAuthenticateModel? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -191,14 +191,14 @@ class TokenAuthApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -213,7 +213,7 @@ class TokenAuthApi {
   ///
   /// 
   Future<List<ExternalLoginProviderInfoModel>> apiTokenauthGetexternalauthenticationprovidersGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -240,14 +240,14 @@ class TokenAuthApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -261,8 +261,8 @@ class TokenAuthApi {
   /// ApiTokenauthImpersonatedauthenticatePost
   ///
   /// 
-  Future<ImpersonatedAuthenticateResultModel> apiTokenauthImpersonatedauthenticatePost({ String impersonationToken }) async {
-    Object postBody = null;
+  Future<ImpersonatedAuthenticateResultModel> apiTokenauthImpersonatedauthenticatePost({ String? impersonationToken }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -292,14 +292,14 @@ class TokenAuthApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -313,8 +313,8 @@ class TokenAuthApi {
   /// ApiTokenauthLinkedaccountauthenticatePost
   ///
   /// 
-  Future<SwitchedAccountAuthenticateResultModel> apiTokenauthLinkedaccountauthenticatePost({ String switchAccountToken }) async {
-    Object postBody = null;
+  Future<SwitchedAccountAuthenticateResultModel> apiTokenauthLinkedaccountauthenticatePost({ String? switchAccountToken }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -344,14 +344,14 @@ class TokenAuthApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -366,7 +366,7 @@ class TokenAuthApi {
   ///
   /// 
   Future apiTokenauthLogoutGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -393,14 +393,14 @@ class TokenAuthApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -414,8 +414,8 @@ class TokenAuthApi {
   /// ApiTokenauthRefreshtokenPost
   ///
   /// 
-  Future<RefreshTokenResult> apiTokenauthRefreshtokenPost({ String refreshToken }) async {
-    Object postBody = null;
+  Future<RefreshTokenResult> apiTokenauthRefreshtokenPost({ String? refreshToken }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -445,14 +445,14 @@ class TokenAuthApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -466,8 +466,8 @@ class TokenAuthApi {
   /// ApiTokenauthSendtwofactorauthcodePost
   ///
   /// 
-  Future apiTokenauthSendtwofactorauthcodePost({ SendTwoFactorAuthCodeModel body }) async {
-    Object postBody = body;
+  Future apiTokenauthSendtwofactorauthcodePost({ SendTwoFactorAuthCodeModel? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -494,14 +494,14 @@ class TokenAuthApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -515,8 +515,8 @@ class TokenAuthApi {
   /// ApiTokenauthTestnotificationGet
   ///
   /// 
-  Future apiTokenauthTestnotificationGet({ String message, String severity }) async {
-    Object postBody = null;
+  Future apiTokenauthTestnotificationGet({ String? message, String? severity }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -549,14 +549,14 @@ class TokenAuthApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

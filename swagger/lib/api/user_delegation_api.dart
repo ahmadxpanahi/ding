@@ -5,13 +5,13 @@ part of swagger.api;
 class UserDelegationApi {
   final ApiClient apiClient;
 
-  UserDelegationApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  UserDelegationApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppUserdelegationDelegatenewuserPost
   ///
   /// 
-  Future apiServicesAppUserdelegationDelegatenewuserPost({ CreateUserDelegationDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppUserdelegationDelegatenewuserPost({ CreateUserDelegationDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -38,14 +38,14 @@ class UserDelegationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -60,7 +60,7 @@ class UserDelegationApi {
   ///
   /// 
   Future<List<UserDelegationDto>> apiServicesAppUserdelegationGetactiveuserdelegationsGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -87,14 +87,14 @@ class UserDelegationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -108,8 +108,8 @@ class UserDelegationApi {
   /// ApiServicesAppUserdelegationGetdelegatedusersGet
   ///
   /// 
-  Future<PagedResultDtoOfUserDelegationDto> apiServicesAppUserdelegationGetdelegatedusersGet({ int maxResultCount, int skipCount, String sorting }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfUserDelegationDto> apiServicesAppUserdelegationGetdelegatedusersGet({ int? maxResultCount, int? skipCount, String? sorting }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -145,14 +145,14 @@ class UserDelegationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -166,8 +166,8 @@ class UserDelegationApi {
   /// ApiServicesAppUserdelegationRemovedelegationDelete
   ///
   /// 
-  Future apiServicesAppUserdelegationRemovedelegationDelete({ int id }) async {
-    Object postBody = null;
+  Future apiServicesAppUserdelegationRemovedelegationDelete({ int? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -197,14 +197,14 @@ class UserDelegationApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

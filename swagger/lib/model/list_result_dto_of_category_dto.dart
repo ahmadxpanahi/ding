@@ -11,7 +11,7 @@ class ListResultDtoOfCategoryDto {
     return 'ListResultDtoOfCategoryDto[items=$items, ]';
   }
 
-  ListResultDtoOfCategoryDto.fromJson(Map<String, dynamic> json) {
+  ListResultDtoOfCategoryDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     items =
       CategoryDto.listFromJson(json['items'])

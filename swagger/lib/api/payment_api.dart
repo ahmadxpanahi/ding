@@ -5,13 +5,13 @@ part of swagger.api;
 class PaymentApi {
   final ApiClient apiClient;
 
-  PaymentApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  PaymentApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppPaymentBuynowsucceedPost
   ///
   /// 
-  Future apiServicesAppPaymentBuynowsucceedPost({ int paymentId }) async {
-    Object postBody = null;
+  Future apiServicesAppPaymentBuynowsucceedPost({ int? paymentId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -41,14 +41,14 @@ class PaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -62,8 +62,8 @@ class PaymentApi {
   /// ApiServicesAppPaymentCancelpaymentPost
   ///
   /// 
-  Future apiServicesAppPaymentCancelpaymentPost({ CancelPaymentDto body }) async {
-    Object postBody = body;
+  Future apiServicesAppPaymentCancelpaymentPost({ CancelPaymentDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -90,14 +90,14 @@ class PaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -111,8 +111,8 @@ class PaymentApi {
   /// ApiServicesAppPaymentCreatepaymentPost
   ///
   /// 
-  Future<int> apiServicesAppPaymentCreatepaymentPost({ CreatePaymentDto body }) async {
-    Object postBody = body;
+  Future<int> apiServicesAppPaymentCreatepaymentPost({ CreatePaymentDto? body }) async {
+    Object? postBody = body;
 
     // verify required params are set
 
@@ -139,14 +139,14 @@ class PaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -160,8 +160,8 @@ class PaymentApi {
   /// ApiServicesAppPaymentExtendsucceedPost
   ///
   /// 
-  Future apiServicesAppPaymentExtendsucceedPost({ int paymentId }) async {
-    Object postBody = null;
+  Future apiServicesAppPaymentExtendsucceedPost({ int? paymentId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -191,14 +191,14 @@ class PaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -212,8 +212,8 @@ class PaymentApi {
   /// ApiServicesAppPaymentGetactivegatewaysGet
   ///
   /// 
-  Future<List<PaymentGatewayModel>> apiServicesAppPaymentGetactivegatewaysGet({ bool recurringPaymentsEnabled }) async {
-    Object postBody = null;
+  Future<List<PaymentGatewayModel>> apiServicesAppPaymentGetactivegatewaysGet({ bool? recurringPaymentsEnabled }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -243,14 +243,14 @@ class PaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -265,7 +265,7 @@ class PaymentApi {
   ///
   /// 
   Future<SubscriptionPaymentDto> apiServicesAppPaymentGetlastcompletedpaymentGet() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -292,14 +292,14 @@ class PaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -313,8 +313,8 @@ class PaymentApi {
   /// ApiServicesAppPaymentGetpaymentGet
   ///
   /// 
-  Future<SubscriptionPaymentDto> apiServicesAppPaymentGetpaymentGet({ int paymentId }) async {
-    Object postBody = null;
+  Future<SubscriptionPaymentDto> apiServicesAppPaymentGetpaymentGet({ int? paymentId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -344,14 +344,14 @@ class PaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -365,8 +365,8 @@ class PaymentApi {
   /// ApiServicesAppPaymentGetpaymenthistoryGet
   ///
   /// 
-  Future<PagedResultDtoOfSubscriptionPaymentListDto> apiServicesAppPaymentGetpaymenthistoryGet({ String sorting, int maxResultCount, int skipCount }) async {
-    Object postBody = null;
+  Future<PagedResultDtoOfSubscriptionPaymentListDto> apiServicesAppPaymentGetpaymenthistoryGet({ String? sorting, int? maxResultCount, int? skipCount }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -402,14 +402,14 @@ class PaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -424,7 +424,7 @@ class PaymentApi {
   ///
   /// 
   Future<bool> apiServicesAppPaymentHasanypaymentPost() async {
-    Object postBody = null;
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -451,14 +451,14 @@ class PaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -472,8 +472,8 @@ class PaymentApi {
   /// ApiServicesAppPaymentNewregistrationsucceedPost
   ///
   /// 
-  Future apiServicesAppPaymentNewregistrationsucceedPost({ int paymentId }) async {
-    Object postBody = null;
+  Future apiServicesAppPaymentNewregistrationsucceedPost({ int? paymentId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -503,14 +503,14 @@ class PaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -524,8 +524,8 @@ class PaymentApi {
   /// ApiServicesAppPaymentPaymentfailedPost
   ///
   /// 
-  Future apiServicesAppPaymentPaymentfailedPost({ int paymentId }) async {
-    Object postBody = null;
+  Future apiServicesAppPaymentPaymentfailedPost({ int? paymentId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -555,14 +555,14 @@ class PaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -576,8 +576,8 @@ class PaymentApi {
   /// ApiServicesAppPaymentSendupgraderequestPost
   ///
   /// 
-  Future apiServicesAppPaymentSendupgraderequestPost({ int paymentId }) async {
-    Object postBody = null;
+  Future apiServicesAppPaymentSendupgraderequestPost({ int? paymentId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -607,14 +607,14 @@ class PaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -628,8 +628,8 @@ class PaymentApi {
   /// ApiServicesAppPaymentUpgradesucceedPost
   ///
   /// 
-  Future apiServicesAppPaymentUpgradesucceedPost({ int paymentId }) async {
-    Object postBody = null;
+  Future apiServicesAppPaymentUpgradesucceedPost({ int? paymentId }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -659,14 +659,14 @@ class PaymentApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

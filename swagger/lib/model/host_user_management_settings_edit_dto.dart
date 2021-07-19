@@ -2,25 +2,25 @@ part of swagger.api;
 
 class HostUserManagementSettingsEditDto {
   
-  bool isEmailConfirmationRequiredForLogin = null;
+  bool? isEmailConfirmationRequiredForLogin = null;
   
 
-  bool smsVerificationEnabled = null;
+  bool? smsVerificationEnabled = null;
   
 
-  bool isCookieConsentEnabled = null;
+  bool? isCookieConsentEnabled = null;
   
 
-  bool isQuickThemeSelectEnabled = null;
+  bool? isQuickThemeSelectEnabled = null;
   
 
-  bool useCaptchaOnLogin = null;
+  bool? useCaptchaOnLogin = null;
   
 
-  bool allowUsingGravatarProfilePicture = null;
+  bool? allowUsingGravatarProfilePicture = null;
   
 
-  SessionTimeOutSettingsEditDto sessionTimeOutSettings = null;
+  SessionTimeOutSettingsEditDto? sessionTimeOutSettings = null;
   
   HostUserManagementSettingsEditDto();
 
@@ -29,7 +29,7 @@ class HostUserManagementSettingsEditDto {
     return 'HostUserManagementSettingsEditDto[isEmailConfirmationRequiredForLogin=$isEmailConfirmationRequiredForLogin, smsVerificationEnabled=$smsVerificationEnabled, isCookieConsentEnabled=$isCookieConsentEnabled, isQuickThemeSelectEnabled=$isQuickThemeSelectEnabled, useCaptchaOnLogin=$useCaptchaOnLogin, allowUsingGravatarProfilePicture=$allowUsingGravatarProfilePicture, sessionTimeOutSettings=$sessionTimeOutSettings, ]';
   }
 
-  HostUserManagementSettingsEditDto.fromJson(Map<String, dynamic> json) {
+  HostUserManagementSettingsEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     isEmailConfirmationRequiredForLogin =
         json['isEmailConfirmationRequiredForLogin']

@@ -2,16 +2,16 @@ part of swagger.api;
 
 class TenantDeviceDto {
   
-  int deviceId = null;
+  int? deviceId = null;
   
 
-  int tenantId = null;
+  int? tenantId = null;
   
 
-  DateTime creationTime = null;
+  DateTime? creationTime = null;
   
 
-  int id = null;
+  int? id = null;
   
   TenantDeviceDto();
 
@@ -20,7 +20,7 @@ class TenantDeviceDto {
     return 'TenantDeviceDto[deviceId=$deviceId, tenantId=$tenantId, creationTime=$creationTime, id=$id, ]';
   }
 
-  TenantDeviceDto.fromJson(Map<String, dynamic> json) {
+  TenantDeviceDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     deviceId =
         json['deviceId']
@@ -38,7 +38,7 @@ class TenantDeviceDto {
     return {
       'deviceId': deviceId,
       'tenantId': tenantId,
-      'creationTime': creationTime == null ? '' : creationTime.toUtc().toIso8601String(),
+      'creationTime': creationTime == null ? '' : creationTime!.toUtc().toIso8601String(),
       'id': id
      };
   }

@@ -5,13 +5,13 @@ part of swagger.api;
 class WebhookEventApi {
   final ApiClient apiClient;
 
-  WebhookEventApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  WebhookEventApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// ApiServicesAppWebhookeventGetGet
   ///
   /// 
-  Future<WebhookEvent> apiServicesAppWebhookeventGetGet({ String id }) async {
-    Object postBody = null;
+  Future<WebhookEvent> apiServicesAppWebhookeventGetGet({ String? id }) async {
+    Object? postBody = null;
 
     // verify required params are set
 
@@ -41,14 +41,14 @@ class WebhookEventApi {
     else {
           }
 
-    var response = await apiClient.invokeAPI(path,
+    var response = await (apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames);
+                                             authNames) as FutureOr<Response>);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

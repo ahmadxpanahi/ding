@@ -2,16 +2,16 @@ part of swagger.api;
 
 class GetAllSubscriptionsOutput {
   
-  String webhookUri = null;
+  String? webhookUri = null;
   
 
-  bool isActive = null;
+  bool? isActive = null;
   
 
   List<String> webhooks = [];
   
 
-  String id = null;
+  String? id = null;
   
   GetAllSubscriptionsOutput();
 
@@ -20,7 +20,7 @@ class GetAllSubscriptionsOutput {
     return 'GetAllSubscriptionsOutput[webhookUri=$webhookUri, isActive=$isActive, webhooks=$webhooks, id=$id, ]';
   }
 
-  GetAllSubscriptionsOutput.fromJson(Map<String, dynamic> json) {
+  GetAllSubscriptionsOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     webhookUri =
         json['webhookUri']
@@ -45,7 +45,7 @@ class GetAllSubscriptionsOutput {
      };
   }
 
-  static List<GetAllSubscriptionsOutput> listFromJson(List<dynamic> json) {
+  static List<GetAllSubscriptionsOutput> listFromJson(List<dynamic>? json) {
     return json == null ? new List<GetAllSubscriptionsOutput>() : json.map((value) => new GetAllSubscriptionsOutput.fromJson(value)).toList();
   }
 

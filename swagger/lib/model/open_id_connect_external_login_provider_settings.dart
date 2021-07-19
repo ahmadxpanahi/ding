@@ -2,19 +2,19 @@ part of swagger.api;
 
 class OpenIdConnectExternalLoginProviderSettings {
   
-  String clientId = null;
+  String? clientId = null;
   
 
-  String clientSecret = null;
+  String? clientSecret = null;
   
 
-  String authority = null;
+  String? authority = null;
   
 
-  String loginUrl = null;
+  String? loginUrl = null;
   
 
-  bool validateIssuer = null;
+  bool? validateIssuer = null;
   
   OpenIdConnectExternalLoginProviderSettings();
 
@@ -23,7 +23,7 @@ class OpenIdConnectExternalLoginProviderSettings {
     return 'OpenIdConnectExternalLoginProviderSettings[clientId=$clientId, clientSecret=$clientSecret, authority=$authority, loginUrl=$loginUrl, validateIssuer=$validateIssuer, ]';
   }
 
-  OpenIdConnectExternalLoginProviderSettings.fromJson(Map<String, dynamic> json) {
+  OpenIdConnectExternalLoginProviderSettings.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     clientId =
         json['clientId']

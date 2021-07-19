@@ -2,25 +2,25 @@ part of swagger.api;
 
 class ApplicationInfoDto {
   
-  String version = null;
+  String? version = null;
   
 
-  DateTime releaseDate = null;
+  DateTime? releaseDate = null;
   
 
-  String currency = null;
+  String? currency = null;
   
 
-  String currencySign = null;
+  String? currencySign = null;
   
 
-  bool allowTenantsToChangeEmailSettings = null;
+  bool? allowTenantsToChangeEmailSettings = null;
   
 
-  bool userDelegationIsEnabled = null;
+  bool? userDelegationIsEnabled = null;
   
 
-  Map<String, bool> features = {};
+  Map<String, bool>? features = {};
   
   ApplicationInfoDto();
 
@@ -29,7 +29,7 @@ class ApplicationInfoDto {
     return 'ApplicationInfoDto[version=$version, releaseDate=$releaseDate, currency=$currency, currencySign=$currencySign, allowTenantsToChangeEmailSettings=$allowTenantsToChangeEmailSettings, userDelegationIsEnabled=$userDelegationIsEnabled, features=$features, ]';
   }
 
-  ApplicationInfoDto.fromJson(Map<String, dynamic> json) {
+  ApplicationInfoDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     version =
         json['version']
@@ -55,7 +55,7 @@ class ApplicationInfoDto {
   Map<String, dynamic> toJson() {
     return {
       'version': version,
-      'releaseDate': releaseDate == null ? '' : releaseDate.toUtc().toIso8601String(),
+      'releaseDate': releaseDate == null ? '' : releaseDate!.toUtc().toIso8601String(),
       'currency': currency,
       'currencySign': currencySign,
       'allowTenantsToChangeEmailSettings': allowTenantsToChangeEmailSettings,
