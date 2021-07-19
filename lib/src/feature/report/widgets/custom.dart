@@ -19,7 +19,7 @@ class _CustomPageState extends State<CustomPage> {
 
   _infoContainer() => Container(
     padding: EdgeInsets.symmetric(
-        horizontal: SizeConfig.heightMultiplier! * 2.5),
+        horizontal: SizeConfig.widthMultiplier! * 4.5),
     height: 15 * SizeConfig.heightMultiplier!,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
