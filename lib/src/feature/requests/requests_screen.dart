@@ -1,3 +1,4 @@
+import 'package:ding/src/feature/create_request/create_request_screen.dart';
 import 'package:ding/src/feature/requests/widgets/cartable_item.dart';
 import 'package:ding/src/feature/requests/widgets/my_requests_item.dart';
 import 'package:ding/ui/colors.dart';
@@ -35,12 +36,12 @@ class _RequestsScreenState extends State<RequestsScreen> {
                 },
                 child: Container(
                   alignment: Alignment.center,
-                  height: 8.2*SizeConfig.heightMultiplier!,
+                  height: 8.2 * SizeConfig.heightMultiplier!,
                   color: value == 0 ? DingColors.dark() : DingColors.light(),
                   child: Text(
                     'درخواست های من',
                     style: TextStyle(
-                        fontSize: 2.73*SizeConfig.textMultiplier!,
+                        fontSize: 2.73 * SizeConfig.textMultiplier!,
                         color: value == 0 ? DingColors.primary() : Colors.grey),
                   ),
                 ),
@@ -55,12 +56,12 @@ class _RequestsScreenState extends State<RequestsScreen> {
                 },
                 child: Container(
                   alignment: Alignment.center,
-                  height: 8.2*SizeConfig.heightMultiplier!,
+                  height: 8.2 * SizeConfig.heightMultiplier!,
                   color: value == 1 ? DingColors.dark() : DingColors.light(),
                   child: Text(
                     'کارتابل',
                     style: TextStyle(
-                        fontSize: 2.73*SizeConfig.textMultiplier!,
+                        fontSize: 2.73 * SizeConfig.textMultiplier!,
                         color: value == 1 ? DingColors.primary() : Colors.grey),
                   ),
                 ),
@@ -111,19 +112,27 @@ class _RequestsScreenState extends State<RequestsScreen> {
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
-                    margin: EdgeInsets.only(bottom: 15),
-                    alignment: Alignment.center,
-                    height: 14.6*SizeConfig.widthMultiplier!,
-                    width: 14.6*SizeConfig.widthMultiplier!,
-                    decoration: BoxDecoration(
-                      color: DingColors.primary(),
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                    child: Icon(
-                      Icons.add,
-                      size: 40,
-                      color: Colors.white,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CreateRequestScreen()));
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(bottom: 15),
+                      alignment: Alignment.center,
+                      height: 14.6 * SizeConfig.widthMultiplier!,
+                      width: 14.6 * SizeConfig.widthMultiplier!,
+                      decoration: BoxDecoration(
+                        color: DingColors.primary(),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: Icon(
+                        Icons.add,
+                        size: 12 * SizeConfig.widthMultiplier!,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 )
@@ -170,8 +179,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
               ),
             ),
           ],
-        )
-        )
+        ))
       ],
     );
   }

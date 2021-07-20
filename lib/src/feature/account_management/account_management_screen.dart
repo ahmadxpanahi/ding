@@ -91,7 +91,7 @@ class _AccountManagementScreenState extends State<AccountManagementScreen> {
                 ),
                 child: Icon(
                   Icons.add,
-                  size: 40,
+                  size: 12 * SizeConfig.widthMultiplier!,
                   color: Colors.white,
                 ),
               ),

@@ -14,6 +14,7 @@ class CustomPage extends StatefulWidget {
 }
 
 class _CustomPageState extends State<CustomPage> {
+
   PersianDate? begin;
   PersianDate? end;
 
@@ -210,7 +211,7 @@ class _CustomPageState extends State<CustomPage> {
                                         setState(() {
                                           end = PersianDate.pDate(
                                               gregorian:
-                                              '${val.year}-${val.month}-${val.day}');
+                                                  '${val.year}-${val.month}-${val.day}');
                                         });
                                       },
                                     ),

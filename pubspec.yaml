@@ -29,6 +29,7 @@ dependencies:
   country_code_picker: ^2.0.2
   pin_code_text_field: ^1.8.0
   jalali_calendar: ^1.0.4
+  flutter_picker: ^2.0.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -75,6 +76,7 @@ flutter:
     - assets/images/trash2.svg
     - assets/images/list.svg
     - assets/images/calendar.svg
+    - assets/images/clock.svg
 
   #   - images/a_dot_ham.jpeg
 
