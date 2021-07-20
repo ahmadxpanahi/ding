@@ -46,12 +46,12 @@ class _MonthlyPageState extends State<MonthlyPage> {
                   children: [
                     Text(
                       'پژمان شفیعی',
-                      style: TextStyle(fontSize: 15),
+                      style: TextStyle(fontSize: 2*SizeConfig.textMultiplier!),
                     ),
                     Text(
                       'واحد فروش',
                       style:
-                          TextStyle(fontSize: 13, fontWeight: FontWeight.w300),
+                      TextStyle(fontSize: 2*SizeConfig.textMultiplier! - 2, fontWeight: FontWeight.w300),
                     ),
                   ],
                 )

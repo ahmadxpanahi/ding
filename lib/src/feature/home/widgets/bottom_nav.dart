@@ -16,7 +16,7 @@ class _BottomNavState extends State<BottomNav> {
   @override
   Widget build(BuildContext context) => Container(
         padding: EdgeInsets.symmetric(vertical: 3),
-        height: 8.2 * SizeConfig.heightMultiplier!,
+        height: SizeConfig.heightMultiplier! > 7.5 ? 11 * SizeConfig.heightMultiplier! : 8.2 * SizeConfig.heightMultiplier!,
         color: DingColors.dark(),
         child: SafeArea(
           child: Align(

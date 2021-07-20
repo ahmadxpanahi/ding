@@ -25,8 +25,8 @@ class _OtherScreenState extends State<OtherScreen> {
             Row(
               children: [
                 Container(
-                  width: 13.5 * SizeConfig.heightMultiplier!,
-                  height: 13.5 * SizeConfig.heightMultiplier!,
+                  width: 20 * SizeConfig.widthMultiplier!,
+                  height: 20 * SizeConfig.widthMultiplier!,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: DingColors.light(),
@@ -45,21 +45,21 @@ class _OtherScreenState extends State<OtherScreen> {
                     Text(
                       'پژمان شفیعی',
                       style: TextStyle(
-                          fontSize: 2.7 * SizeConfig.textMultiplier!,
+                          fontSize: 5 * SizeConfig.widthMultiplier!,
                           fontWeight: FontWeight.bold,
                           color: DingColors.dark()),
                     ),
                     Text(
                       'توسعه ارتباطات دینگ',
                       style: TextStyle(
-                          fontSize: 2.7 * SizeConfig.textMultiplier! - 5,
+                          fontSize: 5 * SizeConfig.widthMultiplier! - 5,
                           fontWeight: FontWeight.w300,
                           color: DingColors.dark()),
                     ),
                     Text(
                       'واحد فروش',
                       style: TextStyle(
-                          fontSize: 2.7 * SizeConfig.textMultiplier! - 5,
+                          fontSize: 5 * SizeConfig.widthMultiplier! - 5,
                           fontWeight: FontWeight.w200,
                           color: DingColors.dark()),
                     ),
@@ -85,7 +85,7 @@ class _OtherScreenState extends State<OtherScreen> {
           ),
           SvgPicture.asset(
             imgUrl,
-            width: 5.4 * SizeConfig.heightMultiplier!,
+            width: 8 * SizeConfig.widthMultiplier!,
           ),
           SizedBox(
             width: 6 * SizeConfig.widthMultiplier!,
@@ -156,7 +156,7 @@ class _OtherScreenState extends State<OtherScreen> {
                     children: [
                       SvgPicture.asset(
                         'assets/images/web.svg',
-                        width: 5 * SizeConfig.heightMultiplier!,
+                        width: 8 * SizeConfig.widthMultiplier!,
                       ),
                       SizedBox(
                         height: 5,
@@ -174,7 +174,7 @@ class _OtherScreenState extends State<OtherScreen> {
                     children: [
                       SvgPicture.asset(
                         'assets/images/telegram.svg',
-                        width: 5 * SizeConfig.heightMultiplier!,
+                        width: 8 * SizeConfig.widthMultiplier!,
                       ),
                       SizedBox(
                         height: 5,
@@ -193,7 +193,7 @@ class _OtherScreenState extends State<OtherScreen> {
                       Transform.scale(
                         child: SvgPicture.asset(
                           'assets/images/instagram.svg',
-                          width: 5 * SizeConfig.heightMultiplier!,
+                          width: 8 * SizeConfig.widthMultiplier!,
                         ),
                         scale: 1.4,
                       ),

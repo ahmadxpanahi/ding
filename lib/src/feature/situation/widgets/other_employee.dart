@@ -23,7 +23,7 @@ class OtherEmployee extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                  flex: 2,
+                  flex: 3,
                   child: Row(
                     children: [
                       Container(
@@ -59,20 +59,20 @@ class OtherEmployee extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 1,
+                  flex: 2,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
                         reason ?? '',
                         style: TextStyle(
-                            fontSize: 2.2 * SizeConfig.textMultiplier! - 2,
+                            fontSize: 3.5 * SizeConfig.widthMultiplier!,
                             color: Colors.grey),
                       ),
                       SizedBox(
-                        width: 3.6 * SizeConfig.widthMultiplier!,
+                        width: 5 + SizeConfig.widthMultiplier!,
                       ),
-                      Icon(Icons.arrow_forward_ios)
+                      Icon(Icons.arrow_forward_ios,size: SizeConfig.widthMultiplier!*5.5,)
                     ],
                   ),
                 )
