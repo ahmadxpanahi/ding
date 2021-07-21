@@ -30,21 +30,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   String _screenName = 'departures';
 
-  @override
-  void initState() {
-    super.initState();
-
-    Future.delayed(Duration.zero, () async {
-        var sp = await SharedPreferences.getInstance();
-        var tokenManager = TokenManager(sp);
-        var interceptor = AccessTokenInterceptor(tokenManager);
-        var api = swagger.ApiClient(basePath: "", client: RestClient(interceptor, tokenManager));
-        var devicesApi = swagger.DevicesApi(api);
-        var response = await devicesApi.apiServicesAppDevicesGetallGet();
-        Log.e("after response...");
-    });
-  }
-
   Map<String, Widget> pages = {
     'situation': SituationScreen(),
     'departures': DeparturesScreen(),
