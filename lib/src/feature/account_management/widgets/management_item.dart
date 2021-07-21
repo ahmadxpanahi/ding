@@ -25,8 +25,8 @@ class ManagementItem extends StatelessWidget {
                   width: 4 * SizeConfig.widthMultiplier!,
                 ),
                 Container(
-                  width: 11 * SizeConfig.heightMultiplier!,
-                  height: 11 * SizeConfig.heightMultiplier!,
+                  width: 20 * SizeConfig.widthMultiplier!,
+                  height: 20  * SizeConfig.widthMultiplier!,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: DingColors.light(),
@@ -45,13 +45,13 @@ class ManagementItem extends StatelessWidget {
                     Text(
                       'توسعه ارتباطات دینگ',
                       style: TextStyle(
-                          fontSize: 2.5 * SizeConfig.textMultiplier!,
+                          fontSize: 4.2 * SizeConfig.widthMultiplier!,
                           color: DingColors.dark()),
                     ),
                     Text(
                       name,
                       style: TextStyle(
-                          fontSize: 2.5 * SizeConfig.textMultiplier! - 5,
+                          fontSize: 3.5 * SizeConfig.widthMultiplier!,
                           fontWeight: FontWeight.w300,
                           color: DingColors.dark()
                       ),
@@ -59,7 +59,7 @@ class ManagementItem extends StatelessWidget {
                     Text(
                       active ? 'فعال' : 'غیر فعال',
                       style: TextStyle(
-                          fontSize: 2.5 * SizeConfig.textMultiplier! - 5,
+                          fontSize: 3.5 * SizeConfig.widthMultiplier!,
                           color: active ? DingColors.primary() : Colors.grey
                       ),
                     ),

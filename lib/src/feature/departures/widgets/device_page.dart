@@ -1,5 +1,6 @@
 import 'package:ding/ui/colors.dart';
 import 'package:ding/ui/size_config.dart';
+import 'package:ding/ui/slide_action.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -49,80 +50,6 @@ class _DevicePageState extends State<DevicePage> {
         ),
       );
 
-  Widget _enter() => Container(
-        margin: EdgeInsets.symmetric(horizontal: 9.7*SizeConfig.widthMultiplier!),
-        height: 9 * SizeConfig.heightMultiplier!,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(100),
-            color: DingColors.veryLight()),
-        child: Row(
-          children: [
-            Expanded(flex: 2, child: SizedBox()),
-            Expanded(
-              flex: 1,
-              child: Container(
-                height: double.infinity,
-                decoration: BoxDecoration(
-                  color: DingColors.primary(),
-                  borderRadius: BorderRadius.circular(100),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(Icons.arrow_back_ios,color: Colors.white,size: 3*SizeConfig.heightMultiplier!,),
-                    Text(
-                      'ورود',
-                      style: TextStyle(
-                          fontSize: 3.4*SizeConfig.textMultiplier!,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w400),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      );
-
-  Widget _exit() => Container(
-        margin: EdgeInsets.symmetric(horizontal: 9.7*SizeConfig.widthMultiplier!),
-        height: 9 * SizeConfig.heightMultiplier!,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(100),
-            color: DingColors.veryLight()),
-        child: Row(
-          children: [
-            Expanded(
-              flex: 1,
-              child: Container(
-                height: double.infinity,
-                decoration: BoxDecoration(
-                  color: DingColors.primary(),
-                  borderRadius: BorderRadius.circular(100),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'خروج',
-                      style: TextStyle(
-                          fontSize: 3.4*SizeConfig.textMultiplier!,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w400),
-                    ),
-                    Icon(Icons.arrow_forward_ios,color: Colors.white,size: 3*SizeConfig.heightMultiplier!,),
-                  ],
-                ),
-              ),
-            ),
-            Expanded(flex: 2, child: SizedBox()),
-          ],
-        ),
-      );
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -151,8 +78,36 @@ class _DevicePageState extends State<DevicePage> {
               ),
             ],
           ),
-          _enter(),
-          _exit()
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 9.7*SizeConfig.widthMultiplier!),
+            child: SlideAction(
+              child: SizedBox(),
+              reversed: true,
+              innerColor: DingColors.primary(),
+              outerColor: DingColors.veryLight(),
+              sliderButtonIconPadding: 0,
+              elevation: 0,
+              submittedIcon: Icon(Icons.check,size: 30,color: DingColors.primary(),),
+              onSubmit: (){},
+              height: 8.9 * SizeConfig.heightMultiplier!,
+              txt: 'ورود',
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 9.7*SizeConfig.widthMultiplier!),
+            child: SlideAction(
+              child: SizedBox(),
+              reversed: false,
+              innerColor: DingColors.primary(),
+              outerColor: DingColors.veryLight(),
+              sliderButtonIconPadding: 0,
+              elevation: 0,
+              submittedIcon: Icon(Icons.check,size: 30,color: DingColors.primary(),),
+              onSubmit: (){},
+              height: 8.9 * SizeConfig.heightMultiplier!,
+              txt: 'خروج',
+            ),
+          ),
         ],
       ),
     );
