@@ -38,14 +38,15 @@ class TenantApi {
     else {
           }
 
-    var response = await (apiClient.invokeAPI(path,
+    var response = await apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames) as FutureOr<Response>);
+                                             authNames);
+ if(response == null) return null;
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -87,14 +88,15 @@ class TenantApi {
     else {
           }
 
-    var response = await (apiClient.invokeAPI(path,
+    var response = await apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames) as FutureOr<Response>);
+                                             authNames);
+ if(response == null) return null;
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -139,14 +141,15 @@ class TenantApi {
     else {
           }
 
-    var response = await (apiClient.invokeAPI(path,
+    var response = await apiClient.invokeAPI(path,
                                              'DELETE',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames) as FutureOr<Response>);
+                                             authNames);
+ if(response == null) return null;
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -191,14 +194,15 @@ class TenantApi {
     else {
           }
 
-    var response = await (apiClient.invokeAPI(path,
+    var response = await apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames) as FutureOr<Response>);
+                                             authNames);
+ if(response == null) return null;
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -243,14 +247,15 @@ class TenantApi {
     else {
           }
 
-    var response = await (apiClient.invokeAPI(path,
+    var response = await apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames) as FutureOr<Response>);
+                                             authNames);
+ if(response == null) return null;
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -322,14 +327,15 @@ class TenantApi {
     else {
           }
 
-    var response = await (apiClient.invokeAPI(path,
+    var response = await apiClient.invokeAPI(path,
                                              'GET',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames) as FutureOr<Response>);
+                                             authNames);
+ if(response == null) return null;
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -371,14 +377,15 @@ class TenantApi {
     else {
           }
 
-    var response = await (apiClient.invokeAPI(path,
+    var response = await apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames) as FutureOr<Response>);
+                                             authNames);
+ if(response == null) return null;
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -420,14 +427,15 @@ class TenantApi {
     else {
           }
 
-    var response = await (apiClient.invokeAPI(path,
+    var response = await apiClient.invokeAPI(path,
                                              'POST',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames) as FutureOr<Response>);
+                                             authNames);
+ if(response == null) return null;
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -469,14 +477,15 @@ class TenantApi {
     else {
           }
 
-    var response = await (apiClient.invokeAPI(path,
+    var response = await apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames) as FutureOr<Response>);
+                                             authNames);
+ if(response == null) return null;
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
@@ -518,14 +527,15 @@ class TenantApi {
     else {
           }
 
-    var response = await (apiClient.invokeAPI(path,
+    var response = await apiClient.invokeAPI(path,
                                              'PUT',
                                              queryParams,
                                              postBody,
                                              headerParams,
                                              formParams,
                                              contentType,
-                                             authNames) as FutureOr<Response>);
+                                             authNames);
+ if(response == null) return null;
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
