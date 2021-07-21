@@ -110,7 +110,7 @@ class EmployeeItem extends StatelessWidget {
                   SizedBox(
                     width: SizeConfig.widthMultiplier!*3.6,
                   ),
-                  Icon(Icons.arrow_forward_ios)
+                  Icon(Icons.arrow_forward_ios,size: SizeConfig.widthMultiplier!*5.5,)
                 ],
               ),
             )

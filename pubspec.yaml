@@ -9,9 +9,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   flutter_svg: ^0.22.0
   country_code_picker: ^2.0.2
   pin_code_text_field: ^1.8.0
+  jalali_calendar: ^1.0.4
+  flutter_picker: ^2.0.2
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   shared_preferences: ^2.0.6
   logger: ^1.0.0
@@ -47,6 +54,9 @@ flutter:
     - assets/images/log-in.svg
     - assets/images/log-out.svg
     - assets/images/trash2.svg
+    - assets/images/list.svg
+    - assets/images/calendar.svg
+    - assets/images/clock.svg
 
   fonts:
    - family: IRANYekan

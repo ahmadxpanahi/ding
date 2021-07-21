@@ -44,13 +44,13 @@ class CartableItem extends StatelessWidget {
                   Text(
                     'شروع',
                     style: TextStyle(
-                        fontSize: 2.2 * SizeConfig.textMultiplier!,
+                        fontSize: 4 * SizeConfig.widthMultiplier!,
                         color: Colors.grey),
                   ),
                   Text(
                     'پایان',
                     style: TextStyle(
-                        fontSize: 2.2 * SizeConfig.textMultiplier!,
+                        fontSize: 4 * SizeConfig.widthMultiplier!,
                         color: Colors.grey),
                   )
                 ],
@@ -65,13 +65,13 @@ class CartableItem extends StatelessWidget {
                   Text(
                     beginDate ?? '',
                     style: TextStyle(
-                        fontSize: 2.2 * SizeConfig.textMultiplier!,
+                        fontSize: 4 * SizeConfig.widthMultiplier!,
                         color: DingColors.dark()),
                   ),
                   Text(
                     endDate ?? '',
                     style: TextStyle(
-                        fontSize: 2.2 * SizeConfig.textMultiplier!,
+                        fontSize: 4 * SizeConfig.widthMultiplier!,
                         color: DingColors.dark()),
                   )
                 ],
@@ -88,7 +88,7 @@ class CartableItem extends StatelessWidget {
                   Text(
                     'نمایش جزءیات',
                     style: TextStyle(
-                        fontSize: 2.2 * SizeConfig.textMultiplier!,
+                        fontSize: 4 * SizeConfig.widthMultiplier!,
                         color: DingColors.primary()),
                   )
                 ],
@@ -102,13 +102,13 @@ class CartableItem extends StatelessWidget {
                       Text(
                         'شروع',
                         style: TextStyle(
-                            fontSize: 2.2 * SizeConfig.textMultiplier!,
+                            fontSize: 4 * SizeConfig.widthMultiplier!,
                             color: Colors.grey),
                       ),
                       Text(
                         'پایان',
                         style: TextStyle(
-                            fontSize: 2.2 * SizeConfig.textMultiplier!,
+                            fontSize: 4 * SizeConfig.widthMultiplier!,
                             color: Colors.grey),
                       )
                     ],
@@ -123,13 +123,13 @@ class CartableItem extends StatelessWidget {
                       Text(
                         beginDate ?? '',
                         style: TextStyle(
-                            fontSize: 2.2 * SizeConfig.textMultiplier!,
+                            fontSize: 4 * SizeConfig.widthMultiplier!,
                             color: DingColors.dark()),
                       ),
                       Text(
                         endDate ?? '',
                         style: TextStyle(
-                            fontSize: 2.2 * SizeConfig.textMultiplier!,
+                            fontSize: 4 * SizeConfig.widthMultiplier!,
                             color: DingColors.dark()),
                       )
                     ],
@@ -175,14 +175,14 @@ class CartableItem extends StatelessWidget {
                               name ?? '',
                               style: TextStyle(
                                   color: DingColors.dark(),
-                                  fontSize: 2.2 * SizeConfig.textMultiplier!),
+                                  fontSize: 4 * SizeConfig.widthMultiplier!),
                             ),
                             Text(
                               unit ?? '',
                               style: TextStyle(
                                   color: Colors.grey,
                                   fontSize:
-                                      2.2 * SizeConfig.textMultiplier! - 2),
+                                      4 * SizeConfig.widthMultiplier! - 2),
                             ),
                           ],
                         ),
@@ -191,7 +191,7 @@ class CartableItem extends StatelessWidget {
                         date ?? '',
                         style: TextStyle(
                             color: Colors.grey,
-                            fontSize: 2.2 * SizeConfig.textMultiplier! - 2),
+                            fontSize: 4 * SizeConfig.widthMultiplier! - 2),
                       )
                     ],
                   ),
@@ -219,7 +219,7 @@ class CartableItem extends StatelessWidget {
                                   info1 ?? '',
                                   style: TextStyle(
                                       fontSize:
-                                          2.2 * SizeConfig.textMultiplier!,
+                                          4 * SizeConfig.widthMultiplier!,
                                       color: DingColors.dark()),
                                 )
                               ],
@@ -240,7 +240,7 @@ class CartableItem extends StatelessWidget {
                                   info2 ?? '',
                                   style: TextStyle(
                                       fontSize:
-                                          2.2 * SizeConfig.textMultiplier!,
+                                          4 * SizeConfig.widthMultiplier!,
                                       color: DingColors.dark()),
                                 )
                               ],
