@@ -1,4 +1,5 @@
 import 'package:ding/src/feature/account_management/account_management_screen.dart';
+import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/feature/other/widgets/options_tile.dart';
 import 'package:ding/src/feature/setting/setting_screen.dart';
 import 'package:ding/ui/colors.dart';
@@ -68,7 +69,10 @@ class _OtherScreenState extends State<OtherScreen> {
               ],
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => NumberLoginScreen()));
+              },
               icon: SvgPicture.asset(
                 'assets/images/edit.svg',
                 width: 7.3 * SizeConfig.widthMultiplier!,

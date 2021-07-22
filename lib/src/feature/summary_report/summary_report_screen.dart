@@ -112,24 +112,26 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
         height: 8.5 * SizeConfig.heightMultiplier!,
         child: Column(
           children: [
-            Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: SizeConfig.widthMultiplier! * 4.5,
-                  vertical: SizeConfig.heightMultiplier!),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(
-                        fontSize: 2.2 * SizeConfig.textMultiplier! + 1),
-                  ),
-                  Text(
-                    time,
-                    style: TextStyle(
-                        fontSize: 2.2 * SizeConfig.textMultiplier! + 1),
-                  ),
-                ],
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: SizeConfig.widthMultiplier! * 4.5,
+                    vertical: SizeConfig.heightMultiplier!),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                          fontSize: 2.2 * SizeConfig.textMultiplier! + 1),
+                    ),
+                    Text(
+                      time,
+                      style: TextStyle(
+                          fontSize: 2.2 * SizeConfig.textMultiplier! + 1),
+                    ),
+                  ],
+                ),
               ),
             ),
             Divider()
