@@ -1,4 +1,4 @@
-import 'package:ding/ui/colors.dart';
+import 'package:ding/src/ui/colors.dart';
 import 'package:flutter/material.dart';
 
 class OptionsTile extends StatelessWidget {

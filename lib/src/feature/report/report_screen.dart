@@ -1,7 +1,7 @@
 import 'package:ding/src/feature/report/widgets/custom.dart';
 import 'package:ding/src/feature/report/widgets/monthly.dart';
-import 'package:ding/ui/colors.dart';
-import 'package:ding/ui/size_config.dart';
+import 'package:ding/src/ui/colors.dart';
+import 'package:ding/src/ui/size_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';

@@ -1,6 +1,6 @@
 import 'package:ding/src/feature/create_request/widgets/leave_page.dart';
-import 'package:ding/ui/colors.dart';
-import 'package:ding/ui/size_config.dart';
+import 'package:ding/src/ui/colors.dart';
+import 'package:ding/src/ui/size_config.dart';
 import 'package:flutter/material.dart';
 
 class CreateRequestScreen extends StatefulWidget {

@@ -1,5 +1,5 @@
-import 'package:ding/ui/colors.dart';
-import 'package:ding/ui/size_config.dart';
+import 'package:ding/src/ui/colors.dart';
+import 'package:ding/src/ui/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

@@ -49,44 +49,46 @@ class AuthenticateResultModel {
 
   AuthenticateResultModel.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
+    print("THIS IS SWAGGER 2");
+    print(json);
     accessToken =
-        json['accessToken']
+        json['result']['accessToken']
     ;
     encryptedAccessToken =
-        json['encryptedAccessToken']
+    json['result']['encryptedAccessToken']
     ;
     expireInSeconds =
-        json['expireInSeconds']
+    json['result']['expireInSeconds']
     ;
     shouldResetPassword =
-        json['shouldResetPassword']
+    json['result']['shouldResetPassword']
     ;
     passwordResetCode =
-        json['passwordResetCode']
+    json['result']['passwordResetCode']
     ;
     userId =
-        json['userId']
+    json['result']['userId']
     ;
     requiresTwoFactorVerification =
-        json['requiresTwoFactorVerification']
+    json['result']['requiresTwoFactorVerification']
     ;
-    twoFactorAuthProviders =
-        (json['twoFactorAuthProviders'] as List).map((item) => item as String).toList()
-    ;
+    // twoFactorAuthProviders =
+    //     (json['result']['twoFactorAuthProviders'] as List).map((item) => item as String).toList()
+    // ;
     twoFactorRememberClientToken =
-        json['twoFactorRememberClientToken']
+    json['result']['twoFactorRememberClientToken']
     ;
     returnUrl =
-        json['returnUrl']
+    json['result']['returnUrl']
     ;
     refreshToken =
-        json['refreshToken']
+    json['result']['refreshToken']
     ;
     refreshTokenExpireInSeconds =
-        json['refreshTokenExpireInSeconds']
+    json['result']['refreshTokenExpireInSeconds']
     ;
     tenantId =
-        json['tenantId']
+    json['result']['tenantId']
     ;
   }
 

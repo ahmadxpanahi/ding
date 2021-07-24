@@ -1,5 +1,5 @@
-import 'package:ding/domain/entity/today_data.dart';
-import 'package:ding/ui/colors.dart';
+import 'package:ding/src/domain/entity/today_data.dart';
+import 'package:ding/src/ui/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

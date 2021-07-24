@@ -1,7 +1,7 @@
 import 'package:ding/src/feature/email_login/email_login_screen.dart';
 import 'package:ding/src/feature/enter_code/enter_code_screen.dart';
-import 'package:ding/ui/colors.dart';
-import 'package:ding/ui/size_config.dart';
+import 'package:ding/src/ui/colors.dart';
+import 'package:ding/src/ui/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -175,59 +175,62 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
   );
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        resizeToAvoidBottomInset: false,
-        backgroundColor: Colors.white,
-        body: Padding(
-          padding: EdgeInsets.only(
-              right: 7.3 * SizeConfig.widthMultiplier!,
-              left: 7.3 * SizeConfig.widthMultiplier!,
-              top: 5.47 * SizeConfig.heightMultiplier!),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      'شماره موبایل خود را وارد کنید',
-                      style: TextStyle(
-                          fontSize: 2.73 * SizeConfig.textMultiplier!,
-                          color: DingColors.dark()),
-                    ),
-                    SizedBox(
-                      height: 2.73 * SizeConfig.heightMultiplier!,
-                    ),
-                    Expanded(
-                      child: Align(
-                        alignment: Alignment.topCenter,
-                        child: _phoneNumberField()
+  Widget build(BuildContext context) => Directionality(
+    textDirection: TextDirection.ltr,
+    child: Scaffold(
+          resizeToAvoidBottomInset: false,
+          backgroundColor: Colors.white,
+          body: Padding(
+            padding: EdgeInsets.only(
+                right: 7.3 * SizeConfig.widthMultiplier!,
+                left: 7.3 * SizeConfig.widthMultiplier!,
+                top: 5.47 * SizeConfig.heightMultiplier!),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        'شماره موبایل خود را وارد کنید',
+                        style: TextStyle(
+                            fontSize: 2.73 * SizeConfig.textMultiplier!,
+                            color: DingColors.dark()),
                       ),
-                    ),
-                  ],
+                      SizedBox(
+                        height: 2.73 * SizeConfig.heightMultiplier!,
+                      ),
+                      Expanded(
+                        child: Align(
+                          alignment: Alignment.topCenter,
+                          child: _phoneNumberField()
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 2.73 * SizeConfig.heightMultiplier!,
-              ),
-              Expanded(
-                child: Column(
-                  children: [
-                    _rules(),
-                    SizedBox(
-                      height: SizeConfig.heightMultiplier! * 2,
-                    ),
-                    _getCodeButton(),
-                  ],
+                SizedBox(
+                  height: 2.73 * SizeConfig.heightMultiplier!,
                 ),
-              ),
-              Expanded(
-                  child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: _enterWithEmail()))
-            ],
+                Expanded(
+                  child: Column(
+                    children: [
+                      _rules(),
+                      SizedBox(
+                        height: SizeConfig.heightMultiplier! * 2,
+                      ),
+                      _getCodeButton(),
+                    ],
+                  ),
+                ),
+                Expanded(
+                    child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: _enterWithEmail()))
+              ],
+            ),
           ),
         ),
-      );
+  );
 }

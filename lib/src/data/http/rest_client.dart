@@ -1,8 +1,6 @@
 import 'dart:convert';
-
 import 'package:http/http.dart';
 import 'package:ding/src/core/logger/logger.dart';
-
 import 'interceptor.dart';
 import 'token_manager.dart';
 

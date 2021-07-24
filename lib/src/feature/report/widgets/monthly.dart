@@ -1,7 +1,7 @@
 import 'package:ding/src/feature/detailed_report/detailed_report_screen.dart';
 import 'package:ding/src/feature/summary_report/summary_report_screen.dart';
-import 'package:ding/ui/colors.dart';
-import 'package:ding/ui/size_config.dart';
+import 'package:ding/src/ui/colors.dart';
+import 'package:ding/src/ui/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';

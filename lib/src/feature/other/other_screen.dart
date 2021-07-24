@@ -2,8 +2,8 @@ import 'package:ding/src/feature/account_management/account_management_screen.da
 import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/feature/other/widgets/options_tile.dart';
 import 'package:ding/src/feature/setting/setting_screen.dart';
-import 'package:ding/ui/colors.dart';
-import 'package:ding/ui/size_config.dart';
+import 'package:ding/src/ui/colors.dart';
+import 'package:ding/src/ui/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';

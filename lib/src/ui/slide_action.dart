@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:ding/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';
 import 'package:flutter/material.dart';
 
 /// Slider call to action component
