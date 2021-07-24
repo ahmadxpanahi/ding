@@ -59,6 +59,7 @@ flutter:
     - assets/images/list.svg
     - assets/images/calendar.svg
     - assets/images/clock.svg
+    - assets/images/name_logo.svg
 
   fonts:
    - family: IRANYekan

@@ -6,6 +6,7 @@ import 'package:ding/src/feature/other/widgets/drop_down.dart';
 import 'package:ding/src/feature/report/report_screen.dart';
 import 'package:ding/src/feature/requests/requests_screen.dart';
 import 'package:ding/src/feature/situation/situation_screen.dart';
+import 'package:ding/src/feature/splash/splash_screen.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:flutter/cupertino.dart';
@@ -129,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return NumberLoginScreen();
+    return SplashScreen();
     //   Scaffold(
     //   body: Directionality(
     //       textDirection: TextDirection.rtl, child: pages[_screenName]!),
