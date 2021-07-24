@@ -1,4 +1,5 @@
 import 'package:country_code_picker/country_localizations.dart';
+import 'package:ding/src/feature/splash/splash_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ding/fallback_cupertino_localizations_delegate.dart';
 import 'package:ding/src/feature/home/home_screen.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
               ),
               locale: Locale('fa', ''),
               debugShowCheckedModeBanner: false,
-              home: HomeScreen(),
+              home: SplashScreen(),
               localizationsDelegates: [
                 CountryLocalizations.delegate,
                 GlobalMaterialLocalizations.delegate,

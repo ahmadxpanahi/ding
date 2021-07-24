@@ -1,9 +1,13 @@
+import 'package:ding/src/data/http/token_manager.dart';
+import 'package:ding/src/feature/home/home_screen.dart';
+import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/feature/splash/bloc/splash_bloc.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -25,6 +29,21 @@ class SplashContainer extends StatefulWidget {
 }
 
 class _SplashContainerState extends State<SplashContainer> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 2), () async {
+      SharedPreferences sp = await SharedPreferences.getInstance();
+      var _tokenManager = TokenManager(sp);
+      var _accessToken = _tokenManager.getAccessToken();
+      if(_accessToken!.length <= 8){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => NumberLoginScreen()));
+      }else{
+        Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

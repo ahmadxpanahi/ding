@@ -1,3 +1,4 @@
+import 'package:ding/src/data/http/token_manager.dart';
 import 'package:ding/src/feature/account_management/account_management_screen.dart';
 import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/feature/other/widgets/options_tile.dart';
@@ -7,6 +8,7 @@ import 'package:ding/src/ui/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OtherScreen extends StatefulWidget {
   const OtherScreen({Key? key}) : super(key: key);
@@ -70,8 +72,15 @@ class _OtherScreenState extends State<OtherScreen> {
             ),
             IconButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => NumberLoginScreen()));
+                Future.delayed(Duration(seconds: 0), () async {
+                  SharedPreferences sp = await SharedPreferences.getInstance();
+                  var _tokenManager = TokenManager(sp);
+                  _tokenManager.removeAccessToken();
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => NumberLoginScreen()));
+                });
               },
               icon: SvgPicture.asset(
                 'assets/images/edit.svg',

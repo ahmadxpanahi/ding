@@ -40,14 +40,15 @@ class _HomeScreenState extends State<HomeScreen> {
     'situation': PreferredSize(
       preferredSize: Size.fromHeight(100),
       child: Container(
-        padding: EdgeInsets.only(top: 2.2*SizeConfig.heightMultiplier!),
+        padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
         alignment: Alignment.center,
         color: DingColors.primary(),
-        height: 13.3*SizeConfig.heightMultiplier!,
+        height: 13.3 * SizeConfig.heightMultiplier!,
         child: Text(
           'وضعیت لحظه ای',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 2.73*SizeConfig.textMultiplier!, color: Colors.white),
+          style: TextStyle(
+              fontSize: 2.73 * SizeConfig.textMultiplier!, color: Colors.white),
         ),
       ),
     ),
@@ -55,13 +56,14 @@ class _HomeScreenState extends State<HomeScreen> {
       preferredSize: Size.fromHeight(100),
       child: Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.only(top: 2.2*SizeConfig.heightMultiplier!),
+        padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
         color: DingColors.primary(),
-        height: 13.3*SizeConfig.heightMultiplier!,
+        height: 13.3 * SizeConfig.heightMultiplier!,
         child: Text(
           'ورود و خروج',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 2.73*SizeConfig.textMultiplier!, color: Colors.white),
+          style: TextStyle(
+              fontSize: 2.73 * SizeConfig.textMultiplier!, color: Colors.white),
         ),
       ),
     ),
@@ -82,8 +84,8 @@ class _HomeScreenState extends State<HomeScreen> {
     'requests': PreferredSize(
       preferredSize: Size.fromHeight(100),
       child: Container(
-        height: 13.3*SizeConfig.heightMultiplier!,
-        padding: EdgeInsets.only(top: 2.2*SizeConfig.heightMultiplier!),
+        height: 13.3 * SizeConfig.heightMultiplier!,
+        padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
         color: DingColors.primary(),
         child: Row(
           children: [
@@ -92,14 +94,17 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Text(
                 'درخواست ها',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 2.73*SizeConfig.textMultiplier!, color: Colors.white),
+                style: TextStyle(
+                    fontSize: 2.73 * SizeConfig.textMultiplier!,
+                    color: Colors.white),
               ),
             ),
             Expanded(
                 child: Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: EdgeInsets.only(left: 4.8*SizeConfig.widthMultiplier!),
+                      padding: EdgeInsets.only(
+                          left: 4.8 * SizeConfig.widthMultiplier!),
                       child: SvgPicture.asset('assets/images/Shape.svg'),
                     ))),
           ],
@@ -110,13 +115,14 @@ class _HomeScreenState extends State<HomeScreen> {
       preferredSize: Size.fromHeight(100),
       child: Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.only(top: 2.2*SizeConfig.heightMultiplier!),
+        padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
         color: DingColors.primary(),
-        height: 13.3*SizeConfig.heightMultiplier!,
+        height: 13.3 * SizeConfig.heightMultiplier!,
         child: Text(
           'سایر موارد',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 2.73*SizeConfig.textMultiplier!, color: Colors.white),
+          style: TextStyle(
+              fontSize: 2.73 * SizeConfig.textMultiplier!, color: Colors.white),
         ),
       ),
     ),
@@ -130,15 +136,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SplashScreen();
-    //   Scaffold(
-    //   body: Directionality(
-    //       textDirection: TextDirection.rtl, child: pages[_screenName]!),
-    //   appBar: appBars[_screenName],
-    //   bottomNavigationBar: BottomNav(
-    //     screenName: _screenName,
-    //     change: setPage,
-    //   ),
-    // );
+    return Scaffold(
+      body: Directionality(
+          textDirection: TextDirection.rtl, child: pages[_screenName]!),
+      appBar: appBars[_screenName],
+      bottomNavigationBar: BottomNav(
+        screenName: _screenName,
+        change: setPage,
+      ),
+    );
   }
 }

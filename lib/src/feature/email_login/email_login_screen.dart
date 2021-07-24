@@ -2,6 +2,7 @@ import 'package:ding/src/feature/email_login/bloc/email_bloc.dart';
 import 'package:ding/src/feature/email_login/bloc/email_event.dart';
 import 'package:ding/src/feature/email_login/bloc/email_state.dart';
 import 'package:ding/src/feature/enter_code/enter_code_screen.dart';
+import 'package:ding/src/feature/home/home_screen.dart';
 import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
@@ -191,8 +192,8 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             height: 8.2 * SizeConfig.heightMultiplier!,
                             decoration: BoxDecoration(
-                                border: Border.all(
-                                    width: 0.6, color: Colors.grey)),
+                                border:
+                                    Border.all(width: 0.6, color: Colors.grey)),
                             child: TextField(
                               onChanged: (val) {
                                 setState(() {
@@ -219,8 +220,8 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             height: 8.2 * SizeConfig.heightMultiplier!,
                             decoration: BoxDecoration(
-                                border: Border.all(
-                                    width: 0.6, color: Colors.grey)),
+                                border:
+                                    Border.all(width: 0.6, color: Colors.grey)),
                             child: TextField(
                               onChanged: (val) {
                                 setState(() {
@@ -247,8 +248,8 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             height: 8.2 * SizeConfig.heightMultiplier!,
                             decoration: BoxDecoration(
-                                border: Border.all(
-                                    width: 0.6, color: Colors.grey)),
+                                border:
+                                    Border.all(width: 0.6, color: Colors.grey)),
                             child: TextField(
                               onChanged: (val) {
                                 setState(() {
@@ -303,7 +304,8 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
       child: _buildBody(),
       listener: (_, state) {
         if (state is LoginWithEmailSuccessful) {
-
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => HomeScreen()));
         } else if (state is LoginError) {
           print('error');
           print(state.message ?? '');
