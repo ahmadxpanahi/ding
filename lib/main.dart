@@ -17,10 +17,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OrientationBuilder(
-      builder: (BuildContext context,Orientation orientation){
+      builder: (BuildContext context, Orientation orientation) {
         return LayoutBuilder(
-          builder: (BuildContext context , BoxConstraints constraints){
-            SizeConfig().init(constraints , orientation);
+          builder: (BuildContext context, BoxConstraints constraints) {
+            SizeConfig().init(constraints, orientation);
             return MaterialApp(
               theme: ThemeData(
                 fontFamily: 'IRANYekan',

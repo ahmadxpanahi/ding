@@ -310,5 +310,6 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
           print('error');
           print(state.message ?? '');
         }
-      });
+      }
+      );
 }

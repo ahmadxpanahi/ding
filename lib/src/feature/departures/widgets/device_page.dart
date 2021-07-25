@@ -1,11 +1,14 @@
+import 'package:ding/src/feature/departures/bloc/departures_bloc.dart';
+import 'package:ding/src/feature/departures/bloc/departures_event.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/ui/slide_action.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class DevicePage extends StatefulWidget {
-  const DevicePage({Key? key}) : super(key: key);
+  DevicePage({Key? key}) : super(key: key);
 
   @override
   _DevicePageState createState() => _DevicePageState();
@@ -43,17 +46,29 @@ class _DevicePageState extends State<DevicePage> {
                 SizedBox(
                   width: 4,
                 ),
-                SvgPicture.asset('assets/images/cloud.svg',width: 7*SizeConfig.widthMultiplier!,),
+                SvgPicture.asset(
+                  'assets/images/cloud.svg',
+                  width: 7 * SizeConfig.widthMultiplier!,
+                ),
               ],
             )
           ],
         ),
       );
+  late DeparturesBloc _bloc;
+
+  @override
+  void initState() {
+    super.initState();
+    _bloc = BlocProvider.of<DeparturesBloc>(context);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: SizeConfig.heightMultiplier!*2,top: SizeConfig.heightMultiplier!*3),
+      padding: EdgeInsets.only(
+          bottom: SizeConfig.heightMultiplier! * 2,
+          top: SizeConfig.heightMultiplier! * 3),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -79,31 +94,47 @@ class _DevicePageState extends State<DevicePage> {
             ],
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 9.7*SizeConfig.widthMultiplier!),
+            padding: EdgeInsets.symmetric(
+                horizontal: 9.7 * SizeConfig.widthMultiplier!),
             child: SlideAction(
               child: SizedBox(),
               reversed: true,
+              onCheckFinished: () {
+                _bloc.add(DoDeparturesEvent(true));
+              },
               innerColor: DingColors.primary(),
               outerColor: DingColors.veryLight(),
               sliderButtonIconPadding: 0,
               elevation: 0,
-              submittedIcon: Icon(Icons.check,size: 30,color: DingColors.primary(),),
-              onSubmit: (){},
+              submittedIcon: Icon(
+                Icons.check,
+                size: 30,
+                color: DingColors.primary(),
+              ),
+              onSubmit: () {},
               height: 8.9 * SizeConfig.heightMultiplier!,
               txt: 'ورود',
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 9.7*SizeConfig.widthMultiplier!),
+            padding: EdgeInsets.symmetric(
+                horizontal: 9.7 * SizeConfig.widthMultiplier!),
             child: SlideAction(
               child: SizedBox(),
               reversed: false,
+              onCheckFinished: () {
+                _bloc.add(DoDeparturesEvent(false));
+              },
               innerColor: DingColors.primary(),
               outerColor: DingColors.veryLight(),
               sliderButtonIconPadding: 0,
               elevation: 0,
-              submittedIcon: Icon(Icons.check,size: 30,color: DingColors.primary(),),
-              onSubmit: (){},
+              submittedIcon: Icon(
+                Icons.check,
+                size: 30,
+                color: DingColors.primary(),
+              ),
+              onSubmit: () {},
               height: 8.9 * SizeConfig.heightMultiplier!,
               txt: 'خروج',
             ),
