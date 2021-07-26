@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:another_flushbar/flushbar.dart';
 import 'package:ding/src/feature/email_login/bloc/email_bloc.dart';
 import 'package:ding/src/feature/email_login/bloc/email_event.dart';
 import 'package:ding/src/feature/email_login/bloc/email_state.dart';
@@ -302,13 +305,21 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
   @override
   Widget build(BuildContext context) => BlocListener<EmailBloc, EmailState>(
       child: _buildBody(),
-      listener: (_, state) {
+      listener: (_, state) async {
         if (state is LoginWithEmailSuccessful) {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => HomeScreen()));
         } else if (state is LoginError) {
-          print('error');
-          print(state.message ?? '');
+          Map errorMap = json.decode(state.message??'');
+          print(state.message);
+            await Flushbar(
+              backgroundColor: DingColors.warning(),
+              duration: Duration(seconds: 1),
+              borderRadius: BorderRadius.circular(100),
+              padding: EdgeInsets.all(15),
+              message: errorMap['error']['message'].toString(),
+              flushbarPosition: FlushbarPosition.TOP,
+          ).show(context);
         }
       }
       );
