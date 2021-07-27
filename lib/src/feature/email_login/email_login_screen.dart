@@ -46,7 +46,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
         bloc: _emailBloc,
         builder: (_, state) {
           if (state is LoginLoading && state.loading) {
-            return CircularProgressIndicator();
+            return CircularProgressIndicator(color: DingColors.primary(),);
           }
           return GestureDetector(
             onTap: () {
@@ -317,7 +317,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
               duration: Duration(seconds: 1),
               borderRadius: BorderRadius.circular(100),
               padding: EdgeInsets.all(15),
-              message: errorMap['error']['message'].toString(),
+              message: errorMap['error']['message'],
               flushbarPosition: FlushbarPosition.TOP,
           ).show(context);
         }

@@ -24,5 +24,6 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
     yield DeparturesStatusState(isEnter: event.isEnter,progress: 2);
     await Future.delayed(Duration(milliseconds: 2000));
     yield DeparturesStatusState(showDialog: true,isEnter: event.isEnter);
+
   }
 }

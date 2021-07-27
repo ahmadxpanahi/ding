@@ -1,22 +1,46 @@
 import 'package:ding/src/feature/create_request/create_request_screen.dart';
+import 'package:ding/src/feature/requests/bloc/requests_bloc.dart';
+import 'package:ding/src/feature/requests/bloc/requests_state.dart';
 import 'package:ding/src/feature/requests/widgets/cartable_item.dart';
 import 'package:ding/src/feature/requests/widgets/my_requests_item.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class RequestsScreen extends StatefulWidget {
+import 'bloc/requests_event.dart';
+
+class RequestsScreen extends StatelessWidget {
   const RequestsScreen({Key? key}) : super(key: key);
 
   @override
-  _RequestsScreenState createState() => _RequestsScreenState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => RequestsBloc(),
+      child: RequestsContainer(),
+    );
+  }
 }
 
-class _RequestsScreenState extends State<RequestsScreen> {
+class RequestsContainer extends StatefulWidget {
+  const RequestsContainer({Key? key}) : super(key: key);
+
+  @override
+  _RequestsContainerState createState() => _RequestsContainerState();
+}
+
+class _RequestsContainerState extends State<RequestsContainer> {
   PageController? _controller;
   int value = 0;
+  late RequestsBloc _requestsBloc;
+
   @override
   void initState() {
+    _requestsBloc = BlocProvider.of<RequestsBloc>(context);
+    _requestsBloc.add(ShowRequestsLoading(true));
+    Future.delayed(Duration(milliseconds: 2000),(){
+      _requestsBloc.add(GetCartableData());
+    });
     super.initState();
     _controller = PageController();
   }
@@ -138,46 +162,57 @@ class _RequestsScreenState extends State<RequestsScreen> {
                 )
               ],
             ),
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  CartableItem(
-                    name: 'پژمان شفیعی',
-                    info2: 'استعلاجی',
-                    info1: 'مرخصی روزانه',
-                    type: 'leave',
-                    unit: 'واحد فروش',
-                    imgUrl:
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
-                    beginDate: '23 خرداد 1398 - 23:10',
-                    date: '23 خرداد 1398 - 23:10',
-                    endDate: '23 خرداد 1398 - 23:10',
-                  ),
-                  CartableItem(
-                    name: 'پژمان شفیعی',
-                    info2: 'ورود/لوکیشن',
-                    info1: 'ورود و خروج',
-                    type: 'enterAndExit',
-                    unit: 'واحد فروش',
-                    imgUrl:
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
-                    date: '23 خرداد 1398 - 23:10',
-                  ),
-                  CartableItem(
-                    name: 'پژمان شفیعی',
-                    info2: 'استعلاجی',
-                    info1: 'مرخصی روزانه',
-                    type: 'mission',
-                    unit: 'واحد فروش',
-                    imgUrl:
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
-                    beginDate: '23 خرداد 1398 - 23:10',
-                    date: '23 خرداد 1398 - 23:10',
-                    endDate: '23 خرداد 1398 - 23:10',
-                  ),
-                ],
-              ),
-            ),
+            BlocBuilder(
+              bloc: _requestsBloc,
+              builder: (_,state){
+                if(state is RequestsLoadingState)
+                  return Center(
+                    child: CircularProgressIndicator(color: DingColors.primary(),),
+                  );
+                else{
+                  return SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        CartableItem(
+                          name: 'پژمان شفیعی',
+                          info2: 'استعلاجی',
+                          info1: 'مرخصی روزانه',
+                          type: 'leave',
+                          unit: 'واحد فروش',
+                          imgUrl:
+                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
+                          beginDate: '23 خرداد 1398 - 23:10',
+                          date: '23 خرداد 1398 - 23:10',
+                          endDate: '23 خرداد 1398 - 23:10',
+                        ),
+                        CartableItem(
+                          name: 'پژمان شفیعی',
+                          info2: 'ورود/لوکیشن',
+                          info1: 'ورود و خروج',
+                          type: 'enterAndExit',
+                          unit: 'واحد فروش',
+                          imgUrl:
+                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
+                          date: '23 خرداد 1398 - 23:10',
+                        ),
+                        CartableItem(
+                          name: 'پژمان شفیعی',
+                          info2: 'استعلاجی',
+                          info1: 'مرخصی روزانه',
+                          type: 'mission',
+                          unit: 'واحد فروش',
+                          imgUrl:
+                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
+                          beginDate: '23 خرداد 1398 - 23:10',
+                          date: '23 خرداد 1398 - 23:10',
+                          endDate: '23 خرداد 1398 - 23:10',
+                        ),
+                      ],
+                    ),
+                  );
+                }
+              },
+            )
           ],
         ))
       ],
