@@ -15,7 +15,6 @@ class DevicePage extends StatefulWidget {
 }
 
 class _DevicePageState extends State<DevicePage> {
-
   Widget _infoContainer() => Container(
         width: 30 * SizeConfig.heightMultiplier!,
         height: 30 * SizeConfig.heightMultiplier!,
@@ -100,7 +99,7 @@ class _DevicePageState extends State<DevicePage> {
               child: SizedBox(),
               reversed: true,
               onCheckFinished: () {
-                _bloc.add(DoDeparturesEvent(true));
+                _bloc.add(DoDeparturesEvent(true, 0));
               },
               innerColor: DingColors.primary(),
               outerColor: DingColors.veryLight(),
@@ -123,7 +122,7 @@ class _DevicePageState extends State<DevicePage> {
               child: SizedBox(),
               reversed: false,
               onCheckFinished: () {
-                _bloc.add(DoDeparturesEvent(false));
+                _bloc.add(DoDeparturesEvent(false, 0));
               },
               innerColor: DingColors.primary(),
               outerColor: DingColors.veryLight(),

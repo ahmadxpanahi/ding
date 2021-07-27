@@ -17,13 +17,12 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
   Stream<DeparturesState> _doDeparture(DoDeparturesEvent event) async* {
 
     await Future.delayed(Duration(milliseconds: 2000));
-    yield DeparturesStatusState(isEnter: event.isEnter,progress: 0);
+    yield DeparturesStatusState(isEnter: event.isEnter,progress: 0,selectedPage: event.selectedPage);
     await Future.delayed(Duration(milliseconds: 2000));
-    yield DeparturesStatusState(isEnter: event.isEnter,progress: 1);
+    yield DeparturesStatusState(isEnter: event.isEnter,progress: 1,selectedPage: event.selectedPage);
     await Future.delayed(Duration(milliseconds: 2000));
-    yield DeparturesStatusState(isEnter: event.isEnter,progress: 2);
+    yield DeparturesStatusState(isEnter: event.isEnter,progress: 2,selectedPage: event.selectedPage);
     await Future.delayed(Duration(milliseconds: 2000));
-    yield DeparturesStatusState(showDialog: true,isEnter: event.isEnter);
-
+    yield DeparturesStatusState(showDialog: true,isEnter: event.isEnter,selectedPage: event.selectedPage);
   }
 }

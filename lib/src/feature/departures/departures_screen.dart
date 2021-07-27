@@ -1,11 +1,14 @@
+import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/feature/departures/bloc/departures_bloc.dart';
 import 'package:ding/src/feature/departures/bloc/departures_state.dart';
+import 'package:ding/src/feature/departures/widgets/departures_pageview.dart';
 import 'package:ding/src/feature/departures/widgets/device_page.dart';
 import 'package:ding/src/feature/departures/widgets/enter_departures_screen.dart';
 import 'package:ding/src/feature/departures/widgets/exit_departures_screen.dart';
 import 'package:ding/src/feature/departures/widgets/location_page.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -33,11 +36,29 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
   PageController? _controller;
   int value = 0;
   late DeparturesBloc _departuresBloc;
+
+  PageView? _pageView;
+
   @override
   void initState() {
     super.initState();
     _controller = PageController();
     _departuresBloc = BlocProvider.of<DeparturesBloc>(context);
+
+    Future.delayed(Duration(milliseconds: 300), () {
+      setState(() {
+        _controller = PageController();
+        _pageView = PageView(
+          controller: _controller,
+          onPageChanged: (i) {
+            setState(() {
+              value = i;
+            });
+          },
+          children: [DevicePage(), LocationPage()],
+        );
+      });
+    });
   }
 
   Widget _buildBody() => BlocBuilder(
@@ -136,17 +157,7 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
                     )
                   ],
                 ),
-                Expanded(
-                  child: PageView(
-                    controller: _controller,
-                    onPageChanged: (val) {
-                      setState(() {
-                        value = val;
-                      });
-                    },
-                    children: [DevicePage(), LocationPage()],
-                  ),
-                )
+                if (_pageView != null) Expanded(child: _pageView!),
               ],
             );
           }
@@ -154,5 +165,34 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
       );
 
   @override
-  Widget build(BuildContext context) => _buildBody();
+  Widget build(BuildContext context) => BlocListener(
+        child: _buildBody(),
+        bloc: _departuresBloc,
+        listener: (_, state) {
+          if (state is DeparturesStatusState) {
+            if(_controller != null && !_controller!.hasClients) {
+              setState(() {
+                _controller = PageController();
+                _pageView = PageView(
+                  controller: _controller,
+                  onPageChanged: (i) {
+                    setState(() {
+                      value = i;
+                    });
+                  },
+                  children: [DevicePage(), LocationPage()],
+                );
+                print("initState -- PageView updated");
+                Future.delayed(Duration(milliseconds: 1000), () {
+                  print("After initState -- hasClients: ${_controller!.hasClients}");
+                  if(_controller?.hasClients ?? false) {
+                    _controller?.animateToPage(value,
+                        duration: Duration(milliseconds: 1500), curve: Curves.linear);
+                  }
+                });
+              });
+            }
+          }
+        },
+      );
 }
