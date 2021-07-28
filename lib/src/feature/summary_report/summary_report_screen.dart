@@ -1,15 +1,34 @@
+import 'package:ding/src/feature/summary_report/bloc/su_report_bloc.dart';
+import 'package:ding/src/feature/summary_report/bloc/su_report_event.dart';
+import 'package:ding/src/feature/summary_report/bloc/su_report_state.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SummaryReportScreen extends StatefulWidget {
+class SummaryReportScreen extends StatelessWidget {
   const SummaryReportScreen({Key? key}) : super(key: key);
 
   @override
-  _SummaryReportScreenState createState() => _SummaryReportScreenState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => SummaryReportBloc(),
+      child: SummaryReportContainer(),
+    );
+  }
 }
 
-class _SummaryReportScreenState extends State<SummaryReportScreen> {
+class SummaryReportContainer extends StatefulWidget {
+  const SummaryReportContainer({Key? key}) : super(key: key);
+
+  @override
+  _SummaryReportContainerState createState() => _SummaryReportContainerState();
+}
+
+class _SummaryReportContainerState extends State<SummaryReportContainer> {
+  late SummaryReportBloc _summaryReportBloc;
+
   Widget _infoContainer() => Column(
         children: [
           Container(
@@ -67,9 +86,8 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
                   children: [
                     Text(
                       'شروع',
-                      style: TextStyle(
-                          fontSize: 2.2.rt + 1,
-                          color: Colors.grey),
+                      style:
+                          TextStyle(fontSize: 2.2.rt + 1, color: Colors.grey),
                     ),
                     SizedBox(
                       width: SizeConfig.widthMultiplier! * 3,
@@ -77,8 +95,7 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
                     Text(
                       '02 خرداد 1398',
                       style: TextStyle(
-                          fontSize: 2.2.rt + 1,
-                          color: DingColors.dark()),
+                          fontSize: 2.2.rt + 1, color: DingColors.dark()),
                     ),
                   ],
                 ),
@@ -86,9 +103,8 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
                   children: [
                     Text(
                       'پایان',
-                      style: TextStyle(
-                          fontSize: 2.2.rt + 1,
-                          color: Colors.grey),
+                      style:
+                          TextStyle(fontSize: 2.2.rt + 1, color: Colors.grey),
                     ),
                     SizedBox(
                       width: SizeConfig.widthMultiplier! * 3,
@@ -96,8 +112,7 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
                     Text(
                       '02 خرداد 1398',
                       style: TextStyle(
-                          fontSize: 2.2.rt + 1,
-                          color: DingColors.dark()),
+                          fontSize: 2.2.rt + 1, color: DingColors.dark()),
                     ),
                   ],
                 ),
@@ -122,13 +137,11 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
                   children: [
                     Text(
                       title,
-                      style: TextStyle(
-                          fontSize: 2.2.rt + 1),
+                      style: TextStyle(fontSize: 2.2.rt + 1),
                     ),
                     Text(
                       time,
-                      style: TextStyle(
-                          fontSize: 2.2.rt + 1),
+                      style: TextStyle(fontSize: 2.2.rt + 1),
                     ),
                   ],
                 ),
@@ -138,63 +151,81 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
           ],
         ),
       );
+
+  @override
+  void initState() {
+    super.initState();
+    _summaryReportBloc = BlocProvider.of<SummaryReportBloc>(context);
+    _summaryReportBloc.add(ShowSuReportLoading(true));
+    Future.delayed(Duration(milliseconds: 1500), () {
+      _summaryReportBloc.add(GetSummaryReportData());
+    });
+  }
+
   @override
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: DingColors.veryLight(),
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(100),
-          child: Container(
-            padding: EdgeInsets.only(top: 2.2.rh),
-            alignment: Alignment.center,
-            color: DingColors.primary(),
-            height: 13.3.rh,
-            child: Row(
-              children: [
-                Expanded(
-                    child: Align(
-                  alignment: Alignment.centerRight,
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                        right: 2.4 .rw),
-                    child: IconButton(
-                      color: Colors.white,
-                      icon: Icon(
-                        Icons.arrow_back_ios,
-                        size: 3.0.rh,
-                      ),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                    ),
-                  ),
-                )),
-                Text(
-                  'گزارش خلاصه',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 2.73.rt,
-                      color: Colors.white),
-                ),
-                Expanded(child: SizedBox())
-              ],
-            ),
-          ),
-        ),
-        body: SingleChildScrollView(
-          child: Column(
+      backgroundColor: DingColors.veryLight(),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100),
+        child: Container(
+          padding: EdgeInsets.only(top: 2.2.rh),
+          alignment: Alignment.center,
+          color: DingColors.primary(),
+          height: 13.3.rh,
+          child: Row(
             children: [
-              _infoContainer(),
-              _item('زمان شیفت', '48:00:00'),
-              _item('زمان کاری', '48:00:00'),
-              _item('زمان تاخیر', '48:00:00'),
-              _item('زمان تعجیل در خروج', '48:00:00'),
-              _item('زمان غیبت', '48:00:00'),
-              _item('زمان اضافه کاری', '48:00:00'),
-              _item('زمان ماموریت', '48:00:00'),
-              _item('زمان مرخصی', '48:00:00'),
-              _item('روز های مرخصی', '05'),
+              Expanded(
+                  child: Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: EdgeInsets.only(right: 2.4.rw),
+                  child: IconButton(
+                    color: Colors.white,
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      size: 3.0.rh,
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+              )),
+              Text(
+                'گزارش خلاصه',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 2.73.rt, color: Colors.white),
+              ),
+              Expanded(child: SizedBox())
             ],
           ),
         ),
-      );
+      ),
+      body: BlocBuilder(
+          bloc: _summaryReportBloc,
+          builder: (_, state) {
+            if (state is SuReportLoadingState) {
+              return Center(
+                child: CircularProgressIndicator(
+                  color: DingColors.primary(),
+                ),
+              );
+            }
+            return SingleChildScrollView(
+              child: Column(
+                children: [
+                  _infoContainer(),
+                  _item('زمان شیفت', '48:00:00'),
+                  _item('زمان کاری', '48:00:00'),
+                  _item('زمان تاخیر', '48:00:00'),
+                  _item('زمان تعجیل در خروج', '48:00:00'),
+                  _item('زمان غیبت', '48:00:00'),
+                  _item('زمان اضافه کاری', '48:00:00'),
+                  _item('زمان ماموریت', '48:00:00'),
+                  _item('زمان مرخصی', '48:00:00'),
+                  _item('روز های مرخصی', '05'),
+                ],
+              ),
+            );
+          }));
 }
