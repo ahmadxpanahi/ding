@@ -3,7 +3,7 @@ import 'package:ding/src/feature/home/home_screen.dart';
 import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/feature/splash/bloc/splash_bloc.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -55,7 +55,7 @@ class _SplashContainerState extends State<SplashContainer> {
               Expanded(child: SizedBox()),
               SvgPicture.asset(
                 'assets/images/name_logo.svg',
-                width: 13.6 * SizeConfig.heightMultiplier!,
+                width: 13.6.rh,
               ),
               Expanded(
                 child: Align(

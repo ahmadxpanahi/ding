@@ -1,7 +1,7 @@
 import 'package:ding/src/feature/email_login/email_login_screen.dart';
 import 'package:ding/src/feature/enter_code/enter_code_screen.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -25,8 +25,8 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
         },
         child: Container(
           alignment: Alignment.center,
-          height: 9 * SizeConfig.heightMultiplier!,
-          width: 73.2 * SizeConfig.widthMultiplier!,
+          height: 9.0.rh,
+          width: 73.2 .rw,
           decoration: BoxDecoration(
             color: phoneNumber == ''
                 ? DingColors.veryLight()
@@ -36,7 +36,7 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
           child: Text(
             'دریافت کد',
             style: TextStyle(
-                fontSize: 2.73 * SizeConfig.textMultiplier!,
+                fontSize: 2.73.rt,
                 color: phoneNumber == '' ? DingColors.light() : Colors.white),
           ),
         ),
@@ -50,8 +50,8 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
         child: Container(
           alignment: Alignment.center,
           margin: EdgeInsets.only(bottom: 25),
-          height: 9 * SizeConfig.heightMultiplier!,
-          width: 73.2 * SizeConfig.widthMultiplier!,
+          height: 9.0.rh,
+          width: 73.2 .rw,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
               border: Border.all(color: DingColors.dark(), width: 2)),
@@ -62,7 +62,7 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
               Text(
                 'ورود با ایمیل',
                 style: TextStyle(
-                    fontSize: 2.73 * SizeConfig.textMultiplier!,
+                    fontSize: 2.73.rt,
                     color: DingColors.dark()),
               ),
               Expanded(
@@ -81,14 +81,14 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
         flex: 1,
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 5),
-          height: 8.2 * SizeConfig.heightMultiplier!,
+          height: 8.2.rh,
           color: DingColors.veryLight(),
           child: CountryCodePicker(
             alignLeft: false,
             showFlag: false,
             showFlagDialog: true,
             dialogSize: Size(
-                87.5 * SizeConfig.widthMultiplier!,
+                87.5 .rw,
                 73.2 *
                     SizeConfig.heightMultiplier!),
             padding: EdgeInsets.all(0),
@@ -108,7 +108,7 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
         flex: 5,
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 10),
-          height: 8.2 * SizeConfig.heightMultiplier!,
+          height: 8.2.rh,
           color: DingColors.veryLight(),
           child: TextField(
             onChanged: (val) {
@@ -119,7 +119,7 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
             keyboardType: TextInputType.phone,
             style: TextStyle(
                 fontSize:
-                2.73 * SizeConfig.textMultiplier!,
+                2.73.rt,
                 letterSpacing: 2),
             decoration:
             InputDecoration(border: InputBorder.none),
@@ -134,14 +134,14 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Container(
-        width: 65.8 * SizeConfig.widthMultiplier!,
+        width: 65.8 .rw,
         child: RichText(
           textAlign: TextAlign.end,
           maxLines: 2,
           text: TextSpan(
               text: 'قوانین و شرایط',
               style: TextStyle(
-                  fontSize: 4.1 * SizeConfig.widthMultiplier!,
+                  fontSize: 4.1 .rw,
                   fontWeight: FontWeight.bold,
                   color: DingColors.dark()),
               children: [
@@ -151,7 +151,7 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
                     style: TextStyle(
                         fontWeight: FontWeight.w200,
                         fontSize:
-                        4.1 * SizeConfig.widthMultiplier!,
+                        4.1 .rw,
                         color: DingColors.dark()))
               ]),
         ),
@@ -182,9 +182,9 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
           backgroundColor: Colors.white,
           body: Padding(
             padding: EdgeInsets.only(
-                right: 7.3 * SizeConfig.widthMultiplier!,
-                left: 7.3 * SizeConfig.widthMultiplier!,
-                top: 5.47 * SizeConfig.heightMultiplier!),
+                right: 7.3 .rw,
+                left: 7.3 .rw,
+                top: 5.47.rh),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -195,11 +195,11 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
                       Text(
                         'شماره موبایل خود را وارد کنید',
                         style: TextStyle(
-                            fontSize: 2.73 * SizeConfig.textMultiplier!,
+                            fontSize: 2.73.rt,
                             color: DingColors.dark()),
                       ),
                       SizedBox(
-                        height: 2.73 * SizeConfig.heightMultiplier!,
+                        height: 2.73.rh,
                       ),
                       Expanded(
                         child: Align(
@@ -211,7 +211,7 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 2.73 * SizeConfig.heightMultiplier!,
+                  height: 2.73.rh,
                 ),
                 Expanded(
                   child: Column(

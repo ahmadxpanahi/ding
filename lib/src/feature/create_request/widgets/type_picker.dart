@@ -1,5 +1,5 @@
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_picker/flutter_picker.dart';
@@ -24,10 +24,10 @@ class _TypePickerState extends State<TypePicker> {
           Text(
             'نوع',
             style: TextStyle(
-                fontSize: 3 * SizeConfig.heightMultiplier!, color: Colors.grey),
+                fontSize: 3.0.rh, color: Colors.grey),
           ),
           SizedBox(
-            width: 6.5 * SizeConfig.widthMultiplier!,
+            width: 6.5 .rw,
           ),
           Expanded(
             flex: 2,
@@ -59,16 +59,16 @@ class _TypePickerState extends State<TypePicker> {
               },
               child: Container(
                 padding: EdgeInsets.symmetric(
-                    horizontal: 2 * SizeConfig.widthMultiplier!),
-                height: 8.8 * SizeConfig.heightMultiplier!,
+                    horizontal: 2.0.rw),
+                height: 8.8.rh,
                 color: DingColors.veryLight(),
                 child: Row(
                   children: [
                     Expanded(
                       child: Padding(
                           padding: EdgeInsets.symmetric(
-                              vertical: 2.2 * SizeConfig.heightMultiplier!,
-                              horizontal: 4.8 * SizeConfig.widthMultiplier!),
+                              vertical: 2.2.rh,
+                              horizontal: 4.8 .rw),
                           child: _type == null
                               ? Align(
                                   alignment: Alignment.bottomCenter,
@@ -80,13 +80,13 @@ class _TypePickerState extends State<TypePicker> {
                               : Text(
                                   _type,
                                   style: TextStyle(
-                                      fontSize: 3 * SizeConfig.textMultiplier!),
+                                      fontSize: 3.0.rt),
                                   textAlign: TextAlign.center,
                                 )),
                     ),
                     Icon(
                       Icons.arrow_drop_down,
-                      size: 5 * SizeConfig.heightMultiplier!,
+                      size: 5.0.rh,
                     )
                   ],
                 ),

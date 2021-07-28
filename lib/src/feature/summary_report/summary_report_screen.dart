@@ -1,5 +1,5 @@
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 class SummaryReportScreen extends StatefulWidget {
@@ -16,12 +16,12 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
             color: Colors.white,
             padding: EdgeInsets.symmetric(
                 horizontal: SizeConfig.widthMultiplier! * 4.5),
-            height: 15 * SizeConfig.heightMultiplier!,
+            height: 15.0.rh,
             child: Row(
               children: [
                 Container(
-                  width: 8 * SizeConfig.heightMultiplier!,
-                  height: 8 * SizeConfig.heightMultiplier!,
+                  width: 8.0.rh,
+                  height: 8.0.rh,
                   decoration: BoxDecoration(
                       color: DingColors.light(),
                       shape: BoxShape.circle,
@@ -68,7 +68,7 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
                     Text(
                       'شروع',
                       style: TextStyle(
-                          fontSize: 2.2 * SizeConfig.textMultiplier! + 1,
+                          fontSize: 2.2.rt + 1,
                           color: Colors.grey),
                     ),
                     SizedBox(
@@ -77,7 +77,7 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
                     Text(
                       '02 خرداد 1398',
                       style: TextStyle(
-                          fontSize: 2.2 * SizeConfig.textMultiplier! + 1,
+                          fontSize: 2.2.rt + 1,
                           color: DingColors.dark()),
                     ),
                   ],
@@ -87,7 +87,7 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
                     Text(
                       'پایان',
                       style: TextStyle(
-                          fontSize: 2.2 * SizeConfig.textMultiplier! + 1,
+                          fontSize: 2.2.rt + 1,
                           color: Colors.grey),
                     ),
                     SizedBox(
@@ -96,7 +96,7 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
                     Text(
                       '02 خرداد 1398',
                       style: TextStyle(
-                          fontSize: 2.2 * SizeConfig.textMultiplier! + 1,
+                          fontSize: 2.2.rt + 1,
                           color: DingColors.dark()),
                     ),
                   ],
@@ -109,7 +109,7 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
 
   _item(title, time) => Container(
         color: Colors.white,
-        height: 8.5 * SizeConfig.heightMultiplier!,
+        height: 8.5.rh,
         child: Column(
           children: [
             Expanded(
@@ -123,12 +123,12 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
                     Text(
                       title,
                       style: TextStyle(
-                          fontSize: 2.2 * SizeConfig.textMultiplier! + 1),
+                          fontSize: 2.2.rt + 1),
                     ),
                     Text(
                       time,
                       style: TextStyle(
-                          fontSize: 2.2 * SizeConfig.textMultiplier! + 1),
+                          fontSize: 2.2.rt + 1),
                     ),
                   ],
                 ),
@@ -144,10 +144,10 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(100),
           child: Container(
-            padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
+            padding: EdgeInsets.only(top: 2.2.rh),
             alignment: Alignment.center,
             color: DingColors.primary(),
-            height: 13.3 * SizeConfig.heightMultiplier!,
+            height: 13.3.rh,
             child: Row(
               children: [
                 Expanded(
@@ -155,12 +155,12 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
                   alignment: Alignment.centerRight,
                   child: Padding(
                     padding: EdgeInsets.only(
-                        right: 2.4 * SizeConfig.widthMultiplier!),
+                        right: 2.4 .rw),
                     child: IconButton(
                       color: Colors.white,
                       icon: Icon(
                         Icons.arrow_back_ios,
-                        size: 3 * SizeConfig.heightMultiplier!,
+                        size: 3.0.rh,
                       ),
                       onPressed: () {
                         Navigator.pop(context);
@@ -172,7 +172,7 @@ class _SummaryReportScreenState extends State<SummaryReportScreen> {
                   'گزارش خلاصه',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontSize: 2.73 * SizeConfig.textMultiplier!,
+                      fontSize: 2.73.rt,
                       color: Colors.white),
                 ),
                 Expanded(child: SizedBox())

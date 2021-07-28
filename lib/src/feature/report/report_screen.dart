@@ -1,7 +1,7 @@
 import 'package:ding/src/feature/report/widgets/custom.dart';
 import 'package:ding/src/feature/report/widgets/monthly.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -40,12 +40,12 @@ class _ReportScreenState extends State<ReportScreen> {
                 },
                 child: Container(
                   alignment: Alignment.center,
-                  height: 8.2 * SizeConfig.heightMultiplier!,
+                  height: 8.2.rh,
                   color: value == 0 ? DingColors.dark() : DingColors.light(),
                   child: Text(
                     'ماهانه',
                     style: TextStyle(
-                        fontSize: 2.73 * SizeConfig.textMultiplier!,
+                        fontSize: 2.73.rt,
                         color: value == 0 ? DingColors.primary() : Colors.grey),
                   ),
                 ),
@@ -60,12 +60,12 @@ class _ReportScreenState extends State<ReportScreen> {
                 },
                 child: Container(
                   alignment: Alignment.center,
-                  height: 8.2 * SizeConfig.heightMultiplier!,
+                  height: 8.2.rh,
                   color: value == 1 ? DingColors.dark() : DingColors.light(),
                   child: Text(
                     'سفارشی',
                     style: TextStyle(
-                        fontSize: 2.73 * SizeConfig.textMultiplier!,
+                        fontSize: 2.73.rt,
                         color: value == 1 ? DingColors.primary() : Colors.grey),
                   ),
                 ),

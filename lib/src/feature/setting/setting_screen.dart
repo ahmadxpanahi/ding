@@ -1,6 +1,6 @@
 import 'package:ding/src/feature/setting/bloc/setting_bloc.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -35,10 +35,10 @@ class _SettingContainerState extends State<SettingContainer> {
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(100),
             child: Container(
-              padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
+              padding: EdgeInsets.only(top: 2.2.rh),
               alignment: Alignment.center,
               color: DingColors.primary(),
-              height: 13.3 * SizeConfig.heightMultiplier!,
+              height: 13.3.rh,
               child: Row(
                 children: [
                   Expanded(
@@ -46,12 +46,12 @@ class _SettingContainerState extends State<SettingContainer> {
                     alignment: Alignment.centerRight,
                     child: Padding(
                       padding: EdgeInsets.only(
-                          right: 2.4 * SizeConfig.widthMultiplier!),
+                          right: 2.4 .rw),
                       child: IconButton(
                         color: Colors.white,
                         icon: Icon(
                           Icons.arrow_back_ios,
-                          size: 3 * SizeConfig.heightMultiplier!,
+                          size: 3.0.rh,
                         ),
                         onPressed: () {
                           Navigator.pop(context);
@@ -63,7 +63,7 @@ class _SettingContainerState extends State<SettingContainer> {
                     'تنظیمات',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontSize: 2.73 * SizeConfig.textMultiplier!,
+                        fontSize: 2.73.rt,
                         color: Colors.white),
                   ),
                   Expanded(child: SizedBox())

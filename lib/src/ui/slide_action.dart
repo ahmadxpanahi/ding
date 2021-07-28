@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:ding/src/feature/report/report_screen.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 /// Slider call to action component
@@ -216,9 +216,9 @@ class SlideActionState extends State<SlideAction>
                                 borderRadius:
                                     BorderRadius.circular(widget.borderRadius),
                                 child: Container(
-                                    height: 8.9 * SizeConfig.heightMultiplier!,
+                                    height: 8.9.rh,
                                     width:
-                                        (24.3 * SizeConfig.widthMultiplier!) +
+                                        (24.3 .rw) +
                                             _dx,
                                     child: Row(
                                       mainAxisAlignment:
@@ -249,7 +249,7 @@ class SlideActionState extends State<SlideAction>
                                                 fontWeight: FontWeight.w400),
                                           ),
                                           origin: Offset(
-                                              5.8 * SizeConfig.widthMultiplier!,
+                                              5.8 .rw,
                                               0),
                                           transform: Matrix4.rotationY(
                                               widget.reversed ? -pi : 0),

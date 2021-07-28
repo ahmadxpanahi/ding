@@ -1,5 +1,5 @@
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -16,7 +16,7 @@ class _BottomNavState extends State<BottomNav> {
   @override
   Widget build(BuildContext context) => Container(
         padding: EdgeInsets.symmetric(vertical: 3),
-        height: SizeConfig.heightMultiplier! > 7.5 ? 11 * SizeConfig.heightMultiplier! : 8.2 * SizeConfig.heightMultiplier!,
+        height: SizeConfig.heightMultiplier! > 7.5 ? 11.0.rh : 8.2.rh,
         color: DingColors.dark(),
         child: SafeArea(
           child: Align(
@@ -31,19 +31,19 @@ class _BottomNavState extends State<BottomNav> {
                 _bottomNavItem(() {
                   widget.change!('report');
                 }, widget.screenName ?? '', 'assets/images/form.svg', 'report',
-                    4.1 * SizeConfig.heightMultiplier!),
+                    4.1.rh),
                 _bottomNavItem(() {
                   widget.change!('departures');
                 }, widget.screenName ?? '', 'assets/images/timer.svg',
-                    'departures', 4.5 * SizeConfig.heightMultiplier!),
+                    'departures', 4.5.rh),
                 _bottomNavItem(() {
                   widget.change!('requests');
                 }, widget.screenName ?? '', 'assets/images/letter.svg',
-                    'requests', 4.1 * SizeConfig.heightMultiplier!),
+                    'requests', 4.1.rh),
                 _bottomNavItem(() {
                   widget.change!('situation');
                 }, widget.screenName ?? '', 'assets/images/eye.svg',
-                    'situation', 7 * SizeConfig.heightMultiplier!),
+                    'situation', 7.0.rh),
 
               ],
             ),

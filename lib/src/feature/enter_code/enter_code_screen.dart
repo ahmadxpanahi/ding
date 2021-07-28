@@ -1,5 +1,5 @@
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 
@@ -22,8 +22,8 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
           alignment: Alignment.topCenter,
           child: Container(
             alignment: Alignment.center,
-            height: 9 * SizeConfig.heightMultiplier!,
-            width: 73.2 * SizeConfig.widthMultiplier!,
+            height: 9.0.rh,
+            width: 73.2 .rw,
             decoration: BoxDecoration(
               color:
                   _code == '' ? DingColors.veryLight() : DingColors.primary(),
@@ -32,7 +32,7 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
             child: Text(
               'ورود',
               style: TextStyle(
-                  fontSize: 2.73 * SizeConfig.textMultiplier!,
+                  fontSize: 2.73.rt,
                   color: _code == '' ? DingColors.light() : Colors.white),
             ),
           ),
@@ -46,7 +46,7 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              height: 2.73 * SizeConfig.heightMultiplier!,
+              height: 2.73.rh,
             ),
             Expanded(
               child: Column(
@@ -70,7 +70,7 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
                   Text(
                     'کد را وارد کنید',
                     style: TextStyle(
-                        fontSize: 2.73 * SizeConfig.textMultiplier!,
+                        fontSize: 2.73.rt,
                         color: DingColors.dark()),
                   ),
                   PinCodeTextField(
@@ -84,10 +84,10 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
                     pinBoxDecoration:
                         ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
                     defaultBorderColor: DingColors.light(),
-                    pinBoxWidth: 9.7 * SizeConfig.widthMultiplier!,
+                    pinBoxWidth: 9.7 .rw,
                     errorBorderColor: DingColors.warning(),
                     hasTextBorderColor: DingColors.light(),
-                    pinBoxHeight: 9.5 * SizeConfig.heightMultiplier!,
+                    pinBoxHeight: 9.5.rh,
                     pinTextStyle:
                         TextStyle(fontSize: 30, color: DingColors.dark()),
                   ),
@@ -101,17 +101,17 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
                   Text(
                     'کد به +98 901 909 5564 ارسال شد',
                     style: TextStyle(
-                        fontSize: 2.73 * SizeConfig.textMultiplier!,
+                        fontSize: 2.73.rt,
                         color: DingColors.dark(),
                         fontWeight: FontWeight.w300),
                   ),
                   SizedBox(
-                    height: 1.3 * SizeConfig.heightMultiplier!,
+                    height: 1.3.rh,
                   ),
                   Text(
                     '00:36',
                     style: TextStyle(
-                        fontSize: 2.73 * SizeConfig.textMultiplier!,
+                        fontSize: 2.73.rt,
                         color: DingColors.dark(),
                         fontWeight: FontWeight.w300),
                   ),

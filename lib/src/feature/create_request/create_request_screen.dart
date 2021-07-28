@@ -1,6 +1,6 @@
 import 'package:ding/src/feature/create_request/widgets/leave_page.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 class CreateRequestScreen extends StatefulWidget {
@@ -25,10 +25,10 @@ class _CreateRequestScreenState extends State<CreateRequestScreen> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100),
         child: Container(
-          padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
+          padding: EdgeInsets.only(top: 2.2.rh),
           alignment: Alignment.center,
           color: DingColors.primary(),
-          height: 13.3 * SizeConfig.heightMultiplier!,
+          height: 13.3.rh,
           child: Row(
             children: [
               Expanded(
@@ -36,7 +36,7 @@ class _CreateRequestScreenState extends State<CreateRequestScreen> {
                     alignment: Alignment.centerRight,
                     child: Padding(
                       padding: EdgeInsets.only(
-                          right: 2.4 * SizeConfig.widthMultiplier!),
+                          right: 2.4 .rw),
                       child: IconButton(
                         color: Colors.white,
                         icon: Icon(
@@ -53,7 +53,7 @@ class _CreateRequestScreenState extends State<CreateRequestScreen> {
                 'ثبت درخواست',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontSize: 2.73 * SizeConfig.textMultiplier!,
+                    fontSize: 2.73.rt,
                     color: Colors.white),
               ),
               Expanded(child: SizedBox())
@@ -74,12 +74,12 @@ class _CreateRequestScreenState extends State<CreateRequestScreen> {
                   },
                   child: Container(
                     alignment: Alignment.center,
-                    height: 8.2 * SizeConfig.heightMultiplier!,
+                    height: 8.2.rh,
                     color: value == 0 ? DingColors.dark() : DingColors.light(),
                     child: Text(
                       'مرخصی',
                       style: TextStyle(
-                          fontSize: 2.73 * SizeConfig.textMultiplier!,
+                          fontSize: 2.73.rt,
                           color: value == 0 ? DingColors.primary() : Colors.grey),
                     ),
                   ),
@@ -94,12 +94,12 @@ class _CreateRequestScreenState extends State<CreateRequestScreen> {
                   },
                   child: Container(
                     alignment: Alignment.center,
-                    height: 8.2 * SizeConfig.heightMultiplier!,
+                    height: 8.2.rh,
                     color: value == 1 ? DingColors.dark() : DingColors.light(),
                     child: Text(
                       'ورود و خروج',
                       style: TextStyle(
-                          fontSize: 2.73 * SizeConfig.textMultiplier!,
+                          fontSize: 2.73.rt,
                           color: value == 1 ? DingColors.primary() : Colors.grey),
                     ),
                   ),
@@ -114,12 +114,12 @@ class _CreateRequestScreenState extends State<CreateRequestScreen> {
                   },
                   child: Container(
                     alignment: Alignment.center,
-                    height: 8.2 * SizeConfig.heightMultiplier!,
+                    height: 8.2.rh,
                     color: value == 2 ? DingColors.dark() : DingColors.light(),
                     child: Text(
                       'ماموریت',
                       style: TextStyle(
-                          fontSize: 2.73 * SizeConfig.textMultiplier!,
+                          fontSize: 2.73.rt,
                           color: value == 2 ? DingColors.primary() : Colors.grey),
                     ),
                   ),

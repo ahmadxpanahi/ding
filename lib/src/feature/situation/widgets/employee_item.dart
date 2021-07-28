@@ -1,5 +1,5 @@
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 class EmployeeItem extends StatelessWidget {
@@ -23,8 +23,8 @@ class EmployeeItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 5),
-      height: 13.5 * SizeConfig.heightMultiplier!,
-      padding: EdgeInsets.only(left: 4.8 * SizeConfig.widthMultiplier!),
+      height: 13.5.rh,
+      padding: EdgeInsets.only(left: 4.8 .rw),
       color: Colors.white,
       child: Opacity(
         opacity: status == '' ? 0.5 : 1,
@@ -35,7 +35,7 @@ class EmployeeItem extends StatelessWidget {
               child: Row(
                 children: [
                   Container(
-                      width: 2.4 * SizeConfig.widthMultiplier!,
+                      width: 2.4 .rw,
                       color: _color(status)),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 10),
@@ -57,13 +57,13 @@ class EmployeeItem extends StatelessWidget {
                       Text(
                         name ?? '',
                         style: TextStyle(
-                            fontSize: 2.2 * SizeConfig.textMultiplier!,
+                            fontSize: 2.2.rt,
                             color: Colors.black),
                       ),
                       Text(
                         unit ?? '',
                         style: TextStyle(
-                            fontSize: 2.2 * SizeConfig.textMultiplier! - 2,
+                            fontSize: 2.2.rt - 2,
                             color: Colors.grey),
                       ),
                       status == ''
@@ -71,7 +71,7 @@ class EmployeeItem extends StatelessWidget {
                           : Text(
                               status == 'present' ? 'حاضر' : 'غایب',
                               style: TextStyle(
-                                  fontSize: 2.2 * SizeConfig.textMultiplier! - 2,
+                                  fontSize: 2.2.rt - 2,
                                   color: _color(status)),
                             ),
                     ],

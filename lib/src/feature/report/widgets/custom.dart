@@ -1,5 +1,6 @@
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -21,15 +22,15 @@ class _CustomPageState extends State<CustomPage> {
   _infoContainer() => Container(
         padding:
             EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier! * 4.5),
-        height: 15 * SizeConfig.heightMultiplier!,
+        height: 15.0.rh,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
                 Container(
-                  width: 8 * SizeConfig.heightMultiplier!,
-                  height: 8 * SizeConfig.heightMultiplier!,
+                  width: 8.0.rh,
+                  height: 8.0.rh,
                   decoration: BoxDecoration(
                       color: DingColors.light(),
                       shape: BoxShape.circle,
@@ -76,11 +77,11 @@ class _CustomPageState extends State<CustomPage> {
               Text(
                 'شروع',
                 style: TextStyle(
-                    fontSize: 2.7 * SizeConfig.textMultiplier!,
+                    fontSize: 2.7.rt,
                     color: Colors.grey),
               ),
               SizedBox(
-                width: 3.6 * SizeConfig.widthMultiplier!,
+                width: 3.6 .rw,
               ),
               Expanded(
                 child: GestureDetector(
@@ -90,10 +91,10 @@ class _CustomPageState extends State<CustomPage> {
                         builder: (_) {
                           return AlertDialog(
                             contentPadding: EdgeInsets.symmetric(
-                                horizontal: 2.6 * SizeConfig.widthMultiplier!,
-                                vertical: 1.3 * SizeConfig.heightMultiplier!),
+                                horizontal: 2.6 .rw,
+                                vertical: 1.3.rh),
                             content: SizedBox(
-                              height: 36.7 * SizeConfig.heightMultiplier!,
+                              height: 36.7.rh,
                               child: Column(
                                 children: [
                                   Expanded(
@@ -136,17 +137,17 @@ class _CustomPageState extends State<CustomPage> {
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(
-                        horizontal: 4.7 * SizeConfig.widthMultiplier!),
-                    height: 8.8 * SizeConfig.heightMultiplier!,
+                        horizontal: 4.7 .rw),
+                    height: 8.8.rh,
                     color: DingColors.veryLight(),
                     child: Row(
                       children: [
                         Expanded(
                           child: Padding(
                               padding: EdgeInsets.symmetric(
-                                  vertical: 2.2 * SizeConfig.heightMultiplier!,
+                                  vertical: 2.2.rh,
                                   horizontal:
-                                      4.8 * SizeConfig.widthMultiplier!),
+                                      4.8 .rw),
                               child: begin == null
                                   ? Align(
                                       alignment: Alignment.bottomCenter,
@@ -159,13 +160,13 @@ class _CustomPageState extends State<CustomPage> {
                                       '${begin!.day} ${begin!.monthname} ${begin!.year}',
                                       style: TextStyle(
                                           fontSize:
-                                              3 * SizeConfig.textMultiplier!),
+                                              3.0.rt),
                                       textAlign: TextAlign.center,
                                     )),
                         ),
                         SvgPicture.asset(
                           'assets/images/calendar.svg',
-                          width: 3.4 * SizeConfig.heightMultiplier!,
+                          width: 3.4.rh,
                         )
                       ],
                     ),
@@ -182,11 +183,11 @@ class _CustomPageState extends State<CustomPage> {
               Text(
                 'پایان',
                 style: TextStyle(
-                    fontSize: 3 * SizeConfig.textMultiplier!,
+                    fontSize: 3.0.rt,
                     color: Colors.grey),
               ),
               SizedBox(
-                width: 3.6 * SizeConfig.widthMultiplier!,
+                width: 3.6 .rw,
               ),
               Expanded(
                 child: GestureDetector(
@@ -196,10 +197,10 @@ class _CustomPageState extends State<CustomPage> {
                         builder: (_) {
                           return AlertDialog(
                             contentPadding: EdgeInsets.symmetric(
-                                horizontal: 2.6 * SizeConfig.widthMultiplier!,
-                                vertical: 1.3 * SizeConfig.heightMultiplier!),
+                                horizontal: 2.6 .rw,
+                                vertical: 1.3.rh),
                             content: SizedBox(
-                              height: 36.7 * SizeConfig.heightMultiplier!,
+                              height: 36.7.rh,
                               child: Column(
                                 children: [
                                   Expanded(
@@ -245,17 +246,17 @@ class _CustomPageState extends State<CustomPage> {
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(
-                        horizontal: 4.7 * SizeConfig.widthMultiplier!),
-                    height: 8.8 * SizeConfig.heightMultiplier!,
+                        horizontal: 4.7 .rw),
+                    height: 8.8.rh,
                     color: DingColors.veryLight(),
                     child: Row(
                       children: [
                         Expanded(
                           child: Padding(
                               padding: EdgeInsets.symmetric(
-                                  vertical: 2.2 * SizeConfig.heightMultiplier!,
+                                  vertical: 2.2.rh,
                                   horizontal:
-                                      4.8 * SizeConfig.widthMultiplier!),
+                                      4.8 .rw),
                               child: end == null
                                   ? Align(
                                       alignment: Alignment.bottomCenter,
@@ -268,13 +269,13 @@ class _CustomPageState extends State<CustomPage> {
                                       '${end!.day} ${end!.monthname} ${end!.year}',
                                       style: TextStyle(
                                           fontSize:
-                                              3 * SizeConfig.textMultiplier!),
+                                              3.0.rt),
                                       textAlign: TextAlign.center,
                                     )),
                         ),
                         SvgPicture.asset(
                           'assets/images/calendar.svg',
-                          width: 3.4 * SizeConfig.heightMultiplier!,
+                          width: 3.4.rh,
                         )
                       ],
                     ),
@@ -292,7 +293,7 @@ class _CustomPageState extends State<CustomPage> {
             child: Container(
               margin: EdgeInsets.only(bottom: SizeConfig.heightMultiplier! * 5),
               alignment: Alignment.center,
-              height: 8.8 * SizeConfig.heightMultiplier!,
+              height: 8.8.rh,
               decoration: BoxDecoration(
                 color: DingColors.primary(),
                 borderRadius: BorderRadius.circular(100),
@@ -312,7 +313,7 @@ class _CustomPageState extends State<CustomPage> {
             child: Container(
               margin: EdgeInsets.only(bottom: SizeConfig.heightMultiplier! * 5),
               alignment: Alignment.center,
-              height: 8.8 * SizeConfig.heightMultiplier!,
+              height: 8.8.rh,
               decoration: BoxDecoration(
                 color: DingColors.secondary(),
                 borderRadius: BorderRadius.circular(100),
@@ -341,7 +342,7 @@ class _CustomPageState extends State<CustomPage> {
             Expanded(
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: 7.3 * SizeConfig.widthMultiplier!),
+                    horizontal: 7.3 .rw),
                 child: Column(
                   children: [
                     Expanded(

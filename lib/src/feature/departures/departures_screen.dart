@@ -7,7 +7,7 @@ import 'package:ding/src/feature/departures/widgets/enter_departures_screen.dart
 import 'package:ding/src/feature/departures/widgets/exit_departures_screen.dart';
 import 'package:ding/src/feature/departures/widgets/location_page.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -84,7 +84,7 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
                         },
                         child: Container(
                           alignment: Alignment.center,
-                          height: 8.2 * SizeConfig.heightMultiplier!,
+                          height: 8.2.rh,
                           color: value == 0
                               ? DingColors.dark()
                               : DingColors.light(),
@@ -93,19 +93,19 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
                             children: [
                               SvgPicture.asset(
                                 'assets/images/device.svg',
-                                width: 3.67 * SizeConfig.heightMultiplier!,
-                                height: 3.67 * SizeConfig.heightMultiplier!,
+                                width: 3.67.rh,
+                                height: 3.67.rh,
                                 color: value == 0
                                     ? DingColors.primary()
                                     : Colors.grey,
                               ),
                               SizedBox(
-                                width: 3 * SizeConfig.widthMultiplier!,
+                                width: 3.0.rw,
                               ),
                               Text(
                                 'دستگاه',
                                 style: TextStyle(
-                                    fontSize: 2.73 * SizeConfig.textMultiplier!,
+                                    fontSize: 2.73.rt,
                                     color: value == 0
                                         ? DingColors.primary()
                                         : Colors.grey),
@@ -124,7 +124,7 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
                         },
                         child: Container(
                           alignment: Alignment.center,
-                          height: 8.2 * SizeConfig.heightMultiplier!,
+                          height: 8.2.rh,
                           color: value == 1
                               ? DingColors.dark()
                               : DingColors.light(),
@@ -133,19 +133,19 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
                             children: [
                               SvgPicture.asset(
                                 'assets/images/location.svg',
-                                width: 3.67 * SizeConfig.heightMultiplier!,
-                                height: 3.67 * SizeConfig.heightMultiplier!,
+                                width: 3.67.rh,
+                                height: 3.67.rh,
                                 color: value == 1
                                     ? DingColors.primary()
                                     : Colors.grey,
                               ),
                               SizedBox(
-                                width: 3 * SizeConfig.widthMultiplier!,
+                                width: 3.0.rw,
                               ),
                               Text(
                                 'لوکیشن',
                                 style: TextStyle(
-                                    fontSize: 2.73 * SizeConfig.textMultiplier!,
+                                    fontSize: 2.73.rt,
                                     color: value == 1
                                         ? DingColors.primary()
                                         : Colors.grey),

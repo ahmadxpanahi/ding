@@ -8,7 +8,7 @@ import 'package:ding/src/feature/requests/requests_screen.dart';
 import 'package:ding/src/feature/situation/situation_screen.dart';
 import 'package:ding/src/feature/splash/splash_screen.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -40,15 +40,15 @@ class _HomeScreenState extends State<HomeScreen> {
     'situation': PreferredSize(
       preferredSize: Size.fromHeight(100),
       child: Container(
-        padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
+        padding: EdgeInsets.only(top: 2.2.rh),
         alignment: Alignment.center,
         color: DingColors.primary(),
-        height: 13.3 * SizeConfig.heightMultiplier!,
+        height: 13.3.rh,
         child: Text(
           'وضعیت لحظه ای',
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: 2.73 * SizeConfig.textMultiplier!, color: Colors.white),
+              fontSize: 2.73.rt, color: Colors.white),
         ),
       ),
     ),
@@ -56,14 +56,14 @@ class _HomeScreenState extends State<HomeScreen> {
       preferredSize: Size.fromHeight(100),
       child: Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
+        padding: EdgeInsets.only(top: 2.2.rh),
         color: DingColors.primary(),
-        height: 13.3 * SizeConfig.heightMultiplier!,
+        height: 13.3.rh,
         child: Text(
           'ورود و خروج',
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: 2.73 * SizeConfig.textMultiplier!, color: Colors.white),
+              fontSize: 2.73.rt, color: Colors.white),
         ),
       ),
     ),
@@ -84,8 +84,8 @@ class _HomeScreenState extends State<HomeScreen> {
     'requests': PreferredSize(
       preferredSize: Size.fromHeight(100),
       child: Container(
-        height: 13.3 * SizeConfig.heightMultiplier!,
-        padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
+        height: 13.3.rh,
+        padding: EdgeInsets.only(top: 2.2.rh),
         color: DingColors.primary(),
         child: Row(
           children: [
@@ -95,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 'درخواست ها',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontSize: 2.73 * SizeConfig.textMultiplier!,
+                    fontSize: 2.73.rt,
                     color: Colors.white),
               ),
             ),
@@ -104,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     alignment: Alignment.centerLeft,
                     child: Padding(
                       padding: EdgeInsets.only(
-                          left: 4.8 * SizeConfig.widthMultiplier!),
+                          left: 4.8 .rw),
                       child: SvgPicture.asset('assets/images/Shape.svg'),
                     ))),
           ],
@@ -115,14 +115,14 @@ class _HomeScreenState extends State<HomeScreen> {
       preferredSize: Size.fromHeight(100),
       child: Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
+        padding: EdgeInsets.only(top: 2.2.rh),
         color: DingColors.primary(),
-        height: 13.3 * SizeConfig.heightMultiplier!,
+        height: 13.3.rh,
         child: Text(
           'سایر موارد',
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: 2.73 * SizeConfig.textMultiplier!, color: Colors.white),
+              fontSize: 2.73.rt, color: Colors.white),
         ),
       ),
     ),

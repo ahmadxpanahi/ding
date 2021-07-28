@@ -1,7 +1,7 @@
 import 'package:ding/src/feature/create_request/widgets/date_picker.dart';
 import 'package:ding/src/feature/create_request/widgets/type_picker.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -27,7 +27,7 @@ class _LeavePageState extends State<LeavePage> {
           children: [
             DDatePicker(title: 'شروع', type: 'begin'),
             SizedBox(
-              height: 2.7 * SizeConfig.widthMultiplier!,
+              height: 2.7 .rw,
             ),
             DDatePicker(title: 'پایان', type: 'end'),
           ],
@@ -45,7 +45,7 @@ class _LeavePageState extends State<LeavePage> {
             Column(
               children: [
                 SizedBox(
-                  height: 3.6 * SizeConfig.widthMultiplier!,
+                  height: 3.6 .rw,
                 ),
                 TypePicker(),
                 SizedBox(
@@ -73,16 +73,16 @@ class _LeavePageState extends State<LeavePage> {
             Container(
               alignment: Alignment.center,
               margin: EdgeInsets.symmetric(
-                horizontal: 12 * SizeConfig.widthMultiplier!,
+                horizontal: 12.0.rw,
               ),
-              height: 8.8 * SizeConfig.heightMultiplier!,
+              height: 8.8.rh,
               decoration: BoxDecoration(
                   color: DingColors.primary(),
                   borderRadius: BorderRadius.circular(100)),
               child: Text(
                 'تایید',
                 style: TextStyle(
-                    fontSize: 3 * SizeConfig.textMultiplier!,
+                    fontSize: 3.0.rt,
                     color: Colors.white),
               ),
             )

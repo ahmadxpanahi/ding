@@ -4,7 +4,7 @@ import 'package:ding/src/feature/account_management/bloc/ac_management_state.dar
 import 'package:ding/src/feature/account_management/widgets/management_item.dart';
 import 'package:ding/src/feature/email_login/bloc/email_event.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -50,10 +50,10 @@ class _AccountManagementContainerState
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(100),
             child: Container(
-              padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
+              padding: EdgeInsets.only(top: 2.2.rh),
               alignment: Alignment.center,
               color: DingColors.primary(),
-              height: 13.3 * SizeConfig.heightMultiplier!,
+              height: 13.3.rh,
               child: Row(
                 children: [
                   Expanded(
@@ -61,12 +61,12 @@ class _AccountManagementContainerState
                     alignment: Alignment.centerRight,
                     child: Padding(
                       padding: EdgeInsets.only(
-                          right: 2.4 * SizeConfig.widthMultiplier!),
+                          right: 2.4 .rw),
                       child: IconButton(
                         color: Colors.white,
                         icon: Icon(
                           Icons.arrow_back_ios,
-                          size: 3 * SizeConfig.heightMultiplier!,
+                          size: 3.0.rh,
                         ),
                         onPressed: () {
                           Navigator.pop(context);
@@ -78,7 +78,7 @@ class _AccountManagementContainerState
                     'مدیریت حساب',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontSize: 2.73 * SizeConfig.textMultiplier!,
+                        fontSize: 2.73.rt,
                         color: Colors.white),
                   ),
                   Expanded(child: SizedBox())
@@ -120,17 +120,17 @@ class _AccountManagementContainerState
                       alignment: Alignment.bottomCenter,
                       child: Container(
                         margin: EdgeInsets.only(
-                            bottom: 2.2 * SizeConfig.heightMultiplier!),
+                            bottom: 2.2.rh),
                         alignment: Alignment.center,
-                        height: 14.6 * SizeConfig.widthMultiplier!,
-                        width: 14.6 * SizeConfig.widthMultiplier!,
+                        height: 14.6 .rw,
+                        width: 14.6 .rw,
                         decoration: BoxDecoration(
                           color: DingColors.primary(),
                           borderRadius: BorderRadius.circular(100),
                         ),
                         child: Icon(
                           Icons.add,
-                          size: 12 * SizeConfig.widthMultiplier!,
+                          size: 12.0.rw,
                           color: Colors.white,
                         ),
                       ),

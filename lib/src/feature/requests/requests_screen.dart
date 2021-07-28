@@ -5,7 +5,9 @@ import 'package:ding/src/feature/requests/widgets/cartable_item.dart';
 import 'package:ding/src/feature/requests/widgets/my_requests_item.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/requests_event.dart';
@@ -38,7 +40,7 @@ class _RequestsContainerState extends State<RequestsContainer> {
   void initState() {
     _requestsBloc = BlocProvider.of<RequestsBloc>(context);
     _requestsBloc.add(ShowRequestsLoading(true));
-    Future.delayed(Duration(milliseconds: 2000),(){
+    Future.delayed(Duration(milliseconds: 2000), () {
       _requestsBloc.add(GetCartableData());
     });
     super.initState();
@@ -60,12 +62,12 @@ class _RequestsContainerState extends State<RequestsContainer> {
                 },
                 child: Container(
                   alignment: Alignment.center,
-                  height: 8.2 * SizeConfig.heightMultiplier!,
+                  height: 8.2.rh,
                   color: value == 0 ? DingColors.dark() : DingColors.light(),
                   child: Text(
                     'درخواست های من',
                     style: TextStyle(
-                        fontSize: 2.73 * SizeConfig.textMultiplier!,
+                        fontSize: 2.73.rt,
                         color: value == 0 ? DingColors.primary() : Colors.grey),
                   ),
                 ),
@@ -80,12 +82,12 @@ class _RequestsContainerState extends State<RequestsContainer> {
                 },
                 child: Container(
                   alignment: Alignment.center,
-                  height: 8.2 * SizeConfig.heightMultiplier!,
+                  height: 8.2.rh,
                   color: value == 1 ? DingColors.dark() : DingColors.light(),
                   child: Text(
                     'کارتابل',
                     style: TextStyle(
-                        fontSize: 2.73 * SizeConfig.textMultiplier!,
+                        fontSize: 2.73.rt,
                         color: value == 1 ? DingColors.primary() : Colors.grey),
                   ),
                 ),
@@ -146,15 +148,15 @@ class _RequestsContainerState extends State<RequestsContainer> {
                     child: Container(
                       margin: EdgeInsets.only(bottom: 15),
                       alignment: Alignment.center,
-                      height: 14.6 * SizeConfig.widthMultiplier!,
-                      width: 14.6 * SizeConfig.widthMultiplier!,
+                      height: 14.6 .rw,
+                      width: 14.6 .rw,
                       decoration: BoxDecoration(
                         color: DingColors.primary(),
                         borderRadius: BorderRadius.circular(100),
                       ),
                       child: Icon(
                         Icons.add,
-                        size: 12 * SizeConfig.widthMultiplier!,
+                        size: 12.0.rw,
                         color: Colors.white,
                       ),
                     ),
@@ -164,12 +166,14 @@ class _RequestsContainerState extends State<RequestsContainer> {
             ),
             BlocBuilder(
               bloc: _requestsBloc,
-              builder: (_,state){
-                if(state is RequestsLoadingState)
+              builder: (_, state) {
+                if (state is RequestsLoadingState)
                   return Center(
-                    child: CircularProgressIndicator(color: DingColors.primary(),),
+                    child: CircularProgressIndicator(
+                      color: DingColors.primary(),
+                    ),
                   );
-                else{
+                else {
                   return SingleChildScrollView(
                     child: Column(
                       children: [
@@ -180,7 +184,7 @@ class _RequestsContainerState extends State<RequestsContainer> {
                           type: 'leave',
                           unit: 'واحد فروش',
                           imgUrl:
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
+                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
                           beginDate: '23 خرداد 1398 - 23:10',
                           date: '23 خرداد 1398 - 23:10',
                           endDate: '23 خرداد 1398 - 23:10',
@@ -192,7 +196,7 @@ class _RequestsContainerState extends State<RequestsContainer> {
                           type: 'enterAndExit',
                           unit: 'واحد فروش',
                           imgUrl:
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
+                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
                           date: '23 خرداد 1398 - 23:10',
                         ),
                         CartableItem(
@@ -202,7 +206,7 @@ class _RequestsContainerState extends State<RequestsContainer> {
                           type: 'mission',
                           unit: 'واحد فروش',
                           imgUrl:
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
+                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
                           beginDate: '23 خرداد 1398 - 23:10',
                           date: '23 خرداد 1398 - 23:10',
                           endDate: '23 خرداد 1398 - 23:10',

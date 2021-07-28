@@ -2,7 +2,7 @@ import 'package:ding/src/feature/detailed_report/bloc/de_report_bloc.dart';
 import 'package:ding/src/feature/detailed_report/bloc/de_report_event.dart';
 import 'package:ding/src/feature/detailed_report/bloc/de_report_state.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -35,12 +35,12 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
             color: Colors.white,
             padding: EdgeInsets.symmetric(
                 horizontal: SizeConfig.widthMultiplier! * 4.5),
-            height: 15 * SizeConfig.heightMultiplier!,
+            height: 15.0.rh,
             child: Row(
               children: [
                 Container(
-                  width: 8 * SizeConfig.heightMultiplier!,
-                  height: 8 * SizeConfig.heightMultiplier!,
+                  width: 8.0.rh,
+                  height: 8.0.rh,
                   decoration: BoxDecoration(
                       color: DingColors.light(),
                       shape: BoxShape.circle,
@@ -87,7 +87,7 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
                     Text(
                       'شروع',
                       style: TextStyle(
-                          fontSize: 2.2 * SizeConfig.textMultiplier! + 1,
+                          fontSize: 2.2.rt + 1,
                           color: Colors.grey),
                     ),
                     SizedBox(
@@ -96,7 +96,7 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
                     Text(
                       '02 خرداد 1398',
                       style: TextStyle(
-                          fontSize: 2.2 * SizeConfig.textMultiplier! + 1,
+                          fontSize: 2.2.rt + 1,
                           color: DingColors.dark()),
                     ),
                   ],
@@ -106,7 +106,7 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
                     Text(
                       'پایان',
                       style: TextStyle(
-                          fontSize: 2.2 * SizeConfig.textMultiplier! + 1,
+                          fontSize: 2.2.rt + 1,
                           color: Colors.grey),
                     ),
                     SizedBox(
@@ -115,7 +115,7 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
                     Text(
                       '02 خرداد 1398',
                       style: TextStyle(
-                          fontSize: 2.2 * SizeConfig.textMultiplier! + 1,
+                          fontSize: 2.2.rt + 1,
                           color: DingColors.dark()),
                     ),
                   ],
@@ -131,7 +131,7 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
           padding: EdgeInsets.symmetric(
               horizontal: SizeConfig.widthMultiplier! * 4.5),
           margin: EdgeInsets.only(top: SizeConfig.heightMultiplier!),
-          height: 14.7 * SizeConfig.heightMultiplier!,
+          height: 14.7.rh,
           color: Colors.white,
           child: Row(
             children: [
@@ -143,13 +143,13 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
                     Text(
                       day,
                       style: TextStyle(
-                          fontSize: 2.8 * SizeConfig.textMultiplier! + 1,
+                          fontSize: 2.8.rt + 1,
                           color: DingColors.dark()),
                     ),
                     Text(
                       '${month} ${year}',
                       style: TextStyle(
-                          fontSize: 2.3 * SizeConfig.textMultiplier! + 1,
+                          fontSize: 2.3.rt + 1,
                           color: Colors.grey),
                     ),
                   ],
@@ -175,7 +175,7 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
               ),
               Icon(
                 Icons.arrow_forward_ios,
-                size: 3 * SizeConfig.heightMultiplier!,
+                size: 3.0.rh,
               )
             ],
           ));
@@ -196,10 +196,10 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(100),
           child: Container(
-            padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
+            padding: EdgeInsets.only(top: 2.2.rh),
             alignment: Alignment.center,
             color: DingColors.primary(),
-            height: 13.3 * SizeConfig.heightMultiplier!,
+            height: 13.3.rh,
             child: Row(
               children: [
                 Expanded(
@@ -207,12 +207,12 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
                   alignment: Alignment.centerRight,
                   child: Padding(
                     padding: EdgeInsets.only(
-                        right: 2.4 * SizeConfig.widthMultiplier!),
+                        right: 2.4 .rw),
                     child: IconButton(
                       color: Colors.white,
                       icon: Icon(
                         Icons.arrow_back_ios,
-                        size: 3 * SizeConfig.heightMultiplier!,
+                        size: 3.0.rh,
                       ),
                       onPressed: () {
                         Navigator.pop(context);
@@ -224,7 +224,7 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
                   'گزارش تفضیلی',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontSize: 2.73 * SizeConfig.textMultiplier!,
+                      fontSize: 2.73.rt,
                       color: Colors.white),
                 ),
                 Expanded(child: SizedBox())

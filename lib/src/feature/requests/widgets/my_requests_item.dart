@@ -1,5 +1,5 @@
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
@@ -48,7 +48,7 @@ class MyRequestsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 14.7 * SizeConfig.heightMultiplier!,
+      height: 14.7.rh,
       margin: EdgeInsets.only(top: 8),
       color: Colors.white,
       child: Row(
@@ -68,7 +68,7 @@ class MyRequestsItem extends StatelessWidget {
                             color: type == 'leave'
                                 ? DingColors.dark()
                                 : Colors.white,
-                            fontSize: 2.73 * SizeConfig.textMultiplier!),
+                            fontSize: 2.73.rt),
                       ),
                     ),
                   ),
@@ -86,7 +86,7 @@ class MyRequestsItem extends StatelessWidget {
                                     color: type == 'leave'
                                         ? DingColors.dark()
                                         : Colors.white,
-                                    fontSize: 2.2 * SizeConfig.textMultiplier!),
+                                    fontSize: 2.2.rt),
                               ),
                             ],
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -98,7 +98,7 @@ class MyRequestsItem extends StatelessWidget {
                                 color: type == 'leave'
                                     ? DingColors.dark()
                                     : Colors.white,
-                                fontSize: 2.2 * SizeConfig.textMultiplier!),
+                                fontSize: 2.2.rt),
                           )),
                         ],
                       ),
@@ -133,7 +133,7 @@ class MyRequestsItem extends StatelessWidget {
                             Text(
                               info1 ?? '',
                               style: TextStyle(
-                                  fontSize: 2.2 * SizeConfig.textMultiplier!,
+                                  fontSize: 2.2.rt,
                                   color: DingColors.dark()),
                             )
                           ],
@@ -153,7 +153,7 @@ class MyRequestsItem extends StatelessWidget {
                             Text(
                               info2 ?? '',
                               style: TextStyle(
-                                  fontSize: 2.2 * SizeConfig.textMultiplier!,
+                                  fontSize: 2.2.rt,
                                   color: DingColors.dark()),
                             )
                           ],
@@ -164,7 +164,7 @@ class MyRequestsItem extends StatelessWidget {
                   Text(
                     _statusText(),
                     style: TextStyle(
-                        fontSize: 2.2 * SizeConfig.textMultiplier!,
+                        fontSize: 2.2.rt,
                         color: _statusColor()),
                   ),
                   SizedBox(

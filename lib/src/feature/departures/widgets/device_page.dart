@@ -1,7 +1,7 @@
 import 'package:ding/src/feature/departures/bloc/departures_bloc.dart';
 import 'package:ding/src/feature/departures/bloc/departures_event.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:ding/src/ui/slide_action.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,8 +16,8 @@ class DevicePage extends StatefulWidget {
 
 class _DevicePageState extends State<DevicePage> {
   Widget _infoContainer() => Container(
-        width: 30 * SizeConfig.heightMultiplier!,
-        height: 30 * SizeConfig.heightMultiplier!,
+        width: 30.0.rh,
+        height: 30.0.rh,
         decoration: BoxDecoration(
             color: DingColors.veryLight(), shape: BoxShape.circle),
         child: Column(
@@ -25,12 +25,12 @@ class _DevicePageState extends State<DevicePage> {
           children: [
             Text(
               '10:45',
-              style: TextStyle(fontSize: 6.1 * SizeConfig.textMultiplier!),
+              style: TextStyle(fontSize: 6.1.rt),
             ),
             Text(
               'دوشنبه، 17 مرداد',
               style: TextStyle(
-                  fontSize: 2.73 * SizeConfig.textMultiplier!,
+                  fontSize: 2.73.rt,
                   fontWeight: FontWeight.w300),
             ),
             Row(
@@ -39,7 +39,7 @@ class _DevicePageState extends State<DevicePage> {
                 Text(
                   '33°C',
                   style: TextStyle(
-                      fontSize: 2.73 * SizeConfig.textMultiplier!,
+                      fontSize: 2.73.rt,
                       fontWeight: FontWeight.w300),
                 ),
                 SizedBox(
@@ -47,7 +47,7 @@ class _DevicePageState extends State<DevicePage> {
                 ),
                 SvgPicture.asset(
                   'assets/images/cloud.svg',
-                  width: 7 * SizeConfig.widthMultiplier!,
+                  width: 7.0.rw,
                 ),
               ],
             )
@@ -87,14 +87,14 @@ class _DevicePageState extends State<DevicePage> {
               Text(
                 'ورود شما در ساعت 20:05 از طریق دستگاه ثبت شده است.',
                 style: TextStyle(
-                    fontSize: 3.4 * SizeConfig.widthMultiplier!,
+                    fontSize: 3.4 .rw,
                     fontWeight: FontWeight.w400),
               ),
             ],
           ),
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: 9.7 * SizeConfig.widthMultiplier!),
+                horizontal: 9.7 .rw),
             child: SlideAction(
               child: SizedBox(),
               reversed: true,
@@ -111,13 +111,13 @@ class _DevicePageState extends State<DevicePage> {
                 color: DingColors.primary(),
               ),
               onSubmit: () {},
-              height: 8.9 * SizeConfig.heightMultiplier!,
+              height: 8.9.rh,
               txt: 'ورود',
             ),
           ),
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: 9.7 * SizeConfig.widthMultiplier!),
+                horizontal: 9.7 .rw),
             child: SlideAction(
               child: SizedBox(),
               reversed: false,
@@ -134,7 +134,7 @@ class _DevicePageState extends State<DevicePage> {
                 color: DingColors.primary(),
               ),
               onSubmit: () {},
-              height: 8.9 * SizeConfig.heightMultiplier!,
+              height: 8.9.rh,
               txt: 'خروج',
             ),
           ),

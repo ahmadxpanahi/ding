@@ -8,7 +8,7 @@ import 'package:ding/src/feature/enter_code/enter_code_screen.dart';
 import 'package:ding/src/feature/home/home_screen.dart';
 import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -59,8 +59,8 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
             },
             child: Container(
               alignment: Alignment.center,
-              height: 9 * SizeConfig.heightMultiplier!,
-              width: 73.2 * SizeConfig.widthMultiplier!,
+              height: 9.0.rh,
+              width: 73.2 .rw,
               decoration: BoxDecoration(
                 color: _validation()
                     ? DingColors.veryLight()
@@ -70,7 +70,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
               child: Text(
                 'ورود',
                 style: TextStyle(
-                    fontSize: 2.73 * SizeConfig.textMultiplier!,
+                    fontSize: 2.73.rt,
                     color: _validation() ? DingColors.light() : Colors.white),
               ),
             ),
@@ -86,8 +86,8 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
         child: Container(
           alignment: Alignment.center,
           margin: EdgeInsets.only(bottom: 25),
-          height: 9 * SizeConfig.heightMultiplier!,
-          width: 73.2 * SizeConfig.widthMultiplier!,
+          height: 9.0.rh,
+          width: 73.2 .rw,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
               border: Border.all(color: DingColors.dark(), width: 2)),
@@ -98,7 +98,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
               Text(
                 'ورود با شماره موبایل',
                 style: TextStyle(
-                    fontSize: 2.73 * SizeConfig.textMultiplier!,
+                    fontSize: 2.73.rt,
                     color: DingColors.dark()),
               ),
               Expanded(
@@ -116,14 +116,14 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 65.8 * SizeConfig.widthMultiplier!,
+            width: 65.8 .rw,
             child: RichText(
               textAlign: TextAlign.end,
               maxLines: 2,
               text: TextSpan(
                   text: 'قوانین و شرایط',
                   style: TextStyle(
-                      fontSize: 4.1 * SizeConfig.widthMultiplier!,
+                      fontSize: 4.1 .rw,
                       fontWeight: FontWeight.bold,
                       color: DingColors.dark()),
                   children: [
@@ -132,7 +132,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                             ' استفاده از سامانه دینگ را به صورت کامل مطالعه نموده ام',
                         style: TextStyle(
                             fontWeight: FontWeight.w200,
-                            fontSize: 4.1 * SizeConfig.widthMultiplier!,
+                            fontSize: 4.1 .rw,
                             color: DingColors.dark()))
                   ]),
             ),
@@ -168,9 +168,9 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
           backgroundColor: Colors.white,
           body: Padding(
             padding: EdgeInsets.only(
-                right: 7.3 * SizeConfig.widthMultiplier!,
-                left: 7.3 * SizeConfig.widthMultiplier!,
-                top: 5.47 * SizeConfig.heightMultiplier!),
+                right: 7.3 .rw,
+                left: 7.3 .rw,
+                top: 5.47.rh),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -183,17 +183,17 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                       Text(
                         'ورود با ایمیل',
                         style: TextStyle(
-                            fontSize: 2.73 * SizeConfig.textMultiplier!,
+                            fontSize: 2.73.rt,
                             color: DingColors.dark()),
                       ),
                       SizedBox(
-                        height: 2.73 * SizeConfig.heightMultiplier!,
+                        height: 2.73.rh,
                       ),
                       Column(
                         children: [
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 10),
-                            height: 8.2 * SizeConfig.heightMultiplier!,
+                            height: 8.2.rh,
                             decoration: BoxDecoration(
                                 border:
                                     Border.all(width: 0.6, color: Colors.grey)),
@@ -205,14 +205,14 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                               },
                               keyboardType: TextInputType.emailAddress,
                               style: TextStyle(
-                                  fontSize: 2.73 * SizeConfig.textMultiplier!,
+                                  fontSize: 2.73.rt,
                                   letterSpacing: 2),
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: 'مستاجر',
                                   hintStyle: TextStyle(
                                       fontSize:
-                                          2.73 * SizeConfig.textMultiplier!,
+                                          2.73.rt,
                                       color: Colors.grey)),
                             ),
                           ),
@@ -221,7 +221,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                           ),
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 10),
-                            height: 8.2 * SizeConfig.heightMultiplier!,
+                            height: 8.2.rh,
                             decoration: BoxDecoration(
                                 border:
                                     Border.all(width: 0.6, color: Colors.grey)),
@@ -233,14 +233,14 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                               },
                               keyboardType: TextInputType.emailAddress,
                               style: TextStyle(
-                                  fontSize: 2.73 * SizeConfig.textMultiplier!,
+                                  fontSize: 2.73.rt,
                                   letterSpacing: 2),
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: 'ایمیل',
                                   hintStyle: TextStyle(
                                       fontSize:
-                                          2.73 * SizeConfig.textMultiplier!,
+                                          2.73.rt,
                                       color: Colors.grey)),
                             ),
                           ),
@@ -249,7 +249,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                           ),
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 10),
-                            height: 8.2 * SizeConfig.heightMultiplier!,
+                            height: 8.2.rh,
                             decoration: BoxDecoration(
                                 border:
                                     Border.all(width: 0.6, color: Colors.grey)),
@@ -261,14 +261,14 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                               },
                               keyboardType: TextInputType.emailAddress,
                               style: TextStyle(
-                                  fontSize: 2.73 * SizeConfig.textMultiplier!,
+                                  fontSize: 2.73.rt,
                                   letterSpacing: 2),
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: 'رمز عبور',
                                   hintStyle: TextStyle(
                                       fontSize:
-                                          2.73 * SizeConfig.textMultiplier!,
+                                          2.73.rt,
                                       color: Colors.grey)),
                             ),
                           ),
@@ -278,7 +278,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                   ),
                 ),
                 SizedBox(
-                  height: 2.7 * SizeConfig.heightMultiplier!,
+                  height: 2.7.rh,
                 ),
                 Expanded(
                   flex: 2,
@@ -286,7 +286,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                     children: [
                       _rules(),
                       SizedBox(
-                        height: 2 * SizeConfig.heightMultiplier!,
+                        height: 2.0.rh,
                       ),
                       _enterButton(),
                     ],

@@ -1,5 +1,5 @@
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -22,10 +22,10 @@ class _DDatePickerState extends State<DDatePicker> {
         Text(
           widget.title??'',
           style: TextStyle(
-              fontSize: widget.type == 'begin' ? 2.7 * SizeConfig.textMultiplier! : 3 * SizeConfig.textMultiplier!, color: Colors.grey),
+              fontSize: widget.type == 'begin' ? 2.7.rt : 3.0.rt, color: Colors.grey),
         ),
         SizedBox(
-          width: 3.6 * SizeConfig.widthMultiplier!,
+          width: 3.6 .rw,
         ),
         Expanded(
           flex: 1,
@@ -36,10 +36,10 @@ class _DDatePickerState extends State<DDatePicker> {
                   builder: (_) {
                     return AlertDialog(
                       contentPadding: EdgeInsets.symmetric(
-                          horizontal: 2.6 * SizeConfig.widthMultiplier!,
-                          vertical: 1.3 * SizeConfig.heightMultiplier!),
+                          horizontal: 2.6 .rw,
+                          vertical: 1.3.rh),
                       content: SizedBox(
-                        height: 36.7 * SizeConfig.heightMultiplier!,
+                        height: 36.7.rh,
                         child: Column(
                           children: [
                             Expanded(
@@ -68,7 +68,7 @@ class _DDatePickerState extends State<DDatePicker> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontSize:
-                                            3 * SizeConfig.textMultiplier! - 2,
+                                            3.0.rt - 2,
                                         color: DingColors.primary()),
                                   ),
                                 ))
@@ -80,16 +80,16 @@ class _DDatePickerState extends State<DDatePicker> {
             },
             child: Container(
               padding: EdgeInsets.symmetric(
-                  horizontal: 2 * SizeConfig.widthMultiplier!),
-              height: 8.8 * SizeConfig.heightMultiplier!,
+                  horizontal: 2.0.rw),
+              height: 8.8.rh,
               color: DingColors.veryLight(),
               child: Row(
                 children: [
                   Expanded(
                     child: Padding(
                         padding: EdgeInsets.symmetric(
-                            vertical: 2.2 * SizeConfig.heightMultiplier!,
-                            horizontal: 2.5 * SizeConfig.widthMultiplier!),
+                            vertical: 2.2.rh,
+                            horizontal: 2.5 .rw),
                         child: date == null
                             ? Align(
                                 alignment: Alignment.bottomCenter,
@@ -101,13 +101,13 @@ class _DDatePickerState extends State<DDatePicker> {
                             : Text(
                                 '${date!.day} ${date!.monthname} ${date!.year}',
                                 style: TextStyle(
-                                    fontSize: 3 * SizeConfig.textMultiplier!),
+                                    fontSize: 3.0.rt),
                                 textAlign: TextAlign.center,
                               )),
                   ),
                   SvgPicture.asset(
                     'assets/images/clock.svg',
-                    width: 3.4 * SizeConfig.heightMultiplier!,
+                    width: 3.4.rh,
                   )
                 ],
               ),
@@ -115,7 +115,7 @@ class _DDatePickerState extends State<DDatePicker> {
           ),
         ),
         SizedBox(
-          width: 2.7 * SizeConfig.widthMultiplier!,
+          width: 2.7 .rw,
         ),
         Expanded(
           flex: 2,
@@ -126,10 +126,10 @@ class _DDatePickerState extends State<DDatePicker> {
                   builder: (_) {
                     return AlertDialog(
                       contentPadding: EdgeInsets.symmetric(
-                          horizontal: 2.6 * SizeConfig.widthMultiplier!,
-                          vertical: 1.3 * SizeConfig.heightMultiplier!),
+                          horizontal: 2.6 .rw,
+                          vertical: 1.3.rh),
                       content: SizedBox(
-                        height: 36.7 * SizeConfig.heightMultiplier!,
+                        height: 36.7.rh,
                         child: Column(
                           children: [
                             Expanded(
@@ -158,7 +158,7 @@ class _DDatePickerState extends State<DDatePicker> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontSize:
-                                            3 * SizeConfig.textMultiplier! - 2,
+                                            3.0.rt - 2,
                                         color: DingColors.primary()),
                                   ),
                                 ))
@@ -170,16 +170,16 @@ class _DDatePickerState extends State<DDatePicker> {
             },
             child: Container(
               padding: EdgeInsets.symmetric(
-                  horizontal: 2 * SizeConfig.widthMultiplier!),
-              height: 8.8 * SizeConfig.heightMultiplier!,
+                  horizontal: 2.0.rw),
+              height: 8.8.rh,
               color: DingColors.veryLight(),
               child: Row(
                 children: [
                   Expanded(
                     child: Padding(
                         padding: EdgeInsets.symmetric(
-                            vertical: 2.2 * SizeConfig.heightMultiplier!,
-                            horizontal: 4.8 * SizeConfig.widthMultiplier!),
+                            vertical: 2.2.rh,
+                            horizontal: 4.8 .rw),
                         child: date == null
                             ? Align(
                                 alignment: Alignment.bottomCenter,
@@ -191,13 +191,13 @@ class _DDatePickerState extends State<DDatePicker> {
                             : Text(
                                 '${date!.day} ${date!.monthname} ${date!.year}',
                                 style: TextStyle(
-                                    fontSize: 3 * SizeConfig.textMultiplier!),
+                                    fontSize: 3.0.rt),
                                 textAlign: TextAlign.center,
                               )),
                   ),
                   SvgPicture.asset(
                     'assets/images/calendar.svg',
-                    width: 3.4 * SizeConfig.heightMultiplier!,
+                    width: 3.4.rh,
                   )
                 ],
               ),

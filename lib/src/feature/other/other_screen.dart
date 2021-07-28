@@ -4,7 +4,7 @@ import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/feature/other/widgets/options_tile.dart';
 import 'package:ding/src/feature/setting/setting_screen.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -28,8 +28,8 @@ class _OtherScreenState extends State<OtherScreen> {
             Row(
               children: [
                 Container(
-                  width: 20 * SizeConfig.widthMultiplier!,
-                  height: 20 * SizeConfig.widthMultiplier!,
+                  width: 20.0.rw,
+                  height: 20.0.rw,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: DingColors.light(),
@@ -39,7 +39,7 @@ class _OtherScreenState extends State<OtherScreen> {
                           fit: BoxFit.fill)),
                 ),
                 SizedBox(
-                  width: 3.6 * SizeConfig.widthMultiplier!,
+                  width: 3.6 .rw,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,21 +48,21 @@ class _OtherScreenState extends State<OtherScreen> {
                     Text(
                       'پژمان شفیعی',
                       style: TextStyle(
-                          fontSize: 5 * SizeConfig.widthMultiplier!,
+                          fontSize: 5.0.rw,
                           fontWeight: FontWeight.bold,
                           color: DingColors.dark()),
                     ),
                     Text(
                       'توسعه ارتباطات دینگ',
                       style: TextStyle(
-                          fontSize: 5 * SizeConfig.widthMultiplier! - 5,
+                          fontSize: 5.0.rw - 5,
                           fontWeight: FontWeight.w300,
                           color: DingColors.dark()),
                     ),
                     Text(
                       'واحد فروش',
                       style: TextStyle(
-                          fontSize: 5 * SizeConfig.widthMultiplier! - 5,
+                          fontSize: 5.0.rw - 5,
                           fontWeight: FontWeight.w200,
                           color: DingColors.dark()),
                     ),
@@ -84,7 +84,7 @@ class _OtherScreenState extends State<OtherScreen> {
               },
               icon: SvgPicture.asset(
                 'assets/images/edit.svg',
-                width: 7.3 * SizeConfig.widthMultiplier!,
+                width: 7.3 .rw,
               ),
             )
           ],
@@ -94,19 +94,19 @@ class _OtherScreenState extends State<OtherScreen> {
   Widget _item(String txt, String imgUrl) => Row(
         children: [
           SizedBox(
-            width: 7 * SizeConfig.widthMultiplier!,
+            width: 7.0.rw,
           ),
           SvgPicture.asset(
             imgUrl,
-            width: 8 * SizeConfig.widthMultiplier!,
+            width: 8.0.rw,
           ),
           SizedBox(
-            width: 6 * SizeConfig.widthMultiplier!,
+            width: 6.0.rw,
           ),
           Text(
             txt,
             style: TextStyle(
-                fontSize: 2.7 * SizeConfig.textMultiplier! - 5,
+                fontSize: 2.7.rt - 5,
                 fontWeight: FontWeight.w300,
                 color: DingColors.dark()),
           )
@@ -169,7 +169,7 @@ class _OtherScreenState extends State<OtherScreen> {
                     children: [
                       SvgPicture.asset(
                         'assets/images/web.svg',
-                        width: 8 * SizeConfig.widthMultiplier!,
+                        width: 8.0.rw,
                       ),
                       SizedBox(
                         height: 5,
@@ -177,7 +177,7 @@ class _OtherScreenState extends State<OtherScreen> {
                       Text(
                         'وب سایت',
                         style: TextStyle(
-                            fontSize: 2.7 * SizeConfig.textMultiplier! - 5,
+                            fontSize: 2.7.rt - 5,
                             fontWeight: FontWeight.w200,
                             color: DingColors.dark()),
                       ),
@@ -187,7 +187,7 @@ class _OtherScreenState extends State<OtherScreen> {
                     children: [
                       SvgPicture.asset(
                         'assets/images/telegram.svg',
-                        width: 8 * SizeConfig.widthMultiplier!,
+                        width: 8.0.rw,
                       ),
                       SizedBox(
                         height: 5,
@@ -195,7 +195,7 @@ class _OtherScreenState extends State<OtherScreen> {
                       Text(
                         'تلگرام',
                         style: TextStyle(
-                            fontSize: 2.7 * SizeConfig.textMultiplier! - 5,
+                            fontSize: 2.7.rt - 5,
                             fontWeight: FontWeight.w200,
                             color: DingColors.dark()),
                       ),
@@ -206,7 +206,7 @@ class _OtherScreenState extends State<OtherScreen> {
                       Transform.scale(
                         child: SvgPicture.asset(
                           'assets/images/instagram.svg',
-                          width: 8 * SizeConfig.widthMultiplier!,
+                          width: 8.0.rw,
                         ),
                         scale: 1.4,
                       ),
@@ -216,7 +216,7 @@ class _OtherScreenState extends State<OtherScreen> {
                       Text(
                         'اینستاگرام',
                         style: TextStyle(
-                            fontSize: 2.7 * SizeConfig.textMultiplier! - 5,
+                            fontSize: 2.7.rt - 5,
                             fontWeight: FontWeight.w200,
                             color: DingColors.dark()),
                       ),
