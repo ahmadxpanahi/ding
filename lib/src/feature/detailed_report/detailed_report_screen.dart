@@ -1,15 +1,33 @@
+import 'package:ding/src/feature/detailed_report/bloc/de_report_bloc.dart';
+import 'package:ding/src/feature/detailed_report/bloc/de_report_event.dart';
+import 'package:ding/src/feature/detailed_report/bloc/de_report_state.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class DetailedReportScreen extends StatefulWidget {
+class DetailedReportScreen extends StatelessWidget {
   const DetailedReportScreen({Key? key}) : super(key: key);
 
   @override
-  _DetailedReportScreenState createState() => _DetailedReportScreenState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => DetailedReportBloc(),
+      child: DetailedReportContainer(),
+    );
+  }
 }
 
-class _DetailedReportScreenState extends State<DetailedReportScreen> {
+class DetailedReportContainer extends StatefulWidget {
+  const DetailedReportContainer({Key? key}) : super(key: key);
+
+  @override
+  _DetailedReportContainerState createState() =>
+      _DetailedReportContainerState();
+}
+
+class _DetailedReportContainerState extends State<DetailedReportContainer> {
+  late DetailedReportBloc _detailedReportBloc;
 
   Widget _infoContainer() => Column(
         children: [
@@ -161,62 +179,83 @@ class _DetailedReportScreenState extends State<DetailedReportScreen> {
               )
             ],
           ));
+  @override
+  void initState() {
+    super.initState();
+    _detailedReportBloc = BlocProvider.of<DetailedReportBloc>(context);
+    _detailedReportBloc.add(ShowDeReportLoading(true));
+    Future.delayed(Duration(milliseconds: 1500),(){
+      _detailedReportBloc.add(GetDetailedReportData());
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: DingColors.veryLight(),
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
-        child: Container(
-          padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
-          alignment: Alignment.center,
-          color: DingColors.primary(),
-          height: 13.3 * SizeConfig.heightMultiplier!,
-          child: Row(
-            children: [
-              Expanded(
-                  child: Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding:
-                      EdgeInsets.only(right: 2.4 * SizeConfig.widthMultiplier!),
-                  child: IconButton(
-                    color: Colors.white,
-                    icon: Icon(
-                      Icons.arrow_back_ios,
-                      size: 3 * SizeConfig.heightMultiplier!,
+        backgroundColor: DingColors.veryLight(),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(100),
+          child: Container(
+            padding: EdgeInsets.only(top: 2.2 * SizeConfig.heightMultiplier!),
+            alignment: Alignment.center,
+            color: DingColors.primary(),
+            height: 13.3 * SizeConfig.heightMultiplier!,
+            child: Row(
+              children: [
+                Expanded(
+                    child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                        right: 2.4 * SizeConfig.widthMultiplier!),
+                    child: IconButton(
+                      color: Colors.white,
+                      icon: Icon(
+                        Icons.arrow_back_ios,
+                        size: 3 * SizeConfig.heightMultiplier!,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                     ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
                   ),
+                )),
+                Text(
+                  'گزارش تفضیلی',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 2.73 * SizeConfig.textMultiplier!,
+                      color: Colors.white),
                 ),
-              )),
-              Text(
-                'گزارش تفضیلی',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 2.73 * SizeConfig.textMultiplier!,
-                    color: Colors.white),
-              ),
-              Expanded(child: SizedBox())
-            ],
+                Expanded(child: SizedBox())
+              ],
+            ),
           ),
         ),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            _infoContainer(),
-            _timesContainer('سه شنبه، 21', '1386', 'خرداد', '02:51:00'),
-            _timesContainer('سه شنبه، 21', '1386', 'خرداد', '02:51:00'),
-            _timesContainer('سه شنبه، 21', '1386', 'خرداد', '02:51:00'),
-            _timesContainer('سه شنبه، 21', '1386', 'خرداد', '02:51:00'),
-            _timesContainer('سه شنبه، 21', '1386', 'خرداد', '02:51:00'),
-          ],
-        ),
-      ),
-    );
+        body: BlocBuilder(
+          bloc: _detailedReportBloc,
+          builder: (_, state) {
+            if (state is DeReportLoadingState) {
+              return Center(
+                child: CircularProgressIndicator(
+                  color: DingColors.primary(),
+                ),
+              );
+            } else {
+              return SingleChildScrollView(
+                child: Column(
+                  children: [
+                    _infoContainer(),
+                    _timesContainer('سه شنبه، 21', '1386', 'خرداد', '02:51:00'),
+                    _timesContainer('سه شنبه، 21', '1386', 'خرداد', '02:51:00'),
+                    _timesContainer('سه شنبه، 21', '1386', 'خرداد', '02:51:00'),
+                    _timesContainer('سه شنبه، 21', '1386', 'خرداد', '02:51:00'),
+                    _timesContainer('سه شنبه، 21', '1386', 'خرداد', '02:51:00'),
+                  ],
+                ),
+              );
+            }
+          },
+        ));
   }
 }
