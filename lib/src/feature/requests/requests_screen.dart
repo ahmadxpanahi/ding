@@ -104,65 +104,78 @@ class _RequestsContainerState extends State<RequestsContainer> {
             });
           },
           children: [
-            Stack(
-              children: [
-                SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      MyRequestsItem(
-                        status: 'pending',
-                        type: 'leave',
-                        info1: 'استعلاجی',
-                        info2: 'روزانه',
-                        time: DateTime.now(),
-                        date: '3 شهریور',
-                      ),
-                      MyRequestsItem(
-                        status: 'failed',
-                        type: 'enterAndExit',
-                        info1: 'ثبت',
-                        info2: 'لوکیشن',
-                        time: DateTime.now(),
-                        date: '3 شهریور',
-                      ),
-                      MyRequestsItem(
-                        status: 'accepted',
-                        type: 'mission',
-                        info1: 'استعلاجی',
-                        info2: 'روزانه',
-                        time: DateTime.now(),
-                        date: '3 شهریور',
-                      ),
-                    ],
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => CreateRequestScreen()));
-                    },
-                    child: Container(
-                      margin: EdgeInsets.only(bottom: 15),
-                      alignment: Alignment.center,
-                      height: 14.6 .rw,
-                      width: 14.6 .rw,
-                      decoration: BoxDecoration(
-                        color: DingColors.primary(),
-                        borderRadius: BorderRadius.circular(100),
-                      ),
-                      child: Icon(
-                        Icons.add,
-                        size: 12.0.rw,
-                        color: Colors.white,
-                      ),
+            BlocBuilder(
+              bloc: _requestsBloc,
+              builder: (_, state) {
+                if (state is RequestsLoadingState)
+                  return Center(
+                    child: CircularProgressIndicator(
+                      color: DingColors.primary(),
                     ),
-                  ),
-                )
-              ],
+                  );
+                else {
+                  return Stack(
+                    children: [
+                      SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            MyRequestsItem(
+                              status: 'pending',
+                              type: 'leave',
+                              info1: 'استعلاجی',
+                              info2: 'روزانه',
+                              time: DateTime.now(),
+                              date: '3 شهریور',
+                            ),
+                            MyRequestsItem(
+                              status: 'failed',
+                              type: 'enterAndExit',
+                              info1: 'ثبت',
+                              info2: 'لوکیشن',
+                              time: DateTime.now(),
+                              date: '3 شهریور',
+                            ),
+                            MyRequestsItem(
+                              status: 'accepted',
+                              type: 'mission',
+                              info1: 'استعلاجی',
+                              info2: 'روزانه',
+                              time: DateTime.now(),
+                              date: '3 شهریور',
+                            ),
+                          ],
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => CreateRequestScreen()));
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(bottom: 15),
+                            alignment: Alignment.center,
+                            height: 14.6 .rw,
+                            width: 14.6 .rw,
+                            decoration: BoxDecoration(
+                              color: DingColors.primary(),
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                            child: Icon(
+                              Icons.add,
+                              size: 12.0.rw,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  );
+                }
+              },
             ),
             BlocBuilder(
               bloc: _requestsBloc,

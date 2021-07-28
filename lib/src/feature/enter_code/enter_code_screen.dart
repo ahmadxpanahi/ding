@@ -41,6 +41,7 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
