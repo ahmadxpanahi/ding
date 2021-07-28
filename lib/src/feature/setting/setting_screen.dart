@@ -1,16 +1,30 @@
+import 'package:ding/src/feature/setting/bloc/setting_bloc.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SettingScreen extends StatefulWidget {
+class SettingScreen extends StatelessWidget {
   const SettingScreen({Key? key}) : super(key: key);
 
   @override
-  _SettingScreenState createState() => _SettingScreenState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => SettingBLoc(),
+      child: SettingContainer(),
+    );
+  }
 }
 
-class _SettingScreenState extends State<SettingScreen> {
+class SettingContainer extends StatefulWidget {
+  const SettingContainer({Key? key}) : super(key: key);
+
+  @override
+  _SettingContainerState createState() => _SettingContainerState();
+}
+
+class _SettingContainerState extends State<SettingContainer> {
   bool val1 = false;
   bool val2 = false;
   @override
@@ -37,7 +51,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         color: Colors.white,
                         icon: Icon(
                           Icons.arrow_back_ios,
-                          size: 3*SizeConfig.heightMultiplier!,
+                          size: 3 * SizeConfig.heightMultiplier!,
                         ),
                         onPressed: () {
                           Navigator.pop(context);
@@ -78,7 +92,8 @@ class _SettingScreenState extends State<SettingScreen> {
                         Switch(
                             activeColor: DingColors.primary(),
                             inactiveThumbColor: DingColors.light(),
-                            activeTrackColor: DingColors.primary().withOpacity(0.5),
+                            activeTrackColor:
+                                DingColors.primary().withOpacity(0.5),
                             value: val1,
                             onChanged: (val) {
                               setState(() {
@@ -98,7 +113,8 @@ class _SettingScreenState extends State<SettingScreen> {
                         Switch(
                             activeColor: DingColors.primary(),
                             inactiveThumbColor: DingColors.light(),
-                            activeTrackColor: DingColors.primary().withOpacity(0.5),
+                            activeTrackColor:
+                                DingColors.primary().withOpacity(0.5),
                             value: val2,
                             onChanged: (val) {
                               setState(() {
@@ -110,7 +126,9 @@ class _SettingScreenState extends State<SettingScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Text(
                 'نسخه 1.0.0',
                 style: TextStyle(fontSize: 12, color: Colors.grey),
