@@ -7,6 +7,7 @@ import 'package:ding/src/ui/slide_action.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:persian_number_utility/persian_number_utility.dart';
 
 class DevicePage extends StatefulWidget {
   DevicePage({Key? key}) : super(key: key);
@@ -16,6 +17,8 @@ class DevicePage extends StatefulWidget {
 }
 
 class _DevicePageState extends State<DevicePage> {
+  String now =
+      '${DateTime.now().hour.timePadded.toString().toPersianDigit()}:${DateTime.now().minute.timePadded.toString().toPersianDigit()}';
   Widget _infoContainer() => Container(
         width: 30.0.rh,
         height: 30.0.rh,
@@ -25,18 +28,21 @@ class _DevicePageState extends State<DevicePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              '10:45',
+              now,
               style: TextStyle(fontSize: 6.1.rt),
             ),
             Text(
-              'دوشنبه، 17 مرداد',
+              '${DateTime.now().toPersianDateStr(
+                showDayStr: true,
+                strYear: false,
+              )}'.replaceRange(13, 18,''),
               style: TextStyle(fontSize: 2.73.rt, fontWeight: FontWeight.w300),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  '33°C',
+                  '${'33'.toPersianDigit()}°C',
                   style:
                       TextStyle(fontSize: 2.73.rt, fontWeight: FontWeight.w300),
                 ),
@@ -83,7 +89,7 @@ class _DevicePageState extends State<DevicePage> {
                 width: 3,
               ),
               Text(
-                'ورود شما در ساعت 20:05 از طریق دستگاه ثبت شده است.',
+                'ورود شما در ساعت ${now} از طریق دستگاه ثبت شده است.',
                 style: TextStyle(fontSize: 3.4.rw, fontWeight: FontWeight.w400),
               ),
             ],

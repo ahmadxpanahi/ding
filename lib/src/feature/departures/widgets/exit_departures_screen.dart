@@ -8,6 +8,8 @@ import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jalali_calendar/jalali_calendar.dart';
+import  'package:persian_number_utility/persian_number_utility.dart';
 
 class ExitDeparturesScreen extends StatefulWidget {
   int progress;
@@ -124,7 +126,7 @@ class _ExitDeparturesScreenState extends State<ExitDeparturesScreen> {
                     context: context,
                     builder: (_) => DingDialog(
                       title:
-                      'خروج شما در روز سه شنبه 10/03/1389 ساعت 20:05 با موفقیت ثبت شد',
+                      'خروج شما در روز سه شنبه ${PersianDate().getNow.toPersianDigit()} با موفقیت ثبت شد',
                       buttonText: 'متوجه شدم',
                       onClick: () {
                         Navigator.pop(context);

@@ -7,6 +7,7 @@ import 'package:ding/src/ui/slide_action.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:persian_number_utility/persian_number_utility.dart';
 
 class LocationPage extends StatefulWidget {
   const LocationPage({Key? key}) : super(key: key);
@@ -17,6 +18,8 @@ class LocationPage extends StatefulWidget {
 
 class _LocationPageState extends State<LocationPage> {
   late DeparturesBloc _bloc;
+  String now =
+      '${DateTime.now().hour.timePadded.toString().toPersianDigit()}:${DateTime.now().minute.timePadded.toString().toPersianDigit()}';
 
   Widget _mapContainer() => Container(
         color: DingColors.secondary(),
@@ -35,15 +38,21 @@ class _LocationPageState extends State<LocationPage> {
                   children: [
                     Expanded(
                         child: Text(
-                      '10:45',
+                      now,
                       style: TextStyle(fontSize: 5.0.rw),
                     )),
                     Text(
-                      'دوشنبه',
+                      '${DateTime.now().toPersianDateStr(
+                        showDayStr: true,
+                        strYear: false,
+                      )}'.replaceRange(13, 18,'').replaceRange(5, 12, ''),
                       style: TextStyle(fontSize: 5.0.rw - 7),
                     ),
                     Text(
-                      '17 مرداد',
+                      '${DateTime.now().toPersianDateStr(
+                        showDayStr: true,
+                        strYear: false,
+                      )}'.replaceRange(13, 18,'').replaceRange(0, 5, ''),
                       style: TextStyle(fontSize: 5.0.rw - 7),
                     ),
                     Expanded(
@@ -51,7 +60,7 @@ class _LocationPageState extends State<LocationPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            '33°C',
+                            '${'33'.toPersianDigit()}°C',
                             style: TextStyle(
                                 fontSize: 5.0.rw - 5,
                                 fontWeight: FontWeight.w300),
