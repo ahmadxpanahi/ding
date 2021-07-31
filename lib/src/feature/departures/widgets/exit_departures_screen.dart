@@ -119,18 +119,42 @@ class _ExitDeparturesScreenState extends State<ExitDeparturesScreen> {
         listener: (_, state) {
           if (state is DeparturesStatusState) {
             if (state.showDialog) {
-              showDialog(
-                  context: context,
-                  builder: (_) => DingDialog(
-                        title:
-                            'خروج شما در روز سه شنبه 10/03/1389 ساعت 20:05 با موفقیت ثبت شد',
-                        buttonText: 'متوجه شدم',
-                        onClick: () {
-                          Navigator.pop(context);
-                          _bloc.add(BackToInitial());
-                        },
-                      ));
+              if (state.dialogType == 'success') {
+                showDialog(
+                    context: context,
+                    builder: (_) => DingDialog(
+                      title:
+                      'خروج شما در روز سه شنبه 10/03/1389 ساعت 20:05 با موفقیت ثبت شد',
+                      buttonText: 'متوجه شدم',
+                      onClick: () {
+                        Navigator.pop(context);
+                        _bloc.add(BackToInitial());
+                      },
+                    ));
+              } else if (state.dialogType == 'network') {
+                showDialog(
+                    context: context,
+                    builder: (_) => DingDialog(
+                      title: 'اتصال اینترنت خود را بررسی کنید.',
+                      buttonText: 'متوجه شدم',
+                      onClick: () {
+                        Navigator.pop(context);
+                        _bloc.add(BackToInitial());
+                      },
+                    ));
+              }
             }
+          } else if(state is DoDepartureError) {
+            showDialog(
+                context: context,
+                builder: (_) => DingDialog(
+                  title: state.message,
+                  buttonText: 'متوجه شدم',
+                  onClick: () {
+                    Navigator.pop(context);
+                    _bloc.add(BackToInitial());
+                  },
+                ));
           }
         },
       );

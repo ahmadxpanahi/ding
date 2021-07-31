@@ -13,9 +13,9 @@ class DeparturesStatusState extends DeparturesState {
   int selectedPage;
   int progress;
   bool showDialog;
-  bool networkConnection;
+  String dialogType;
   DeparturesStatusState(
-      {this.networkConnection = false,
+      {this.dialogType = 'success',
       this.isEnter = true,
       this.progress = 0,
       this.showDialog = false,
@@ -24,12 +24,9 @@ class DeparturesStatusState extends DeparturesState {
   List<Object?> get props => [isEnter, progress, selectedPage];
 }
 
-class DeparturesSuccess extends DeparturesState {
+class DoDepartureError extends DeparturesState {
+  String message;
+  DoDepartureError(this.message);
   @override
-  List<Object?> get props => [];
-}
-
-class DeparturesDialogState extends DeparturesState {
-  @override
-  List<Object?> get props => [];
+  List<Object?> get props => [message];
 }

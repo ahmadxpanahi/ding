@@ -118,7 +118,7 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
         listener: (_, state) {
           if (state is DeparturesStatusState) {
             if (state.showDialog) {
-              if (state.networkConnection) {
+              if (state.dialogType == 'success') {
                 showDialog(
                     context: context,
                     builder: (_) => DingDialog(
@@ -130,7 +130,7 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
                             _bloc.add(BackToInitial());
                           },
                         ));
-              } else if (!state.networkConnection) {
+              } else if (state.dialogType == 'network') {
                 showDialog(
                     context: context,
                     builder: (_) => DingDialog(
@@ -143,6 +143,17 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
                         ));
               }
             }
+          } else if(state is DoDepartureError) {
+            showDialog(
+                context: context,
+                builder: (_) => DingDialog(
+                  title: state.message,
+                  buttonText: 'متوجه شدم',
+                  onClick: () {
+                    Navigator.pop(context);
+                    _bloc.add(BackToInitial());
+                  },
+                ));
           }
         },
       );

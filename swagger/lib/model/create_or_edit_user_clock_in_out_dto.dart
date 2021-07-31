@@ -83,8 +83,8 @@ class CreateOrEditUserClockInOutDto {
   Map<String, dynamic> toJson() {
     return {
       'clock': clock == null ? '' : clock!.toUtc().toIso8601String(),
-      'clockInOutType': clockInOutType,
-      'abnormalityType': abnormalityType,
+      'clockInOutType': clockInOutType?.value,
+      'abnormalityType': abnormalityType?.value,
       'weekNumber': weekNumber,
       'projectName': projectName,
       'description': description,
@@ -93,7 +93,7 @@ class CreateOrEditUserClockInOutDto {
       'workHourId': workHourId,
       'organizationUnitId': organizationUnitId,
       'id': id
-     };
+    };
   }
 
   static List<CreateOrEditUserClockInOutDto> listFromJson(List<dynamic> json) {

@@ -59,7 +59,7 @@ class UserClockInOutsApi {
   }
   /// ApiServicesAppUserclockinoutsCreateoreditPost
   ///
-  /// 
+  ///
   Future apiServicesAppUserclockinoutsCreateoreditPost({ CreateOrEditUserClockInOutDto? body }) async {
     Object? postBody = body;
 
@@ -96,6 +96,9 @@ class UserClockInOutsApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    print('from swagger :');
+    print(response!.body);
+    print(response!.statusCode);
  if(response == null) return null;
 
     if(response.statusCode >= 400) {

@@ -1,11 +1,16 @@
 import 'package:equatable/equatable.dart';
+import 'package:swagger/api.dart';
 
 abstract class DeparturesEvent extends Equatable {}
 
 class DoDeparturesEvent extends DeparturesEvent {
   bool isEnter;
   int selectedPage;
-  DoDeparturesEvent(this.isEnter, this.selectedPage);
+
+  DoDeparturesEvent(
+    this.isEnter,
+    this.selectedPage
+  );
   @override
   List<Object?> get props => [isEnter, selectedPage];
 }
@@ -16,7 +21,3 @@ class BackToInitial extends DeparturesEvent {
   List<Object?> get props => [];
 }
 
-class ShowDeparturesDialog extends DeparturesEvent {
-  @override
-  List<Object?> get props => [];
-}

@@ -62,8 +62,9 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
     });
   }
 
-  Widget _buildBody() => BlocBuilder(
+  Widget _buildBody() => BlocBuilder<DeparturesBloc, DeparturesState>(
         bloc: _departuresBloc,
+        buildWhen: (o, n) => !(n is DoDepartureError),
         builder: (_, state) {
           if (state is DeparturesStatusState) {
             if (state.isEnter) {

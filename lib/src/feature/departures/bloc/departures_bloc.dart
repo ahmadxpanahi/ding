@@ -1,12 +1,28 @@
 import 'dart:io';
-
+import 'package:ding/src/data/http/interceptor.dart';
+import 'package:ding/src/data/http/rest_client.dart';
+import 'package:ding/src/data/http/token_manager.dart';
 import 'package:ding/src/feature/departures/bloc/departures_event.dart';
 import 'package:ding/src/feature/departures/bloc/departures_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:swagger/api.dart';
 
 class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
-  DeparturesBloc() : super(DeparturesInitialState());
+  UserClockInOutsApi? _userClockInOutsApi;
+  TokenManager? tokenManager;
 
+  DeparturesBloc() : super(DeparturesInitialState()) {
+    Future.delayed(Duration.zero, () async {
+      var sp = await SharedPreferences.getInstance();
+      tokenManager = TokenManager(sp);
+      var interceptor = AccessTokenInterceptor(tokenManager!);
+      var api = ApiClient(
+          basePath: 'https://dinghost.daustany.ir',
+          client: RestClient(interceptor, tokenManager!));
+      _userClockInOutsApi = UserClockInOutsApi(api);
+    });
+  }
   @override
   Stream<DeparturesState> mapEventToState(DeparturesEvent event) async* {
     if (event is DoDeparturesEvent) {
@@ -22,11 +38,12 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
     await Future.delayed(Duration(milliseconds: 2000));
     yield DeparturesStatusState(
         isEnter: event.isEnter, progress: 1, selectedPage: event.selectedPage);
-    bool connection = await checkNetworkConnection();
+    bool? connection = await _checkNetworkConnection();
+    print(connection);
     await Future.delayed(Duration(milliseconds: 1000));
-    if (!connection) {
+    if (!connection!) {
       yield DeparturesStatusState(
-          networkConnection: false,
+          dialogType: 'network',
           showDialog: true,
           isEnter: event.isEnter,
           selectedPage: event.selectedPage);
@@ -35,20 +52,44 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
           isEnter: event.isEnter,
           progress: 2,
           selectedPage: event.selectedPage);
-      await Future.delayed(Duration(milliseconds: 2000));
-      yield DeparturesStatusState(
-          networkConnection: true,
-          showDialog: true,
-          isEnter: event.isEnter,
-          selectedPage: event.selectedPage);
+
+      try{
+        var response = await _userClockInOutsApi
+            ?.apiServicesAppUserclockinoutsCreateoreditPost(
+          body: CreateOrEditUserClockInOutDto()
+            ..userId = tokenManager?.getUserId()
+            ..clock = DateTime.now()
+            ..clockInOutType = event.isEnter
+                ? UserClockInOutType.number1_
+                : UserClockInOutType.number2_
+            ..workScheduleId = 0
+            ..workHourId = 0
+            ..projectName = ''
+            ..description = ''
+            ..organizationUnitId = 0
+            ..abnormalityType = UserWorkScheduleAbnormalities.number1_
+            ..weekNumber = 1
+            ..id = 0,
+        );
+        print('response');
+        print(response);
+        yield DeparturesStatusState(
+            dialogType: 'success',
+            showDialog: true,
+            isEnter: event.isEnter,
+            selectedPage: event.selectedPage);
+      }on ApiException catch (e) {
+        print('EXEPTION');
+        yield DoDepartureError(e.message??'');
+      }
     }
   }
 }
 
-Future<bool> checkNetworkConnection() async {
-  bool connection = false;
+Future<bool?> _checkNetworkConnection() async {
+  bool? connection;
   try {
-    final result = await InternetAddress.lookup('https://dinghost.daustany.ir');
+    final result = await InternetAddress.lookup('www.google.com');
     if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
       connection = true;
     }
