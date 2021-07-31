@@ -59,28 +59,31 @@ Widget _bottomNavItem(Function tap, String screenName, String svgUrl,
         onTap: () {
           tap();
         },
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Expanded(
-              child: SvgPicture.asset(
-                svgUrl,
-                width: size,
-                height: size,
-                color: screenName == checkTitle
-                    ? DingColors.primary()
-                    : DingColors.light(),
+        child: Container(
+          color: Colors.transparent,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Expanded(
+                child: SvgPicture.asset(
+                  svgUrl,
+                  width: size,
+                  height: size,
+                  color: screenName == checkTitle
+                      ? DingColors.primary()
+                      : DingColors.light(),
+                ),
               ),
-            ),
-            if (screenName == checkTitle)
-              Container(
-                height: 6,
-                width: 6,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: DingColors.primary()),
-              )
-          ],
+              if (screenName == checkTitle)
+                Container(
+                  height: 6,
+                  width: 6,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: DingColors.primary()),
+                )
+            ],
+          ),
         ),
       ),
     );
