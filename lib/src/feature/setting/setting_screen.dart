@@ -1,6 +1,7 @@
 import 'package:ding/src/feature/setting/bloc/setting_bloc.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,8 +46,7 @@ class _SettingContainerState extends State<SettingContainer> {
                       child: Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding: EdgeInsets.only(
-                          right: 2.4 .rw),
+                      padding: EdgeInsets.only(right: 2.4.rw),
                       child: IconButton(
                         color: Colors.white,
                         icon: Icon(
@@ -62,9 +62,7 @@ class _SettingContainerState extends State<SettingContainer> {
                   Text(
                     'تنظیمات',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 2.73.rt,
-                        color: Colors.white),
+                    style: TextStyle(fontSize: 2.73.rt, color: Colors.white),
                   ),
                   Expanded(child: SizedBox())
                 ],

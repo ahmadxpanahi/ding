@@ -5,6 +5,5 @@ class StaffData {
   late final String status;
   late final String imgUrl;
 
-  StaffData(
-      {required this.status, required this.imgUrl, required this.name});
+  StaffData({required this.status, required this.imgUrl, required this.name});
 }

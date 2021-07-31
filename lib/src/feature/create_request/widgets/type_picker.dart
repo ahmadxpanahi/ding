@@ -1,5 +1,6 @@
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_picker/flutter_picker.dart';
@@ -23,11 +24,10 @@ class _TypePickerState extends State<TypePicker> {
         children: [
           Text(
             'نوع',
-            style: TextStyle(
-                fontSize: 3.0.rh, color: Colors.grey),
+            style: TextStyle(fontSize: 3.0.rh, color: Colors.grey),
           ),
           SizedBox(
-            width: 6.5 .rw,
+            width: 6.5.rw,
           ),
           Expanded(
             flex: 2,
@@ -38,19 +38,26 @@ class _TypePickerState extends State<TypePicker> {
                         pickerdata: ['بدون حقوق', 'استحقاقی', 'استعلاجی']),
                     changeToFirst: true,
                     hideHeader: true,
-                    textStyle: TextStyle(fontSize: SizeConfig.textMultiplier!*2.8,color: DingColors.dark()),
-                    confirmTextStyle: TextStyle(fontSize: SizeConfig.textMultiplier!*2.8,color: DingColors.primary()),
+                    textStyle: TextStyle(
+                        fontSize: SizeConfig.textMultiplier! * 2.8,
+                        color: DingColors.dark()),
+                    confirmTextStyle: TextStyle(
+                        fontSize: SizeConfig.textMultiplier! * 2.8,
+                        color: DingColors.primary()),
                     cancel: SizedBox(),
                     textAlign: TextAlign.center,
                     confirmText: 'تایید',
                     onConfirm: (Picker picker, List value) {
                       setState(() {
-                        switch(value.toString()){
-                          case "[0]": _type = 'بدون حقوق';
+                        switch (value.toString()) {
+                          case "[0]":
+                            _type = 'بدون حقوق';
                             break;
-                          case "[1]": _type = 'استحقاقی';
+                          case "[1]":
+                            _type = 'استحقاقی';
                             break;
-                          case "[2]": _type = 'استعلاجی';
+                          case "[2]":
+                            _type = 'استعلاجی';
                             break;
                         }
                       });
@@ -58,8 +65,7 @@ class _TypePickerState extends State<TypePicker> {
                 picker.showDialog(context);
               },
               child: Container(
-                padding: EdgeInsets.symmetric(
-                    horizontal: 2.0.rw),
+                padding: EdgeInsets.symmetric(horizontal: 2.0.rw),
                 height: 8.8.rh,
                 color: DingColors.veryLight(),
                 child: Row(
@@ -67,8 +73,7 @@ class _TypePickerState extends State<TypePicker> {
                     Expanded(
                       child: Padding(
                           padding: EdgeInsets.symmetric(
-                              vertical: 2.2.rh,
-                              horizontal: 4.8 .rw),
+                              vertical: 2.2.rh, horizontal: 4.8.rw),
                           child: _type == null
                               ? Align(
                                   alignment: Alignment.bottomCenter,
@@ -79,8 +84,7 @@ class _TypePickerState extends State<TypePicker> {
                                 )
                               : Text(
                                   _type,
-                                  style: TextStyle(
-                                      fontSize: 3.0.rt),
+                                  style: TextStyle(fontSize: 3.0.rt),
                                   textAlign: TextAlign.center,
                                 )),
                     ),

@@ -8,7 +8,8 @@ import 'package:ding/src/feature/enter_code/enter_code_screen.dart';
 import 'package:ding/src/feature/home/home_screen.dart';
 import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -46,7 +47,9 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
         bloc: _emailBloc,
         builder: (_, state) {
           if (state is LoginLoading && state.loading) {
-            return CircularProgressIndicator(color: DingColors.primary(),);
+            return CircularProgressIndicator(
+              color: DingColors.primary(),
+            );
           }
           return GestureDetector(
             onTap: () {
@@ -60,7 +63,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
             child: Container(
               alignment: Alignment.center,
               height: 9.0.rh,
-              width: 73.2 .rw,
+              width: 73.2.rw,
               decoration: BoxDecoration(
                 color: _validation()
                     ? DingColors.veryLight()
@@ -87,7 +90,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
           alignment: Alignment.center,
           margin: EdgeInsets.only(bottom: 25),
           height: 9.0.rh,
-          width: 73.2 .rw,
+          width: 73.2.rw,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
               border: Border.all(color: DingColors.dark(), width: 2)),
@@ -97,9 +100,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
               Expanded(child: SizedBox()),
               Text(
                 'ورود با شماره موبایل',
-                style: TextStyle(
-                    fontSize: 2.73.rt,
-                    color: DingColors.dark()),
+                style: TextStyle(fontSize: 2.73.rt, color: DingColors.dark()),
               ),
               Expanded(
                   child: SvgPicture.asset(
@@ -116,14 +117,14 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 65.8 .rw,
+            width: 65.8.rw,
             child: RichText(
               textAlign: TextAlign.end,
               maxLines: 2,
               text: TextSpan(
                   text: 'قوانین و شرایط',
                   style: TextStyle(
-                      fontSize: 4.1 .rw,
+                      fontSize: 4.1.rw,
                       fontWeight: FontWeight.bold,
                       color: DingColors.dark()),
                   children: [
@@ -132,7 +133,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                             ' استفاده از سامانه دینگ را به صورت کامل مطالعه نموده ام',
                         style: TextStyle(
                             fontWeight: FontWeight.w200,
-                            fontSize: 4.1 .rw,
+                            fontSize: 4.1.rw,
                             color: DingColors.dark()))
                   ]),
             ),
@@ -167,10 +168,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
           resizeToAvoidBottomInset: false,
           backgroundColor: Colors.white,
           body: Padding(
-            padding: EdgeInsets.only(
-                right: 7.3 .rw,
-                left: 7.3 .rw,
-                top: 5.47.rh),
+            padding: EdgeInsets.only(right: 7.3.rw, left: 7.3.rw, top: 5.47.rh),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -183,8 +181,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                       Text(
                         'ورود با ایمیل',
                         style: TextStyle(
-                            fontSize: 2.73.rt,
-                            color: DingColors.dark()),
+                            fontSize: 2.73.rt, color: DingColors.dark()),
                       ),
                       SizedBox(
                         height: 2.73.rh,
@@ -205,15 +202,12 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                               },
                               keyboardType: TextInputType.emailAddress,
                               style: TextStyle(
-                                  fontSize: 2.73.rt,
-                                  letterSpacing: 2),
+                                  fontSize: 2.73.rt, letterSpacing: 2),
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: 'مستاجر',
                                   hintStyle: TextStyle(
-                                      fontSize:
-                                          2.73.rt,
-                                      color: Colors.grey)),
+                                      fontSize: 2.73.rt, color: Colors.grey)),
                             ),
                           ),
                           SizedBox(
@@ -233,15 +227,12 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                               },
                               keyboardType: TextInputType.emailAddress,
                               style: TextStyle(
-                                  fontSize: 2.73.rt,
-                                  letterSpacing: 2),
+                                  fontSize: 2.73.rt, letterSpacing: 2),
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: 'ایمیل',
                                   hintStyle: TextStyle(
-                                      fontSize:
-                                          2.73.rt,
-                                      color: Colors.grey)),
+                                      fontSize: 2.73.rt, color: Colors.grey)),
                             ),
                           ),
                           SizedBox(
@@ -261,15 +252,12 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                               },
                               keyboardType: TextInputType.emailAddress,
                               style: TextStyle(
-                                  fontSize: 2.73.rt,
-                                  letterSpacing: 2),
+                                  fontSize: 2.73.rt, letterSpacing: 2),
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: 'رمز عبور',
                                   hintStyle: TextStyle(
-                                      fontSize:
-                                          2.73.rt,
-                                      color: Colors.grey)),
+                                      fontSize: 2.73.rt, color: Colors.grey)),
                             ),
                           ),
                         ],
@@ -310,17 +298,16 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => HomeScreen()));
         } else if (state is LoginError) {
-          Map errorMap = json.decode(state.message??'');
+          Map errorMap = json.decode(state.message ?? '');
           print(state.message);
-            await Flushbar(
-              backgroundColor: DingColors.warning(),
-              duration: Duration(seconds: 1),
-              borderRadius: BorderRadius.circular(100),
-              padding: EdgeInsets.all(15),
-              message: errorMap['error']['message'],
-              flushbarPosition: FlushbarPosition.TOP,
+          await Flushbar(
+            backgroundColor: DingColors.warning(),
+            duration: Duration(seconds: 1),
+            borderRadius: BorderRadius.circular(100),
+            padding: EdgeInsets.all(15),
+            message: errorMap['error']['message'],
+            flushbarPosition: FlushbarPosition.TOP,
           ).show(context);
         }
-      }
-      );
+      });
 }

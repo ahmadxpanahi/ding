@@ -9,7 +9,6 @@ class OtherDropdown extends StatefulWidget {
 }
 
 class _OtherDropdownState extends State<OtherDropdown> {
-
   String dropdownValue = 'توسعه فناوی دینگ';
 
   @override

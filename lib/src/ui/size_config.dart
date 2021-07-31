@@ -40,5 +40,4 @@ class SizeConfig {
     print(_blockHeight);
     print(_blockWidth);
   }
-
 }

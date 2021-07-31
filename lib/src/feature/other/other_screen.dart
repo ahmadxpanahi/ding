@@ -4,7 +4,8 @@ import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/feature/other/widgets/options_tile.dart';
 import 'package:ding/src/feature/setting/setting_screen.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -39,7 +40,7 @@ class _OtherScreenState extends State<OtherScreen> {
                           fit: BoxFit.fill)),
                 ),
                 SizedBox(
-                  width: 3.6 .rw,
+                  width: 3.6.rw,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,7 +85,7 @@ class _OtherScreenState extends State<OtherScreen> {
               },
               icon: SvgPicture.asset(
                 'assets/images/edit.svg',
-                width: 7.3 .rw,
+                width: 7.3.rw,
               ),
             )
           ],

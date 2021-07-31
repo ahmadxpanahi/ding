@@ -1,7 +1,8 @@
 import 'package:ding/src/feature/departures/bloc/departures_bloc.dart';
 import 'package:ding/src/feature/departures/bloc/departures_event.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:ding/src/ui/slide_action.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,7 +28,7 @@ class _LocationPageState extends State<LocationPage> {
               bottom: 10,
               left: 10,
               child: Container(
-                width: 19.5 .rw,
+                width: 19.5.rw,
                 height: 16.0.rh,
                 color: Colors.white,
                 child: Column(
@@ -35,18 +36,15 @@ class _LocationPageState extends State<LocationPage> {
                     Expanded(
                         child: Text(
                       '10:45',
-                      style:
-                          TextStyle(fontSize: 5.0.rw),
+                      style: TextStyle(fontSize: 5.0.rw),
                     )),
                     Text(
                       'دوشنبه',
-                      style: TextStyle(
-                          fontSize: 5.0.rw - 7),
+                      style: TextStyle(fontSize: 5.0.rw - 7),
                     ),
                     Text(
                       '17 مرداد',
-                      style: TextStyle(
-                          fontSize: 5.0.rw - 7),
+                      style: TextStyle(fontSize: 5.0.rw - 7),
                     ),
                     Expanded(
                       child: Row(
@@ -106,15 +104,12 @@ class _LocationPageState extends State<LocationPage> {
               ),
               Text(
                 'ورود شما در ساعت 20:05 از طریق دستگاه ثبت شده است.',
-                style: TextStyle(
-                    fontSize: 3.4 .rw,
-                    fontWeight: FontWeight.w400),
+                style: TextStyle(fontSize: 3.4.rw, fontWeight: FontWeight.w400),
               ),
             ],
           ),
           Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: 9.7 .rw),
+            padding: EdgeInsets.symmetric(horizontal: 9.7.rw),
             child: SlideAction(
               child: SizedBox(),
               reversed: true,
@@ -136,8 +131,7 @@ class _LocationPageState extends State<LocationPage> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: 9.7 .rw),
+            padding: EdgeInsets.symmetric(horizontal: 9.7.rw),
             child: SlideAction(
               child: SizedBox(),
               reversed: false,

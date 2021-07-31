@@ -7,7 +7,8 @@ import 'package:ding/src/feature/departures/widgets/enter_departures_screen.dart
 import 'package:ding/src/feature/departures/widgets/exit_departures_screen.dart';
 import 'package:ding/src/feature/departures/widgets/location_page.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -170,7 +171,7 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
         bloc: _departuresBloc,
         listener: (_, state) {
           if (state is DeparturesStatusState) {
-            if(_controller != null && !_controller!.hasClients) {
+            if (_controller != null && !_controller!.hasClients) {
               setState(() {
                 _controller = PageController();
                 _pageView = PageView(
@@ -184,10 +185,12 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
                 );
                 print("initState -- PageView updated");
                 Future.delayed(Duration(milliseconds: 1000), () {
-                  print("After initState -- hasClients: ${_controller!.hasClients}");
-                  if(_controller?.hasClients ?? false) {
+                  print(
+                      "After initState -- hasClients: ${_controller!.hasClients}");
+                  if (_controller?.hasClients ?? false) {
                     _controller?.animateToPage(value,
-                        duration: Duration(milliseconds: 1500), curve: Curves.linear);
+                        duration: Duration(milliseconds: 1500),
+                        curve: Curves.linear);
                   }
                 });
               });

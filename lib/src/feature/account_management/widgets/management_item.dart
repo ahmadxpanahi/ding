@@ -1,5 +1,6 @@
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -14,7 +15,7 @@ class ManagementItem extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: SizeConfig.heightMultiplier! + 5),
       color: Colors.white,
-      height: 16*SizeConfig.heightMultiplier!,
+      height: 16 * SizeConfig.heightMultiplier!,
       child: Stack(
         children: [
           Opacity(
@@ -36,7 +37,7 @@ class ManagementItem extends StatelessWidget {
                           fit: BoxFit.fill)),
                 ),
                 SizedBox(
-                  width: 3.6 .rw,
+                  width: 3.6.rw,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,24 +45,21 @@ class ManagementItem extends StatelessWidget {
                   children: [
                     Text(
                       'توسعه ارتباطات دینگ',
-                      style: TextStyle(
-                          fontSize: 4.2 .rw,
-                          color: DingColors.dark()),
+                      style:
+                          TextStyle(fontSize: 4.2.rw, color: DingColors.dark()),
                     ),
                     Text(
                       name,
                       style: TextStyle(
-                          fontSize: 3.5 .rw,
+                          fontSize: 3.5.rw,
                           fontWeight: FontWeight.w300,
-                          color: DingColors.dark()
-                      ),
+                          color: DingColors.dark()),
                     ),
                     Text(
                       active ? 'فعال' : 'غیر فعال',
                       style: TextStyle(
-                          fontSize: 3.5 .rw,
-                          color: active ? DingColors.primary() : Colors.grey
-                      ),
+                          fontSize: 3.5.rw,
+                          color: active ? DingColors.primary() : Colors.grey),
                     ),
                   ],
                 ),
@@ -77,7 +75,7 @@ class ManagementItem extends StatelessWidget {
                   opacity: active ? 1 : 0.3,
                   child: SvgPicture.asset(
                     'assets/images/trash2.svg',
-                    width: 6.5 .rw,
+                    width: 6.5.rw,
                     color: active ? DingColors.warning() : DingColors.dark(),
                   ),
                 ),
@@ -88,7 +86,7 @@ class ManagementItem extends StatelessWidget {
                   opacity: active ? 1 : 0.3,
                   child: SvgPicture.asset(
                     'assets/images/edit.svg',
-                    width: 6.5 .rw,
+                    width: 6.5.rw,
                     color: DingColors.dark(),
                   ),
                 ),
@@ -96,8 +94,10 @@ class ManagementItem extends StatelessWidget {
                   width: 4.0.rw,
                 ),
                 SvgPicture.asset(
-                  active ? 'assets/images/log-out.svg' : 'assets/images/log-in.svg',
-                  width: 6.5 .rw,
+                  active
+                      ? 'assets/images/log-out.svg'
+                      : 'assets/images/log-in.svg',
+                  width: 6.5.rw,
                   color: active ? DingColors.dark() : DingColors.primary(),
                 ),
               ],

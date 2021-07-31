@@ -1,7 +1,8 @@
 import 'package:ding/src/feature/create_request/widgets/date_picker.dart';
 import 'package:ding/src/feature/create_request/widgets/type_picker.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -27,7 +28,7 @@ class _LeavePageState extends State<LeavePage> {
           children: [
             DDatePicker(title: 'شروع', type: 'begin'),
             SizedBox(
-              height: 2.7 .rw,
+              height: 2.7.rw,
             ),
             DDatePicker(title: 'پایان', type: 'end'),
           ],
@@ -45,7 +46,7 @@ class _LeavePageState extends State<LeavePage> {
             Column(
               children: [
                 SizedBox(
-                  height: 3.6 .rw,
+                  height: 3.6.rw,
                 ),
                 TypePicker(),
                 SizedBox(
@@ -54,16 +55,18 @@ class _LeavePageState extends State<LeavePage> {
               ],
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier!*3),
+              padding: EdgeInsets.symmetric(
+                  horizontal: SizeConfig.widthMultiplier! * 3),
               margin: EdgeInsets.symmetric(
                   vertical: SizeConfig.heightMultiplier! * 3,
                   horizontal: SizeConfig.widthMultiplier! * 4),
-              height: 20.5*SizeConfig.heightMultiplier!,
+              height: 20.5 * SizeConfig.heightMultiplier!,
               child: TextField(
                 maxLines: 3,
                 decoration: InputDecoration(
                   border: InputBorder.none,
-                  hintStyle: TextStyle(fontSize: 2.8*SizeConfig.heightMultiplier!),
+                  hintStyle:
+                      TextStyle(fontSize: 2.8 * SizeConfig.heightMultiplier!),
                   hintText: 'لطفا توضیحات خود را اینجا وارد کنید.',
                 ),
               ),
@@ -81,9 +84,7 @@ class _LeavePageState extends State<LeavePage> {
                   borderRadius: BorderRadius.circular(100)),
               child: Text(
                 'تایید',
-                style: TextStyle(
-                    fontSize: 3.0.rt,
-                    color: Colors.white),
+                style: TextStyle(fontSize: 3.0.rt, color: Colors.white),
               ),
             )
           ],

@@ -3,7 +3,8 @@ import 'package:ding/src/feature/departures/bloc/departures_event.dart';
 import 'package:ding/src/feature/departures/bloc/departures_state.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/dialog.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -117,17 +118,30 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
         listener: (_, state) {
           if (state is DeparturesStatusState) {
             if (state.showDialog) {
-              showDialog(
-                  context: context,
-                  builder: (_) => DingDialog(
-                        title:
-                            'ورود شما در روز سه شنبه 10/03/1389 ساعت 20:05 با موفقیت ثبت شد',
-                        buttonText: 'متوجه شدم',
-                        onClick: () {
-                          Navigator.pop(context);
-                          _bloc.add(BackToInitial());
-                        },
-                      ));
+              if (state.networkConnection) {
+                showDialog(
+                    context: context,
+                    builder: (_) => DingDialog(
+                          title:
+                              'ورود شما در روز سه شنبه 10/03/1389 ساعت 20:05 با موفقیت ثبت شد',
+                          buttonText: 'متوجه شدم',
+                          onClick: () {
+                            Navigator.pop(context);
+                            _bloc.add(BackToInitial());
+                          },
+                        ));
+              } else if (!state.networkConnection) {
+                showDialog(
+                    context: context,
+                    builder: (_) => DingDialog(
+                          title: 'اتصال اینترنت خود را بررسی کنید.',
+                          buttonText: 'متوجه شدم',
+                          onClick: () {
+                            Navigator.pop(context);
+                            _bloc.add(BackToInitial());
+                          },
+                        ));
+              }
             }
           }
         },

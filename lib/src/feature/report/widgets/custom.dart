@@ -15,7 +15,6 @@ class CustomPage extends StatefulWidget {
 }
 
 class _CustomPageState extends State<CustomPage> {
-
   PersianDate? begin;
   PersianDate? end;
 
@@ -48,12 +47,14 @@ class _CustomPageState extends State<CustomPage> {
                   children: [
                     Text(
                       'پژمان شفیعی',
-                      style: TextStyle(fontSize: 2*SizeConfig.textMultiplier!),
+                      style:
+                          TextStyle(fontSize: 2 * SizeConfig.textMultiplier!),
                     ),
                     Text(
                       'واحد فروش',
-                      style:
-                          TextStyle(fontSize: 2*SizeConfig.textMultiplier! - 2, fontWeight: FontWeight.w300),
+                      style: TextStyle(
+                          fontSize: 2 * SizeConfig.textMultiplier! - 2,
+                          fontWeight: FontWeight.w300),
                     ),
                   ],
                 )
@@ -76,12 +77,10 @@ class _CustomPageState extends State<CustomPage> {
             children: [
               Text(
                 'شروع',
-                style: TextStyle(
-                    fontSize: 2.7.rt,
-                    color: Colors.grey),
+                style: TextStyle(fontSize: 2.7.rt, color: Colors.grey),
               ),
               SizedBox(
-                width: 3.6 .rw,
+                width: 3.6.rw,
               ),
               Expanded(
                 child: GestureDetector(
@@ -91,8 +90,7 @@ class _CustomPageState extends State<CustomPage> {
                         builder: (_) {
                           return AlertDialog(
                             contentPadding: EdgeInsets.symmetric(
-                                horizontal: 2.6 .rw,
-                                vertical: 1.3.rh),
+                                horizontal: 2.6.rw, vertical: 1.3.rh),
                             content: SizedBox(
                               height: 36.7.rh,
                               child: Column(
@@ -136,8 +134,7 @@ class _CustomPageState extends State<CustomPage> {
                         });
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: 4.7 .rw),
+                    padding: EdgeInsets.symmetric(horizontal: 4.7.rw),
                     height: 8.8.rh,
                     color: DingColors.veryLight(),
                     child: Row(
@@ -145,9 +142,7 @@ class _CustomPageState extends State<CustomPage> {
                         Expanded(
                           child: Padding(
                               padding: EdgeInsets.symmetric(
-                                  vertical: 2.2.rh,
-                                  horizontal:
-                                      4.8 .rw),
+                                  vertical: 2.2.rh, horizontal: 4.8.rw),
                               child: begin == null
                                   ? Align(
                                       alignment: Alignment.bottomCenter,
@@ -158,9 +153,7 @@ class _CustomPageState extends State<CustomPage> {
                                     )
                                   : Text(
                                       '${begin!.day} ${begin!.monthname} ${begin!.year}',
-                                      style: TextStyle(
-                                          fontSize:
-                                              3.0.rt),
+                                      style: TextStyle(fontSize: 3.0.rt),
                                       textAlign: TextAlign.center,
                                     )),
                         ),
@@ -182,12 +175,10 @@ class _CustomPageState extends State<CustomPage> {
             children: [
               Text(
                 'پایان',
-                style: TextStyle(
-                    fontSize: 3.0.rt,
-                    color: Colors.grey),
+                style: TextStyle(fontSize: 3.0.rt, color: Colors.grey),
               ),
               SizedBox(
-                width: 3.6 .rw,
+                width: 3.6.rw,
               ),
               Expanded(
                 child: GestureDetector(
@@ -197,8 +188,7 @@ class _CustomPageState extends State<CustomPage> {
                         builder: (_) {
                           return AlertDialog(
                             contentPadding: EdgeInsets.symmetric(
-                                horizontal: 2.6 .rw,
-                                vertical: 1.3.rh),
+                                horizontal: 2.6.rw, vertical: 1.3.rh),
                             content: SizedBox(
                               height: 36.7.rh,
                               child: Column(
@@ -245,8 +235,7 @@ class _CustomPageState extends State<CustomPage> {
                         });
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: 4.7 .rw),
+                    padding: EdgeInsets.symmetric(horizontal: 4.7.rw),
                     height: 8.8.rh,
                     color: DingColors.veryLight(),
                     child: Row(
@@ -254,9 +243,7 @@ class _CustomPageState extends State<CustomPage> {
                         Expanded(
                           child: Padding(
                               padding: EdgeInsets.symmetric(
-                                  vertical: 2.2.rh,
-                                  horizontal:
-                                      4.8 .rw),
+                                  vertical: 2.2.rh, horizontal: 4.8.rw),
                               child: end == null
                                   ? Align(
                                       alignment: Alignment.bottomCenter,
@@ -267,9 +254,7 @@ class _CustomPageState extends State<CustomPage> {
                                     )
                                   : Text(
                                       '${end!.day} ${end!.monthname} ${end!.year}',
-                                      style: TextStyle(
-                                          fontSize:
-                                              3.0.rt),
+                                      style: TextStyle(fontSize: 3.0.rt),
                                       textAlign: TextAlign.center,
                                     )),
                         ),
@@ -341,8 +326,7 @@ class _CustomPageState extends State<CustomPage> {
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: 7.3 .rw),
+                padding: EdgeInsets.symmetric(horizontal: 7.3.rw),
                 child: Column(
                   children: [
                     Expanded(

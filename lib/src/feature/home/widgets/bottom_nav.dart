@@ -1,5 +1,6 @@
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -44,7 +45,6 @@ class _BottomNavState extends State<BottomNav> {
                   widget.change!('situation');
                 }, widget.screenName ?? '', 'assets/images/eye.svg',
                     'situation', 7.0.rh),
-
               ],
             ),
           ),

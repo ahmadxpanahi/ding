@@ -1,5 +1,6 @@
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
@@ -133,8 +134,7 @@ class MyRequestsItem extends StatelessWidget {
                             Text(
                               info1 ?? '',
                               style: TextStyle(
-                                  fontSize: 2.2.rt,
-                                  color: DingColors.dark()),
+                                  fontSize: 2.2.rt, color: DingColors.dark()),
                             )
                           ],
                         ),
@@ -153,8 +153,7 @@ class MyRequestsItem extends StatelessWidget {
                             Text(
                               info2 ?? '',
                               style: TextStyle(
-                                  fontSize: 2.2.rt,
-                                  color: DingColors.dark()),
+                                  fontSize: 2.2.rt, color: DingColors.dark()),
                             )
                           ],
                         ),
@@ -163,9 +162,7 @@ class MyRequestsItem extends StatelessWidget {
                   ),
                   Text(
                     _statusText(),
-                    style: TextStyle(
-                        fontSize: 2.2.rt,
-                        color: _statusColor()),
+                    style: TextStyle(fontSize: 2.2.rt, color: _statusColor()),
                   ),
                   SizedBox(
                     width: SizeConfig.widthMultiplier!,

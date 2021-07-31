@@ -11,7 +11,8 @@ class DeparturesPageView extends StatefulWidget {
   State<StatefulWidget> createState() => _DeparturesPageViewState();
 }
 
-class _DeparturesPageViewState extends State<DeparturesPageView> with AutomaticKeepAliveClientMixin<DeparturesPageView> {
+class _DeparturesPageViewState extends State<DeparturesPageView>
+    with AutomaticKeepAliveClientMixin<DeparturesPageView> {
   @override
   Widget build(BuildContext context) {
     super.build(context);

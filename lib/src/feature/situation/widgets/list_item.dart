@@ -4,17 +4,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ListItem extends StatelessWidget {
-
   TodayData todayData;
 
-  ListItem(
-      {Key? key,
-        required this.todayData})
-      : super(key: key);
+  ListItem({Key? key, required this.todayData}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     int min = todayData.enterTime.minute;
     int hour = todayData.enterTime.hour;
 
@@ -32,7 +27,8 @@ class ListItem extends StatelessWidget {
                 decoration: BoxDecoration(
                     border: Border.all(width: 4, color: DingColors.primary()),
                     image: DecorationImage(
-                        image: NetworkImage(todayData.imgUrl), fit: BoxFit.fill),
+                        image: NetworkImage(todayData.imgUrl),
+                        fit: BoxFit.fill),
                     borderRadius: BorderRadius.circular(100),
                     color: Colors.red),
               ),
@@ -52,7 +48,11 @@ class ListItem extends StatelessWidget {
                   ],
                 ),
               ),
-              Icon(Icons.arrow_forward_ios,size: 30,color: Colors.grey,)
+              Icon(
+                Icons.arrow_forward_ios,
+                size: 30,
+                color: Colors.grey,
+              )
             ],
           ),
         ),

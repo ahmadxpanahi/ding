@@ -4,7 +4,8 @@ import 'package:ding/src/feature/account_management/bloc/ac_management_state.dar
 import 'package:ding/src/feature/account_management/widgets/management_item.dart';
 import 'package:ding/src/feature/email_login/bloc/email_event.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -37,7 +38,7 @@ class _AccountManagementContainerState
     super.initState();
     _managementBloc = BlocProvider.of<AccountManagementBloc>(context);
     _managementBloc.add(ShowAcManagementLoading(true));
-    Future.delayed(Duration(milliseconds: 1500),(){
+    Future.delayed(Duration(milliseconds: 1500), () {
       _managementBloc.add(GetAcManagementData());
     });
   }
@@ -60,8 +61,7 @@ class _AccountManagementContainerState
                       child: Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding: EdgeInsets.only(
-                          right: 2.4 .rw),
+                      padding: EdgeInsets.only(right: 2.4.rw),
                       child: IconButton(
                         color: Colors.white,
                         icon: Icon(
@@ -77,9 +77,7 @@ class _AccountManagementContainerState
                   Text(
                     'مدیریت حساب',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 2.73.rt,
-                        color: Colors.white),
+                    style: TextStyle(fontSize: 2.73.rt, color: Colors.white),
                   ),
                   Expanded(child: SizedBox())
                 ],
@@ -119,11 +117,10 @@ class _AccountManagementContainerState
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Container(
-                        margin: EdgeInsets.only(
-                            bottom: 2.2.rh),
+                        margin: EdgeInsets.only(bottom: 2.2.rh),
                         alignment: Alignment.center,
-                        height: 14.6 .rw,
-                        width: 14.6 .rw,
+                        height: 14.6.rw,
+                        width: 14.6.rw,
                         decoration: BoxDecoration(
                           color: DingColors.primary(),
                           borderRadius: BorderRadius.circular(100),

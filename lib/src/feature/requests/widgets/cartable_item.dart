@@ -1,5 +1,6 @@
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 class CartableItem extends StatelessWidget {
@@ -43,15 +44,11 @@ class CartableItem extends StatelessWidget {
                 children: [
                   Text(
                     'شروع',
-                    style: TextStyle(
-                        fontSize: 4.0.rw,
-                        color: Colors.grey),
+                    style: TextStyle(fontSize: 4.0.rw, color: Colors.grey),
                   ),
                   Text(
                     'پایان',
-                    style: TextStyle(
-                        fontSize: 4.0.rw,
-                        color: Colors.grey),
+                    style: TextStyle(fontSize: 4.0.rw, color: Colors.grey),
                   )
                 ],
               ),
@@ -64,15 +61,13 @@ class CartableItem extends StatelessWidget {
                 children: [
                   Text(
                     beginDate ?? '',
-                    style: TextStyle(
-                        fontSize: 4.0.rw,
-                        color: DingColors.dark()),
+                    style:
+                        TextStyle(fontSize: 4.0.rw, color: DingColors.dark()),
                   ),
                   Text(
                     endDate ?? '',
-                    style: TextStyle(
-                        fontSize: 4.0.rw,
-                        color: DingColors.dark()),
+                    style:
+                        TextStyle(fontSize: 4.0.rw, color: DingColors.dark()),
                   )
                 ],
               ),
@@ -88,8 +83,7 @@ class CartableItem extends StatelessWidget {
                   Text(
                     'نمایش جزءیات',
                     style: TextStyle(
-                        fontSize: 4.0.rw,
-                        color: DingColors.primary()),
+                        fontSize: 4.0.rw, color: DingColors.primary()),
                   )
                 ],
               )
@@ -101,15 +95,11 @@ class CartableItem extends StatelessWidget {
                     children: [
                       Text(
                         'شروع',
-                        style: TextStyle(
-                            fontSize: 4.0.rw,
-                            color: Colors.grey),
+                        style: TextStyle(fontSize: 4.0.rw, color: Colors.grey),
                       ),
                       Text(
                         'پایان',
-                        style: TextStyle(
-                            fontSize: 4.0.rw,
-                            color: Colors.grey),
+                        style: TextStyle(fontSize: 4.0.rw, color: Colors.grey),
                       )
                     ],
                   ),
@@ -123,14 +113,12 @@ class CartableItem extends StatelessWidget {
                       Text(
                         beginDate ?? '',
                         style: TextStyle(
-                            fontSize: 4.0.rw,
-                            color: DingColors.dark()),
+                            fontSize: 4.0.rw, color: DingColors.dark()),
                       ),
                       Text(
                         endDate ?? '',
                         style: TextStyle(
-                            fontSize: 4.0.rw,
-                            color: DingColors.dark()),
+                            fontSize: 4.0.rw, color: DingColors.dark()),
                       )
                     ],
                   ),
@@ -144,13 +132,12 @@ class CartableItem extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            width: 4.1 .rw,
+            width: 4.1.rw,
             color: _typeColor(),
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: 2.4 .rw),
+              padding: EdgeInsets.symmetric(horizontal: 2.4.rw),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -165,7 +152,7 @@ class CartableItem extends StatelessWidget {
                               image: DecorationImage(
                                   image: NetworkImage(imgUrl ?? '')))),
                       SizedBox(
-                        width: 2.4 .rw,
+                        width: 2.4.rw,
                       ),
                       Expanded(
                         child: Column(
@@ -174,24 +161,20 @@ class CartableItem extends StatelessWidget {
                             Text(
                               name ?? '',
                               style: TextStyle(
-                                  color: DingColors.dark(),
-                                  fontSize: 4.0.rw),
+                                  color: DingColors.dark(), fontSize: 4.0.rw),
                             ),
                             Text(
                               unit ?? '',
                               style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize:
-                                      4.0.rw - 2),
+                                  color: Colors.grey, fontSize: 4.0.rw - 2),
                             ),
                           ],
                         ),
                       ),
                       Text(
                         date ?? '',
-                        style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 4.0.rw - 2),
+                        style:
+                            TextStyle(color: Colors.grey, fontSize: 4.0.rw - 2),
                       )
                     ],
                   ),
@@ -218,8 +201,7 @@ class CartableItem extends StatelessWidget {
                                 Text(
                                   info1 ?? '',
                                   style: TextStyle(
-                                      fontSize:
-                                          4.0.rw,
+                                      fontSize: 4.0.rw,
                                       color: DingColors.dark()),
                                 )
                               ],
@@ -239,8 +221,7 @@ class CartableItem extends StatelessWidget {
                                 Text(
                                   info2 ?? '',
                                   style: TextStyle(
-                                      fontSize:
-                                          4.0.rw,
+                                      fontSize: 4.0.rw,
                                       color: DingColors.dark()),
                                 )
                               ],
@@ -253,7 +234,7 @@ class CartableItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Container(
-                        width: 20.7 .rw,
+                        width: 20.7.rw,
                         height: 5.47.rh,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
@@ -267,10 +248,10 @@ class CartableItem extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        width: 2.4 .rw,
+                        width: 2.4.rw,
                       ),
                       Container(
-                        width: 20.7 .rw,
+                        width: 20.7.rw,
                         height: 5.47.rh,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),

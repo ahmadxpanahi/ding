@@ -49,7 +49,6 @@ class AuthenticateResultModel {
 
   AuthenticateResultModel.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
-    print("THIS IS SWAGGER 2");
     print(json);
     accessToken =
         json['result']['accessToken']

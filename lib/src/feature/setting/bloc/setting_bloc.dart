@@ -2,7 +2,7 @@ import 'package:ding/src/feature/setting/bloc/setting_event.dart';
 import 'package:ding/src/feature/setting/bloc/setting_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SettingBLoc extends Bloc<SettingEvent,SettingState>{
+class SettingBLoc extends Bloc<SettingEvent, SettingState> {
   SettingBLoc() : super(SettingInitialState());
 
   @override
@@ -10,5 +10,4 @@ class SettingBLoc extends Bloc<SettingEvent,SettingState>{
     // TODO: implement mapEventToState
     throw UnimplementedError();
   }
-
 }

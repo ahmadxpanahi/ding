@@ -13,13 +13,23 @@ class DeparturesStatusState extends DeparturesState {
   int selectedPage;
   int progress;
   bool showDialog;
-  DeparturesStatusState({this.isEnter=true,this.progress=0,this.showDialog = false,this.selectedPage=0});
+  bool networkConnection;
+  DeparturesStatusState(
+      {this.networkConnection = false,
+      this.isEnter = true,
+      this.progress = 0,
+      this.showDialog = false,
+      this.selectedPage = 0});
   @override
-  List<Object?> get props => [isEnter,progress,selectedPage];
+  List<Object?> get props => [isEnter, progress, selectedPage];
 }
 
-class DeparturesSuccess extends DeparturesState{
+class DeparturesSuccess extends DeparturesState {
   @override
   List<Object?> get props => [];
+}
 
+class DeparturesDialogState extends DeparturesState {
+  @override
+  List<Object?> get props => [];
 }

@@ -153,13 +153,14 @@ class _RequestsContainerState extends State<RequestsContainer> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => CreateRequestScreen()));
+                                    builder: (context) =>
+                                        CreateRequestScreen()));
                           },
                           child: Container(
                             margin: EdgeInsets.only(bottom: 15),
                             alignment: Alignment.center,
-                            height: 14.6 .rw,
-                            width: 14.6 .rw,
+                            height: 14.6.rw,
+                            width: 14.6.rw,
                             decoration: BoxDecoration(
                               color: DingColors.primary(),
                               borderRadius: BorderRadius.circular(100),

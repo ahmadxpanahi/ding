@@ -5,13 +5,18 @@ abstract class DeparturesEvent extends Equatable {}
 class DoDeparturesEvent extends DeparturesEvent {
   bool isEnter;
   int selectedPage;
-  DoDeparturesEvent(this.isEnter,this.selectedPage);
+  DoDeparturesEvent(this.isEnter, this.selectedPage);
   @override
-  List<Object?> get props => [isEnter,selectedPage];
+  List<Object?> get props => [isEnter, selectedPage];
 }
 
 class BackToInitial extends DeparturesEvent {
   BackToInitial();
+  @override
+  List<Object?> get props => [];
+}
+
+class ShowDeparturesDialog extends DeparturesEvent {
   @override
   List<Object?> get props => [];
 }

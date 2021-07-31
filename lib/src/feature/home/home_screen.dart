@@ -8,7 +8,8 @@ import 'package:ding/src/feature/requests/requests_screen.dart';
 import 'package:ding/src/feature/situation/situation_screen.dart';
 import 'package:ding/src/feature/splash/splash_screen.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -47,8 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Text(
           'وضعیت لحظه ای',
           textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 2.73.rt, color: Colors.white),
+          style: TextStyle(fontSize: 2.73.rt, color: Colors.white),
         ),
       ),
     ),
@@ -62,8 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Text(
           'ورود و خروج',
           textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 2.73.rt, color: Colors.white),
+          style: TextStyle(fontSize: 2.73.rt, color: Colors.white),
         ),
       ),
     ),
@@ -94,17 +93,14 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Text(
                 'درخواست ها',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 2.73.rt,
-                    color: Colors.white),
+                style: TextStyle(fontSize: 2.73.rt, color: Colors.white),
               ),
             ),
             Expanded(
                 child: Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: EdgeInsets.only(
-                          left: 4.8 .rw),
+                      padding: EdgeInsets.only(left: 4.8.rw),
                       child: SvgPicture.asset('assets/images/Shape.svg'),
                     ))),
           ],
@@ -121,8 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Text(
           'سایر موارد',
           textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 2.73.rt, color: Colors.white),
+          style: TextStyle(fontSize: 2.73.rt, color: Colors.white),
         ),
       ),
     ),

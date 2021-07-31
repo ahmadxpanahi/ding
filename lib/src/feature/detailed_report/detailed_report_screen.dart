@@ -2,7 +2,8 @@ import 'package:ding/src/feature/detailed_report/bloc/de_report_bloc.dart';
 import 'package:ding/src/feature/detailed_report/bloc/de_report_event.dart';
 import 'package:ding/src/feature/detailed_report/bloc/de_report_state.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -86,9 +87,8 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
                   children: [
                     Text(
                       'شروع',
-                      style: TextStyle(
-                          fontSize: 2.2.rt + 1,
-                          color: Colors.grey),
+                      style:
+                          TextStyle(fontSize: 2.2.rt + 1, color: Colors.grey),
                     ),
                     SizedBox(
                       width: SizeConfig.widthMultiplier! * 3,
@@ -96,8 +96,7 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
                     Text(
                       '02 خرداد 1398',
                       style: TextStyle(
-                          fontSize: 2.2.rt + 1,
-                          color: DingColors.dark()),
+                          fontSize: 2.2.rt + 1, color: DingColors.dark()),
                     ),
                   ],
                 ),
@@ -105,9 +104,8 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
                   children: [
                     Text(
                       'پایان',
-                      style: TextStyle(
-                          fontSize: 2.2.rt + 1,
-                          color: Colors.grey),
+                      style:
+                          TextStyle(fontSize: 2.2.rt + 1, color: Colors.grey),
                     ),
                     SizedBox(
                       width: SizeConfig.widthMultiplier! * 3,
@@ -115,8 +113,7 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
                     Text(
                       '02 خرداد 1398',
                       style: TextStyle(
-                          fontSize: 2.2.rt + 1,
-                          color: DingColors.dark()),
+                          fontSize: 2.2.rt + 1, color: DingColors.dark()),
                     ),
                   ],
                 ),
@@ -143,14 +140,12 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
                     Text(
                       day,
                       style: TextStyle(
-                          fontSize: 2.8.rt + 1,
-                          color: DingColors.dark()),
+                          fontSize: 2.8.rt + 1, color: DingColors.dark()),
                     ),
                     Text(
                       '${month} ${year}',
-                      style: TextStyle(
-                          fontSize: 2.3.rt + 1,
-                          color: Colors.grey),
+                      style:
+                          TextStyle(fontSize: 2.3.rt + 1, color: Colors.grey),
                     ),
                   ],
                 ),
@@ -184,7 +179,7 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
     super.initState();
     _detailedReportBloc = BlocProvider.of<DetailedReportBloc>(context);
     _detailedReportBloc.add(ShowDeReportLoading(true));
-    Future.delayed(Duration(milliseconds: 1500),(){
+    Future.delayed(Duration(milliseconds: 1500), () {
       _detailedReportBloc.add(GetDetailedReportData());
     });
   }
@@ -206,8 +201,7 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
                     child: Align(
                   alignment: Alignment.centerRight,
                   child: Padding(
-                    padding: EdgeInsets.only(
-                        right: 2.4 .rw),
+                    padding: EdgeInsets.only(right: 2.4.rw),
                     child: IconButton(
                       color: Colors.white,
                       icon: Icon(
@@ -223,9 +217,7 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
                 Text(
                   'گزارش تفضیلی',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 2.73.rt,
-                      color: Colors.white),
+                  style: TextStyle(fontSize: 2.73.rt, color: Colors.white),
                 ),
                 Expanded(child: SizedBox())
               ],

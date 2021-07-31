@@ -1,7 +1,8 @@
 import 'package:ding/src/feature/departures/bloc/departures_bloc.dart';
 import 'package:ding/src/feature/departures/bloc/departures_event.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:ding/src/ui/slide_action.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,18 +30,15 @@ class _DevicePageState extends State<DevicePage> {
             ),
             Text(
               'دوشنبه، 17 مرداد',
-              style: TextStyle(
-                  fontSize: 2.73.rt,
-                  fontWeight: FontWeight.w300),
+              style: TextStyle(fontSize: 2.73.rt, fontWeight: FontWeight.w300),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   '33°C',
-                  style: TextStyle(
-                      fontSize: 2.73.rt,
-                      fontWeight: FontWeight.w300),
+                  style:
+                      TextStyle(fontSize: 2.73.rt, fontWeight: FontWeight.w300),
                 ),
                 SizedBox(
                   width: 4,
@@ -86,15 +84,12 @@ class _DevicePageState extends State<DevicePage> {
               ),
               Text(
                 'ورود شما در ساعت 20:05 از طریق دستگاه ثبت شده است.',
-                style: TextStyle(
-                    fontSize: 3.4 .rw,
-                    fontWeight: FontWeight.w400),
+                style: TextStyle(fontSize: 3.4.rw, fontWeight: FontWeight.w400),
               ),
             ],
           ),
           Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: 9.7 .rw),
+            padding: EdgeInsets.symmetric(horizontal: 9.7.rw),
             child: SlideAction(
               child: SizedBox(),
               reversed: true,
@@ -116,8 +111,7 @@ class _DevicePageState extends State<DevicePage> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: 9.7 .rw),
+            padding: EdgeInsets.symmetric(horizontal: 9.7.rw),
             child: SlideAction(
               child: SizedBox(),
               reversed: false,

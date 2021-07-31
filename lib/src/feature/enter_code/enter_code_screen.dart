@@ -1,5 +1,6 @@
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 
@@ -23,7 +24,7 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
           child: Container(
             alignment: Alignment.center,
             height: 9.0.rh,
-            width: 73.2 .rw,
+            width: 73.2.rw,
             decoration: BoxDecoration(
               color:
                   _code == '' ? DingColors.veryLight() : DingColors.primary(),
@@ -62,7 +63,10 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          icon: Icon(Icons.arrow_forward_ios,size: 6*SizeConfig.widthMultiplier!,),
+                          icon: Icon(
+                            Icons.arrow_forward_ios,
+                            size: 6 * SizeConfig.widthMultiplier!,
+                          ),
                           color: DingColors.dark(),
                         ),
                       ),
@@ -70,9 +74,8 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
                   ),
                   Text(
                     'کد را وارد کنید',
-                    style: TextStyle(
-                        fontSize: 2.73.rt,
-                        color: DingColors.dark()),
+                    style:
+                        TextStyle(fontSize: 2.73.rt, color: DingColors.dark()),
                   ),
                   PinCodeTextField(
                     onTextChanged: (val) {
@@ -85,7 +88,7 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
                     pinBoxDecoration:
                         ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
                     defaultBorderColor: DingColors.light(),
-                    pinBoxWidth: 9.7 .rw,
+                    pinBoxWidth: 9.7.rw,
                     errorBorderColor: DingColors.warning(),
                     hasTextBorderColor: DingColors.light(),
                     pinBoxHeight: 9.5.rh,
@@ -119,12 +122,12 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
                   Text(
                     'ارسال مجدد',
                     style: TextStyle(
-                      fontSize: 2*SizeConfig.textMultiplier!,
+                      fontSize: 2 * SizeConfig.textMultiplier!,
                       color: DingColors.light(),
                     ),
                   ),
                   SizedBox(
-                    height: 2.73*SizeConfig.heightMultiplier!,
+                    height: 2.73 * SizeConfig.heightMultiplier!,
                   ),
                 ],
               ),

@@ -1,5 +1,6 @@
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 class DingDialog extends StatelessWidget {
@@ -18,7 +19,7 @@ class DingDialog extends StatelessWidget {
     return SizedBox(
       child: Dialog(
         child: Container(
-          padding: EdgeInsets.all(4.8 .rw),
+          padding: EdgeInsets.all(4.8.rw),
           height: 36.0.rh,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,9 +28,7 @@ class DingDialog extends StatelessWidget {
               Text(
                 title,
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 2.2.rt,
-                    color: DingColors.dark()),
+                style: TextStyle(fontSize: 2.2.rt, color: DingColors.dark()),
               ),
               GestureDetector(
                 onTap: () {
@@ -43,9 +42,8 @@ class DingDialog extends StatelessWidget {
                       borderRadius: BorderRadius.circular(100)),
                   child: Text(
                     buttonText,
-                    style: TextStyle(
-                        fontSize: 2.2.rt,
-                        color: DingColors.dark()),
+                    style:
+                        TextStyle(fontSize: 2.2.rt, color: DingColors.dark()),
                   ),
                 ),
               )

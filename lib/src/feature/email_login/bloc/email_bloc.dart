@@ -11,13 +11,13 @@ import 'package:swagger/api.dart';
 class EmailBloc extends Bloc<EmailEvent, EmailState> {
   TokenAuthApi? tokenAuthApi;
   TokenManager? tokenManager;
-
   EmailBloc() : super(EmailInitialState()) {
     Future.delayed(Duration(milliseconds: 0), () async {
       var sp = await SharedPreferences.getInstance();
       tokenManager = TokenManager(sp);
       var interceptor = AccessTokenInterceptor(tokenManager!);
-      var api = ApiClient(basePath: 'https://dinghost.daustany.ir',
+      var api = ApiClient(
+          basePath: 'https://dinghost.daustany.ir',
           client: RestClient(interceptor, tokenManager!));
       tokenAuthApi = TokenAuthApi(api);
     });
@@ -38,18 +38,18 @@ class EmailBloc extends Bloc<EmailEvent, EmailState> {
     yield LoginLoading(loading: true);
     try {
       var response = await tokenAuthApi?.apiTokenauthAuthenticatebytenantPost(
-        body: AuthenticateByTenantModel()
-          ..tenancyName = event.tenancyName
-          ..userNameOrEmailAddress = event.userName
-          ..password = event.password
-          ..rememberClient = true
-          ..twoFactorRememberClientToken = ''
-          ..twoFactorVerificationCode = ''
-          ..singleSignIn = true
-          ..returnUrl = ''
-          ..captchaResponse = ''
-      );
+          body: AuthenticateByTenantModel()
+            ..tenancyName = event.tenancyName
+            ..userNameOrEmailAddress = event.userName
+            ..password = event.password
+            ..rememberClient = true
+            ..twoFactorRememberClientToken = ''
+            ..twoFactorVerificationCode = ''
+            ..singleSignIn = true
+            ..returnUrl = ''
+            ..captchaResponse = '');
       await tokenManager?.setAccessToken(response?.accessToken ?? "");
+      await tokenManager?.setUserId(response?.userId);
       yield LoginWithEmailSuccessful(response);
     } on ApiException catch (e) {
       yield LoginError(message: e.message);

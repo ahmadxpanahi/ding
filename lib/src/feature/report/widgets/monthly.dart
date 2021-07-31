@@ -1,7 +1,8 @@
 import 'package:ding/src/feature/detailed_report/detailed_report_screen.dart';
 import 'package:ding/src/feature/summary_report/summary_report_screen.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -46,12 +47,14 @@ class _MonthlyPageState extends State<MonthlyPage> {
                   children: [
                     Text(
                       'پژمان شفیعی',
-                      style: TextStyle(fontSize: 2*SizeConfig.textMultiplier!),
+                      style:
+                          TextStyle(fontSize: 2 * SizeConfig.textMultiplier!),
                     ),
                     Text(
                       'واحد فروش',
-                      style:
-                      TextStyle(fontSize: 2*SizeConfig.textMultiplier! - 2, fontWeight: FontWeight.w300),
+                      style: TextStyle(
+                          fontSize: 2 * SizeConfig.textMultiplier! - 2,
+                          fontWeight: FontWeight.w300),
                     ),
                   ],
                 )
@@ -71,11 +74,10 @@ class _MonthlyPageState extends State<MonthlyPage> {
         children: [
           Text(
             'دوره',
-            style: TextStyle(
-                fontSize: 2.7.rt, color: Colors.grey),
+            style: TextStyle(fontSize: 2.7.rt, color: Colors.grey),
           ),
           SizedBox(
-            width: 3.6 .rw,
+            width: 3.6.rw,
           ),
           Expanded(
             child: GestureDetector(
@@ -85,8 +87,7 @@ class _MonthlyPageState extends State<MonthlyPage> {
                     builder: (_) {
                       return AlertDialog(
                         contentPadding: EdgeInsets.symmetric(
-                            horizontal: 2.6 .rw,
-                            vertical: 1.3.rh),
+                            horizontal: 2.6.rw, vertical: 1.3.rh),
                         content: SizedBox(
                           height: 36.7.rh,
                           child: Column(
@@ -113,9 +114,7 @@ class _MonthlyPageState extends State<MonthlyPage> {
                                       'تایید',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                          fontSize:
-                                              3.0.rt -
-                                                  2,
+                                          fontSize: 3.0.rt - 2,
                                           color: DingColors.primary()),
                                     ),
                                   ))
@@ -126,8 +125,7 @@ class _MonthlyPageState extends State<MonthlyPage> {
                     });
               },
               child: Container(
-                padding: EdgeInsets.symmetric(
-                    horizontal: 4.7 .rw),
+                padding: EdgeInsets.symmetric(horizontal: 4.7.rw),
                 height: 8.8.rh,
                 color: DingColors.veryLight(),
                 child: Row(
@@ -135,8 +133,7 @@ class _MonthlyPageState extends State<MonthlyPage> {
                     Expanded(
                       child: Padding(
                           padding: EdgeInsets.symmetric(
-                              vertical: 2.2.rh,
-                              horizontal: 4.8 .rw),
+                              vertical: 2.2.rh, horizontal: 4.8.rw),
                           child: period == null
                               ? Align(
                                   alignment: Alignment.bottomCenter,
@@ -147,8 +144,7 @@ class _MonthlyPageState extends State<MonthlyPage> {
                                 )
                               : Text(
                                   '${period!.day} ${period!.month} ${period!.year}',
-                                  style: TextStyle(
-                                      fontSize: 3.0.rt),
+                                  style: TextStyle(fontSize: 3.0.rt),
                                   textAlign: TextAlign.center,
                                 )),
                     ),
@@ -236,8 +232,7 @@ class _MonthlyPageState extends State<MonthlyPage> {
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: 7.3 .rw),
+                padding: EdgeInsets.symmetric(horizontal: 7.3.rw),
                 child: Column(
                   children: [
                     Expanded(

@@ -1,4 +1,5 @@
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 class OtherEmployee extends StatelessWidget {
@@ -18,8 +19,7 @@ class OtherEmployee extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(
-                vertical: 1.3.rh),
+            padding: EdgeInsets.symmetric(vertical: 1.3.rh),
             child: Row(
               children: [
                 Expanded(
@@ -50,8 +50,7 @@ class OtherEmployee extends StatelessWidget {
                           Text(
                             unit ?? '',
                             style: TextStyle(
-                                fontSize: 2.2.rt - 2,
-                                color: Colors.grey),
+                                fontSize: 2.2.rt - 2, color: Colors.grey),
                           ),
                         ],
                       )
@@ -65,14 +64,15 @@ class OtherEmployee extends StatelessWidget {
                     children: [
                       Text(
                         reason ?? '',
-                        style: TextStyle(
-                            fontSize: 3.5 .rw,
-                            color: Colors.grey),
+                        style: TextStyle(fontSize: 3.5.rw, color: Colors.grey),
                       ),
                       SizedBox(
                         width: 5 + SizeConfig.widthMultiplier!,
                       ),
-                      Icon(Icons.arrow_forward_ios,size: SizeConfig.widthMultiplier!*5.5,)
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: SizeConfig.widthMultiplier! * 5.5,
+                      )
                     ],
                   ),
                 )

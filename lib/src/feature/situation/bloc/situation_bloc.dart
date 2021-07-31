@@ -11,7 +11,7 @@ class SituationBloc extends Bloc<SituationEvent, SituationState> {
       yield SituationLoadingState(event.isLoading);
     } else if (event is ShowSituationError) {
       yield SituationErrorState(event.message);
-    }else if(event is GetSituationData){
+    } else if (event is GetSituationData) {
       yield SituationInitialState();
     }
   }

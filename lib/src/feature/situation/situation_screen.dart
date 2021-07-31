@@ -36,7 +36,7 @@ class _SituationContainerState extends State<SituationContainer> {
     super.initState();
     _situationBloc = BlocProvider.of<SituationBloc>(context);
     _situationBloc.add(ShowSituationLoading(true));
-    Future.delayed(Duration(milliseconds: 1500),(){
+    Future.delayed(Duration(milliseconds: 1500), () {
       _situationBloc.add(GetSituationData());
     });
   }
@@ -52,7 +52,7 @@ class _SituationContainerState extends State<SituationContainer> {
                 color: DingColors.primary(),
               ),
             );
-          } else{
+          } else {
             return Container(
               padding: EdgeInsets.only(top: 5),
               color: Colors.grey[100],

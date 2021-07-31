@@ -1,6 +1,7 @@
 import 'package:ding/src/feature/create_request/widgets/leave_page.dart';
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';import 'package:ding/src/utils/extensions.dart';
+import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 class CreateRequestScreen extends StatefulWidget {
@@ -18,6 +19,7 @@ class _CreateRequestScreenState extends State<CreateRequestScreen> {
     super.initState();
     _controller = PageController();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,28 +35,25 @@ class _CreateRequestScreenState extends State<CreateRequestScreen> {
             children: [
               Expanded(
                   child: Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                          right: 2.4 .rw),
-                      child: IconButton(
-                        color: Colors.white,
-                        icon: Icon(
-                          Icons.arrow_back_ios,
-                          size: 3*SizeConfig.heightMultiplier!,
-                        ),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: EdgeInsets.only(right: 2.4.rw),
+                  child: IconButton(
+                    color: Colors.white,
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      size: 3 * SizeConfig.heightMultiplier!,
                     ),
-                  )),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+              )),
               Text(
                 'ثبت درخواست',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 2.73.rt,
-                    color: Colors.white),
+                style: TextStyle(fontSize: 2.73.rt, color: Colors.white),
               ),
               Expanded(child: SizedBox())
             ],
@@ -80,7 +79,8 @@ class _CreateRequestScreenState extends State<CreateRequestScreen> {
                       'مرخصی',
                       style: TextStyle(
                           fontSize: 2.73.rt,
-                          color: value == 0 ? DingColors.primary() : Colors.grey),
+                          color:
+                              value == 0 ? DingColors.primary() : Colors.grey),
                     ),
                   ),
                 ),
@@ -100,7 +100,8 @@ class _CreateRequestScreenState extends State<CreateRequestScreen> {
                       'ورود و خروج',
                       style: TextStyle(
                           fontSize: 2.73.rt,
-                          color: value == 1 ? DingColors.primary() : Colors.grey),
+                          color:
+                              value == 1 ? DingColors.primary() : Colors.grey),
                     ),
                   ),
                 ),
@@ -120,7 +121,8 @@ class _CreateRequestScreenState extends State<CreateRequestScreen> {
                       'ماموریت',
                       style: TextStyle(
                           fontSize: 2.73.rt,
-                          color: value == 2 ? DingColors.primary() : Colors.grey),
+                          color:
+                              value == 2 ? DingColors.primary() : Colors.grey),
                     ),
                   ),
                 ),
@@ -129,18 +131,22 @@ class _CreateRequestScreenState extends State<CreateRequestScreen> {
           ),
           Expanded(
               child: PageView(
-                controller: _controller,
-                onPageChanged: (val) {
-                  setState(() {
-                    value = val;
-                  });
-                },
-                children: [
-                  LeavePage(),
-                  Container(color: DingColors.secondary(),),
-                  Container(color: DingColors.warning(),)
-                ],
-              ))
+            controller: _controller,
+            onPageChanged: (val) {
+              setState(() {
+                value = val;
+              });
+            },
+            children: [
+              LeavePage(),
+              Container(
+                color: DingColors.secondary(),
+              ),
+              Container(
+                color: DingColors.warning(),
+              )
+            ],
+          ))
         ],
       ),
     );

@@ -8,7 +8,7 @@ class LoginWithEmailEvent extends EmailEvent {
   String? password;
 
   @override
-  List<Object?> get props => [tenancyName,userName,password];
+  List<Object?> get props => [tenancyName, userName, password];
 }
 
 class ShowLoading extends EmailEvent {
