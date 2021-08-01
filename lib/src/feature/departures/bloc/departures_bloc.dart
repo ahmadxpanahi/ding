@@ -80,7 +80,6 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
             isEnter: event.isEnter,
             selectedPage: event.selectedPage);
       } on ApiException catch (e) {
-        print('EXEPTION');
         yield DoDepartureError(e.message ?? '');
       }
     }

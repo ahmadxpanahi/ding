@@ -39,16 +39,114 @@ class _RequestsContainerState extends State<RequestsContainer> {
   @override
   void initState() {
     _requestsBloc = BlocProvider.of<RequestsBloc>(context);
-    _requestsBloc.add(ShowRequestsLoading(true));
-    Future.delayed(Duration(milliseconds: 2000), () {
-      _requestsBloc.add(GetCartableData());
-    });
+    _requestsBloc.add(GetMyRequestsData());
     super.initState();
     _controller = PageController();
   }
 
   @override
   Widget build(BuildContext context) {
+    Widget _myRequestsPage() => Stack(
+      children: [
+        SingleChildScrollView(
+          child: Column(
+            children: [
+              MyRequestsItem(
+                status: 'pending',
+                type: 'leave',
+                info1: 'استعلاجی',
+                info2: 'روزانه',
+                time: DateTime.now(),
+                date: '3 شهریور',
+              ),
+              MyRequestsItem(
+                status: 'failed',
+                type: 'enterAndExit',
+                info1: 'ثبت',
+                info2: 'لوکیشن',
+                time: DateTime.now(),
+                date: '3 شهریور',
+              ),
+              MyRequestsItem(
+                status: 'accepted',
+                type: 'mission',
+                info1: 'استعلاجی',
+                info2: 'روزانه',
+                time: DateTime.now(),
+                date: '3 شهریور',
+              ),
+            ],
+          ),
+        ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          CreateRequestScreen()));
+            },
+            child: Container(
+              margin: EdgeInsets.only(bottom: 15),
+              alignment: Alignment.center,
+              height: 14.6.rw,
+              width: 14.6.rw,
+              decoration: BoxDecoration(
+                color: DingColors.primary(),
+                borderRadius: BorderRadius.circular(100),
+              ),
+              child: Icon(
+                Icons.add,
+                size: 12.0.rw,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        )
+      ],
+    );
+    Widget _cartablePage() => SingleChildScrollView(
+      child: Column(
+        children: [
+          CartableItem(
+            name: 'پژمان شفیعی',
+            info2: 'استعلاجی',
+            info1: 'مرخصی روزانه',
+            type: 'leave',
+            unit: 'واحد فروش',
+            imgUrl:
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
+            beginDate: '23 خرداد 1398 - 23:10',
+            date: '23 خرداد 1398 - 23:10',
+            endDate: '23 خرداد 1398 - 23:10',
+          ),
+          CartableItem(
+            name: 'پژمان شفیعی',
+            info2: 'ورود/لوکیشن',
+            info1: 'ورود و خروج',
+            type: 'enterAndExit',
+            unit: 'واحد فروش',
+            imgUrl:
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
+            date: '23 خرداد 1398 - 23:10',
+          ),
+          CartableItem(
+            name: 'پژمان شفیعی',
+            info2: 'استعلاجی',
+            info1: 'مرخصی روزانه',
+            type: 'mission',
+            unit: 'واحد فروش',
+            imgUrl:
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
+            beginDate: '23 خرداد 1398 - 23:10',
+            date: '23 خرداد 1398 - 23:10',
+            endDate: '23 خرداد 1398 - 23:10',
+          ),
+        ],
+      ),
+    );
     return Column(
       children: [
         Row(
@@ -107,76 +205,20 @@ class _RequestsContainerState extends State<RequestsContainer> {
             BlocBuilder(
               bloc: _requestsBloc,
               builder: (_, state) {
-                if (state is RequestsLoadingState)
-                  return Center(
-                    child: CircularProgressIndicator(
-                      color: DingColors.primary(),
-                    ),
-                  );
-                else {
-                  return Stack(
-                    children: [
-                      SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            MyRequestsItem(
-                              status: 'pending',
-                              type: 'leave',
-                              info1: 'استعلاجی',
-                              info2: 'روزانه',
-                              time: DateTime.now(),
-                              date: '3 شهریور',
-                            ),
-                            MyRequestsItem(
-                              status: 'failed',
-                              type: 'enterAndExit',
-                              info1: 'ثبت',
-                              info2: 'لوکیشن',
-                              time: DateTime.now(),
-                              date: '3 شهریور',
-                            ),
-                            MyRequestsItem(
-                              status: 'accepted',
-                              type: 'mission',
-                              info1: 'استعلاجی',
-                              info2: 'روزانه',
-                              time: DateTime.now(),
-                              date: '3 شهریور',
-                            ),
-                          ],
-                        ),
+                if (state is RequestsLoadingState){
+                  if(state.isLoading){
+                    return Center(
+                      child: CircularProgressIndicator(
+                        color: DingColors.primary(),
                       ),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        CreateRequestScreen()));
-                          },
-                          child: Container(
-                            margin: EdgeInsets.only(bottom: 15),
-                            alignment: Alignment.center,
-                            height: 14.6.rw,
-                            width: 14.6.rw,
-                            decoration: BoxDecoration(
-                              color: DingColors.primary(),
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                            child: Icon(
-                              Icons.add,
-                              size: 12.0.rw,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  );
+                    );
+                  }else {
+                    return _myRequestsPage();
+                  }
                 }
+                return _myRequestsPage();
               },
+
             ),
             BlocBuilder(
               bloc: _requestsBloc,
@@ -188,46 +230,7 @@ class _RequestsContainerState extends State<RequestsContainer> {
                     ),
                   );
                 else {
-                  return SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        CartableItem(
-                          name: 'پژمان شفیعی',
-                          info2: 'استعلاجی',
-                          info1: 'مرخصی روزانه',
-                          type: 'leave',
-                          unit: 'واحد فروش',
-                          imgUrl:
-                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
-                          beginDate: '23 خرداد 1398 - 23:10',
-                          date: '23 خرداد 1398 - 23:10',
-                          endDate: '23 خرداد 1398 - 23:10',
-                        ),
-                        CartableItem(
-                          name: 'پژمان شفیعی',
-                          info2: 'ورود/لوکیشن',
-                          info1: 'ورود و خروج',
-                          type: 'enterAndExit',
-                          unit: 'واحد فروش',
-                          imgUrl:
-                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
-                          date: '23 خرداد 1398 - 23:10',
-                        ),
-                        CartableItem(
-                          name: 'پژمان شفیعی',
-                          info2: 'استعلاجی',
-                          info1: 'مرخصی روزانه',
-                          type: 'mission',
-                          unit: 'واحد فروش',
-                          imgUrl:
-                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbGv0MjXmTohr4qtlT2kRF6r4JlM1e-B32Lw02SvDeqS-zY8O8zl7l_WE-Cph1jot8Mag&usqp=CAU',
-                          beginDate: '23 خرداد 1398 - 23:10',
-                          date: '23 خرداد 1398 - 23:10',
-                          endDate: '23 خرداد 1398 - 23:10',
-                        ),
-                      ],
-                    ),
-                  );
+                  return _cartablePage();
                 }
               },
             )

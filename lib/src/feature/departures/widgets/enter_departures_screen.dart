@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:ding/src/feature/departures/bloc/departures_bloc.dart';
 import 'package:ding/src/feature/departures/bloc/departures_event.dart';
 import 'package:ding/src/feature/departures/bloc/departures_state.dart';
@@ -146,10 +148,11 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
               }
             }
           } else if (state is DoDepartureError) {
+            Map errorMap = json.decode(state.message ?? '');
             showDialog(
                 context: context,
                 builder: (_) => DingDialog(
-                      title: state.message,
+                      title: errorMap['error']['message'].toString(),
                       buttonText: 'متوجه شدم',
                       onClick: () {
                         Navigator.pop(context);

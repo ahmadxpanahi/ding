@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/feature/departures/bloc/departures_bloc.dart';
 import 'package:ding/src/feature/departures/bloc/departures_event.dart';
@@ -147,16 +149,18 @@ class _ExitDeparturesScreenState extends State<ExitDeparturesScreen> {
               }
             }
           } else if (state is DoDepartureError) {
+            Map errorMap = json.decode(state.message ?? '');
+            print(state.message);
             showDialog(
                 context: context,
                 builder: (_) => DingDialog(
-                      title: state.message,
-                      buttonText: 'متوجه شدم',
-                      onClick: () {
-                        Navigator.pop(context);
-                        _bloc.add(BackToInitial());
-                      },
-                    ));
+                  title: errorMap['error']['message'].toString(),
+                  buttonText: 'متوجه شدم',
+                  onClick: () {
+                    Navigator.pop(context);
+                    _bloc.add(BackToInitial());
+                  },
+                ));
           }
         },
       );

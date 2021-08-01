@@ -7,6 +7,12 @@ class RequestsInitialState extends RequestsState {
   List<Object?> get props => [];
 }
 
+class GetMyRequestsDataSuccess extends RequestsState{
+  @override
+  List<Object?> get props =>[];
+
+}
+
 class RequestsLoadingState extends RequestsState {
   bool isLoading;
   RequestsLoadingState(this.isLoading);
