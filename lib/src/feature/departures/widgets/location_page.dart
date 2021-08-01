@@ -7,7 +7,9 @@ import 'package:ding/src/ui/slide_action.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:jalali_calendar/jalali_calendar.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
+import 'package:timer_builder/timer_builder.dart';
 
 class LocationPage extends StatefulWidget {
   const LocationPage({Key? key}) : super(key: key);
@@ -18,8 +20,9 @@ class LocationPage extends StatefulWidget {
 
 class _LocationPageState extends State<LocationPage> {
   late DeparturesBloc _bloc;
-  String now =
-      '${DateTime.now().hour.timePadded.toString().toPersianDigit()}:${DateTime.now().minute.timePadded.toString().toPersianDigit()}';
+
+  String timeNow =
+      '${PersianDate().hour.toString().toPersianDigit()}:${PersianDate().minute.toString().toPersianDigit()}';
 
   Widget _mapContainer() => Container(
         color: DingColors.secondary(),
@@ -37,26 +40,19 @@ class _LocationPageState extends State<LocationPage> {
                 child: Column(
                   children: [
                     Expanded(
-                        child: Text(
-                      now,
-                      style: TextStyle(fontSize: 5.0.rw),
-                    )),
+                        child: TimerBuilder.periodic(Duration(seconds: 5), builder: (_) {
+                          return Text(
+                            '${PersianDate().hour.toString().toPersianDigit()}:${PersianDate().minute.toString().toPersianDigit()}',
+                            style: TextStyle(fontSize: 5.0.rw,fontWeight: FontWeight.w300),
+                          );
+                        }),
+                    ),
                     Text(
-                      '${DateTime.now().toPersianDateStr(
-                        showDayStr: true,
-                        strYear: false,
-                      )}'
-                          .replaceRange(13, 18, '')
-                          .replaceRange(5, 12, ''),
+                      '${PersianDate().weekdayname}',
                       style: TextStyle(fontSize: 5.0.rw - 7),
                     ),
                     Text(
-                      '${DateTime.now().toPersianDateStr(
-                        showDayStr: true,
-                        strYear: false,
-                      )}'
-                          .replaceRange(13, 18, '')
-                          .replaceRange(0, 5, ''),
+                      '${PersianDate().day.toString().toPersianDigit()} ${PersianDate().monthname}',
                       style: TextStyle(fontSize: 5.0.rw - 7),
                     ),
                     Expanded(
@@ -116,7 +112,7 @@ class _LocationPageState extends State<LocationPage> {
                 width: 3,
               ),
               Text(
-                'ورود شما در ساعت 20:05 از طریق دستگاه ثبت شده است.',
+                'ورود شما در ساعت ${timeNow} از طریق دستگاه ثبت شده است.',
                 style: TextStyle(fontSize: 3.4.rw, fontWeight: FontWeight.w400),
               ),
             ],

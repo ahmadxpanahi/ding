@@ -7,6 +7,8 @@ import 'package:ding/src/ui/slide_action.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:timer_builder/timer_builder.dart';
+import 'package:jalali_calendar/jalali_calendar.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 
 class DevicePage extends StatefulWidget {
@@ -17,8 +19,9 @@ class DevicePage extends StatefulWidget {
 }
 
 class _DevicePageState extends State<DevicePage> {
-  String now =
-      '${DateTime.now().hour.timePadded.toString().toPersianDigit()}:${DateTime.now().minute.timePadded.toString().toPersianDigit()}';
+  String timeNow =
+      '${PersianDate().hour.toString().toPersianDigit()}:${PersianDate().minute.toString().toPersianDigit()}';
+
   Widget _infoContainer() => Container(
         width: 30.0.rh,
         height: 30.0.rh,
@@ -27,16 +30,14 @@ class _DevicePageState extends State<DevicePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            TimerBuilder.periodic(Duration(seconds: 5), builder: (_) {
+              return Text(
+                '${PersianDate().hour.toString().toPersianDigit()}:${PersianDate().minute.toString().toPersianDigit()}',
+                style: TextStyle(fontSize: 6.1.rt),
+              );
+            }),
             Text(
-              now,
-              style: TextStyle(fontSize: 6.1.rt),
-            ),
-            Text(
-              '${DateTime.now().toPersianDateStr(
-                showDayStr: true,
-                strYear: false,
-              )}'
-                  .replaceRange(13, 18, ''),
+              '${PersianDate().weekdayname} ${PersianDate().day.toString().toPersianDigit()} ${PersianDate().monthname}',
               style: TextStyle(fontSize: 2.73.rt, fontWeight: FontWeight.w300),
             ),
             Row(
@@ -90,7 +91,7 @@ class _DevicePageState extends State<DevicePage> {
                 width: 3,
               ),
               Text(
-                'ورود شما در ساعت ${now} از طریق دستگاه ثبت شده است.',
+                'ورود شما در ساعت ${timeNow} از طریق دستگاه ثبت شده است.',
                 style: TextStyle(fontSize: 3.4.rw, fontWeight: FontWeight.w400),
               ),
             ],
