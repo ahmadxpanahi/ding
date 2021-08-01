@@ -24,7 +24,8 @@ class AccessTokenInterceptor {
       token = _tokenManager.getAccessToken();
     }
 
-    log('Apply access token [$token] to $url');
+    // log('Request body of $url is -> ${request}');
+
     if (token != null) {
       request.headers['Authorization'] = 'Bearer $token';
     }

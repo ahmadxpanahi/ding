@@ -74,13 +74,17 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
           body: createOrEdit
         );
 
-        yield DeparturesStatusState(
-            dialogType: 'success',
-            showDialog: true,
-            isEnter: event.isEnter,
-            selectedPage: event.selectedPage);
-      } on ApiException catch (e) {
-        yield DoDepartureError(e.message ?? '');
+        if(response != null) {
+          yield DeparturesStatusState(
+              dialogType: 'success',
+              showDialog: true,
+              isEnter: event.isEnter,
+              selectedPage: event.selectedPage);
+        } else {
+          yield DoDepartureError('خطا در ارسال اطلاعات');
+        }
+      }on ApiException catch (e) {
+        yield DoDepartureError(e.message??'');
       }
     }
   }
