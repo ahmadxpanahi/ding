@@ -28,92 +28,95 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
     _bloc = BlocProvider.of<DeparturesBloc>(context);
   }
 
-  Widget _buildBody() => Column(
-        children: [
-          SizedBox(
-            height: SizeConfig.heightMultiplier! * 4,
-          ),
-          Text(
-            'ثبت ورود',
-            style: TextStyle(fontSize: SizeConfig.textMultiplier! * 2.5),
-          ),
-          SizedBox(
-            height: SizeConfig.heightMultiplier! * 6,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text(
-                'اتصال به دینگ',
-                style: TextStyle(fontSize: SizeConfig.textMultiplier! * 2.5),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: SizeConfig.widthMultiplier! * 5),
-                child: widget.progress == 0
-                    ? CircularProgressIndicator(
-                        color: DingColors.primary(),
-                      )
-                    : Icon(
-                        Icons.check,
-                        color: DingColors.primary(),
-                        size: SizeConfig.heightMultiplier! * 6,
-                      ),
-              )
-            ],
-          ),
-          SizedBox(
-            height: SizeConfig.heightMultiplier! * 6,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text(
-                'بررسی ارتباط با شبکه (اینترنت)',
-                style: TextStyle(fontSize: SizeConfig.textMultiplier! * 2.5),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: SizeConfig.widthMultiplier! * 5),
-                child: widget.progress == 1
-                    ? CircularProgressIndicator(
-                        color: DingColors.primary(),
-                      )
-                    : Icon(
-                        Icons.check,
-                        color: DingColors.primary(),
-                        size: SizeConfig.heightMultiplier! * 6,
-                      ),
-              )
-            ],
-          ),
-          SizedBox(
-            height: SizeConfig.heightMultiplier! * 6,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text(
-                'ثبت عملیات در سرور',
-                style: TextStyle(fontSize: SizeConfig.textMultiplier! * 2.5),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: SizeConfig.widthMultiplier! * 5),
-                child: widget.progress == 2
-                    ? CircularProgressIndicator(
-                        color: DingColors.primary(),
-                      )
-                    : Icon(
-                        Icons.check,
-                        color: DingColors.primary(),
-                        size: SizeConfig.heightMultiplier! * 6,
-                      ),
-              )
-            ],
-          ),
-        ],
-      );
+  Widget _buildBody() => Container(
+    color: Colors.white,
+    child: Column(
+          children: [
+            SizedBox(
+              height: SizeConfig.heightMultiplier! * 4,
+            ),
+            Text(
+              'ثبت ورود',
+              style: TextStyle(fontSize: SizeConfig.textMultiplier! * 2.5),
+            ),
+            SizedBox(
+              height: SizeConfig.heightMultiplier! * 6,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'اتصال به دینگ',
+                  style: TextStyle(fontSize: SizeConfig.textMultiplier! * 2.5),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: SizeConfig.widthMultiplier! * 5),
+                  child: widget.progress == 0
+                      ? CircularProgressIndicator(
+                          color: DingColors.primary(),
+                        )
+                      : Icon(
+                          Icons.check,
+                          color: DingColors.primary(),
+                          size: SizeConfig.heightMultiplier! * 6,
+                        ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: SizeConfig.heightMultiplier! * 6,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'بررسی ارتباط با شبکه (اینترنت)',
+                  style: TextStyle(fontSize: SizeConfig.textMultiplier! * 2.5),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: SizeConfig.widthMultiplier! * 5),
+                  child: widget.progress == 1
+                      ? CircularProgressIndicator(
+                          color: DingColors.primary(),
+                        )
+                      : Icon(
+                          Icons.check,
+                          color: DingColors.primary(),
+                          size: SizeConfig.heightMultiplier! * 6,
+                        ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: SizeConfig.heightMultiplier! * 6,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'ثبت عملیات در سرور',
+                  style: TextStyle(fontSize: SizeConfig.textMultiplier! * 2.5),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: SizeConfig.widthMultiplier! * 5),
+                  child: widget.progress == 2
+                      ? CircularProgressIndicator(
+                          color: DingColors.primary(),
+                        )
+                      : Icon(
+                          Icons.check,
+                          color: DingColors.primary(),
+                          size: SizeConfig.heightMultiplier! * 6,
+                        ),
+                )
+              ],
+            ),
+          ],
+        ),
+  );
 
   @override
   Widget build(BuildContext context) =>
