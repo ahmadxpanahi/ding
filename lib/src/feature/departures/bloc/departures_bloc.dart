@@ -71,15 +71,17 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
             ..weekNumber = 1
             ..id = 0,
         );
-        print('response');
-        print(response);
-        yield DeparturesStatusState(
-            dialogType: 'success',
-            showDialog: true,
-            isEnter: event.isEnter,
-            selectedPage: event.selectedPage);
+
+        if(response != null) {
+          yield DeparturesStatusState(
+              dialogType: 'success',
+              showDialog: true,
+              isEnter: event.isEnter,
+              selectedPage: event.selectedPage);
+        } else {
+          yield DoDepartureError('خطا در ارسال اطلاعات');
+        }
       }on ApiException catch (e) {
-        print('EXEPTION');
         yield DoDepartureError(e.message??'');
       }
     }

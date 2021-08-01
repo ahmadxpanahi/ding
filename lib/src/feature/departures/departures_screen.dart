@@ -184,10 +184,7 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
                   },
                   children: [DevicePage(), LocationPage()],
                 );
-                print("initState -- PageView updated");
                 Future.delayed(Duration(milliseconds: 1000), () {
-                  print(
-                      "After initState -- hasClients: ${_controller!.hasClients}");
                   if (_controller?.hasClients ?? false) {
                     _controller?.animateToPage(value,
                         duration: Duration(milliseconds: 1500),
