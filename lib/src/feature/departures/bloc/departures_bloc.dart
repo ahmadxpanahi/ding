@@ -54,22 +54,24 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
           selectedPage: event.selectedPage);
 
       try {
+        var createOrEdit = CreateOrEditUserClockInOutDto()
+          ..userId = tokenManager?.getUserId()
+          ..clock = DateTime.now()
+          ..clockInOutType = event.isEnter
+              ? UserClockInOutType.number1_
+              : UserClockInOutType.number2_
+          ..workScheduleId = 0
+          ..workHourId = 0
+          ..projectName = ''
+          ..description = ''
+          ..organizationUnitId = 0
+          ..abnormalityType = UserWorkScheduleAbnormalities.number1_
+          ..weekNumber = 1
+          ..id = 0;
+
         var response = await _userClockInOutsApi
             ?.apiServicesAppUserclockinoutsCreateoreditPost(
-          body: CreateOrEditUserClockInOutDto()
-            ..userId = tokenManager?.getUserId()
-            ..clock = DateTime.now()
-            ..clockInOutType = event.isEnter
-                ? UserClockInOutType.number1_
-                : UserClockInOutType.number2_
-            ..workScheduleId = 0
-            ..workHourId = 0
-            ..projectName = ''
-            ..description = ''
-            ..organizationUnitId = 0
-            ..abnormalityType = UserWorkScheduleAbnormalities.number1_
-            ..weekNumber = 1
-            ..id = 0,
+          body: createOrEdit
         );
 
         yield DeparturesStatusState(

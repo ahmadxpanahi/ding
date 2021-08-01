@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jalali_calendar/jalali_calendar.dart';
+import 'package:persian_number_utility/persian_number_utility.dart';
 
 class CustomPage extends StatefulWidget {
   const CustomPage({Key? key}) : super(key: key);
@@ -102,9 +103,12 @@ class _CustomPageState extends State<CustomPage> {
                                         initialDateTime: DateTime.now(),
                                         onDateTimeChanged: (DateTime val) {
                                           setState(() {
+                                            var year = val.year.timePadded;
+                                            var month = val.month.timePadded;
+                                            var day = val.day.timePadded;
                                             begin = PersianDate.pDate(
                                                 gregorian:
-                                                    '${val.year}-${val.month}-${val.day}');
+                                                    '${year}-${month}-${day}');
                                           });
                                         }),
                                   ),
@@ -114,7 +118,6 @@ class _CustomPageState extends State<CustomPage> {
                                       child: GestureDetector(
                                         onTap: () {
                                           Navigator.pop(context);
-                                          initState();
                                         },
                                         child: Text(
                                           'تایید',
@@ -148,7 +151,7 @@ class _CustomPageState extends State<CustomPage> {
                                       alignment: Alignment.bottomCenter,
                                       child: Container(
                                         height: 1,
-                                        color: DingColors.dark(),
+                                        color: Colors.grey,
                                       ),
                                     )
                                   : Text(
@@ -199,10 +202,13 @@ class _CustomPageState extends State<CustomPage> {
                                       mode: CupertinoDatePickerMode.date,
                                       initialDateTime: DateTime.now(),
                                       onDateTimeChanged: (val) {
+                                        var year = val.year.timePadded;
+                                        var month = val.month.timePadded;
+                                        var day = val.day.timePadded;
                                         setState(() {
                                           end = PersianDate.pDate(
                                               gregorian:
-                                                  '${val.year}-${val.month}-${val.day}');
+                                              '${year}-${month}-${day}');
                                         });
                                       },
                                     ),
@@ -213,9 +219,6 @@ class _CustomPageState extends State<CustomPage> {
                                       child: GestureDetector(
                                         onTap: () {
                                           Navigator.pop(context);
-                                          setState(() {
-                                            initState();
-                                          });
                                         },
                                         child: Text(
                                           'تایید',
@@ -249,7 +252,7 @@ class _CustomPageState extends State<CustomPage> {
                                       alignment: Alignment.bottomCenter,
                                       child: Container(
                                         height: 1,
-                                        color: DingColors.dark(),
+                                        color: Colors.grey,
                                       ),
                                     )
                                   : Text(

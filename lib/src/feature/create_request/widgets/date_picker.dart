@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jalali_calendar/jalali_calendar.dart';
+import 'package:persian_number_utility/persian_number_utility.dart';
 
 class DDatePicker extends StatefulWidget {
   DDatePicker({Key? key, this.title, this.type}) : super(key: key);
@@ -15,9 +16,12 @@ class DDatePicker extends StatefulWidget {
 }
 
 class _DDatePickerState extends State<DDatePicker> {
+
+  DateTime? time;
+  PersianDate? date;
+
   @override
   Widget build(BuildContext context) {
-    PersianDate? date;
     return Row(
       children: [
         Text(
@@ -46,13 +50,11 @@ class _DDatePickerState extends State<DDatePicker> {
                             Expanded(
                               flex: 5,
                               child: CupertinoDatePicker(
-                                  mode: CupertinoDatePickerMode.date,
+                                  mode: CupertinoDatePickerMode.time,
                                   initialDateTime: DateTime.now(),
                                   onDateTimeChanged: (DateTime val) {
                                     setState(() {
-                                      date = PersianDate.pDate(
-                                          gregorian:
-                                              '${val.year}-${val.month}-${val.day}');
+                                      time = val;
                                     });
                                   }),
                             ),
@@ -62,7 +64,6 @@ class _DDatePickerState extends State<DDatePicker> {
                                 child: GestureDetector(
                                   onTap: () {
                                     Navigator.pop(context);
-                                    initState();
                                   },
                                   child: Text(
                                     'تایید',
@@ -88,16 +89,16 @@ class _DDatePickerState extends State<DDatePicker> {
                     child: Padding(
                         padding: EdgeInsets.symmetric(
                             vertical: 2.2.rh, horizontal: 2.5.rw),
-                        child: date == null
+                        child: time == null
                             ? Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Container(
                                   height: 1,
-                                  color: DingColors.dark(),
+                                  color: Colors.grey,
                                 ),
                               )
                             : Text(
-                                '${date!.day} ${date!.monthname} ${date!.year}',
+                                '${time?.hour.toString().toPersianDigit()}:${time?.minute.toString().toPersianDigit()}',
                                 style: TextStyle(fontSize: 3.0.rt),
                                 textAlign: TextAlign.center,
                               )),
@@ -134,10 +135,13 @@ class _DDatePickerState extends State<DDatePicker> {
                                   mode: CupertinoDatePickerMode.date,
                                   initialDateTime: DateTime.now(),
                                   onDateTimeChanged: (DateTime val) {
+                                    var year = val.year.timePadded;
+                                    var month = val.month.timePadded;
+                                    var day = val.day.timePadded;
                                     setState(() {
                                       date = PersianDate.pDate(
                                           gregorian:
-                                              '${val.year}-${val.month}-${val.day}');
+                                          '${year}-${month}-${day}');
                                     });
                                   }),
                             ),
@@ -147,7 +151,6 @@ class _DDatePickerState extends State<DDatePicker> {
                                 child: GestureDetector(
                                   onTap: () {
                                     Navigator.pop(context);
-                                    initState();
                                   },
                                   child: Text(
                                     'تایید',
@@ -178,7 +181,7 @@ class _DDatePickerState extends State<DDatePicker> {
                                 alignment: Alignment.bottomCenter,
                                 child: Container(
                                   height: 1,
-                                  color: DingColors.dark(),
+                                  color: Colors.grey,
                                 ),
                               )
                             : Text(
