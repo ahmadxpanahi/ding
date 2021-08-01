@@ -45,14 +45,18 @@ class _LocationPageState extends State<LocationPage> {
                       '${DateTime.now().toPersianDateStr(
                         showDayStr: true,
                         strYear: false,
-                      )}'.replaceRange(13, 18,'').replaceRange(5, 12, ''),
+                      )}'
+                          .replaceRange(13, 18, '')
+                          .replaceRange(5, 12, ''),
                       style: TextStyle(fontSize: 5.0.rw - 7),
                     ),
                     Text(
                       '${DateTime.now().toPersianDateStr(
                         showDayStr: true,
                         strYear: false,
-                      )}'.replaceRange(13, 18,'').replaceRange(0, 5, ''),
+                      )}'
+                          .replaceRange(13, 18, '')
+                          .replaceRange(0, 5, ''),
                       style: TextStyle(fontSize: 5.0.rw - 7),
                     ),
                     Expanded(

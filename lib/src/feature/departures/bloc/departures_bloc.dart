@@ -53,7 +53,7 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
           progress: 2,
           selectedPage: event.selectedPage);
 
-      try{
+      try {
         var response = await _userClockInOutsApi
             ?.apiServicesAppUserclockinoutsCreateoreditPost(
           body: CreateOrEditUserClockInOutDto()
@@ -71,16 +71,15 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
             ..weekNumber = 1
             ..id = 0,
         );
-        print('response');
-        print(response);
+
         yield DeparturesStatusState(
             dialogType: 'success',
             showDialog: true,
             isEnter: event.isEnter,
             selectedPage: event.selectedPage);
-      }on ApiException catch (e) {
+      } on ApiException catch (e) {
         print('EXEPTION');
-        yield DoDepartureError(e.message??'');
+        yield DoDepartureError(e.message ?? '');
       }
     }
   }

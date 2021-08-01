@@ -17,7 +17,7 @@ extension DoubleExt on double {
 
 extension IntExt on int {
   String get timePadded {
-    if(this.toString().length == 1) {
+    if (this.toString().length == 1) {
       return this.toString().padLeft(2, '0');
     } else {
       return this.toString();

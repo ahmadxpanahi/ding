@@ -35,7 +35,8 @@ class _DevicePageState extends State<DevicePage> {
               '${DateTime.now().toPersianDateStr(
                 showDayStr: true,
                 strYear: false,
-              )}'.replaceRange(13, 18,''),
+              )}'
+                  .replaceRange(13, 18, ''),
               style: TextStyle(fontSize: 2.73.rt, fontWeight: FontWeight.w300),
             ),
             Row(

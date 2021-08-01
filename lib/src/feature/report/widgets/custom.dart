@@ -103,7 +103,7 @@ class _CustomPageState extends State<CustomPage> {
                                         onDateTimeChanged: (DateTime val) {
                                           setState(() {
                                             begin = PersianDate.pDate(
-                                                 gregorian:
+                                                gregorian:
                                                     '${val.year}-${val.month}-${val.day}');
                                           });
                                         }),

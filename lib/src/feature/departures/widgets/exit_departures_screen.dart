@@ -9,7 +9,7 @@ import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jalali_calendar/jalali_calendar.dart';
-import  'package:persian_number_utility/persian_number_utility.dart';
+import 'package:persian_number_utility/persian_number_utility.dart';
 
 class ExitDeparturesScreen extends StatefulWidget {
   int progress;
@@ -125,38 +125,38 @@ class _ExitDeparturesScreenState extends State<ExitDeparturesScreen> {
                 showDialog(
                     context: context,
                     builder: (_) => DingDialog(
-                      title:
-                      'خروج شما در روز سه شنبه ${PersianDate().getNow.toPersianDigit()} با موفقیت ثبت شد',
-                      buttonText: 'متوجه شدم',
-                      onClick: () {
-                        Navigator.pop(context);
-                        _bloc.add(BackToInitial());
-                      },
-                    ));
+                          title:
+                              'خروج شما در روز سه شنبه ${PersianDate().getNow.toPersianDigit()} با موفقیت ثبت شد',
+                          buttonText: 'متوجه شدم',
+                          onClick: () {
+                            Navigator.pop(context);
+                            _bloc.add(BackToInitial());
+                          },
+                        ));
               } else if (state.dialogType == 'network') {
                 showDialog(
                     context: context,
                     builder: (_) => DingDialog(
-                      title: 'اتصال اینترنت خود را بررسی کنید.',
+                          title: 'اتصال اینترنت خود را بررسی کنید.',
+                          buttonText: 'متوجه شدم',
+                          onClick: () {
+                            Navigator.pop(context);
+                            _bloc.add(BackToInitial());
+                          },
+                        ));
+              }
+            }
+          } else if (state is DoDepartureError) {
+            showDialog(
+                context: context,
+                builder: (_) => DingDialog(
+                      title: state.message,
                       buttonText: 'متوجه شدم',
                       onClick: () {
                         Navigator.pop(context);
                         _bloc.add(BackToInitial());
                       },
                     ));
-              }
-            }
-          } else if(state is DoDepartureError) {
-            showDialog(
-                context: context,
-                builder: (_) => DingDialog(
-                  title: state.message,
-                  buttonText: 'متوجه شدم',
-                  onClick: () {
-                    Navigator.pop(context);
-                    _bloc.add(BackToInitial());
-                  },
-                ));
           }
         },
       );
