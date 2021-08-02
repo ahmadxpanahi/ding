@@ -9,8 +9,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:swagger/api.dart';
 
 class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
-  RequestsApi? _requestsApi;
   TokenManager? _tokenManager;
+  RequestsApi? _requestsApi;
+  EnterLeavesApi? _enterLeavesApi;
+
   RequestsBloc() : super(RequestsInitialState()) {
     Future.delayed(Duration.zero, () async {
       var sp = await SharedPreferences.getInstance();
@@ -20,39 +22,52 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
           basePath: 'https://dinghost.daustany.ir',
           client: RestClient(interceptor, _tokenManager!));
       _requestsApi = RequestsApi(api);
+      _enterLeavesApi = EnterLeavesApi(api);
     });
   }
 
   @override
   Stream<RequestsState> mapEventToState(RequestsEvent event) async* {
-    if(event is GetMyRequestsData){
+    if (event is GetMyRequestsData) {
       yield* _getMyRequestsData(event);
-    }else if (event is GetCartableData) {
+    } else if (event is GetCartableData) {
       yield RequestsInitialState();
     } else if (event is ShowRequestsLoading) {
       yield RequestsLoadingState(event.isLoading);
+    } else if (event is CreateRequest) {
+      yield* _createRequest(event);
+    }
+    if (event is UpdateRequestType) {
+      yield UpdateRequestsTypeState(type:event.type);
     }
   }
 
-  Stream<RequestsState> _getMyRequestsData(GetMyRequestsData event)async*{
+  Stream<RequestsState> _getMyRequestsData(GetMyRequestsData event) async* {
     yield RequestsLoadingState(true);
-    try{
-      var response =  await _requestsApi?.apiServicesAppRequestsGetallGet(
-        filter: '',
-        commentFilter: '',
-        fromFilter: DateTime.now(),
-        maxResultCount: 3,
-        userNameFilter: 'admin',
-        statusFilter: 1,
-        requestTypeFilter: 1,
-        skipCount: 1,
-        sorting: '',
-      );
+    try {
+      var response = await _requestsApi?.apiServicesAppRequestsGetallGet();
       print(response);
       yield GetMyRequestsDataSuccess();
-    }on ApiException catch (e) {
+    } on ApiException catch (e) {
       print('EXEPTION');
       yield RequestsLoadingState(false);
+    }
+  }
+
+  Stream<RequestsState> _createRequest(CreateRequest event) async* {
+    yield RequestsLoadingState(true);
+    try {
+      var response = await _requestsApi?.apiServicesAppRequestsCreateoreditPost(
+          body: CreateOrEditRequestDto()
+            ..comment = event.comment
+            ..status = event.requestType
+            ..requestType = event.requestType
+            ..from = event.beginDate
+            ..to = event.endDate);
+      print(response);
+    } on ApiException catch (e) {
+      print('EXXXXX');
+      print(e);
     }
   }
 }

@@ -1,3 +1,4 @@
+import 'package:ding/src/feature/requests/bloc/requests_event.dart';
 import 'package:equatable/equatable.dart';
 import 'package:swagger/api.dart';
 
@@ -17,3 +18,4 @@ class BackToInitial extends DeparturesEvent {
   @override
   List<Object?> get props => [];
 }
+

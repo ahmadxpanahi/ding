@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:swagger/api.dart';
 
 abstract class RequestsEvent extends Equatable {}
 
@@ -27,4 +28,28 @@ class GetCartableData extends RequestsEvent {
   GetCartableData();
   @override
   List<Object?> get props => [];
+}
+
+class CreateRequest extends RequestsEvent {
+  final int? requestType;
+  final int? requestStatus;
+  final DateTime? beginDate;
+  final DateTime? endDate;
+  final String comment;
+  CreateRequest(
+      {this.requestStatus,
+        this.beginDate,
+        this.endDate,
+        this.requestType,
+        this.comment = ''});
+  @override
+  List<Object?> get props => [requestType, requestStatus, beginDate, endDate];
+}
+
+class UpdateRequestType extends RequestsEvent{
+  final int type;
+  UpdateRequestType({this.type = 1});
+  @override
+  List<Object?> get props => [type];
+
 }

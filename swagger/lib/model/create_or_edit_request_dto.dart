@@ -2,7 +2,7 @@ part of swagger.api;
 
 class CreateOrEditRequestDto {
   
-  RequestType? requestType = null;
+  int? requestType = null;
   
 
   DateTime? from = null;
@@ -14,7 +14,7 @@ class CreateOrEditRequestDto {
   String? comment = null;
   
 
-  RequestStatus? status = null;
+  int? status = null;
   
 
   int? substituteUserId = null;
@@ -34,17 +34,14 @@ class CreateOrEditRequestDto {
     requestType =
       
       
-      new RequestType.fromJson(json['requestType'])
+    json['requestType']
 ;
     from = json['from'] == null ? null : DateTime.parse(json['from']);
     to = json['to'] == null ? null : DateTime.parse(json['to']);
     comment =
         json['comment']
     ;
-    status =
-      
-      
-      new RequestStatus.fromJson(json['status'])
+    status = json['status']
 ;
     substituteUserId =
         json['substituteUserId']

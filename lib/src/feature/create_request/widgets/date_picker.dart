@@ -8,9 +8,12 @@ import 'package:jalali_calendar/jalali_calendar.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 
 class DDatePicker extends StatefulWidget {
-  DDatePicker({Key? key, this.title, this.type}) : super(key: key);
+  DDatePicker({Key? key, this.title, this.type,this.daily=false,this.onChange}) : super(key: key);
   String? title;
   String? type;
+  bool daily;
+  Function(DateTime)? onChange;
+
   @override
   _DDatePickerState createState() => _DDatePickerState();
 }
@@ -33,7 +36,7 @@ class _DDatePickerState extends State<DDatePicker> {
         SizedBox(
           width: 3.6.rw,
         ),
-        Expanded(
+        widget.daily ? SizedBox() : Expanded(
           flex: 1,
           child: GestureDetector(
             onTap: () {
@@ -81,27 +84,27 @@ class _DDatePickerState extends State<DDatePicker> {
             },
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 2.0.rw),
-              height: 8.8.rh,
+              height: 7.5.rh,
               color: DingColors.veryLight(),
               child: Row(
                 children: [
                   Expanded(
                     child: Padding(
                         padding: EdgeInsets.symmetric(
-                            vertical: 2.2.rh, horizontal: 2.5.rw),
+                            vertical: 1.5.rh, horizontal: 2.5.rw),
                         child: time == null
                             ? Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Container(
-                                  height: 1,
-                                  color: Colors.grey,
-                                ),
-                              )
+                          alignment: Alignment.bottomCenter,
+                          child: Container(
+                            height: 1,
+                            color: Colors.grey,
+                          ),
+                        )
                             : Text(
-                                '${time?.hour.toString().toPersianDigit()}:${time?.minute.toString().toPersianDigit()}',
-                                style: TextStyle(fontSize: 3.0.rt),
-                                textAlign: TextAlign.center,
-                              )),
+                          '${time?.hour.toString().toPersianDigit()}:${time?.minute.toString().toPersianDigit()}',
+                          style: TextStyle(fontSize: 2.5.rt),
+                          textAlign: TextAlign.center,
+                        )),
                   ),
                   SvgPicture.asset(
                     'assets/images/clock.svg',
@@ -135,6 +138,10 @@ class _DDatePickerState extends State<DDatePicker> {
                                   mode: CupertinoDatePickerMode.date,
                                   initialDateTime: DateTime.now(),
                                   onDateTimeChanged: (DateTime val) {
+                                    if(widget.onChange != null){
+                                      widget.onChange!(val);
+                                    }
+
                                     var year = val.year.timePadded;
                                     var month = val.month.timePadded;
                                     var day = val.day.timePadded;
@@ -168,14 +175,14 @@ class _DDatePickerState extends State<DDatePicker> {
             },
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 2.0.rw),
-              height: 8.8.rh,
+              height: 7.5.rh,
               color: DingColors.veryLight(),
               child: Row(
                 children: [
                   Expanded(
                     child: Padding(
                         padding: EdgeInsets.symmetric(
-                            vertical: 2.2.rh, horizontal: 4.8.rw),
+                            vertical: 1.5.rh, horizontal: 4.8.rw),
                         child: date == null
                             ? Align(
                                 alignment: Alignment.bottomCenter,
@@ -186,7 +193,7 @@ class _DDatePickerState extends State<DDatePicker> {
                               )
                             : Text(
                                 '${date!.day} ${date!.monthname} ${date!.year}',
-                                style: TextStyle(fontSize: 3.0.rt),
+                                style: TextStyle(fontSize: 2.5.rt),
                                 textAlign: TextAlign.center,
                               )),
                   ),

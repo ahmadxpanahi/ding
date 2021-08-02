@@ -26,3 +26,11 @@ class RequestsErrorState extends RequestsState {
   @override
   List<Object?> get props => [this.message];
 }
+
+class UpdateRequestsTypeState extends RequestsState{
+  final int type;
+  UpdateRequestsTypeState({this.type = 1});
+  @override
+  List<Object?> get props => [type];
+
+}

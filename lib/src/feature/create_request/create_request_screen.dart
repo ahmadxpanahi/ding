@@ -1,22 +1,42 @@
-import 'package:ding/src/feature/create_request/widgets/leave_page.dart';
+import 'package:ding/src/feature/create_request/widgets/daily_page.dart';
+import 'package:ding/src/feature/create_request/widgets/hourly_page.dart';
+import 'package:ding/src/feature/create_request/widgets/top_buttons.dart';
+import 'package:ding/src/feature/requests/bloc/requests_bloc.dart';
+import 'package:ding/src/feature/requests/bloc/requests_event.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CreateRequestScreen extends StatefulWidget {
+class CreateRequestScreen extends StatelessWidget {
   const CreateRequestScreen({Key? key}) : super(key: key);
 
   @override
-  _CreateRequestScreenState createState() => _CreateRequestScreenState();
+  Widget build(BuildContext context) {
+    return BlocProvider<RequestsBloc>(
+      create: (_) => RequestsBloc(),
+      child: CreateRequestContainer(),
+    );
+  }
 }
 
-class _CreateRequestScreenState extends State<CreateRequestScreen> {
+class CreateRequestContainer extends StatefulWidget {
+  const CreateRequestContainer({Key? key}) : super(key: key);
+
+  @override
+  _CreateRequestContainerState createState() => _CreateRequestContainerState();
+}
+
+class _CreateRequestContainerState extends State<CreateRequestContainer> {
   PageController? _controller;
-  int value = 0;
+  int pageValue = 0;
+  late RequestsBloc _requestsBloc;
   @override
   void initState() {
     super.initState();
+    _requestsBloc = BlocProvider.of<RequestsBloc>(context);
+    _requestsBloc.add(UpdateRequestType(type: 1));
     _controller = PageController();
   }
 
@@ -62,91 +82,80 @@ class _CreateRequestScreenState extends State<CreateRequestScreen> {
       ),
       body: Column(
         children: [
-          Row(
-            children: [
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    _controller!.animateToPage(0,
-                        duration: Duration(milliseconds: 300),
-                        curve: Curves.linear);
-                  },
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: 8.2.rh,
-                    color: value == 0 ? DingColors.dark() : DingColors.light(),
-                    child: Text(
-                      'مرخصی',
-                      style: TextStyle(
-                          fontSize: 2.73.rt,
-                          color:
-                              value == 0 ? DingColors.primary() : Colors.grey),
+          CreateRequestTopBar(),
+          Container(
+            height: 1.1.rh,
+            color: DingColors.light(),
+          ),
+          Container(
+            height: 7.5.rh,
+            color: DingColors.light(),
+            child: Row(
+              children: [
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        pageValue = 0;
+                        _controller!.animateToPage(0,
+                            duration: Duration(milliseconds: 300),
+                            curve: Curves.linear);
+                      });
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      color: pageValue == 0 ? Colors.white : Colors.transparent,
+                      child: Text(
+                        'روزانه',
+                        style: TextStyle(
+                            fontSize: 2.5.rt,
+                            color: pageValue == 0 ? Colors.black : Colors.grey),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    _controller!.animateToPage(1,
-                        duration: Duration(milliseconds: 300),
-                        curve: Curves.linear);
-                  },
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: 8.2.rh,
-                    color: value == 1 ? DingColors.dark() : DingColors.light(),
-                    child: Text(
-                      'ورود و خروج',
-                      style: TextStyle(
-                          fontSize: 2.73.rt,
-                          color:
-                              value == 1 ? DingColors.primary() : Colors.grey),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        pageValue = 1;
+                        _controller!.animateToPage(1,
+                            duration: Duration(milliseconds: 300),
+                            curve: Curves.linear);
+                      });
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      color: pageValue == 1 ? Colors.white : Colors.transparent,
+                      child: Text(
+                        'ساعتی',
+                        style: TextStyle(
+                            fontSize: 2.5.rt,
+                            color: pageValue == 1 ? Colors.black : Colors.grey),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    _controller!.animateToPage(2,
-                        duration: Duration(milliseconds: 300),
-                        curve: Curves.linear);
-                  },
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: 8.2.rh,
-                    color: value == 2 ? DingColors.dark() : DingColors.light(),
-                    child: Text(
-                      'ماموریت',
-                      style: TextStyle(
-                          fontSize: 2.73.rt,
-                          color:
-                              value == 2 ? DingColors.primary() : Colors.grey),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 5,
           ),
           Expanded(
               child: PageView(
             controller: _controller,
-            onPageChanged: (val) {
+            onPageChanged: (value) {
               setState(() {
-                value = val;
+                pageValue = value;
               });
             },
             children: [
-              LeavePage(),
-              Container(
-                color: DingColors.secondary(),
-              ),
-              Container(
-                color: DingColors.warning(),
-              )
+              DailyPage(),
+              HourlyPage(),
             ],
-          ))
+          )
+          )
         ],
       ),
     );
