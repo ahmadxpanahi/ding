@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:ding/src/core/logger/logger.dart';
 import 'package:http/http.dart';
 
 import 'token_manager.dart';
@@ -24,7 +25,7 @@ class AccessTokenInterceptor {
       token = _tokenManager.getAccessToken();
     }
 
-    // log('Request body of $url is -> ${request}');
+    // Log.i('Apply $token to -> $url');
 
     if (token != null) {
       request.headers['Authorization'] = 'Bearer $token';

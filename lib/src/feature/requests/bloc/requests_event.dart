@@ -53,3 +53,4 @@ class UpdateRequestType extends RequestsEvent{
   List<Object?> get props => [type];
 
 }
+

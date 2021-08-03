@@ -30,9 +30,6 @@ class _TypePickerState extends State<TypePicker> {
   void initState() {
     super.initState();
 
-    _typeTxt = widget.type == 1
-        ? widget.vacationOptions[0]
-        : widget.enterLeaveOptions[0];
   }
 
   Widget _buildBody() => Padding(
@@ -69,7 +66,7 @@ class _TypePickerState extends State<TypePicker> {
                       textAlign: TextAlign.center,
                       confirmText: 'تایید',
                       onConfirm: (Picker picker, List value) {
-                        widget.getRequestType!(value.first);
+                        widget.getRequestType!(value.first+1);
                         setState(() {
                           switch (value.first) {
                             case 0:
@@ -112,7 +109,7 @@ class _TypePickerState extends State<TypePicker> {
                                     alignment: Alignment.bottomCenter,
                                     child: Container(
                                       height: 1,
-                                      color: DingColors.dark(),
+                                      color: Colors.grey,
                                     ),
                                   )
                                 : Text(

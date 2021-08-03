@@ -1,5 +1,4 @@
 import 'package:ding/src/ui/colors.dart';
-import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,11 +7,12 @@ import 'package:jalali_calendar/jalali_calendar.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 
 class DDatePicker extends StatefulWidget {
-  DDatePicker({Key? key, this.title, this.type,this.daily=false,this.onChange}) : super(key: key);
+  DDatePicker({Key? key, this.title, this.type,this.daily=false,this.onChangeDate,this.onChangeTime}) : super(key: key);
   String? title;
   String? type;
   bool daily;
-  Function(DateTime)? onChange;
+  Function(DateTime)? onChangeDate;
+  Function(DateTime)? onChangeTime;
 
   @override
   _DDatePickerState createState() => _DDatePickerState();
@@ -40,47 +40,68 @@ class _DDatePickerState extends State<DDatePicker> {
           flex: 1,
           child: GestureDetector(
             onTap: () {
-              showDialog(
-                  context: context,
-                  builder: (_) {
-                    return AlertDialog(
-                      contentPadding: EdgeInsets.symmetric(
-                          horizontal: 2.6.rw, vertical: 1.3.rh),
-                      content: SizedBox(
-                        height: 36.7.rh,
-                        child: Column(
-                          children: [
-                            Expanded(
-                              flex: 5,
-                              child: CupertinoDatePicker(
-                                  mode: CupertinoDatePickerMode.time,
-                                  initialDateTime: DateTime.now(),
-                                  onDateTimeChanged: (DateTime val) {
-                                    setState(() {
-                                      time = val;
-                                    });
-                                  }),
-                            ),
-                            Divider(),
-                            Expanded(
-                                flex: 1,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Text(
-                                    'تایید',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 3.0.rt - 2,
-                                        color: DingColors.primary()),
-                                  ),
-                                ))
-                          ],
-                        ),
-                      ),
-                    );
-                  });
+              DatePicker.showDatePicker(
+                  context,
+                  minYear: 1300,
+                  maxYear: 1450,
+                  confirm: Text(
+                    'Confirm',
+                    style: TextStyle(color: Colors.red),
+                  ),
+                  cancel: Text(
+                    'Cancel',
+                    style: TextStyle(color: Colors.cyan),
+                  ),
+                  dateFormat: 'hh-mm-ss',
+                  onChanged: (year, month, day) {
+
+                  },
+                  onConfirm: (year, month, day) {
+                    }
+              );
+              // showDialog(
+              //     context: context,
+              //     builder: (_) {
+              //       return AlertDialog(
+              //         contentPadding: EdgeInsets.symmetric(
+              //             horizontal: 2.6.rw, vertical: 1.3.rh),
+              //         content: SizedBox(
+              //           height: 36.7.rh,
+              //           child: Column(
+              //             children: [
+              //               Expanded(
+              //                 flex: 5,
+              //                 child: CupertinoDatePicker(
+              //                     mode: CupertinoDatePickerMode.time,
+              //                     initialDateTime: DateTime.now(),
+              //                     onDateTimeChanged: (DateTime val) {
+              //                       setState(() {
+              //                         time = val;
+              //                         widget.onChangeTime!(val);
+              //                         print(val);
+              //                       });
+              //                     }),
+              //               ),
+              //               Divider(),
+              //               Expanded(
+              //                   flex: 1,
+              //                   child: GestureDetector(
+              //                     onTap: () {
+              //                       Navigator.pop(context);
+              //                     },
+              //                     child: Text(
+              //                       'تایید',
+              //                       textAlign: TextAlign.center,
+              //                       style: TextStyle(
+              //                           fontSize: 3.0.rt - 2,
+              //                           color: DingColors.primary()),
+              //                     ),
+              //                   ))
+              //             ],
+              //           ),
+              //         ),
+              //       );
+              //     });
             },
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 2.0.rw),
@@ -138,8 +159,8 @@ class _DDatePickerState extends State<DDatePicker> {
                                   mode: CupertinoDatePickerMode.date,
                                   initialDateTime: DateTime.now(),
                                   onDateTimeChanged: (DateTime val) {
-                                    if(widget.onChange != null){
-                                      widget.onChange!(val);
+                                    if(widget.onChangeDate != null){
+                                      widget.onChangeDate!(val);
                                     }
 
                                     var year = val.year.timePadded;

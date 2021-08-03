@@ -54,8 +54,8 @@ class CreateOrEditRequestDto {
   Map<String, dynamic> toJson() {
     return {
       'requestType': requestType,
-      'from': from == null ? '' : from!.toUtc().toIso8601String(),
-      'to': to == null ? '' : to!.toUtc().toIso8601String(),
+      'from': from == null ? '' : from!.toIso8601String(),
+      'to': to == null ? '' : to!.toIso8601String(),
       'comment': comment,
       'status': status,
       'substituteUserId': substituteUserId,

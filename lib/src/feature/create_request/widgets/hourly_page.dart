@@ -1,6 +1,8 @@
+import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/feature/create_request/widgets/date_picker.dart';
 import 'package:ding/src/feature/create_request/widgets/type_picker.dart';
 import 'package:ding/src/feature/requests/bloc/requests_bloc.dart';
+import 'package:ding/src/feature/requests/bloc/requests_event.dart';
 import 'package:ding/src/feature/requests/bloc/requests_state.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
@@ -20,23 +22,63 @@ class HourlyPage extends StatefulWidget {
 }
 
 class _HourlyPageState extends State<HourlyPage> {
-  PersianDate? begin;
-  PersianDate? end;
+  late RequestsBloc _requestsBloc;
+  DateTime? _beginDate;
+  DateTime? _beginTime;
+  DateTime? _endDate;
+  DateTime? _endTime;
+  String? _comment;
+  int? requestType;
+  int? requestStatus = 1;
 
   _datePickers(context) => Padding(
-    padding:
-    EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier! * 4),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        DDatePicker(daily: false,title: 'شروع', type: 'begin'),
-        SizedBox(
-          height: 2.7.rw,
+        padding:
+            EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier! * 4),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            DDatePicker(
+              daily: false,
+              title: 'شروع',
+              type: 'begin',
+              onChangeDate: (dateTime) {
+                _beginDate = dateTime;
+                print("BEGIN DATE :");
+                print(_beginDate);
+              },
+              onChangeTime: (dateTime) {
+                _beginTime = dateTime;
+                print("BEGIN TIME :");
+                print(_beginTime);
+              },
+            ),
+            SizedBox(
+              height: 2.7.rw,
+            ),
+            DDatePicker(
+              daily: false,
+              title: 'پایان',
+              type: 'end',
+              onChangeDate: (dateTime) {
+                _endDate = dateTime;
+                print("END DATE :");
+                print(_endDate);
+              },
+              onChangeTime: (dateTime) {
+                _endTime = dateTime;
+                print("END TIME :");
+                print(_endTime);
+              },
+            ),
+          ],
         ),
-        DDatePicker(daily: false,title: 'پایان', type: 'end'),
-      ],
-    ),
-  );
+      );
+
+  @override
+  void initState() {
+    super.initState();
+    _requestsBloc = BlocProvider.of<RequestsBloc>(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +96,9 @@ class _HourlyPageState extends State<HourlyPage> {
                   if (state is UpdateRequestsTypeState) {
                     if (state.type == 1) {
                       return TypePicker(
+                        getRequestType: (T) {
+                          requestType = T;
+                        },
                         key: UniqueKey(),
                         type: 1,
                         vacationOptions: [
@@ -66,6 +111,9 @@ class _HourlyPageState extends State<HourlyPage> {
                       );
                     } else if (state.type == 2) {
                       return TypePicker(
+                          getRequestType: (T) {
+                            requestType = T;
+                          },
                           key: UniqueKey(),
                           type: 2,
                           enterLeaveOptions: [
@@ -73,6 +121,7 @@ class _HourlyPageState extends State<HourlyPage> {
                             'خروج',
                           ]);
                     } else {
+                      requestType = 6;
                       return SizedBox();
                     }
                   }
@@ -101,30 +150,68 @@ class _HourlyPageState extends State<HourlyPage> {
                 horizontal: SizeConfig.widthMultiplier! * 4),
             height: 20.5 * SizeConfig.heightMultiplier!,
             child: TextField(
+              keyboardType: TextInputType.name,
               maxLines: 3,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintStyle:
-                TextStyle(fontSize: 2.8 * SizeConfig.heightMultiplier!),
+                    TextStyle(fontSize: 2.8 * SizeConfig.heightMultiplier!),
                 hintText: 'لطفا توضیحات خود را اینجا وارد کنید.',
               ),
             ),
             decoration: BoxDecoration(
                 border: Border.all(width: 1, color: DingColors.light())),
           ),
-          Container(
-            alignment: Alignment.center,
-            margin: EdgeInsets.symmetric(
-              horizontal: 12.0.rw,
-            ),
-            height: 8.8.rh,
-            decoration: BoxDecoration(
-                color: DingColors.primary(),
-                borderRadius: BorderRadius.circular(100)),
-            child: Text(
-              'تایید',
-              style: TextStyle(fontSize: 3.0.rt, color: Colors.white),
-            ),
+          BlocBuilder<RequestsBloc, RequestsState>(
+            bloc: _requestsBloc,
+            builder: (_, state) {
+              if (state is RequestsLoadingState) {
+                return CircularProgressIndicator(
+                  color: DingColors.primary(),
+                );
+              } else {
+                return GestureDetector(
+                  onTap: () {
+
+                    DateTime finalBeginDate = DateTime(
+                        _beginDate?.year ?? 2000,
+                        _beginDate?.month ?? 1,
+                        _beginDate?.day ?? 1,
+                        _beginTime?.hour ?? 1,
+                        _beginTime?.minute ?? 1);
+                    DateTime finalEndDate = DateTime(
+                        _endDate?.year ?? 2000,
+                        _endDate?.month ?? 1,
+                        _endDate?.day ?? 1,
+                        _endTime?.hour ?? 1,
+                        _endTime?.minute ?? 1);
+
+                    Log.e("hourly_page screen --- beginDate: ${finalBeginDate.toIso8601String()}");
+                    _requestsBloc.add(CreateRequest(
+                      comment: _comment ?? '',
+                      beginDate: finalBeginDate,
+                      endDate: finalEndDate,
+                      requestStatus: requestStatus,
+                      requestType: requestType,
+                    ));
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.symmetric(
+                      horizontal: 12.0.rw,
+                    ),
+                    height: 8.8.rh,
+                    decoration: BoxDecoration(
+                        color: DingColors.primary(),
+                        borderRadius: BorderRadius.circular(100)),
+                    child: Text(
+                      'تایید',
+                      style: TextStyle(fontSize: 3.0.rt, color: Colors.white),
+                    ),
+                  ),
+                );
+              }
+            },
           )
         ],
       ),

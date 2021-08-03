@@ -34,3 +34,9 @@ class UpdateRequestsTypeState extends RequestsState{
   List<Object?> get props => [type];
 
 }
+
+class CreateRequestSuccess extends RequestsState{
+  @override
+  List<Object?> get props => [];
+
+}

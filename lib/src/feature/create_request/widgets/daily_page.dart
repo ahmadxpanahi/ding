@@ -25,8 +25,7 @@ class _DailyPageState extends State<DailyPage> {
   DateTime? _begin;
   DateTime? _end;
   String? _comment;
-  int requestType = 1;
-  int requestStatus = 1;
+  int? requestType;
 
   _datePickers(context) => Padding(
         padding:
@@ -38,7 +37,7 @@ class _DailyPageState extends State<DailyPage> {
               daily: true,
               title: 'شروع',
               type: 'begin',
-              onChange: (dateTime) {
+              onChangeDate: (dateTime) {
                 _begin = dateTime;
               },
             ),
@@ -49,7 +48,7 @@ class _DailyPageState extends State<DailyPage> {
               daily: true,
               title: 'پایان',
               type: 'end',
-              onChange: (dateTime) {
+              onChangeDate: (dateTime) {
                 _end = dateTime;
               },
             ),
@@ -104,6 +103,7 @@ class _DailyPageState extends State<DailyPage> {
                             'خروج',
                           ]);
                     } else {
+                      requestType = 6;
                       return SizedBox();
                     }
                   }
@@ -161,7 +161,7 @@ class _DailyPageState extends State<DailyPage> {
                       comment: _comment ?? '',
                       beginDate: _begin,
                       endDate: _end,
-                      requestStatus: requestStatus,
+                      requestStatus: 1,
                       requestType: requestType,
                     ));
                   },
