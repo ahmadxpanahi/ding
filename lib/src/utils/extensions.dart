@@ -1,5 +1,4 @@
 import 'package:ding/src/ui/size_config.dart';
-import 'package:ding/src/utils/extensions.dart';
 
 extension DoubleExt on double {
   double get rt {

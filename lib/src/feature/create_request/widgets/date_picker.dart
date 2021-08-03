@@ -1,3 +1,4 @@
+import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
@@ -7,7 +8,14 @@ import 'package:jalali_calendar/jalali_calendar.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 
 class DDatePicker extends StatefulWidget {
-  DDatePicker({Key? key, this.title, this.type,this.daily=false,this.onChangeDate,this.onChangeTime}) : super(key: key);
+  DDatePicker(
+      {Key? key,
+      this.title,
+      this.type,
+      this.daily = false,
+      this.onChangeDate,
+      this.onChangeTime})
+      : super(key: key);
   String? title;
   String? type;
   bool daily;
@@ -19,12 +27,12 @@ class DDatePicker extends StatefulWidget {
 }
 
 class _DDatePickerState extends State<DDatePicker> {
-
   DateTime? time;
   PersianDate? date;
 
   @override
   Widget build(BuildContext context) {
+    Log.i("build()");
     return Row(
       children: [
         Text(
@@ -36,8 +44,94 @@ class _DDatePickerState extends State<DDatePicker> {
         SizedBox(
           width: 3.6.rw,
         ),
-        widget.daily ? SizedBox() : Expanded(
-          flex: 1,
+        widget.daily
+            ? SizedBox()
+            : Expanded(
+                flex: 1,
+                child: GestureDetector(
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (_) {
+                          return AlertDialog(
+                            contentPadding: EdgeInsets.symmetric(
+                                horizontal: 2.6.rw, vertical: 1.3.rh),
+                            content: SizedBox(
+                              height: 36.7.rh,
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    flex: 5,
+                                    child: CupertinoDatePicker(
+                                        mode: CupertinoDatePickerMode.time,
+                                        initialDateTime: DateTime.now(),
+                                        onDateTimeChanged: (DateTime val) {
+                                          setState(() {
+                                            time = val;
+                                            widget.onChangeTime!(time!);
+                                          });
+                                        }),
+                                  ),
+                                  Divider(),
+                                  Expanded(
+                                      flex: 1,
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text(
+                                          'تایید',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                              fontSize: 3.0.rt - 2,
+                                              color: DingColors.primary()),
+                                        ),
+                                      ))
+                                ],
+                              ),
+                            ),
+                          );
+                        });
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 2.0.rw),
+                    height: 7.5.rh,
+                    color: DingColors.veryLight(),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 1.5.rh, horizontal: 1.5.rw),
+                              child: time == null
+                                  ? Align(
+                                      alignment: Alignment.bottomCenter,
+                                      child: Container(
+                                        height: 1,
+                                        color: Colors.grey,
+                                      ),
+                                    )
+                                  : Text(
+                                      '${time?.hour.timePadded.toPersianDigit()}:${time?.minute.timePadded.toPersianDigit()}',
+                                      style: TextStyle(fontSize: 4.8.rw),
+                                      textAlign: TextAlign.center,
+                                    )),
+                        ),
+                        SvgPicture.asset(
+                          'assets/images/clock.svg',
+                          width: 5.9.rw,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+        SizedBox(
+          width: 2.7.rw,
+        ),
+        Expanded(
+          flex: 2,
           child: GestureDetector(
             onTap: () {
               DatePicker.showDatePicker(
@@ -52,147 +146,14 @@ class _DDatePickerState extends State<DDatePicker> {
                     'Cancel',
                     style: TextStyle(color: Colors.cyan),
                   ),
-                  dateFormat: 'hh-mm-ss',
+                  dateFormat: 'yyyy-mm-dd',
                   onChanged: (year, month, day) {
 
                   },
                   onConfirm: (year, month, day) {
-                    }
-              );
-              // showDialog(
-              //     context: context,
-              //     builder: (_) {
-              //       return AlertDialog(
-              //         contentPadding: EdgeInsets.symmetric(
-              //             horizontal: 2.6.rw, vertical: 1.3.rh),
-              //         content: SizedBox(
-              //           height: 36.7.rh,
-              //           child: Column(
-              //             children: [
-              //               Expanded(
-              //                 flex: 5,
-              //                 child: CupertinoDatePicker(
-              //                     mode: CupertinoDatePickerMode.time,
-              //                     initialDateTime: DateTime.now(),
-              //                     onDateTimeChanged: (DateTime val) {
-              //                       setState(() {
-              //                         time = val;
-              //                         widget.onChangeTime!(val);
-              //                         print(val);
-              //                       });
-              //                     }),
-              //               ),
-              //               Divider(),
-              //               Expanded(
-              //                   flex: 1,
-              //                   child: GestureDetector(
-              //                     onTap: () {
-              //                       Navigator.pop(context);
-              //                     },
-              //                     child: Text(
-              //                       'تایید',
-              //                       textAlign: TextAlign.center,
-              //                       style: TextStyle(
-              //                           fontSize: 3.0.rt - 2,
-              //                           color: DingColors.primary()),
-              //                     ),
-              //                   ))
-              //             ],
-              //           ),
-              //         ),
-              //       );
-              //     });
-            },
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 2.0.rw),
-              height: 7.5.rh,
-              color: DingColors.veryLight(),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 1.5.rh, horizontal: 2.5.rw),
-                        child: time == null
-                            ? Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Container(
-                            height: 1,
-                            color: Colors.grey,
-                          ),
-                        )
-                            : Text(
-                          '${time?.hour.toString().toPersianDigit()}:${time?.minute.toString().toPersianDigit()}',
-                          style: TextStyle(fontSize: 2.5.rt),
-                          textAlign: TextAlign.center,
-                        )),
-                  ),
-                  SvgPicture.asset(
-                    'assets/images/clock.svg',
-                    width: 3.4.rh,
-                  )
-                ],
-              ),
-            ),
-          ),
-        ),
-        SizedBox(
-          width: 2.7.rw,
-        ),
-        Expanded(
-          flex: 2,
-          child: GestureDetector(
-            onTap: () {
-              showDialog(
-                  context: context,
-                  builder: (_) {
-                    return AlertDialog(
-                      contentPadding: EdgeInsets.symmetric(
-                          horizontal: 2.6.rw, vertical: 1.3.rh),
-                      content: SizedBox(
-                        height: 36.7.rh,
-                        child: Column(
-                          children: [
-                            Expanded(
-                              flex: 5,
-                              child: CupertinoDatePicker(
-                                  mode: CupertinoDatePickerMode.date,
-                                  initialDateTime: DateTime.now(),
-                                  onDateTimeChanged: (DateTime val) {
-                                    if(widget.onChangeDate != null){
-                                      widget.onChangeDate!(val);
-                                    }
 
-                                    var year = val.year.timePadded;
-                                    var month = val.month.timePadded;
-                                    var day = val.day.timePadded;
-                                    setState(() {
-                                      date = PersianDate.pDate(
-                                          gregorian:
-                                          '${year}-${month}-${day}');
-                                    });
-                                  }),
-                            ),
-                            Divider(),
-                            Expanded(
-                                flex: 1,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Text(
-                                    'تایید',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 3.0.rt - 2,
-                                        color: DingColors.primary()),
-                                  ),
-                                ))
-                          ],
-                        ),
-                      ),
-                    );
-                  });
+                   }
+              );
             },
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 2.0.rw),

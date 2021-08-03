@@ -29,7 +29,6 @@ class _TypePickerState extends State<TypePicker> {
   @override
   void initState() {
     super.initState();
-
   }
 
   Widget _buildBody() => Padding(
@@ -114,7 +113,7 @@ class _TypePickerState extends State<TypePicker> {
                                   )
                                 : Text(
                                     _typeTxt ?? '',
-                                    style: TextStyle(fontSize: 3.0.rt),
+                                    style: TextStyle(fontSize: 5.0.rw),
                                     textAlign: TextAlign.center,
                                   )),
                       ),
