@@ -35,7 +35,12 @@ class _EmailLoginContainer extends StatefulWidget {
 }
 
 class _EmailLoginContainerState extends State<_EmailLoginContainer> {
-  bool _validation() => _emailValue == '' || _passValue == '' ? true : false;
+  bool _validation() => _emailValue == '' ||
+          _passValue == '' ||
+          _tenancyValue == '' ||
+          _checkBoxValue == false
+      ? false
+      : true;
   bool _checkBoxValue = false;
   String _emailValue = '';
   String _passValue = '';
@@ -53,12 +58,14 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
           }
           return GestureDetector(
             onTap: () {
-              _emailBloc.add(
-                LoginWithEmailEvent()
-                  ..tenancyName = _tenancyValue
-                  ..password = _passValue
-                  ..userName = _emailValue,
-              );
+              if(_validation()){
+                _emailBloc.add(
+                  LoginWithEmailEvent()
+                    ..tenancyName = _tenancyValue
+                    ..password = _passValue
+                    ..userName = _emailValue,
+                );
+              }
             },
             child: Container(
               alignment: Alignment.center,
@@ -66,15 +73,15 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
               width: 73.2.rw,
               decoration: BoxDecoration(
                 color: _validation()
-                    ? DingColors.veryLight()
-                    : DingColors.primary(),
+                    ? DingColors.primary()
+                    : DingColors.veryLight(),
                 borderRadius: BorderRadius.circular(100),
               ),
               child: Text(
                 'ورود',
                 style: TextStyle(
                     fontSize: 2.73.rt,
-                    color: _validation() ? DingColors.light() : Colors.white),
+                    color: _validation() ? Colors.white : DingColors.light()),
               ),
             ),
           );
@@ -245,6 +252,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                                 border:
                                     Border.all(width: 0.6, color: Colors.grey)),
                             child: TextField(
+                              obscureText: true,
                               onChanged: (val) {
                                 setState(() {
                                   _passValue = val;

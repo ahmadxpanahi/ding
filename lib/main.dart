@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:country_code_picker/country_localizations.dart';
 import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/feature/splash/splash_screen.dart';
@@ -12,6 +14,7 @@ import 'package:flutter/cupertino.dart';
 
 void main() {
   Log.init();
+  HttpOverrides.global = new MyHttpOverrides();
   runApp(MyApp());
 }
 
@@ -46,5 +49,14 @@ class MyApp extends StatelessWidget {
         );
       },
     );
+  }
+}
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }
