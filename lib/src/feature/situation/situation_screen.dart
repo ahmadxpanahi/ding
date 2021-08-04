@@ -5,11 +5,12 @@ import 'package:ding/src/feature/situation/bloc/situation_state.dart';
 import 'package:ding/src/feature/situation/widgets/employee_item.dart';
 import 'package:ding/src/feature/situation/widgets/other_employee.dart';
 import 'package:ding/src/ui/colors.dart';
+import 'package:ding/src/ui/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:ding/src/utils/extensions.dart';
 class SituationScreen extends StatelessWidget {
   const SituationScreen({Key? key}) : super(key: key);
 
@@ -92,7 +93,7 @@ class _SituationContainerState extends State<SituationContainer> {
                           Text(
                             'سایر کارمندان',
                             style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
+                                fontSize: SizeConfig.heightMultiplier! <  6 ? 4.5.rw : 5.0.rw, fontWeight: FontWeight.bold),
                           ),
                           Divider(),
                           OtherEmployee(

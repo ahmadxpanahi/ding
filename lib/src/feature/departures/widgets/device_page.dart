@@ -107,6 +107,7 @@ class _DevicePageState extends State<DevicePage> {
               innerColor: DingColors.primary(),
               outerColor: DingColors.veryLight(),
               sliderButtonIconPadding: 0,
+              sliderButtonIconSize: 4.5.rw,
               elevation: 0,
               submittedIcon: Icon(
                 Icons.check,
@@ -129,6 +130,7 @@ class _DevicePageState extends State<DevicePage> {
               innerColor: DingColors.primary(),
               outerColor: DingColors.veryLight(),
               sliderButtonIconPadding: 0,
+              sliderButtonIconSize: 4.5.rw,
               elevation: 0,
               submittedIcon: Icon(
                 Icons.check,

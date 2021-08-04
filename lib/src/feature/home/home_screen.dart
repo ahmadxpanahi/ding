@@ -2,7 +2,6 @@ import 'package:ding/src/feature/departures/departures_screen.dart';
 import 'package:ding/src/feature/home/widgets/bottom_nav.dart';
 import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/feature/other/other_screen.dart';
-import 'package:ding/src/feature/other/widgets/drop_down.dart';
 import 'package:ding/src/feature/report/report_screen.dart';
 import 'package:ding/src/feature/requests/requests_screen.dart';
 import 'package:ding/src/feature/situation/situation_screen.dart';
@@ -101,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     alignment: Alignment.centerLeft,
                     child: Padding(
                       padding: EdgeInsets.only(left: 4.8.rw),
-                      child: SvgPicture.asset('assets/images/Shape.svg'),
+                      child: SvgPicture.asset('assets/images/Shape.svg',width: 4.5.rw,),
                     ))),
           ],
         ),

@@ -53,9 +53,12 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
                   padding: EdgeInsets.symmetric(
                       horizontal: SizeConfig.widthMultiplier! * 5),
                   child: widget.progress == 0
-                      ? CircularProgressIndicator(
-                          color: DingColors.primary(),
-                        )
+                      ? Transform.scale(
+                        scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
+                        child: CircularProgressIndicator(
+                            color: DingColors.primary(),
+                          ),
+                      )
                       : Icon(
                           Icons.check,
                           color: DingColors.primary(),
@@ -78,9 +81,12 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
                   padding: EdgeInsets.symmetric(
                       horizontal: SizeConfig.widthMultiplier! * 5),
                   child: widget.progress == 1
-                      ? CircularProgressIndicator(
-                          color: DingColors.primary(),
-                        )
+                      ? Transform.scale(
+                    scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
+                    child: CircularProgressIndicator(
+                      color: DingColors.primary(),
+                    ),
+                  )
                       : Icon(
                           Icons.check,
                           color: DingColors.primary(),
@@ -103,9 +109,12 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
                   padding: EdgeInsets.symmetric(
                       horizontal: SizeConfig.widthMultiplier! * 5),
                   child: widget.progress == 2
-                      ? CircularProgressIndicator(
-                          color: DingColors.primary(),
-                        )
+                      ? Transform.scale(
+                    scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
+                    child: CircularProgressIndicator(
+                      color: DingColors.primary(),
+                    ),
+                  )
                       : Icon(
                           Icons.check,
                           color: DingColors.primary(),

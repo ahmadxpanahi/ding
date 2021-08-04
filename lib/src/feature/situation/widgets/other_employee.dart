@@ -28,8 +28,8 @@ class OtherEmployee extends StatelessWidget {
                     children: [
                       Container(
                         margin: EdgeInsets.only(left: 10),
-                        width: 14.6 * SizeConfig.imageSizeMultiplier!,
-                        height: 14.6 * SizeConfig.imageSizeMultiplier!,
+                        width: 8.5.rh,
+                        height: 8.5.rh,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100),
                             image: DecorationImage(
@@ -44,13 +44,13 @@ class OtherEmployee extends StatelessWidget {
                           Text(
                             name ?? '',
                             style: TextStyle(
-                                fontSize: SizeConfig.textMultiplier! * 2.2,
+                                fontSize: 3.5.rw,
                                 color: Colors.black),
                           ),
                           Text(
                             unit ?? '',
                             style: TextStyle(
-                                fontSize: 2.2.rt - 2, color: Colors.grey),
+                                fontSize: 3.5.rw, color: Colors.grey),
                           ),
                         ],
                       )

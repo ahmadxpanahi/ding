@@ -20,56 +20,56 @@ class _CustomPageState extends State<CustomPage> {
   PersianDate? end;
 
   _infoContainer() => Container(
-        padding:
-            EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier! * 4.5),
-        height: 15.0.rh,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    padding:
+    EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier! * 4.5),
+    height: 15.0.rh,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
           children: [
-            Row(
-              children: [
-                Container(
-                  width: 8.0.rh,
-                  height: 8.0.rh,
-                  decoration: BoxDecoration(
-                      color: DingColors.light(),
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                          image: NetworkImage(
-                              'https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png'),
-                          fit: BoxFit.fill)),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'پژمان شفیعی',
-                      style:
-                          TextStyle(fontSize: 2 * SizeConfig.textMultiplier!),
-                    ),
-                    Text(
-                      'واحد فروش',
-                      style: TextStyle(
-                          fontSize: 2 * SizeConfig.textMultiplier! - 2,
-                          fontWeight: FontWeight.w300),
-                    ),
-                  ],
-                )
-              ],
+            Container(
+              width: 8.0.rh,
+              height: 8.0.rh,
+              decoration: BoxDecoration(
+                  color: DingColors.light(),
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                      image: NetworkImage(
+                          'https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png'),
+                      fit: BoxFit.fill)),
             ),
-            IconButton(
-                onPressed: () {},
-                icon: SvgPicture.asset(
-                  'assets/images/list.svg',
-                  width: 25,
-                ))
+            SizedBox(
+              width: 10,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'پژمان شفیعی',
+                  style:
+                  TextStyle(fontSize: 2 * SizeConfig.textMultiplier!),
+                ),
+                Text(
+                  'واحد فروش',
+                  style: TextStyle(
+                      fontSize: 2 * SizeConfig.textMultiplier! - 2,
+                      fontWeight: FontWeight.w300),
+                ),
+              ],
+            )
           ],
         ),
-      );
+        IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset(
+              'assets/images/list.svg',
+              width: SizeConfig.heightMultiplier! < 6 ? 6.0.rw : 7.0.rw,
+            ))
+      ],
+    ),
+  );
 
   _datePickers(context) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -156,7 +156,7 @@ class _CustomPageState extends State<CustomPage> {
                                     )
                                   : Text(
                                       '${begin!.day} ${begin!.monthname} ${begin!.year}',
-                                      style: TextStyle(fontSize: 3.0.rt),
+                                      style: TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 4.7.rw : 5.5.rw),
                                       textAlign: TextAlign.center,
                                     )),
                         ),
@@ -257,7 +257,9 @@ class _CustomPageState extends State<CustomPage> {
                                     )
                                   : Text(
                                       '${end!.day} ${end!.monthname} ${end!.year}',
-                                      style: TextStyle(fontSize: 3.0.rt),
+                                      style: end!.month == 1 || end!.month == 2 || end!.month == 3
+                                      ? TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.7.rw : 4.5.rw)
+                                      : TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 4.7.rw : 5.5.rw),
                                       textAlign: TextAlign.center,
                                     )),
                         ),

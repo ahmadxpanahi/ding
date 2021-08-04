@@ -38,12 +38,12 @@ class EmployeeItem extends StatelessWidget {
                   Container(width: 2.4.rw, color: _color(status)),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 10),
-                    width: 14.6 * SizeConfig.imageSizeMultiplier!,
-                    height: 14.6 * SizeConfig.imageSizeMultiplier!,
+                    width: 8.5.rh,
+                    height: 8.5.rh,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
+                        shape: BoxShape.circle,
                         border: Border.all(
-                            width: status == '' ? 0 : 4, color: _color(status)),
+                            width: status == '' ? 0 : SizeConfig.heightMultiplier! / 2, color: _color(status)),
                         image: DecorationImage(
                             image: NetworkImage(
                           imgUrl ?? '',
@@ -55,19 +55,19 @@ class EmployeeItem extends StatelessWidget {
                     children: [
                       Text(
                         name ?? '',
-                        style: TextStyle(fontSize: 2.2.rt, color: Colors.black),
+                        style: TextStyle(fontSize: 3.5.rw, color: Colors.black),
                       ),
                       Text(
                         unit ?? '',
                         style:
-                            TextStyle(fontSize: 2.2.rt - 2, color: Colors.grey),
+                            TextStyle(fontSize: 3.5.rw, color: Colors.grey),
                       ),
                       status == ''
                           ? SizedBox()
                           : Text(
                               status == 'present' ? 'حاضر' : 'غایب',
                               style: TextStyle(
-                                  fontSize: 2.2.rt - 2, color: _color(status)),
+                                  fontSize: 3.5.rw, color: _color(status)),
                             ),
                     ],
                   )

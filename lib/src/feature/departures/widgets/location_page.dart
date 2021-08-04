@@ -129,6 +129,7 @@ class _LocationPageState extends State<LocationPage> {
               outerColor: DingColors.veryLight(),
               sliderButtonIconPadding: 0,
               elevation: 0,
+              sliderButtonIconSize: 4.5.rw,
               submittedIcon: Icon(
                 Icons.check,
                 size: 30,
@@ -148,6 +149,7 @@ class _LocationPageState extends State<LocationPage> {
               outerColor: DingColors.veryLight(),
               sliderButtonIconPadding: 0,
               elevation: 0,
+              sliderButtonIconSize: 4.5.rw,
               onCheckFinished: () {
                 _bloc.add(DoDeparturesEvent(false, 1));
               },

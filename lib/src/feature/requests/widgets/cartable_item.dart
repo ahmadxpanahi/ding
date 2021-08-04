@@ -29,6 +29,7 @@ class CartableItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     Color _typeColor() => type == 'leave'
         ? DingColors.secondary()
         : type == 'enterAndExit'
@@ -44,11 +45,11 @@ class CartableItem extends StatelessWidget {
                 children: [
                   Text(
                     'شروع',
-                    style: TextStyle(fontSize: 4.0.rw, color: Colors.grey),
+                    style: TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: Colors.grey),
                   ),
                   Text(
                     'پایان',
-                    style: TextStyle(fontSize: 4.0.rw, color: Colors.grey),
+                    style: TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: Colors.grey),
                   )
                 ],
               ),
@@ -62,12 +63,12 @@ class CartableItem extends StatelessWidget {
                   Text(
                     beginDate ?? '',
                     style:
-                        TextStyle(fontSize: 4.0.rw, color: DingColors.dark()),
+                        TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: DingColors.dark()),
                   ),
                   Text(
                     endDate ?? '',
                     style:
-                        TextStyle(fontSize: 4.0.rw, color: DingColors.dark()),
+                        TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: DingColors.dark()),
                   )
                 ],
               ),
@@ -83,7 +84,7 @@ class CartableItem extends StatelessWidget {
                   Text(
                     'نمایش جزءیات',
                     style: TextStyle(
-                        fontSize: 4.0.rw, color: DingColors.primary()),
+                        fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: DingColors.primary()),
                   )
                 ],
               )
@@ -95,11 +96,11 @@ class CartableItem extends StatelessWidget {
                     children: [
                       Text(
                         'شروع',
-                        style: TextStyle(fontSize: 4.0.rw, color: Colors.grey),
+                        style: TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: Colors.grey),
                       ),
                       Text(
                         'پایان',
-                        style: TextStyle(fontSize: 4.0.rw, color: Colors.grey),
+                        style: TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: Colors.grey),
                       )
                     ],
                   ),
@@ -113,12 +114,12 @@ class CartableItem extends StatelessWidget {
                       Text(
                         beginDate ?? '',
                         style: TextStyle(
-                            fontSize: 4.0.rw, color: DingColors.dark()),
+                            fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: DingColors.dark()),
                       ),
                       Text(
                         endDate ?? '',
                         style: TextStyle(
-                            fontSize: 4.0.rw, color: DingColors.dark()),
+                            fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: DingColors.dark()),
                       )
                     ],
                   ),
@@ -142,13 +143,13 @@ class CartableItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                          width: 14.6 * SizeConfig.imageSizeMultiplier!,
-                          height: 60,
+                          width: SizeConfig.heightMultiplier! < 6 ? 12.5.rw : 14.6.rw,
+                          height: 14.6.rw,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
+                              shape: BoxShape.circle,
                               image: DecorationImage(
                                   image: NetworkImage(imgUrl ?? '')))),
                       SizedBox(
@@ -161,12 +162,12 @@ class CartableItem extends StatelessWidget {
                             Text(
                               name ?? '',
                               style: TextStyle(
-                                  color: DingColors.dark(), fontSize: 4.0.rw),
+                                  color: DingColors.dark(), fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw),
                             ),
                             Text(
                               unit ?? '',
                               style: TextStyle(
-                                  color: Colors.grey, fontSize: 4.0.rw - 2),
+                                  color: Colors.grey, fontSize: SizeConfig.heightMultiplier! < 6 ? 3.1.rw : 4.0.rw),
                             ),
                           ],
                         ),
@@ -201,7 +202,7 @@ class CartableItem extends StatelessWidget {
                                 Text(
                                   info1 ?? '',
                                   style: TextStyle(
-                                      fontSize: 4.0.rw,
+                                      fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw,
                                       color: DingColors.dark()),
                                 )
                               ],
@@ -221,7 +222,7 @@ class CartableItem extends StatelessWidget {
                                 Text(
                                   info2 ?? '',
                                   style: TextStyle(
-                                      fontSize: 4.0.rw,
+                                      fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw,
                                       color: DingColors.dark()),
                                 )
                               ],

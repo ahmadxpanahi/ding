@@ -66,7 +66,7 @@ class _MonthlyPageState extends State<MonthlyPage> {
                 onPressed: () {},
                 icon: SvgPicture.asset(
                   'assets/images/list.svg',
-                  width: 25,
+                  width: SizeConfig.heightMultiplier! < 6 ? 6.0.rw : 7.0.rw,
                 ))
           ],
         ),
@@ -76,7 +76,7 @@ class _MonthlyPageState extends State<MonthlyPage> {
     children: [
       Text(
         'پایان',
-        style: TextStyle(fontSize: 3.0.rt, color: Colors.grey),
+        style: TextStyle(fontSize: 5.0.rw, color: Colors.grey),
       ),
       SizedBox(
         width: 3.6.rw,
@@ -154,8 +154,8 @@ class _MonthlyPageState extends State<MonthlyPage> {
                         ),
                       )
                           : Text(
-                        '${date!.monthname} ${date!.year}',
-                        style: TextStyle(fontSize: 3.0.rt),
+                        '${date!.day} ${date!.monthname} ${date!.year}',
+                        style: TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 4.7.rw : 5.5.rw),
                         textAlign: TextAlign.center,
                       )),
                 ),

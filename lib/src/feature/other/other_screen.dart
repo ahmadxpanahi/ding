@@ -1,7 +1,6 @@
 import 'package:ding/src/data/http/token_manager.dart';
 import 'package:ding/src/feature/account_management/account_management_screen.dart';
 import 'package:ding/src/feature/number_login/number_login_screen.dart';
-import 'package:ding/src/feature/other/widgets/options_tile.dart';
 import 'package:ding/src/feature/setting/setting_screen.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
@@ -49,14 +48,14 @@ class _OtherScreenState extends State<OtherScreen> {
                     Text(
                       'پژمان شفیعی',
                       style: TextStyle(
-                          fontSize: 5.0.rw,
+                          fontSize: SizeConfig.heightMultiplier! < 6 ? 4.0.rw : 5.0.rw,
                           fontWeight: FontWeight.bold,
                           color: DingColors.dark()),
                     ),
                     Text(
                       'توسعه ارتباطات دینگ',
                       style: TextStyle(
-                          fontSize: 5.0.rw - 5,
+                          fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.5.rw,
                           fontWeight: FontWeight.w300,
                           color: DingColors.dark()),
                     ),
@@ -99,7 +98,7 @@ class _OtherScreenState extends State<OtherScreen> {
           ),
           SvgPicture.asset(
             imgUrl,
-            width: 8.0.rw,
+            width: SizeConfig.heightMultiplier! < 6 ? 7.0.rw : 8.0.rw,
           ),
           SizedBox(
             width: 6.0.rw,
@@ -107,7 +106,7 @@ class _OtherScreenState extends State<OtherScreen> {
           Text(
             txt,
             style: TextStyle(
-                fontSize: 2.7.rt - 5,
+                fontSize: SizeConfig.textMultiplier! < 6 ? 3.5.rw : 4.0.rw,
                 fontWeight: FontWeight.w300,
                 color: DingColors.dark()),
           )
