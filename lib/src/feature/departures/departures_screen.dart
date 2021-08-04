@@ -50,6 +50,7 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
     Future.delayed(Duration.zero, () {
       setState(() {
         _pageView = PageView(
+          physics: NeverScrollableScrollPhysics(),
           controller: _controller,
           onPageChanged: (i) {
             setState(() {

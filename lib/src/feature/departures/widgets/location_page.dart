@@ -10,6 +10,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:jalali_calendar/jalali_calendar.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 import 'package:timer_builder/timer_builder.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
 
 class LocationPage extends StatefulWidget {
   const LocationPage({Key? key}) : super(key: key);
@@ -40,12 +42,14 @@ class _LocationPageState extends State<LocationPage> {
                 child: Column(
                   children: [
                     Expanded(
-                        child: TimerBuilder.periodic(Duration(seconds: 5), builder: (_) {
-                          return Text(
-                            '${PersianDate().hour.toString().toPersianDigit()}:${PersianDate().minute.toString().toPersianDigit()}',
-                            style: TextStyle(fontSize: 5.0.rw,fontWeight: FontWeight.w300),
-                          );
-                        }),
+                      child: TimerBuilder.periodic(Duration(seconds: 5),
+                          builder: (_) {
+                        return Text(
+                          '${PersianDate().hour.toString().toPersianDigit()}:${PersianDate().minute.toString().toPersianDigit()}',
+                          style: TextStyle(
+                              fontSize: 5.0.rw, fontWeight: FontWeight.w300),
+                        );
+                      }),
                     ),
                     Text(
                       '${PersianDate().weekdayname}',
@@ -83,7 +87,30 @@ class _LocationPageState extends State<LocationPage> {
         ),
       );
 
-  Widget _map() => Container();
+  Widget _map() => FlutterMap(
+        options: MapOptions(
+          center: LatLng(32.852949, 59.242625),
+          zoom: 13.0,
+        ),
+        layers: [
+          new TileLayerOptions(
+              urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+              subdomains: ['a', 'b', 'c']),
+          new MarkerLayerOptions(
+            markers: [
+              new Marker(
+                  width: 80.0,
+                  height: 80.0,
+                  point: new LatLng(32.852949, 59.242625),
+                  builder: (ctx) => Transform.scale(
+                      scale: 0.5,
+                      child: SvgPicture.asset(
+                        'assets/images/loc.svg',
+                      ))),
+            ],
+          ),
+        ],
+      );
 
   @override
   void initState() {
