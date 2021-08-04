@@ -6,6 +6,7 @@ import 'package:ding/src/feature/requests/bloc/requests_event.dart';
 import 'package:ding/src/feature/requests/bloc/requests_state.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/date_utils.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -23,9 +24,9 @@ class HourlyPage extends StatefulWidget {
 
 class _HourlyPageState extends State<HourlyPage> {
   late RequestsBloc _requestsBloc;
-  DateTime? _beginDate;
+  PersianDate? _beginDate;
   DateTime? _beginTime;
-  DateTime? _endDate;
+  PersianDate? _endDate;
   DateTime? _endTime;
   String? _comment;
   int? requestType;
@@ -172,25 +173,10 @@ class _HourlyPageState extends State<HourlyPage> {
               } else {
                 return GestureDetector(
                   onTap: () {
-
-                    DateTime finalBeginDate = DateTime(
-                        _beginDate?.year ?? 2000,
-                        _beginDate?.month ?? 1,
-                        _beginDate?.day ?? 1,
-                        _beginTime?.hour ?? 1,
-                        _beginTime?.minute ?? 1);
-                    DateTime finalEndDate = DateTime(
-                        _endDate?.year ?? 2000,
-                        _endDate?.month ?? 1,
-                        _endDate?.day ?? 1,
-                        _endTime?.hour ?? 1,
-                        _endTime?.minute ?? 1);
-
-                    Log.e("hourly_page screen --- beginDate: ${finalBeginDate.toIso8601String()}");
                     _requestsBloc.add(CreateRequest(
                       comment: _comment ?? '',
-                      beginDate: finalBeginDate,
-                      endDate: finalEndDate,
+                      beginDate: DDateUtils.createISO(_beginDate!, _beginTime!),
+                      endDate: DDateUtils.createISO(_endDate!, _endTime!),
                       requestStatus: requestStatus,
                       requestType: requestType,
                     ));

@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:jalali_calendar/jalali_calendar.dart';
 import 'package:swagger/api.dart';
 
 abstract class RequestsEvent extends Equatable {}
@@ -33,13 +34,13 @@ class GetCartableData extends RequestsEvent {
 class CreateRequest extends RequestsEvent {
   final int? requestType;
   final int? requestStatus;
-  final DateTime? beginDate;
-  final DateTime? endDate;
+  final String beginDate;
+  final String endDate;
   final String comment;
   CreateRequest(
       {this.requestStatus,
-        this.beginDate,
-        this.endDate,
+        this.beginDate = "",
+        this.endDate = "",
         this.requestType,
         this.comment = ''});
   @override
