@@ -54,7 +54,6 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
       print(response);
       yield GetMyRequestsDataSuccess();
     } on ApiException catch (e) {
-      print('EXEPTION');
       yield RequestsLoadingState(false);
     }
   }
@@ -62,7 +61,6 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
   Stream<RequestsState> _createRequest(CreateRequest event) async* {
     yield RequestsLoadingState(true);
     try {
-      Log.e("Stream<RequestsState> _createRequest --- beginDate: ${event.beginDate?.toIso8601String()}");
       var response = await _requestsApi?.apiServicesAppRequestsCreateoreditPost(
           body: CreateOrEditRequestDto()
             ..comment = event.comment
@@ -71,10 +69,8 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
             ..from = event.beginDate
             ..to = event.endDate);
       if(response != null){
-        print('SECCESS');
         yield CreateRequestSuccess();
       }else{
-        print('NULL RESPONSE');
         yield RequestsErrorState('خطا در ارسال اطلاعات');
       }
     } on Exception catch (e) {

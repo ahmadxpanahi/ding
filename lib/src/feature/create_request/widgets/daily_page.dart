@@ -10,11 +10,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jalali_calendar/jalali_calendar.dart';
+import 'package:ding/src/utils/date_utils.dart';
 import 'package:swagger/api.dart' as swagger;
 
 class DailyPage extends StatefulWidget {
-
-  DailyPage({Key? key,}) : super(key: key);
+  DailyPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   _DailyPageState createState() => _DailyPageState();
@@ -22,8 +25,8 @@ class DailyPage extends StatefulWidget {
 
 class _DailyPageState extends State<DailyPage> {
   late RequestsBloc _requestsBloc;
-  DateTime? _begin;
-  DateTime? _end;
+  PersianDate? _begin;
+  PersianDate? _end;
   String? _comment;
   int? requestType;
 
@@ -78,7 +81,7 @@ class _DailyPageState extends State<DailyPage> {
                   if (state is UpdateRequestsTypeState) {
                     if (state.type == 1) {
                       return TypePicker(
-                        getRequestType: (T){
+                        getRequestType: (T) {
                           requestType = T;
                         },
                         key: UniqueKey(),
@@ -93,7 +96,7 @@ class _DailyPageState extends State<DailyPage> {
                       );
                     } else if (state.type == 2) {
                       return TypePicker(
-                          getRequestType: (T){
+                          getRequestType: (T) {
                             requestType = T;
                           },
                           key: UniqueKey(),
@@ -134,7 +137,8 @@ class _DailyPageState extends State<DailyPage> {
             child: TextField(
               keyboardType: TextInputType.name,
               onChanged: (val) {
-                _comment = val;
+                if(val.length > 0)
+                  _comment = val;
               },
               maxLines: 3,
               decoration: InputDecoration(
@@ -147,7 +151,7 @@ class _DailyPageState extends State<DailyPage> {
             decoration: BoxDecoration(
                 border: Border.all(width: 1, color: DingColors.light())),
           ),
-          BlocBuilder<RequestsBloc,RequestsState>(
+          BlocBuilder<RequestsBloc, RequestsState>(
             bloc: _requestsBloc,
             builder: (_, state) {
               if (state is RequestsLoadingState) {
@@ -159,8 +163,10 @@ class _DailyPageState extends State<DailyPage> {
                   onTap: () {
                     _requestsBloc.add(CreateRequest(
                       comment: _comment ?? '',
-                      beginDate: _begin,
-                      endDate: _end,
+                      beginDate: DDateUtils.createISO(
+                          _begin!, DateTime(0, 0, 0, 0, 0)),
+                      endDate:
+                          DDateUtils.createISO(_end!, DateTime(0, 0, 0, 0, 0)),
                       requestStatus: 1,
                       requestType: requestType,
                     ));

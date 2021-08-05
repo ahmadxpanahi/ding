@@ -1,25 +1,27 @@
 import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/ui/colors.dart';
+import 'package:ding/src/utils/date_utils.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jalali_calendar/jalali_calendar.dart';
+import 'package:ding/src/utils/extensions.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 
 class DDatePicker extends StatefulWidget {
-  DDatePicker(
-      {Key? key,
-      this.title,
-      this.type,
-      this.daily = false,
-      this.onChangeDate,
-      this.onChangeTime})
-      : super(key: key);
+  DDatePicker({
+    Key? key,
+    this.title,
+    this.type,
+    this.daily = false,
+    this.onChangeDate,
+    this.onChangeTime,
+  }) : super(key: key);
   String? title;
   String? type;
   bool daily;
-  Function(DateTime)? onChangeDate;
+  Function(PersianDate)? onChangeDate;
   Function(DateTime)? onChangeTime;
 
   @override
@@ -32,7 +34,6 @@ class _DDatePickerState extends State<DDatePicker> {
 
   @override
   Widget build(BuildContext context) {
-    Log.i("build()");
     return Row(
       children: [
         Text(
@@ -135,24 +136,20 @@ class _DDatePickerState extends State<DDatePicker> {
           child: GestureDetector(
             onTap: () {
               DatePicker.showDatePicker(
-                  context,
-                  minYear: 1300,
-                  maxYear: 1450,
-                  confirm: Text(
-                    'Confirm',
-                    style: TextStyle(color: Colors.red),
-                  ),
-                  cancel: Text(
-                    'Cancel',
-                    style: TextStyle(color: Colors.cyan),
-                  ),
-                  dateFormat: 'yyyy-mm-dd',
-                  onChanged: (year, month, day) {
-
-                  },
-                  onConfirm: (year, month, day) {
-
-                   }
+                context,
+                minYear: 1300,
+                maxYear: 1450,
+                confirm: Text(
+                  'Confirm',
+                  style: TextStyle(color: Colors.red),
+                ),
+                cancel: Text(
+                  'Cancel',
+                  style: TextStyle(color: Colors.cyan),
+                ),
+                dateFormat: 'yyyy-mm-dd',
+                onChanged: _updateDate,
+                onConfirm: _updateDate,
               );
             },
             child: Container(
@@ -175,6 +172,7 @@ class _DDatePickerState extends State<DDatePicker> {
                               )
                             : Text(
                                 '${date!.day} ${date!.monthname} ${date!.year}',
+                                key: UniqueKey(),
                                 style: TextStyle(fontSize: 2.5.rt),
                                 textAlign: TextAlign.center,
                               )),
@@ -190,5 +188,14 @@ class _DDatePickerState extends State<DDatePicker> {
         )
       ],
     );
+  }
+
+  void _updateDate(int? year, int? month, int? day) {
+    setState(() {
+      date = DDateUtils.createPersianDate(year!, month!, day!);
+      if (widget.onChangeDate != null) {
+        widget.onChangeDate!(date!);
+      }
+    });
   }
 }

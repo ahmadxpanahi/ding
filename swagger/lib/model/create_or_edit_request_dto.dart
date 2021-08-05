@@ -5,10 +5,10 @@ class CreateOrEditRequestDto {
   int? requestType = null;
   
 
-  DateTime? from = null;
+  String? from = null;
   
 
-  DateTime? to = null;
+  String? to = null;
   
 
   String? comment = null;
@@ -36,8 +36,8 @@ class CreateOrEditRequestDto {
       
     json['requestType']
 ;
-    from = json['from'] == null ? null : DateTime.parse(json['from']);
-    to = json['to'] == null ? null : DateTime.parse(json['to']);
+    from = json['from'];
+    to = json['to'];
     comment =
         json['comment']
     ;
@@ -54,8 +54,8 @@ class CreateOrEditRequestDto {
   Map<String, dynamic> toJson() {
     return {
       'requestType': requestType,
-      'from': from == null ? '' : from!.toIso8601String(),
-      'to': to == null ? '' : to!.toIso8601String(),
+      'from': from,
+      'to': to,
       'comment': comment,
       'status': status,
       'substituteUserId': substituteUserId,
