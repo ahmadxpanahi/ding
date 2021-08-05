@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:swagger/api.dart';
 
 abstract class RequestsState extends Equatable {}
 
@@ -8,8 +9,10 @@ class RequestsInitialState extends RequestsState {
 }
 
 class GetMyRequestsDataSuccess extends RequestsState{
+  List<GetRequestForViewDto>? items;
+  GetMyRequestsDataSuccess(this.items);
   @override
-  List<Object?> get props =>[];
+  List<Object?> get props =>[items];
 
 }
 
@@ -27,16 +30,3 @@ class RequestsErrorState extends RequestsState {
   List<Object?> get props => [this.message];
 }
 
-class UpdateRequestsTypeState extends RequestsState{
-  final int type;
-  UpdateRequestsTypeState({this.type = 1});
-  @override
-  List<Object?> get props => [type];
-
-}
-
-class CreateRequestSuccess extends RequestsState{
-  @override
-  List<Object?> get props => [];
-
-}

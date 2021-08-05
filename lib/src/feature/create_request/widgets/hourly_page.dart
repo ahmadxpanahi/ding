@@ -1,4 +1,7 @@
 import 'package:ding/src/core/logger/logger.dart';
+import 'package:ding/src/feature/create_request/bloc/cr_request_bloc.dart';
+import 'package:ding/src/feature/create_request/bloc/cr_request_event.dart';
+import 'package:ding/src/feature/create_request/bloc/cr_request_state.dart';
 import 'package:ding/src/feature/create_request/widgets/date_picker.dart';
 import 'package:ding/src/feature/create_request/widgets/type_picker.dart';
 import 'package:ding/src/feature/requests/bloc/requests_bloc.dart';
@@ -23,7 +26,7 @@ class HourlyPage extends StatefulWidget {
 }
 
 class _HourlyPageState extends State<HourlyPage> {
-  late RequestsBloc _requestsBloc;
+  late CreateRequestsBloc _requestsBloc;
   PersianDate? _beginDate;
   DateTime? _beginTime;
   PersianDate? _endDate;
@@ -78,7 +81,7 @@ class _HourlyPageState extends State<HourlyPage> {
   @override
   void initState() {
     super.initState();
-    _requestsBloc = BlocProvider.of<RequestsBloc>(context);
+    _requestsBloc = BlocProvider.of<CreateRequestsBloc>(context);
   }
 
   @override
@@ -92,7 +95,7 @@ class _HourlyPageState extends State<HourlyPage> {
               SizedBox(
                 height: 3.6.rw,
               ),
-              BlocBuilder<RequestsBloc, RequestsState>(
+              BlocBuilder<CreateRequestsBloc, CreateRequestState>(
                 builder: (_, state) {
                   if (state is UpdateRequestsTypeState) {
                     if (state.type == 1) {
@@ -151,6 +154,9 @@ class _HourlyPageState extends State<HourlyPage> {
                 horizontal: SizeConfig.widthMultiplier! * 4),
             height: 20.5 * SizeConfig.heightMultiplier!,
             child: TextField(
+              onChanged: (val){
+                _comment = val;
+              },
               keyboardType: TextInputType.name,
               maxLines: 3,
               decoration: InputDecoration(
@@ -163,7 +169,7 @@ class _HourlyPageState extends State<HourlyPage> {
             decoration: BoxDecoration(
                 border: Border.all(width: 1, color: DingColors.light())),
           ),
-          BlocBuilder<RequestsBloc, RequestsState>(
+          BlocBuilder<CreateRequestsBloc, CreateRequestState>(
             bloc: _requestsBloc,
             builder: (_, state) {
               if (state is RequestsLoadingState) {

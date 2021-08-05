@@ -1,3 +1,4 @@
+import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/create_request/create_request_screen.dart';
 import 'package:ding/src/feature/requests/bloc/requests_bloc.dart';
 import 'package:ding/src/feature/requests/bloc/requests_state.dart';
@@ -9,7 +10,7 @@ import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:swagger/api.dart' as myRequests;
 import 'bloc/requests_event.dart';
 
 class RequestsScreen extends StatelessWidget {
@@ -18,7 +19,7 @@ class RequestsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => RequestsBloc(),
+      create: (_) => RequestsBloc(inject(), inject()),
       child: RequestsContainer(),
     );
   }
@@ -35,47 +36,66 @@ class _RequestsContainerState extends State<RequestsContainer> {
   PageController? _controller;
   int value = 0;
   late RequestsBloc _requestsBloc;
+  List<myRequests.GetRequestForViewDto>? myRequestsItem;
 
   @override
   void initState() {
+    super.initState();
     _requestsBloc = BlocProvider.of<RequestsBloc>(context);
     _requestsBloc.add(GetMyRequestsData());
-    super.initState();
     _controller = PageController();
   }
 
   @override
   Widget build(BuildContext context) {
+
+
     Widget _myRequestsPage() => Stack(
       children: [
         SingleChildScrollView(
-          child: Column(
-            children: [
-              MyRequestsItem(
-                status: 'pending',
-                type: 'leave',
-                info1: 'استعلاجی',
-                info2: 'روزانه',
-                time: DateTime.now(),
-                date: '3 شهریور',
-              ),
-              MyRequestsItem(
-                status: 'failed',
-                type: 'enterAndExit',
-                info1: 'ثبت',
-                info2: 'لوکیشن',
-                time: DateTime.now(),
-                date: '3 شهریور',
-              ),
-              MyRequestsItem(
-                status: 'accepted',
-                type: 'mission',
-                info1: 'استعلاجی',
-                info2: 'روزانه',
-                time: DateTime.now(),
-                date: '3 شهریور',
-              ),
-            ],
+          child: BlocBuilder(
+            bloc: _requestsBloc,
+            builder: (_, state) {
+              if (state is RequestsLoadingState){
+                return CircularProgressIndicator(
+                  color: DingColors.primary(),
+                );
+              }else if(state is GetMyRequestsDataSuccess){
+                myRequestsItem = state.items;
+                
+                }
+                return Column(
+                  children: [
+                    MyRequestsItem(
+                      status: 'pending',
+                      type: 'leave',
+                      info1: 'استعلاجی',
+                      info2: 'روزانه',
+                      time: DateTime.now(),
+                      date: '3 شهریور',
+                    ),
+                    MyRequestsItem(
+                      status: 'failed',
+                      type: 'enterAndExit',
+                      info1: 'ثبت',
+                      info2: 'لوکیشن',
+                      time: DateTime.now(),
+                      date: '3 شهریور',
+                    ),
+                    MyRequestsItem(
+                      status: 'accepted',
+                      type: 'mission',
+                      info1: 'استعلاجی',
+                      info2: 'روزانه',
+                      time: DateTime.now(),
+                      date: '3 شهریور',
+                    ),
+                  ],
+                );
+              }
+              return SizedBox();
+            },
+
           ),
         ),
         Align(
@@ -147,6 +167,7 @@ class _RequestsContainerState extends State<RequestsContainer> {
         ],
       ),
     );
+
     return Column(
       children: [
         Row(
@@ -202,24 +223,7 @@ class _RequestsContainerState extends State<RequestsContainer> {
             });
           },
           children: [
-            BlocBuilder(
-              bloc: _requestsBloc,
-              builder: (_, state) {
-                if (state is RequestsLoadingState){
-                  if(state.isLoading){
-                    return Center(
-                      child: CircularProgressIndicator(
-                        color: DingColors.primary(),
-                      ),
-                    );
-                  }else {
-                    return _myRequestsPage();
-                  }
-                }
-                return _myRequestsPage();
-              },
-
-            ),
+            _myRequestsPage(),
             BlocBuilder(
               bloc: _requestsBloc,
               builder: (_, state) {

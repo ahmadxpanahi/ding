@@ -1,3 +1,6 @@
+import 'package:ding/src/feature/create_request/bloc/cr_request_bloc.dart';
+import 'package:ding/src/feature/create_request/bloc/cr_request_event.dart';
+import 'package:ding/src/feature/create_request/bloc/cr_request_state.dart';
 import 'package:ding/src/feature/requests/bloc/requests_bloc.dart';
 import 'package:ding/src/feature/requests/bloc/requests_event.dart';
 import 'package:ding/src/feature/requests/bloc/requests_state.dart';
@@ -15,12 +18,12 @@ class CreateRequestTopBar extends StatefulWidget {
 }
 
 class _CreateRequestTopBarState extends State<CreateRequestTopBar> {
-  late RequestsBloc _requestsBloc;
+  late CreateRequestsBloc _requestsBloc;
   int type = 1;
   @override
   void initState() {
     super.initState();
-    _requestsBloc = BlocProvider.of<RequestsBloc>(context);
+    _requestsBloc = BlocProvider.of<CreateRequestsBloc>(context);
   }
 
   Widget _buildBody() => Row(
@@ -99,7 +102,7 @@ class _CreateRequestTopBarState extends State<CreateRequestTopBar> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<RequestsBloc, RequestsState>(
+    return BlocListener<CreateRequestsBloc, CreateRequestState>(
       listener: (_, state) {
         if (state is UpdateRequestsTypeState) {
           if (state.type == 1) {

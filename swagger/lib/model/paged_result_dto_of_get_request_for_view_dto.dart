@@ -17,10 +17,10 @@ class PagedResultDtoOfGetRequestForViewDto {
   PagedResultDtoOfGetRequestForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     totalCount =
-        json['totalCount']
+        json['result']['totalCount']
     ;
     items =
-      GetRequestForViewDto.listFromJson(json['items'])
+      GetRequestForViewDto.listFromJson(json['result']['items'])
 ;
   }
 

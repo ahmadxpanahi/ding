@@ -1,3 +1,5 @@
+import 'package:ding/src/feature/create_request/bloc/cr_request_bloc.dart';
+import 'package:ding/src/feature/create_request/bloc/cr_request_event.dart';
 import 'package:ding/src/feature/create_request/widgets/daily_page.dart';
 import 'package:ding/src/feature/create_request/widgets/hourly_page.dart';
 import 'package:ding/src/feature/create_request/widgets/top_buttons.dart';
@@ -14,8 +16,8 @@ class CreateRequestScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<RequestsBloc>(
-      create: (_) => RequestsBloc(),
+    return BlocProvider<CreateRequestsBloc>(
+      create: (_) => CreateRequestsBloc(),
       child: CreateRequestContainer(),
     );
   }
@@ -31,11 +33,11 @@ class CreateRequestContainer extends StatefulWidget {
 class _CreateRequestContainerState extends State<CreateRequestContainer> {
   PageController? _controller;
   int pageValue = 0;
-  late RequestsBloc _requestsBloc;
+  late CreateRequestsBloc _requestsBloc;
   @override
   void initState() {
     super.initState();
-    _requestsBloc = BlocProvider.of<RequestsBloc>(context);
+    _requestsBloc = BlocProvider.of<CreateRequestsBloc>(context);
     _requestsBloc.add(UpdateRequestType(type: 1));
     _controller = PageController();
   }

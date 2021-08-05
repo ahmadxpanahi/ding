@@ -1,3 +1,6 @@
+import 'package:ding/src/feature/create_request/bloc/cr_request_bloc.dart';
+import 'package:ding/src/feature/create_request/bloc/cr_request_event.dart';
+import 'package:ding/src/feature/create_request/bloc/cr_request_state.dart';
 import 'package:ding/src/feature/create_request/widgets/date_picker.dart';
 import 'package:ding/src/feature/create_request/widgets/type_picker.dart';
 import 'package:ding/src/feature/requests/bloc/requests_bloc.dart';
@@ -24,7 +27,7 @@ class DailyPage extends StatefulWidget {
 }
 
 class _DailyPageState extends State<DailyPage> {
-  late RequestsBloc _requestsBloc;
+  late CreateRequestsBloc _requestsBloc;
   PersianDate? _begin;
   PersianDate? _end;
   String? _comment;
@@ -62,7 +65,7 @@ class _DailyPageState extends State<DailyPage> {
   @override
   void initState() {
     super.initState();
-    _requestsBloc = BlocProvider.of<RequestsBloc>(context);
+    _requestsBloc = BlocProvider.of<CreateRequestsBloc>(context);
   }
 
   @override
@@ -76,7 +79,7 @@ class _DailyPageState extends State<DailyPage> {
               SizedBox(
                 height: 3.6.rw,
               ),
-              BlocBuilder<RequestsBloc, RequestsState>(
+              BlocBuilder<CreateRequestsBloc,CreateRequestState>(
                 builder: (_, state) {
                   if (state is UpdateRequestsTypeState) {
                     if (state.type == 1) {
@@ -151,7 +154,7 @@ class _DailyPageState extends State<DailyPage> {
             decoration: BoxDecoration(
                 border: Border.all(width: 1, color: DingColors.light())),
           ),
-          BlocBuilder<RequestsBloc, RequestsState>(
+          BlocBuilder<CreateRequestsBloc, CreateRequestState>(
             bloc: _requestsBloc,
             builder: (_, state) {
               if (state is RequestsLoadingState) {

@@ -65,7 +65,9 @@ class _TypePickerState extends State<TypePicker> {
                       textAlign: TextAlign.center,
                       confirmText: 'تایید',
                       onConfirm: (Picker picker, List value) {
-                        widget.getRequestType!(value.first+1);
+                        if(widget.getRequestType != null){
+                          widget.getRequestType!(value.first+1);
+                        }
                         setState(() {
                           switch (value.first) {
                             case 0:

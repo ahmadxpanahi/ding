@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:country_code_picker/country_localizations.dart';
 import 'package:ding/src/core/logger/logger.dart';
+import 'package:ding/src/di/core_di.dart';
 import 'package:ding/src/feature/splash/splash_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ding/fallback_cupertino_localizations_delegate.dart';
@@ -15,7 +16,8 @@ import 'package:flutter/cupertino.dart';
 void main() {
   Log.init();
   HttpOverrides.global = new MyHttpOverrides();
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  registerInjection().whenComplete(() => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
