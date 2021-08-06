@@ -68,8 +68,10 @@ class _DDatePickerState extends State<DDatePicker> {
                                         initialDateTime: DateTime.now(),
                                         onDateTimeChanged: (DateTime val) {
                                           setState(() {
-                                            time = val;
-                                            widget.onChangeTime!(time!);
+                                            if(widget.onChangeTime != null && time != null){
+                                              time = val;
+                                              widget.onChangeTime!(time!);
+                                            }
                                           });
                                         }),
                                   ),
@@ -116,6 +118,7 @@ class _DDatePickerState extends State<DDatePicker> {
                                   : Text(
                                       '${time?.hour.timePadded.toPersianDigit()}:${time?.minute.timePadded.toPersianDigit()}',
                                       style: TextStyle(fontSize: 4.8.rw),
+                                      key: UniqueKey(),
                                       textAlign: TextAlign.center,
                                     )),
                         ),

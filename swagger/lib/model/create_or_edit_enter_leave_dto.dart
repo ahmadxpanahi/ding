@@ -2,10 +2,10 @@ part of swagger.api;
 
 class CreateOrEditEnterLeaveDto {
   
-  EnteringLeavingType? enterLeaveType = null;
+  int? enterLeaveType = null;
   
 
-  DateTime? occurDate = null;
+  String? occurDate = null;
   
 
   String? occurTime = null;
@@ -14,7 +14,7 @@ class CreateOrEditEnterLeaveDto {
   String? comment = null;
   
 
-  RequestStatus? status = null;
+  int? status = null;
   
 
   String? rejectReason = null;
@@ -38,11 +38,11 @@ class CreateOrEditEnterLeaveDto {
   CreateOrEditEnterLeaveDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     enterLeaveType =
-      
-      
-      new EnteringLeavingType.fromJson(json['enterLeaveType'])
+
+
+    json['enterLeaveType']
 ;
-    occurDate = json['occurDate'] == null ? null : DateTime.parse(json['occurDate']);
+    occurDate = json['occurDate'] == null ? null : json['occurDate'];
     occurTime =
         json['occurTime']
     ;
@@ -50,9 +50,9 @@ class CreateOrEditEnterLeaveDto {
         json['comment']
     ;
     status =
-      
-      
-      new RequestStatus.fromJson(json['status'])
+
+
+    json['status']
 ;
     rejectReason =
         json['rejectReason']
@@ -71,7 +71,7 @@ class CreateOrEditEnterLeaveDto {
   Map<String, dynamic> toJson() {
     return {
       'enterLeaveType': enterLeaveType,
-      'occurDate': occurDate == null ? '' : occurDate!.toUtc().toIso8601String(),
+      'occurDate': occurDate == null ? '' : occurDate!,
       'occurTime': occurTime,
       'comment': comment,
       'status': status,

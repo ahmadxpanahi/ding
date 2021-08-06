@@ -17,10 +17,10 @@ class PagedResultDtoOfGetEnterLeaveForViewDto {
   PagedResultDtoOfGetEnterLeaveForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     totalCount =
-        json['totalCount']
+        json['result']['totalCount']
     ;
     items =
-      GetEnterLeaveForViewDto.listFromJson(json['items'])
+      GetEnterLeaveForViewDto.listFromJson(json['result']['items'])
 ;
   }
 

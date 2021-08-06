@@ -1,3 +1,4 @@
+import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/create_request/bloc/cr_request_bloc.dart';
 import 'package:ding/src/feature/create_request/bloc/cr_request_event.dart';
 import 'package:ding/src/feature/create_request/widgets/daily_page.dart';
@@ -17,7 +18,7 @@ class CreateRequestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<CreateRequestsBloc>(
-      create: (_) => CreateRequestsBloc(),
+      create: (_) => CreateRequestsBloc(inject(),inject()),
       child: CreateRequestContainer(),
     );
   }

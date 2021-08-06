@@ -3,48 +3,65 @@ import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:jalali_calendar/jalali_calendar.dart';
+import 'package:swagger/api.dart' as req;
+import 'package:persian_number_utility/persian_number_utility.dart';
 
 class MyRequestsItem extends StatelessWidget {
-  String? type;
-  String? status;
-  String? date;
-  DateTime? time;
+  int? type;
+  int? status;
+  DateTime? date;
   String? info1;
   String? info2;
 
   MyRequestsItem(
-      {Key? key,
-      this.status,
-      this.time,
-      this.date,
-      this.info1,
-      this.info2,
-      this.type})
+      {Key? key, this.status, this.date, this.info1, this.info2, this.type})
       : super(key: key);
 
-  Color _statusColor() => status == 'accepted'
+  String myType() {
+    if (type! < 6) {
+      return 'vacation';
+    } else if (type == 6) {
+      return 'mission';
+    } else if (type == 7) {
+      return 'enter';
+    } else {
+      return 'leave';
+    }
+  }
+
+  PersianDate? _persianDate(){
+    if(date != null)
+      return PersianDate.pDate(
+        gregorian: '${date!.year}-${date!.month.timePadded}-${date!.day.timePadded}'
+      );
+  }
+
+  Color _statusColor() => status == 2
       ? DingColors.primary()
-      : status == 'failed'
+      : status == 3
           ? DingColors.warning()
           : Colors.grey;
 
-  String _statusText() => status == 'accepted'
+  String _statusText() => status == 2
       ? "تایید شد"
-      : status == 'failed'
+      : status == 3
           ? 'رد شد'
           : 'درحال بررسی';
 
-  Color _typeColor() => type == 'leave'
+  Color _typeColor() => myType() == 'vacation'
       ? DingColors.secondary()
-      : type == 'enterAndExit'
-          ? DingColors.primary()
-          : Colors.grey;
+      : myType() == 'mission'
+          ? Colors.grey
+          : DingColors.primary();
 
-  String _typeText() => type == 'leave'
+  String _typeText() => myType() == 'vacation'
       ? "مرخصی"
-      : type == 'enterAndExit'
-          ? 'ورود و خروج'
-          : 'ماموریت';
+      : myType() == 'mission'
+          ? 'ماموریت'
+          : myType() == 'enter'
+              ? 'ورود'
+              : 'خروج';
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +83,7 @@ class MyRequestsItem extends StatelessWidget {
                       child: Text(
                         _typeText(),
                         style: TextStyle(
-                            color: type == 'leave'
+                            color: myType() == 'vacation'
                                 ? DingColors.dark()
                                 : Colors.white,
                             fontSize: 2.73.rt),
@@ -82,9 +99,9 @@ class MyRequestsItem extends StatelessWidget {
                               child: Row(
                             children: [
                               Text(
-                                date ?? '',
+                                '${date?.day.toString().toPersianDigit()} ${_persianDate()?.monthname}',
                                 style: TextStyle(
-                                    color: type == 'leave'
+                                    color: myType() == 'vacation'
                                         ? DingColors.dark()
                                         : Colors.white,
                                     fontSize: 2.2.rt),
@@ -93,14 +110,17 @@ class MyRequestsItem extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                           )),
                           Expanded(
-                              child: Text(
-                            '${time!.hour}:${time!.minute}:${time!.second}',
-                            style: TextStyle(
-                                color: type == 'leave'
-                                    ? DingColors.dark()
-                                    : Colors.white,
-                                fontSize: 2.2.rt),
-                          )),
+                            child: date != null
+                                ? Text(
+                                    '${date!.hour.toString().toPersianDigit()}:${date!.minute.toString().toPersianDigit()}:${date!.second.toString().toPersianDigit()}',
+                                    style: TextStyle(
+                                        color: myType() == 'vacation'
+                                            ? DingColors.dark()
+                                            : Colors.white,
+                                        fontSize: 2.2.rt),
+                                  )
+                                : SizedBox(),
+                          ),
                         ],
                       ),
                     ),

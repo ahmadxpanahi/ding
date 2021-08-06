@@ -1,3 +1,4 @@
+import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/feature/requests/bloc/requests_event.dart';
 import 'package:ding/src/feature/requests/bloc/requests_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,14 +25,19 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
   Stream<RequestsState> _getMyRequestsData(GetMyRequestsData event) async* {
     yield RequestsLoadingState(true);
     try {
-      var response = await _requestsApi.apiServicesAppRequestsGetallGet();
-      if(response != null)
-      yield GetMyRequestsDataSuccess(response.items);
+      var requestsResponse = await _requestsApi.apiServicesAppRequestsGetallGet();
+      var enterLeavesResponse = await _enterLeavesApi.apiServicesAppEnterleavesGetallGet();
+      Log.e(enterLeavesResponse);
+      if(requestsResponse != null && enterLeavesResponse != null){
+        yield GetMyRequestsDataSuccess(requestsResponse.items, enterLeavesResponse.items);
+      }
       else{
+        Log.e('خطا در دریافت اطلاعات');
         yield RequestsErrorState('خطا در دریافت اطلاعات');
       }
-    } on ApiException catch (e) {
-      yield RequestsErrorState(e.message??'');
+    } on Exception catch (e) {
+      Log.e(e);
+      yield RequestsErrorState(e.toString());
     }
   }
 

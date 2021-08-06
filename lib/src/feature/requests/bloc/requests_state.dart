@@ -9,10 +9,11 @@ class RequestsInitialState extends RequestsState {
 }
 
 class GetMyRequestsDataSuccess extends RequestsState{
-  List<GetRequestForViewDto>? items;
-  GetMyRequestsDataSuccess(this.items);
+  List<GetRequestForViewDto> requestItems;
+  List<GetEnterLeaveForViewDto> enterLeaveItems;
+  GetMyRequestsDataSuccess(this.requestItems, this.enterLeaveItems);
   @override
-  List<Object?> get props =>[items];
+  List<Object?> get props =>[requestItems, enterLeaveItems];
 
 }
 

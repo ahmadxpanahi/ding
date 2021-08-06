@@ -31,9 +31,7 @@ class _CreateRequestTopBarState extends State<CreateRequestTopBar> {
           Expanded(
             child: GestureDetector(
               onTap: () {
-                setState(() {
-                  _requestsBloc.add(UpdateRequestType(type: 1));
-                });
+                _requestsBloc.add(UpdateRequestType(type: 1));
               },
               child: Container(
                 alignment: Alignment.center,
@@ -54,9 +52,7 @@ class _CreateRequestTopBarState extends State<CreateRequestTopBar> {
           Expanded(
             child: GestureDetector(
               onTap: () {
-                setState(() {
-                  _requestsBloc.add(UpdateRequestType(type: 2));
-                });
+                _requestsBloc.add(UpdateRequestType(type: 2));
               },
               child: Container(
                 alignment: Alignment.center,
@@ -77,9 +73,7 @@ class _CreateRequestTopBarState extends State<CreateRequestTopBar> {
           Expanded(
             child: GestureDetector(
               onTap: () {
-                setState(() {
-                  _requestsBloc.add(UpdateRequestType(type: 3));
-                });
+                _requestsBloc.add(UpdateRequestType(type: 3));
               },
               child: Container(
                 alignment: Alignment.center,
@@ -106,11 +100,17 @@ class _CreateRequestTopBarState extends State<CreateRequestTopBar> {
       listener: (_, state) {
         if (state is UpdateRequestsTypeState) {
           if (state.type == 1) {
-            type = 1;
+            setState(() {
+              type = 1;
+            });
           } else if (state.type == 2) {
-            type = 2;
+            setState(() {
+              type = 2;
+            });
           } else if (state.type == 3) {
-            type = 3;
+            setState(() {
+              type = 3;
+            });
           }
         }
       },

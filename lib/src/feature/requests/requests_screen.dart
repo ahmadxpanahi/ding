@@ -1,3 +1,4 @@
+import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/create_request/create_request_screen.dart';
 import 'package:ding/src/feature/requests/bloc/requests_bloc.dart';
@@ -52,51 +53,38 @@ class _RequestsContainerState extends State<RequestsContainer> {
 
     Widget _myRequestsPage() => Stack(
       children: [
-        SingleChildScrollView(
-          child: BlocBuilder(
-            bloc: _requestsBloc,
-            builder: (_, state) {
-              if (state is RequestsLoadingState){
-                return CircularProgressIndicator(
+        BlocBuilder(
+          bloc: _requestsBloc,
+          builder: (_, state) {
+            if (state is RequestsLoadingState){
+              return Center(
+                child: CircularProgressIndicator(
                   color: DingColors.primary(),
-                );
-              }else if(state is GetMyRequestsDataSuccess){
-                myRequestsItem = state.items;
-                
-                }
-                return Column(
-                  children: [
-                    MyRequestsItem(
-                      status: 'pending',
-                      type: 'leave',
-                      info1: 'استعلاجی',
-                      info2: 'روزانه',
-                      time: DateTime.now(),
-                      date: '3 شهریور',
-                    ),
-                    MyRequestsItem(
-                      status: 'failed',
-                      type: 'enterAndExit',
-                      info1: 'ثبت',
-                      info2: 'لوکیشن',
-                      time: DateTime.now(),
-                      date: '3 شهریور',
-                    ),
-                    MyRequestsItem(
-                      status: 'accepted',
-                      type: 'mission',
-                      info1: 'استعلاجی',
-                      info2: 'روزانه',
-                      time: DateTime.now(),
-                      date: '3 شهریور',
-                    ),
-                  ],
-                );
-              }
-              return SizedBox();
-            },
-
-          ),
+                ),
+              );
+            }else if(state is GetMyRequestsDataSuccess){
+              return SingleChildScrollView(
+                child: Column(
+                  children: state.enterLeaveItems.map((e) => MyRequestsItem(
+                      key: Key(e.enterLeave!.id.toString()),
+                      info1: '',
+                      info2: '',
+                      date: e.enterLeave!.creationTime,
+                      type: e.enterLeave!.enterLeaveType!.value!+6,
+                      status: e.enterLeave!.status!.value!+6
+                  ),).toList() + state.requestItems.map((e) => MyRequestsItem(
+                    key: Key(e.request!.id.toString()),
+                    date: e.request!.creationTime,
+                    info1: '',
+                    info2: '',
+                    type: e.request!.requestType!.value,
+                    status: e.request!.status!.value,
+                  ),).toList(),
+                ),
+              );
+            }
+            return SizedBox();
+          },
         ),
         Align(
           alignment: Alignment.bottomCenter,
@@ -106,7 +94,7 @@ class _RequestsContainerState extends State<RequestsContainer> {
                   context,
                   MaterialPageRoute(
                       builder: (context) =>
-                          CreateRequestScreen()));
+                          CreateRequestScreen())).then((value) => _requestsBloc.add(GetMyRequestsData()));
             },
             child: Container(
               margin: EdgeInsets.only(bottom: 15),
