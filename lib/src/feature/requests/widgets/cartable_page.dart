@@ -27,6 +27,7 @@ class _CartablePageState extends State<CartablePage> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<RequestsBloc,RequestsState>(
+      buildWhen: (o, n) => !(n is ActionButtonErrorState || n is ActionButtonLoadingState),
       bloc: _requestsBloc,
       builder: (_,state){
         if(state is RequestsLoadingState){
@@ -36,6 +37,7 @@ class _CartablePageState extends State<CartablePage> {
             child: Column(
                 children: state.enterLeaveItems.map((e) => CartableItem(
                   key: Key(e.enterLeave!.id.toString()),
+                  requestId: e.enterLeave?.id,
                   name: e.requestByUser,
                   date: e.enterLeave?.creationTime.toString(),
                   info1: '',
@@ -45,6 +47,7 @@ class _CartablePageState extends State<CartablePage> {
                   unit: 'واحد فروش',
                 ),).toList()+state.requestItems.map((e) => CartableItem(
                   key: Key(e.request!.id.toString()),
+                  requestId: e.request?.id,
                   name: e.requestByUser,
                   unit: e.substituteUser,
                   info2: '',
@@ -57,9 +60,8 @@ class _CartablePageState extends State<CartablePage> {
                 ),).toList()
             ),
           );
-        }else{
-          return SizedBox();
         }
+        return SizedBox();
       },
     );
   }

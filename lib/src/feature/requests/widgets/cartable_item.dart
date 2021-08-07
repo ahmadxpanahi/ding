@@ -1,10 +1,14 @@
+import 'package:ding/src/feature/requests/bloc/requests_bloc.dart';
+import 'package:ding/src/feature/requests/bloc/requests_event.dart';
+import 'package:ding/src/feature/requests/bloc/requests_state.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 
-class CartableItem extends StatelessWidget {
+class CartableItem extends StatefulWidget {
   String? imgUrl;
   String? name;
   String? unit;
@@ -14,6 +18,7 @@ class CartableItem extends StatelessWidget {
   int? type;
   String? info1;
   String? info2;
+  int? requestId;
 
   CartableItem(
       {Key? key,
@@ -24,22 +29,85 @@ class CartableItem extends StatelessWidget {
       this.unit,
       this.imgUrl,
       this.name,
+      this.requestId,
       this.endDate,
       this.beginDate})
       : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    String _date = date.toString().toPersianDigit();
-    String _beginDate = beginDate.toString().toPersianDigit();
-    String _endDate = endDate.toString().toPersianDigit();
+  _CartableItemState createState() => _CartableItemState();
+}
 
-    String? _type(){
-      if(type == 1){
+class _CartableItemState extends State<CartableItem> {
+  late RequestsBloc _requestsBloc;
+
+  @override
+  void initState() {
+    super.initState();
+    _requestsBloc = BlocProvider.of<RequestsBloc>(context);
+  }
+
+  Widget _actionButtons() => Row(
+    mainAxisAlignment: MainAxisAlignment.end,
+    children: [
+      GestureDetector(
+        onTap: () {
+          _requestsBloc
+              .add(RejectRequest(widget.requestId??1));
+        },
+        child: Container(
+          width: 20.7.rw,
+          height: 5.47.rh,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(100),
+            border: Border.all(
+                width: 1, color: DingColors.warning()),
+          ),
+          child: Icon(
+            Icons.close,
+            size: 6.0.rw,
+            color: DingColors.warning(),
+          ),
+        ),
+      ),
+      SizedBox(
+        width: 2.4.rw,
+      ),
+      GestureDetector(
+        onTap: () {
+          _requestsBloc
+              .add(AcceptRequest(widget.requestId??1));
+        },
+        child: Container(
+          width: 20.7.rw,
+          height: 5.47.rh,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(100),
+            border: Border.all(
+                width: 1, color: DingColors.primary()),
+          ),
+          child: Icon(
+            Icons.check,
+            size: 6.0.rw,
+            color: DingColors.primary(),
+          ),
+        ),
+      ),
+    ],
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    String _date = widget.date.toString().toPersianDigit();
+    String _beginDate = widget.beginDate.toString().toPersianDigit();
+    String _endDate = widget.endDate.toString().toPersianDigit();
+
+    String? _type() {
+      if (widget.type == 1) {
         return 'leave';
-      }else if(type == 2){
+      } else if (widget.type == 2) {
         return 'enterAndExit';
-      }else if(type == 3){
+      } else if (widget.type == 3) {
         return 'mission';
       }
     }
@@ -59,11 +127,17 @@ class CartableItem extends StatelessWidget {
                 children: [
                   Text(
                     'شروع',
-                    style: TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: Colors.grey),
+                    style: TextStyle(
+                        fontSize:
+                            SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw,
+                        color: Colors.grey),
                   ),
                   Text(
                     'پایان',
-                    style: TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: Colors.grey),
+                    style: TextStyle(
+                        fontSize:
+                            SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw,
+                        color: Colors.grey),
                   )
                 ],
               ),
@@ -75,14 +149,18 @@ class CartableItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    _beginDate ?? '',
-                    style:
-                        TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: DingColors.dark()),
+                    _beginDate,
+                    style: TextStyle(
+                        fontSize:
+                            SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw,
+                        color: DingColors.dark()),
                   ),
                   Text(
-                    _endDate ?? '',
-                    style:
-                        TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: DingColors.dark()),
+                    _endDate,
+                    style: TextStyle(
+                        fontSize:
+                            SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw,
+                        color: DingColors.dark()),
                   )
                 ],
               ),
@@ -98,7 +176,9 @@ class CartableItem extends StatelessWidget {
                   Text(
                     'نمایش جزءیات',
                     style: TextStyle(
-                        fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: DingColors.primary()),
+                        fontSize:
+                            SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw,
+                        color: DingColors.primary()),
                   )
                 ],
               )
@@ -110,11 +190,19 @@ class CartableItem extends StatelessWidget {
                     children: [
                       Text(
                         'شروع',
-                        style: TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: Colors.grey),
+                        style: TextStyle(
+                            fontSize: SizeConfig.heightMultiplier! < 6
+                                ? 3.5.rw
+                                : 4.0.rw,
+                            color: Colors.grey),
                       ),
                       Text(
                         'پایان',
-                        style: TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: Colors.grey),
+                        style: TextStyle(
+                            fontSize: SizeConfig.heightMultiplier! < 6
+                                ? 3.5.rw
+                                : 4.0.rw,
+                            color: Colors.grey),
                       )
                     ],
                   ),
@@ -126,14 +214,20 @@ class CartableItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        _beginDate ?? '',
+                        _beginDate,
                         style: TextStyle(
-                            fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: DingColors.dark()),
+                            fontSize: SizeConfig.heightMultiplier! < 6
+                                ? 3.5.rw
+                                : 4.0.rw,
+                            color: DingColors.dark()),
                       ),
                       Text(
-                        _endDate ?? '',
+                        _endDate,
                         style: TextStyle(
-                            fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: DingColors.dark()),
+                            fontSize: SizeConfig.heightMultiplier! < 6
+                                ? 3.5.rw
+                                : 4.0.rw,
+                            color: DingColors.dark()),
                       )
                     ],
                   ),
@@ -160,12 +254,14 @@ class CartableItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                          width: SizeConfig.heightMultiplier! < 6 ? 12.5.rw : 14.6.rw,
+                          width: SizeConfig.heightMultiplier! < 6
+                              ? 12.5.rw
+                              : 14.6.rw,
                           height: 14.6.rw,
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
-                                  image: NetworkImage(imgUrl ?? '')))),
+                                  image: NetworkImage(widget.imgUrl ?? '')))),
                       SizedBox(
                         width: 2.4.rw,
                       ),
@@ -174,20 +270,26 @@ class CartableItem extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              name ?? '',
+                              widget.name ?? '',
                               style: TextStyle(
-                                  color: DingColors.dark(), fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw),
+                                  color: DingColors.dark(),
+                                  fontSize: SizeConfig.heightMultiplier! < 6
+                                      ? 3.5.rw
+                                      : 4.0.rw),
                             ),
                             Text(
-                              unit ?? '',
+                              widget.unit ?? '',
                               style: TextStyle(
-                                  color: Colors.grey, fontSize: SizeConfig.heightMultiplier! < 6 ? 3.1.rw : 4.0.rw),
+                                  color: Colors.grey,
+                                  fontSize: SizeConfig.heightMultiplier! < 6
+                                      ? 3.1.rw
+                                      : 4.0.rw),
                             ),
                           ],
                         ),
                       ),
                       Text(
-                        _date ?? '',
+                        _date,
                         style:
                             TextStyle(color: Colors.grey, fontSize: 4.0.rw - 2),
                       )
@@ -214,9 +316,11 @@ class CartableItem extends StatelessWidget {
                                   width: 6,
                                 ),
                                 Text(
-                                  info1 ?? '',
+                                  widget.info1 ?? '',
                                   style: TextStyle(
-                                      fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw,
+                                      fontSize: SizeConfig.heightMultiplier! < 6
+                                          ? 3.5.rw
+                                          : 4.0.rw,
                                       color: DingColors.dark()),
                                 )
                               ],
@@ -234,9 +338,11 @@ class CartableItem extends StatelessWidget {
                                   width: 6,
                                 ),
                                 Text(
-                                  info2 ?? '',
+                                  widget.info2 ?? '',
                                   style: TextStyle(
-                                      fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw,
+                                      fontSize: SizeConfig.heightMultiplier! < 6
+                                          ? 3.5.rw
+                                          : 4.0.rw,
                                       color: DingColors.dark()),
                                 )
                               ],
@@ -245,41 +351,23 @@ class CartableItem extends StatelessWidget {
                         ),
                         _typeDetail()
                       ]),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Container(
-                        width: 20.7.rw,
-                        height: 5.47.rh,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          border:
-                              Border.all(width: 1, color: DingColors.warning()),
-                        ),
-                        child: Icon(
-                          Icons.close,
-                          size: 6.0.rw,
-                          color: DingColors.warning(),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 2.4.rw,
-                      ),
-                      Container(
-                        width: 20.7.rw,
-                        height: 5.47.rh,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          border:
-                              Border.all(width: 1, color: DingColors.primary()),
-                        ),
-                        child: Icon(
-                          Icons.check,
-                          size: 6.0.rw,
-                          color: DingColors.primary(),
-                        ),
-                      ),
-                    ],
+                  BlocBuilder(
+                    bloc: _requestsBloc,
+                    builder: (_, state) {
+                      if (state is ActionButtonLoadingState) {
+                        if(state.id == widget.requestId){
+                          return Transform.scale(
+                              scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
+                              child: CircularProgressIndicator(
+                                color: DingColors.primary(),
+                              ));
+                        }else{
+                          return _actionButtons();
+                        }
+                      } else{
+                        return _actionButtons();
+                      }
+                    },
                   )
                 ],
               ),

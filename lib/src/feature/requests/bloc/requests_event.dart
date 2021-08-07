@@ -26,5 +26,24 @@ class GetRequestsData extends RequestsEvent{
 
 }
 
+class AcceptRequest extends RequestsEvent{
+  final int id;
+  AcceptRequest(this.id);
+  @override
+  List<Object?> get props => [id];
 
+}
 
+class RejectRequest extends RequestsEvent{
+  final int id;
+  RejectRequest(this.id);
+  @override
+  List<Object?> get props => [id];
+
+}
+
+class ShowActionButtonLoading extends RequestsEvent{
+  @override
+  List<Object?> get props => [];
+
+}

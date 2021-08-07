@@ -18,6 +18,10 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
       yield RequestsLoadingState(event.isLoading);
     } else if (event is ShowRequestsError) {
       yield RequestsErrorState(event.message);
+    }else if(event is AcceptRequest){
+      yield* _acceptRequest(event);
+    }else if(event is RejectRequest){
+      yield* _rejectRequest(event);
     }
   }
 
@@ -50,6 +54,30 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
     } on Exception catch (e) {
       Log.e(e);
       yield RequestsErrorState(e.toString());
+    }
+  }
+
+  Stream<RequestsState> _acceptRequest(AcceptRequest event) async* {
+    yield ActionButtonLoadingState(event.id);
+    try {
+      var acceptRequestResponse = await _requestsApi.apiServicesAppRequestsApproverequestsPost();
+      var acceptEnterLeaveResponse = await _enterLeavesApi.apiServicesAppEnterleavesApproverequestsPost();
+      yield RequestAccepted(event.id);
+    } on Exception catch (e) {
+      Log.e(e);
+      yield ActionButtonErrorState(e.toString());
+    }
+  }
+
+  Stream<RequestsState> _rejectRequest(RejectRequest event) async* {
+    yield ActionButtonLoadingState(event.id);
+    try {
+      var rejectRequestResponse = await _requestsApi.apiServicesAppRequestsRejectrequestsPost();
+      var rejectEnterLeaveResponse = await _enterLeavesApi.apiServicesAppEnterleavesRejectrequestsPost();
+      yield RequestRejected(event.id);
+    } on Exception catch (e) {
+      Log.e(e);
+      yield ActionButtonErrorState(e.toString());
     }
   }
 }

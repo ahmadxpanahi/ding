@@ -32,3 +32,32 @@ class RequestsErrorState extends RequestsState {
   List<Object?> get props => [this.message];
 }
 
+class RequestAccepted extends RequestsState{
+  int id;
+  RequestAccepted(this.id);
+  @override
+  List<Object?> get props => [id];
+}
+
+class RequestRejected extends RequestsState{
+  int id;
+  RequestRejected(this.id);
+  @override
+  List<Object?> get props => [id];
+}
+
+class ActionButtonLoadingState extends RequestsState{
+  int id;
+  ActionButtonLoadingState(this.id);
+  @override
+  List<Object?> get props => [id];
+
+}
+
+class ActionButtonErrorState extends RequestsState{
+  String message;
+  ActionButtonErrorState(this.message);
+  @override
+  List<Object?> get props => [message];
+
+}
