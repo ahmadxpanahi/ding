@@ -34,16 +34,18 @@ class RequestsErrorState extends RequestsState {
 
 class RequestAccepted extends RequestsState{
   int id;
-  RequestAccepted(this.id);
+  bool enterLeave;
+  RequestAccepted(this.id,this.enterLeave);
   @override
-  List<Object?> get props => [id];
+  List<Object?> get props => [id,enterLeave];
 }
 
 class RequestRejected extends RequestsState{
+  bool enterLeave;
   int id;
-  RequestRejected(this.id);
+  RequestRejected(this.id,this.enterLeave);
   @override
-  List<Object?> get props => [id];
+  List<Object?> get props => [id,enterLeave];
 }
 
 class ActionButtonLoadingState extends RequestsState{

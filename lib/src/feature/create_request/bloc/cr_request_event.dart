@@ -6,8 +6,8 @@ class CreateRequest extends CreateRequestEvent {
   final int? type;
   final int? requestType;
   final int? requestStatus;
-  final String beginDate;
-  final String endDate;
+  final String? beginDate;
+  final String? endDate;
   final String comment;
   final String? date;
   final String? time;
@@ -17,8 +17,8 @@ class CreateRequest extends CreateRequestEvent {
         this.date,
         this.time,
         this.requestStatus,
-        this.beginDate = "",
-        this.endDate = "",
+        this.beginDate,
+        this.endDate,
         this.requestType,
         this.comment = ''});
   @override

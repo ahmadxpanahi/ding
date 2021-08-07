@@ -27,18 +27,20 @@ class GetRequestsData extends RequestsEvent{
 }
 
 class AcceptRequest extends RequestsEvent{
+  final bool enterLeave;
   final int id;
-  AcceptRequest(this.id);
+  AcceptRequest(this.id,this.enterLeave);
   @override
-  List<Object?> get props => [id];
+  List<Object?> get props => [id,enterLeave];
 
 }
 
 class RejectRequest extends RequestsEvent{
   final int id;
-  RejectRequest(this.id);
+  final bool enterLeave;
+  RejectRequest(this.id,this.enterLeave);
   @override
-  List<Object?> get props => [id];
+  List<Object?> get props => [id,enterLeave];
 
 }
 

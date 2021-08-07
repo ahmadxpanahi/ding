@@ -28,19 +28,19 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        BlocBuilder(
-          bloc: _requestsBloc,
-          builder: (_, state) {
-            if (state is RequestsLoadingState){
-              return Center(
-                child: CircularProgressIndicator(
-                  color: DingColors.primary(),
-                ),
-              );
-            }else if(state is GetRequestsDataSuccess){
-              return SingleChildScrollView(
+    return BlocBuilder(
+      bloc: _requestsBloc,
+      builder: (_, state) {
+        if (state is RequestsLoadingState){
+          return Center(
+            child: CircularProgressIndicator(
+              color: DingColors.primary(),
+            ),
+          );
+        }else if(state is GetRequestsDataSuccess){
+          return Stack(
+            children: [
+              SingleChildScrollView(
                 child: Column(
                   children: state.enterLeaveItems.map((e) => MyRequestsItem(
                       key: Key(e.enterLeave!.id.toString()),
@@ -58,39 +58,39 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
                     status: e.request!.status!.value,
                   ),).toList(),
                 ),
-              );
-            }
-            return SizedBox();
-          },
-        ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          CreateRequestScreen())).then((value) => _requestsBloc.add(GetRequestsData(false)));
-            },
-            child: Container(
-              margin: EdgeInsets.only(bottom: 15),
-              alignment: Alignment.center,
-              height: 14.6.rw,
-              width: 14.6.rw,
-              decoration: BoxDecoration(
-                color: DingColors.primary(),
-                borderRadius: BorderRadius.circular(100),
               ),
-              child: Icon(
-                Icons.add,
-                size: 12.0.rw,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        )
-      ],
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                CreateRequestScreen())).then((value) => _requestsBloc.add(GetRequestsData(false)));
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 15),
+                    alignment: Alignment.center,
+                    height: 14.6.rw,
+                    width: 14.6.rw,
+                    decoration: BoxDecoration(
+                      color: DingColors.primary(),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child: Icon(
+                      Icons.add,
+                      size: 12.0.rw,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              )
+            ],
+          );
+        }
+        return SizedBox();
+      },
     );
   }
 }

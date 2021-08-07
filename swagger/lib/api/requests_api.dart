@@ -10,7 +10,7 @@ class RequestsApi {
   /// ApiServicesAppRequestsApproverequestsPost
   ///
   /// 
-  Future apiServicesAppRequestsApproverequestsPost({ List<GetRequestForViewDto>? body }) async {
+  Future apiServicesAppRequestsApproverequestsPost(List<Map<String, dynamic>> body) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -541,7 +541,7 @@ class RequestsApi {
   /// ApiServicesAppRequestsRejectrequestsPost
   ///
   /// 
-  Future apiServicesAppRequestsRejectrequestsPost({ List<GetRequestForViewDto>? body }) async {
+  Future apiServicesAppRequestsRejectrequestsPost(List<Map<String, dynamic>> body) async {
     Object? postBody = body;
 
     // verify required params are set

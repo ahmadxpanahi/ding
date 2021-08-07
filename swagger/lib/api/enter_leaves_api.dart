@@ -10,7 +10,7 @@ class EnterLeavesApi {
   /// ApiServicesAppEnterleavesApproverequestsPost
   ///
   /// 
-  Future apiServicesAppEnterleavesApproverequestsPost({ List<GetEnterLeaveForViewDto>? body }) async {
+  Future apiServicesAppEnterleavesApproverequestsPost(List<Map<String, dynamic>> body) async {
     Object? postBody = body;
 
     // verify required params are set
@@ -408,7 +408,7 @@ class EnterLeavesApi {
   /// ApiServicesAppEnterleavesRejectrequestsPost
   ///
   /// 
-  Future apiServicesAppEnterleavesRejectrequestsPost({ List<GetEnterLeaveForViewDto>? body }) async {
+  Future apiServicesAppEnterleavesRejectrequestsPost(List<Map<String, dynamic>> body) async {
     Object? postBody = body;
 
     // verify required params are set

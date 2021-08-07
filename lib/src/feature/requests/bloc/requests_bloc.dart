@@ -18,9 +18,9 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
       yield RequestsLoadingState(event.isLoading);
     } else if (event is ShowRequestsError) {
       yield RequestsErrorState(event.message);
-    }else if(event is AcceptRequest){
+    } else if (event is AcceptRequest) {
       yield* _acceptRequest(event);
-    }else if(event is RejectRequest){
+    } else if (event is RejectRequest) {
       yield* _rejectRequest(event);
     }
   }
@@ -43,8 +43,8 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
                 : requestsResponse.items,
             event.cartable
                 ? enterLeavesResponse.items
-                .where((element) => element.enterLeave?.status?.value == 1)
-                .toList()
+                    .where((element) => element.enterLeave?.status?.value == 1)
+                    .toList()
                 : enterLeavesResponse.items,
             event.cartable);
       } else {
@@ -60,9 +60,32 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
   Stream<RequestsState> _acceptRequest(AcceptRequest event) async* {
     yield ActionButtonLoadingState(event.id);
     try {
-      var acceptRequestResponse = await _requestsApi.apiServicesAppRequestsApproverequestsPost();
-      var acceptEnterLeaveResponse = await _enterLeavesApi.apiServicesAppEnterleavesApproverequestsPost();
-      yield RequestAccepted(event.id);
+      if (!event.enterLeave) {
+        var acceptRequestResponse =
+            await _requestsApi.apiServicesAppRequestsApproverequestsPost([
+          {
+            "request": {
+              "creatorUserId": 1,
+              "comment": "string",
+              "rejectReason": "string",
+              "id": 12
+            }
+          }
+        ]);
+      } else {
+        var acceptEnterLeaveResponse =
+            await _enterLeavesApi.apiServicesAppEnterleavesApproverequestsPost([
+          {
+            "enterLeave": {
+              "creatorUserId": 1,
+              "comment": "string",
+              "rejectReason": "string",
+              "id": 12
+            }
+          }
+        ]);
+      }
+      yield RequestAccepted(event.id, event.enterLeave);
     } on Exception catch (e) {
       Log.e(e);
       yield ActionButtonErrorState(e.toString());
@@ -72,9 +95,36 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
   Stream<RequestsState> _rejectRequest(RejectRequest event) async* {
     yield ActionButtonLoadingState(event.id);
     try {
-      var rejectRequestResponse = await _requestsApi.apiServicesAppRequestsRejectrequestsPost();
-      var rejectEnterLeaveResponse = await _enterLeavesApi.apiServicesAppEnterleavesRejectrequestsPost();
-      yield RequestRejected(event.id);
+      if(!event.enterLeave){
+        var rejectRequestResponse =
+        await _requestsApi.apiServicesAppRequestsRejectrequestsPost(
+            [
+              {
+                "request": {
+                  "creatorUserId": 1,
+                  "comment": "string",
+                  "rejectReason": "string",
+                  "id": 12
+                }
+              }
+            ]
+        );
+      }else{
+        var rejectEnterLeaveResponse =
+        await _enterLeavesApi.apiServicesAppEnterleavesRejectrequestsPost(
+            [
+              {
+                "enterLeave": {
+                  "creatorUserId": 1,
+                  "comment": "string",
+                  "rejectReason": "string",
+                  "id": 12
+                }
+              }
+            ]
+        );
+      }
+      yield RequestRejected(event.id,event.enterLeave);
     } on Exception catch (e) {
       Log.e(e);
       yield ActionButtonErrorState(e.toString());

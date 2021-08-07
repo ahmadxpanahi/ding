@@ -53,7 +53,7 @@ class _CartableItemState extends State<CartableItem> {
       GestureDetector(
         onTap: () {
           _requestsBloc
-              .add(RejectRequest(widget.requestId??1));
+              .add(RejectRequest(widget.requestId??1,_inEnterLeave()));
         },
         child: Container(
           width: 20.7.rw,
@@ -76,7 +76,7 @@ class _CartableItemState extends State<CartableItem> {
       GestureDetector(
         onTap: () {
           _requestsBloc
-              .add(AcceptRequest(widget.requestId??1));
+              .add(AcceptRequest(widget.requestId??1,_inEnterLeave()));
         },
         child: Container(
           width: 20.7.rw,
@@ -95,7 +95,7 @@ class _CartableItemState extends State<CartableItem> {
       ),
     ],
   );
-
+  bool _inEnterLeave() => widget.type == 2 ? true : false;
   @override
   Widget build(BuildContext context) {
     String _date = widget.date.toString().toPersianDigit();
