@@ -1,12 +1,8 @@
-import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/feature/create_request/bloc/cr_request_bloc.dart';
 import 'package:ding/src/feature/create_request/bloc/cr_request_event.dart';
 import 'package:ding/src/feature/create_request/bloc/cr_request_state.dart';
 import 'package:ding/src/feature/create_request/widgets/date_picker.dart';
 import 'package:ding/src/feature/create_request/widgets/type_picker.dart';
-import 'package:ding/src/feature/requests/bloc/requests_bloc.dart';
-import 'package:ding/src/feature/requests/bloc/requests_event.dart';
-import 'package:ding/src/feature/requests/bloc/requests_state.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/date_utils.dart';
@@ -15,7 +11,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:jalali_calendar/jalali_calendar.dart';
 
 class HourlyPage extends StatefulWidget {

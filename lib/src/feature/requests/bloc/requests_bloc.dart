@@ -8,30 +8,42 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
   RequestsApi _requestsApi;
   EnterLeavesApi _enterLeavesApi;
 
-  RequestsBloc(this._requestsApi, this._enterLeavesApi) : super(RequestsInitialState());
+  RequestsBloc(this._requestsApi, this._enterLeavesApi)
+      : super(RequestsInitialState());
   @override
   Stream<RequestsState> mapEventToState(RequestsEvent event) async* {
-    if (event is GetMyRequestsData) {
-      yield* _getMyRequestsData(event);
-    } else if (event is GetCartableData) {
-      yield RequestsInitialState();
+    if (event is GetRequestsData) {
+      yield* _getRequestsData(event);
     } else if (event is ShowRequestsLoading) {
       yield RequestsLoadingState(event.isLoading);
-    }else if(event is ShowRequestsError){
+    } else if (event is ShowRequestsError) {
       yield RequestsErrorState(event.message);
     }
   }
 
-  Stream<RequestsState> _getMyRequestsData(GetMyRequestsData event) async* {
+  Stream<RequestsState> _getRequestsData(GetRequestsData event) async* {
     yield RequestsLoadingState(true);
     try {
-      var requestsResponse = await _requestsApi.apiServicesAppRequestsGetallGet();
-      var enterLeavesResponse = await _enterLeavesApi.apiServicesAppEnterleavesGetallGet();
-      Log.e(enterLeavesResponse);
-      if(requestsResponse != null && enterLeavesResponse != null){
-        yield GetMyRequestsDataSuccess(requestsResponse.items, enterLeavesResponse.items);
-      }
-      else{
+      var requestsResponse =
+          await _requestsApi.apiServicesAppRequestsGetallGet();
+      var enterLeavesResponse =
+          await _enterLeavesApi.apiServicesAppEnterleavesGetallGet();
+      Log.e(requestsResponse);
+      Log.wtf(enterLeavesResponse);
+      if (requestsResponse != null && enterLeavesResponse != null) {
+        yield GetRequestsDataSuccess(
+            event.cartable
+                ? requestsResponse.items
+                    .where((element) => element.request?.status?.value == 1)
+                    .toList()
+                : requestsResponse.items,
+            event.cartable
+                ? enterLeavesResponse.items
+                .where((element) => element.enterLeave?.status?.value == 1)
+                .toList()
+                : enterLeavesResponse.items,
+            event.cartable);
+      } else {
         Log.e('خطا در دریافت اطلاعات');
         yield RequestsErrorState('خطا در دریافت اطلاعات');
       }
@@ -40,5 +52,4 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
       yield RequestsErrorState(e.toString());
     }
   }
-
 }

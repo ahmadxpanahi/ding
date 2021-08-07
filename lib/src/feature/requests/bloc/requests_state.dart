@@ -8,12 +8,13 @@ class RequestsInitialState extends RequestsState {
   List<Object?> get props => [];
 }
 
-class GetMyRequestsDataSuccess extends RequestsState{
+class GetRequestsDataSuccess extends RequestsState{
+  bool? cartable;
   List<GetRequestForViewDto> requestItems;
   List<GetEnterLeaveForViewDto> enterLeaveItems;
-  GetMyRequestsDataSuccess(this.requestItems, this.enterLeaveItems);
+  GetRequestsDataSuccess(this.requestItems, this.enterLeaveItems,this.cartable);
   @override
-  List<Object?> get props =>[requestItems, enterLeaveItems];
+  List<Object?> get props =>[requestItems, enterLeaveItems,cartable];
 
 }
 

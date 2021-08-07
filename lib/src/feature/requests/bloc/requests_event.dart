@@ -18,17 +18,13 @@ class ShowRequestsError extends RequestsEvent {
   List<Object?> get props => [this.message];
 }
 
-class GetMyRequestsData extends RequestsEvent{
-
+class GetRequestsData extends RequestsEvent{
+  bool cartable;
+  GetRequestsData(this.cartable);
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [cartable];
 
 }
 
-class GetCartableData extends RequestsEvent {
-  GetCartableData();
-  @override
-  List<Object?> get props => [];
-}
 
 

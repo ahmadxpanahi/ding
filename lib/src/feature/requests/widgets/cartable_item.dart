@@ -2,6 +2,7 @@ import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:persian_number_utility/persian_number_utility.dart';
 
 class CartableItem extends StatelessWidget {
   String? imgUrl;
@@ -10,7 +11,7 @@ class CartableItem extends StatelessWidget {
   String? date;
   String? beginDate;
   String? endDate;
-  String? type;
+  int? type;
   String? info1;
   String? info2;
 
@@ -29,14 +30,27 @@ class CartableItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String _date = date.toString().toPersianDigit();
+    String _beginDate = beginDate.toString().toPersianDigit();
+    String _endDate = endDate.toString().toPersianDigit();
 
-    Color _typeColor() => type == 'leave'
+    String? _type(){
+      if(type == 1){
+        return 'leave';
+      }else if(type == 2){
+        return 'enterAndExit';
+      }else if(type == 3){
+        return 'mission';
+      }
+    }
+
+    Color _typeColor() => _type() == 'leave'
         ? DingColors.secondary()
-        : type == 'enterAndExit'
+        : _type() == 'enterAndExit'
             ? DingColors.primary()
             : Colors.grey;
 
-    Widget _typeDetail() => type == 'leave'
+    Widget _typeDetail() => _type() == 'leave'
         ? Row(
             children: [
               Column(
@@ -61,12 +75,12 @@ class CartableItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    beginDate ?? '',
+                    _beginDate ?? '',
                     style:
                         TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: DingColors.dark()),
                   ),
                   Text(
-                    endDate ?? '',
+                    _endDate ?? '',
                     style:
                         TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: DingColors.dark()),
                   )
@@ -74,7 +88,7 @@ class CartableItem extends StatelessWidget {
               ),
             ],
           )
-        : type == 'enterAndExit'
+        : _type() == 'enterAndExit'
             ? Row(
                 children: [
                   Icon(
@@ -112,12 +126,12 @@ class CartableItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        beginDate ?? '',
+                        _beginDate ?? '',
                         style: TextStyle(
                             fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: DingColors.dark()),
                       ),
                       Text(
-                        endDate ?? '',
+                        _endDate ?? '',
                         style: TextStyle(
                             fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.0.rw, color: DingColors.dark()),
                       )
@@ -173,7 +187,7 @@ class CartableItem extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        date ?? '',
+                        _date ?? '',
                         style:
                             TextStyle(color: Colors.grey, fontSize: 4.0.rw - 2),
                       )
