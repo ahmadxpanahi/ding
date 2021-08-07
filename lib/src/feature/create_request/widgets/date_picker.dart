@@ -68,8 +68,9 @@ class _DDatePickerState extends State<DDatePicker> {
                                         initialDateTime: DateTime.now(),
                                         onDateTimeChanged: (DateTime val) {
                                           setState(() {
-                                            if(widget.onChangeTime != null && time != null){
-                                              time = val;
+                                            time = val;
+
+                                            if(widget.onChangeTime != null){
                                               widget.onChangeTime!(time!);
                                             }
                                           });
