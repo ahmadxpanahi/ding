@@ -35,7 +35,14 @@ class RequestsContainer extends StatefulWidget {
 class _RequestsContainerState extends State<RequestsContainer> {
   PageController? _controller;
   int value = 0;
+
   late RequestsBloc _requestsBloc;
+
+  var _tabs = [
+    MyRequestsPage(),
+    CartablePage()
+  ];
+
   List<myRequests.GetRequestForViewDto>? myRequestsItem;
 
   @override
@@ -102,10 +109,7 @@ class _RequestsContainerState extends State<RequestsContainer> {
               value = val;
             });
           },
-          children: [
-            MyRequestsPage(),
-            CartablePage()
-          ],
+          children: _tabs,
         ))
       ],
     );

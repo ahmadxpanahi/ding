@@ -6,6 +6,7 @@ import 'package:ding/src/ui/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ding/src/utils/extensions.dart';
+import 'package:swagger/api.dart' as api;
 import 'my_requests_item.dart';
 
 class MyRequestsPage extends StatefulWidget {
@@ -16,6 +17,8 @@ class MyRequestsPage extends StatefulWidget {
 }
 
 class _MyRequestsPageState extends State<MyRequestsPage> {
+  List<api.GetRequestForViewDto> _requestItems = [];
+  List<api.GetEnterLeaveForViewDto> _enterLeaveItems = [];
 
   late RequestsBloc _requestsBloc;
 
@@ -26,71 +29,93 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
     _requestsBloc.add(GetRequestsData(false));
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder(
+  Widget _buildLoading() => BlocBuilder<RequestsBloc, RequestsState>(
       bloc: _requestsBloc,
       builder: (_, state) {
-        if (state is RequestsLoadingState){
+        if (state is RequestsLoadingState) {
           return Center(
             child: CircularProgressIndicator(
               color: DingColors.primary(),
             ),
           );
-        }else if(state is GetRequestsDataSuccess){
-          return Stack(
-            children: [
-              SingleChildScrollView(
-                child: Column(
-                  children: state.enterLeaveItems.map((e) => MyRequestsItem(
-                      key: Key(e.enterLeave!.id.toString()),
-                      info1: '',
-                      info2: '',
-                      date: e.enterLeave!.creationTime,
-                      type: e.enterLeave!.enterLeaveType!.value!+6,
-                      status: e.enterLeave!.status!.value!+6
-                  ),).toList() + state.requestItems.map((e) => MyRequestsItem(
-                    key: Key(e.request!.id.toString()),
-                    date: e.request!.creationTime,
-                    info1: '',
-                    info2: '',
-                    type: e.request!.requestType!.value,
-                    status: e.request!.status!.value,
-                  ),).toList(),
-                ),
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                CreateRequestScreen())).then((value) => _requestsBloc.add(GetRequestsData(false)));
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(bottom: 15),
-                    alignment: Alignment.center,
-                    height: 14.6.rw,
-                    width: 14.6.rw,
-                    decoration: BoxDecoration(
-                      color: DingColors.primary(),
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                    child: Icon(
-                      Icons.add,
-                      size: 12.0.rw,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              )
-            ],
-          );
         }
         return SizedBox();
-      },
-    );
-  }
+      });
+
+  Widget _buildBody() => Stack(
+        children: [
+          SingleChildScrollView(
+            child: Column(
+              children: _enterLeaveItems
+                      .map(
+                        (e) => MyRequestsItem(
+                            key: Key(e.enterLeave!.id.toString()),
+                            info1: '',
+                            info2: '',
+                            date: e.enterLeave!.creationTime,
+                            type: e.enterLeave!.enterLeaveType!.value! + 6,
+                            status: e.enterLeave!.status!.value! + 6),
+                      )
+                      .toList() +
+                  _requestItems
+                      .map(
+                        (e) => MyRequestsItem(
+                          key: Key(e.request!.id.toString()),
+                          date: e.request!.creationTime,
+                          info1: '',
+                          info2: '',
+                          type: e.request!.requestType!.value,
+                          status: e.request!.status!.value,
+                        ),
+                      )
+                      .toList(),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CreateRequestScreen()))
+                    .then((value) => _requestsBloc.add(GetRequestsData(false)));
+              },
+              child: Container(
+                margin: EdgeInsets.only(bottom: 15),
+                alignment: Alignment.center,
+                height: 14.6.rw,
+                width: 14.6.rw,
+                decoration: BoxDecoration(
+                  color: DingColors.primary(),
+                  borderRadius: BorderRadius.circular(100),
+                ),
+                child: Icon(
+                  Icons.add,
+                  size: 12.0.rw,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          _buildLoading(),
+        ],
+      );
+
+  @override
+  Widget build(BuildContext context) =>
+      BlocListener<RequestsBloc, RequestsState>(
+        bloc: _requestsBloc,
+        child: _buildBody(),
+        listener: (_, state) {
+          if (state is GetRequestsDataSuccess) {
+            if (!state.cartable!) {
+              setState(() {
+                _requestItems = state.requestItems;
+                _enterLeaveItems = state.enterLeaveItems;
+              });
+            }
+          }
+        },
+      );
 }
