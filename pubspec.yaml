@@ -15,11 +15,12 @@ dependencies:
   country_code_picker: ^2.0.2
   pin_code_text_field: ^1.8.0
   jalali_calendar: ^1.0.4
+  shamsi_date: ^0.15.0
+  persian_number_utility: ^0.3.4
   flutter_picker: ^2.0.2
   flutter_bloc: ^7.0.1
   equatable: ^2.0.3
   another_flushbar: ^1.10.24
-  persian_number_utility: ^0.3.4
   timer_builder: ^2.0.0
   flutter_map: ^0.13.1
   latlong2: ^0.8.0

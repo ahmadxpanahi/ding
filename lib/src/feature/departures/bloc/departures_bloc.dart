@@ -39,7 +39,7 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
     yield DeparturesStatusState(
         isEnter: event.isEnter, progress: 1, selectedPage: event.selectedPage);
     bool? connection = await _checkNetworkConnection();
-    
+
     await Future.delayed(Duration(milliseconds: 1000));
     if (!connection!) {
       yield DeparturesStatusState(
