@@ -53,13 +53,9 @@ class _HourlyPageState extends State<HourlyPage> {
                   type: 'begin',
                   onChangeDate: (dateTime) {
                     _beginDate = dateTime;
-                    print("BEGIN DATE :");
-                    print(_beginDate);
                   },
                   onChangeTime: (dateTime) {
                     _beginTime = dateTime;
-                    print("BEGIN TIME :");
-                    print(_beginTime);
                   },
                 ),
                 SizedBox(
@@ -71,13 +67,9 @@ class _HourlyPageState extends State<HourlyPage> {
                   type: 'end',
                   onChangeDate: (dateTime) {
                     _endDate = dateTime;
-                    print("END DATE :");
-                    print(_endDate);
                   },
                   onChangeTime: (dateTime) {
                     _endTime = dateTime;
-                    print("END TIME :");
-                    print(_endTime);
                   },
                 ),
               ],
@@ -104,13 +96,9 @@ class _HourlyPageState extends State<HourlyPage> {
                   type: 'begin',
                   onChangeDate: (dateTime) {
                     _beginDate = dateTime;
-                    print("BEGIN DATE :");
-                    print(_beginDate);
                   },
                   onChangeTime: (dateTime) {
                     _beginTime = dateTime;
-                    print("BEGIN TIME :");
-                    print(_beginTime);
                   },
                 ),
                 SizedBox(
@@ -122,13 +110,9 @@ class _HourlyPageState extends State<HourlyPage> {
                   type: 'end',
                   onChangeDate: (dateTime) {
                     _endDate = dateTime;
-                    print("END DATE :");
-                    print(_endDate);
                   },
                   onChangeTime: (dateTime) {
                     _endTime = dateTime;
-                    print("END TIME :");
-                    print(_endTime);
                   },
                 ),
               ],
@@ -144,13 +128,9 @@ class _HourlyPageState extends State<HourlyPage> {
               type: 'begin',
               onChangeDate: (dateTime) {
                 _beginDate = dateTime;
-                print("BEGIN DATE :");
-                print(_beginDate);
               },
               onChangeTime: (dateTime) {
                 _beginTime = dateTime;
-                print("BEGIN TIME :");
-                print(_beginTime);
               },
             ),
             SizedBox(
@@ -162,13 +142,9 @@ class _HourlyPageState extends State<HourlyPage> {
               type: 'end',
               onChangeDate: (dateTime) {
                 _endDate = dateTime;
-                print("END DATE :");
-                print(_endDate);
               },
               onChangeTime: (dateTime) {
                 _endTime = dateTime;
-                print("END TIME :");
-                print(_endTime);
               },
             ),
           ],

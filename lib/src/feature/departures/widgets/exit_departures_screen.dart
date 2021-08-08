@@ -162,7 +162,7 @@ class _ExitDeparturesScreenState extends State<ExitDeparturesScreen> {
             }
           } else if (state is DoDepartureError) {
             Map errorMap = json.decode(state.message);
-            print(state.message);
+
             showDialog(
                 context: context,
                 builder: (_) => DingDialog(

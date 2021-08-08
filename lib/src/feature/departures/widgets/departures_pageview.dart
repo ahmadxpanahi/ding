@@ -24,24 +24,5 @@ class _DeparturesPageViewState extends State<DeparturesPageView>
   }
 
   @override
-  void didUpdateWidget(covariant DeparturesPageView oldWidget) {
-    super.didUpdateWidget(oldWidget);
-
-    print("DeparturesPageView -- didUpdateWidget()");
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    print("DeparturesPageView -- dispose()");
-  }
-
-  @override
-  void deactivate() {
-    super.deactivate();
-    print("DeparturesPageView -- deactivate()");
-  }
-
-  @override
   bool get wantKeepAlive => true;
 }
