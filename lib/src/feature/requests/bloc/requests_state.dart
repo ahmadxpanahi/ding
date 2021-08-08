@@ -8,12 +8,13 @@ class RequestsInitialState extends RequestsState {
   List<Object?> get props => [];
 }
 
-class GetMyRequestsDataSuccess extends RequestsState{
+class GetRequestsDataSuccess extends RequestsState{
+  bool? cartable;
   List<GetRequestForViewDto> requestItems;
   List<GetEnterLeaveForViewDto> enterLeaveItems;
-  GetMyRequestsDataSuccess(this.requestItems, this.enterLeaveItems);
+  GetRequestsDataSuccess(this.requestItems, this.enterLeaveItems,this.cartable);
   @override
-  List<Object?> get props =>[requestItems, enterLeaveItems];
+  List<Object?> get props =>[requestItems, enterLeaveItems,cartable];
 
 }
 
@@ -31,3 +32,34 @@ class RequestsErrorState extends RequestsState {
   List<Object?> get props => [this.message];
 }
 
+class RequestAccepted extends RequestsState{
+  int id;
+  bool enterLeave;
+  RequestAccepted(this.id,this.enterLeave);
+  @override
+  List<Object?> get props => [id,enterLeave];
+}
+
+class RequestRejected extends RequestsState{
+  bool enterLeave;
+  int id;
+  RequestRejected(this.id,this.enterLeave);
+  @override
+  List<Object?> get props => [id,enterLeave];
+}
+
+class ActionButtonLoadingState extends RequestsState{
+  int id;
+  ActionButtonLoadingState(this.id);
+  @override
+  List<Object?> get props => [id];
+
+}
+
+class ActionButtonErrorState extends RequestsState{
+  String message;
+  ActionButtonErrorState(this.message);
+  @override
+  List<Object?> get props => [message];
+
+}

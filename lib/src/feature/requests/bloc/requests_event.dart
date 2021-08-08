@@ -18,17 +18,34 @@ class ShowRequestsError extends RequestsEvent {
   List<Object?> get props => [this.message];
 }
 
-class GetMyRequestsData extends RequestsEvent{
+class GetRequestsData extends RequestsEvent{
+  bool cartable;
+  GetRequestsData(this.cartable);
+  @override
+  List<Object?> get props => [cartable];
 
+}
+
+class AcceptRequest extends RequestsEvent{
+  final bool enterLeave;
+  final int id;
+  AcceptRequest(this.id,this.enterLeave);
+  @override
+  List<Object?> get props => [id,enterLeave];
+
+}
+
+class RejectRequest extends RequestsEvent{
+  final int id;
+  final bool enterLeave;
+  RejectRequest(this.id,this.enterLeave);
+  @override
+  List<Object?> get props => [id,enterLeave];
+
+}
+
+class ShowActionButtonLoading extends RequestsEvent{
   @override
   List<Object?> get props => [];
 
 }
-
-class GetCartableData extends RequestsEvent {
-  GetCartableData();
-  @override
-  List<Object?> get props => [];
-}
-
-
