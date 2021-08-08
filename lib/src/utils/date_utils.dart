@@ -28,4 +28,12 @@ class DDateUtils {
 
     return "$year-${month.timePadded}-${day.timePadded}T${time.hour.timePadded}:${time.minute.timePadded}:00.000Z";
   }
+
+  static PersianDate persianDateFromSlashString(String slashString) {
+    int year = int.parse(slashString.substring(0, slashString.indexOf('/')));
+    int month = int.parse(slashString.substring(slashString.indexOf('/'), slashString.lastIndexOf('/')));
+    int day = int.parse(slashString.substring(slashString.lastIndexOf('/')));
+
+    return createPersianDate(year, month, day);
+  }
 }
