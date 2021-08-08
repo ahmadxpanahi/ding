@@ -19,8 +19,10 @@ class DetailedReportsFetched extends ReportState{
 }
 
 class SummaryReportsFetched extends ReportState{
+  List<GetSummaryEmployeeReportForViewDto> items;
+  SummaryReportsFetched(this.items);
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [items];
 
 }
 

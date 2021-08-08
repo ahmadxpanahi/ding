@@ -221,10 +221,8 @@ class _MonthlyPageState extends State<MonthlyPage> {
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SummaryReportScreen()));
+                      if (date != null)
+                        _reportBloc.add(GetSummaryReports(date!));
                     },
                     child: Container(
                       margin: EdgeInsets.only(

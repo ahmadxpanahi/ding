@@ -3,6 +3,7 @@ import 'package:ding/src/feature/detailed_report/detailed_report_screen.dart';
 import 'package:ding/src/feature/report/bloc/report_bloc.dart';
 import 'package:ding/src/feature/report/widgets/custom.dart';
 import 'package:ding/src/feature/report/widgets/monthly.dart';
+import 'package:ding/src/feature/summary_report/summary_report_screen.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/foundation.dart';
@@ -19,7 +20,7 @@ class ReportScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => ReportBloc(inject(), inject()),
+      create: (_) => ReportBloc(inject(), inject(),inject()),
       child: ReportContainer(),
     );
   }
@@ -115,6 +116,11 @@ class _ReportContainerState extends State<ReportContainer> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => DetailedReportScreen(state.items)));
+          }else if(state is SummaryReportsFetched){
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => SummaryReportScreen(state.items)));
           }
         },
       );

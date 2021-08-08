@@ -4,10 +4,12 @@ import 'package:ding/src/feature/detailed_report/bloc/de_report_state.dart';
 import 'package:ding/src/feature/detailed_report/widgets/detailed_report_item.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/date_utils.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:swagger/api.dart' as api;
+import 'package:persian_number_utility/persian_number_utility.dart';
 
 class DetailedReportScreen extends StatefulWidget {
   DetailedReportScreen(this.reports, {Key? key}) : super(key: key);
@@ -85,7 +87,7 @@ class _DetailedReportContainerState extends State<DetailedReportScreen> {
                       width: SizeConfig.widthMultiplier! * 3,
                     ),
                     Text(
-                      '02 خرداد 1398',
+                      '${DDateUtils.persianDateFromSlashString(widget.reports.first.reportDate ?? "0000/00/00").day.toString().toPersianDigit()} ${DDateUtils.persianDateFromSlashString(widget.reports.first.reportDate ?? "0000/00/00").monthname} ${DDateUtils.persianDateFromSlashString(widget.reports.first.reportDate ?? "0000/00/00").year.toString().toPersianDigit()}',
                       style: TextStyle(
                           fontSize: 2.2.rt + 1, color: DingColors.dark()),
                     ),
@@ -102,7 +104,7 @@ class _DetailedReportContainerState extends State<DetailedReportScreen> {
                       width: SizeConfig.widthMultiplier! * 3,
                     ),
                     Text(
-                      '02 خرداد 1398',
+                      '${DDateUtils.persianDateFromSlashString(widget.reports.last.reportDate ?? "0000/00/00").day.toString().toPersianDigit()} ${DDateUtils.persianDateFromSlashString(widget.reports.first.reportDate ?? "0000/00/00").monthname} ${DDateUtils.persianDateFromSlashString(widget.reports.first.reportDate ?? "0000/00/00").year.toString().toPersianDigit()}',
                       style: TextStyle(
                           fontSize: 2.2.rt + 1, color: DingColors.dark()),
                     ),
@@ -119,8 +121,8 @@ class _DetailedReportContainerState extends State<DetailedReportScreen> {
           children: [
             _infoContainer(),
             ...widget.reports.map(
-                  (element) =>
-                  DetailedReportItem(time: '02:51:00',year: '1386',month: 'خرداد',day: '25',),
+                  (element) => DetailedReportItem(element)
+
             )
           ],
         ),

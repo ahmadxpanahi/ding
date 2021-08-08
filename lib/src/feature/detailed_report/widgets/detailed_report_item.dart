@@ -1,21 +1,20 @@
 import 'package:ding/src/ui/colors.dart';
+import 'package:persian_number_utility/persian_number_utility.dart';
 import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/date_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:ding/src/utils/extensions.dart';
+import 'package:swagger/api.dart' as api;
 
 class DetailedReportItem extends StatelessWidget {
-
-  DetailedReportItem({Key? key,this.time,this.day,this.month,this.year}) : super(key: key);
-  String? time;
-  String? day;
-  String? month;
-  String? year;
+  DetailedReportItem(this.report, {Key? key}) : super(key: key);
+  api.GetDetailedEmployeeReportForViewDto report;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.symmetric(
-            horizontal: SizeConfig.widthMultiplier! * 4.5),
+        padding:
+            EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier! * 4.5),
         margin: EdgeInsets.only(top: SizeConfig.heightMultiplier!),
         height: 14.7.rh,
         color: Colors.white,
@@ -27,14 +26,13 @@ class DetailedReportItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    day!,
+                    '${DDateUtils.persianDateFromSlashString(report.reportDate ?? "0000/00/00").weekdayname} ,${DDateUtils.persianDateFromSlashString(report.reportDate ?? "0000/00/00").day!.timePadded.toString().toPersianDigit()} ',
                     style: TextStyle(
                         fontSize: 2.8.rt + 1, color: DingColors.dark()),
                   ),
                   Text(
-                    '${month} ${year}',
-                    style:
-                    TextStyle(fontSize: 2.3.rt + 1, color: Colors.grey),
+                    '${DDateUtils.persianDateFromSlashString(report.reportDate ?? "0000/00/00").monthname} ${DDateUtils.persianDateFromSlashString(report.reportDate ?? "0000/00/00").year.toString().toPersianDigit()}',
+                    style: TextStyle(fontSize: 2.3.rt + 1, color: Colors.grey),
                   ),
                 ],
               ),
@@ -49,7 +47,7 @@ class DetailedReportItem extends StatelessWidget {
                   width: SizeConfig.widthMultiplier! * 2,
                 ),
                 Text(
-                  time!,
+                  report.employeeReport?.totalOvertime ?? '',
                   style: TextStyle(fontSize: 15, color: DingColors.primary()),
                 ),
               ],

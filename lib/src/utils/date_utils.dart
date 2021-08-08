@@ -31,8 +31,8 @@ class DDateUtils {
 
   static PersianDate persianDateFromSlashString(String slashString) {
     int year = int.parse(slashString.substring(0, slashString.indexOf('/')));
-    int month = int.parse(slashString.substring(slashString.indexOf('/'), slashString.lastIndexOf('/')));
-    int day = int.parse(slashString.substring(slashString.lastIndexOf('/')));
+    int month = int.parse(slashString.substring(slashString.indexOf('/') + 1, slashString.lastIndexOf('/')));
+    int day = int.parse(slashString.substring(slashString.lastIndexOf('/') + 1));
 
     return createPersianDate(year, month, day);
   }

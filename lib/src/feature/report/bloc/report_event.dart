@@ -12,8 +12,10 @@ class GetDetailedReports extends ReportEvent{
 }
 
 class GetSummaryReports extends ReportEvent{
+  PersianDate date;
+  GetSummaryReports(this.date);
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [date];
 
 }
 
