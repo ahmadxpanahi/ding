@@ -1,4 +1,7 @@
 import 'package:ding/src/feature/detailed_report/detailed_report_screen.dart';
+import 'package:ding/src/feature/report/bloc/report_bloc.dart';
+import 'package:ding/src/feature/report/bloc/report_event.dart';
+import 'package:ding/src/feature/report/bloc/report_state.dart';
 import 'package:ding/src/feature/summary_report/summary_report_screen.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
@@ -6,6 +9,7 @@ import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jalali_calendar/jalali_calendar.dart';
 
@@ -19,6 +23,7 @@ class MonthlyPage extends StatefulWidget {
 class _MonthlyPageState extends State<MonthlyPage> {
   DateTime? period;
   PersianDate? date;
+  late ReportBloc _reportBloc;
 
   _infoContainer() => Container(
         padding:
@@ -73,163 +78,183 @@ class _MonthlyPageState extends State<MonthlyPage> {
       );
 
   _datePickers(context) => Row(
-    children: [
-      Text(
-        'پایان',
-        style: TextStyle(fontSize: 5.0.rw, color: Colors.grey),
-      ),
-      SizedBox(
-        width: 3.6.rw,
-      ),
-      Expanded(
-        child: GestureDetector(
-          onTap: () {
-            showDialog(
-                context: context,
-                builder: (_) {
-                  return AlertDialog(
-                    contentPadding: EdgeInsets.symmetric(
-                        horizontal: 2.6.rw, vertical: 1.3.rh),
-                    content: SizedBox(
-                      height: 36.7.rh,
-                      child: Column(
-                        children: [
-                          Expanded(
-                            flex: 5,
-                            child: CupertinoDatePicker(
-                              mode: CupertinoDatePickerMode.date,
-                              initialDateTime: DateTime.now(),
-                              onDateTimeChanged: (val) {
-                                var year = val.year.timePadded;
-                                var month = val.month.timePadded;
-                                var day = val.day.timePadded;
-                                setState(() {
-                                  date = PersianDate.pDate(
-                                      gregorian:
-                                      '${year}-${month}-${day}');
-                                });
-                              },
-                            ),
-                          ),
-                          Divider(),
-                          Expanded(
-                              flex: 1,
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.pop(context);
-                                },
-                                child: Text(
-                                  'تایید',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontSize: 3 *
-                                          SizeConfig
-                                              .textMultiplier! -
-                                          2,
-                                      color: DingColors.primary()),
-                                ),
-                              ))
-                        ],
-                      ),
-                    ),
-                  );
-                });
-          },
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 4.7.rw),
-            height: 8.8.rh,
-            color: DingColors.veryLight(),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          vertical: 2.2.rh, horizontal: 4.8.rw),
-                      child: date == null
-                          ? Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Container(
-                          height: 1,
-                          color: Colors.grey,
-                        ),
-                      )
-                          : Text(
-                        '${date!.day} ${date!.monthname} ${date!.year}',
-                        style: TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 4.7.rw : 5.5.rw),
-                        textAlign: TextAlign.center,
-                      )),
-                ),
-                SvgPicture.asset(
-                  'assets/images/calendar.svg',
-                  width: 3.4.rh,
-                )
-              ],
-            ),
-          ),
-        ),
-      )
-    ],
-  );
-
-  _bottomButtons() => Row(
         children: [
-          Expanded(
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => DetailedReportScreen()));
-              },
-              child: Container(
-                margin:
-                    EdgeInsets.only(bottom: SizeConfig.heightMultiplier! * 5),
-                alignment: Alignment.center,
-                height: 8.8.rh,
-                decoration: BoxDecoration(
-                  color: DingColors.primary(),
-                  borderRadius: BorderRadius.circular(100),
-                ),
-                child: Text(
-                  'گزارش تفضیلی',
-                  style: TextStyle(
-                      fontSize: SizeConfig.textMultiplier! * 2.5,
-                      color: Colors.white),
-                ),
-              ),
-            ),
+          Text(
+            'پایان',
+            style: TextStyle(fontSize: 5.0.rw, color: Colors.grey),
           ),
           SizedBox(
-            width: SizeConfig.widthMultiplier! * 3,
+            width: 3.6.rw,
           ),
           Expanded(
             child: GestureDetector(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => SummaryReportScreen()));
+                showDialog(
+                    context: context,
+                    builder: (_) {
+                      return AlertDialog(
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 2.6.rw, vertical: 1.3.rh),
+                        content: SizedBox(
+                          height: 36.7.rh,
+                          child: Column(
+                            children: [
+                              Expanded(
+                                flex: 5,
+                                child: CupertinoDatePicker(
+                                  mode: CupertinoDatePickerMode.date,
+                                  initialDateTime: DateTime.now(),
+                                  onDateTimeChanged: (val) {
+                                    var year = val.year.timePadded;
+                                    var month = val.month.timePadded;
+                                    var day = val.day.timePadded;
+                                    setState(() {
+                                      date = PersianDate.pDate(
+                                          gregorian: '${year}-${month}-${day}');
+                                    });
+                                  },
+                                ),
+                              ),
+                              Divider(),
+                              Expanded(
+                                  flex: 1,
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text(
+                                      'تایید',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize:
+                                              3 * SizeConfig.textMultiplier! -
+                                                  2,
+                                          color: DingColors.primary()),
+                                    ),
+                                  ))
+                            ],
+                          ),
+                        ),
+                      );
+                    });
               },
               child: Container(
-                margin:
-                    EdgeInsets.only(bottom: SizeConfig.heightMultiplier! * 5),
-                alignment: Alignment.center,
+                padding: EdgeInsets.symmetric(horizontal: 4.7.rw),
                 height: 8.8.rh,
-                decoration: BoxDecoration(
-                  color: DingColors.secondary(),
-                  borderRadius: BorderRadius.circular(100),
-                ),
-                child: Text(
-                  'گزارش خلاصه',
-                  style: TextStyle(
-                      fontSize: SizeConfig.textMultiplier! * 2.5,
-                      color: DingColors.dark()),
+                color: DingColors.veryLight(),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 2.2.rh, horizontal: 4.8.rw),
+                          child: date == null
+                              ? Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: Container(
+                                    height: 1,
+                                    color: Colors.grey,
+                                  ),
+                                )
+                              : Text(
+                                  '${date!.day} ${date!.monthname} ${date!.year}',
+                                  style: TextStyle(
+                                      fontSize: SizeConfig.heightMultiplier! < 6
+                                          ? 4.7.rw
+                                          : 5.5.rw),
+                                  textAlign: TextAlign.center,
+                                )),
+                    ),
+                    SvgPicture.asset(
+                      'assets/images/calendar.svg',
+                      width: 3.4.rh,
+                    )
+                  ],
                 ),
               ),
             ),
-          ),
+          )
         ],
       );
+
+  _bottomButtons() => BlocBuilder(
+        bloc: _reportBloc,
+        builder: (_, state) {
+          if (state is ReportLoadingState) {
+            return Center(
+              child: Transform.scale(
+                  scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
+                  child: CircularProgressIndicator(
+                    color: DingColors.primary(),
+                  )),
+            );
+          } else {
+            return Row(
+              children: [
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      if (date != null)
+                        _reportBloc.add(GetDetailedReports(date!));
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(
+                          bottom: SizeConfig.heightMultiplier! * 5),
+                      alignment: Alignment.center,
+                      height: 8.8.rh,
+                      decoration: BoxDecoration(
+                        color: DingColors.primary(),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: Text(
+                        'گزارش تفضیلی',
+                        style: TextStyle(
+                            fontSize: SizeConfig.textMultiplier! * 2.5,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: SizeConfig.widthMultiplier! * 3,
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SummaryReportScreen()));
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(
+                          bottom: SizeConfig.heightMultiplier! * 5),
+                      alignment: Alignment.center,
+                      height: 8.8.rh,
+                      decoration: BoxDecoration(
+                        color: DingColors.secondary(),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: Text(
+                        'گزارش خلاصه',
+                        style: TextStyle(
+                            fontSize: SizeConfig.textMultiplier! * 2.5,
+                            color: DingColors.dark()),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            );
+          }
+        },
+      );
+
+  @override
+  void initState() {
+    super.initState();
+    _reportBloc = BlocProvider.of<ReportBloc>(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -249,7 +274,8 @@ class _MonthlyPageState extends State<MonthlyPage> {
                     Expanded(
                       child: _datePickers(context),
                     ),
-                    _bottomButtons()
+                    _bottomButtons(),
+                    SizedBox(height: 2.5.rh,)
                   ],
                 ),
               ),

@@ -7,8 +7,9 @@ import 'package:swagger/api.dart';
 class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
   RequestsApi _requestsApi;
   EnterLeavesApi _enterLeavesApi;
+  AccountApi _accountApi;
 
-  RequestsBloc(this._requestsApi, this._enterLeavesApi)
+  RequestsBloc(this._requestsApi, this._enterLeavesApi, this._accountApi)
       : super(RequestsInitialState());
   @override
   Stream<RequestsState> mapEventToState(RequestsEvent event) async* {
@@ -32,8 +33,7 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
           await _requestsApi.apiServicesAppRequestsGetallGet();
       var enterLeavesResponse =
           await _enterLeavesApi.apiServicesAppEnterleavesGetallGet();
-      Log.e(requestsResponse);
-      Log.wtf(enterLeavesResponse);
+
       if (requestsResponse != null && enterLeavesResponse != null) {
         yield GetRequestsDataSuccess(
             event.cartable

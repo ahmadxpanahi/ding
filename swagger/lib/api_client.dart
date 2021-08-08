@@ -893,6 +893,8 @@ class ApiClient {
           return new UpdateProfilePictureInput.fromJson(value);
         case 'UpdateTenantFeaturesInput':
           return new UpdateTenantFeaturesInput.fromJson(value);
+        case 'GetDetailedEmployeeReportReesultForViewDto':
+          return new GetDetailedEmployeeReportReesultForViewDto.fromJson(value);
         case 'UpdateUserPermissionsInput':
           return new UpdateUserPermissionsInput.fromJson(value);
         case 'UpdateUserSignInTokenOutput':

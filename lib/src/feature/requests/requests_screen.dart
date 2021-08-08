@@ -19,7 +19,7 @@ class RequestsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => RequestsBloc(inject(), inject()),
+      create: (_) => RequestsBloc(inject(), inject(), inject()),
       child: RequestsContainer(),
     );
   }

@@ -29,7 +29,7 @@ class GetDetailedEmployeeReportForViewDto {
         json['reportWeekDay']
     ;
     userClockInOutList =
-      DetailedUserClockInOutDto.listFromJson(json['userClockInOutList'])
+      []
 ;
     employeeReport =
       

@@ -18,6 +18,8 @@ Future<void> registerApis(GetIt getIt) async{
 
   getIt.registerLazySingleton<RequestsApi>(() => _requestsApi());
   getIt.registerLazySingleton<EnterLeavesApi>(() => _enterLeavesApi());
+  getIt.registerLazySingleton<AccountApi>(() => _accountApi());
+  getIt.registerLazySingleton<DetailedEmployeeReportsApi>(() => _detailedEmployeeReportsApi());
 }
 
 Future<TokenManager> _tokenManager() async{
@@ -39,3 +41,7 @@ Future<ApiClient> _apiClient() async{
 RequestsApi _requestsApi() => RequestsApi(inject<ApiClient>());
 
 EnterLeavesApi _enterLeavesApi() => EnterLeavesApi(inject<ApiClient>());
+
+AccountApi _accountApi() => AccountApi(inject<ApiClient>());
+
+DetailedEmployeeReportsApi _detailedEmployeeReportsApi() => DetailedEmployeeReportsApi(inject<ApiClient>());

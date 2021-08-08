@@ -10,7 +10,7 @@ class DetailedEmployeeReportsApi {
   /// ApiServicesAppDetailedemployeereportsGetallGet
   ///
   /// 
-  Future<List<GetDetailedEmployeeReportForViewDto>?> apiServicesAppDetailedemployeereportsGetallGet({ int? userIdFilter, String? userNameFilter, int? workScheduleIdFilter, String? workScheduleNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo }) async {
+  Future<GetDetailedEmployeeReportReesultForViewDto?> apiServicesAppDetailedemployeereportsGetallGet({ int? userIdFilter, String? userNameFilter, int? workScheduleIdFilter, String? workScheduleNameFilter, DateTime? reportDateFrom, DateTime? reportDateTo }) async {
     Object? postBody = null;
 
     // verify required params are set
@@ -70,7 +70,7 @@ class DetailedEmployeeReportsApi {
       throw new ApiException(response.statusCode, response.body);
     } else if(response.body != null) {
       return 
-        (apiClient.deserialize(response.body, 'List<GetDetailedEmployeeReportForViewDto>') as List).map((item) => item as GetDetailedEmployeeReportForViewDto).toList();
+        (apiClient.deserialize(response.body, 'GetDetailedEmployeeReportReesultForViewDto') as GetDetailedEmployeeReportReesultForViewDto);
     } else {
       return null;
     }

@@ -93,6 +93,7 @@ part 'model/add_widget_input.dart';
 part 'model/additional_data.dart';
 part 'model/all_available_devices_dto.dart';
 part 'model/app_settings_json_dto.dart';
+part 'model/get_detailed_employee_report_result_for_view_dto.dart';
 part 'model/application_info_dto.dart';
 part 'model/application_language_edit_dto.dart';
 part 'model/application_language_list_dto.dart';

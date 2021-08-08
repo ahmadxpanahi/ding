@@ -1,34 +1,25 @@
 import 'package:ding/src/feature/detailed_report/bloc/de_report_bloc.dart';
 import 'package:ding/src/feature/detailed_report/bloc/de_report_event.dart';
 import 'package:ding/src/feature/detailed_report/bloc/de_report_state.dart';
+import 'package:ding/src/feature/detailed_report/widgets/detailed_report_item.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:swagger/api.dart' as api;
 
-class DetailedReportScreen extends StatelessWidget {
-  const DetailedReportScreen({Key? key}) : super(key: key);
+class DetailedReportScreen extends StatefulWidget {
+  DetailedReportScreen(this.reports, {Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => DetailedReportBloc(),
-      child: DetailedReportContainer(),
-    );
-  }
-}
-
-class DetailedReportContainer extends StatefulWidget {
-  const DetailedReportContainer({Key? key}) : super(key: key);
+  final List<api.GetDetailedEmployeeReportForViewDto> reports;
 
   @override
   _DetailedReportContainerState createState() =>
       _DetailedReportContainerState();
 }
 
-class _DetailedReportContainerState extends State<DetailedReportContainer> {
-  late DetailedReportBloc _detailedReportBloc;
+class _DetailedReportContainerState extends State<DetailedReportScreen> {
 
   Widget _infoContainer() => Column(
         children: [
@@ -123,70 +114,19 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
         ],
       );
 
-  Widget _timesContainer(String day, String year, String month, String time) =>
-      Container(
-          padding: EdgeInsets.symmetric(
-              horizontal: SizeConfig.widthMultiplier! * 4.5),
-          margin: EdgeInsets.only(top: SizeConfig.heightMultiplier!),
-          height: 14.7.rh,
-          color: Colors.white,
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      day,
-                      style: TextStyle(
-                          fontSize: 2.8.rt + 1, color: DingColors.dark()),
-                    ),
-                    Text(
-                      '${month} ${year}',
-                      style:
-                          TextStyle(fontSize: 2.3.rt + 1, color: Colors.grey),
-                    ),
-                  ],
-                ),
-              ),
-              Row(
-                children: [
-                  Text(
-                    'جمع :',
-                    style: TextStyle(fontSize: 15, color: Colors.grey),
-                  ),
-                  SizedBox(
-                    width: SizeConfig.widthMultiplier! * 2,
-                  ),
-                  Text(
-                    time,
-                    style: TextStyle(fontSize: 15, color: DingColors.primary()),
-                  ),
-                ],
-              ),
-              SizedBox(
-                width: SizeConfig.widthMultiplier! * 5,
-              ),
-              Icon(
-                Icons.arrow_forward_ios,
-                size: 3.0.rh,
-              )
-            ],
-          ));
-  @override
-  void initState() {
-    super.initState();
-    _detailedReportBloc = BlocProvider.of<DetailedReportBloc>(context);
-    _detailedReportBloc.add(ShowDeReportLoading(true));
-    Future.delayed(Duration(milliseconds: 1500), () {
-      _detailedReportBloc.add(GetDetailedReportData());
-    });
-  }
+  Widget _buildList() => SingleChildScrollView(
+        child: Column(
+          children: [
+            _infoContainer(),
+            ...widget.reports.map(
+                  (element) =>
+                  DetailedReportItem(time: '02:51:00',year: '1386',month: 'خرداد',day: '25',),
+            )
+          ],
+        ),
+      );
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget _buildBody() => Scaffold(
         backgroundColor: DingColors.veryLight(),
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(100),
@@ -224,30 +164,9 @@ class _DetailedReportContainerState extends State<DetailedReportContainer> {
             ),
           ),
         ),
-        body: BlocBuilder(
-          bloc: _detailedReportBloc,
-          builder: (_, state) {
-            if (state is DeReportLoadingState) {
-              return Center(
-                child: CircularProgressIndicator(
-                  color: DingColors.primary(),
-                ),
-              );
-            } else {
-              return SingleChildScrollView(
-                child: Column(
-                  children: [
-                    _infoContainer(),
-                    _timesContainer('سه شنبه، 21', '1386', 'خرداد', '02:51:00'),
-                    _timesContainer('سه شنبه، 21', '1386', 'خرداد', '02:51:00'),
-                    _timesContainer('سه شنبه، 21', '1386', 'خرداد', '02:51:00'),
-                    _timesContainer('سه شنبه، 21', '1386', 'خرداد', '02:51:00'),
-                    _timesContainer('سه شنبه، 21', '1386', 'خرداد', '02:51:00'),
-                  ],
-                ),
-              );
-            }
-          },
-        ));
-  }
+        body: _buildList(),
+      );
+
+  @override
+  Widget build(BuildContext context) => _buildBody();
 }

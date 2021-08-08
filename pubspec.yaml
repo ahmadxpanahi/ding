@@ -15,7 +15,6 @@ dependencies:
   country_code_picker: ^2.0.2
   pin_code_text_field: ^1.8.0
   jalali_calendar: ^1.0.4
-  shamsi_date: ^0.15.0
   persian_number_utility: ^0.3.4
   flutter_picker: ^2.0.2
   flutter_bloc: ^7.0.1
