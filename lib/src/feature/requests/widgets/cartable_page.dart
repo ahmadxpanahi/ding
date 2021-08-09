@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:swagger/api.dart' as api;
-
+import 'package:ding/src/utils/extensions.dart';
 import 'cartable_item.dart';
 
 class CartablePage extends StatefulWidget {
@@ -35,9 +35,12 @@ class _CartablePageState extends State<CartablePage> {
       bloc: _requestsBloc,
       builder: (_, state) {
         if (state is RequestsLoadingState) {
-          return Center(
-            child: CircularProgressIndicator(
-              color: DingColors.primary(),
+          return Container(
+            color: Colors.white,
+            child: Center(
+              child: CircularProgressIndicator(
+                color: DingColors.primary(),
+              ),
             ),
           );
         }
@@ -46,43 +49,50 @@ class _CartablePageState extends State<CartablePage> {
 
   Widget _buildBody() => Stack(
         children: [
-          SingleChildScrollView(
-            child: Column(
-                children: _enterLeaveItems
-                        .map(
-                          (e) => CartableItem(
-                            key: Key(e.enterLeave!.id.toString()),
-                            requestId: e.enterLeave?.id,
-                            name: e.requestByUser,
-                            date: e.enterLeave?.creationTime.toString(),
-                            info1: '',
-                            info2: '',
-                            type: e.enterLeave?.enterLeaveType?.value,
-                            imgUrl:
-                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxoBnq05850hAXAOcv0CciJtz3dASMTGcBQY38EssxzZkD7mpDlgUj1HUlhHaFJlo5gEk&usqp=CAU',
-                            unit: 'واحد فروش',
-                          ),
-                        )
-                        .toList() +
-                    _requestItems
-                        .map(
-                          (e) => CartableItem(
-                            key: Key(e.request!.id.toString()),
-                            requestId: e.request?.id,
-                            name: e.requestByUser,
-                            unit: e.substituteUser,
-                            info2: '',
-                            info1: '',
-                            date: e.request!.creationTime.toString(),
-                            type: e.request?.requestType?.value,
-                            imgUrl:
-                                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxoBnq05850hAXAOcv0CciJtz3dASMTGcBQY38EssxzZkD7mpDlgUj1HUlhHaFJlo5gEk&usqp=CAU',
-                            beginDate: e.request?.from.toString(),
-                            endDate: e.request?.to.toString(),
-                          ),
-                        )
-                        .toList()),
-          ),
+          _requestItems.length < 1 && _enterLeaveItems.length < 1
+              ? Center(
+                  child: Text(
+                    'هیچ آیتمی برای نمایش وجود ندارد.',
+                    style: TextStyle(fontSize: 3.5.rw),
+                  ),
+                )
+              : SingleChildScrollView(
+                  child: Column(
+                      children: _enterLeaveItems
+                              .map(
+                                (e) => CartableItem(
+                                  key: Key(e.enterLeave!.id.toString()),
+                                  requestId: e.enterLeave?.id,
+                                  name: e.requestByUser,
+                                  date: e.enterLeave?.creationTime.toString(),
+                                  info1: '',
+                                  info2: '',
+                                  type: e.enterLeave?.enterLeaveType?.value,
+                                  imgUrl:
+                                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxoBnq05850hAXAOcv0CciJtz3dASMTGcBQY38EssxzZkD7mpDlgUj1HUlhHaFJlo5gEk&usqp=CAU',
+                                  unit: 'واحد فروش',
+                                ),
+                              )
+                              .toList() +
+                          _requestItems
+                              .map(
+                                (e) => CartableItem(
+                                  key: Key(e.request!.id.toString()),
+                                  requestId: e.request?.id,
+                                  name: e.requestByUser,
+                                  unit: e.substituteUser,
+                                  info2: '',
+                                  info1: '',
+                                  date: e.request!.creationTime.toString(),
+                                  type: e.request?.requestType?.value,
+                                  imgUrl:
+                                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxoBnq05850hAXAOcv0CciJtz3dASMTGcBQY38EssxzZkD7mpDlgUj1HUlhHaFJlo5gEk&usqp=CAU',
+                                  beginDate: e.request?.from.toString(),
+                                  endDate: e.request?.to.toString(),
+                                ),
+                              )
+                              .toList()),
+                ),
           _buildLoading(),
         ],
       );

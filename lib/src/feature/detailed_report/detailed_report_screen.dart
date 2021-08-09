@@ -22,7 +22,6 @@ class DetailedReportScreen extends StatefulWidget {
 }
 
 class _DetailedReportContainerState extends State<DetailedReportScreen> {
-
   Widget _infoContainer() => Column(
         children: [
           Container(
@@ -56,13 +55,13 @@ class _DetailedReportContainerState extends State<DetailedReportScreen> {
                     ),
                     Text(
                       'توسعه ارتباطات دینگ',
-                      style:
-                          TextStyle(fontSize: 3.0.rw, fontWeight: FontWeight.w300),
+                      style: TextStyle(
+                          fontSize: 3.0.rw, fontWeight: FontWeight.w300),
                     ),
                     Text(
                       'واحد فروش',
-                      style:
-                          TextStyle(fontSize: 3.0.rw, fontWeight: FontWeight.w200),
+                      style: TextStyle(
+                          fontSize: 3.0.rw, fontWeight: FontWeight.w200),
                     ),
                   ],
                 )
@@ -120,10 +119,20 @@ class _DetailedReportContainerState extends State<DetailedReportScreen> {
         child: Column(
           children: [
             _infoContainer(),
-            ...widget.reports.map(
-                  (element) => DetailedReportItem(element)
-
-            )
+            ...(widget.reports.length < 1
+                ? [
+                    Expanded(
+                      child: Center(
+                        child: Text(
+                          'هیچ آیتمی برای نمایش وجود ندارد.',
+                          style: TextStyle(fontSize: 3.5.rw),
+                        ),
+                      ),
+                    )
+                  ]
+                : widget.reports.map(
+                    (element) => DetailedReportItem(element),
+                  ))
           ],
         ),
       );

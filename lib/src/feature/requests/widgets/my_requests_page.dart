@@ -33,9 +33,12 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
       bloc: _requestsBloc,
       builder: (_, state) {
         if (state is RequestsLoadingState) {
-          return Center(
-            child: CircularProgressIndicator(
-              color: DingColors.primary(),
+          return Container(
+            color: Colors.white,
+            child: Center(
+              child: CircularProgressIndicator(
+                color: DingColors.primary(),
+              ),
             ),
           );
         }
@@ -44,33 +47,41 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
 
   Widget _buildBody() => Stack(
         children: [
-          SingleChildScrollView(
-            child: Column(
-              children: _enterLeaveItems
-                      .map(
-                        (e) => MyRequestsItem(
-                            key: Key(e.enterLeave!.id.toString()),
-                            info1: '',
-                            info2: '',
-                            date: e.enterLeave!.creationTime,
-                            type: e.enterLeave!.enterLeaveType!.value! + 6,
-                            status: e.enterLeave!.status!.value! + 6),
-                      )
-                      .toList() +
-                  _requestItems
-                      .map(
-                        (e) => MyRequestsItem(
-                          key: Key(e.request!.id.toString()),
-                          date: e.request!.creationTime,
-                          info1: '',
-                          info2: '',
-                          type: e.request!.requestType!.value,
-                          status: e.request!.status!.value,
-                        ),
-                      )
-                      .toList(),
+          _requestItems.length < 1 && _enterLeaveItems.length < 1
+              ? Center(
+            child: Text(
+              'هیچ آیتمی برای نمایش وجود ندارد.',
+              style: TextStyle(fontSize: 3.5.rw),
             ),
-          ),
+          )
+              : SingleChildScrollView(
+                  child: Column(
+                    children: _enterLeaveItems
+                            .map(
+                              (e) => MyRequestsItem(
+                                  key: Key(e.enterLeave!.id.toString()),
+                                  info1: '',
+                                  info2: '',
+                                  date: e.enterLeave!.creationTime,
+                                  type:
+                                      e.enterLeave!.enterLeaveType!.value! + 6,
+                                  status: e.enterLeave!.status!.value! + 6),
+                            )
+                            .toList() +
+                        _requestItems
+                            .map(
+                              (e) => MyRequestsItem(
+                                key: Key(e.request!.id.toString()),
+                                date: e.request!.creationTime,
+                                info1: '',
+                                info2: '',
+                                type: e.request!.requestType!.value,
+                                status: e.request!.status!.value,
+                              ),
+                            )
+                            .toList(),
+                  ),
+                ),
           Align(
             alignment: Alignment.bottomCenter,
             child: GestureDetector(
