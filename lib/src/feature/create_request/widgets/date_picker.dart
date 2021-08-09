@@ -144,12 +144,12 @@ class _DDatePickerState extends State<DDatePicker> {
                 minYear: 1300,
                 maxYear: 1450,
                 confirm: Text(
-                  'Confirm',
-                  style: TextStyle(color: Colors.red),
+                  'تایید',
+                  style: TextStyle(color: DingColors.primary()),
                 ),
                 cancel: Text(
-                  'Cancel',
-                  style: TextStyle(color: Colors.cyan),
+                  'برگشت',
+                  style: TextStyle(color: DingColors.warning()),
                 ),
                 dateFormat: 'yyyy-mm-dd',
                 onChanged: _updateDate,
@@ -175,7 +175,7 @@ class _DDatePickerState extends State<DDatePicker> {
                                 ),
                               )
                             : Text(
-                                '${date!.day} ${date!.monthname} ${date!.year}',
+                                '${date!.day} ${date!.monthname} ${date!.year}'.toPersianDigit(),
                                 key: UniqueKey(),
                                 style: TextStyle(fontSize: 2.5.rt),
                                 textAlign: TextAlign.center,

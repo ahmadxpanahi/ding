@@ -36,4 +36,12 @@ class DDateUtils {
 
     return createPersianDate(year, month, day);
   }
+  static DateTime createGregorianFromPersian(PersianDate date) {
+    var gregorian = PersianDate().jalaliToGregorian(date.year!, date.month!, date.day!);
+    int year = gregorian[0];
+    int month = gregorian[1];
+    int day = gregorian[2];
+
+    return DateTime(year, month, day);
+  }
 }

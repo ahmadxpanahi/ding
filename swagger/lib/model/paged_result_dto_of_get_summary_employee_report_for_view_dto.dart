@@ -17,10 +17,10 @@ class PagedResultDtoOfGetSummaryEmployeeReportForViewDto {
   PagedResultDtoOfGetSummaryEmployeeReportForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     totalCount =
-        json['totalCount']
+        json['result']['totalCount']
     ;
     items =
-      GetSummaryEmployeeReportForViewDto.listFromJson(json['items'])
+      GetSummaryEmployeeReportForViewDto.listFromJson(json['result']['items'])
 ;
   }
 

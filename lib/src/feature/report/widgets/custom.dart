@@ -1,12 +1,16 @@
+import 'package:ding/src/feature/create_request/widgets/date_picker.dart';
+import 'package:ding/src/feature/report/bloc/report_bloc.dart';
+import 'package:ding/src/feature/report/bloc/report_event.dart';
+import 'package:ding/src/feature/report/bloc/report_state.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jalali_calendar/jalali_calendar.dart';
-import 'package:persian_number_utility/persian_number_utility.dart';
 
 class CustomPage extends StatefulWidget {
   const CustomPage({Key? key}) : super(key: key);
@@ -18,6 +22,7 @@ class CustomPage extends StatefulWidget {
 class _CustomPageState extends State<CustomPage> {
   PersianDate? begin;
   PersianDate? end;
+  late ReportBloc _reportBloc;
 
   _infoContainer() => Container(
     padding:
@@ -74,250 +79,104 @@ class _CustomPageState extends State<CustomPage> {
   _datePickers(context) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Row(
-            children: [
-              Text(
-                'شروع',
-                style: TextStyle(fontSize: 2.7.rt, color: Colors.grey),
-              ),
-              SizedBox(
-                width: 3.6.rw,
-              ),
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    showDialog(
-                        context: context,
-                        builder: (_) {
-                          return AlertDialog(
-                            contentPadding: EdgeInsets.symmetric(
-                                horizontal: 2.6.rw, vertical: 1.3.rh),
-                            content: SizedBox(
-                              height: 36.7.rh,
-                              child: Column(
-                                children: [
-                                  Expanded(
-                                    flex: 5,
-                                    child: CupertinoDatePicker(
-                                        mode: CupertinoDatePickerMode.date,
-                                        initialDateTime: DateTime.now(),
-                                        onDateTimeChanged: (DateTime val) {
-                                          setState(() {
-                                            var year = val.year.timePadded;
-                                            var month = val.month.timePadded;
-                                            var day = val.day.timePadded;
-                                            begin = PersianDate.pDate(
-                                                gregorian:
-                                                    '${year}-${month}-${day}');
-                                          });
-                                        }),
-                                  ),
-                                  Divider(),
-                                  Expanded(
-                                      flex: 1,
-                                      child: GestureDetector(
-                                        onTap: () {
-                                          Navigator.pop(context);
-                                        },
-                                        child: Text(
-                                          'تایید',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              fontSize: 3 *
-                                                      SizeConfig
-                                                          .textMultiplier! -
-                                                  2,
-                                              color: DingColors.primary()),
-                                        ),
-                                      ))
-                                ],
-                              ),
-                            ),
-                          );
-                        });
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 4.7.rw),
-                    height: 8.8.rh,
-                    color: DingColors.veryLight(),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 2.2.rh, horizontal: 4.8.rw),
-                              child: begin == null
-                                  ? Align(
-                                      alignment: Alignment.bottomCenter,
-                                      child: Container(
-                                        height: 1,
-                                        color: Colors.grey,
-                                      ),
-                                    )
-                                  : Text(
-                                      '${begin!.day} ${begin!.monthname} ${begin!.year}',
-                                      style: TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 4.7.rw : 5.5.rw),
-                                      textAlign: TextAlign.center,
-                                    )),
-                        ),
-                        SvgPicture.asset(
-                          'assets/images/calendar.svg',
-                          width: 3.4.rh,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              )
-            ],
+          DDatePicker(
+            title: 'شروع',
+            daily: true,
+            type: 'begin',
+            onChangeDate: (dateTime){
+              begin = dateTime;
+            },
           ),
           SizedBox(
             height: SizeConfig.heightMultiplier!,
           ),
-          Row(
-            children: [
-              Text(
-                'پایان',
-                style: TextStyle(fontSize: 3.0.rt, color: Colors.grey),
-              ),
-              SizedBox(
-                width: 3.6.rw,
-              ),
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    showDialog(
-                        context: context,
-                        builder: (_) {
-                          return AlertDialog(
-                            contentPadding: EdgeInsets.symmetric(
-                                horizontal: 2.6.rw, vertical: 1.3.rh),
-                            content: SizedBox(
-                              height: 36.7.rh,
-                              child: Column(
-                                children: [
-                                  Expanded(
-                                    flex: 5,
-                                    child: CupertinoDatePicker(
-                                      mode: CupertinoDatePickerMode.date,
-                                      initialDateTime: DateTime.now(),
-                                      onDateTimeChanged: (val) {
-                                        var year = val.year.timePadded;
-                                        var month = val.month.timePadded;
-                                        var day = val.day.timePadded;
-                                        setState(() {
-                                          end = PersianDate.pDate(
-                                              gregorian:
-                                              '${year}-${month}-${day}');
-                                        });
-                                      },
-                                    ),
-                                  ),
-                                  Divider(),
-                                  Expanded(
-                                      flex: 1,
-                                      child: GestureDetector(
-                                        onTap: () {
-                                          Navigator.pop(context);
-                                        },
-                                        child: Text(
-                                          'تایید',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              fontSize: 3 *
-                                                      SizeConfig
-                                                          .textMultiplier! -
-                                                  2,
-                                              color: DingColors.primary()),
-                                        ),
-                                      ))
-                                ],
-                              ),
-                            ),
-                          );
-                        });
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 4.7.rw),
-                    height: 8.8.rh,
-                    color: DingColors.veryLight(),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 2.2.rh, horizontal: 4.8.rw),
-                              child: end == null
-                                  ? Align(
-                                      alignment: Alignment.bottomCenter,
-                                      child: Container(
-                                        height: 1,
-                                        color: Colors.grey,
-                                      ),
-                                    )
-                                  : Text(
-                                      '${end!.day} ${end!.monthname} ${end!.year}',
-                                      style: end!.month == 1 || end!.month == 2 || end!.month == 3
-                                      ? TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 3.7.rw : 4.5.rw)
-                                      : TextStyle(fontSize: SizeConfig.heightMultiplier! < 6 ? 4.7.rw : 5.5.rw),
-                                      textAlign: TextAlign.center,
-                                    )),
-                        ),
-                        SvgPicture.asset(
-                          'assets/images/calendar.svg',
-                          width: 3.4.rh,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
+          DDatePicker(
+            title: 'پایان',
+            daily: true,
+            type: 'begin',
+            onChangeDate: (dateTime){
+              end = dateTime;
+            },
+          )
         ],
       );
 
-  _bottomButtons() => Row(
-        children: [
-          Expanded(
-            child: Container(
-              margin: EdgeInsets.only(bottom: SizeConfig.heightMultiplier! * 5),
-              alignment: Alignment.center,
-              height: 8.8.rh,
-              decoration: BoxDecoration(
+  _bottomButtons() => BlocBuilder(
+    bloc: _reportBloc,
+    builder: (_, state) {
+      if (state is ReportLoadingState) {
+        return Center(
+          child: Transform.scale(
+              scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
+              child: CircularProgressIndicator(
                 color: DingColors.primary(),
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: Text(
-                'گزارش تفضیلی',
-                style: TextStyle(
-                    fontSize: SizeConfig.textMultiplier! * 2.5,
-                    color: Colors.white),
+              )),
+        );
+      } else {
+        return Row(
+          children: [
+            Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  if (begin != null || end != null)
+                    _reportBloc.add(GetDetailedReports(begin!,end!));
+                },
+                child: Container(
+                  margin: EdgeInsets.only(
+                      bottom: SizeConfig.heightMultiplier! * 5),
+                  alignment: Alignment.center,
+                  height: 8.8.rh,
+                  decoration: BoxDecoration(
+                    color: DingColors.primary(),
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                  child: Text(
+                    'گزارش تفضیلی',
+                    style: TextStyle(
+                        fontSize: SizeConfig.textMultiplier! * 2.5,
+                        color: Colors.white),
+                  ),
+                ),
               ),
             ),
-          ),
-          SizedBox(
-            width: SizeConfig.widthMultiplier! * 3,
-          ),
-          Expanded(
-            child: Container(
-              margin: EdgeInsets.only(bottom: SizeConfig.heightMultiplier! * 5),
-              alignment: Alignment.center,
-              height: 8.8.rh,
-              decoration: BoxDecoration(
-                color: DingColors.secondary(),
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: Text(
-                'گزارش خلاصه',
-                style: TextStyle(
-                    fontSize: SizeConfig.textMultiplier! * 2.5,
-                    color: DingColors.dark()),
+            SizedBox(
+              width: SizeConfig.widthMultiplier! * 3,
+            ),
+            Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  if (begin != null || end != null)
+                    _reportBloc.add(GetSummaryReports(begin!,end!));
+                },
+                child: Container(
+                  margin: EdgeInsets.only(
+                      bottom: SizeConfig.heightMultiplier! * 5),
+                  alignment: Alignment.center,
+                  height: 8.8.rh,
+                  decoration: BoxDecoration(
+                    color: DingColors.secondary(),
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                  child: Text(
+                    'گزارش خلاصه',
+                    style: TextStyle(
+                        fontSize: SizeConfig.textMultiplier! * 2.5,
+                        color: DingColors.dark()),
+                  ),
+                ),
               ),
             ),
-          ),
-        ],
-      );
+          ],
+        );
+      }
+    },
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    _reportBloc = BlocProvider.of<ReportBloc>(context);
+  }
 
   @override
   Widget build(BuildContext context) {

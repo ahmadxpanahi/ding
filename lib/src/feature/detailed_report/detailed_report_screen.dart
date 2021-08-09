@@ -52,17 +52,17 @@ class _DetailedReportContainerState extends State<DetailedReportScreen> {
                   children: [
                     Text(
                       'پژمان شفیعی',
-                      style: TextStyle(fontSize: 15),
+                      style: TextStyle(fontSize: 3.5.rw),
                     ),
                     Text(
                       'توسعه ارتباطات دینگ',
                       style:
-                          TextStyle(fontSize: 13, fontWeight: FontWeight.w300),
+                          TextStyle(fontSize: 3.0.rw, fontWeight: FontWeight.w300),
                     ),
                     Text(
                       'واحد فروش',
                       style:
-                          TextStyle(fontSize: 13, fontWeight: FontWeight.w200),
+                          TextStyle(fontSize: 3.0.rw, fontWeight: FontWeight.w200),
                     ),
                   ],
                 )

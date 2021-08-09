@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'bloc/report_state.dart';
 
 class ReportScreen extends StatelessWidget {
@@ -112,15 +111,17 @@ class _ReportContainerState extends State<ReportContainer> {
         child: _buildBody(),
         listener: (_, state) {
           if (state is DetailedReportsFetched) {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => DetailedReportScreen(state.items)));
+            if(state.items.length > 0)
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DetailedReportScreen(state.items)));
           }else if(state is SummaryReportsFetched){
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => SummaryReportScreen(state.items)));
+            if(state.items.length > 0)
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SummaryReportScreen(state.items.first.summaryEmployeeReport!)));
           }
         },
       );

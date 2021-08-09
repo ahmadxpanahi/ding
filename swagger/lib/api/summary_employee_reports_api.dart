@@ -74,7 +74,7 @@ class SummaryEmployeeReportsApi {
                                              contentType,
                                              authNames);
  if(response == null) return null;
-
+  print(response.body);
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
     } else if(response.body != null) {

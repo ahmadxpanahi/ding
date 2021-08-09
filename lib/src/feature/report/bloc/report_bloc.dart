@@ -4,6 +4,7 @@ import 'package:ding/src/feature/report/bloc/report_event.dart';
 import 'package:ding/src/feature/report/bloc/report_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:swagger/api.dart';
+import 'package:ding/src/utils/date_utils.dart';
 
 class ReportBloc extends Bloc<ReportEvent,ReportState>{
   DetailedEmployeeReportsApi _detailedEmployeeReportsApi;
@@ -26,8 +27,8 @@ class ReportBloc extends Bloc<ReportEvent,ReportState>{
     yield ReportLoadingState();
     try {
       var response = await _detailedEmployeeReportsApi.apiServicesAppDetailedemployeereportsGetallGet(
-        reportDateFrom: DateTime.now(),
-        reportDateTo: DateTime.now(),
+        reportDateFrom: DDateUtils.createGregorianFromPersian(event.beginDate),
+        reportDateTo: DDateUtils.createGregorianFromPersian(event.endDate),
         userIdFilter: _tokenManager.getUserId()
       );
 
@@ -47,8 +48,8 @@ class ReportBloc extends Bloc<ReportEvent,ReportState>{
     yield ReportLoadingState();
     try {
       var response = await _summaryEmployeeReportsApi.apiServicesAppSummaryemployeereportsGetallGet(
-          reportDateFrom: DateTime.now(),
-          reportDateTo: DateTime.now(),
+          reportDateFrom: DDateUtils.createGregorianFromPersian(event.beginDate),
+          reportDateTo: DDateUtils.createGregorianFromPersian(event.endDate),
           userIdsFilter: _tokenManager.getUserId() != null ? [_tokenManager.getUserId()!] : []
       );
 

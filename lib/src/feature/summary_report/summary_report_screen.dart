@@ -1,16 +1,13 @@
-import 'package:ding/src/feature/summary_report/bloc/su_report_bloc.dart';
-import 'package:ding/src/feature/summary_report/bloc/su_report_event.dart';
-import 'package:ding/src/feature/summary_report/bloc/su_report_state.dart';
+import 'package:ding/src/feature/summary_report/widgets/summary_report_item.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
-import 'package:ding/src/utils/date_utils.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:swagger/api.dart' as api;
 
 class SummaryReportScreen extends StatelessWidget {
-  SummaryReportScreen(this.reports);
-  final List<api.GetSummaryEmployeeReportForViewDto> reports;
+  SummaryReportScreen(this._summaryEmployeeReportDto);
+  final api.SummaryEmployeeReportDto _summaryEmployeeReportDto;
 
   Widget _infoContainer() => Column(
     children: [
@@ -41,17 +38,17 @@ class SummaryReportScreen extends StatelessWidget {
               children: [
                 Text(
                   'پژمان شفیعی',
-                  style: TextStyle(fontSize: 15),
+                  style: TextStyle(fontSize: 3.5.rw),
                 ),
                 Text(
                   'توسعه ارتباطات دینگ',
                   style:
-                  TextStyle(fontSize: 13, fontWeight: FontWeight.w300),
+                  TextStyle(fontSize: 3.0.rw, fontWeight: FontWeight.w300),
                 ),
                 Text(
                   'واحد فروش',
                   style:
-                  TextStyle(fontSize: 13, fontWeight: FontWeight.w200),
+                  TextStyle(fontSize: 3.0.rw, fontWeight: FontWeight.w200),
                 ),
               ],
             )
@@ -105,37 +102,6 @@ class SummaryReportScreen extends StatelessWidget {
     ],
   );
 
-  _item(title, time) => Container(
-    color: Colors.white,
-    height: 8.5.rh,
-    child: Column(
-      children: [
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: SizeConfig.widthMultiplier! * 4.5,
-                vertical: SizeConfig.heightMultiplier!),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(fontSize: 2.2.rt + 1),
-                ),
-                Text(
-                  time,
-                  style: TextStyle(fontSize: 2.2.rt + 1),
-                ),
-              ],
-            ),
-          ),
-        ),
-        Divider()
-      ],
-    ),
-  );
-
-
   @override
   Widget build(BuildContext context) => Scaffold(
       backgroundColor: DingColors.veryLight(),
@@ -179,15 +145,15 @@ class SummaryReportScreen extends StatelessWidget {
         child: Column(
           children: [
             _infoContainer(),
-            _item('زمان شیفت', '48:00:00'),
-            _item('زمان کاری', '48:00:00'),
-            _item('زمان تاخیر', '48:00:00'),
-            _item('زمان تعجیل در خروج', '48:00:00'),
-            _item('زمان غیبت', '48:00:00'),
-            _item('زمان اضافه کاری', '48:00:00'),
-            _item('زمان ماموریت', '48:00:00'),
-            _item('زمان مرخصی', '48:00:00'),
-            _item('روز های مرخصی', '05'),
+            SummaryReportItem('زمان شیفت', _summaryEmployeeReportDto.shiftLength??''),
+            SummaryReportItem('زمان کاری', _summaryEmployeeReportDto.totalAttendance??''),
+            SummaryReportItem('زمان تاخیر', _summaryEmployeeReportDto.totalDelay??''),
+            SummaryReportItem('زمان تعجیل در خروج', _summaryEmployeeReportDto.totalHurry??''),
+            SummaryReportItem('زمان غیبت', _summaryEmployeeReportDto.totalAbsence??''),
+            SummaryReportItem('زمان اضافه کاری', _summaryEmployeeReportDto.totalOvertime??''),
+            SummaryReportItem('زمان ماموریت', _summaryEmployeeReportDto.totalMission??''),
+            SummaryReportItem('زمان مرخصی', _summaryEmployeeReportDto.totalLeave??''),
+            SummaryReportItem('روز های مرخصی', _summaryEmployeeReportDto.daysOfLeave.toString()),
           ],
         ),
       ));
