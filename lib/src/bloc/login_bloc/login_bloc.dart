@@ -1,15 +1,16 @@
 import 'package:ding/src/bloc/login_bloc/login_event.dart';
 import 'package:ding/src/bloc/login_bloc/login_state.dart';
+import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/data/http/token_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:swagger/api.dart';
 
-class LoginBloc extends Bloc<LoginEvent,LoginState>{
-
+class LoginBloc extends Bloc<LoginEvent, LoginState> {
   TokenAuthApi _tokenAuthApi;
   TokenManager _tokenManager;
 
-  LoginBloc(this._tokenAuthApi,this._tokenManager) : super(LoginInitialState());
+  LoginBloc(this._tokenAuthApi, this._tokenManager)
+      : super(LoginInitialState());
 
   @override
   Stream<LoginState> mapEventToState(LoginEvent event) async* {
@@ -27,6 +28,10 @@ class LoginBloc extends Bloc<LoginEvent,LoginState>{
   Stream<LoginState> _loginWithEmail(LoginWithEmail event) async* {
     yield LoginLoadingState(true);
     try {
+      var r = await _tokenAuthApi.apiTokenauthSendtwofactorauthcodePost(
+          body: SendTwoFactorAuthCodeModel()
+            ..userId = 2
+            ..provider = "Phone");
       var response = await _tokenAuthApi.apiTokenauthAuthenticatebytenantPost(
           body: AuthenticateByTenantModel()
             ..tenancyName = event.tenancyName
@@ -53,20 +58,20 @@ class LoginBloc extends Bloc<LoginEvent,LoginState>{
   Stream<LoginState> _loginWithPhoneNumber(LoginWithPhoneNumber event) async* {
     yield LoginLoadingState(true);
     try {
+      Log.i('RESPONSE VALUE');
       var response = await _tokenAuthApi.apiTokenauthAuthenticatebyOTPPost(
-        body: AuthenticateByTenantModel()
-            ..tenancyName = event.tenancyName
-      );
-
+          body: AuthenticateByTenantModel()
+            ..userNameOrEmailAddress = event.phoneNumber);
+      Log.i(response);
       await _tokenManager.setAccessToken(response?.accessToken ?? "");
       await _tokenManager.setUserId(response?.userId);
 
-      yield LoginWithEmailSuccessful(response);
+      yield LoginWithPhoneNumberSuccessful(response);
     } on ApiException catch (e) {
+      Log.e(e.toString());
       yield LoginErrorState(message: e.message);
     } finally {
       yield LoginLoadingState(false);
     }
   }
-
 }

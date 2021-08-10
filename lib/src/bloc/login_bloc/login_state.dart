@@ -19,8 +19,12 @@ class LoginWithEmailSuccessful extends LoginState{
 }
 
 class LoginWithPhoneNumberSuccessful extends LoginState{
+  final AuthenticateResultModel? response;
+
+  LoginWithPhoneNumberSuccessful(this.response);
+
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [response];
 }
 
 class LoginLoadingState extends LoginState{

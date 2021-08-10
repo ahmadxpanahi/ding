@@ -2,7 +2,6 @@ import 'package:ding/src/feature/account_management/bloc/ac_management_bloc.dart
 import 'package:ding/src/feature/account_management/bloc/ac_management_event.dart';
 import 'package:ding/src/feature/account_management/bloc/ac_management_state.dart';
 import 'package:ding/src/feature/account_management/widgets/management_item.dart';
-import 'package:ding/src/feature/email_login/bloc/email_event.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';

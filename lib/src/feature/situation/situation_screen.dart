@@ -1,4 +1,3 @@
-import 'package:ding/src/feature/email_login/bloc/email_event.dart';
 import 'package:ding/src/feature/situation/bloc/situation_bloc.dart';
 import 'package:ding/src/feature/situation/bloc/situation_event.dart';
 import 'package:ding/src/feature/situation/bloc/situation_state.dart';

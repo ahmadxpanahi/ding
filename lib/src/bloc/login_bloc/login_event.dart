@@ -14,12 +14,12 @@ class LoginWithEmail extends LoginEvent{
 }
 
 class LoginWithPhoneNumber extends LoginEvent{
-  final String? tenancyName;
+  final String? phoneNumber;
 
-  LoginWithPhoneNumber({this.tenancyName});
+  LoginWithPhoneNumber({this.phoneNumber});
 
   @override
-  List<Object?> get props => [tenancyName];
+  List<Object?> get props => [phoneNumber];
 
 }
 

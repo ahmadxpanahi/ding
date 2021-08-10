@@ -1,35 +1,56 @@
+import 'package:ding/src/bloc/login_bloc/login_bloc.dart';
+import 'package:ding/src/bloc/login_bloc/login_event.dart';
+import 'package:ding/src/bloc/login_bloc/login_state.dart';
+import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/email_login/email_login_screen.dart';
-import 'package:ding/src/feature/enter_code/enter_code_screen.dart';
+import 'package:ding/src/feature/home/home_screen.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 
-class NumberLoginScreen extends StatefulWidget {
+class NumberLoginScreen extends StatelessWidget {
   const NumberLoginScreen({Key? key}) : super(key: key);
 
   @override
-  _NumberLoginScreenState createState() => _NumberLoginScreenState();
+  Widget build(BuildContext context) => BlocProvider(
+      create: (_) => LoginBloc(inject(), inject()),
+      child: NumberLoginContainer(),
+      );
 }
 
-class _NumberLoginScreenState extends State<NumberLoginScreen> {
+class NumberLoginContainer extends StatefulWidget {
+  const NumberLoginContainer({Key? key}) : super(key: key);
+
+  @override
+  _NumberLoginContainerState createState() => _NumberLoginContainerState();
+}
+
+class _NumberLoginContainerState extends State<NumberLoginContainer> {
   bool _checkBoxValue = false;
-  String phoneNumber = '';
+  String _phoneNumber = '';
+  late LoginBloc _loginBloc;
+
+  @override
+  void initState() {
+    super.initState();
+    _loginBloc = BlocProvider.of<LoginBloc>(context);
+  }
 
   Widget _getCodeButton() => GestureDetector(
         onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => EnterCodeScreen()));
+          _loginBloc.add(LoginWithPhoneNumber(phoneNumber: _phoneNumber));
         },
         child: Container(
           alignment: Alignment.center,
           height: 9.0.rh,
           width: 73.2.rw,
           decoration: BoxDecoration(
-            color: phoneNumber == ''
+            color: _phoneNumber == '' || !_checkBoxValue
                 ? DingColors.veryLight()
                 : DingColors.primary(),
             borderRadius: BorderRadius.circular(100),
@@ -38,7 +59,9 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
             'دریافت کد',
             style: TextStyle(
                 fontSize: 2.73.rt,
-                color: phoneNumber == '' ? DingColors.light() : Colors.white),
+                color: _phoneNumber == '' || !_checkBoxValue
+                    ? DingColors.light()
+                    : Colors.white),
           ),
         ),
       );
@@ -108,7 +131,7 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
               child: TextField(
                 onChanged: (val) {
                   setState(() {
-                    phoneNumber = val;
+                    _phoneNumber = val;
                   });
                 },
                 keyboardType: TextInputType.phone,
@@ -164,8 +187,7 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
         ],
       );
 
-  @override
-  Widget build(BuildContext context) => Directionality(
+  Widget _buildBody() => Directionality(
         textDirection: TextDirection.ltr,
         child: Scaffold(
           resizeToAvoidBottomInset: false,
@@ -217,5 +239,17 @@ class _NumberLoginScreenState extends State<NumberLoginScreen> {
             ),
           ),
         ),
+      );
+
+  @override
+  Widget build(BuildContext context) => BlocListener<LoginBloc, LoginState>(
+        child: _buildBody(),
+        bloc: _loginBloc,
+        listener: (_, state) {
+          if (state is LoginWithPhoneNumberSuccessful) {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => HomeScreen()));
+          }
+        },
       );
 }

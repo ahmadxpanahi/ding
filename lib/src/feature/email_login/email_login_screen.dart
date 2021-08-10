@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:another_flushbar/flushbar.dart';
+import 'package:ding/src/bloc/login_bloc/login_bloc.dart';
+import 'package:ding/src/bloc/login_bloc/login_event.dart';
+import 'package:ding/src/bloc/login_bloc/login_state.dart';
 import 'package:ding/src/di/inject.dart';
-import 'package:ding/src/feature/email_login/bloc/email_bloc.dart';
-import 'package:ding/src/feature/email_login/bloc/email_event.dart';
-import 'package:ding/src/feature/email_login/bloc/email_state.dart';
 import 'package:ding/src/feature/enter_code/enter_code_screen.dart';
 import 'package:ding/src/feature/home/home_screen.dart';
 import 'package:ding/src/feature/number_login/number_login_screen.dart';
@@ -21,8 +21,8 @@ class EmailLoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<EmailBloc>(
-      create: (_) => EmailBloc(inject(), inject()),
+    return BlocProvider<LoginBloc>(
+      create: (_) => LoginBloc(inject(), inject()),
       child: _EmailLoginContainer(),
     );
   }
@@ -46,13 +46,13 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
   String _emailValue = '';
   String _passValue = '';
   String _tenancyValue = '';
-  late EmailBloc _emailBloc;
+  late LoginBloc _emailBloc;
   var sp;
 
-  Widget _enterButton() => BlocBuilder<EmailBloc, EmailState>(
+  Widget _enterButton() => BlocBuilder<LoginBloc, LoginState>(
         bloc: _emailBloc,
         builder: (_, state) {
-          if (state is LoginLoading && state.loading) {
+          if (state is LoginLoadingState && state.isLoading) {
             return CircularProgressIndicator(
               color: DingColors.primary(),
             );
@@ -61,10 +61,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
             onTap: () {
               if(_validation()){
                 _emailBloc.add(
-                  LoginWithEmailEvent()
-                    ..tenancyName = _tenancyValue
-                    ..password = _passValue
-                    ..userName = _emailValue,
+                  LoginWithEmail(_emailValue, _passValue, _tenancyValue)
                 );
               }
             },
@@ -167,7 +164,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
   @override
   void initState() {
     super.initState();
-    _emailBloc = BlocProvider.of<EmailBloc>(context);
+    _emailBloc = BlocProvider.of<LoginBloc>(context);
   }
 
   Widget _buildBody() => Directionality(
@@ -213,7 +210,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                                   fontSize: 2.73.rt, letterSpacing: 2),
                               decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: 'مستاجر',
+                                  hintText: 'نام شرکت',
                                   hintStyle: TextStyle(
                                       fontSize: 2.73.rt, color: Colors.grey)),
                             ),
@@ -300,13 +297,13 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
       );
 
   @override
-  Widget build(BuildContext context) => BlocListener<EmailBloc, EmailState>(
+  Widget build(BuildContext context) => BlocListener<LoginBloc, LoginState>(
       child: _buildBody(),
       listener: (_, state) async {
         if (state is LoginWithEmailSuccessful) {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => HomeScreen()));
-        } else if (state is LoginError) {
+        } else if (state is LoginErrorState) {
           Map errorMap = json.decode(state.message ?? '');
           print(state.message);
           await Flushbar(
