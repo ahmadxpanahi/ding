@@ -56,7 +56,6 @@ class LoginBloc extends Bloc<LoginEvent,LoginState>{
       var response = await _tokenAuthApi.apiTokenauthAuthenticatebyOTPPost(
         body: AuthenticateByTenantModel()
             ..tenancyName = event.tenancyName
-
       );
 
       await _tokenManager.setAccessToken(response?.accessToken ?? "");
