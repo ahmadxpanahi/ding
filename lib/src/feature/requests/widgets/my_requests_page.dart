@@ -29,22 +29,6 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
     super.initState();
     _requestsBloc = BlocProvider.of<RequestsBloc>(context);
     _requestsBloc.add(GetRequestsData(false));
-    sort();
-  }
-
-  List<Widget> allRequests = [];
-
-  void sort() {
-    _enterLeaveItems.sort((a, b) {
-      var aDate = a.enterLeave!.creationTime;
-      var bDate = b.enterLeave!.creationTime;
-      return -aDate!.compareTo(bDate!);
-    });
-    _requestItems.sort((a, b) {
-      var aDate = a.request!.creationTime;
-      var bDate = b.request!.creationTime;
-      return -aDate!.compareTo(bDate!);
-    });
   }
 
   Widget _buildLoading() => BlocBuilder<RequestsBloc, RequestsState>(
@@ -128,8 +112,12 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
               setState(() {
                 _requestItems = state.requestItems;
                 _enterLeaveItems = state.enterLeaveItems;
-                _items = [...state.requestItems, ...state.enterLeaveItems];
-                Log.wtf("_requestItems(${_requestItems.length}) --- _enterLeaveItems(${_enterLeaveItems.length}) --- _items(${_items.length})");
+                _items = [...state.requestItems, ...state.enterLeaveItems]
+                  ..sort((a, b) {
+                    var aDate = a.getDate();
+                    var bDate = b.getDate();
+                    return -aDate.compareTo(bDate);
+                  });
               });
             }
           }
