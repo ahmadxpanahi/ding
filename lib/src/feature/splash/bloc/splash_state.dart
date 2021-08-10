@@ -7,9 +7,11 @@ class SplashInitialState extends SplashState {
   List<Object?> get props => [];
 }
 
-class LoginState extends SplashState {
-  bool isLoading;
-  LoginState(this.isLoading);
+class ProfileBasicsLoaded extends SplashState {
+  bool success;
+
+  ProfileBasicsLoaded(this.success);
+
   @override
-  List<Object?> get props => [isLoading];
+  List<Object?> get props => [success];
 }
