@@ -3,6 +3,11 @@ import 'package:jalali_calendar/jalali_calendar.dart';
 
 abstract class ReportEvent extends Equatable{}
 
+class GetUserProfile extends ReportEvent{
+  @override
+  List<Object?> get props => [];
+}
+
 class GetDetailedReports extends ReportEvent{
   PersianDate beginDate;
   PersianDate endDate;

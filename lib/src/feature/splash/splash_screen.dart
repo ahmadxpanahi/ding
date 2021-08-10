@@ -1,7 +1,10 @@
 import 'package:ding/src/data/http/token_manager.dart';
+import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/home/home_screen.dart';
 import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/feature/splash/bloc/splash_bloc.dart';
+import 'package:ding/src/feature/splash/bloc/splash_event.dart';
+import 'package:ding/src/feature/splash/bloc/splash_state.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
@@ -14,12 +17,10 @@ class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider<SplashBloc>(
-      create: (_) => SplashBloc(),
-      child: SplashContainer(),
-    );
-  }
+  Widget build(BuildContext context) => BlocProvider<SplashBloc>(
+        create: (_) => SplashBloc(inject(), inject()),
+        child: SplashContainer(),
+      );
 }
 
 class SplashContainer extends StatefulWidget {
@@ -30,54 +31,68 @@ class SplashContainer extends StatefulWidget {
 }
 
 class _SplashContainerState extends State<SplashContainer> {
+  late SplashBloc _splashBloc;
+
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2), () async {
+
+    _splashBloc = BlocProvider.of<SplashBloc>(context);
+
+    Future.delayed(Duration(seconds: 1), () async {
       SharedPreferences sp = await SharedPreferences.getInstance();
       var _tokenManager = TokenManager(sp);
       var _accessToken = _tokenManager.getAccessToken();
+
       if (_accessToken!.length <= 8) {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => NumberLoginScreen()));
       } else {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        _splashBloc.add(LoadProfileBasics());
       }
     });
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-          width: double.infinity,
-          color: DingColors.primary(),
-          child: Column(
-            children: [
-              Expanded(child: SizedBox()),
-              SvgPicture.asset(
-                'assets/images/name_logo.svg',
-                width: 13.6.rh,
-              ),
-              Expanded(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                        bottom: SizeConfig.heightMultiplier! * 3),
-                    child: Text(
-                      'www.dingontime.com',
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.white.withOpacity(0.7),
-                          letterSpacing: 3),
+  Widget _buildBody() => Scaffold(
+        body: Container(
+            width: double.infinity,
+            color: DingColors.primary(),
+            child: Column(
+              children: [
+                Expanded(child: SizedBox()),
+                SvgPicture.asset(
+                  'assets/images/name_logo.svg',
+                  width: 13.6.rh,
+                ),
+                Expanded(
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          bottom: SizeConfig.heightMultiplier! * 3),
+                      child: Text(
+                        'www.dingontime.com',
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.white.withOpacity(0.7),
+                            letterSpacing: 3),
+                      ),
                     ),
                   ),
-                ),
-              )
-            ],
-          )),
-    );
-  }
+                )
+              ],
+            )),
+      );
+
+  @override
+  Widget build(BuildContext context) => BlocListener<SplashBloc, SplashState>(
+        bloc: _splashBloc,
+        child: _buildBody(),
+        listener: (_, state) {
+          if(state is ProfileBasicsLoaded) {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => HomeScreen()));
+          }
+        },
+      );
 }

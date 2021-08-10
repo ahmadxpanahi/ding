@@ -12,17 +12,54 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jalali_calendar/jalali_calendar.dart';
 
-class MonthlyPage extends StatefulWidget {
-  const MonthlyPage({Key? key}) : super(key: key);
+class MonthlyReportPage extends StatefulWidget {
+  const MonthlyReportPage({Key? key}) : super(key: key);
 
   @override
-  _MonthlyPageState createState() => _MonthlyPageState();
+  _MonthlyReportPageState createState() => _MonthlyReportPageState();
 }
 
-class _MonthlyPageState extends State<MonthlyPage> {
+class _MonthlyReportPageState extends State<MonthlyReportPage> {
+  late ReportBloc _reportBloc;
+
   DateTime? period;
   PersianDate? date;
-  late ReportBloc _reportBloc;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _reportBloc = BlocProvider.of<ReportBloc>(context);
+    _reportBloc.add(GetUserProfile());
+  }
+
+  _buildAvatar() => BlocBuilder<ReportBloc, ReportState>(
+        bloc: _reportBloc,
+        buildWhen: (o, n) => n is ReportProfileLoaded,
+        builder: (_, state) {
+          if (state is ReportProfileLoaded) {
+            return Container(
+              width: 8.0.rh,
+              height: 8.0.rh,
+              decoration: BoxDecoration(
+                color: DingColors.light(),
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                    image: MemoryImage(state.imageBinary), fit: BoxFit.fill),
+              ),
+            );
+          }
+
+          return Container(
+            width: 8.0.rh,
+            height: 8.0.rh,
+            decoration: BoxDecoration(
+              color: DingColors.light(),
+              shape: BoxShape.circle,
+            ),
+          );
+        },
+      );
 
   _infoContainer() => Container(
         padding:
@@ -33,17 +70,7 @@ class _MonthlyPageState extends State<MonthlyPage> {
           children: [
             Row(
               children: [
-                Container(
-                  width: 8.0.rh,
-                  height: 8.0.rh,
-                  decoration: BoxDecoration(
-                      color: DingColors.light(),
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                          image: NetworkImage(
-                              'https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png'),
-                          fit: BoxFit.fill)),
-                ),
+                _buildAvatar(),
                 SizedBox(
                   width: 10,
                 ),
@@ -77,15 +104,15 @@ class _MonthlyPageState extends State<MonthlyPage> {
       );
 
   _datePickers(context) => DDatePicker(
-    title: 'دوره',
-    daily: true,
-    type: 'begin',
-    onChangeDate: (dateTime){
-      date = dateTime;
-    },
-  );
+        title: 'دوره',
+        daily: true,
+        type: 'begin',
+        onChangeDate: (dateTime) {
+          date = dateTime;
+        },
+      );
 
-  _bottomButtons() => BlocBuilder(
+  _bottomButtons() => BlocBuilder<ReportBloc, ReportState>(
         bloc: _reportBloc,
         builder: (_, state) {
           if (state is ReportLoadingState) {
@@ -103,7 +130,7 @@ class _MonthlyPageState extends State<MonthlyPage> {
                   child: GestureDetector(
                     onTap: () {
                       if (date != null)
-                        _reportBloc.add(GetDetailedReports(date!,date!));
+                        _reportBloc.add(GetDetailedReports(date!, date!));
                     },
                     child: Container(
                       margin: EdgeInsets.only(
@@ -130,7 +157,7 @@ class _MonthlyPageState extends State<MonthlyPage> {
                   child: GestureDetector(
                     onTap: () {
                       if (date != null)
-                        _reportBloc.add(GetSummaryReports(date!,date!));
+                        _reportBloc.add(GetSummaryReports(date!, date!));
                     },
                     child: Container(
                       margin: EdgeInsets.only(
@@ -156,37 +183,33 @@ class _MonthlyPageState extends State<MonthlyPage> {
         },
       );
 
-  @override
-  void initState() {
-    super.initState();
-    _reportBloc = BlocProvider.of<ReportBloc>(context);
-  }
+  Widget _buildBody() => Container(
+      color: Colors.white,
+      child: Column(
+        children: [
+          _infoContainer(),
+          Divider(
+            color: DingColors.light(),
+          ),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 7.3.rw),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: _datePickers(context),
+                  ),
+                  _bottomButtons(),
+                  SizedBox(
+                    height: 2.5.rh,
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
+      ));
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-        color: Colors.white,
-        child: Column(
-          children: [
-            _infoContainer(),
-            Divider(
-              color: DingColors.light(),
-            ),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 7.3.rw),
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: _datePickers(context),
-                    ),
-                    _bottomButtons(),
-                    SizedBox(height: 2.5.rh,)
-                  ],
-                ),
-              ),
-            )
-          ],
-        ));
-  }
+  Widget build(BuildContext context) => _buildBody();
 }

@@ -6,6 +6,8 @@ class TokenManager {
   static const _accessTokenKey = 'auth.accessToken';
   static const _tempTokenKey = 'auth.tempToken';
   static const _userIdKey = 'auth.userId';
+  static const _userFirstLastNameKey = 'profile.userFirstLastName';
+  static const _usernameKey = 'profile.username';
 
   final SharedPreferences _sharedPreferences;
 
@@ -16,6 +18,14 @@ class TokenManager {
   Future<void> setUserId(int? id) => _putInt(_userIdKey, id);
 
   int? getUserId() => _getInt(_userIdKey);
+
+  Future<void> setUsername(String username) => _put(_usernameKey, username);
+
+  String? getUsername() => _get(_usernameKey);
+
+  Future<void> setUserFirstLastName(String userFirstLastName) => _put(_userFirstLastNameKey, userFirstLastName);
+
+  String? getUserFirstLastName() => _get(_userFirstLastNameKey);
 
   Future<void> removeAccessToken() => _remove(_accessTokenKey);
 

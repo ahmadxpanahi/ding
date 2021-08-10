@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:another_flushbar/flushbar.dart';
+import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/email_login/bloc/email_bloc.dart';
 import 'package:ding/src/feature/email_login/bloc/email_event.dart';
 import 'package:ding/src/feature/email_login/bloc/email_state.dart';
@@ -21,7 +22,7 @@ class EmailLoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<EmailBloc>(
-      create: (_) => EmailBloc(),
+      create: (_) => EmailBloc(inject(), inject()),
       child: _EmailLoginContainer(),
     );
   }

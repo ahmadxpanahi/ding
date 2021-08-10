@@ -12,17 +12,53 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jalali_calendar/jalali_calendar.dart';
 
-class CustomPage extends StatefulWidget {
-  const CustomPage({Key? key}) : super(key: key);
+class CustomReportPage extends StatefulWidget {
+  const CustomReportPage({Key? key}) : super(key: key);
 
   @override
-  _CustomPageState createState() => _CustomPageState();
+  _CustomReportPageState createState() => _CustomReportPageState();
 }
 
-class _CustomPageState extends State<CustomPage> {
+class _CustomReportPageState extends State<CustomReportPage> {
+  late ReportBloc _reportBloc;
+
+
   PersianDate? begin;
   PersianDate? end;
-  late ReportBloc _reportBloc;
+
+  @override
+  void initState() {
+    super.initState();
+    _reportBloc = BlocProvider.of<ReportBloc>(context);
+  }
+
+  _buildAvatar() => BlocBuilder<ReportBloc, ReportState>(
+    bloc: _reportBloc,
+    buildWhen: (o, n) => n is ReportProfileLoaded,
+    builder: (_, state) {
+      if (state is ReportProfileLoaded) {
+        return Container(
+          width: 8.0.rh,
+          height: 8.0.rh,
+          decoration: BoxDecoration(
+            color: DingColors.light(),
+            shape: BoxShape.circle,
+            image: DecorationImage(
+                image: MemoryImage(state.imageBinary), fit: BoxFit.fill),
+          ),
+        );
+      }
+
+      return Container(
+        width: 8.0.rh,
+        height: 8.0.rh,
+        decoration: BoxDecoration(
+          color: DingColors.light(),
+          shape: BoxShape.circle,
+        ),
+      );
+    },
+  );
 
   _infoContainer() => Container(
     padding:
@@ -33,17 +69,7 @@ class _CustomPageState extends State<CustomPage> {
       children: [
         Row(
           children: [
-            Container(
-              width: 8.0.rh,
-              height: 8.0.rh,
-              decoration: BoxDecoration(
-                  color: DingColors.light(),
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                      image: NetworkImage(
-                          'https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png'),
-                      fit: BoxFit.fill)),
-            ),
+            _buildAvatar(),
             SizedBox(
               width: 10,
             ),
@@ -101,7 +127,7 @@ class _CustomPageState extends State<CustomPage> {
         ],
       );
 
-  _bottomButtons() => BlocBuilder(
+  _bottomButtons() => BlocBuilder<ReportBloc,ReportState>(
     bloc: _reportBloc,
     builder: (_, state) {
       if (state is ReportLoadingState) {
@@ -172,36 +198,33 @@ class _CustomPageState extends State<CustomPage> {
     },
   );
 
-  @override
-  void initState() {
-    super.initState();
-    _reportBloc = BlocProvider.of<ReportBloc>(context);
-  }
+  Widget _buildBody() => Container(
+      color: Colors.white,
+      child: Column(
+        children: [
+          _infoContainer(),
+          Divider(
+            color: DingColors.light(),
+          ),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 7.3.rw),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: _datePickers(context),
+                  ),
+                  _bottomButtons(),
+                  SizedBox(
+                    height: 2.5.rh,
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
+      ));
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-        color: Colors.white,
-        child: Column(
-          children: [
-            _infoContainer(),
-            Divider(
-              color: DingColors.light(),
-            ),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 7.3.rw),
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: _datePickers(context),
-                    ),
-                    _bottomButtons()
-                  ],
-                ),
-              ),
-            )
-          ],
-        ));
-  }
+  Widget build(BuildContext context) => _buildBody();
 }
