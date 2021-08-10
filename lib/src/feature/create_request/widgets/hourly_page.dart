@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:ding/src/feature/create_request/bloc/cr_request_bloc.dart';
 import 'package:ding/src/feature/create_request/bloc/cr_request_event.dart';
 import 'package:ding/src/feature/create_request/bloc/cr_request_state.dart';
@@ -32,6 +33,7 @@ class _HourlyPageState extends State<HourlyPage> {
   int? requestType;
   int? requestStatus = 1;
   int _type = 1;
+
   _datePickers(context) => Padding(
     padding:
     EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier! * 4),
@@ -241,6 +243,7 @@ class _HourlyPageState extends State<HourlyPage> {
               return GestureDetector(
                 onTap: () {
                   if(_type == 2){
+                    if(_enterLeaveDate != null)
                     _requestsBloc.add(CreateRequest(
                       type: _type,
                       date: DDateUtils.createISOFromPersian(
@@ -250,6 +253,9 @@ class _HourlyPageState extends State<HourlyPage> {
                       requestStatus: 2,
                       requestType: requestType,
                     ));
+                    else{
+                      _requestsBloc.add(ShowCrRequestsError('ابتدا فیلد های خواسته شده را تکمیل کنید.'));
+                    }
                   }else{
                     if(_beginTime != null && _beginTime != null && _endTime != null && _endDate != null){
                       _requestsBloc.add(CreateRequest(
@@ -262,6 +268,8 @@ class _HourlyPageState extends State<HourlyPage> {
                         requestStatus: 2,
                         requestType: requestType,
                       ));
+                    }else{
+                      _requestsBloc.add(ShowCrRequestsError('ابتدا فیلد های خواسته شده را تکمیل کنید.'));
                     }
                   }
                 },
@@ -293,6 +301,17 @@ class _HourlyPageState extends State<HourlyPage> {
     listener: (_,state){
       if(state is CreateRequestSuccess){
         Navigator.pop(context);
+      }else if(state is CrRequestErrorState){
+        Future.delayed(Duration.zero, () async {
+          await Flushbar(
+            backgroundColor: DingColors.warning(),
+            duration: Duration(seconds: 2),
+            borderRadius: BorderRadius.circular(100),
+            padding: EdgeInsets.all(15),
+            message: state.message,
+            flushbarPosition: FlushbarPosition.TOP,
+          ).show(context);
+        });
       }
     },
     child: _buildBody(),

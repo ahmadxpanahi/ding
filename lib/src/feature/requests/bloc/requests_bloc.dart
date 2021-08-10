@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/feature/requests/bloc/requests_event.dart';
 import 'package:ding/src/feature/requests/bloc/requests_state.dart';
@@ -7,9 +9,8 @@ import 'package:swagger/api.dart';
 class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
   RequestsApi _requestsApi;
   EnterLeavesApi _enterLeavesApi;
-  AccountApi _accountApi;
 
-  RequestsBloc(this._requestsApi, this._enterLeavesApi, this._accountApi)
+  RequestsBloc(this._requestsApi, this._enterLeavesApi,)
       : super(RequestsInitialState());
   @override
   Stream<RequestsState> mapEventToState(RequestsEvent event) async* {
@@ -51,7 +52,10 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
         Log.e('خطا در دریافت اطلاعات');
         yield RequestsErrorState('خطا در دریافت اطلاعات');
       }
-    } on Exception catch (e) {
+    } on SocketException catch (e) {
+      Log.e(e);
+      yield RequestsErrorState('اتصال اینترنت خود را بررسی کنید.');
+    }on Exception catch (e) {
       Log.e(e);
       yield RequestsErrorState(e.toString());
     }
@@ -86,9 +90,12 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
         ]);
       }
       yield RequestAccepted(event.id, event.enterLeave);
-    } on Exception catch (e) {
+    } on SocketException catch (e) {
       Log.e(e);
-      yield ActionButtonErrorState(e.toString());
+      yield RequestsErrorState('اتصال اینترنت خود را بررسی کنید.');
+    }on Exception catch (e) {
+      Log.e(e);
+      yield RequestsErrorState(e.toString());
     }
   }
 
@@ -125,9 +132,12 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
         );
       }
       yield RequestRejected(event.id,event.enterLeave);
-    } on Exception catch (e) {
+    } on SocketException catch (e) {
       Log.e(e);
-      yield ActionButtonErrorState(e.toString());
+      yield RequestsErrorState('اتصال اینترنت خود را بررسی کنید.');
+    }on Exception catch (e) {
+      Log.e(e);
+      yield RequestsErrorState(e.toString());
     }
   }
 }

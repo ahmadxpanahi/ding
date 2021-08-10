@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/data/http/interceptor.dart';
 import 'package:ding/src/data/http/rest_client.dart';
@@ -22,6 +24,8 @@ class CreateRequestsBloc extends Bloc<CreateRequestEvent,CreateRequestState>{
       yield CrRequestLoadingState();
     }else if(event is UpdateRequestType){
       yield UpdateRequestsTypeState(type: event.type);
+    }else if(event is ShowCrRequestsError){
+      yield CrRequestErrorState(event.message);
     }
   }
 
@@ -48,8 +52,11 @@ class CreateRequestsBloc extends Bloc<CreateRequestEvent,CreateRequestState>{
         );
       }
       yield CreateRequestSuccess();
-    } on Exception catch (e) {
-      print(e);
+    } on SocketException catch (e) {
+      Log.e(e);
+      yield CrRequestErrorState('اتصال اینترنت خود را بررسی کنید.');
+    }on Exception catch (e) {
+      Log.e(e);
       yield CrRequestErrorState(e.toString());
     }
   }

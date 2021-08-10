@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/requests/bloc/requests_bloc.dart';
 import 'package:ding/src/feature/requests/bloc/requests_event.dart';
@@ -110,6 +111,28 @@ class _CartablePageState extends State<CartablePage> {
                 _enterLeaveItems = state.enterLeaveItems;
               });
             }
+          }else if(state is RequestsErrorState){
+            Future.delayed(Duration.zero,()async{
+              await Flushbar(
+                backgroundColor: DingColors.warning(),
+                duration: Duration(seconds: 2),
+                borderRadius: BorderRadius.circular(100),
+                padding: EdgeInsets.all(15),
+                message: state.message,
+                flushbarPosition: FlushbarPosition.TOP,
+              ).show(context);
+            });
+          }else if(state is ActionButtonErrorState){
+            Future.delayed(Duration.zero,()async{
+              await Flushbar(
+                backgroundColor: DingColors.warning(),
+                duration: Duration(seconds: 2),
+                borderRadius: BorderRadius.circular(100),
+                padding: EdgeInsets.all(15),
+                message: state.message,
+                flushbarPosition: FlushbarPosition.TOP,
+              ).show(context);
+            });
           }
         },
       );

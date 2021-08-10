@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/detailed_report/detailed_report_screen.dart';
 import 'package:ding/src/feature/report/bloc/report_bloc.dart';
@@ -128,6 +129,17 @@ class _ReportContainerState extends State<ReportContainer> {
                   MaterialPageRoute(
                       builder: (context) => SummaryReportScreen(
                           state.items.first.summaryEmployeeReport!)));
+          } else if (state is ReportErrorState){
+            Future.delayed(Duration.zero,()async{
+              await Flushbar(
+                backgroundColor: DingColors.warning(),
+                duration: Duration(seconds: 1),
+                borderRadius: BorderRadius.circular(100),
+                padding: EdgeInsets.all(15),
+                message: state.message,
+                flushbarPosition: FlushbarPosition.TOP,
+              ).show(context);
+            });
           }
         },
       );
