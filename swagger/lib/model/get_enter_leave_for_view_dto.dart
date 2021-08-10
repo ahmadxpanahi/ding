@@ -1,6 +1,6 @@
 part of swagger.api;
 
-class GetEnterLeaveForViewDto {
+class GetEnterLeaveForViewDto extends RequestEnterLeave {
   
   EnterLeaveDto? enterLeave = null;
   
@@ -12,6 +12,26 @@ class GetEnterLeaveForViewDto {
   @override
   String toString() {
     return 'GetEnterLeaveForViewDto[enterLeave=$enterLeave, requestByUser=$requestByUser, ]';
+  }
+
+  @override
+  String getId() {
+    return (enterLeave?.id ?? -1).toString();
+  }
+
+  @override
+  DateTime getDate(){
+    return enterLeave?.occurDate ?? DateTime.now();
+  }
+
+  @override
+  int getType(){
+    return (enterLeave?.enterLeaveType?.value ?? 0) + 6;
+  }
+
+  @override
+  int getStatus(){
+    return (enterLeave?.status?.value ?? 0) + 6;
   }
 
   GetEnterLeaveForViewDto.fromJson(Map<String, dynamic>? json) {

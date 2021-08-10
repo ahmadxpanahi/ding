@@ -1,5 +1,6 @@
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/date_utils.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -28,13 +29,6 @@ class MyRequestsItem extends StatelessWidget {
     } else {
       return 'leave';
     }
-  }
-
-  PersianDate? _persianDate(){
-    if(date != null)
-      return PersianDate.pDate(
-        gregorian: '${date!.year}-${date!.month.timePadded}-${date!.day.timePadded}'
-      );
   }
 
   Color _statusColor() => status == 2
@@ -99,7 +93,7 @@ class MyRequestsItem extends StatelessWidget {
                               child: Row(
                             children: [
                               Text(
-                                '${date?.day.toString().toPersianDigit()} ${_persianDate()?.monthname}',
+                                '${date?.day.toString().toPersianDigit()} ${DDateUtils.createPersianDateFromGregorian(date).monthname}',
                                 style: TextStyle(
                                     color: myType() == 'vacation'
                                         ? DingColors.dark()
