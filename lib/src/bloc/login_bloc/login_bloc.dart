@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:swagger/api.dart';
 
 class LoginBloc extends Bloc<LoginEvent,LoginState>{
-
   TokenAuthApi _tokenAuthApi;
   TokenManager _tokenManager;
 
@@ -26,6 +25,10 @@ class LoginBloc extends Bloc<LoginEvent,LoginState>{
 
   Stream<LoginState> _loginWithEmail(LoginWithEmail event) async* {
     yield LoginLoadingState(true);
+
+    Log.wtf("#################################");
+    await _tokenAuthApi.apiTokenauthSendtwofactorauthcodePost(SendTwoFactorAuthCodeModel()..userId=17..provider="Phone");
+
     try {
       var response = await _tokenAuthApi.apiTokenauthAuthenticatebytenantPost(
           body: AuthenticateByTenantModel()
@@ -49,6 +52,25 @@ class LoginBloc extends Bloc<LoginEvent,LoginState>{
       yield LoginLoadingState(false);
     }
   }
+
+  // Stream<LoginState> _setOTPOnUser(LoginWithPhoneNumber event) async* {
+  //   yield LoginLoadingState(true);
+  //   try {
+  //     var response = await _tokenAuthApi.apiTokenauthAuthenticatebyOTPPost(
+  //         body: AuthenticateByTenantModel()
+  //           ..tenancyName = event.tenancyName
+  //     );
+  //
+  //     await _tokenManager.setAccessToken(response?.accessToken ?? "");
+  //     await _tokenManager.setUserId(response?.userId);
+  //
+  //     yield LoginWithEmailSuccessful(response);
+  //   } on ApiException catch (e) {
+  //     yield LoginErrorState(message: e.message);
+  //   } finally {
+  //     yield LoginLoadingState(false);
+  //   }
+  // }
 
   Stream<LoginState> _loginWithPhoneNumber(LoginWithPhoneNumber event) async* {
     yield LoginLoadingState(true);

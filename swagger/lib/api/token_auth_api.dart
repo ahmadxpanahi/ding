@@ -614,6 +614,9 @@ class TokenAuthApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    print("FORM SWAGGER");
+    print(response!.body);
+
  if(response == null) return null;
 
     if(response.statusCode >= 400) {

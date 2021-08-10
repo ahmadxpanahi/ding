@@ -19,8 +19,6 @@ class MyRequestsPage extends StatefulWidget {
 
 class _MyRequestsPageState extends State<MyRequestsPage> {
   List<api.RequestEnterLeave> _items = [];
-  List<api.GetRequestForViewDto> _requestItems = [];
-  List<api.GetEnterLeaveForViewDto> _enterLeaveItems = [];
 
   late RequestsBloc _requestsBloc;
 
@@ -110,8 +108,6 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
           if (state is GetRequestsDataSuccess) {
             if (!state.cartable!) {
               setState(() {
-                _requestItems = state.requestItems;
-                _enterLeaveItems = state.enterLeaveItems;
                 _items = [...state.requestItems, ...state.enterLeaveItems]
                   ..sort((a, b) {
                     var aDate = a.getDate();
