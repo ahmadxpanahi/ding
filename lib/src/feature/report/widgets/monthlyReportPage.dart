@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:ding/src/feature/create_request/widgets/date_picker.dart';
 import 'package:ding/src/feature/report/bloc/report_bloc.dart';
 import 'package:ding/src/feature/report/bloc/report_event.dart';
@@ -131,6 +132,18 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
                     onTap: () {
                       if (date != null)
                         _reportBloc.add(GetDetailedReports(date!, date!));
+                      else{
+                        Future.delayed(Duration.zero,()async{
+                          await Flushbar(
+                            backgroundColor: DingColors.warning(),
+                            duration: Duration(seconds: 2),
+                            borderRadius: BorderRadius.circular(100),
+                            padding: EdgeInsets.all(15),
+                            message: 'ابتدا فیلد خواسته شده را تکمیل کنید.',
+                            flushbarPosition: FlushbarPosition.TOP,
+                          ).show(context);
+                        });
+                      }
                     },
                     child: Container(
                       margin: EdgeInsets.only(
@@ -158,6 +171,18 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
                     onTap: () {
                       if (date != null)
                         _reportBloc.add(GetSummaryReports(date!, date!));
+                      else{
+                        Future.delayed(Duration.zero,()async{
+                          await Flushbar(
+                            backgroundColor: DingColors.warning(),
+                            duration: Duration(seconds: 2),
+                            borderRadius: BorderRadius.circular(100),
+                            padding: EdgeInsets.all(15),
+                            message: 'ابتدا فیلد خواسته شده را تکمیل کنید.',
+                            flushbarPosition: FlushbarPosition.TOP,
+                          ).show(context);
+                        });
+                      }
                     },
                     child: Container(
                       margin: EdgeInsets.only(

@@ -43,7 +43,6 @@ class _RequestsContainerState extends State<RequestsContainer> {
     CartablePage()
   ];
 
-  List<myRequests.GetRequestForViewDto>? myRequestsItem;
 
   @override
   void initState() {

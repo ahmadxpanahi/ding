@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:ding/src/core/logger/logger.dart';
@@ -45,7 +46,10 @@ class ReportBloc extends Bloc<ReportEvent,ReportState>{
         Log.e('NULL');
         yield ReportErrorState("خطا در دریافت اطلاعات");
       }
-    } on Exception catch (e) {
+    } on SocketException catch (e) {
+      Log.e(e);
+      yield ReportErrorState('اتصال اینترنت خود را بررسی کنید.');
+    }on Exception catch (e) {
       Log.e(e);
       yield ReportErrorState(e.toString());
     }
@@ -65,7 +69,10 @@ class ReportBloc extends Bloc<ReportEvent,ReportState>{
       } else {
         yield ReportErrorState("خطا در دریافت اطلاعات");
       }
-    } on Exception catch (e) {
+    } on SocketException catch (e) {
+      Log.e(e);
+      yield ReportErrorState('اتصال اینترنت خود را بررسی کنید.');
+    }on Exception catch (e) {
       Log.e(e);
       yield ReportErrorState(e.toString());
     }
@@ -87,7 +94,10 @@ class ReportBloc extends Bloc<ReportEvent,ReportState>{
       else {
         yield ReportErrorState("خطا در دریافت اطلاعات");
       }
-    } on Exception catch (e) {
+    } on SocketException catch (e) {
+      Log.e(e);
+      yield ReportErrorState('اتصال اینترنت خود را بررسی کنید.');
+    }on Exception catch (e) {
       Log.e(e);
       yield ReportErrorState(e.toString());
     }

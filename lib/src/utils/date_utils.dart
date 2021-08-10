@@ -21,7 +21,8 @@ class DDateUtils {
   }
 
   static String createISOFromPersian(PersianDate date, DateTime time) {
-    var gregorian = PersianDate().jalaliToGregorian(date.year!, date.month!, date.day!);
+    var gregorian =
+        PersianDate().jalaliToGregorian(date.year!, date.month!, date.day!);
     int year = gregorian[0];
     int month = gregorian[1];
     int day = gregorian[2];
@@ -29,15 +30,37 @@ class DDateUtils {
     return "$year-${month.timePadded}-${day.timePadded}T${time.hour.timePadded}:${time.minute.timePadded}:00.000Z";
   }
 
+  static PersianDate createPersianDateFromGregorian(DateTime? date) {
+    if(date == null)
+      return PersianDate();
+
+    PersianDate? persian;
+    try {
+      persian = PersianDate.pDate(
+          defualtFormat: "yyyy-mm-dd",
+          gregorian:
+              '${date.year}-${date.month.timePadded}-${date.day.timePadded}');
+    } on FormatException catch (e) {
+      Log.e("FormatException occured for ${date.toString()}");
+      persian = PersianDate();
+    }
+
+    return persian;
+  }
+
   static PersianDate persianDateFromSlashString(String slashString) {
     int year = int.parse(slashString.substring(0, slashString.indexOf('/')));
-    int month = int.parse(slashString.substring(slashString.indexOf('/') + 1, slashString.lastIndexOf('/')));
-    int day = int.parse(slashString.substring(slashString.lastIndexOf('/') + 1));
+    int month = int.parse(slashString.substring(
+        slashString.indexOf('/') + 1, slashString.lastIndexOf('/')));
+    int day =
+        int.parse(slashString.substring(slashString.lastIndexOf('/') + 1));
 
     return createPersianDate(year, month, day);
   }
+
   static DateTime createGregorianFromPersian(PersianDate date) {
-    var gregorian = PersianDate().jalaliToGregorian(date.year!, date.month!, date.day!);
+    var gregorian =
+        PersianDate().jalaliToGregorian(date.year!, date.month!, date.day!);
     int year = gregorian[0];
     int month = gregorian[1];
     int day = gregorian[2];

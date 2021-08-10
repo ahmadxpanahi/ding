@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/feature/create_request/bloc/cr_request_bloc.dart';
 import 'package:ding/src/feature/create_request/bloc/cr_request_event.dart';
@@ -224,27 +225,38 @@ class _DailyPageState extends State<DailyPage> {
                 } else {
                   return GestureDetector(
                     onTap: () {
-                      if(_type == 2){
-                        _requestsBloc.add(CreateRequest(
-                          type: _type,
-                          date: DDateUtils.createISOFromPersian(
+                      if (_type == 2) {
+                        if (_enterLeaveDate != null)
+                          _requestsBloc.add(CreateRequest(
+                            type: _type,
+                            date: DDateUtils.createISOFromPersian(
                                 _enterLeaveDate!, DateTime(0, 0, 0, 0, 0)),
-                          time: '${_enterLeaveDate?.hour}:${_enterLeaveDate?.minute}:${_enterLeaveDate?.second}',
-                          comment: _comment ?? '',
-                          requestStatus: 2,
-                          requestType: requestType,
-                        ));
-                      }else{
-                        _requestsBloc.add(CreateRequest(
-                          type: _type,
-                          comment: _comment ?? '',
-                          beginDate: DDateUtils.createISOFromPersian(
-                              _begin!, DateTime(0, 0, 0, 0, 0)),
-                          endDate: DDateUtils.createISOFromPersian(
-                              _end!, DateTime(0, 0, 0, 0, 0)),
-                          requestStatus: 2,
-                          requestType: requestType,
-                        ));
+                            time:
+                                '${_enterLeaveDate?.hour}:${_enterLeaveDate?.minute}:${_enterLeaveDate?.second}',
+                            comment: _comment ?? '',
+                            requestStatus: 2,
+                            requestType: requestType,
+                          ));
+                        else {
+                          _requestsBloc.add(ShowCrRequestsError(
+                              'فیلد های خواسته شده را تکمیل کنید.'));
+                        }
+                      } else {
+                        if (_end != null && _begin != null)
+                          _requestsBloc.add(CreateRequest(
+                            type: _type,
+                            comment: _comment ?? '',
+                            beginDate: DDateUtils.createISOFromPersian(
+                                _begin!, DateTime(0, 0, 0, 0, 0)),
+                            endDate: DDateUtils.createISOFromPersian(
+                                _end!, DateTime(0, 0, 0, 0, 0)),
+                            requestStatus: 2,
+                            requestType: requestType,
+                          ));
+                        else {
+                          _requestsBloc.add(ShowCrRequestsError(
+                              'فیلد های خواسته شده را تکمیل کنید.'));
+                        }
                       }
                     },
                     child: Container(
@@ -276,6 +288,17 @@ class _DailyPageState extends State<DailyPage> {
       listener: (_, state) {
         if (state is CreateRequestSuccess) {
           Navigator.pop(context);
+        } else if (state is CrRequestErrorState) {
+          Future.delayed(Duration.zero, () async {
+            await Flushbar(
+              backgroundColor: DingColors.warning(),
+              duration: Duration(seconds: 2),
+              borderRadius: BorderRadius.circular(100),
+              padding: EdgeInsets.all(15),
+              message: state.message,
+              flushbarPosition: FlushbarPosition.TOP,
+            ).show(context);
+          });
         }
       },
       child: _buildBody(),

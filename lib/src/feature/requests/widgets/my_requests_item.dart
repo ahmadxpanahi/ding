@@ -3,6 +3,7 @@ import 'package:ding/src/feature/requests/bloc/requests_event.dart';
 import 'package:ding/src/feature/requests/bloc/requests_state.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/date_utils.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -58,14 +59,7 @@ class _MyRequestsItemState extends State<MyRequestsItem> {
       return 'leave';
     }
   }
-
-  PersianDate? _persianDate() {
-    if (widget.date != null)
-      return PersianDate.pDate(
-          gregorian:
-              '${widget.date!.year}-${widget.date!.month.timePadded}-${widget.date!.day.timePadded}');
-  }
-
+  
   Color _statusColor() => widget.status == 2
       ? DingColors.primary()
       : widget.status == 3
@@ -126,7 +120,7 @@ class _MyRequestsItemState extends State<MyRequestsItem> {
                                 child: Row(
                               children: [
                                 Text(
-                                  '${widget.date?.day.toString().toPersianDigit()} ${_persianDate()?.monthname}',
+                                  '${widget.date?.day.toString().toPersianDigit()} ${DDateUtils.createPersianDateFromGregorian(widget.date).monthname}',
                                   style: TextStyle(
                                       color: myType() == 'vacation'
                                           ? DingColors.dark()
@@ -179,7 +173,7 @@ class _MyRequestsItemState extends State<MyRequestsItem> {
                                 width: 6,
                               ),
                               Text(
-                                widget.info1 ?? '',
+                                '${widget.date?.day.toString().toPersianDigit()} ${DDateUtils.createPersianDateFromGregorian(widget.date).monthname}',
                                 style: TextStyle(
                                     fontSize: 2.2.rt, color: DingColors.dark()),
                               )

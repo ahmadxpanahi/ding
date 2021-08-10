@@ -552,6 +552,7 @@ part 'model/work_hour_dto.dart';
 part 'model/work_model_type.dart';
 part 'model/work_schedule_dto.dart';
 part 'model/ws_federation_external_login_provider_settings.dart';
+part 'model/abstract/request_enter_leave.dart';
 
 
 ApiClient defaultApiClient = new ApiClient();

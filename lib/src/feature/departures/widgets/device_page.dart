@@ -10,6 +10,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:timer_builder/timer_builder.dart';
 import 'package:jalali_calendar/jalali_calendar.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
+import 'package:ding/src/utils/date_utils.dart';
 
 class DevicePage extends StatefulWidget {
   DevicePage({Key? key}) : super(key: key);
@@ -32,7 +33,7 @@ class _DevicePageState extends State<DevicePage> {
           children: [
             TimerBuilder.periodic(Duration(seconds: 5), builder: (_) {
               return Text(
-                '${PersianDate().hour.toString().toPersianDigit()}:${PersianDate().minute.toString().toPersianDigit()}',
+                '${PersianDate().hour?.toInt().timePadded.toPersianDigit()}:${PersianDate().minute?.toInt().timePadded.toPersianDigit()}',
                 style: TextStyle(fontSize: 6.1.rt),
               );
             }),

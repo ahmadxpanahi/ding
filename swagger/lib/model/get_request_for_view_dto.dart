@@ -1,6 +1,6 @@
 part of swagger.api;
 
-class GetRequestForViewDto {
+class GetRequestForViewDto extends RequestEnterLeave {
   
   RequestDto? request = null;
   
@@ -15,6 +15,26 @@ class GetRequestForViewDto {
   @override
   String toString() {
     return 'GetRequestForViewDto[request=$request, substituteUser=$substituteUser, requestByUser=$requestByUser, ]';
+  }
+
+  @override
+  String getId() {
+    return (request?.id ?? -1).toString();
+  }
+
+  @override
+  DateTime getDate(){
+    return request?.creationTime ?? DateTime.now();
+  }
+
+  @override
+  int getType(){
+    return request?.requestType?.value ?? -1;
+  }
+
+  @override
+  int getStatus(){
+    return request?.status?.value ?? -1;
   }
 
   GetRequestForViewDto.fromJson(Map<String, dynamic>? json) {
