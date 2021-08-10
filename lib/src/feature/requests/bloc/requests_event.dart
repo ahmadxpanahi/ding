@@ -49,3 +49,13 @@ class ShowActionButtonLoading extends RequestsEvent{
   List<Object?> get props => [];
 
 }
+
+class LoadImage extends RequestsEvent{
+  final int widgetId;
+  final int userId;
+
+  LoadImage(this.widgetId, this.userId);
+
+  @override
+  List<Object?> get props => [widgetId, userId];
+}

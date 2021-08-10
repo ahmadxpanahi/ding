@@ -9,7 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 
 class CartableItem extends StatefulWidget {
-  String? imgUrl;
+  int? userId;
   String? name;
   String? unit;
   String? date;
@@ -22,12 +22,12 @@ class CartableItem extends StatefulWidget {
 
   CartableItem(
       {Key? key,
+      this.userId,
       this.type,
       this.info2,
       this.info1,
       this.date,
       this.unit,
-      this.imgUrl,
       this.name,
       this.requestId,
       this.endDate,
@@ -44,57 +44,61 @@ class _CartableItemState extends State<CartableItem> {
   @override
   void initState() {
     super.initState();
+
     _requestsBloc = BlocProvider.of<RequestsBloc>(context);
+    _requestsBloc.add(LoadImage(key, widget.userId ?? -1));
+  }
+
+  int get key {
+    return int.parse(widget.key.toString());
   }
 
   Widget _actionButtons() => Row(
-    mainAxisAlignment: MainAxisAlignment.end,
-    children: [
-      GestureDetector(
-        onTap: () {
-          _requestsBloc
-              .add(RejectRequest(widget.requestId??1,_inEnterLeave()));
-        },
-        child: Container(
-          width: 20.7.rw,
-          height: 5.47.rh,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(100),
-            border: Border.all(
-                width: 1, color: DingColors.warning()),
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          GestureDetector(
+            onTap: () {
+              _requestsBloc
+                  .add(RejectRequest(widget.requestId ?? 1, _inEnterLeave()));
+            },
+            child: Container(
+              width: 20.7.rw,
+              height: 5.47.rh,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(100),
+                border: Border.all(width: 1, color: DingColors.warning()),
+              ),
+              child: Icon(
+                Icons.close,
+                size: 6.0.rw,
+                color: DingColors.warning(),
+              ),
+            ),
           ),
-          child: Icon(
-            Icons.close,
-            size: 6.0.rw,
-            color: DingColors.warning(),
+          SizedBox(
+            width: 2.4.rw,
           ),
-        ),
-      ),
-      SizedBox(
-        width: 2.4.rw,
-      ),
-      GestureDetector(
-        onTap: () {
-          _requestsBloc
-              .add(AcceptRequest(widget.requestId??1,_inEnterLeave()));
-        },
-        child: Container(
-          width: 20.7.rw,
-          height: 5.47.rh,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(100),
-            border: Border.all(
-                width: 1, color: DingColors.primary()),
+          GestureDetector(
+            onTap: () {
+              _requestsBloc
+                  .add(AcceptRequest(widget.requestId ?? 1, _inEnterLeave()));
+            },
+            child: Container(
+              width: 20.7.rw,
+              height: 5.47.rh,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(100),
+                border: Border.all(width: 1, color: DingColors.primary()),
+              ),
+              child: Icon(
+                Icons.check,
+                size: 6.0.rw,
+                color: DingColors.primary(),
+              ),
+            ),
           ),
-          child: Icon(
-            Icons.check,
-            size: 6.0.rw,
-            color: DingColors.primary(),
-          ),
-        ),
-      ),
-    ],
-  );
+        ],
+      );
   bool _inEnterLeave() => widget.type == 2 ? true : false;
   @override
   Widget build(BuildContext context) {
@@ -117,6 +121,39 @@ class _CartableItemState extends State<CartableItem> {
         : _type() == 'enterAndExit'
             ? DingColors.primary()
             : Colors.grey;
+
+    _buildAvatar() => BlocBuilder<RequestsBloc, RequestsState>(
+          bloc: _requestsBloc,
+          buildWhen: (o, n) => n is ImageLoaded,
+          builder: (_, state) {
+            if (state is ImageLoaded) {
+              //if widget was alive (mounted) AND state id was the same as current widget
+              if (mounted && state.id == key) {
+                return Container(
+                  width: SizeConfig.heightMultiplier! < 6 ? 12.5.rw : 14.6.rw,
+                  height: 14.6.rw,
+                  decoration: BoxDecoration(
+                    color: DingColors.light(),
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: MemoryImage(state.imageBytes),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                );
+              }
+            }
+
+            return Container(
+              width: SizeConfig.heightMultiplier! < 6 ? 12.5.rw : 14.6.rw,
+              height: 14.6.rw,
+              decoration: BoxDecoration(
+                color: DingColors.light(),
+                shape: BoxShape.circle,
+              ),
+            );
+          },
+        );
 
     Widget _typeDetail() => _type() == 'leave'
         ? Row(
@@ -253,15 +290,7 @@ class _CartableItemState extends State<CartableItem> {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                          width: SizeConfig.heightMultiplier! < 6
-                              ? 12.5.rw
-                              : 14.6.rw,
-                          height: 14.6.rw,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                  image: NetworkImage(widget.imgUrl ?? '')))),
+                      _buildAvatar(),
                       SizedBox(
                         width: 2.4.rw,
                       ),
@@ -355,16 +384,16 @@ class _CartableItemState extends State<CartableItem> {
                     bloc: _requestsBloc,
                     builder: (_, state) {
                       if (state is ActionButtonLoadingState) {
-                        if(state.id == widget.requestId){
+                        if (state.id == widget.requestId) {
                           return Transform.scale(
                               scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
                               child: CircularProgressIndicator(
                                 color: DingColors.primary(),
                               ));
-                        }else{
+                        } else {
                           return _actionButtons();
                         }
-                      } else{
+                      } else {
                         return _actionButtons();
                       }
                     },

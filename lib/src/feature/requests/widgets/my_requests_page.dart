@@ -49,6 +49,7 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
               children: _enterLeaveItems
                       .map(
                         (e) => MyRequestsItem(
+                          userId: e.enterLeave?.creatorUserId,
                             key: Key(e.enterLeave!.id.toString()),
                             info1: '',
                             info2: '',
@@ -60,6 +61,7 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
                   _requestItems
                       .map(
                         (e) => MyRequestsItem(
+                          userId: e.request?.creatorUserId,
                           key: Key(e.request!.id.toString()),
                           date: e.request!.creationTime,
                           info1: '',

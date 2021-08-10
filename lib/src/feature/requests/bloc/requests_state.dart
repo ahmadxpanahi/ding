@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:equatable/equatable.dart';
 import 'package:swagger/api.dart';
 
@@ -61,5 +63,15 @@ class ActionButtonErrorState extends RequestsState{
   ActionButtonErrorState(this.message);
   @override
   List<Object?> get props => [message];
+}
+
+class ImageLoaded extends RequestsState{
+  int id;
+  Uint8List imageBytes;
+
+  ImageLoaded(this.id, this.imageBytes);
+
+  @override
+  List<Object?> get props => [id, imageBytes];
 
 }

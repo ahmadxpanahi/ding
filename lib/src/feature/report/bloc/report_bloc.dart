@@ -76,22 +76,15 @@ class ReportBloc extends Bloc<ReportEvent,ReportState>{
 
     try {
       int userId = _tokenManager.getUserId() ?? 0;
-      Log.e("Waiting for base64...");
       var response = await _profileApi.apiServicesAppProfileGetprofilepicturebyuserGet(userId: userId);
-      Log.e("response completed");
 
       if(response != null) {
-        Log.e("Base64 resolved: ${response.profilePicture}");
-
         if(response.profilePicture != null) {
-          Log.e("Going to decode base64");
           Uint8List imageData = Base64Decoder().convert(response.profilePicture!);
-          Log.e("Base64 decoded to UInt8List!");
           yield ReportProfileLoaded(imageData);
         }
       }
       else {
-        Log.e("response was null");
         yield ReportErrorState("خطا در دریافت اطلاعات");
       }
     } on Exception catch (e) {

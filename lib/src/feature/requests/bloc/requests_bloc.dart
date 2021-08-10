@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
 import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/feature/requests/bloc/requests_event.dart';
 import 'package:ding/src/feature/requests/bloc/requests_state.dart';
@@ -7,9 +10,9 @@ import 'package:swagger/api.dart';
 class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
   RequestsApi _requestsApi;
   EnterLeavesApi _enterLeavesApi;
-  AccountApi _accountApi;
+  ProfileApi _profileApi;
 
-  RequestsBloc(this._requestsApi, this._enterLeavesApi, this._accountApi)
+  RequestsBloc(this._requestsApi, this._enterLeavesApi, this._profileApi)
       : super(RequestsInitialState());
   @override
   Stream<RequestsState> mapEventToState(RequestsEvent event) async* {
@@ -95,39 +98,53 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
   Stream<RequestsState> _rejectRequest(RejectRequest event) async* {
     yield ActionButtonLoadingState(event.id);
     try {
-      if(!event.enterLeave){
+      if (!event.enterLeave) {
         var rejectRequestResponse =
-        await _requestsApi.apiServicesAppRequestsRejectrequestsPost(
-            [
-              {
-                "request": {
-                  "creatorUserId": 1,
-                  "comment": "string",
-                  "rejectReason": "string",
-                  "id": 12
-                }
-              }
-            ]
-        );
-      }else{
+            await _requestsApi.apiServicesAppRequestsRejectrequestsPost([
+          {
+            "request": {
+              "creatorUserId": 1,
+              "comment": "string",
+              "rejectReason": "string",
+              "id": 12
+            }
+          }
+        ]);
+      } else {
         var rejectEnterLeaveResponse =
-        await _enterLeavesApi.apiServicesAppEnterleavesRejectrequestsPost(
-            [
-              {
-                "enterLeave": {
-                  "creatorUserId": 1,
-                  "comment": "string",
-                  "rejectReason": "string",
-                  "id": 12
-                }
-              }
-            ]
-        );
+            await _enterLeavesApi.apiServicesAppEnterleavesRejectrequestsPost([
+          {
+            "enterLeave": {
+              "creatorUserId": 1,
+              "comment": "string",
+              "rejectReason": "string",
+              "id": 12
+            }
+          }
+        ]);
       }
-      yield RequestRejected(event.id,event.enterLeave);
+      yield RequestRejected(event.id, event.enterLeave);
     } on Exception catch (e) {
       Log.e(e);
       yield ActionButtonErrorState(e.toString());
+    }
+  }
+
+  Stream<RequestsState> _loadImage(LoadImage event) async* {
+    try {
+      var response =
+          await _profileApi.apiServicesAppProfileGetprofilepicturebyuserGet(
+              userId: event.userId);
+
+      if (response != null) {
+        if (response.profilePicture != null) {
+          Uint8List imageData =
+              Base64Decoder().convert(response.profilePicture!);
+          yield ImageLoaded(event.widgetId, imageData);
+        }
+      }
+    } on Exception catch (e) {
+      Log.e(e);
     }
   }
 }
