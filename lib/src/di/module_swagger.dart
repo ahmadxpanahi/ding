@@ -19,6 +19,7 @@ Future<void> registerApis(GetIt getIt) async{
   getIt.registerLazySingleton<RequestsApi>(() => _requestsApi());
   getIt.registerLazySingleton<EnterLeavesApi>(() => _enterLeavesApi());
   getIt.registerLazySingleton<AccountApi>(() => _accountApi());
+  getIt.registerLazySingleton<TokenAuthApi>(() => _tokenAuthApi());
   getIt.registerLazySingleton<DetailedEmployeeReportsApi>(() => _detailedEmployeeReportsApi());
   getIt.registerLazySingleton<SummaryEmployeeReportsApi>(() => _summaryEmployeeReportsApi());
   getIt.registerLazySingleton<ProfileApi>(() => _profileApi());
@@ -47,6 +48,8 @@ EnterLeavesApi _enterLeavesApi() => EnterLeavesApi(inject<ApiClient>());
 AccountApi _accountApi() => AccountApi(inject<ApiClient>());
 
 ProfileApi _profileApi() => ProfileApi(inject<ApiClient>());
+
+TokenAuthApi _tokenAuthApi() => TokenAuthApi(inject<ApiClient>());
 
 DetailedEmployeeReportsApi _detailedEmployeeReportsApi() => DetailedEmployeeReportsApi(inject<ApiClient>());
 

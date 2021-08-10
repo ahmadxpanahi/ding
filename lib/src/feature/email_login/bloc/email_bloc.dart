@@ -9,19 +9,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:swagger/api.dart';
 
 class EmailBloc extends Bloc<EmailEvent, EmailState> {
-  TokenAuthApi? tokenAuthApi;
-  TokenManager? tokenManager;
-  EmailBloc() : super(EmailInitialState()) {
-    Future.delayed(Duration(milliseconds: 0), () async {
-      var sp = await SharedPreferences.getInstance();
-      tokenManager = TokenManager(sp);
-      var interceptor = AccessTokenInterceptor(tokenManager!);
-      var api = ApiClient(
-          basePath: 'https://dinghost.daustany.ir',
-          client: RestClient(interceptor, tokenManager!));
-      tokenAuthApi = TokenAuthApi(api);
-    });
-  }
+  TokenAuthApi _tokenAuthApi;
+  TokenManager _tokenManager;
+
+  EmailBloc(this._tokenAuthApi, this._tokenManager) : super(EmailInitialState());
 
   @override
   Stream<EmailState> mapEventToState(EmailEvent event) async* {
@@ -37,7 +28,7 @@ class EmailBloc extends Bloc<EmailEvent, EmailState> {
   Stream<EmailState> _loginWithEmail(LoginWithEmailEvent event) async* {
     yield LoginLoading(loading: true);
     try {
-      var response = await tokenAuthApi?.apiTokenauthAuthenticatebytenantPost(
+      var response = await _tokenAuthApi.apiTokenauthAuthenticatebytenantPost(
           body: AuthenticateByTenantModel()
             ..tenancyName = event.tenancyName
             ..userNameOrEmailAddress = event.userName
@@ -48,8 +39,10 @@ class EmailBloc extends Bloc<EmailEvent, EmailState> {
             ..singleSignIn = true
             ..returnUrl = ''
             ..captchaResponse = '');
-      await tokenManager?.setAccessToken(response?.accessToken ?? "");
-      await tokenManager?.setUserId(response?.userId);
+
+      await _tokenManager.setAccessToken(response?.accessToken ?? "");
+      await _tokenManager.setUserId(response?.userId);
+
       yield LoginWithEmailSuccessful(response);
     } on ApiException catch (e) {
       yield LoginError(message: e.message);
