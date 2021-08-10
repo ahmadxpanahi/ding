@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:equatable/equatable.dart';
 import 'package:swagger/api.dart';
 
@@ -7,6 +9,15 @@ class ReportInitialState extends ReportState{
   @override
   List<Object?> get props => [];
 
+}
+
+class ReportProfileLoaded extends ReportState{
+  Uint8List imageBinary;
+
+  ReportProfileLoaded(this.imageBinary);
+
+  @override
+  List<Object?> get props => [imageBinary];
 }
 
 class DetailedReportsFetched extends ReportState{

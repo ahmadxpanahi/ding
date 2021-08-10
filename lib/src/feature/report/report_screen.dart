@@ -1,8 +1,8 @@
 import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/detailed_report/detailed_report_screen.dart';
 import 'package:ding/src/feature/report/bloc/report_bloc.dart';
-import 'package:ding/src/feature/report/widgets/custom.dart';
-import 'package:ding/src/feature/report/widgets/monthly.dart';
+import 'package:ding/src/feature/report/widgets/customReportPage.dart';
+import 'package:ding/src/feature/report/widgets/monthlyReportPage.dart';
 import 'package:ding/src/feature/summary_report/summary_report_screen.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/utils/extensions.dart';
@@ -19,7 +19,12 @@ class ReportScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => ReportBloc(inject(), inject(),inject()),
+      create: (_) => ReportBloc(
+        inject(),
+        inject(),
+        inject(),
+        inject(),
+      ),
       child: ReportContainer(),
     );
   }
@@ -99,8 +104,8 @@ class _ReportContainerState extends State<ReportContainer> {
               });
             },
             children: [
-              MonthlyPage(),
-              CustomPage(),
+              MonthlyReportPage(),
+              CustomReportPage(),
             ],
           ))
         ],
@@ -111,17 +116,18 @@ class _ReportContainerState extends State<ReportContainer> {
         child: _buildBody(),
         listener: (_, state) {
           if (state is DetailedReportsFetched) {
-            if(state.items.length > 0)
+            if (state.items.length > 0)
               Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) => DetailedReportScreen(state.items)));
-          }else if(state is SummaryReportsFetched){
-            if(state.items.length > 0)
+          } else if (state is SummaryReportsFetched) {
+            if (state.items.length > 0)
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => SummaryReportScreen(state.items.first.summaryEmployeeReport!)));
+                      builder: (context) => SummaryReportScreen(
+                          state.items.first.summaryEmployeeReport!)));
           }
         },
       );

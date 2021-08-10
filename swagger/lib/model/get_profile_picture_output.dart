@@ -14,7 +14,7 @@ class GetProfilePictureOutput {
   GetProfilePictureOutput.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     profilePicture =
-        json['profilePicture']
+        json['result']['profilePicture']
     ;
   }
 
