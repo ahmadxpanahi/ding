@@ -3,7 +3,7 @@ import 'package:ding/src/bloc/login_bloc/login_event.dart';
 import 'package:ding/src/bloc/login_bloc/login_state.dart';
 import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/email_login/email_login_screen.dart';
-import 'package:ding/src/feature/home/home_screen.dart';
+import 'package:ding/src/feature/enter_code/enter_code_screen.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
@@ -18,8 +18,8 @@ class NumberLoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BlocProvider(
-      create: (_) => LoginBloc(inject(), inject()),
-      child: NumberLoginContainer(),
+        create: (_) => LoginBloc(inject(), inject()),
+        child: NumberLoginContainer(),
       );
 }
 
@@ -41,11 +41,21 @@ class _NumberLoginContainerState extends State<NumberLoginContainer> {
     _loginBloc = BlocProvider.of<LoginBloc>(context);
   }
 
-  Widget _getCodeButton() => GestureDetector(
-        onTap: () {
-          _loginBloc.add(LoginWithPhoneNumber(phoneNumber: _phoneNumber));
-        },
-        child: Container(
+  Widget _getCodeButton() => BlocBuilder<LoginBloc,LoginState>(
+    bloc: _loginBloc,
+    builder: (_,state){
+      if(state is LoginLoadingState && state.isLoading){
+        return Center(child: Transform.scale(scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
+        child: CircularProgressIndicator(
+          color: DingColors.primary(),
+        ),
+        ),);
+      }else{
+        return GestureDetector(
+          onTap: (){
+            _loginBloc.add(LoginWithPhoneNumber(phoneNumber: _phoneNumber));
+          },
+          child: Container(
           alignment: Alignment.center,
           height: 9.0.rh,
           width: 73.2.rw,
@@ -64,7 +74,10 @@ class _NumberLoginContainerState extends State<NumberLoginContainer> {
                     : Colors.white),
           ),
         ),
-      );
+        );
+      }
+    },
+  );
 
   Widget _enterWithEmail() => GestureDetector(
         onTap: () {
@@ -248,7 +261,9 @@ class _NumberLoginContainerState extends State<NumberLoginContainer> {
         listener: (_, state) {
           if (state is LoginWithPhoneNumberSuccessful) {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                context,
+                MaterialPageRoute(
+                    builder: (context) => EnterCodeScreen(phoneNumber: _phoneNumber,)));
           }
         },
       );

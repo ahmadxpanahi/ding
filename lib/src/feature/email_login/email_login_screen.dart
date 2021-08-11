@@ -1,11 +1,9 @@
 import 'dart:convert';
-
 import 'package:another_flushbar/flushbar.dart';
 import 'package:ding/src/bloc/login_bloc/login_bloc.dart';
 import 'package:ding/src/bloc/login_bloc/login_event.dart';
 import 'package:ding/src/bloc/login_bloc/login_state.dart';
 import 'package:ding/src/di/inject.dart';
-import 'package:ding/src/feature/enter_code/enter_code_screen.dart';
 import 'package:ding/src/feature/home/home_screen.dart';
 import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/ui/colors.dart';
@@ -14,7 +12,6 @@ import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class EmailLoginScreen extends StatelessWidget {
   const EmailLoginScreen({Key? key}) : super(key: key);

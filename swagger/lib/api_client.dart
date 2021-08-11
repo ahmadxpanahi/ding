@@ -1049,7 +1049,7 @@ class ApiClient {
       var msgBody = contentType == "application/x-www-form-urlencoded" ? formParams : serialize(body);
       switch(method) {
         case "POST":
-          print("api client");
+          print("body for $url with header: $headerParams is ->");
           print(msgBody);
           return client.post(Uri.parse(url), headers: headerParams, body: msgBody);
         case "PUT":
