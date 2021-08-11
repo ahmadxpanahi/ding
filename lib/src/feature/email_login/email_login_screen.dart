@@ -308,7 +308,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
           print(state.message);
           await Flushbar(
             backgroundColor: DingColors.warning(),
-            duration: Duration(seconds: 1),
+            duration: Duration(seconds: 2),
             borderRadius: BorderRadius.circular(100),
             padding: EdgeInsets.all(15),
             message: errorMap['error']['message'],

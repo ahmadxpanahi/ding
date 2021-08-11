@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:swagger/api.dart';
 
 abstract class DeparturesState extends Equatable {}
 
@@ -29,4 +30,15 @@ class DoDepartureError extends DeparturesState {
   DoDepartureError(this.message);
   @override
   List<Object?> get props => [message];
+}
+
+class GetEnterOrLeaveTimeSuccessful extends DeparturesState{
+
+  final GetUserClockInOutForViewDto userClock;
+
+  GetEnterOrLeaveTimeSuccessful(this.userClock);
+
+  @override
+  List<Object?> get props => [userClock];
+
 }

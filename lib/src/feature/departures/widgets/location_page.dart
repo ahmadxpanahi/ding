@@ -1,5 +1,6 @@
 import 'package:ding/src/feature/departures/bloc/departures_bloc.dart';
 import 'package:ding/src/feature/departures/bloc/departures_event.dart';
+import 'package:ding/src/feature/departures/bloc/departures_state.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
@@ -28,6 +29,49 @@ class _LocationPageState extends State<LocationPage> {
   LatLng _myLocation = LatLng(32.852971, 59.242443);
   String timeNow =
       '${PersianDate().hour.toString().toPersianDigit()}:${PersianDate().minute.toString().toPersianDigit()}';
+
+  @override
+  void initState() {
+    super.initState();
+    _bloc = BlocProvider.of<DeparturesBloc>(context);
+    _bloc.add(GetEnterOrLeaveTime());
+    Future.delayed(Duration(milliseconds: 1500), () {
+      _centerLocation = _mapController?.center;
+    });
+  }
+
+  Widget _buildStatusText() => BlocBuilder(
+    bloc: _bloc,
+    builder: (_, state) {
+      if (state is GetEnterOrLeaveTimeSuccessful) {
+        String txt;
+        DateTime? date = state.userClock.userClockInOut?.clock;
+        if (state.userClock.userClockInOut?.abnormalityType?.value == 1) {
+          txt = 'ورود';
+        } else
+          txt = 'خروج';
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.check,
+              size: 25,
+              color: DingColors.primary(),
+            ),
+            SizedBox(
+              width: 3,
+            ),
+            Text(
+              '${txt} شما در ساعت ${'${date?.hour.timePadded}:${date?.minute.timePadded}'} از طریق دستگاه ثبت شده است.',
+              style:
+              TextStyle(fontSize: 3.4.rw, fontWeight: FontWeight.w400),
+            )
+          ],
+        );
+      } else
+        return SizedBox();
+    },
+  );
 
   Widget _mapContainer() => Container(
         color: DingColors.secondary(),
@@ -134,15 +178,6 @@ class _LocationPageState extends State<LocationPage> {
       );
 
   @override
-  void initState() {
-    super.initState();
-    _bloc = BlocProvider.of<DeparturesBloc>(context);
-    Future.delayed(Duration(milliseconds: 1500), () {
-      _centerLocation = _mapController?.center;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(bottom: SizeConfig.heightMultiplier! * 4),
@@ -151,23 +186,7 @@ class _LocationPageState extends State<LocationPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           _mapContainer(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.check,
-                size: 25,
-                color: DingColors.primary(),
-              ),
-              SizedBox(
-                width: 3,
-              ),
-              Text(
-                'ورود شما در ساعت ${timeNow} از طریق دستگاه ثبت شده است.',
-                style: TextStyle(fontSize: 3.4.rw, fontWeight: FontWeight.w400),
-              ),
-            ],
-          ),
+          _buildStatusText(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 9.7.rw),
             child: SlideAction(

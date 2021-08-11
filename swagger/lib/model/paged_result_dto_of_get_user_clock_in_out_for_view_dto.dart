@@ -17,10 +17,10 @@ class PagedResultDtoOfGetUserClockInOutForViewDto {
   PagedResultDtoOfGetUserClockInOutForViewDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     totalCount =
-        json['totalCount']
+        json['result']['totalCount']
     ;
     items =
-      GetUserClockInOutForViewDto.listFromJson(json['items'])
+      GetUserClockInOutForViewDto.listFromJson(json['result']['items'])
 ;
   }
 

@@ -13,6 +13,15 @@ class DoDeparturesEvent extends DeparturesEvent {
   List<Object?> get props => [isEnter, selectedPage];
 }
 
+class GetEnterOrLeaveTime extends DeparturesEvent{
+
+  GetEnterOrLeaveTime();
+  @override
+  List<Object?> get props => [];
+
+}
+
+
 class BackToInitial extends DeparturesEvent {
   BackToInitial();
   @override
