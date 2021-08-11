@@ -62,6 +62,36 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
         },
       );
 
+  get _profileRowWidget => BlocBuilder<ReportBloc, ReportState>(
+        bloc: _reportBloc,
+        buildWhen: (o, n) => n is ReportProfileLoaded,
+        builder: (_, state) {
+          if (state is ReportProfileLoaded) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  _getProfileName(state),
+                  style: TextStyle(fontSize: 2 * SizeConfig.textMultiplier!),
+                ),
+                Text(
+                  'ادمین',
+                  style: TextStyle(
+                      fontSize: 2 * SizeConfig.textMultiplier! - 2,
+                      fontWeight: FontWeight.w300),
+                ),
+              ],
+            );
+          }
+
+          return SizedBox();
+        },
+      );
+
+  String _getProfileName(ReportProfileLoaded state) =>
+      state.userProfileName.length > 0 ? state.userProfileName : "--";
+
   _infoContainer() => Container(
         padding:
             EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier! * 4.5),
@@ -75,23 +105,7 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
                 SizedBox(
                   width: 10,
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'پژمان شفیعی',
-                      style:
-                          TextStyle(fontSize: 2 * SizeConfig.textMultiplier!),
-                    ),
-                    Text(
-                      'واحد فروش',
-                      style: TextStyle(
-                          fontSize: 2 * SizeConfig.textMultiplier! - 2,
-                          fontWeight: FontWeight.w300),
-                    ),
-                  ],
-                )
+                _profileRowWidget,
               ],
             ),
             IconButton(
@@ -132,8 +146,8 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
                     onTap: () {
                       if (date != null)
                         _reportBloc.add(GetDetailedReports(date!, date!));
-                      else{
-                        Future.delayed(Duration.zero,()async{
+                      else {
+                        Future.delayed(Duration.zero, () async {
                           await Flushbar(
                             backgroundColor: DingColors.warning(),
                             duration: Duration(seconds: 2),
@@ -171,8 +185,8 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
                     onTap: () {
                       if (date != null)
                         _reportBloc.add(GetSummaryReports(date!, date!));
-                      else{
-                        Future.delayed(Duration.zero,()async{
+                      else {
+                        Future.delayed(Duration.zero, () async {
                           await Flushbar(
                             backgroundColor: DingColors.warning(),
                             duration: Duration(seconds: 2),

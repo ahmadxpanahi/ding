@@ -35,7 +35,7 @@ class UserEditDto {
   bool? isLockoutEnabled = null;
   
 
-  GenderType? genderType = null;
+  int? genderType = null;
   
 
   DateTime? birthdate = null;
@@ -71,7 +71,7 @@ class UserEditDto {
   String? nationalCode = null;
   
 
-  DegreeType? degreeType = null;
+  int? degreeType = null;
   
 
   String? occupation = null;
@@ -80,7 +80,7 @@ class UserEditDto {
   String? jobTitle = null;
   
 
-  IntroduceType? introduceType = null;
+  int? introduceType = null;
   
 
   int? vacationTypeId = null;
@@ -95,92 +95,92 @@ class UserEditDto {
   UserEditDto.fromJson(Map<String, dynamic>? json) {
     if (json == null) return;
     id =
-        json['id']
+        json['result']['id']
     ;
     name =
-        json['name']
+        json['result']['name']
     ;
     surname =
-        json['surname']
+        json['result']['surname']
     ;
     userName =
-        json['userName']
+        json['result']['userName']
     ;
     emailAddress =
-        json['emailAddress']
+        json['result']['emailAddress']
     ;
     phoneNumber =
-        json['phoneNumber']
+        json['result']['phoneNumber']
     ;
     password =
-        json['password']
+        json['result']['password']
     ;
     isActive =
-        json['isActive']
+        json['result']['isActive']
     ;
     shouldChangePasswordOnNextLogin =
-        json['shouldChangePasswordOnNextLogin']
+        json['result']['shouldChangePasswordOnNextLogin']
     ;
     isTwoFactorEnabled =
-        json['isTwoFactorEnabled']
+        json['result']['isTwoFactorEnabled']
     ;
     isLockoutEnabled =
-        json['isLockoutEnabled']
+        json['result']['isLockoutEnabled']
     ;
     genderType =
       
       
-      new GenderType.fromJson(json['genderType'])
+      json['result']['genderType']
 ;
-    birthdate = json['birthdate'] == null ? null : DateTime.parse(json['birthdate']);
+    birthdate = json['result']['birthdate'] == null ? null : DateTime.parse(json['result']['birthdate']);
     bankAccount =
-        json['bankAccount']
+        json['result']['bankAccount']
     ;
     countryId =
-        json['countryId']
+        json['result']['countryId']
     ;
     stateId =
-        json['stateId']
+        json['result']['stateId']
     ;
     cityId =
-        json['cityId']
+        json['result']['cityId']
     ;
     address =
-        json['address']
+        json['result']['address']
     ;
     homePhoneNumber =
-        json['homePhoneNumber']
+        json['result']['homePhoneNumber']
     ;
     workPhoneNumber =
-        json['workPhoneNumber']
+        json['result']['workPhoneNumber']
     ;
     postalCode =
-        json['postalCode']
+        json['result']['postalCode']
     ;
     birthCertificateNumber =
-        json['birthCertificateNumber']
+        json['result']['birthCertificateNumber']
     ;
     nationalCode =
-        json['nationalCode']
+        json['result']['nationalCode']
     ;
     degreeType =
       
       
-      new DegreeType.fromJson(json['degreeType'])
+      json['result']['degreeType']
 ;
     occupation =
-        json['occupation']
+        json['result']['occupation']
     ;
     jobTitle =
-        json['jobTitle']
+        json['result']['jobTitle']
     ;
     introduceType =
       
       
-      new IntroduceType.fromJson(json['introduceType'])
+      json['result']['introduceType']
 ;
     vacationTypeId =
-        json['vacationTypeId']
+        json['result']['vacationTypeId']
     ;
   }
 

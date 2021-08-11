@@ -9,7 +9,8 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   AccountApi _accountApi;
   TokenManager _tokenManager;
 
-  SplashBloc(this._accountApi, this._tokenManager) : super(SplashInitialState());
+  SplashBloc(this._accountApi, this._tokenManager)
+      : super(SplashInitialState());
 
   @override
   Stream<SplashState> mapEventToState(SplashEvent event) async* {
@@ -20,19 +21,23 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
 
   Stream<SplashState> _loadProfileBasics(LoadProfileBasics event) async* {
     UserEditDto? response;
-    try {
-      response = await _accountApi.apiServicesAppAccountGetprofileGet();
-    } on Exception catch(e) {
 
-    }
+    var userId = await _tokenManager.getUserId();
+    if (userId != null) {
+      try {
+        response = await _accountApi.apiServicesAppAccountGetprofileGet(
+            userId: userId);
+      } on Exception catch (e) {}      
 
-    if(response != null) {
-      await _tokenManager.setUserFirstLastName("${response.name} ${response.surname}");
-      await _tokenManager.setUsername(response.userName ?? "");
+      if (response != null) {             
+        await _tokenManager
+            .setUserFirstLastName("${response.name} ${response.surname}");
+        await _tokenManager.setUsername(response.userName ?? "");
 
-      Log.e("${response.name} ${response.surname} with username: ${response.userName} is ready to go");
-
-      yield ProfileBasicsLoaded(true);
+        yield ProfileBasicsLoaded(true);
+      } else {
+        yield ProfileBasicsLoaded(false);
+      }
     } else {
       yield ProfileBasicsLoaded(false);
     }

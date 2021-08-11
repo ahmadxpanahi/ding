@@ -83,12 +83,14 @@ class ReportBloc extends Bloc<ReportEvent,ReportState>{
 
     try {
       int userId = _tokenManager.getUserId() ?? 0;
+      String userProfileName = _tokenManager.getUserFirstLastName() ?? "-"; 
+
       var response = await _profileApi.apiServicesAppProfileGetprofilepicturebyuserGet(userId: userId);
 
       if(response != null) {
         if(response.profilePicture != null) {
           Uint8List imageData = Base64Decoder().convert(response.profilePicture!);
-          yield ReportProfileLoaded(imageData);
+          yield ReportProfileLoaded(imageData, userProfileName);
         }
       }
       else {

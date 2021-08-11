@@ -23,13 +23,13 @@ class CustomReportPage extends StatefulWidget {
 class _CustomReportPageState extends State<CustomReportPage> {
   late ReportBloc _reportBloc;
 
-
   PersianDate? begin;
   PersianDate? end;
 
   @override
   void initState() {
     super.initState();
+    
     _reportBloc = BlocProvider.of<ReportBloc>(context);
   }
 
@@ -61,6 +61,36 @@ class _CustomReportPageState extends State<CustomReportPage> {
     },
   );
 
+  get _profileRowWidget => BlocBuilder<ReportBloc, ReportState>(
+    bloc: _reportBloc,
+    buildWhen: (o, n) => n is ReportProfileLoaded,
+    builder: (_, state) {
+      if (state is ReportProfileLoaded) {
+        return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  _getProfileName(state),
+                  style:
+                  TextStyle(fontSize: 2 * SizeConfig.textMultiplier!),
+                ),
+                Text(
+                  'ادمین',
+                  style: TextStyle(
+                      fontSize: 2 * SizeConfig.textMultiplier! - 2,
+                      fontWeight: FontWeight.w300),
+                ),
+              ],
+            );
+      }
+
+      return SizedBox();
+    },
+  );
+
+  String _getProfileName(ReportProfileLoaded state) => state.userProfileName.length > 0 ? state.userProfileName : "--";
+
   _infoContainer() => Container(
     padding:
     EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier! * 4.5),
@@ -74,23 +104,7 @@ class _CustomReportPageState extends State<CustomReportPage> {
             SizedBox(
               width: 10,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'پژمان شفیعی',
-                  style:
-                  TextStyle(fontSize: 2 * SizeConfig.textMultiplier!),
-                ),
-                Text(
-                  'واحد فروش',
-                  style: TextStyle(
-                      fontSize: 2 * SizeConfig.textMultiplier! - 2,
-                      fontWeight: FontWeight.w300),
-                ),
-              ],
-            )
+            _profileRowWidget
           ],
         ),
         IconButton(

@@ -1,23 +1,118 @@
 import 'package:ding/src/data/http/token_manager.dart';
+import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/account_management/account_management_screen.dart';
 import 'package:ding/src/feature/number_login/number_login_screen.dart';
+import 'package:ding/src/feature/other/bloc/others_bloc.dart';
+import 'package:ding/src/feature/other/bloc/others_event.dart';
+import 'package:ding/src/feature/other/bloc/others_state.dart';
 import 'package:ding/src/feature/setting/setting_screen.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class OtherScreen extends StatefulWidget {
-  const OtherScreen({Key? key}) : super(key: key);
+class OtherScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => BlocProvider<OthersBloc>(
+        create: (_) => OthersBloc(inject(), inject()),
+        child: _OtherScreenContainer(),
+      );
+}
+
+class _OtherScreenContainer extends StatefulWidget {
+  const _OtherScreenContainer({Key? key}) : super(key: key);
 
   @override
   _OtherScreenState createState() => _OtherScreenState();
 }
 
-class _OtherScreenState extends State<OtherScreen> {
+class _OtherScreenState extends State<_OtherScreenContainer> {
+  late OthersBloc _othersBloc;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _othersBloc = BlocProvider.of<OthersBloc>(context);
+    _othersBloc.add(LoadProfile());
+  }
+
+  get _avatarWidget => BlocBuilder<OthersBloc, OthersState>(
+    bloc: _othersBloc,
+    buildWhen: (o, n) => n is ProfileLoaded,
+    builder: (_, state) {
+      if (state is ProfileLoaded) {
+        return Container(
+          width: 20.0.rw,
+          height: 20.0.rw,
+          decoration: BoxDecoration(
+            color: DingColors.light(),
+            shape: BoxShape.circle,
+            image: DecorationImage(
+                image: MemoryImage(state.imageBinary), fit: BoxFit.fill),
+          ),
+        );
+      }
+
+      return Container(
+        width: 20.0.rw,
+        height: 20.0.rw,
+        decoration: BoxDecoration(
+          color: DingColors.light(),
+          shape: BoxShape.circle,
+        ),
+      );
+    },
+  );
+
+  get _profileRowWidget => BlocBuilder<OthersBloc, OthersState>(
+    bloc: _othersBloc,
+    buildWhen: (o, n) => n is ProfileLoaded,
+    builder: (_, state) {
+      if (state is ProfileLoaded) {
+        return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      _getProfileName(state),
+                      style: TextStyle(
+                          fontSize: SizeConfig.heightMultiplier! < 6
+                              ? 4.0.rw
+                              : 5.0.rw,
+                          fontWeight: FontWeight.bold,
+                          color: DingColors.dark()),
+                    ),
+                    Text(
+                      'توسعه ارتباطات دینگ',
+                      style: TextStyle(
+                          fontSize: SizeConfig.heightMultiplier! < 6
+                              ? 3.5.rw
+                              : 4.5.rw,
+                          fontWeight: FontWeight.w300,
+                          color: DingColors.dark()),
+                    ),
+                    Text(
+                      'ادمین',
+                      style: TextStyle(
+                          fontSize: 5.0.rw - 5,
+                          fontWeight: FontWeight.w200,
+                          color: DingColors.dark()),
+                    ),
+                  ],
+                );
+      }
+
+      return SizedBox();
+    },
+  );
+
+  String _getProfileName(ProfileLoaded state) => state.profileName.length > 0 ? state.profileName : "--";
+
   Widget _profileContainer() => Expanded(
       flex: 3,
       child: Container(
@@ -27,47 +122,11 @@ class _OtherScreenState extends State<OtherScreen> {
           children: [
             Row(
               children: [
-                Container(
-                  width: 20.0.rw,
-                  height: 20.0.rw,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: DingColors.light(),
-                      image: DecorationImage(
-                          image: NetworkImage(
-                              'https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png'),
-                          fit: BoxFit.fill)),
-                ),
+                _avatarWidget,
                 SizedBox(
                   width: 3.6.rw,
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'پژمان شفیعی',
-                      style: TextStyle(
-                          fontSize: SizeConfig.heightMultiplier! < 6 ? 4.0.rw : 5.0.rw,
-                          fontWeight: FontWeight.bold,
-                          color: DingColors.dark()),
-                    ),
-                    Text(
-                      'توسعه ارتباطات دینگ',
-                      style: TextStyle(
-                          fontSize: SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.5.rw,
-                          fontWeight: FontWeight.w300,
-                          color: DingColors.dark()),
-                    ),
-                    Text(
-                      'واحد فروش',
-                      style: TextStyle(
-                          fontSize: 5.0.rw - 5,
-                          fontWeight: FontWeight.w200,
-                          color: DingColors.dark()),
-                    ),
-                  ],
-                ),
+                _profileRowWidget
               ],
             ),
             IconButton(

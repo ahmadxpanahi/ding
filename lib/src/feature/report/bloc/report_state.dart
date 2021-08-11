@@ -13,11 +13,12 @@ class ReportInitialState extends ReportState{
 
 class ReportProfileLoaded extends ReportState{
   Uint8List imageBinary;
+  String userProfileName;
 
-  ReportProfileLoaded(this.imageBinary);
+  ReportProfileLoaded(this.imageBinary, this.userProfileName);
 
   @override
-  List<Object?> get props => [imageBinary];
+  List<Object?> get props => [imageBinary, userProfileName];
 }
 
 class DetailedReportsFetched extends ReportState{
