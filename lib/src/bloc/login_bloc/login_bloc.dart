@@ -26,9 +26,6 @@ class LoginBloc extends Bloc<LoginEvent,LoginState>{
   Stream<LoginState> _loginWithEmail(LoginWithEmail event) async* {
     yield LoginLoadingState(true);
 
-    Log.wtf("#################################");
-    await _tokenAuthApi.apiTokenauthSendtwofactorauthcodePost(SendTwoFactorAuthCodeModel()..userId=17..provider="Phone");
-
     try {
       var response = await _tokenAuthApi.apiTokenauthAuthenticatebytenantPost(
           body: AuthenticateByTenantModel()
