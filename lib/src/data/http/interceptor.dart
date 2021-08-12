@@ -19,10 +19,10 @@ class AccessTokenInterceptor {
         url.contains('/api/TokenAuth/SendTwoFactorAuthCode') ||
         url.contains('/api/TokenAuth/AuthenticateByOTP') ||
         url.endsWith('/api/v1/reset-account')) {
-      Log.w('No Need token');
+      // Log.w('No Need token');
       //no need for token
     } else if (_needAccessToken(url)) {
-      Log.w('Apply token');
+      // Log.w('Apply token');
       token = _tokenManager.getAccessToken();
     }
 

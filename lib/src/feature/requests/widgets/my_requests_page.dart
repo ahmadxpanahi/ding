@@ -1,4 +1,5 @@
 import 'package:another_flushbar/flushbar.dart';
+import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/feature/create_request/create_request_screen.dart';
 import 'package:ding/src/feature/requests/bloc/requests_bloc.dart';
 import 'package:ding/src/feature/requests/bloc/requests_event.dart';
@@ -19,8 +20,6 @@ class MyRequestsPage extends StatefulWidget {
 
 class _MyRequestsPageState extends State<MyRequestsPage> {
   List<api.RequestEnterLeave> _items = [];
-  List<api.GetRequestForViewDto> _requestItems = [];
-  List<api.GetEnterLeaveForViewDto> _enterLeaveItems = [];
 
   late RequestsBloc _requestsBloc;
 
@@ -110,8 +109,7 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
           if (state is GetRequestsDataSuccess) {
             if (!state.cartable!) {
               setState(() {
-                _requestItems = state.requestItems;
-                _enterLeaveItems = state.enterLeaveItems;
+                Log.wtf('Before show items in my request item : ${state.requestItems.first.request?.creationTime}');
                 _items = [...state.requestItems, ...state.enterLeaveItems]
                   ..sort((a, b) {
                     var aDate = a.getDate();

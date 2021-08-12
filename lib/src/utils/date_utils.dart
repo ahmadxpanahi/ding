@@ -40,11 +40,12 @@ class DDateUtils {
           defualtFormat: "yyyy-mm-dd",
           gregorian:
               '${date.year}-${date.month.timePadded}-${date.day.timePadded}');
+      Log.w(date.month);
+      Log.wtf(persian.monthname);
     } on FormatException catch (e) {
       Log.e("FormatException occured for ${date.toString()}");
       persian = PersianDate();
     }
-
     return persian;
   }
 
@@ -59,6 +60,7 @@ class DDateUtils {
   }
 
   static DateTime createGregorianFromPersian(PersianDate date) {
+
     var gregorian =
         PersianDate().jalaliToGregorian(date.year!, date.month!, date.day!);
     int year = gregorian[0];
@@ -67,4 +69,5 @@ class DDateUtils {
 
     return DateTime(year, month, day);
   }
+
 }

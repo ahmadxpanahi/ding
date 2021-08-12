@@ -1,3 +1,4 @@
+import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/date_utils.dart';
@@ -59,138 +60,143 @@ class MyRequestsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 14.7.rh,
-      margin: EdgeInsets.only(top: 8),
-      color: Colors.white,
-      child: Row(
-        children: [
-          Expanded(
-            flex: 1,
-            child: Container(
-              color: _typeColor(),
-              child: Column(
-                children: [
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        _typeText(),
-                        style: TextStyle(
-                            color: myType() == 'vacation'
-                                ? DingColors.dark()
-                                : Colors.white,
-                            fontSize: 2.73.rt),
+    return GestureDetector(
+      onTap: (){
+        Log.wtf(date);
+      },
+      child: Container(
+        height: 14.7.rh,
+        margin: EdgeInsets.only(top: 8),
+        color: Colors.white,
+        child: Row(
+          children: [
+            Expanded(
+              flex: 1,
+              child: Container(
+                color: _typeColor(),
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          _typeText(),
+                          style: TextStyle(
+                              color: myType() == 'vacation'
+                                  ? DingColors.dark()
+                                  : Colors.white,
+                              fontSize: 2.73.rt),
+                        ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      color: Colors.white.withOpacity(0.2),
+                    Expanded(
+                      child: Container(
+                        color: Colors.white.withOpacity(0.2),
+                        child: Column(
+                          children: [
+                            Expanded(
+                                child: Row(
+                              children: [
+                                Text(
+                                  '${date?.day.toString().toPersianDigit()} ${DDateUtils.createPersianDate(date!.year,date!.month,date!.day).monthname}',
+                                  style: TextStyle(
+                                      color: myType() == 'vacation'
+                                          ? DingColors.dark()
+                                          : Colors.white,
+                                      fontSize: 2.2.rt),
+                                ),
+                              ],
+                              mainAxisAlignment: MainAxisAlignment.center,
+                            )),
+                            Expanded(
+                              child: date != null
+                                  ? Text(
+                                      '${date!.hour.toString().toPersianDigit()}:${date!.minute.toString().toPersianDigit()}:${date!.second.toString().toPersianDigit()}',
+                                      style: TextStyle(
+                                          color: myType() == 'vacation'
+                                              ? DingColors.dark()
+                                              : Colors.white,
+                                          fontSize: 2.2.rt),
+                                    )
+                                  : SizedBox(),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 2,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  children: [
+                    Expanded(
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Expanded(
-                              child: Row(
+                          Row(
                             children: [
-                              Text(
-                                '${date?.day.toString().toPersianDigit()} ${DDateUtils.createPersianDateFromGregorian(date).monthname}',
-                                style: TextStyle(
-                                    color: myType() == 'vacation'
-                                        ? DingColors.dark()
-                                        : Colors.white,
-                                    fontSize: 2.2.rt),
+                              Container(
+                                width: 3 + SizeConfig.widthMultiplier!,
+                                height: 3 + SizeConfig.widthMultiplier!,
+                                decoration: BoxDecoration(
+                                    color: _typeColor(),
+                                    borderRadius: BorderRadius.circular(50)),
                               ),
+                              SizedBox(
+                                width: 6,
+                              ),
+                              Text(
+                                info1 ?? '',
+                                style: TextStyle(
+                                    fontSize: 2.2.rt, color: DingColors.dark()),
+                              )
                             ],
-                            mainAxisAlignment: MainAxisAlignment.center,
-                          )),
-                          Expanded(
-                            child: date != null
-                                ? Text(
-                                    '${date!.hour.toString().toPersianDigit()}:${date!.minute.toString().toPersianDigit()}:${date!.second.toString().toPersianDigit()}',
-                                    style: TextStyle(
-                                        color: myType() == 'vacation'
-                                            ? DingColors.dark()
-                                            : Colors.white,
-                                        fontSize: 2.2.rt),
-                                  )
-                                : SizedBox(),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 3 + SizeConfig.widthMultiplier!,
+                                height: 3 + SizeConfig.widthMultiplier!,
+                                decoration: BoxDecoration(
+                                    color: _typeColor(),
+                                    borderRadius: BorderRadius.circular(50)),
+                              ),
+                              SizedBox(
+                                width: 6,
+                              ),
+                              Text(
+                                info2 ?? '',
+                                style: TextStyle(
+                                    fontSize: 2.2.rt, color: DingColors.dark()),
+                              )
+                            ],
                           ),
                         ],
                       ),
                     ),
-                  )
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              width: 3 + SizeConfig.widthMultiplier!,
-                              height: 3 + SizeConfig.widthMultiplier!,
-                              decoration: BoxDecoration(
-                                  color: _typeColor(),
-                                  borderRadius: BorderRadius.circular(50)),
-                            ),
-                            SizedBox(
-                              width: 6,
-                            ),
-                            Text(
-                              info1 ?? '',
-                              style: TextStyle(
-                                  fontSize: 2.2.rt, color: DingColors.dark()),
-                            )
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              width: 3 + SizeConfig.widthMultiplier!,
-                              height: 3 + SizeConfig.widthMultiplier!,
-                              decoration: BoxDecoration(
-                                  color: _typeColor(),
-                                  borderRadius: BorderRadius.circular(50)),
-                            ),
-                            SizedBox(
-                              width: 6,
-                            ),
-                            Text(
-                              info2 ?? '',
-                              style: TextStyle(
-                                  fontSize: 2.2.rt, color: DingColors.dark()),
-                            )
-                          ],
-                        ),
-                      ],
+                    Text(
+                      _statusText(),
+                      style: TextStyle(fontSize: 2.2.rt, color: _statusColor()),
                     ),
-                  ),
-                  Text(
-                    _statusText(),
-                    style: TextStyle(fontSize: 2.2.rt, color: _statusColor()),
-                  ),
-                  SizedBox(
-                    width: SizeConfig.widthMultiplier!,
-                  ),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.grey,
-                    size: SizeConfig.widthMultiplier! * 5,
-                  )
-                ],
+                    SizedBox(
+                      width: SizeConfig.widthMultiplier!,
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.grey,
+                      size: SizeConfig.widthMultiplier! * 5,
+                    )
+                  ],
+                ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
