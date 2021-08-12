@@ -45,7 +45,7 @@ class _OtherScreenState extends State<_OtherScreenContainer> {
     bloc: _othersBloc,
     buildWhen: (o, n) => n is ProfileLoaded,
     builder: (_, state) {
-      if (state is ProfileLoaded) {
+      if (state is ProfileLoaded && state.imageBinary != null) {
         return Container(
           width: 20.0.rw,
           height: 20.0.rw,
@@ -53,7 +53,7 @@ class _OtherScreenState extends State<_OtherScreenContainer> {
             color: DingColors.light(),
             shape: BoxShape.circle,
             image: DecorationImage(
-                image: MemoryImage(state.imageBinary), fit: BoxFit.fill),
+                image: MemoryImage(state.imageBinary!), fit: BoxFit.fill),
           ),
         );
       }

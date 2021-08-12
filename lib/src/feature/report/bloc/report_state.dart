@@ -12,7 +12,7 @@ class ReportInitialState extends ReportState{
 }
 
 class ReportProfileLoaded extends ReportState{
-  Uint8List imageBinary;
+  Uint8List? imageBinary;
   String userProfileName;
 
   ReportProfileLoaded(this.imageBinary, this.userProfileName);

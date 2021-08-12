@@ -16,13 +16,11 @@ class AccessTokenInterceptor {
     String? token;
 
     if (url.contains('/api/TokenAuth/SetOTPOnUser') ||
-        url.contains('/api/TokenAuth/SendTwoFactorAuthCode') ||
+        url.contains('/api/TokenAuth/SendOTP') ||
         url.contains('/api/TokenAuth/AuthenticateByOTP') ||
-        url.endsWith('/api/v1/reset-account')) {
-      Log.w('No Need token');
+        url.endsWith('/api/v1/reset-account')) {      
       //no need for token
-    } else if (_needAccessToken(url)) {
-      Log.w('Apply token');
+    } else if (_needAccessToken(url)) {      
       token = _tokenManager.getAccessToken();
     }
 

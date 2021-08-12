@@ -38,7 +38,7 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
         bloc: _reportBloc,
         buildWhen: (o, n) => n is ReportProfileLoaded,
         builder: (_, state) {
-          if (state is ReportProfileLoaded) {
+          if (state is ReportProfileLoaded && state.imageBinary != null) {
             return Container(
               width: 8.0.rh,
               height: 8.0.rh,
@@ -46,7 +46,7 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
                 color: DingColors.light(),
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                    image: MemoryImage(state.imageBinary), fit: BoxFit.fill),
+                    image: MemoryImage(state.imageBinary!), fit: BoxFit.fill),
               ),
             );
           }

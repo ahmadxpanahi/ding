@@ -41,37 +41,48 @@ class _LocationPageState extends State<LocationPage> {
   }
 
   Widget _buildStatusText() => BlocBuilder(
-    bloc: _bloc,
-    builder: (_, state) {
-      if (state is GetEnterOrLeaveTimeSuccessful) {
-        String txt;
-        DateTime? date = state.userClock.userClockInOut?.clock;
-        if (state.userClock.userClockInOut?.abnormalityType?.value == 1) {
-          txt = 'ورود';
-        } else
-          txt = 'خروج';
-        return Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.check,
-              size: 25,
-              color: DingColors.primary(),
-            ),
-            SizedBox(
-              width: 3,
-            ),
-            Text(
-              '${txt} شما در ساعت ${'${date?.hour.timePadded}:${date?.minute.timePadded}'} از طریق دستگاه ثبت شده است.',
-              style:
-              TextStyle(fontSize: 3.4.rw, fontWeight: FontWeight.w400),
-            )
-          ],
-        );
-      } else
-        return SizedBox();
-    },
-  );
+        bloc: _bloc,
+        builder: (_, state) {
+          if (state is GetEnterOrLeaveTimeSuccessful) {
+            String txt;
+            DateTime? date = state.userClock?.userClockInOut?.clock;
+
+            if (date != null) {
+              if (state.userClock!.userClockInOut!.abnormalityType?.value ==
+                  1) {
+                txt = 'ورود';
+              } else {
+                txt = 'خروج';
+              }
+
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.check,
+                    size: 25,
+                    color: DingColors.primary(),
+                  ),
+                  SizedBox(
+                    width: 3,
+                  ),
+                  Text(
+                    '$txt شما در ساعت ${'${date.hour.timePadded}:${date.minute.timePadded}'} از طریق دستگاه ثبت شده است.',
+                    style: TextStyle(
+                        fontSize: 3.4.rw, fontWeight: FontWeight.w400),
+                  )
+                ],
+              );
+            } else {
+              return Text(
+                'ورود و خروجی برای شما ثبت نشده است',
+                style: TextStyle(fontSize: 3.4.rw, fontWeight: FontWeight.w400),
+              );
+            }
+          } else
+            return SizedBox();
+        },
+      );
 
   Widget _mapContainer() => Container(
         color: DingColors.secondary(),

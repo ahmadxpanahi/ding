@@ -10,20 +10,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:swagger/api.dart';
 
 class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
-  UserClockInOutsApi? _userClockInOutsApi;
-  TokenManager? tokenManager;
+  UserClockInOutsApi _userClockInOutsApi;
+  TokenManager _tokenManager;
 
-  DeparturesBloc() : super(DeparturesInitialState()) {
-    Future.delayed(Duration.zero, () async {
-      var sp = await SharedPreferences.getInstance();
-      tokenManager = TokenManager(sp);
-      var interceptor = AccessTokenInterceptor(tokenManager!);
-      var api = ApiClient(
-          basePath: 'https://dinghost.daustany.ir',
-          client: RestClient(interceptor, tokenManager!));
-      _userClockInOutsApi = UserClockInOutsApi(api);
-    });
-  }
+  DeparturesBloc(this._userClockInOutsApi, this._tokenManager)
+      : super(DeparturesInitialState());
 
   @override
   Stream<DeparturesState> mapEventToState(DeparturesEvent event) async* {
@@ -59,24 +50,15 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
 
       try {
         var createOrEdit = CreateOrEditUserClockInOutDto()
-          ..userId = tokenManager?.getUserId()
+          ..userId = _tokenManager.getUserId()
           ..clock = DateTime.now()
           ..clockInOutType = event.isEnter
               ? UserClockInOutType.number1_
               : UserClockInOutType.number2_
-          ..workScheduleId = 0
-          ..workHourId = 0
-          ..projectName = ''
-          ..description = ''
-          ..organizationUnitId = 0
-          ..abnormalityType = UserWorkScheduleAbnormalities.number1_
-          ..weekNumber = 1
-          ..id = 0;
+          ..abnormalityType = UserWorkScheduleAbnormalities.number1_;
 
         var response = await _userClockInOutsApi
-            ?.apiServicesAppUserclockinoutsCreateoreditPost(
-            body: createOrEdit
-        );
+            .apiServicesAppUserclockinoutsCreateoreditPost(body: createOrEdit);
 
         if (response != null) {
           yield DeparturesStatusState(
@@ -96,13 +78,15 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
   Stream<DeparturesState> _getEnterLeaveTime(GetEnterOrLeaveTime event) async* {
     try {
       var response = await _userClockInOutsApi
-          ?.apiServicesAppUserclockinoutsGetuserclocksstatusGet(
+          .apiServicesAppUserclockinoutsGetuserclocksstatusGet(
         minClockFilter: DateTime(2020, 1, 1),
         maxClockFilter: DateTime(2022, 1, 1),
       );
-      if (response != null && response.items.length > 0)
-        yield GetEnterOrLeaveTimeSuccessful(response.items.last);
-      else Log.e('NULL');
+
+      yield GetEnterOrLeaveTimeSuccessful(
+          response != null && response.items.length > 0
+              ? response.items.last
+              : null);
     } on Exception catch (e) {
       Log.e(e.toString());
     }

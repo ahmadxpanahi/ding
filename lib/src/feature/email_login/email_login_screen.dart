@@ -298,11 +298,10 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
       child: _buildBody(),
       listener: (_, state) async {
         if (state is LoginWithEmailSuccessful) {
-          Navigator.push(
+          Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => HomeScreen()));
         } else if (state is LoginErrorState) {
-          Map errorMap = json.decode(state.message ?? '');
-          print(state.message);
+          Map errorMap = json.decode(state.message ?? '');          
           await Flushbar(
             backgroundColor: DingColors.warning(),
             duration: Duration(seconds: 2),

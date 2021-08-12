@@ -1,7 +1,9 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:ding/src/bloc/login_bloc/login_bloc.dart';
 import 'package:ding/src/bloc/login_bloc/login_event.dart';
 import 'package:ding/src/bloc/login_bloc/login_state.dart';
 import 'package:ding/src/di/inject.dart';
+import 'package:ding/src/feature/home/home_screen.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
@@ -14,19 +16,29 @@ import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 
 class EnterCodeScreen extends StatelessWidget {
   final String? phoneNumber;
-  const EnterCodeScreen({ Key? key , this.phoneNumber}) : super(key: key);
+  final int? userId;
+
+  const EnterCodeScreen({Key? key, this.phoneNumber, this.userId})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<LoginBloc>(
-      create: (_) => LoginBloc(inject(),inject()),
-      child: EnterCodeContaier(phoneNumber: phoneNumber,),
+      create: (_) => LoginBloc(inject(), inject()),
+      child: EnterCodeContaier(
+        phoneNumber: phoneNumber,
+        userId: userId,
+      ),
     );
   }
 }
+
 class EnterCodeContaier extends StatefulWidget {
   final String? phoneNumber;
-  EnterCodeContaier({Key? key,this.phoneNumber}) : super(key: key);
+  final int? userId;
+
+  EnterCodeContaier({Key? key, this.phoneNumber, this.userId})
+      : super(key: key);
 
   @override
   _EnterCodeContaierState createState() => _EnterCodeContaierState();
@@ -37,11 +49,17 @@ class _EnterCodeContaierState extends State<EnterCodeContaier> {
 
   late LoginBloc _loginBloc;
 
+  @override
+  void initState() {
+    super.initState();
+
+    _loginBloc = BlocProvider.of<LoginBloc>(context);
+    _loginBloc.add(SendTwoFactorCode(widget.userId ?? -1));
+  }
 
   Widget _enterButton() => GestureDetector(
         onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => EnterCodeScreen()));
+          _loginBloc.add(LoginWithOTP(_code, widget.phoneNumber ?? ""));
         },
         child: Align(
           alignment: Alignment.topCenter,
@@ -64,15 +82,7 @@ class _EnterCodeContaierState extends State<EnterCodeContaier> {
         ),
       );
 
-  @override
-  void initState() {
-    super.initState();
-    _loginBloc = BlocProvider.of<LoginBloc>(context);
-    _loginBloc.add(SendTwoFactorCode());
-  }
-
-  @override
-  Widget build(BuildContext context) => Scaffold(
+  get _body => Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
         body: Column(
@@ -114,7 +124,7 @@ class _EnterCodeContaierState extends State<EnterCodeContaier> {
                         _code = val;
                       });
                     },
-                    maxLength: 4,
+                    maxLength: 6,
                     pinBoxColor: Colors.white,
                     pinBoxDecoration:
                         ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
@@ -143,11 +153,15 @@ class _EnterCodeContaierState extends State<EnterCodeContaier> {
                   SizedBox(
                     height: 1.3.rh,
                   ),
-                  Directionality(textDirection: TextDirection.ltr, child: CountdownTimer(
-                    endTime: DateTime.now().millisecondsSinceEpoch + 2000 * 30,
-                    onEnd: (){},
-                    endWidget: SizedBox(),
-                  ),),
+                  Directionality(
+                    textDirection: TextDirection.ltr,
+                    child: CountdownTimer(
+                      endTime:
+                          DateTime.now().millisecondsSinceEpoch + 2000 * 30,
+                      onEnd: () {},
+                      endWidget: SizedBox(),
+                    ),
+                  ),
                   Text(
                     'ارسال مجدد',
                     style: TextStyle(
@@ -165,4 +179,25 @@ class _EnterCodeContaierState extends State<EnterCodeContaier> {
           ],
         ),
       );
+
+  @override
+  Widget build(BuildContext context) => BlocListener<LoginBloc, LoginState>(
+      child: _body,
+      listener: (_, state) {
+        if (state is LoginErrorState) {
+          Future.delayed(Duration.zero, () async {
+            await Flushbar(
+              backgroundColor: DingColors.warning(),
+              duration: Duration(seconds: 1),
+              borderRadius: BorderRadius.circular(100),
+              padding: EdgeInsets.all(15),
+              message: state.message?.dingError,
+              flushbarPosition: FlushbarPosition.TOP,
+            ).show(context);
+          });
+        } else if (state is LoginWithOTPSuccessful) {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        }
+      });
 }

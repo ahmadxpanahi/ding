@@ -33,8 +33,7 @@ class DoDepartureError extends DeparturesState {
 }
 
 class GetEnterOrLeaveTimeSuccessful extends DeparturesState{
-
-  final GetUserClockInOutForViewDto userClock;
+  final GetUserClockInOutForViewDto? userClock;
 
   GetEnterOrLeaveTimeSuccessful(this.userClock);
 

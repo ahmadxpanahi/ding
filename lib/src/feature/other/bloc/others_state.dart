@@ -10,7 +10,7 @@ class OthersInitialState extends OthersState{
 }
 
 class ProfileLoaded extends OthersState{
-  Uint8List imageBinary;
+  Uint8List? imageBinary;
   String profileName;
 
   ProfileLoaded(this.imageBinary, this.profileName);

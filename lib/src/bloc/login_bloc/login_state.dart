@@ -18,10 +18,10 @@ class LoginWithEmailSuccessful extends LoginState{
   List<Object?> get props => [response];
 }
 
-class LoginWithPhoneNumberSuccessful extends LoginState{
+class OTPSent extends LoginState{
   final AuthenticateResultModel? response;
 
-  LoginWithPhoneNumberSuccessful(this.response);
+  OTPSent(this.response);
 
   @override
   List<Object?> get props => [response];
@@ -30,6 +30,15 @@ class LoginWithPhoneNumberSuccessful extends LoginState{
 class SendTwoFactorCodeSuccessful extends LoginState{
   @override
   List<Object?> get props => [];
+}
+
+class LoginWithOTPSuccessful extends LoginState{
+  final AuthenticateResultModel response;
+
+  LoginWithOTPSuccessful(this.response);
+
+  @override
+  List<Object?> get props => [response];
 }
 
 class LoginLoadingState extends LoginState{

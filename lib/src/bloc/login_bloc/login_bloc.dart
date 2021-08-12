@@ -4,7 +4,8 @@ import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/data/http/token_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:swagger/api.dart';
-class LoginBloc extends Bloc<LoginEvent,LoginState>{
+
+class LoginBloc extends Bloc<LoginEvent, LoginState> {
   TokenAuthApi _tokenAuthApi;
   TokenManager _tokenManager;
 
@@ -15,13 +16,15 @@ class LoginBloc extends Bloc<LoginEvent,LoginState>{
   Stream<LoginState> mapEventToState(LoginEvent event) async* {
     if (event is LoginWithEmail) {
       yield* _loginWithEmail(event);
-    } else if (event is LoginWithPhoneNumber) {
-      yield* _loginWithPhoneNumber(event);
-    } else if (event is ShowLoginError) {
-      yield LoginErrorState(message: event.message);
+    } else if (event is SetOTP) {
+      yield* _setOTP(event);
     } else if (event is SendTwoFactorCode) {
       yield* _sendTwoFactorCode(event);
-    }else if (event is ShowLoginLoading) {
+    } else if (event is LoginWithOTP) {
+      yield* _loginWithOTP(event);
+    } else if (event is ShowLoginError) {
+      yield LoginErrorState(message: event.message);
+    } else if (event is ShowLoginLoading) {
       yield LoginLoadingState(true);
     }
   }
@@ -53,38 +56,16 @@ class LoginBloc extends Bloc<LoginEvent,LoginState>{
     }
   }
 
-  // Stream<LoginState> _setOTPOnUser(LoginWithPhoneNumber event) async* {
-  //   yield LoginLoadingState(true);
-  //   try {
-  //     var response = await _tokenAuthApi.apiTokenauthAuthenticatebyOTPPost(
-  //         body: AuthenticateByTenantModel()
-  //           ..tenancyName = event.tenancyName
-  //     );
-  //
-  //     await _tokenManager.setAccessToken(response?.accessToken ?? "");
-  //     await _tokenManager.setUserId(response?.userId);
-  //
-  //     yield LoginWithEmailSuccessful(response);
-  //   } on ApiException catch (e) {
-  //     yield LoginErrorState(message: e.message);
-  //   } finally {
-  //     yield LoginLoadingState(false);
-  //   }
-  // }
-
-  Stream<LoginState> _loginWithPhoneNumber(LoginWithPhoneNumber event) async* {
+  Stream<LoginState> _setOTP(SetOTP event) async* {
     yield LoginLoadingState(true);
     try {
-      Log.i('RESPONSE VALUE');
-      
       var response = await _tokenAuthApi.apiTokenauthSetOTPOnUserPost(
-        body: AuthenticateModel()
+          body: AuthenticateModel()
             ..userNameOrEmailAddress = event.phoneNumber
             ..captchaResponse = ''
-            ..twoFactorVerificationCode = ''
-      );
+            ..twoFactorVerificationCode = '');
 
-      yield LoginWithPhoneNumberSuccessful(response);
+      yield OTPSent(response);
     } on ApiException catch (e) {
       Log.e(e.toString());
       yield LoginErrorState(message: e.message);
@@ -94,17 +75,41 @@ class LoginBloc extends Bloc<LoginEvent,LoginState>{
   }
 
   Stream<LoginState> _sendTwoFactorCode(SendTwoFactorCode event) async* {
-    try {      
+    try {
       await _tokenAuthApi.apiTokenauthSendtwofactorauthcodePost(
-        body: SendTwoFactorAuthCodeModel()
-        ..userId = _tokenManager.getUserId()
-        ..provider = 'Phone'
-      );
+          body: SendTwoFactorAuthCodeModel()
+            ..userId = event.userId
+            ..provider = 'Phone');
 
       yield SendTwoFactorCodeSuccessful();
     } on ApiException catch (e) {
       Log.e(e.toString());
       yield LoginErrorState(message: e.message);
+    }
+  }
+
+  Stream<LoginState> _loginWithOTP(LoginWithOTP event) async* {
+    yield LoginLoadingState(true);
+
+    try {
+      var response = await _tokenAuthApi.apiTokenauthAuthenticatebyOTPPost(
+        body: AuthenticateByTenantModel()
+          ..twoFactorVerificationCode = event.otp
+          ..userNameOrEmailAddress = event.phoneNumber,
+      );
+
+      if (response != null) {
+        await _tokenManager.setAccessToken(response.accessToken ?? "");
+        await _tokenManager.setUserId(response.userId);
+
+        yield LoginWithOTPSuccessful(response);
+      } else {
+        yield LoginErrorState(message: "خطا در برقراری ارتباط");
+      }
+    } on ApiException catch (e) {
+      yield LoginErrorState(message: e.message);
+    } finally {
+      yield LoginLoadingState(false);
     }
   }
 }

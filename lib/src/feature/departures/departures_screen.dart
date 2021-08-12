@@ -1,4 +1,5 @@
 import 'package:ding/src/core/logger/logger.dart';
+import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/departures/bloc/departures_bloc.dart';
 import 'package:ding/src/feature/departures/bloc/departures_event.dart';
 import 'package:ding/src/feature/departures/bloc/departures_state.dart';
@@ -21,7 +22,7 @@ class DeparturesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => DeparturesBloc(),
+      create: (_) => DeparturesBloc(inject(), inject()),
       child: DeparturesContainer(),
     );
   }

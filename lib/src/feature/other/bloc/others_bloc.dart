@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/data/http/token_manager.dart';
 import 'package:ding/src/feature/other/bloc/others_event.dart';
 import 'package:ding/src/feature/other/bloc/others_state.dart';
@@ -29,9 +30,11 @@ class OthersBloc extends Bloc<OthersEvent, OthersState> {
         .apiServicesAppProfileGetprofilepicturebyuserGet(userId: userId);
 
     if (response != null) {
-      if (response.profilePicture != null) {
+      if (response.profilePicture != null && response.profilePicture!.length > 10) {        
         Uint8List imageData = Base64Decoder().convert(response.profilePicture!);
         yield ProfileLoaded(imageData, userProfileName);
+      } else {
+        yield ProfileLoaded(null, userProfileName);
       }
     }
   }

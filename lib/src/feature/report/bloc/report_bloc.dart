@@ -88,9 +88,11 @@ class ReportBloc extends Bloc<ReportEvent,ReportState>{
       var response = await _profileApi.apiServicesAppProfileGetprofilepicturebyuserGet(userId: userId);
 
       if(response != null) {
-        if(response.profilePicture != null) {
+        if(response.profilePicture != null && response.profilePicture!.length > 10) {
           Uint8List imageData = Base64Decoder().convert(response.profilePicture!);
           yield ReportProfileLoaded(imageData, userProfileName);
+        } else {
+          yield ReportProfileLoaded(null, userProfileName);
         }
       }
       else {

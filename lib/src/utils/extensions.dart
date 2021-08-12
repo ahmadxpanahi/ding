@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:ding/src/ui/size_config.dart';
 
 extension DoubleExt on double {
@@ -21,5 +23,15 @@ extension IntExt on int {
     } else {
       return this.toString();
     }
+  }
+}
+extension StringExt on String {
+  String get dingError {
+    try {
+      Map errorMap = json.decode(this);
+      return errorMap['error']['message'].toString();
+    } on Exception catch (_) {}
+
+    return "Unknown!";
   }
 }

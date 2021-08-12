@@ -584,7 +584,7 @@ class TokenAuthApi {
     // verify required params are set
 
     // create path and map variables
-    String path = "/api/TokenAuth/SendTwoFactorAuthCode".replaceAll("{format}","json");
+    String path = "/api/TokenAuth/SendOTP".replaceAll("{format}","json");
 
     // query params
     List<QueryParam> queryParams = [];
@@ -616,6 +616,9 @@ class TokenAuthApi {
                                              authNames);
 
  if(response == null) return null;
+
+ print("FROM SWAGGER 3");
+ print(response!.body);
 
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);

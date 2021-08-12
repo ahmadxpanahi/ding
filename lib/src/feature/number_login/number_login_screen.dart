@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:ding/src/bloc/login_bloc/login_bloc.dart';
 import 'package:ding/src/bloc/login_bloc/login_event.dart';
 import 'package:ding/src/bloc/login_bloc/login_state.dart';
@@ -41,43 +42,46 @@ class _NumberLoginContainerState extends State<NumberLoginContainer> {
     _loginBloc = BlocProvider.of<LoginBloc>(context);
   }
 
-  Widget _getCodeButton() => BlocBuilder<LoginBloc,LoginState>(
-    bloc: _loginBloc,
-    builder: (_,state){
-      if(state is LoginLoadingState && state.isLoading){
-        return Center(child: Transform.scale(scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
-        child: CircularProgressIndicator(
-          color: DingColors.primary(),
-        ),
-        ),);
-      }else{
-        return GestureDetector(
-          onTap: (){
-            _loginBloc.add(LoginWithPhoneNumber(phoneNumber: _phoneNumber));
-          },
-          child: Container(
-          alignment: Alignment.center,
-          height: 9.0.rh,
-          width: 73.2.rw,
-          decoration: BoxDecoration(
-            color: _phoneNumber == '' || !_checkBoxValue
-                ? DingColors.veryLight()
-                : DingColors.primary(),
-            borderRadius: BorderRadius.circular(100),
-          ),
-          child: Text(
-            'دریافت کد',
-            style: TextStyle(
-                fontSize: 2.73.rt,
-                color: _phoneNumber == '' || !_checkBoxValue
-                    ? DingColors.light()
-                    : Colors.white),
-          ),
-        ),
-        );
-      }
-    },
-  );
+  Widget _getCodeButton() => BlocBuilder<LoginBloc, LoginState>(
+        bloc: _loginBloc,
+        builder: (_, state) {
+          if (state is LoginLoadingState && state.isLoading) {
+            return Center(
+              child: Transform.scale(
+                scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
+                child: CircularProgressIndicator(
+                  color: DingColors.primary(),
+                ),
+              ),
+            );
+          } else {
+            return GestureDetector(
+              onTap: () {
+                _loginBloc.add(SetOTP(phoneNumber: _phoneNumber));
+              },
+              child: Container(
+                alignment: Alignment.center,
+                height: 9.0.rh,
+                width: 73.2.rw,
+                decoration: BoxDecoration(
+                  color: _phoneNumber == '' || !_checkBoxValue
+                      ? DingColors.veryLight()
+                      : DingColors.primary(),
+                  borderRadius: BorderRadius.circular(100),
+                ),
+                child: Text(
+                  'دریافت کد',
+                  style: TextStyle(
+                      fontSize: 2.73.rt,
+                      color: _phoneNumber == '' || !_checkBoxValue
+                          ? DingColors.light()
+                          : Colors.white),
+                ),
+              ),
+            );
+          }
+        },
+      );
 
   Widget _enterWithEmail() => GestureDetector(
         onTap: () {
@@ -259,11 +263,27 @@ class _NumberLoginContainerState extends State<NumberLoginContainer> {
         child: _buildBody(),
         bloc: _loginBloc,
         listener: (_, state) {
-          if (state is LoginWithPhoneNumberSuccessful) {
+          if (state is OTPSent) {
             Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => EnterCodeScreen(phoneNumber: _phoneNumber,)));
+              context,
+              MaterialPageRoute(
+                builder: (context) => EnterCodeScreen(
+                  phoneNumber: _phoneNumber,
+                  userId: state.response?.userId ?? -1,
+                ),
+              ),
+            );
+          } else if (state is LoginErrorState) {
+            Future.delayed(Duration.zero, () async {
+              await Flushbar(
+                backgroundColor: DingColors.warning(),
+                duration: Duration(seconds: 1),
+                borderRadius: BorderRadius.circular(100),
+                padding: EdgeInsets.all(15),
+                message: state.message?.dingError,
+                flushbarPosition: FlushbarPosition.TOP,
+              ).show(context);
+            });
           }
         },
       );
