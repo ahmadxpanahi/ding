@@ -8,8 +8,14 @@ class TokenManager {
   static const _userIdKey = 'auth.userId';
   static const _userFirstLastNameKey = 'profile.userFirstLastName';
   static const _usernameKey = 'profile.username';
+  static const _lunchKey = 'auth.firstLunch';
+
 
   final SharedPreferences _sharedPreferences;
+
+  Future<void> setFirstLunch(bool isFirstLunch) => _putBool(_lunchKey, isFirstLunch);
+
+  bool? getFirstLunch() => _getBool(_lunchKey);
 
   Future<void> setAccessToken(String token) => _put(_accessTokenKey, token);
 
@@ -43,6 +49,20 @@ class TokenManager {
       return Future.delayed(Duration.zero);
     }
     return _sharedPreferences.setInt(key, value);
+  }
+
+  Future<void> _putBool(String key, bool? value) {
+    if (value == null) {
+      return Future.delayed(Duration.zero);
+    }
+    return _sharedPreferences.setBool(key, value);
+  }
+
+  bool? _getBool(String key) {
+    if (_sharedPreferences.containsKey(key)) {
+      return _sharedPreferences.getBool(key);
+    }
+    return null;
   }
 
   String? _get(String key) {

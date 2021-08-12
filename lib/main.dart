@@ -2,7 +2,10 @@ import 'dart:io';
 
 import 'package:country_code_picker/country_localizations.dart';
 import 'package:ding/src/core/logger/logger.dart';
+import 'package:ding/src/data/http/token_manager.dart';
 import 'package:ding/src/di/core_di.dart';
+import 'package:ding/src/di/inject.dart';
+import 'package:ding/src/feature/intro_pages/first_intro_page.dart';
 import 'package:ding/src/feature/splash/splash_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ding/fallback_cupertino_localizations_delegate.dart';
@@ -22,6 +25,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return OrientationBuilder(

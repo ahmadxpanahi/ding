@@ -48,7 +48,6 @@ class LoginLoadingState extends LoginState{
   List<Object?> get props => [isLoading];
 
 }
-
 class LoginErrorState extends LoginState{
   final String? message;
   LoginErrorState({this.message});

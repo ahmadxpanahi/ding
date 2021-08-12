@@ -34,6 +34,13 @@ class _HourlyPageState extends State<HourlyPage> {
   int? requestStatus = 1;
   int _type = 1;
 
+  @override
+  void initState() {
+    super.initState();
+    _requestsBloc = BlocProvider.of<CreateRequestsBloc>(context);
+    _requestsBloc.add(UpdateRequestType(type: 1));
+  }
+
   _datePickers(context) => Padding(
     padding:
     EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier! * 4),
@@ -150,11 +157,16 @@ class _HourlyPageState extends State<HourlyPage> {
     ),
   );
 
-  @override
-  void initState() {
-    super.initState();
-    _requestsBloc = BlocProvider.of<CreateRequestsBloc>(context);
-    _requestsBloc.add(UpdateRequestType(type: 1));
+  void _showFlushBar(message) async {
+    await Flushbar(
+      backgroundColor: DingColors.warning(),
+      duration: Duration(seconds: 2),
+      borderRadius: BorderRadius.circular(100),
+      padding: EdgeInsets.all(15),
+      message: message,
+      flushbarStyle: FlushbarStyle.FLOATING,
+      flushbarPosition: FlushbarPosition.TOP,
+    ).show(context);
   }
 
   Widget _buildBody() => SingleChildScrollView(
@@ -247,14 +259,14 @@ class _HourlyPageState extends State<HourlyPage> {
                     _requestsBloc.add(CreateRequest(
                       type: _type,
                       date: DDateUtils.createISOFromPersian(
-                          _enterLeaveDate!, DateTime(0, 0, 0, 0, 0)),
+                          _enterLeaveDate!, DateTime(0, 0, 0, _enterLeaveDate!.hour!, _enterLeaveDate!.minute!,_enterLeaveDate!.second!)),
                       time: '${_enterLeaveDate?.hour}:${_enterLeaveDate?.minute}:${_enterLeaveDate?.second}',
                       comment: _comment ?? '',
                       requestStatus: 2,
                       requestType: requestType,
                     ));
                     else{
-                      _requestsBloc.add(ShowCrRequestsError('ابتدا فیلد های خواسته شده را تکمیل کنید.'));
+                      _showFlushBar('ابتدا فیلد های خواسته شده را تکمیل کنید.');
                     }
                   }else{
                     if(_beginTime != null && _beginTime != null && _endTime != null && _endDate != null){
@@ -269,7 +281,7 @@ class _HourlyPageState extends State<HourlyPage> {
                         requestType: requestType,
                       ));
                     }else{
-                      _requestsBloc.add(ShowCrRequestsError('ابتدا فیلد های خواسته شده را تکمیل کنید.'));
+                      _showFlushBar('ابتدا فیلد های خواسته شده را تکمیل کنید.');
                     }
                   }
                 },

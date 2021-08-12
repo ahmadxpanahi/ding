@@ -120,7 +120,7 @@ class _MyRequestsItemState extends State<MyRequestsItem> {
                                 child: Row(
                               children: [
                                 Text(
-                                  '${widget.date?.day.toString().toPersianDigit()} ${DDateUtils.createPersianDateFromGregorian(widget.date).monthname}',
+                                  '${date?.day.toString().toPersianDigit()} ${DDateUtils.createPersianDate(date!.year,date!.month,date!.day).monthname}',
                                   style: TextStyle(
                                       color: myType() == 'vacation'
                                           ? DingColors.dark()

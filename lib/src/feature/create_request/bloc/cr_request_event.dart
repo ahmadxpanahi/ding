@@ -22,7 +22,7 @@ class CreateRequest extends CreateRequestEvent {
         this.requestType,
         this.comment = ''});
   @override
-  List<Object?> get props => [requestType, requestStatus, beginDate, endDate, type];
+  List<Object?> get props => [requestType, requestStatus, beginDate, endDate, type,comment,date,time];
 }
 
 class UpdateRequestType extends CreateRequestEvent{

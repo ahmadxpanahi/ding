@@ -1,13 +1,9 @@
 import 'package:another_flushbar/flushbar.dart';
-import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/feature/create_request/bloc/cr_request_bloc.dart';
 import 'package:ding/src/feature/create_request/bloc/cr_request_event.dart';
 import 'package:ding/src/feature/create_request/bloc/cr_request_state.dart';
 import 'package:ding/src/feature/create_request/widgets/date_picker.dart';
 import 'package:ding/src/feature/create_request/widgets/type_picker.dart';
-import 'package:ding/src/feature/requests/bloc/requests_bloc.dart';
-import 'package:ding/src/feature/requests/bloc/requests_event.dart';
-import 'package:ding/src/feature/requests/bloc/requests_state.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
@@ -139,6 +135,18 @@ class _DailyPageState extends State<DailyPage> {
     _requestsBloc.add(UpdateRequestType(type: 1));
   }
 
+  void _showFlushBar(message) async {
+    await Flushbar(
+      backgroundColor: DingColors.warning(),
+      duration: Duration(seconds: 2),
+      borderRadius: BorderRadius.circular(100),
+      padding: EdgeInsets.all(15),
+      message: message,
+      flushbarStyle: FlushbarStyle.FLOATING,
+      flushbarPosition: FlushbarPosition.TOP,
+    ).show(context);
+  }
+
   Widget _buildBody() => SingleChildScrollView(
         child: Column(
           children: [
@@ -238,8 +246,7 @@ class _DailyPageState extends State<DailyPage> {
                             requestType: requestType,
                           ));
                         else {
-                          _requestsBloc.add(ShowCrRequestsError(
-                              'فیلد های خواسته شده را تکمیل کنید.'));
+                          _showFlushBar('فیلد های خواسته شده را تکمیل کنید.');
                         }
                       } else {
                         if (_end != null && _begin != null)
@@ -254,8 +261,7 @@ class _DailyPageState extends State<DailyPage> {
                             requestType: requestType,
                           ));
                         else {
-                          _requestsBloc.add(ShowCrRequestsError(
-                              'فیلد های خواسته شده را تکمیل کنید.'));
+                          _showFlushBar('فیلد های خواسته شده را تکمیل کنید.');
                         }
                       }
                     },
@@ -289,16 +295,7 @@ class _DailyPageState extends State<DailyPage> {
         if (state is CreateRequestSuccess) {
           Navigator.pop(context);
         } else if (state is CrRequestErrorState) {
-          Future.delayed(Duration.zero, () async {
-            await Flushbar(
-              backgroundColor: DingColors.warning(),
-              duration: Duration(seconds: 2),
-              borderRadius: BorderRadius.circular(100),
-              padding: EdgeInsets.all(15),
-              message: state.message,
-              flushbarPosition: FlushbarPosition.TOP,
-            ).show(context);
-          });
+          _showFlushBar(state.message);
         }
       },
       child: _buildBody(),

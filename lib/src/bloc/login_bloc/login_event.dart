@@ -42,6 +42,13 @@ LoginWithOTP(this.otp, this.phoneNumber);
   List<Object?> get props => [otp, phoneNumber];
 }
 
+class AuthenticateByOTP extends LoginEvent{
+
+ @override
+  List<Object?> get props => [];
+
+}
+
 class ShowLoginLoading extends LoginEvent{
   @override
   List<Object?> get props => [];
