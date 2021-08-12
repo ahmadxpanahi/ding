@@ -22,6 +22,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       yield LoginErrorState(message: event.message);
     } else if (event is SendTwoFactorCode) {
       yield* _sendTwoFactorCode(event);
+    }else if (event is AuthenticateByOTP) {
+      yield* _authenticateByOTPPost(event);
     }else if (event is ShowLoginLoading) {
       yield LoginLoadingState(true);
     }
@@ -83,6 +85,22 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       );
 
       yield SendTwoFactorCodeSuccessful();
+    } on ApiException catch (e) {
+      Log.e(e.toString());
+      yield LoginErrorState(message: e.message);
+    }
+  }
+
+  Stream<LoginState> _authenticateByOTPPost(AuthenticateByOTP event) async* {
+    try { 
+      var response = await _tokenAuthApi.apiTokenauthAuthenticatebyOTPPost(
+
+        body: AuthenticateByTenantModel()
+            ..twoFactorRememberClientToken = ''
+            ..twoFactorVerificationCode = ''
+      );
+
+      yield AuthenticateByOTPSuccessful();
     } on ApiException catch (e) {
       Log.e(e.toString());
       yield LoginErrorState(message: e.message);

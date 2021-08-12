@@ -32,6 +32,11 @@ class SendTwoFactorCodeSuccessful extends LoginState{
   List<Object?> get props => [];
 }
 
+class AuthenticateByOTPSuccessful extends LoginState{
+  @override
+  List<Object?> get props => [];
+}
+
 class LoginLoadingState extends LoginState{
   final bool isLoading;
   LoginLoadingState(this.isLoading);

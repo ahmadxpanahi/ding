@@ -43,6 +43,9 @@ flutter:
     - assets/images/form.svg
     - assets/images/letter.svg
     - assets/images/timer.svg
+    - assets/images/first_page.png
+    - assets/images/second_page.png
+    - assets/images/third_page.png
     - assets/images/other.svg
     - assets/images/Shape.svg
     - assets/images/mail.svg

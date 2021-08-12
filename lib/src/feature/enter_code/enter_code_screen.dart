@@ -1,6 +1,5 @@
 import 'package:ding/src/bloc/login_bloc/login_bloc.dart';
 import 'package:ding/src/bloc/login_bloc/login_event.dart';
-import 'package:ding/src/bloc/login_bloc/login_state.dart';
 import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';

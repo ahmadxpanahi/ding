@@ -31,6 +31,13 @@ class SendTwoFactorCode extends LoginEvent{
 
 }
 
+class AuthenticateByOTP extends LoginEvent{
+
+ @override
+  List<Object?> get props => [];
+
+}
+
 class ShowLoginLoading extends LoginEvent{
   @override
   List<Object?> get props => [];

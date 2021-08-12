@@ -1,6 +1,7 @@
 import 'package:ding/src/data/http/token_manager.dart';
 import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/home/home_screen.dart';
+import 'package:ding/src/feature/intro_pages/first_intro_page.dart';
 import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/feature/splash/bloc/splash_bloc.dart';
 import 'package:ding/src/feature/splash/bloc/splash_event.dart';
@@ -11,6 +12,7 @@ import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jalali_calendar/jalali_calendar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -32,6 +34,7 @@ class SplashContainer extends StatefulWidget {
 
 class _SplashContainerState extends State<SplashContainer> {
   late SplashBloc _splashBloc;
+  TokenManager? _tokenManager;
 
   @override
   void initState() {
@@ -40,13 +43,14 @@ class _SplashContainerState extends State<SplashContainer> {
     _splashBloc = BlocProvider.of<SplashBloc>(context);
 
     Future.delayed(Duration(seconds: 1), () async {
-      SharedPreferences sp = await SharedPreferences.getInstance();
-      var _tokenManager = TokenManager(sp);
-      var _accessToken = _tokenManager.getAccessToken();
+      
+      _tokenManager = TokenManager(inject());
+      var _accessToken = _tokenManager?.getAccessToken();
+      bool firstLunch = _tokenManager?.getFirstLunch() ?? true;
 
       if (_accessToken!.length <= 8) {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => NumberLoginScreen()));
+            MaterialPageRoute(builder: (context) => firstLunch ? FirstIntro() : NumberLoginScreen()));
       } else {
         _splashBloc.add(LoadProfileBasics());
       }
@@ -90,8 +94,10 @@ class _SplashContainerState extends State<SplashContainer> {
         child: _buildBody(),
         listener: (_, state) {
           if(state is ProfileBasicsLoaded) {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HomeScreen()));
+            bool firstLunch = _tokenManager?.getFirstLunch() ?? true;
+            if(_tokenManager?.getFirstLunch() != null)
+              Navigator.push(
+                context, MaterialPageRoute(builder: (context) => firstLunch ? FirstIntro() : HomeScreen()));
           }
         },
       );
