@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/data/http/interceptor.dart';
 import 'package:ding/src/data/http/rest_client.dart';
 import 'package:ding/src/data/http/token_manager.dart';
@@ -23,10 +24,13 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
       _userClockInOutsApi = UserClockInOutsApi(api);
     });
   }
+
   @override
   Stream<DeparturesState> mapEventToState(DeparturesEvent event) async* {
     if (event is DoDeparturesEvent) {
       yield* _doDeparture(event);
+    } else if (event is GetEnterOrLeaveTime) {
+      yield* _getEnterLeaveTime(event);
     } else {
       yield DeparturesInitialState();
     }
@@ -71,10 +75,10 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
 
         var response = await _userClockInOutsApi
             ?.apiServicesAppUserclockinoutsCreateoreditPost(
-          body: createOrEdit
+            body: createOrEdit
         );
 
-        if(response != null) {
+        if (response != null) {
           yield DeparturesStatusState(
               dialogType: 'success',
               showDialog: true,
@@ -83,22 +87,37 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
         } else {
           yield DoDepartureError('خطا در ارسال اطلاعات');
         }
-      }on ApiException catch (e) {
-        yield DoDepartureError(e.message??'');
+      } on ApiException catch (e) {
+        yield DoDepartureError(e.message ?? '');
       }
     }
   }
-}
 
-Future<bool?> _checkNetworkConnection() async {
-  bool? connection;
-  try {
-    final result = await InternetAddress.lookup('www.google.com');
-    if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-      connection = true;
+  Stream<DeparturesState> _getEnterLeaveTime(GetEnterOrLeaveTime event) async* {
+    try {
+      var response = await _userClockInOutsApi
+          ?.apiServicesAppUserclockinoutsGetuserclocksstatusGet(
+        minClockFilter: DateTime(2020, 1, 1),
+        maxClockFilter: DateTime(2022, 1, 1),
+      );
+      if (response != null && response.items.length > 0)
+        yield GetEnterOrLeaveTimeSuccessful(response.items.last);
+      else Log.e('NULL');
+    } on Exception catch (e) {
+      Log.e(e.toString());
     }
-  } on SocketException catch (_) {
-    connection = false;
   }
-  return connection;
+
+  Future<bool?> _checkNetworkConnection() async {
+    bool? connection;
+    try {
+      final result = await InternetAddress.lookup('www.google.com');
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+        connection = true;
+      }
+    } on SocketException catch (_) {
+      connection = false;
+    }
+    return connection;
+  }
 }

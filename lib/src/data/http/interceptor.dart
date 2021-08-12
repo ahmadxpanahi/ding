@@ -15,13 +15,14 @@ class AccessTokenInterceptor {
 
     String? token;
 
-    if (url.endsWith('/api/v1/set-password') ||
-        url.endsWith('/api/v1/verify/password') ||
-        url.endsWith('/api/v1/verify/reset-password') ||
-        url.endsWith('/api/v1/reset-password') ||
+    if (url.contains('/api/TokenAuth/SetOTPOnUser') ||
+        url.contains('/api/TokenAuth/SendTwoFactorAuthCode') ||
+        url.contains('/api/TokenAuth/AuthenticateByOTP') ||
         url.endsWith('/api/v1/reset-account')) {
-      token = _tokenManager.getTempToken();
+      Log.w('No Need token');
+      //no need for token
     } else if (_needAccessToken(url)) {
+      Log.w('Apply token');
       token = _tokenManager.getAccessToken();
     }
 

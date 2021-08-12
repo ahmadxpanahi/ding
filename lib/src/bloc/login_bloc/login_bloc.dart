@@ -1,14 +1,15 @@
 import 'package:ding/src/bloc/login_bloc/login_event.dart';
 import 'package:ding/src/bloc/login_bloc/login_state.dart';
+import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/data/http/token_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:swagger/api.dart';
-
 class LoginBloc extends Bloc<LoginEvent,LoginState>{
   TokenAuthApi _tokenAuthApi;
   TokenManager _tokenManager;
 
-  LoginBloc(this._tokenAuthApi,this._tokenManager) : super(LoginInitialState());
+  LoginBloc(this._tokenAuthApi, this._tokenManager)
+      : super(LoginInitialState());
 
   @override
   Stream<LoginState> mapEventToState(LoginEvent event) async* {
@@ -18,7 +19,9 @@ class LoginBloc extends Bloc<LoginEvent,LoginState>{
       yield* _loginWithPhoneNumber(event);
     } else if (event is ShowLoginError) {
       yield LoginErrorState(message: event.message);
-    } else if (event is ShowLoginLoading) {
+    } else if (event is SendTwoFactorCode) {
+      yield* _sendTwoFactorCode(event);
+    }else if (event is ShowLoginLoading) {
       yield LoginLoadingState(true);
     }
   }
@@ -72,20 +75,36 @@ class LoginBloc extends Bloc<LoginEvent,LoginState>{
   Stream<LoginState> _loginWithPhoneNumber(LoginWithPhoneNumber event) async* {
     yield LoginLoadingState(true);
     try {
-      var response = await _tokenAuthApi.apiTokenauthAuthenticatebyOTPPost(
-        body: AuthenticateByTenantModel()
-            ..tenancyName = event.tenancyName
+      Log.i('RESPONSE VALUE');
+      
+      var response = await _tokenAuthApi.apiTokenauthSetOTPOnUserPost(
+        body: AuthenticateModel()
+            ..userNameOrEmailAddress = event.phoneNumber
+            ..captchaResponse = ''
+            ..twoFactorVerificationCode = ''
       );
 
-      await _tokenManager.setAccessToken(response?.accessToken ?? "");
-      await _tokenManager.setUserId(response?.userId);
-
-      yield LoginWithEmailSuccessful(response);
+      yield LoginWithPhoneNumberSuccessful(response);
     } on ApiException catch (e) {
+      Log.e(e.toString());
       yield LoginErrorState(message: e.message);
     } finally {
       yield LoginLoadingState(false);
     }
   }
 
+  Stream<LoginState> _sendTwoFactorCode(SendTwoFactorCode event) async* {
+    try {      
+      await _tokenAuthApi.apiTokenauthSendtwofactorauthcodePost(
+        body: SendTwoFactorAuthCodeModel()
+        ..userId = _tokenManager.getUserId()
+        ..provider = 'Phone'
+      );
+
+      yield SendTwoFactorCodeSuccessful();
+    } on ApiException catch (e) {
+      Log.e(e.toString());
+      yield LoginErrorState(message: e.message);
+    }
+  }
 }

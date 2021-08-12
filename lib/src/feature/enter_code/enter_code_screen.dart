@@ -1,18 +1,42 @@
+import 'package:ding/src/bloc/login_bloc/login_bloc.dart';
+import 'package:ding/src/bloc/login_bloc/login_event.dart';
+import 'package:ding/src/bloc/login_bloc/login_state.dart';
+import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
+import 'package:persian_number_utility/persian_number_utility.dart';
+import 'package:swagger/api.dart' as api;
+import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 
-class EnterCodeScreen extends StatefulWidget {
-  const EnterCodeScreen({Key? key}) : super(key: key);
+class EnterCodeScreen extends StatelessWidget {
+  final String? phoneNumber;
+  const EnterCodeScreen({ Key? key , this.phoneNumber}) : super(key: key);
 
   @override
-  _EnterCodeScreenState createState() => _EnterCodeScreenState();
+  Widget build(BuildContext context) {
+    return BlocProvider<LoginBloc>(
+      create: (_) => LoginBloc(inject(),inject()),
+      child: EnterCodeContaier(phoneNumber: phoneNumber,),
+    );
+  }
+}
+class EnterCodeContaier extends StatefulWidget {
+  final String? phoneNumber;
+  EnterCodeContaier({Key? key,this.phoneNumber}) : super(key: key);
+
+  @override
+  _EnterCodeContaierState createState() => _EnterCodeContaierState();
 }
 
-class _EnterCodeScreenState extends State<EnterCodeScreen> {
+class _EnterCodeContaierState extends State<EnterCodeContaier> {
   String _code = '';
+
+  late LoginBloc _loginBloc;
+
 
   Widget _enterButton() => GestureDetector(
         onTap: () {
@@ -39,6 +63,13 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
           ),
         ),
       );
+
+  @override
+  void initState() {
+    super.initState();
+    _loginBloc = BlocProvider.of<LoginBloc>(context);
+    _loginBloc.add(SendTwoFactorCode());
+  }
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -103,7 +134,7 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'کد به +98 901 909 5564 ارسال شد',
+                    'کد به ${'${0.toString().toPersianDigit()}${widget.phoneNumber.toString().toPersianDigit()}'} ارسال شد',
                     style: TextStyle(
                         fontSize: 2.73.rt,
                         color: DingColors.dark(),
@@ -112,13 +143,11 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
                   SizedBox(
                     height: 1.3.rh,
                   ),
-                  Text(
-                    '00:36',
-                    style: TextStyle(
-                        fontSize: 2.73.rt,
-                        color: DingColors.dark(),
-                        fontWeight: FontWeight.w300),
-                  ),
+                  Directionality(textDirection: TextDirection.ltr, child: CountdownTimer(
+                    endTime: DateTime.now().millisecondsSinceEpoch + 2000 * 30,
+                    onEnd: (){},
+                    endWidget: SizedBox(),
+                  ),),
                   Text(
                     'ارسال مجدد',
                     style: TextStyle(

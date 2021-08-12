@@ -1,5 +1,6 @@
 import 'package:ding/src/feature/departures/bloc/departures_bloc.dart';
 import 'package:ding/src/feature/departures/bloc/departures_event.dart';
+import 'package:ding/src/feature/departures/bloc/departures_state.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
@@ -20,6 +21,8 @@ class DevicePage extends StatefulWidget {
 }
 
 class _DevicePageState extends State<DevicePage> {
+  late DeparturesBloc _bloc;
+
   String timeNow =
       '${PersianDate().hour.toString().toPersianDigit()}:${PersianDate().minute.toString().toPersianDigit()}';
 
@@ -61,13 +64,46 @@ class _DevicePageState extends State<DevicePage> {
           ],
         ),
       );
-  late DeparturesBloc _bloc;
 
   @override
   void initState() {
     super.initState();
     _bloc = BlocProvider.of<DeparturesBloc>(context);
+    _bloc.add(GetEnterOrLeaveTime());
   }
+
+  Widget _buildStatusText() => BlocBuilder(
+        bloc: _bloc,
+        builder: (_, state) {
+          if (state is GetEnterOrLeaveTimeSuccessful) {
+            String txt;
+            DateTime? date = state.userClock.userClockInOut?.clock;
+            if (state.userClock.userClockInOut?.abnormalityType?.value == 1) {
+              txt = 'ورود';
+            } else
+              txt = 'خروج';
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.check,
+                  size: 25,
+                  color: DingColors.primary(),
+                ),
+                SizedBox(
+                  width: 3,
+                ),
+                Text(
+                  '${txt} شما در ساعت ${'${date?.hour.timePadded}:${date?.minute.timePadded}'} از طریق دستگاه ثبت شده است.',
+                  style:
+                      TextStyle(fontSize: 3.4.rw, fontWeight: FontWeight.w400),
+                )
+              ],
+            );
+          } else
+            return SizedBox();
+        },
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -80,23 +116,7 @@ class _DevicePageState extends State<DevicePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           _infoContainer(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.check,
-                size: 25,
-                color: DingColors.primary(),
-              ),
-              SizedBox(
-                width: 3,
-              ),
-              Text(
-                'ورود شما در ساعت ${timeNow} از طریق دستگاه ثبت شده است.',
-                style: TextStyle(fontSize: 3.4.rw, fontWeight: FontWeight.w400),
-              ),
-            ],
-          ),
+          _buildStatusText(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 9.7.rw),
             child: SlideAction(

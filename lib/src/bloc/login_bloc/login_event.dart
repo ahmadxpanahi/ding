@@ -3,6 +3,7 @@ import 'package:equatable/equatable.dart';
 abstract class LoginEvent extends Equatable{}
 
 class LoginWithEmail extends LoginEvent{
+
   final String? tenancyName;
   final String? userName;
   final String? password;
@@ -14,12 +15,19 @@ class LoginWithEmail extends LoginEvent{
 }
 
 class LoginWithPhoneNumber extends LoginEvent{
-  final String? tenancyName;
+  final String? phoneNumber;
 
-  LoginWithPhoneNumber({this.tenancyName});
+  LoginWithPhoneNumber({this.phoneNumber});
 
   @override
-  List<Object?> get props => [tenancyName];
+  List<Object?> get props => [phoneNumber];
+
+}
+
+class SendTwoFactorCode extends LoginEvent{
+
+ @override
+  List<Object?> get props => [];
 
 }
 

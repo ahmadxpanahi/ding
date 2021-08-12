@@ -1,5 +1,6 @@
 import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/feature/departures/bloc/departures_bloc.dart';
+import 'package:ding/src/feature/departures/bloc/departures_event.dart';
 import 'package:ding/src/feature/departures/bloc/departures_state.dart';
 import 'package:ding/src/feature/departures/widgets/departures_pageview.dart';
 import 'package:ding/src/feature/departures/widgets/device_page.dart';
@@ -45,6 +46,7 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
     super.initState();
 
     _controller = PageController();
+
     _departuresBloc = BlocProvider.of<DeparturesBloc>(context);
 
     Future.delayed(Duration.zero, () {
@@ -61,6 +63,7 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
         );
       });
     });
+
   }
 
   Widget _buildTabs() => Column(
