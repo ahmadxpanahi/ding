@@ -31,8 +31,7 @@ class DDateUtils {
   }
 
   static PersianDate createPersianDateFromGregorian(DateTime? date) {
-    if(date == null)
-      return PersianDate();
+    if (date == null) return PersianDate();
 
     PersianDate? persian;
     try {
@@ -60,7 +59,6 @@ class DDateUtils {
   }
 
   static DateTime createGregorianFromPersian(PersianDate date) {
-
     var gregorian =
         PersianDate().jalaliToGregorian(date.year!, date.month!, date.day!);
     int year = gregorian[0];
@@ -70,4 +68,23 @@ class DDateUtils {
     return DateTime(year, month, day);
   }
 
+  static String getCurrentPersianDay() {
+    var year = "${DateTime.now().year}";
+    var month = DateTime.now().month.timePadded;
+    var day = DateTime.now().day.timePadded;
+
+    return PersianDate.pDate(
+            defualtFormat: "yyyy-mm-dd", gregorian: "$year-$month-$day")
+        .weekdayname;
+  }
+
+  static String getCurrentPersianDescribe() {
+    var year = "${DateTime.now().year}";
+    var month = DateTime.now().month.timePadded;
+    var day = DateTime.now().day.timePadded;
+    var p = PersianDate.pDate(
+        defualtFormat: "yyyy-mm-dd", gregorian: "$year-$month-$day");
+
+    return "${p.year}/${p.month!.timePadded}/${p.day!.timePadded} ${p.hour!.timePadded}:${p.minute!.timePadded}";
+  }
 }

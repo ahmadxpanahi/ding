@@ -68,6 +68,7 @@ class _DevicePageState extends State<DevicePage> {
   @override
   void initState() {
     super.initState();
+    
     _bloc = BlocProvider.of<DeparturesBloc>(context);
     _bloc.add(GetEnterOrLeaveTime());
   }

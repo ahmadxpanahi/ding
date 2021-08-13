@@ -6,6 +6,7 @@ import 'package:ding/src/data/http/token_manager.dart';
 import 'package:ding/src/feature/departures/bloc/departures_event.dart';
 import 'package:ding/src/feature/departures/bloc/departures_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jalali_calendar/jalali_calendar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:swagger/api.dart';
 
@@ -30,11 +31,13 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
   Stream<DeparturesState> _doDeparture(DoDeparturesEvent event) async* {
     yield DeparturesStatusState(
         isEnter: event.isEnter, progress: 0, selectedPage: event.selectedPage);
+
     await Future.delayed(Duration(milliseconds: 2000));
+
     yield DeparturesStatusState(
         isEnter: event.isEnter, progress: 1, selectedPage: event.selectedPage);
-    bool? connection = await _checkNetworkConnection();
 
+    bool? connection = await _checkNetworkConnection();
     await Future.delayed(Duration(milliseconds: 1000));
     if (!connection!) {
       yield DeparturesStatusState(
@@ -55,12 +58,14 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
           ..clockInOutType = event.isEnter
               ? UserClockInOutType.number1_
               : UserClockInOutType.number2_
+              ..weekNumber=1
+              ..workScheduleId=1
           ..abnormalityType = UserWorkScheduleAbnormalities.number1_;
 
         var response = await _userClockInOutsApi
             .apiServicesAppUserclockinoutsCreateoreditPost(body: createOrEdit);
 
-        if (response != null) {
+        if (response != null && response['success']) {
           yield DeparturesStatusState(
               dialogType: 'success',
               showDialog: true,

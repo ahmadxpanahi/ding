@@ -6,6 +6,7 @@ import 'package:ding/src/feature/departures/bloc/departures_state.dart';
 import 'package:ding/src/ui/colors.dart';
 import 'package:ding/src/ui/dialog.dart';
 import 'package:ding/src/ui/size_config.dart';
+import 'package:ding/src/utils/date_utils.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -139,11 +140,12 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
                     context: context,
                     builder: (_) => DingDialog(
                           title:
-                              'ورود شما در روز سه شنبه ${PersianDate().getNow.toPersianDigit()} با موفقیت ثبت شد',
+                              'ورود شما در روز ${DDateUtils.getCurrentPersianDescribe()} ${DDateUtils.getCurrentPersianDay()} با موفقیت ثبت شد',
                           buttonText: 'متوجه شدم',
                           onClick: () {
                             Navigator.pop(context);
                             _bloc.add(BackToInitial());
+                            _bloc.add(GetEnterOrLeaveTime());
                           },
                         ));
               } else if (state.dialogType == 'network') {
@@ -160,15 +162,16 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
               }
             }
           } else if (state is DoDepartureError) {
-            Map errorMap = json.decode(state.message);
             showDialog(
                 context: context,
                 builder: (_) => DingDialog(
-                      title: errorMap['error']['message'].toString(),
+                      title: state.message.dingError,
                       buttonText: 'متوجه شدم',
                       onClick: () {
                         Navigator.pop(context);
+          
                         _bloc.add(BackToInitial());
+                        _bloc.add(GetEnterOrLeaveTime());
                       },
                     ));
           }
