@@ -24,12 +24,12 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
 
     var userId = await _tokenManager.getUserId();
     if (userId != null) {
-      try {
+      try {        
         response = await _accountApi.apiServicesAppAccountGetprofileGet(
             userId: userId);
       } on Exception catch (e) {}      
-
-      if (response != null) {             
+      
+      if (response != null) {                     
         await _tokenManager
             .setUserFirstLastName("${response.name} ${response.surname}");
         await _tokenManager.setUsername(response.userName ?? "");

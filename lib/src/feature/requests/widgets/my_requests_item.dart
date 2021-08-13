@@ -59,7 +59,7 @@ class _MyRequestsItemState extends State<MyRequestsItem> {
       return 'leave';
     }
   }
-  
+
   Color _statusColor() => widget.status == 2
       ? DingColors.primary()
       : widget.status == 3
@@ -120,7 +120,7 @@ class _MyRequestsItemState extends State<MyRequestsItem> {
                                 child: Row(
                               children: [
                                 Text(
-                                  '${date?.day.toString().toPersianDigit()} ${DDateUtils.createPersianDate(date!.year,date!.month,date!.day).monthname}',
+                                  '${widget.date?.day.toString().toPersianDigit()} ${DDateUtils.createPersianDate(widget.date!.year, widget.date!.month, widget.date!.day).monthname}',
                                   style: TextStyle(
                                       color: myType() == 'vacation'
                                           ? DingColors.dark()
@@ -227,11 +227,9 @@ class _MyRequestsItemState extends State<MyRequestsItem> {
         bloc: _requestsBloc,
         child: _buildBody(),
         listener: (_, state) {
-          if(state is ImageLoaded) {
-            if(state.id == key) {
-              setState(() {
-
-              });
+          if (state is ImageLoaded) {
+            if (state.id == key) {
+              setState(() {});
             }
           }
         },

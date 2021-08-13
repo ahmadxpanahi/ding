@@ -43,14 +43,16 @@ class _SplashContainerState extends State<SplashContainer> {
     _splashBloc = BlocProvider.of<SplashBloc>(context);
 
     Future.delayed(Duration(seconds: 1), () async {
-      
       _tokenManager = TokenManager(inject());
-      var _accessToken = _tokenManager?.getAccessToken();
+      var _accessToken = _tokenManager?.getAccessToken() ?? "";
       bool firstLunch = _tokenManager?.getFirstLunch() ?? true;
 
-      if (_accessToken!.length <= 8) {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => firstLunch ? FirstIntro() : NumberLoginScreen()));
+      if (_accessToken!.length == 0) {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    firstLunch ? FirstIntro() : NumberLoginScreen()));
       } else {
         _splashBloc.add(LoadProfileBasics());
       }
@@ -93,11 +95,13 @@ class _SplashContainerState extends State<SplashContainer> {
         bloc: _splashBloc,
         child: _buildBody(),
         listener: (_, state) {
-          if(state is ProfileBasicsLoaded) {
+          if (state is ProfileBasicsLoaded) {
             bool firstLunch = _tokenManager?.getFirstLunch() ?? true;
-            if(_tokenManager?.getFirstLunch() != null)
-              Navigator.push(
-                context, MaterialPageRoute(builder: (context) => firstLunch ? FirstIntro() : HomeScreen()));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        firstLunch ? FirstIntro() : HomeScreen()));
           }
         },
       );
