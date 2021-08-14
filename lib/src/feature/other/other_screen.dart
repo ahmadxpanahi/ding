@@ -42,76 +42,75 @@ class _OtherScreenState extends State<_OtherScreenContainer> {
   }
 
   get _avatarWidget => BlocBuilder<OthersBloc, OthersState>(
-    bloc: _othersBloc,
-    buildWhen: (o, n) => n is ProfileLoaded,
-    builder: (_, state) {
-      if (state is ProfileLoaded && state.imageBinary != null) {
-        return Container(
-          width: 20.0.rw,
-          height: 20.0.rw,
-          decoration: BoxDecoration(
-            color: DingColors.light(),
-            shape: BoxShape.circle,
-            image: DecorationImage(
-                image: MemoryImage(state.imageBinary!), fit: BoxFit.fill),
-          ),
-        );
-      }
+        bloc: _othersBloc,
+        buildWhen: (o, n) => n is ProfileLoaded,
+        builder: (_, state) {
+          if (state is ProfileLoaded && state.imageBinary != null) {
+            return Container(
+              width: 20.0.rw,
+              height: 20.0.rw,
+              decoration: BoxDecoration(
+                color: DingColors.light(),
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                    image: MemoryImage(state.imageBinary!), fit: BoxFit.fill),
+              ),
+            );
+          }
 
-      return Container(
-        width: 20.0.rw,
-        height: 20.0.rw,
-        decoration: BoxDecoration(
-          color: DingColors.light(),
-          shape: BoxShape.circle,
-        ),
+          return Container(
+            width: 20.0.rw,
+            height: 20.0.rw,
+            decoration: BoxDecoration(
+              color: DingColors.light(),
+              shape: BoxShape.circle,
+            ),
+          );
+        },
       );
-    },
-  );
 
   get _profileRowWidget => BlocBuilder<OthersBloc, OthersState>(
-    bloc: _othersBloc,
-    buildWhen: (o, n) => n is ProfileLoaded,
-    builder: (_, state) {
-      if (state is ProfileLoaded) {
-        return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      _getProfileName(state),
-                      style: TextStyle(
-                          fontSize: SizeConfig.heightMultiplier! < 6
-                              ? 4.0.rw
-                              : 5.0.rw,
-                          fontWeight: FontWeight.bold,
-                          color: DingColors.dark()),
-                    ),
-                    Text(
-                      'توسعه ارتباطات دینگ',
-                      style: TextStyle(
-                          fontSize: SizeConfig.heightMultiplier! < 6
-                              ? 3.5.rw
-                              : 4.5.rw,
-                          fontWeight: FontWeight.w300,
-                          color: DingColors.dark()),
-                    ),
-                    Text(
-                      'ادمین',
-                      style: TextStyle(
-                          fontSize: 5.0.rw - 5,
-                          fontWeight: FontWeight.w200,
-                          color: DingColors.dark()),
-                    ),
-                  ],
-                );
-      }
+        bloc: _othersBloc,
+        buildWhen: (o, n) => n is ProfileLoaded,
+        builder: (_, state) {
+          if (state is ProfileLoaded) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  _getProfileName(state),
+                  style: TextStyle(
+                      fontSize:
+                          SizeConfig.heightMultiplier! < 6 ? 4.0.rw : 5.0.rw,
+                      fontWeight: FontWeight.bold,
+                      color: DingColors.dark()),
+                ),
+                Text(
+                  'توسعه ارتباطات دینگ',
+                  style: TextStyle(
+                      fontSize:
+                          SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.5.rw,
+                      fontWeight: FontWeight.w300,
+                      color: DingColors.dark()),
+                ),
+                Text(
+                  'ادمین',
+                  style: TextStyle(
+                      fontSize: 5.0.rw - 5,
+                      fontWeight: FontWeight.w200,
+                      color: DingColors.dark()),
+                ),
+              ],
+            );
+          }
 
-      return SizedBox();
-    },
-  );
+          return SizedBox();
+        },
+      );
 
-  String _getProfileName(ProfileLoaded state) => state.profileName.length > 0 ? state.profileName : "--";
+  String _getProfileName(ProfileLoaded state) =>
+      state.profileName.length > 0 ? state.profileName : "--";
 
   Widget _profileContainer() => Expanded(
       flex: 3,

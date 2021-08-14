@@ -10,6 +10,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ding/src/utils/extensions.dart';
+
 class SituationScreen extends StatelessWidget {
   const SituationScreen({Key? key}) : super(key: key);
 
@@ -92,7 +93,10 @@ class _SituationContainerState extends State<SituationContainer> {
                           Text(
                             'سایر کارمندان',
                             style: TextStyle(
-                                fontSize: SizeConfig.heightMultiplier! <  6 ? 4.5.rw : 5.0.rw, fontWeight: FontWeight.bold),
+                                fontSize: SizeConfig.heightMultiplier! < 6
+                                    ? 4.5.rw
+                                    : 5.0.rw,
+                                fontWeight: FontWeight.bold),
                           ),
                           Divider(),
                           OtherEmployee(

@@ -100,7 +100,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     alignment: Alignment.centerLeft,
                     child: Padding(
                       padding: EdgeInsets.only(left: 4.8.rw),
-                      child: SvgPicture.asset('assets/images/Shape.svg',width: 4.5.rw,),
+                      child: SvgPicture.asset(
+                        'assets/images/Shape.svg',
+                        width: 4.5.rw,
+                      ),
                     ))),
           ],
         ),

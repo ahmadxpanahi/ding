@@ -32,12 +32,11 @@ class DoDepartureError extends DeparturesState {
   List<Object?> get props => [message];
 }
 
-class GetEnterOrLeaveTimeSuccessful extends DeparturesState{
+class GetEnterOrLeaveTimeSuccessful extends DeparturesState {
   final GetUserClockInOutForViewDto? userClock;
 
   GetEnterOrLeaveTimeSuccessful(this.userClock);
 
   @override
   List<Object?> get props => [userClock];
-
 }

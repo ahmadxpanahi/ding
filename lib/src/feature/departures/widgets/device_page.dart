@@ -68,7 +68,7 @@ class _DevicePageState extends State<DevicePage> {
   @override
   void initState() {
     super.initState();
-    
+
     _bloc = BlocProvider.of<DeparturesBloc>(context);
     _bloc.add(GetEnterOrLeaveTime());
   }
@@ -108,10 +108,9 @@ class _DevicePageState extends State<DevicePage> {
               );
             } else {
               return Text(
-                    'ورود و خروجی برای شما ثبت نشده است',
-                    style: TextStyle(
-                        fontSize: 3.4.rw, fontWeight: FontWeight.w400),
-                  );
+                'ورود و خروجی برای شما ثبت نشده است',
+                style: TextStyle(fontSize: 3.4.rw, fontWeight: FontWeight.w400),
+              );
             }
           } else
             return SizedBox();

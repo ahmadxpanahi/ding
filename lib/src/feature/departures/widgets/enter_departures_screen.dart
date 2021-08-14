@@ -30,8 +30,8 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
   }
 
   Widget _buildBody() => Container(
-    color: Colors.white,
-    child: Column(
+        color: Colors.white,
+        child: Column(
           children: [
             SizedBox(
               height: SizeConfig.heightMultiplier! * 4,
@@ -55,11 +55,11 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
                       horizontal: SizeConfig.widthMultiplier! * 5),
                   child: widget.progress == 0
                       ? Transform.scale(
-                        scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
-                        child: CircularProgressIndicator(
+                          scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
+                          child: CircularProgressIndicator(
                             color: DingColors.primary(),
                           ),
-                      )
+                        )
                       : Icon(
                           Icons.check,
                           color: DingColors.primary(),
@@ -83,11 +83,11 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
                       horizontal: SizeConfig.widthMultiplier! * 5),
                   child: widget.progress == 1
                       ? Transform.scale(
-                    scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
-                    child: CircularProgressIndicator(
-                      color: DingColors.primary(),
-                    ),
-                  )
+                          scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
+                          child: CircularProgressIndicator(
+                            color: DingColors.primary(),
+                          ),
+                        )
                       : Icon(
                           Icons.check,
                           color: DingColors.primary(),
@@ -111,11 +111,11 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
                       horizontal: SizeConfig.widthMultiplier! * 5),
                   child: widget.progress == 2
                       ? Transform.scale(
-                    scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
-                    child: CircularProgressIndicator(
-                      color: DingColors.primary(),
-                    ),
-                  )
+                          scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
+                          child: CircularProgressIndicator(
+                            color: DingColors.primary(),
+                          ),
+                        )
                       : Icon(
                           Icons.check,
                           color: DingColors.primary(),
@@ -126,7 +126,7 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
             ),
           ],
         ),
-  );
+      );
 
   @override
   Widget build(BuildContext context) =>
@@ -169,7 +169,7 @@ class _EnterDeparturesScreenState extends State<EnterDeparturesScreen> {
                       buttonText: 'متوجه شدم',
                       onClick: () {
                         Navigator.pop(context);
-          
+
                         _bloc.add(BackToInitial());
                         _bloc.add(GetEnterOrLeaveTime());
                       },

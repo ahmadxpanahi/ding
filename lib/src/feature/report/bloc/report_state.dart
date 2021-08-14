@@ -3,15 +3,14 @@ import 'dart:typed_data';
 import 'package:equatable/equatable.dart';
 import 'package:swagger/api.dart';
 
-abstract class ReportState extends Equatable{}
+abstract class ReportState extends Equatable {}
 
-class ReportInitialState extends ReportState{
+class ReportInitialState extends ReportState {
   @override
   List<Object?> get props => [];
-
 }
 
-class ReportProfileLoaded extends ReportState{
+class ReportProfileLoaded extends ReportState {
   Uint8List? imageBinary;
   String userProfileName;
 
@@ -21,7 +20,7 @@ class ReportProfileLoaded extends ReportState{
   List<Object?> get props => [imageBinary, userProfileName];
 }
 
-class DetailedReportsFetched extends ReportState{
+class DetailedReportsFetched extends ReportState {
   List<GetDetailedEmployeeReportForViewDto> items;
 
   DetailedReportsFetched(this.items);
@@ -30,26 +29,23 @@ class DetailedReportsFetched extends ReportState{
   List<Object?> get props => [items];
 }
 
-class SummaryReportsFetched extends ReportState{
+class SummaryReportsFetched extends ReportState {
   List<GetSummaryEmployeeReportForViewDto> items;
   SummaryReportsFetched(this.items);
   @override
   List<Object?> get props => [items];
-
 }
 
-class ReportLoadingState extends ReportState{
+class ReportLoadingState extends ReportState {
   @override
   List<Object?> get props => [];
-
 }
 
-class ReportErrorState extends ReportState{
+class ReportErrorState extends ReportState {
   final String message;
 
   ReportErrorState(this.message);
 
   @override
   List<Object?> get props => [message];
-
 }

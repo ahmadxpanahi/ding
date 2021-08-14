@@ -10,14 +10,14 @@ class RequestsInitialState extends RequestsState {
   List<Object?> get props => [];
 }
 
-class GetRequestsDataSuccess extends RequestsState{
+class GetRequestsDataSuccess extends RequestsState {
   bool? cartable;
   List<GetRequestForViewDto> requestItems;
   List<GetEnterLeaveForViewDto> enterLeaveItems;
-  GetRequestsDataSuccess(this.requestItems, this.enterLeaveItems,this.cartable);
+  GetRequestsDataSuccess(
+      this.requestItems, this.enterLeaveItems, this.cartable);
   @override
-  List<Object?> get props =>[requestItems, enterLeaveItems,cartable];
-
+  List<Object?> get props => [requestItems, enterLeaveItems, cartable];
 }
 
 class RequestsLoadingState extends RequestsState {
@@ -34,38 +34,37 @@ class RequestsErrorState extends RequestsState {
   List<Object?> get props => [this.message];
 }
 
-class RequestAccepted extends RequestsState{
+class RequestAccepted extends RequestsState {
   int id;
   bool enterLeave;
-  RequestAccepted(this.id,this.enterLeave);
+  RequestAccepted(this.id, this.enterLeave);
   @override
-  List<Object?> get props => [id,enterLeave];
+  List<Object?> get props => [id, enterLeave];
 }
 
-class RequestRejected extends RequestsState{
+class RequestRejected extends RequestsState {
   bool enterLeave;
   int id;
-  RequestRejected(this.id,this.enterLeave);
+  RequestRejected(this.id, this.enterLeave);
   @override
-  List<Object?> get props => [id,enterLeave];
+  List<Object?> get props => [id, enterLeave];
 }
 
-class ActionButtonLoadingState extends RequestsState{
+class ActionButtonLoadingState extends RequestsState {
   int id;
   ActionButtonLoadingState(this.id);
   @override
   List<Object?> get props => [id];
-
 }
 
-class ActionButtonErrorState extends RequestsState{
+class ActionButtonErrorState extends RequestsState {
   String message;
   ActionButtonErrorState(this.message);
   @override
   List<Object?> get props => [message];
 }
 
-class ImageLoaded extends RequestsState{
+class ImageLoaded extends RequestsState {
   int id;
   Uint8List imageBytes;
 
@@ -73,5 +72,4 @@ class ImageLoaded extends RequestsState{
 
   @override
   List<Object?> get props => [id, imageBytes];
-
 }

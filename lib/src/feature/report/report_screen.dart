@@ -129,8 +129,8 @@ class _ReportContainerState extends State<ReportContainer> {
                   MaterialPageRoute(
                       builder: (context) => SummaryReportScreen(
                           state.items.first.summaryEmployeeReport!)));
-          } else if (state is ReportErrorState){
-            Future.delayed(Duration.zero,()async{
+          } else if (state is ReportErrorState) {
+            Future.delayed(Duration.zero, () async {
               await Flushbar(
                 backgroundColor: DingColors.warning(),
                 duration: Duration(seconds: 1),

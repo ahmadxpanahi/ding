@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-abstract class CreateRequestEvent extends Equatable{}
+abstract class CreateRequestEvent extends Equatable {}
 
 class CreateRequest extends CreateRequestEvent {
   final int? type;
@@ -12,25 +12,32 @@ class CreateRequest extends CreateRequestEvent {
   final String? date;
   final String? time;
   CreateRequest(
-      {
-        this.type,
-        this.date,
-        this.time,
-        this.requestStatus,
-        this.beginDate,
-        this.endDate,
-        this.requestType,
-        this.comment = ''});
+      {this.type,
+      this.date,
+      this.time,
+      this.requestStatus,
+      this.beginDate,
+      this.endDate,
+      this.requestType,
+      this.comment = ''});
   @override
-  List<Object?> get props => [requestType, requestStatus, beginDate, endDate, type,comment,date,time];
+  List<Object?> get props => [
+        requestType,
+        requestStatus,
+        beginDate,
+        endDate,
+        type,
+        comment,
+        date,
+        time
+      ];
 }
 
-class UpdateRequestType extends CreateRequestEvent{
+class UpdateRequestType extends CreateRequestEvent {
   final int type;
   UpdateRequestType({this.type = 1});
   @override
   List<Object?> get props => [type];
-
 }
 
 class ShowCrRequestsLoading extends CreateRequestEvent {

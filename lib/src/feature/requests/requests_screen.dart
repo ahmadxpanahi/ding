@@ -38,11 +38,7 @@ class _RequestsContainerState extends State<RequestsContainer> {
 
   late RequestsBloc _requestsBloc;
 
-  var _tabs = [
-    MyRequestsPage(),
-    CartablePage()
-  ];
-
+  var _tabs = [MyRequestsPage(), CartablePage()];
 
   @override
   void initState() {
@@ -53,7 +49,6 @@ class _RequestsContainerState extends State<RequestsContainer> {
 
   @override
   Widget build(BuildContext context) {
-
     return Column(
       children: [
         Row(

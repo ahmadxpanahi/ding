@@ -59,7 +59,7 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
     } on SocketException catch (e) {
       Log.e(e);
       yield RequestsErrorState('اتصال اینترنت خود را بررسی کنید.');
-    }on Exception catch (e) {
+    } on Exception catch (e) {
       Log.e(e);
       yield RequestsErrorState(e.toString());
     }
@@ -97,7 +97,7 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
     } on SocketException catch (e) {
       Log.e(e);
       yield RequestsErrorState('اتصال اینترنت خود را بررسی کنید.');
-    }on Exception catch (e) {
+    } on Exception catch (e) {
       Log.e(e);
       yield RequestsErrorState(e.toString());
     }
@@ -131,12 +131,12 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
           }
         ]);
       }
-      
-      yield RequestRejected(event.id,event.enterLeave);
+
+      yield RequestRejected(event.id, event.enterLeave);
     } on SocketException catch (e) {
       Log.e(e);
       yield RequestsErrorState('اتصال اینترنت خود را بررسی کنید.');
-    }on Exception catch (e) {
+    } on Exception catch (e) {
       Log.e(e);
       yield RequestsErrorState(e.toString());
     }

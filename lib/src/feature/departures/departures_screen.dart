@@ -64,7 +64,6 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
         );
       });
     });
-
   }
 
   Widget _buildTabs() => Column(
@@ -173,7 +172,8 @@ class _DeparturesContainerState extends State<DeparturesContainer> {
       );
 
   @override
-  Widget build(BuildContext context) => BlocListener<DeparturesBloc, DeparturesState>(
+  Widget build(BuildContext context) =>
+      BlocListener<DeparturesBloc, DeparturesState>(
         child: _buildBody(),
         bloc: _departuresBloc,
         listener: (_, state) {

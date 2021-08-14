@@ -31,8 +31,8 @@ class _ExitDeparturesScreenState extends State<ExitDeparturesScreen> {
   }
 
   Widget _buildBody() => Container(
-    color: Colors.white,
-    child: Column(
+        color: Colors.white,
+        child: Column(
           children: [
             SizedBox(
               height: SizeConfig.heightMultiplier! * 4,
@@ -56,11 +56,11 @@ class _ExitDeparturesScreenState extends State<ExitDeparturesScreen> {
                       horizontal: SizeConfig.widthMultiplier! * 5),
                   child: widget.progress == 0
                       ? Transform.scale(
-                    scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
-                    child: CircularProgressIndicator(
-                      color: DingColors.primary(),
-                    ),
-                  )
+                          scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
+                          child: CircularProgressIndicator(
+                            color: DingColors.primary(),
+                          ),
+                        )
                       : Icon(
                           Icons.check,
                           color: DingColors.primary(),
@@ -84,11 +84,11 @@ class _ExitDeparturesScreenState extends State<ExitDeparturesScreen> {
                       horizontal: SizeConfig.widthMultiplier! * 5),
                   child: widget.progress == 1
                       ? Transform.scale(
-                    scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
-                    child: CircularProgressIndicator(
-                      color: DingColors.primary(),
-                    ),
-                  )
+                          scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
+                          child: CircularProgressIndicator(
+                            color: DingColors.primary(),
+                          ),
+                        )
                       : Icon(
                           Icons.check,
                           color: DingColors.primary(),
@@ -112,11 +112,11 @@ class _ExitDeparturesScreenState extends State<ExitDeparturesScreen> {
                       horizontal: SizeConfig.widthMultiplier! * 5),
                   child: widget.progress == 2
                       ? Transform.scale(
-                    scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
-                    child: CircularProgressIndicator(
-                      color: DingColors.primary(),
-                    ),
-                  )
+                          scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
+                          child: CircularProgressIndicator(
+                            color: DingColors.primary(),
+                          ),
+                        )
                       : Icon(
                           Icons.check,
                           color: DingColors.primary(),
@@ -127,7 +127,7 @@ class _ExitDeparturesScreenState extends State<ExitDeparturesScreen> {
             ),
           ],
         ),
-  );
+      );
 
   @override
   Widget build(BuildContext context) =>
@@ -145,7 +145,7 @@ class _ExitDeparturesScreenState extends State<ExitDeparturesScreen> {
                           buttonText: 'متوجه شدم',
                           onClick: () {
                             Navigator.pop(context);
-                            
+
                             _bloc.add(BackToInitial());
                             _bloc.add(GetEnterOrLeaveTime());
                           },
@@ -167,15 +167,15 @@ class _ExitDeparturesScreenState extends State<ExitDeparturesScreen> {
             showDialog(
                 context: context,
                 builder: (_) => DingDialog(
-                  title: state.message.dingError,
-                  buttonText: 'متوجه شدم',
-                  onClick: () {
-                    Navigator.pop(context);
+                      title: state.message.dingError,
+                      buttonText: 'متوجه شدم',
+                      onClick: () {
+                        Navigator.pop(context);
 
-                    _bloc.add(BackToInitial());
-                    _bloc.add(GetEnterOrLeaveTime());
-                  },
-                ));
+                        _bloc.add(BackToInitial());
+                        _bloc.add(GetEnterOrLeaveTime());
+                      },
+                    ));
           }
         },
       );

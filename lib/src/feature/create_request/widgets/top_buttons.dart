@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CreateRequestTopBar extends StatefulWidget {
-
   CreateRequestTopBar({Key? key}) : super(key: key);
   @override
   _CreateRequestTopBarState createState() => _CreateRequestTopBarState();
@@ -36,15 +35,12 @@ class _CreateRequestTopBarState extends State<CreateRequestTopBar> {
               child: Container(
                 alignment: Alignment.center,
                 height: 8.2.rh,
-                color:
-                    type == 1 ? DingColors.dark() : DingColors.light(),
+                color: type == 1 ? DingColors.dark() : DingColors.light(),
                 child: Text(
                   'مرخصی',
                   style: TextStyle(
                       fontSize: 2.73.rt,
-                      color: type == 1
-                          ? DingColors.primary()
-                          : Colors.grey),
+                      color: type == 1 ? DingColors.primary() : Colors.grey),
                 ),
               ),
             ),
@@ -57,15 +53,12 @@ class _CreateRequestTopBarState extends State<CreateRequestTopBar> {
               child: Container(
                 alignment: Alignment.center,
                 height: 8.2.rh,
-                color:
-                    type == 2 ? DingColors.dark() : DingColors.light(),
+                color: type == 2 ? DingColors.dark() : DingColors.light(),
                 child: Text(
                   'ورود و خروج',
                   style: TextStyle(
                       fontSize: 2.73.rt,
-                      color: type == 2
-                          ? DingColors.primary()
-                          : Colors.grey),
+                      color: type == 2 ? DingColors.primary() : Colors.grey),
                 ),
               ),
             ),
@@ -78,15 +71,12 @@ class _CreateRequestTopBarState extends State<CreateRequestTopBar> {
               child: Container(
                 alignment: Alignment.center,
                 height: 8.2.rh,
-                color:
-                    type == 3 ? DingColors.dark() : DingColors.light(),
+                color: type == 3 ? DingColors.dark() : DingColors.light(),
                 child: Text(
                   'ماموریت',
                   style: TextStyle(
                       fontSize: 2.73.rt,
-                      color: type == 3
-                          ? DingColors.primary()
-                          : Colors.grey),
+                      color: type == 3 ? DingColors.primary() : Colors.grey),
                 ),
               ),
             ),

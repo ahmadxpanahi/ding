@@ -2,14 +2,14 @@ import 'dart:typed_data';
 
 import 'package:equatable/equatable.dart';
 
-abstract class OthersState extends Equatable{}
+abstract class OthersState extends Equatable {}
 
-class OthersInitialState extends OthersState{
+class OthersInitialState extends OthersState {
   @override
   List<Object?> get props => [];
 }
 
-class ProfileLoaded extends OthersState{
+class ProfileLoaded extends OthersState {
   Uint8List? imageBinary;
   String profileName;
 

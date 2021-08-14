@@ -9,48 +9,52 @@ import 'package:flutter/material.dart';
 import 'package:ding/src/utils/extensions.dart';
 
 class ThirdIntro extends StatelessWidget {
-  ThirdIntro({ Key? key}) : super(key: key);
+  ThirdIntro({Key? key}) : super(key: key);
 
-  Widget _changePageContainer(Color color,String txt,context,nextPage,type) => GestureDetector(
-    onTap: (){
-      TokenManager? tokenManager = TokenManager(inject());
-      if(type == 'enter'){
-        Future.delayed(Duration.zero,()async{
-          await tokenManager.setFirstLunch(false);
-        });
-      }
-      Navigator.push(context, MaterialPageRoute(builder: (context) => nextPage));
-      },
-    child: Container(
-    width: 15.0.rw,
-    height: 15.0.rw,
-    decoration: BoxDecoration(
-      shape: BoxShape.circle,
-      color: color
-    ),
-    child: Center(
-      child: Text(txt,style: TextStyle(color: Colors.white,fontSize: 4.5.rw),),
-    ),
-  ),
-  );
-  
+  Widget _changePageContainer(
+          Color color, String txt, context, nextPage, type) =>
+      GestureDetector(
+        onTap: () {
+          TokenManager? tokenManager = TokenManager(inject());
+          if (type == 'enter') {
+            Future.delayed(Duration.zero, () async {
+              await tokenManager.setFirstLunch(false);
+            });
+          }
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => nextPage));
+        },
+        child: Container(
+          width: 15.0.rw,
+          height: 15.0.rw,
+          decoration: BoxDecoration(shape: BoxShape.circle, color: color),
+          child: Center(
+            child: Text(
+              txt,
+              style: TextStyle(color: Colors.white, fontSize: 4.5.rw),
+            ),
+          ),
+        ),
+      );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Image.asset('assets/images/third_page.png'),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _changePageContainer(DingColors.primary(),'ورود',context,EmailLoginScreen(),'enter'),
-              _changePageContainer(DingColors.secondary(),'قبلی',context,SecondIntro(),''),
-            ],
-          )
-        ],
-      )
-    );
+        backgroundColor: Colors.white,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Image.asset('assets/images/third_page.png'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _changePageContainer(DingColors.primary(), 'ورود', context,
+                    EmailLoginScreen(), 'enter'),
+                _changePageContainer(
+                    DingColors.secondary(), 'قبلی', context, SecondIntro(), ''),
+              ],
+            )
+          ],
+        ));
   }
 }

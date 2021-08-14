@@ -44,13 +44,12 @@ class OtherEmployee extends StatelessWidget {
                           Text(
                             name ?? '',
                             style: TextStyle(
-                                fontSize: 3.5.rw,
-                                color: Colors.black),
+                                fontSize: 3.5.rw, color: Colors.black),
                           ),
                           Text(
                             unit ?? '',
-                            style: TextStyle(
-                                fontSize: 3.5.rw, color: Colors.grey),
+                            style:
+                                TextStyle(fontSize: 3.5.rw, color: Colors.grey),
                           ),
                         ],
                       )

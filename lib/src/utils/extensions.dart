@@ -25,6 +25,7 @@ extension IntExt on int {
     }
   }
 }
+
 extension StringExt on String {
   String get dingError {
     try {

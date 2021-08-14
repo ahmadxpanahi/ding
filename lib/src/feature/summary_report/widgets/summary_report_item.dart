@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ding/src/utils/extensions.dart';
 
 class SummaryReportItem extends StatelessWidget {
-  SummaryReportItem(this.time,this.title,{Key? key}) : super(key: key);
+  SummaryReportItem(this.time, this.title, {Key? key}) : super(key: key);
   String title;
   String time;
   @override

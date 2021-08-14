@@ -29,51 +29,50 @@ class _CustomReportPageState extends State<CustomReportPage> {
   @override
   void initState() {
     super.initState();
-    
+
     _reportBloc = BlocProvider.of<ReportBloc>(context);
   }
 
   _buildAvatar() => BlocBuilder<ReportBloc, ReportState>(
-    bloc: _reportBloc,
-    buildWhen: (o, n) => n is ReportProfileLoaded,
-    builder: (_, state) {
-      if (state is ReportProfileLoaded && state.imageBinary != null) {
-        return Container(
-          width: 8.0.rh,
-          height: 8.0.rh,
-          decoration: BoxDecoration(
-            color: DingColors.light(),
-            shape: BoxShape.circle,
-            image: DecorationImage(
-                image: MemoryImage(state.imageBinary!), fit: BoxFit.fill),
-          ),
-        );
-      }
+        bloc: _reportBloc,
+        buildWhen: (o, n) => n is ReportProfileLoaded,
+        builder: (_, state) {
+          if (state is ReportProfileLoaded && state.imageBinary != null) {
+            return Container(
+              width: 8.0.rh,
+              height: 8.0.rh,
+              decoration: BoxDecoration(
+                color: DingColors.light(),
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                    image: MemoryImage(state.imageBinary!), fit: BoxFit.fill),
+              ),
+            );
+          }
 
-      return Container(
-        width: 8.0.rh,
-        height: 8.0.rh,
-        decoration: BoxDecoration(
-          color: DingColors.light(),
-          shape: BoxShape.circle,
-        ),
+          return Container(
+            width: 8.0.rh,
+            height: 8.0.rh,
+            decoration: BoxDecoration(
+              color: DingColors.light(),
+              shape: BoxShape.circle,
+            ),
+          );
+        },
       );
-    },
-  );
 
   get _profileRowWidget => BlocBuilder<ReportBloc, ReportState>(
-    bloc: _reportBloc,
-    buildWhen: (o, n) => n is ReportProfileLoaded,
-    builder: (_, state) {
-      if (state is ReportProfileLoaded) {
-        return Column(
+        bloc: _reportBloc,
+        buildWhen: (o, n) => n is ReportProfileLoaded,
+        builder: (_, state) {
+          if (state is ReportProfileLoaded) {
+            return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   _getProfileName(state),
-                  style:
-                  TextStyle(fontSize: 2 * SizeConfig.textMultiplier!),
+                  style: TextStyle(fontSize: 2 * SizeConfig.textMultiplier!),
                 ),
                 Text(
                   'ادمین',
@@ -83,39 +82,40 @@ class _CustomReportPageState extends State<CustomReportPage> {
                 ),
               ],
             );
-      }
+          }
 
-      return SizedBox();
-    },
-  );
+          return SizedBox();
+        },
+      );
 
-  String _getProfileName(ReportProfileLoaded state) => state.userProfileName.length > 0 ? state.userProfileName : "--";
+  String _getProfileName(ReportProfileLoaded state) =>
+      state.userProfileName.length > 0 ? state.userProfileName : "--";
 
   _infoContainer() => Container(
-    padding:
-    EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier! * 4.5),
-    height: 15.0.rh,
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
+        padding:
+            EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier! * 4.5),
+        height: 15.0.rh,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            _buildAvatar(),
-            SizedBox(
-              width: 10,
+            Row(
+              children: [
+                _buildAvatar(),
+                SizedBox(
+                  width: 10,
+                ),
+                _profileRowWidget
+              ],
             ),
-            _profileRowWidget
+            IconButton(
+                onPressed: () {},
+                icon: SvgPicture.asset(
+                  'assets/images/list.svg',
+                  width: SizeConfig.heightMultiplier! < 6 ? 6.0.rw : 7.0.rw,
+                ))
           ],
         ),
-        IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              'assets/images/list.svg',
-              width: SizeConfig.heightMultiplier! < 6 ? 6.0.rw : 7.0.rw,
-            ))
-      ],
-    ),
-  );
+      );
 
   _datePickers(context) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -124,7 +124,7 @@ class _CustomReportPageState extends State<CustomReportPage> {
             title: 'شروع',
             daily: true,
             type: 'begin',
-            onChangeDate: (dateTime){
+            onChangeDate: (dateTime) {
               begin = dateTime;
             },
           ),
@@ -135,107 +135,107 @@ class _CustomReportPageState extends State<CustomReportPage> {
             title: 'پایان',
             daily: true,
             type: 'begin',
-            onChangeDate: (dateTime){
+            onChangeDate: (dateTime) {
               end = dateTime;
             },
           )
         ],
       );
 
-  _bottomButtons() => BlocBuilder<ReportBloc,ReportState>(
-    bloc: _reportBloc,
-    builder: (_, state) {
-      if (state is ReportLoadingState) {
-        return Center(
-          child: Transform.scale(
-              scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
-              child: CircularProgressIndicator(
-                color: DingColors.primary(),
-              )),
-        );
-      } else {
-        return Row(
-          children: [
-            Expanded(
-              child: GestureDetector(
-                onTap: () {
-                  if (begin != null || end != null)
-                    _reportBloc.add(GetDetailedReports(begin!,end!));
-                  else{
-                    Future.delayed(Duration.zero,()async{
-                      await Flushbar(
-                        backgroundColor: DingColors.warning(),
-                        duration: Duration(seconds: 2),
-                        borderRadius: BorderRadius.circular(100),
-                        padding: EdgeInsets.all(15),
-                        message: 'ابتدا فیلد های خواسته شده را تکمیل کنید.',
-                        flushbarPosition: FlushbarPosition.TOP,
-                      ).show(context);
-                    });
-                  }
-                },
-                child: Container(
-                  margin: EdgeInsets.only(
-                      bottom: SizeConfig.heightMultiplier! * 5),
-                  alignment: Alignment.center,
-                  height: 8.8.rh,
-                  decoration: BoxDecoration(
+  _bottomButtons() => BlocBuilder<ReportBloc, ReportState>(
+        bloc: _reportBloc,
+        builder: (_, state) {
+          if (state is ReportLoadingState) {
+            return Center(
+              child: Transform.scale(
+                  scale: SizeConfig.heightMultiplier! < 6 ? 0.6 : 1,
+                  child: CircularProgressIndicator(
                     color: DingColors.primary(),
-                    borderRadius: BorderRadius.circular(100),
-                  ),
-                  child: Text(
-                    'گزارش تفضیلی',
-                    style: TextStyle(
-                        fontSize: SizeConfig.textMultiplier! * 2.5,
-                        color: Colors.white),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              width: SizeConfig.widthMultiplier! * 3,
-            ),
-            Expanded(
-              child: GestureDetector(
-                onTap: () {
-                  if (begin != null || end != null)
-                    _reportBloc.add(GetSummaryReports(begin!,end!));
-                  else{
-                    Future.delayed(Duration.zero,()async{
-                      await Flushbar(
-                        backgroundColor: DingColors.warning(),
-                        duration: Duration(seconds: 2),
+                  )),
+            );
+          } else {
+            return Row(
+              children: [
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      if (begin != null || end != null)
+                        _reportBloc.add(GetDetailedReports(begin!, end!));
+                      else {
+                        Future.delayed(Duration.zero, () async {
+                          await Flushbar(
+                            backgroundColor: DingColors.warning(),
+                            duration: Duration(seconds: 2),
+                            borderRadius: BorderRadius.circular(100),
+                            padding: EdgeInsets.all(15),
+                            message: 'ابتدا فیلد های خواسته شده را تکمیل کنید.',
+                            flushbarPosition: FlushbarPosition.TOP,
+                          ).show(context);
+                        });
+                      }
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(
+                          bottom: SizeConfig.heightMultiplier! * 5),
+                      alignment: Alignment.center,
+                      height: 8.8.rh,
+                      decoration: BoxDecoration(
+                        color: DingColors.primary(),
                         borderRadius: BorderRadius.circular(100),
-                        padding: EdgeInsets.all(15),
-                        message: 'ابتدا فیلد های خواسته شده را تکمیل کنید.',
-                        flushbarPosition: FlushbarPosition.TOP,
-                      ).show(context);
-                    });
-                  }
-                },
-                child: Container(
-                  margin: EdgeInsets.only(
-                      bottom: SizeConfig.heightMultiplier! * 5),
-                  alignment: Alignment.center,
-                  height: 8.8.rh,
-                  decoration: BoxDecoration(
-                    color: DingColors.secondary(),
-                    borderRadius: BorderRadius.circular(100),
-                  ),
-                  child: Text(
-                    'گزارش خلاصه',
-                    style: TextStyle(
-                        fontSize: SizeConfig.textMultiplier! * 2.5,
-                        color: DingColors.dark()),
+                      ),
+                      child: Text(
+                        'گزارش تفضیلی',
+                        style: TextStyle(
+                            fontSize: SizeConfig.textMultiplier! * 2.5,
+                            color: Colors.white),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
-          ],
-        );
-      }
-    },
-  );
+                SizedBox(
+                  width: SizeConfig.widthMultiplier! * 3,
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      if (begin != null || end != null)
+                        _reportBloc.add(GetSummaryReports(begin!, end!));
+                      else {
+                        Future.delayed(Duration.zero, () async {
+                          await Flushbar(
+                            backgroundColor: DingColors.warning(),
+                            duration: Duration(seconds: 2),
+                            borderRadius: BorderRadius.circular(100),
+                            padding: EdgeInsets.all(15),
+                            message: 'ابتدا فیلد های خواسته شده را تکمیل کنید.',
+                            flushbarPosition: FlushbarPosition.TOP,
+                          ).show(context);
+                        });
+                      }
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(
+                          bottom: SizeConfig.heightMultiplier! * 5),
+                      alignment: Alignment.center,
+                      height: 8.8.rh,
+                      decoration: BoxDecoration(
+                        color: DingColors.secondary(),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: Text(
+                        'گزارش خلاصه',
+                        style: TextStyle(
+                            fontSize: SizeConfig.textMultiplier! * 2.5,
+                            color: DingColors.dark()),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            );
+          }
+        },
+      );
 
   Widget _buildBody() => Container(
       color: Colors.white,

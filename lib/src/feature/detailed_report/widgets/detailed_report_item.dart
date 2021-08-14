@@ -18,12 +18,16 @@ class DetailedReportItem extends StatelessWidget {
   Widget build(BuildContext context) {
     late ReportBloc _reportBloc = BlocProvider.of<ReportBloc>(context);
     return GestureDetector(
-      onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>SummaryReportScreen(report.employeeReport!)));
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    SummaryReportScreen(report.employeeReport!)));
       },
       child: Container(
-          padding:
-              EdgeInsets.symmetric(horizontal: SizeConfig.widthMultiplier! * 4.5),
+          padding: EdgeInsets.symmetric(
+              horizontal: SizeConfig.widthMultiplier! * 4.5),
           margin: EdgeInsets.only(top: SizeConfig.heightMultiplier!),
           height: 14.7.rh,
           color: Colors.white,
@@ -41,7 +45,8 @@ class DetailedReportItem extends StatelessWidget {
                     ),
                     Text(
                       '${DDateUtils.persianDateFromSlashString(report.reportDate ?? "0000/00/00").monthname} ${DDateUtils.persianDateFromSlashString(report.reportDate ?? "0000/00/00").year.toString().toPersianDigit()}',
-                      style: TextStyle(fontSize: 2.3.rt + 1, color: Colors.grey),
+                      style:
+                          TextStyle(fontSize: 2.3.rt + 1, color: Colors.grey),
                     ),
                   ],
                 ),

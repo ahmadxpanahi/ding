@@ -11,14 +11,14 @@ class TypePicker extends StatefulWidget {
   List<String> vacationOptions;
   List<String> enterLeaveOptions;
   Function(int)? getRequestType;
-  TypePicker({
-    Key? key,
-    this.type = 1,
-    this.labelPadding = EdgeInsets.zero,
-    this.vacationOptions = const [],
-    this.enterLeaveOptions = const [],
-    this.getRequestType
-  }) : super(key: key);
+  TypePicker(
+      {Key? key,
+      this.type = 1,
+      this.labelPadding = EdgeInsets.zero,
+      this.vacationOptions = const [],
+      this.enterLeaveOptions = const [],
+      this.getRequestType})
+      : super(key: key);
 
   @override
   _TypePickerState createState() => _TypePickerState();
@@ -65,8 +65,8 @@ class _TypePickerState extends State<TypePicker> {
                       textAlign: TextAlign.center,
                       confirmText: 'تایید',
                       onConfirm: (Picker picker, List value) {
-                        if(widget.getRequestType != null){
-                          widget.getRequestType!(value.first+1);
+                        if (widget.getRequestType != null) {
+                          widget.getRequestType!(value.first + 1);
                         }
                         setState(() {
                           switch (value.first) {

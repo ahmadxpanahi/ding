@@ -18,9 +18,9 @@ class AccessTokenInterceptor {
     if (url.contains('/api/TokenAuth/SetOTPOnUser') ||
         url.contains('/api/TokenAuth/SendOTP') ||
         url.contains('/api/TokenAuth/AuthenticateByOTP') ||
-        url.endsWith('/api/v1/reset-account')) {      
+        url.endsWith('/api/v1/reset-account')) {
       //no need for token
-    } else if (_needAccessToken(url)) {      
+    } else if (_needAccessToken(url)) {
       token = _tokenManager.getAccessToken();
     }
 

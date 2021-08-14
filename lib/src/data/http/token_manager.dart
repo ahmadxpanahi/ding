@@ -10,10 +10,10 @@ class TokenManager {
   static const _usernameKey = 'profile.username';
   static const _lunchKey = 'auth.firstLunch';
 
-
   final SharedPreferences _sharedPreferences;
 
-  Future<void> setFirstLunch(bool isFirstLunch) => _putBool(_lunchKey, isFirstLunch);
+  Future<void> setFirstLunch(bool isFirstLunch) =>
+      _putBool(_lunchKey, isFirstLunch);
 
   bool? getFirstLunch() => _getBool(_lunchKey);
 
@@ -29,7 +29,8 @@ class TokenManager {
 
   String? getUsername() => _get(_usernameKey);
 
-  Future<void> setUserFirstLastName(String userFirstLastName) => _put(_userFirstLastNameKey, userFirstLastName);
+  Future<void> setUserFirstLastName(String userFirstLastName) =>
+      _put(_userFirstLastNameKey, userFirstLastName);
 
   String? getUserFirstLastName() => _get(_userFirstLastNameKey);
 

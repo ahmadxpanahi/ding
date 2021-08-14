@@ -5,6 +5,6 @@ import 'package:get_it/get_it.dart';
 GetIt getIt = GetIt.instance;
 
 Future<void> registerInjection() async {
- await registerPersistence(getIt);
- await registerApis(getIt);
+  await registerPersistence(getIt);
+  await registerApis(getIt);
 }

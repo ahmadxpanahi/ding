@@ -58,8 +58,8 @@ class DeparturesBloc extends Bloc<DeparturesEvent, DeparturesState> {
           ..clockInOutType = event.isEnter
               ? UserClockInOutType.number1_
               : UserClockInOutType.number2_
-              ..weekNumber=1
-              ..workScheduleId=1
+          ..weekNumber = 1
+          ..workScheduleId = 1
           ..abnormalityType = UserWorkScheduleAbnormalities.number1_;
 
         var response = await _userClockInOutsApi

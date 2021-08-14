@@ -117,8 +117,8 @@ class _MyRequestsPageState extends State<MyRequestsPage> {
                   });
               });
             }
-          }else if(state is RequestsErrorState){
-            Future.delayed(Duration.zero,()async{
+          } else if (state is RequestsErrorState) {
+            Future.delayed(Duration.zero, () async {
               await Flushbar(
                 backgroundColor: DingColors.warning(),
                 duration: Duration(seconds: 2),

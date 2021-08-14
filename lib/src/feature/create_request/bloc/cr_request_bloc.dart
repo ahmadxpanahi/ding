@@ -10,21 +10,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jalali_calendar/jalali_calendar.dart';
 import 'package:swagger/api.dart';
 
-class CreateRequestsBloc extends Bloc<CreateRequestEvent,CreateRequestState>{
+class CreateRequestsBloc extends Bloc<CreateRequestEvent, CreateRequestState> {
   RequestsApi? _requestsApi;
   EnterLeavesApi? _enterLeavesApi;
 
-  CreateRequestsBloc(this._enterLeavesApi,this._requestsApi) : super(CrRequestInitialState());
+  CreateRequestsBloc(this._enterLeavesApi, this._requestsApi)
+      : super(CrRequestInitialState());
 
   @override
   Stream<CreateRequestState> mapEventToState(CreateRequestEvent event) async* {
-    if(event is CreateRequest){
+    if (event is CreateRequest) {
       yield* _createRequest(event);
-    } else if(event is ShowCrRequestsLoading){
+    } else if (event is ShowCrRequestsLoading) {
       yield CrRequestLoadingState();
-    }else if(event is UpdateRequestType){
+    } else if (event is UpdateRequestType) {
       yield UpdateRequestsTypeState(type: event.type);
-    }else if(event is ShowCrRequestsError){
+    } else if (event is ShowCrRequestsError) {
       yield CrRequestErrorState(event.message);
     }
   }
@@ -33,7 +34,7 @@ class CreateRequestsBloc extends Bloc<CreateRequestEvent,CreateRequestState>{
     yield CrRequestLoadingState();
     Log.i(event.type);
     try {
-      if(event.type == 1 || event.type == 3){
+      if (event.type == 1 || event.type == 3) {
         await _requestsApi?.apiServicesAppRequestsCreateoreditPost(
             body: CreateOrEditRequestDto()
               ..comment = event.comment
@@ -41,21 +42,20 @@ class CreateRequestsBloc extends Bloc<CreateRequestEvent,CreateRequestState>{
               ..requestType = event.requestType
               ..from = event.beginDate
               ..to = event.endDate);
-      }else if(event.type == 2){
+      } else if (event.type == 2) {
         await _enterLeavesApi?.apiServicesAppEnterleavesCreateoreditPost(
             body: CreateOrEditEnterLeaveDto()
               ..comment = event.comment
               ..status = event.requestStatus
               ..enterLeaveType = event.requestType
               ..occurDate = event.date.toString()
-              ..occurTime = event.time
-        );
+              ..occurTime = event.time);
       }
       yield CreateRequestSuccess();
     } on SocketException catch (e) {
       Log.e(e);
       yield CrRequestErrorState('اتصال اینترنت خود را بررسی کنید.');
-    }on Exception catch (e) {
+    } on Exception catch (e) {
       Log.e(e);
       yield CrRequestErrorState(e.toString());
     }

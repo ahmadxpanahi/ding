@@ -43,7 +43,10 @@ class EmployeeItem extends StatelessWidget {
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(
-                            width: status == '' ? 0 : SizeConfig.heightMultiplier! / 2, color: _color(status)),
+                            width: status == ''
+                                ? 0
+                                : SizeConfig.heightMultiplier! / 2,
+                            color: _color(status)),
                         image: DecorationImage(
                             image: NetworkImage(
                           imgUrl ?? '',
@@ -59,8 +62,7 @@ class EmployeeItem extends StatelessWidget {
                       ),
                       Text(
                         unit ?? '',
-                        style:
-                            TextStyle(fontSize: 3.5.rw, color: Colors.grey),
+                        style: TextStyle(fontSize: 3.5.rw, color: Colors.grey),
                       ),
                       status == ''
                           ? SizedBox()

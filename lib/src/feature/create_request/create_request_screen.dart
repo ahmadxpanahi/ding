@@ -18,7 +18,7 @@ class CreateRequestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<CreateRequestsBloc>(
-      create: (_) => CreateRequestsBloc(inject(),inject()),
+      create: (_) => CreateRequestsBloc(inject(), inject()),
       child: CreateRequestContainer(),
     );
   }
@@ -157,8 +157,7 @@ class _CreateRequestContainerState extends State<CreateRequestContainer> {
               DailyPage(),
               HourlyPage(),
             ],
-          )
-          )
+          ))
         ],
       ),
     );

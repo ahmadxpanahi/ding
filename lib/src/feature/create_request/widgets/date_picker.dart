@@ -70,7 +70,7 @@ class _DDatePickerState extends State<DDatePicker> {
                                           setState(() {
                                             time = val;
 
-                                            if(widget.onChangeTime != null){
+                                            if (widget.onChangeTime != null) {
                                               widget.onChangeTime!(time!);
                                             }
                                           });
@@ -175,7 +175,8 @@ class _DDatePickerState extends State<DDatePicker> {
                                 ),
                               )
                             : Text(
-                                '${date!.day} ${date!.monthname} ${date!.year}'.toPersianDigit(),
+                                '${date!.day} ${date!.monthname} ${date!.year}'
+                                    .toPersianDigit(),
                                 key: UniqueKey(),
                                 style: TextStyle(fontSize: 2.5.rt),
                                 textAlign: TextAlign.center,

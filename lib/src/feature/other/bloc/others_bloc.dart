@@ -30,7 +30,8 @@ class OthersBloc extends Bloc<OthersEvent, OthersState> {
         .apiServicesAppProfileGetprofilepicturebyuserGet(userId: userId);
 
     if (response != null) {
-      if (response.profilePicture != null && response.profilePicture!.length > 10) {        
+      if (response.profilePicture != null &&
+          response.profilePicture!.length > 10) {
         Uint8List imageData = Base64Decoder().convert(response.profilePicture!);
         yield ProfileLoaded(imageData, userProfileName);
       } else {

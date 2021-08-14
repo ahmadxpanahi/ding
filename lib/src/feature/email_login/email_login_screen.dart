@@ -56,10 +56,9 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
           }
           return GestureDetector(
             onTap: () {
-              if(_validation()){
+              if (_validation()) {
                 _emailBloc.add(
-                  LoginWithEmail(_emailValue, _passValue, _tenancyValue)
-                );
+                    LoginWithEmail(_emailValue, _passValue, _tenancyValue));
               }
             },
             child: Container(
@@ -301,7 +300,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
           Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => HomeScreen()));
         } else if (state is LoginErrorState) {
-          Map errorMap = json.decode(state.message ?? '');          
+          Map errorMap = json.decode(state.message ?? '');
           await Flushbar(
             backgroundColor: DingColors.warning(),
             duration: Duration(seconds: 2),
