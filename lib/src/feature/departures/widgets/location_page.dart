@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:ding/src/core/logger/logger.dart';
 import 'package:ding/src/feature/departures/bloc/departures_bloc.dart';
 import 'package:ding/src/feature/departures/bloc/departures_event.dart';
 import 'package:ding/src/feature/departures/bloc/departures_state.dart';
@@ -23,21 +26,42 @@ class LocationPage extends StatefulWidget {
 
 class _LocationPageState extends State<LocationPage> {
   late DeparturesBloc _bloc;
+
   MapController? _mapController = MapController();
-  var currentLocation = Location().getLocation();
+
   LatLng? _centerLocation;
-  LatLng _myLocation = LatLng(32.852971, 59.242443);
+  LatLng _myLocation = LatLng(35.699730,51.338044);
+  LocationData? currentLocation;
+
   String timeNow =
       '${PersianDate().hour.toString().toPersianDigit()}:${PersianDate().minute.toString().toPersianDigit()}';
-
+  
   @override
   void initState() {
     super.initState();
+    Future.delayed(Duration.zero,()async{
+      currentLocation = await Location().getLocation();
+    });
+
     _bloc = BlocProvider.of<DeparturesBloc>(context);
     _bloc.add(GetEnterOrLeaveTime());
+
     Future.delayed(Duration(milliseconds: 1500), () {
       _centerLocation = _mapController?.center;
     });
+    Log.wtf(currentLocation);
+    Future.delayed(Duration(milliseconds: 4000),(){
+            if(currentLocation != null)
+            _goToMyLocation();
+    });
+  }
+
+  void _goToMyLocation(){
+    setState(() {
+                      if(currentLocation != null)
+                      _myLocation = LatLng(currentLocation!.latitude!,currentLocation!.longitude!);
+                      _mapController?.move(_myLocation,16);
+                    });
   }
 
   Widget _buildStatusText() => BlocBuilder(
@@ -83,6 +107,14 @@ class _LocationPageState extends State<LocationPage> {
             return SizedBox();
         },
       );
+  Widget _myLocationIcon() => GestureDetector(
+                  onTap: () {
+                    _goToMyLocation();
+                  },
+                  child: SvgPicture.asset(
+                    'assets/images/mylocation.svg',
+                    width: 7.5.rw,
+                  ));
 
   Widget _mapContainer() => Container(
         color: DingColors.secondary(),
@@ -93,9 +125,7 @@ class _LocationPageState extends State<LocationPage> {
             Positioned(
               bottom: 10,
               left: 10,
-              child: GestureDetector(
-                onTap: () {},
-                child: Container(
+              child: Container(
                   width: 19.5.rw,
                   height: 16.0.rh,
                   color: Colors.white,
@@ -142,26 +172,11 @@ class _LocationPageState extends State<LocationPage> {
                     ],
                   ),
                 ),
-              ),
             ),
             Positioned(
               bottom: 10,
               right: 15,
-              child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      print(currentLocation);
-                      currentLocation.then((value) {
-                        double? long = value.longitude;
-                        double? lat = value.latitude;
-                        _myLocation = LatLng(lat!, long!);
-                      });
-                    });
-                  },
-                  child: SvgPicture.asset(
-                    'assets/images/mylocation.svg',
-                    width: 7.5.rw,
-                  )),
+              child: _myLocationIcon()
             ),
             Align(
                 alignment: Alignment.center,
