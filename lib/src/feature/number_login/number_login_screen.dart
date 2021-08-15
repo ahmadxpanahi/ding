@@ -57,6 +57,7 @@ class _NumberLoginContainerState extends State<NumberLoginContainer> {
           } else {
             return GestureDetector(
               onTap: () {
+                if(_phoneNumber != "" && !_checkBoxValue)
                 _loginBloc.add(SetOTP(phoneNumber: _phoneNumber));
               },
               child: Container(
@@ -218,6 +219,7 @@ class _NumberLoginContainerState extends State<NumberLoginContainer> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
+                      SizedBox(height: SizeConfig.heightMultiplier! >= 7 ? 2.0.rh : 0,),
                       Text(
                         'شماره موبایل خود را وارد کنید',
                         style: TextStyle(

@@ -107,6 +107,7 @@ class _LocationPageState extends State<LocationPage> {
             return SizedBox();
         },
       );
+ 
   Widget _myLocationIcon() => GestureDetector(
                   onTap: () {
                     _goToMyLocation();

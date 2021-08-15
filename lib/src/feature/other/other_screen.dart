@@ -82,22 +82,21 @@ class _OtherScreenState extends State<_OtherScreenContainer> {
                   _getProfileName(state),
                   style: TextStyle(
                       fontSize:
-                          SizeConfig.heightMultiplier! < 6 ? 4.0.rw : 5.0.rw,
+                          4.0.rw,
                       fontWeight: FontWeight.bold,
                       color: DingColors.dark()),
                 ),
                 Text(
                   'توسعه ارتباطات دینگ',
                   style: TextStyle(
-                      fontSize:
-                          SizeConfig.heightMultiplier! < 6 ? 3.5.rw : 4.5.rw,
+                      fontSize: 3.5.rw,
                       fontWeight: FontWeight.w300,
                       color: DingColors.dark()),
                 ),
                 Text(
                   'ادمین',
                   style: TextStyle(
-                      fontSize: 5.0.rw - 5,
+                      fontSize: 3.5.rw ,
                       fontWeight: FontWeight.w200,
                       color: DingColors.dark()),
                 ),

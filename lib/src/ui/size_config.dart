@@ -29,6 +29,7 @@ class SizeConfig {
       isMobilePortrait = false;
     }
 
+
     _blockWidth = screenWidth! / 100;
     _blockHeight = _screenHeight! / 100;
 
@@ -36,5 +37,8 @@ class SizeConfig {
     imageSizeMultiplier = _blockWidth;
     heightMultiplier = _blockHeight;
     widthMultiplier = _blockWidth;
+
+    print(heightMultiplier);
+    print(widthMultiplier);
   }
 }
