@@ -56,12 +56,9 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
         Log.e('خطا در دریافت اطلاعات');
         yield RequestsErrorState('خطا در دریافت اطلاعات');
       }
-    } on SocketException catch (e) {
+    } on ApiException catch (e) {
       Log.e(e);
-      yield RequestsErrorState('اتصال اینترنت خود را بررسی کنید.');
-    } on Exception catch (e) {
-      Log.e(e);
-      yield RequestsErrorState(e.toString());
+      yield RequestsErrorState(e.message.toString());
     }
   }
 

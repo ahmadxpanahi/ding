@@ -7,6 +7,7 @@ import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/home/home_screen.dart';
 import 'package:ding/src/feature/number_login/number_login_screen.dart';
 import 'package:ding/src/ui/colors.dart';
+import 'package:ding/src/ui/show_flushbar.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
@@ -301,15 +302,7 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
           Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => HomeScreen()));
         } else if (state is LoginErrorState) {
-          Map errorMap = json.decode(state.message ?? '');
-          await Flushbar(
-            backgroundColor: DingColors.warning(),
-            duration: Duration(seconds: 2),
-            borderRadius: BorderRadius.circular(100),
-            padding: EdgeInsets.all(15),
-            message: errorMap['error']['message'],
-            flushbarPosition: FlushbarPosition.TOP,
-          ).show(context);
+          showFlushBar(context, state.message?.dingError);
         }
       });
 }

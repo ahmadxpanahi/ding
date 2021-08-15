@@ -4,6 +4,7 @@ import 'package:ding/src/feature/requests/bloc/requests_bloc.dart';
 import 'package:ding/src/feature/requests/bloc/requests_event.dart';
 import 'package:ding/src/feature/requests/bloc/requests_state.dart';
 import 'package:ding/src/ui/colors.dart';
+import 'package:ding/src/ui/show_flushbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -93,27 +94,9 @@ class _CartablePageState extends State<CartablePage> {
               });
             }
           } else if (state is RequestsErrorState) {
-            Future.delayed(Duration.zero, () async {
-              await Flushbar(
-                backgroundColor: DingColors.warning(),
-                duration: Duration(seconds: 2),
-                borderRadius: BorderRadius.circular(100),
-                padding: EdgeInsets.all(15),
-                message: state.message,
-                flushbarPosition: FlushbarPosition.TOP,
-              ).show(context);
-            });
+            showFlushBar(context, state.message.dingError);
           } else if (state is ActionButtonErrorState) {
-            Future.delayed(Duration.zero, () async {
-              await Flushbar(
-                backgroundColor: DingColors.warning(),
-                duration: Duration(seconds: 2),
-                borderRadius: BorderRadius.circular(100),
-                padding: EdgeInsets.all(15),
-                message: state.message,
-                flushbarPosition: FlushbarPosition.TOP,
-              ).show(context);
-            });
+            showFlushBar(context, state.message.dingError);
           }
         },
       );

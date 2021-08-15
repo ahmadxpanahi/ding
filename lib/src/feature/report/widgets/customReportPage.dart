@@ -4,6 +4,7 @@ import 'package:ding/src/feature/report/bloc/report_bloc.dart';
 import 'package:ding/src/feature/report/bloc/report_event.dart';
 import 'package:ding/src/feature/report/bloc/report_state.dart';
 import 'package:ding/src/ui/colors.dart';
+import 'package:ding/src/ui/show_flushbar.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
@@ -265,5 +266,12 @@ class _CustomReportPageState extends State<CustomReportPage> {
       ));
 
   @override
-  Widget build(BuildContext context) => _buildBody();
+  Widget build(BuildContext context) => BlocListener<ReportBloc,ReportState>(listener: (_,state){
+    if(state is ReportErrorState){
+      showFlushBar(context, state.message.dingError);
+    }
+  },
+  bloc: _reportBloc,
+  child: _buildBody(),
+  );
 }

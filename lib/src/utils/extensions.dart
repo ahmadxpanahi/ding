@@ -33,6 +33,6 @@ extension StringExt on String {
       return errorMap['error']['message'].toString();
     } on Exception catch (_) {}
 
-    return "Unknown!";
+    return this;
   }
 }

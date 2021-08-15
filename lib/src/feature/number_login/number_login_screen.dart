@@ -6,6 +6,7 @@ import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/email_login/email_login_screen.dart';
 import 'package:ding/src/feature/enter_code/enter_code_screen.dart';
 import 'package:ding/src/ui/colors.dart';
+import 'package:ding/src/ui/show_flushbar.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
@@ -57,7 +58,7 @@ class _NumberLoginContainerState extends State<NumberLoginContainer> {
           } else {
             return GestureDetector(
               onTap: () {
-                if(_phoneNumber != "" && !_checkBoxValue)
+                if(_phoneNumber != "" && _checkBoxValue)
                 _loginBloc.add(SetOTP(phoneNumber: _phoneNumber));
               },
               child: Container(
@@ -276,16 +277,7 @@ class _NumberLoginContainerState extends State<NumberLoginContainer> {
               ),
             );
           } else if (state is LoginErrorState) {
-            Future.delayed(Duration.zero, () async {
-              await Flushbar(
-                backgroundColor: DingColors.warning(),
-                duration: Duration(seconds: 1),
-                borderRadius: BorderRadius.circular(100),
-                padding: EdgeInsets.all(15),
-                message: state.message?.dingError,
-                flushbarPosition: FlushbarPosition.TOP,
-              ).show(context);
-            });
+            showFlushBar(context, state.message?.dingError);
           }
         },
       );

@@ -171,7 +171,6 @@ class _ExitDeparturesScreenState extends State<ExitDeparturesScreen> {
                       buttonText: 'متوجه شدم',
                       onClick: () {
                         Navigator.pop(context);
-
                         _bloc.add(BackToInitial());
                         _bloc.add(GetEnterOrLeaveTime());
                       },
