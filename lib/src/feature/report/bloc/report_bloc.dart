@@ -56,7 +56,7 @@ class ReportBloc extends Bloc<ReportEvent, ReportState> {
     } on SocketException catch (e) {
       Log.e(e);
       yield ReportErrorState('اتصال اینترنت خود را بررسی کنید');
-    }on ApiException catch (e) {
+    } on ApiException catch (e) {
       Log.e(e);
       yield ReportErrorState(e.message.toString());
     }
@@ -83,7 +83,7 @@ class ReportBloc extends Bloc<ReportEvent, ReportState> {
     } on SocketException catch (e) {
       Log.e(e);
       yield ReportErrorState('اتصال اینترنت خود را بررسی کنید');
-    }on ApiException catch (e) {
+    } on ApiException catch (e) {
       Log.e(e);
       yield ReportErrorState(e.message.toString());
     }

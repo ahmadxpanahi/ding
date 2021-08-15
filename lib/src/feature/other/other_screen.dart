@@ -81,8 +81,7 @@ class _OtherScreenState extends State<_OtherScreenContainer> {
                 Text(
                   _getProfileName(state),
                   style: TextStyle(
-                      fontSize:
-                          4.0.rw,
+                      fontSize: 4.0.rw,
                       fontWeight: FontWeight.bold,
                       color: DingColors.dark()),
                 ),
@@ -96,7 +95,7 @@ class _OtherScreenState extends State<_OtherScreenContainer> {
                 Text(
                   'ادمین',
                   style: TextStyle(
-                      fontSize: 3.5.rw ,
+                      fontSize: 3.5.rw,
                       fontWeight: FontWeight.w200,
                       color: DingColors.dark()),
                 ),

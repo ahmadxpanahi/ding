@@ -5,6 +5,7 @@ import 'package:ding/src/bloc/login_bloc/login_state.dart';
 import 'package:ding/src/di/inject.dart';
 import 'package:ding/src/feature/home/home_screen.dart';
 import 'package:ding/src/ui/colors.dart';
+import 'package:ding/src/ui/show_flushbar.dart';
 import 'package:ding/src/ui/size_config.dart';
 import 'package:ding/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
@@ -185,16 +186,7 @@ class _EnterCodeContaierState extends State<EnterCodeContaier> {
       child: _body,
       listener: (_, state) {
         if (state is LoginErrorState) {
-          Future.delayed(Duration.zero, () async {
-            await Flushbar(
-              backgroundColor: DingColors.warning(),
-              duration: Duration(seconds: 1),
-              borderRadius: BorderRadius.circular(100),
-              padding: EdgeInsets.all(15),
-              message: state.message?.dingError,
-              flushbarPosition: FlushbarPosition.TOP,
-            ).show(context);
-          });
+          showFlushBar(context, state.message?.dingError);
         } else if (state is LoginWithOTPSuccessful) {
           Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => HomeScreen()));

@@ -29,7 +29,6 @@ class SizeConfig {
       isMobilePortrait = false;
     }
 
-
     _blockWidth = screenWidth! / 100;
     _blockHeight = _screenHeight! / 100;
 

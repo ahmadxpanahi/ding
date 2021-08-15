@@ -56,6 +56,9 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
         Log.e('خطا در دریافت اطلاعات');
         yield RequestsErrorState('خطا در دریافت اطلاعات');
       }
+    } on SocketException catch (e) {
+      Log.e(e);
+      yield RequestsErrorState('اتصال اینترنت خود را بررسی کنید');
     } on ApiException catch (e) {
       Log.e(e);
       yield RequestsErrorState(e.message.toString());
@@ -94,9 +97,9 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
     } on SocketException catch (e) {
       Log.e(e);
       yield RequestsErrorState('اتصال اینترنت خود را بررسی کنید.');
-    } on Exception catch (e) {
+    } on ApiException catch (e) {
       Log.e(e);
-      yield RequestsErrorState(e.toString());
+      yield RequestsErrorState(e.message.toString());
     }
   }
 
@@ -133,27 +136,9 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
     } on SocketException catch (e) {
       Log.e(e);
       yield RequestsErrorState('اتصال اینترنت خود را بررسی کنید.');
-    } on Exception catch (e) {
+    } on ApiException catch (e) {
       Log.e(e);
-      yield RequestsErrorState(e.toString());
-    }
-  }
-
-  Stream<RequestsState> _loadImage(LoadImage event) async* {
-    try {
-      var response =
-          await _profileApi.apiServicesAppProfileGetprofilepicturebyuserGet(
-              userId: event.userId);
-
-      if (response != null) {
-        if (response.profilePicture != null) {
-          Uint8List imageData =
-              Base64Decoder().convert(response.profilePicture!);
-          yield ImageLoaded(event.widgetId, imageData);
-        }
-      }
-    } on Exception catch (e) {
-      Log.e(e);
+      yield RequestsErrorState(e.message.toString());
     }
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:ding/src/bloc/login_bloc/login_event.dart';
 import 'package:ding/src/bloc/login_bloc/login_state.dart';
 import 'package:ding/src/core/logger/logger.dart';
@@ -49,8 +51,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       await _tokenManager.setUserId(response?.userId);
 
       yield LoginWithEmailSuccessful(response);
+    } on SocketException catch (e) {
+      Log.e(e);
+      yield LoginErrorState(message: 'اتصال اینترنت خود را بررسی کنید');
     } on ApiException catch (e) {
-      yield LoginErrorState(message: e.message);
+      yield LoginErrorState(message: e.message.toString());
     } finally {
       yield LoginLoadingState(false);
     }
@@ -66,9 +71,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
             ..twoFactorVerificationCode = '');
 
       yield OTPSent(response);
+    } on SocketException catch (e) {
+      Log.e(e);
+      yield LoginErrorState(message: 'اتصال اینترنت خود را بررسی کنید');
     } on ApiException catch (e) {
       Log.e(e.toString());
-      yield LoginErrorState(message: e.message);
+      yield LoginErrorState(message: e.message.toString());
     } finally {
       yield LoginLoadingState(false);
     }
@@ -82,9 +90,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
             ..provider = 'Phone');
 
       yield SendTwoFactorCodeSuccessful();
+    } on SocketException catch (e) {
+      Log.e(e);
+      yield LoginErrorState(message: 'اتصال اینترنت خود را بررسی کنید');
     } on ApiException catch (e) {
       Log.e(e.toString());
-      yield LoginErrorState(message: e.message);
+      yield LoginErrorState(message: e.message.toString());
     }
   }
 
@@ -106,6 +117,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       } else {
         yield LoginErrorState(message: "خطا در برقراری ارتباط");
       }
+    } on SocketException catch (e) {
+      Log.e(e);
+      yield LoginErrorState(message: 'اتصال اینترنت خود را بررسی کنید');
     } on ApiException catch (e) {
       yield LoginErrorState(message: e.message);
     } finally {

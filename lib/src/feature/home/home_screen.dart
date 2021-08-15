@@ -40,7 +40,8 @@ class _HomeScreenState extends State<HomeScreen> {
     'situation': PreferredSize(
       preferredSize: Size.fromHeight(100),
       child: Container(
-        padding: EdgeInsets.only(top: SizeConfig.heightMultiplier! >= 7 ? 3.5.rh : 2.2.rh),
+        padding: EdgeInsets.only(
+            top: SizeConfig.heightMultiplier! >= 7 ? 3.5.rh : 2.2.rh),
         alignment: Alignment.center,
         color: DingColors.primary(),
         height: 13.3.rh,
@@ -55,7 +56,8 @@ class _HomeScreenState extends State<HomeScreen> {
       preferredSize: Size.fromHeight(100),
       child: Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.only(top: SizeConfig.heightMultiplier! >= 7 ? 3.5.rh : 2.2.rh),
+        padding: EdgeInsets.only(
+            top: SizeConfig.heightMultiplier! >= 7 ? 3.5.rh : 2.2.rh),
         color: DingColors.primary(),
         height: 13.3.rh,
         child: Text(
@@ -69,7 +71,8 @@ class _HomeScreenState extends State<HomeScreen> {
       preferredSize: Size.fromHeight(100),
       child: Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.only(top: SizeConfig.heightMultiplier! >= 7 ? 3.5.rh : 2.2.rh),
+        padding: EdgeInsets.only(
+            top: SizeConfig.heightMultiplier! >= 7 ? 3.5.rh : 2.2.rh),
         color: DingColors.primary(),
         height: 13.3.rh,
         child: Text(
@@ -83,7 +86,8 @@ class _HomeScreenState extends State<HomeScreen> {
       preferredSize: Size.fromHeight(100),
       child: Container(
         height: 13.3.rh,
-        padding: EdgeInsets.only(top: SizeConfig.heightMultiplier! >= 7 ? 3.5.rh : 2.2.rh),
+        padding: EdgeInsets.only(
+            top: SizeConfig.heightMultiplier! >= 7 ? 3.5.rh : 2.2.rh),
         color: DingColors.primary(),
         child: Row(
           children: [
@@ -113,7 +117,8 @@ class _HomeScreenState extends State<HomeScreen> {
       preferredSize: Size.fromHeight(100),
       child: Container(
         alignment: Alignment.center,
-       padding: EdgeInsets.only(top: SizeConfig.heightMultiplier! >= 7 ? 3.5.rh : 2.2.rh),
+        padding: EdgeInsets.only(
+            top: SizeConfig.heightMultiplier! >= 7 ? 3.5.rh : 2.2.rh),
         color: DingColors.primary(),
         height: 13.3.rh,
         child: Text(

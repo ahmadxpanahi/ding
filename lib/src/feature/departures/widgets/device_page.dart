@@ -26,13 +26,13 @@ class _DevicePageState extends State<DevicePage> {
   String timeNow =
       '${PersianDate().hour.toString().toPersianDigit()}:${PersianDate().minute.toString().toPersianDigit()}';
 
-    @override
+  @override
   void initState() {
     super.initState();
     _bloc = BlocProvider.of<DeparturesBloc>(context);
     _bloc.add(GetEnterOrLeaveTime());
-    }
-  
+  }
+
   Widget _infoContainer() => Container(
         width: 30.0.rh,
         height: 30.0.rh,

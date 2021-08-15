@@ -180,7 +180,9 @@ class _EmailLoginContainerState extends State<_EmailLoginContainer> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      SizedBox(height: SizeConfig.heightMultiplier! >= 7 ? 2.0.rh : 0,),
+                      SizedBox(
+                        height: SizeConfig.heightMultiplier! >= 7 ? 2.0.rh : 0,
+                      ),
                       Text(
                         'ورود با ایمیل',
                         style: TextStyle(

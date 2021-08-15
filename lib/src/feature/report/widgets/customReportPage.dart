@@ -266,12 +266,13 @@ class _CustomReportPageState extends State<CustomReportPage> {
       ));
 
   @override
-  Widget build(BuildContext context) => BlocListener<ReportBloc,ReportState>(listener: (_,state){
-    if(state is ReportErrorState){
-      showFlushBar(context, state.message.dingError);
-    }
-  },
-  bloc: _reportBloc,
-  child: _buildBody(),
-  );
+  Widget build(BuildContext context) => BlocListener<ReportBloc, ReportState>(
+        listener: (_, state) {
+          if (state is ReportErrorState) {
+            showFlushBar(context, state.message.dingError);
+          }
+        },
+        bloc: _reportBloc,
+        child: _buildBody(),
+      );
 }
