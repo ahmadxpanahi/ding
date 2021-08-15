@@ -108,7 +108,7 @@ class SummaryReportScreen extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100),
         child: Container(
-          padding: EdgeInsets.only(top: 2.2.rh),
+          padding: EdgeInsets.only(top: SizeConfig.heightMultiplier! >= 7 ? 3.5.rh : 2.2.rh),
           alignment: Alignment.center,
           color: DingColors.primary(),
           height: 13.3.rh,
